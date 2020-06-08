@@ -3,13 +3,17 @@
 Brandeis community members - Join free [Library Workshops](https://calendar.library.brandeis.edu/calendar/workshops/) this summer.
 
 ## Summer Workshop Materials:
-- SummeR of R  [register]
-- Python Programming  [register]
-- Automate with Shell [register]
-- Git Version Control [register]
-- Survey Research with Qualtrics [register]
-- LaTeX for Science and Math [register]
-
+- SummeR of R  [register](https://calendar.library.brandeis.edu/calendar/workshops/summeR2020)
+- Python Programming  [register](https://calendar.library.brandeis.edu/calendar/workshops/python2020)
+- Automate with Shell [register](https://calendar.library.brandeis.edu/calendar/workshops/shell2020)
+- Getting Started with Stata [register] (https://calendar.library.brandeis.edu/calendar/workshops/summeR2020)
+- Git Version Control [register](https://calendar.library.brandeis.edu/calendar/workshops/git2020)
+- LaTeX for Science and Math [register](https://calendar.library.brandeis.edu/calendar/workshops/latex2020)
+- Survey Research with Qualtrics Part 1 [register](https://calendar.library.brandeis.edu/event/6739925)
+- Survey Research with Qualtrics Part 2 [register](https://calendar.library.brandeis.edu/event/6739927)
+- Getting Started with Stata [register](https://calendar.library.brandeis.edu/event/6750519)
+- Bivariate Analysis with Stata [register](https://calendar.library.brandeis.edu/event/6750634)
+- Regression Analysis with Stata [register](https://calendar.library.brandeis.edu/event/6750649)
 
 ### Support
 Having trouble? Make an appointment with your Data Analysis Specialists, Dr. Margarita Corral and Dr. Claire Pontbriand, or your [Brandeis Library Subject Liaison](https://www.brandeis.edu/library/research/help/liaison-subject.html) and we’ll help you sort it out.
