@@ -2,7 +2,7 @@
 
 Brandeis community members - Join free [Library Workshops](https://calendar.library.brandeis.edu/calendar/workshops/) this summer.
 
-## Summer Workshop Materials:
+## Summer Workshops:
 - SummeR of R  [[register](https://calendar.library.brandeis.edu/calendar/workshops/summeR2020) / [materials](https://github.com/DeisData/summer-of-r)]
 - Python Programming  [[register](https://calendar.library.brandeis.edu/calendar/workshops/python2020) / [materials](https://github.com/DeisData/python)]
 - Automate with Shell [[register](https://calendar.library.brandeis.edu/calendar/workshops/shell2020) / [materials](https://github.com/DeisData/unix-shell)]
@@ -17,4 +17,4 @@ Brandeis community members - Join free [Library Workshops](https://calendar.libr
   - Regression Analysis with Stata [[register](https://calendar.library.brandeis.edu/event/6750649)]
 
 ### Support
-Having trouble? Make an appointment with your Data Analysis Specialists, Dr. Margarita Corral and Dr. Claire Pontbriand, or your [Brandeis Library Subject Liaison](https://www.brandeis.edu/library/research/help/liaison-subject.html) and we’ll help you sort it out.
+Having trouble? Make an appointment with your Data Analysis Specialists, [Dr. Margarita Corral](http://calendar.library.brandeis.edu/appointment/8518) and [Dr. Claire Pontbriand](https://calendar.library.brandeis.edu/appointments/scidata) (sciences), or your [Brandeis Library Subject Liaison](https://www.brandeis.edu/library/research/help/liaison-subject.html) and we’ll help you sort it out.
