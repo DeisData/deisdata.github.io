@@ -3,9 +3,9 @@
 Brandeis community members - Join free [Library Workshops](https://calendar.library.brandeis.edu/calendar/workshops/) this summer.
 
 ## Summer Workshops:
-- SummeR of R  [[register](https://calendar.library.brandeis.edu/calendar/workshops/summeR2020) / [materials](https://github.com/DeisData/summer-of-r) / [zoom classroom](https://docs.google.com/document/d/1-eeemJIYWoDuRAUvtmO5TKnyAUYvORIzNCFNdfnin5c/edit?usp=sharing) / [session recordings](https://drive.google.com/drive/folders/1O9NfLaXlViJeM2pp_H_Q9DaIp2vD8b-F?usp=sharing)]
-- Python Programming  [[register](https://calendar.library.brandeis.edu/calendar/workshops/python2020) / [materials](https://github.com/DeisData/python) / [zoom classroom](https://docs.google.com/document/d/18TwHdTBUU34PNF8Vz2YYWbmME4tS3NS7Ugu5NjaMmBo/edit?usp=sharing) / session recordings]
-- Automate with Shell [[register](https://calendar.library.brandeis.edu/calendar/workshops/shell2020) / [materials](https://github.com/DeisData/unix-shell) / [zoom classroom](https://docs.google.com/document/d/1-kjo4I40Ovu0-DXxMi9sfps7VhQmY-JF_lPx9cc9cM4/edit?usp=sharing) / [session recordings](https://drive.google.com/drive/folders/1AiOPiggTaJ4hnZeMvQ7nX2XRmaxj1C73?usp=sharing)]
+- SummeR of R  [[register](https://calendar.library.brandeis.edu/calendar/workshops/summeR2020) / [materials](https://github.com/DeisData/summer-of-r) / [zoom classroom and session recordings](https://docs.google.com/document/d/1-eeemJIYWoDuRAUvtmO5TKnyAUYvORIzNCFNdfnin5c/edit?usp=sharing)]
+- Python Programming  [[register](https://calendar.library.brandeis.edu/calendar/workshops/python2020) / [materials](https://github.com/DeisData/python) / [zoom classroom and session recordings](https://docs.google.com/document/d/18TwHdTBUU34PNF8Vz2YYWbmME4tS3NS7Ugu5NjaMmBo/edit?usp=sharing)]
+- Automate with Shell [[register](https://calendar.library.brandeis.edu/calendar/workshops/shell2020) / [materials](https://github.com/DeisData/unix-shell) / [zoom classroom and session recordings](https://docs.google.com/document/d/1-kjo4I40Ovu0-DXxMi9sfps7VhQmY-JF_lPx9cc9cM4/edit?usp=sharing)]
 - Git Version Control [[register](https://calendar.library.brandeis.edu/calendar/workshops/git2020)]
 - LaTeX for Science and Math [[register](https://calendar.library.brandeis.edu/calendar/workshops/latex2020)]
 - Survey Research with Qualtrics 
