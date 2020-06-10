@@ -4,7 +4,7 @@ Brandeis community members - Join free [Library Workshops](https://calendar.libr
 
 ## Summer Workshops:
 - SummeR of R  [[register](https://calendar.library.brandeis.edu/calendar/workshops/summeR2020) / [materials](https://github.com/DeisData/summer-of-r) / [zoom link and recordings](https://docs.google.com/document/d/1-eeemJIYWoDuRAUvtmO5TKnyAUYvORIzNCFNdfnin5c/edit?usp=sharing)]
-- Python Programming  [[register](https://calendar.library.brandeis.edu/calendar/workshops/python2020) / [materials](https://github.com/DeisData/python) / [zoom link and ecordings](https://docs.google.com/document/d/18TwHdTBUU34PNF8Vz2YYWbmME4tS3NS7Ugu5NjaMmBo/edit?usp=sharing)]
+- Python Programming  [[register](https://calendar.library.brandeis.edu/calendar/workshops/python2020) / [materials](https://github.com/DeisData/python) / [zoom link and recordings](https://docs.google.com/document/d/18TwHdTBUU34PNF8Vz2YYWbmME4tS3NS7Ugu5NjaMmBo/edit?usp=sharing)]
 - Automate with Shell [[register](https://calendar.library.brandeis.edu/calendar/workshops/shell2020) / [materials](https://github.com/DeisData/unix-shell) / [zoom link and recordings](https://docs.google.com/document/d/1-kjo4I40Ovu0-DXxMi9sfps7VhQmY-JF_lPx9cc9cM4/edit?usp=sharing)]
 - Git Version Control [[register](https://calendar.library.brandeis.edu/calendar/workshops/git2020)]
 - LaTeX for Science and Math [[register](https://calendar.library.brandeis.edu/calendar/workshops/latex2020)]
