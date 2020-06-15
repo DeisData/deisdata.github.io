@@ -16,5 +16,9 @@ Brandeis community members - Join free [Library Workshops](https://calendar.libr
   - Bivariate Analysis with Stata [[register](https://calendar.library.brandeis.edu/event/6750634)]
   - Regression Analysis with Stata [[register](https://calendar.library.brandeis.edu/event/6750649)]
 
+### How do I download a file to my computer?
+- To download a repository of materials, use the [Clone or Download] button and select "Download ZIP"
+- To download an individual file, click to open the file, and right-click on the [RAW] button to "Save link as"
+
 ### Support
 Having trouble? Make an appointment with your Data Analysis Specialists, [Dr. Margarita Corral](http://calendar.library.brandeis.edu/appointment/8518) and [Dr. Claire Pontbriand](https://calendar.library.brandeis.edu/appointments/scidata) (sciences), or your [Brandeis Library Subject Liaison](https://www.brandeis.edu/library/research/help/liaison-subject.html) and we’ll help you sort it out.
