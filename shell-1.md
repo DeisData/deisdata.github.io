@@ -1,3 +1,5 @@
+[< home](index.html) | [< shell >](shell.html) | [lesson 2 >](shell-2.html)
+
 # Session 1:  Shell for Navigating to Files and Directories
 
 ## Your challenges of the day:
@@ -68,6 +70,10 @@ _Spaces are important between command and options. (But options can be combined 
 - The help option can be used with a command, for example `ls --help`
 - The manual (`man`) for a command can be accessed, for example `man ls`
 
+
+
 ### References
 - [Intermediate Linux Commands](https://docs.google.com/document/d/1xY7fSNBzChx5PMPF_tGoBWOwXef5wVsH1Mf7vLdgJz0/edit?usp=sharing)
 - [Software Carpentry Unix Shell](http://swcarpentry.github.io/shell-novice/)
+
+[< home](index.html) | [< shell >](shell.html) | [lesson 2 >](shell-2.html)
