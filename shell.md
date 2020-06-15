@@ -1,3 +1,5 @@
+[<home](index.html)
+
 # Automate with Shell
 
 This repository contains the scripts and datasets used in the **Automate with Shell** workshops through Brandeis Library Data Services.
