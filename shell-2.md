@@ -1,3 +1,5 @@
+[< home](index.html) | [< shell >](shell.html) | [lesson 3 >](shell-3.html)
+
 # Session 2: Working with files and directories
 
 ## Questions of the day:
@@ -203,3 +205,10 @@ Now, it's your turn!
   cp *-11-*.txt send_to_claire/
   ```
 </details>
+
+### Resources
+This lesson is adapted from [The Unix Shell on Software Carpentry](http://swcarpentry.github.io/shell-novice/).
+
+
+[< home](index.html) | [< shell >](shell.html) | [lesson 3 >](shell-3.html)
+
