@@ -1,4 +1,4 @@
-[<home](index.html)
+[< home](index.html)
 
 # Automate with Shell
 
