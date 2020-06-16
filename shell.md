@@ -22,3 +22,7 @@ Access the [Zoom Classroom link and Session Recordings here](https://docs.google
 
 ## Resources
 These lessons are based on [The Unix Shell on Software Carpentry](http://swcarpentry.github.io/shell-novice/).
+
+
+[< home](index.html) | [< get started >](shell-start.html) | [lesson 1 >](shell-1.html)
+
