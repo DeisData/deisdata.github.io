@@ -1,4 +1,5 @@
-[< home](index.html)
+[< home](index.html) | [< get started >](shell-start.html) | [lesson 1 >](shell-1.html)
+
 
 # Automate with Shell
 
