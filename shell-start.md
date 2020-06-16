@@ -1,3 +1,5 @@
+[< home](index.html) | [< shell >](shell.html) | [lesson 1 >](shell-1.html)
+
 _Adapted from [Software Carpentry]("https://software-carpentry.org")_
 # Opening a Unix Shell in Bash
 
@@ -67,3 +69,8 @@ using the Windows 10 command-line tool, or installing and using a Unix/Linux emu
   <p>*Please note that commands in the Windows Subsystem for Linux (WSL) or Cygwin may differ slightly from those shown in the lesson or presented in the workshop.</p>
 </blockquote>
 
+### Resources
+This lesson is adapted from [The Unix Shell on Software Carpentry](http://swcarpentry.github.io/shell-novice/).
+
+
+[< home](index.html) | [< shell >](shell.html) | [lesson 1 >](shell-1.html)
