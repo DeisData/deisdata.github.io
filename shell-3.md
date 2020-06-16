@@ -1,3 +1,5 @@
+[< home](index.html) | [< shell >](shell.html) | [lesson 4 coming soon >](shell.html)
+
 # Session 3: Pipes and Filters
 The idea of linking together programs is why Unix has been so successful.
 Instead of creating enormous programs that try to do many  different things, we focus on lots of simple tools that work well with each other.
@@ -81,3 +83,10 @@ cut -d , -f 2 animals.txt | sort | uniq > animals_unique.txt
 - Piping Commands Together
   - `|` command **pipe** tells the shell to use the output of a command on the left as the input of the command on the right
   - Chain pipes consecutively
+
+
+### Resources
+This lesson is adapted from [The Unix Shell on Software Carpentry](http://swcarpentry.github.io/shell-novice/).
+
+
+[< home](index.html) | [< shell >](shell.html) | lesson 4 coming soon.
