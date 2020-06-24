@@ -1,4 +1,4 @@
-[< home](index.html) | [< shell >](shell.html) | [lesson 4 coming soon >](shell.html)
+[< home](index.html) | [< shell >](shell.html) | [lesson 4 >](shell-4.html)
 
 # Session 3: Pipes and Filters
 The idea of linking together programs is why Unix has been so successful.
@@ -89,4 +89,4 @@ cut -d , -f 2 animals.txt | sort | uniq > animals_unique.txt
 This lesson is adapted from [The Unix Shell on Software Carpentry](http://swcarpentry.github.io/shell-novice/).
 
 
-[< home](index.html) | [< shell >](shell.html) | lesson 4 coming soon.
+[< home](index.html) | [< shell >](shell.html) | [lesson 4](shell-4.html)
