@@ -1,3 +1,6 @@
+[< home](index.html) | [< shell >](shell.html) | lesson 6 coming soon.
+
+
 # Session 5: Shell Scripts
 We finally see what makes the shell a powerful programming environment.  
 We will take commands we repeat and save them in a **shell script**- a small program, so we can re-run operations with a single command.
@@ -111,3 +114,9 @@ do
    operation_using $thing
 done
 ```
+
+### Resources
+This lesson is adapted from [The Unix Shell on Software Carpentry](http://swcarpentry.github.io/shell-novice/).
+
+
+[< home](index.html) | [< shell >](shell.html) | lesson 6 coming soon.
