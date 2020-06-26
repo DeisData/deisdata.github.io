@@ -1,3 +1,4 @@
+[< home](index.html) | [< shell >](shell.html)
 
 # Session 6: Finding Things!
 
@@ -72,5 +73,11 @@ do
 done
 ```
 - Writing Shell Scripts (See Session 5 notes)
+
+### Resources
+This lesson is adapted from [The Unix Shell on Software Carpentry](http://swcarpentry.github.io/shell-novice/).
+
+
+[< home](index.html) | [< shell >](shell.html)
 
 
