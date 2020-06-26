@@ -1,4 +1,4 @@
-[< home](index.html) | [< shell >](shell.html) | lesson 6 coming soon.
+[< home](index.html) | [< shell >](shell.html) | [lesson 6 >](shell-6.html)
 
 
 # Session 5: Shell Scripts
@@ -119,4 +119,4 @@ done
 This lesson is adapted from [The Unix Shell on Software Carpentry](http://swcarpentry.github.io/shell-novice/).
 
 
-[< home](index.html) | [< shell >](shell.html) | lesson 6 coming soon.
+[< home](index.html) | [< shell >](shell.html) | [lesson 6 >](shell-6.html)
