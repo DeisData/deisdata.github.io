@@ -5,7 +5,7 @@ Brandeis community members - Join free [Library Workshops](https://calendar.libr
 ## Summer Workshops:
 - SummeR of R  [[materials](https://github.com/DeisData/summer-of-r) / [zoom link and recordings](https://docs.google.com/document/d/1-eeemJIYWoDuRAUvtmO5TKnyAUYvORIzNCFNdfnin5c/edit?usp=sharing)]
 - Python Programming  [[materials](https://github.com/DeisData/python) / [zoom link and recordings](https://docs.google.com/document/d/18TwHdTBUU34PNF8Vz2YYWbmME4tS3NS7Ugu5NjaMmBo/edit?usp=sharing) / [website](python.md)] 
-- Git Version Control [[register](https://calendar.library.brandeis.edu/calendar/workshops/git2020) / [zoom link and recordings](https://docs.google.com/document/d/1gfG80ugHj3yOAZagHsRqNH8XnQjPHtHUCldsAerqbGY/edit?usp=sharing) / materials]
+- Git Version Control [[register](https://calendar.library.brandeis.edu/calendar/workshops/git2020) / [zoom link and recordings](https://docs.google.com/document/d/1gfG80ugHj3yOAZagHsRqNH8XnQjPHtHUCldsAerqbGY/edit?usp=sharing) / [materials](https://github.com/DeisData/git-version-control/blob/master/README.md)]
 - LaTeX for Science and Math [[register](https://calendar.library.brandeis.edu/calendar/workshops/latex2020)]
 - Survey Research with Qualtrics 
 - Analysis with Stata
