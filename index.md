@@ -5,15 +5,10 @@ Brandeis community members - Join free [Library Workshops](https://calendar.libr
 ## Summer Workshops:
 - SummeR of R  [[materials](https://github.com/DeisData/summer-of-r) / [zoom link and recordings](https://docs.google.com/document/d/1-eeemJIYWoDuRAUvtmO5TKnyAUYvORIzNCFNdfnin5c/edit?usp=sharing)]
 - Python Programming  [[materials](https://github.com/DeisData/python) / [zoom link and recordings](https://docs.google.com/document/d/18TwHdTBUU34PNF8Vz2YYWbmME4tS3NS7Ugu5NjaMmBo/edit?usp=sharing) / [website](python.md)] 
-- Git Version Control [[register](https://calendar.library.brandeis.edu/calendar/workshops/git2020)]
+- Git Version Control [[register](https://calendar.library.brandeis.edu/calendar/workshops/git2020) / [zoom link and recordings](https://docs.google.com/document/d/1gfG80ugHj3yOAZagHsRqNH8XnQjPHtHUCldsAerqbGY/edit?usp=sharing) / materials]
 - LaTeX for Science and Math [[register](https://calendar.library.brandeis.edu/calendar/workshops/latex2020)]
 - Survey Research with Qualtrics 
-  - Part 1 [[register](https://calendar.library.brandeis.edu/event/6739925)]
-  - Part 2 [[register](https://calendar.library.brandeis.edu/event/6739927)]
 - Analysis with Stata
-  - Getting Started with Stata [[register](https://calendar.library.brandeis.edu/event/6750519)]
-  - Bivariate Analysis with Stata [[register](https://calendar.library.brandeis.edu/event/6750634)]
-  - Regression Analysis with Stata [[register](https://calendar.library.brandeis.edu/event/6750649)]
 - Automate with Shell [[materials](https://github.com/DeisData/unix-shell) / [zoom recordings](https://docs.google.com/document/d/1-kjo4I40Ovu0-DXxMi9sfps7VhQmY-JF_lPx9cc9cM4/edit?usp=sharing) / [website](shell.md)]
 
 ### How do I download a file to my computer?
