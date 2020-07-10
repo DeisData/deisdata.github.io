@@ -7,6 +7,9 @@ Workshop materials for a git and GitHub workshop series from Brandeis Library RI
 - Session 2: Working with git [[commands](https://github.com/DeisData/git-version-control/blob/master/lesson2_git.txt)]
 - Session 3: Collaborating with git and GitHub [[notes](https://github.com/DeisData/git-version-control/blob/master/lesson3_git.txt)]
 
+[Links to Session Recordings](https://docs.google.com/document/d/1gfG80ugHj3yOAZagHsRqNH8XnQjPHtHUCldsAerqbGY/edit?usp=sharing)
+
+
 **More Resources:**
 - How can Version Control make my science more open? [[Open Science](http://swcarpentry.github.io/git-novice/10-open/index.html)]
 - [Licensing](http://swcarpentry.github.io/git-novice/11-licensing/index.html)
