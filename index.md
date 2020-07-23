@@ -5,7 +5,7 @@ Brandeis community members - Join free [Library Workshops](https://calendar.libr
 ## Summer Workshops:
 - SummeR of R  [[materials](https://github.com/DeisData/summer-of-r) / [zoom link and recordings](https://docs.google.com/document/d/1-eeemJIYWoDuRAUvtmO5TKnyAUYvORIzNCFNdfnin5c/edit?usp=sharing)]
 - Python Programming  [[materials](https://github.com/DeisData/python) / [zoom link and recordings](https://docs.google.com/document/d/18TwHdTBUU34PNF8Vz2YYWbmME4tS3NS7Ugu5NjaMmBo/edit?usp=sharing) / [website](python.md)] 
-- LaTeX for Science and Math [[materials](https://github.com/DeisData/latex-for-science) / [zoom link](https://docs.google.com/document/d/13w_DiBNY6DPYrbRGw0sRPbZ1uhg_ILZ1YWcDcseU048/edit?usp=sharing)]
+- LaTeX for Science and Math [[materials](https://github.com/DeisData/latex-for-science) / [zoom link](https://docs.google.com/document/d/13w_DiBNY6DPYrbRGw0sRPbZ1uhg_ILZ1YWcDcseU048/edit?usp=sharing) / [Workshop project on Overleaf](https://www.overleaf.com/read/pnrxjvrwsxtm)]
 - Survey Research with Qualtrics 
 - Analysis with Stata
 - Automate with Shell [[materials](https://github.com/DeisData/unix-shell) / [zoom recordings](https://docs.google.com/document/d/1-kjo4I40Ovu0-DXxMi9sfps7VhQmY-JF_lPx9cc9cM4/edit?usp=sharing) / [website](shell.md)]
