@@ -1,6 +1,6 @@
 # Welcome to Brandeis Library Data Services
 
-Brandeis community members - Join free [Library Workshops](https://calendar.library.brandeis.edu/calendar/workshops/) on many technical and research topics.
+Brandeis community members - Join free [Library Workshops](https://calendar.library.brandeis.edu/calendar/workshops/) on technical and research topics.
 
 ## Summer Workshops:
 - SummeR of R  [[materials](https://github.com/DeisData/summer-of-r) / [zoom link and recordings](https://docs.google.com/document/d/1-eeemJIYWoDuRAUvtmO5TKnyAUYvORIzNCFNdfnin5c/edit?usp=sharing)]
