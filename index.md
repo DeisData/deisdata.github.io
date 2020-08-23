@@ -1,10 +1,24 @@
 # Welcome to Brandeis Library Data Services
 
-Brandeis community members - Join free [Library Workshops](https://calendar.library.brandeis.edu/calendar/workshops/) on technical and research topics.
+## Fall 2020 Workshops for our Brandeis Community:
+Register for [Library Workshops](https://calendar.library.brandeis.edu/calendar/workshops/) on technical and research topics, including:
 
-**[Share your ideas and needs for fall workshops now!](https://forms.gle/k9AwEMcQfsj83tMf9)**
+- R for Data Analysis
+- Bash Shell Skills
+- Python Programming for Data Analysis
+- Social Code with Python
+- Git and GitHub
+- LaTeX for Beginners 
+- Stata
+- SPSS
+- Excel with Excel
+- Qualtrics
+- Atlas.ti
 
-## Summer Workshops:
+Materials and recordings will be shared here when the semester starts.
+
+
+## Summer 2020 Workshops:
 - SummeR of R  [[materials](https://github.com/DeisData/summer-of-r) / [zoom link and recordings](https://docs.google.com/document/d/1-eeemJIYWoDuRAUvtmO5TKnyAUYvORIzNCFNdfnin5c/edit?usp=sharing)]
 - Python Programming  [[materials](https://github.com/DeisData/python) / [recordings](https://docs.google.com/document/d/18TwHdTBUU34PNF8Vz2YYWbmME4tS3NS7Ugu5NjaMmBo/edit?usp=sharing) / [website](python.md)] 
 - LaTeX for Science and Math [[materials](https://github.com/DeisData/latex-for-science) / [Workshop project on Overleaf](https://www.overleaf.com/read/pnrxjvrwsxtm)]
