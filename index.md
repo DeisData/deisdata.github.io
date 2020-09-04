@@ -3,8 +3,8 @@
 ## Fall 2020 Workshops for our Brandeis Community:
 Register for [Library Workshops](https://calendar.library.brandeis.edu/calendar/workshops/) on technical and research topics, including:
 
+- [Bash Shell Skills](https://github.com/DeisData/bash-shell-skills)
 - R for Data Analysis
-- Bash Shell Skills
 - Python Programming for Data Analysis
 - Social Code with Python
 - Git and GitHub
