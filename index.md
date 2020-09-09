@@ -1,15 +1,13 @@
-# Welcome to Brandeis Library Data Services
+# How Do Deisians Learn with Us?
 
-## How Do Deisians Learn with Us?
-
-### 1. Meet your research community of support.
+## 1. Meet your research community of support.
 - Make an appointment with your Data Analysis Specialist:
   - [Dr. Margarita Corral](http://calendar.library.brandeis.edu/appointment/8518) (social sciences)
   - [Dr. Claire Pontbriand](https://calendar.library.brandeis.edu/appointments/scidata) (sciences)
 
 - [Register for September Library Workshops](https://calendar.library.brandeis.edu/calendar/workshops/), including [Bash Shell](https://calendar.library.brandeis.edu/event/6940568), [R](https://calendar.library.brandeis.edu/event/7099675), [Python](https://calendar.library.brandeis.edu/event/6940509), [LaTeX](https://calendar.library.brandeis.edu/event/6961762), [Git and GitHub](https://calendar.library.brandeis.edu/event/6961681), [STATA](https://calendar.library.brandeis.edu/event/6897169), [SPSS](https://calendar.library.brandeis.edu/event/6954821), [Excel](https://calendar.library.brandeis.edu/event/6955237), [Qualtrics](https://calendar.library.brandeis.edu/event/6897275), and more.
 
-### 2. Explore coding.
+## 2. Explore coding.
 - **Demos and challenges running this fall.**
   - Bash Shell Skills [[Thurs 9-10](https://calendar.library.brandeis.edu/event/6940568) / [materials](https://github.com/DeisData/bash-shell-skills/)]
   - Python Programming [[Mon 9-14](https://calendar.library.brandeis.edu/event/6940509) / materials to come]
