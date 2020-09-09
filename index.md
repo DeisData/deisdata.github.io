@@ -9,7 +9,7 @@
 
 ## 2. Explore coding.
 - **Demos and challenges running this fall.**
-  - Bash Shell Skills [[Thurs 9-10](https://calendar.library.brandeis.edu/event/6940568) / [materials](https://github.com/DeisData/bash-shell-skills/)]
+  - Bash Shell Skills [[Thurs 9-10](https://calendar.library.brandeis.edu/event/6940568) / [materials](https://github.com/DeisData/bash-shell-skills/) / [video tutorials](https://www.youtube.com/playlist?list=PL1FKvuJFWIghz5GgBIji7YDuTovUE32o7)]
   - Python Programming [[Mon 9-14](https://calendar.library.brandeis.edu/event/6940509) / materials to come]
   - R Projects Night [[Tues 9-15](https://calendar.library.brandeis.edu/event/7099675) / materials to come]
   - Social Code - Python [[Wed 9-16](https://calendar.library.brandeis.edu/event/6940456) / challenge to come]
