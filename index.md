@@ -1,33 +1,19 @@
 # Welcome to Brandeis Library Data Services
 
-## Fall 2020 Workshops for our Brandeis Community:
-Register for [Library Workshops](https://calendar.library.brandeis.edu/calendar/workshops/) on technical and research topics, including:
-
-- [Bash Shell Skills](https://github.com/DeisData/bash-shell-skills)
-- R for Data Analysis
-- Python Programming for Data Analysis
-- Social Code with Python
-- Git and GitHub
-- LaTeX for Beginners 
-- Stata
-- SPSS
-- Excel with Excel
-- Qualtrics
-- Atlas.ti
-
-Materials and recordings will be shared here when the semester starts.
+## How Deisians Learn with Us:
+- Make an appointment with your Data Analysis Specialist:
+  - [Dr. Margarita Corral](http://calendar.library.brandeis.edu/appointment/8518) (social sciences)
+  - [Dr. Claire Pontbriand](https://calendar.library.brandeis.edu/appointments/scidata) (sciences)
+- Register for September [Library Workshops](https://calendar.library.brandeis.edu/calendar/workshops/) on technical and research topics, including [Bash Shell Skills](https://calendar.library.brandeis.edu/event/6940568), [R](https://calendar.library.brandeis.edu/event/7099675), [Python](https://calendar.library.brandeis.edu/event/6940509), [LaTeX](https://calendar.library.brandeis.edu/event/6961762), [Git and GitHub](https://calendar.library.brandeis.edu/event/6961681), [STATA](https://calendar.library.brandeis.edu/event/6897169), [SPSS](https://calendar.library.brandeis.edu/event/6954821), [Excel](https://calendar.library.brandeis.edu/event/6955237), [Qualtrics](https://calendar.library.brandeis.edu/event/6897275), and more.
+- Explore repositories for the demos and challenges running this fall.
+  - Bash Shell Skills [[register](https://calendar.library.brandeis.edu/event/6940568) / [materials](https://github.com/DeisData/bash-shell-skills)]
+  - Python Programming [[register for Mon 9/14](https://calendar.library.brandeis.edu/event/6940509) / materials to come]
+  - R Projects Night [[register for Tues 9/15](https://calendar.library.brandeis.edu/event/7099675) / materials to come]
+  - Social Code - Python [[register for Wed 9/16](https://calendar.library.brandeis.edu/event/6940456) / challenge to come]
+- [Explore materials from Summer 2020 workshops](summer2020.md)
 
 
-## Summer 2020 Workshops:
-- SummeR of R  [[materials](https://github.com/DeisData/summer-of-r) / [zoom link and recordings](https://docs.google.com/document/d/1-eeemJIYWoDuRAUvtmO5TKnyAUYvORIzNCFNdfnin5c/edit?usp=sharing)]
-- Python Programming  [[materials](https://github.com/DeisData/python) / [recordings](https://docs.google.com/document/d/18TwHdTBUU34PNF8Vz2YYWbmME4tS3NS7Ugu5NjaMmBo/edit?usp=sharing) / [website](python.md)] 
-- LaTeX for Science and Math [[materials](https://github.com/DeisData/latex-for-science) / [Workshop project on Overleaf](https://www.overleaf.com/read/pnrxjvrwsxtm)]
-- Automate with Shell [[materials](https://github.com/DeisData/unix-shell) / [recordings](https://docs.google.com/document/d/1-kjo4I40Ovu0-DXxMi9sfps7VhQmY-JF_lPx9cc9cM4/edit?usp=sharing) / [website](shell.md)]
-- Git Version Control [[materials](https://github.com/DeisData/git-version-control/blob/master/README.md) / [recordings](https://docs.google.com/document/d/1gfG80ugHj3yOAZagHsRqNH8XnQjPHtHUCldsAerqbGY/edit?usp=sharing) /  [website](git.md)]
-- Survey Research with Qualtrics 
-- Analysis with Stata
-
-### How do I download a file to my computer?
+### How do I download a file from GitHub to my computer?
 - To download a repository of materials, use the [Clone or Download] button and select "Download ZIP"
 - To download an individual file, click to open the file, and right-click on the [RAW] button to "Save link as."  Make sure you retain the intended file extension -- sometimes raw files default to *.txt.
 
