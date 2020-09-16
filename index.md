@@ -13,7 +13,7 @@
   - Python Programming [[Mon 9-21](https://calendar.library.brandeis.edu/event/6940510) / [materials](https://github.com/DeisData/python-projects)]
   - R Projects Night - Regression Session [[Tues 9-22](https://calendar.library.brandeis.edu/event/7099676) / [materials](https://github.com/DeisData/r-projects)]
   - Social Code - Python [[Wed 9-16](https://calendar.library.brandeis.edu/event/6940456) / [Colab group challenges](https://colab.research.google.com/drive/1XoosFMP60wBB8qmCpjmjDoAyU7X65mr8?usp=sharing)]
-- [Materials from Summer 2020 workshops](summer2020.html)
+- [Materials from Summer 2020 workshops](summer2020.md)
 
 
 ### How do I download a file from GitHub to my computer?
