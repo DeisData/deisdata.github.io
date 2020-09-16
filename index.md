@@ -5,14 +5,14 @@
   - [Dr. Margarita Corral](http://calendar.library.brandeis.edu/appointment/8518) (social sciences)
   - [Dr. Claire Pontbriand](https://calendar.library.brandeis.edu/appointments/scidata) (sciences)
 
-- [Register for September Library Workshops](https://calendar.library.brandeis.edu/calendar/workshops/), including [Bash Shell](https://calendar.library.brandeis.edu/event/6940568), [R](https://calendar.library.brandeis.edu/event/7099675), [Python](https://calendar.library.brandeis.edu/event/6940509), [LaTeX](https://calendar.library.brandeis.edu/event/6961762), [Git and GitHub](https://calendar.library.brandeis.edu/event/6961681), [STATA](https://calendar.library.brandeis.edu/event/6897169), [SPSS](https://calendar.library.brandeis.edu/event/6954821), [Excel](https://calendar.library.brandeis.edu/event/6955237), [Qualtrics](https://calendar.library.brandeis.edu/event/6897275), and more.
+- [Register for September Library Workshops](https://calendar.library.brandeis.edu/calendar/workshops/), including Bash Shell, R and Python (weekly), [LaTeX](https://calendar.library.brandeis.edu/event/6961762), [Git and GitHub](https://calendar.library.brandeis.edu/event/6961681), [STATA](https://calendar.library.brandeis.edu/event/6897169), [SPSS](https://calendar.library.brandeis.edu/event/6954821), [Excel](https://calendar.library.brandeis.edu/event/6955237), [Qualtrics](https://calendar.library.brandeis.edu/event/6897275), and more.
 
 ## 2. Explore coding.
 - **Demos and challenges running this fall.**
-  - Bash Shell Skills [[Thurs 9-10](https://calendar.library.brandeis.edu/event/6940568) / [materials](https://github.com/DeisData/bash-shell-skills/) / [video tutorials](https://www.youtube.com/playlist?list=PL1FKvuJFWIghz5GgBIji7YDuTovUE32o7)]
-  - Python Programming [[Mon 9-14](https://calendar.library.brandeis.edu/event/6940509) / [materials](https://github.com/DeisData/python-projects)]
-  - R Projects Night [[Tues 9-15](https://calendar.library.brandeis.edu/event/7099675) / [materials](https://github.com/DeisData/r-projects)]
-  - Social Code - Python [[Wed 9-16](https://calendar.library.brandeis.edu/event/6940456) / challenge to come]
+  - Bash Shell Skills [[Thurs 9-17](https://calendar.library.brandeis.edu/event/6940569) / [materials](https://github.com/DeisData/bash-shell-skills/) / [video tutorials](https://www.youtube.com/playlist?list=PL1FKvuJFWIghz5GgBIji7YDuTovUE32o7)]
+  - Python Programming [[Mon 9-21](https://calendar.library.brandeis.edu/event/6940510) / [materials](https://github.com/DeisData/python-projects)]
+  - R Projects Night - Regression Session [[Tues 9-22](https://calendar.library.brandeis.edu/event/7099676) / [materials](https://github.com/DeisData/r-projects)]
+  - Social Code - Python [[Wed 9-16](https://calendar.library.brandeis.edu/event/6940456) / [Colab group challenges](https://colab.research.google.com/drive/1XoosFMP60wBB8qmCpjmjDoAyU7X65mr8?usp=sharing)]
 - [Materials from Summer 2020 workshops](summer2020.html)
 
 
@@ -24,4 +24,4 @@
 Having trouble? **Make an appointment with your Data Analysis Specialists**, [Dr. Margarita Corral](http://calendar.library.brandeis.edu/appointment/8518) and [Dr. Claire Pontbriand](https://calendar.library.brandeis.edu/appointments/scidata) (sciences), or your [**Brandeis Library Subject Liaison**](https://www.brandeis.edu/library/research/help/liaison-subject.html) and we’ll help you sort it out.
 
 
-*Updated September 9, 2020.*
+*Updated September 16, 2020.*
