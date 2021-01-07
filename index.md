@@ -11,7 +11,7 @@
 
 - [Register for Library Workshops](https://calendar.library.brandeis.edu/calendar/workshops/), including Bash Shell, R and Python, LaTeX, Git and GitHub, STATA, SPSS, Excel, Qualtrics, and more.
 
-## 2. Explore coding this January.
+## 2. Expand your skillset with workshops this January.
 - Programming with R: [Register](https://calendar.library.brandeis.edu/event/7297544) / Class Materials (coming soon)
 - Version Control with Git: [Register]() / Class Materials (coming soon)
 - Intro to Programming with Python: [Register](https://calendar.library.brandeis.edu/event/7299345) / Class Materials (coming soon)
