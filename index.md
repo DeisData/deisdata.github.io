@@ -1,6 +1,6 @@
 *Updated January 7th, 2021.*
 
-# How Do Deisians Learn with Us?
+# How Do I Use Brandeis Data Services?
 
 ## 1. Meet your research community of support.
 - Make an appointment with your Data Analysis Specialist:
