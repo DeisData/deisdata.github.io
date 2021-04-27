@@ -4,7 +4,7 @@
 - Make an appointment to meet with your Data Analysis Specialist:
   - [Dr. Margarita Corral](http://calendar.library.brandeis.edu/appointment/8518) (social sciences)
   - [Dr. Claire Pontbriand](https://calendar.library.brandeis.edu/appointments/scidata) (sciences)
-  - [Alex Willet](http://calendar.library.brandeis.edu/appointment/5342) (Geographical Information Systems)
+  - [Alex Willett](http://calendar.library.brandeis.edu/appointment/5342) (Geographical Information Systems)
   - Data Services Drop-In chats, Fridays at 10am: [Register for the zoom link](https://calendar.library.brandeis.edu/calendar/workshops/)
 
 - [Register for Library Workshops](https://calendar.library.brandeis.edu/calendar/workshops/), including Bash Shell, R and Python, LaTeX, Git and GitHub, STATA, SPSS, Excel, Qualtrics, and more.
