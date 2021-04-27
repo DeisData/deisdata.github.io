@@ -1,9 +1,7 @@
-*Updated January 7th, 2021.*
-
 # How Do I Use Brandeis Data Services?
 
 ## Meet your research community of support.
-- Make an appointment with your Data Analysis Specialist:
+- Make an appointment to meet with your Data Analysis Specialist:
   - [Dr. Margarita Corral](http://calendar.library.brandeis.edu/appointment/8518) (social sciences)
   - [Dr. Claire Pontbriand](https://calendar.library.brandeis.edu/appointments/scidata) (sciences)
   - [Alex Willet](http://calendar.library.brandeis.edu/appointment/5342) (Geographical Information Systems)
