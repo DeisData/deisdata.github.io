@@ -1,8 +1,7 @@
 ---
+layout: shell
 title: Shell Workshop
 ---
-
-[< home](/) | [< bash >](/shell/) | [lesson 2 >](/shell/shell-2/)
 
 # Session 1:  Shell for Navigating to Files and Directories
 
@@ -59,7 +58,7 @@ title: Shell Workshop
 
 ## General syntax of a shell command
 **Bash**
-```
+```bash
 $ ls -F /
 ```
 `ls` is the **command**, with an **option** (or **switch** or **flag**) `-F` and an **argument** `/`.
@@ -80,4 +79,7 @@ _Spaces are important between command and options. (But options can be combined 
 - [Intermediate Linux Commands](https://docs.google.com/document/d/1xY7fSNBzChx5PMPF_tGoBWOwXef5wVsH1Mf7vLdgJz0/edit?usp=sharing)
 - [Software Carpentry Unix Shell](http://swcarpentry.github.io/shell-novice/)
 
-[< home](/) | [< shell >](/shell/) | [lesson 2 >](/shell/shell-2/)
+<span class="lesson">
+    [ <a href="/shell/shell-start/">previous</a> ]
+    [ <a href="/shell/shell-2"> next</a> ]
+</span>

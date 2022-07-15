@@ -1,4 +1,6 @@
-[<home](/)
+---
+layout: single
+---
 
 # Git Version Control
 Workshop materials for a git and GitHub workshop series from Brandeis Library RIS.

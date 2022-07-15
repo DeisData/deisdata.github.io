@@ -1,3 +1,7 @@
+---
+layout: single
+---
+
 # Brandeis Library Data Services
 
 [ < home](/)

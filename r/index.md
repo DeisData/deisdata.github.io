@@ -1,5 +1,6 @@
 ---
 title: Installing R
+layout: single
 ---
 
 # Install/Update R & RStudio

@@ -1,4 +1,6 @@
-[< home](/) | [< shell >](/shell/)
+---
+layout: shell
+---
 
 # Session 6: Finding Things!
 
@@ -66,7 +68,7 @@ How can we find things in files?
 - Piping Commands Together
   - `|` command **pipe** tells the shell to use the output of a command on the left as the input of the command on the right
 - Loop Structure: 
-```
+```bash
 for thing in list_of_things
 do
    operation_using $thing
@@ -78,6 +80,15 @@ done
 This lesson is adapted from [The Unix Shell on Software Carpentry](http://swcarpentry.github.io/shell-novice/).
 
 
-[< home](/) | [< shell >](/shell/)
+<span class="lesson">
+    [ <a href="/shell">shell</a> ]
+    [ <a href="/shell/shell-start/">get started</a> ]
+    [ <a href="/shell/shell-1"> lesson 1</a> ]
+    [ <a href="/shell/shell-2"> lesson 2</a> ]
+    [ <a href="/shell/shell-3"> lesson 3</a> ]
+    [ <a href="/shell/shell-4"> lesson 4</a> ]
+    [ <a href="/shell/shell-5"> lesson 5</a> ]
+    [ <a href="/shell/shell-6"> lesson 6</a> ]
+</span>
 
 

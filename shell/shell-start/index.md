@@ -1,7 +1,9 @@
-[< home](/) | [< shell >](/shell/) | [lesson 1 >](/shell/shell-1/)
+---
+layout: shell
+---
 
-_Adapted from [Software Carpentry]("https://software-carpentry.org")_
 # Opening a Unix Shell in Bash
+_Adapted from [Software Carpentry]("https://software-carpentry.org")_
 
 **Where to type commands: How to open a new shell**
   <p>The shell is a program that enables us to send commands to the computer and receive output. It is also referred to as the terminal or command line.</p>
@@ -73,4 +75,7 @@ using the Windows 10 command-line tool, or installing and using a Unix/Linux emu
 This lesson is adapted from [The Unix Shell on Software Carpentry](http://swcarpentry.github.io/shell-novice/).
 
 
-[< home](/) | [< shell >](/shell/) | [lesson 1 >](/shell/shell-1/)
+<span class="lesson">
+    [ <a href="/shell">previous</a> ]
+    [ <a href="/shell/shell-1"> next</a> ]  
+</span>

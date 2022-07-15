@@ -1,4 +1,6 @@
-[< home](/) | [< shell >](/shell/) | [lesson 3 >](/shell/shell-3/)
+---
+layout: shell
+---
 
 # Session 2: Working with files and directories
 
@@ -9,7 +11,7 @@
 
 ## Challenge Questions
 1. Moving files.  We accidentally put the files `sucrose.dat` and `maltose.dat` into the wrong folder, `analyzed/`.  Fill in the blanks to move these files into the `raw/` folder.
-```
+```bash
 $ ls -F
   analyzed/  raw/
 $ ls -F analyzed/
@@ -17,7 +19,7 @@ $ ls -F analyzed/
 $ cd analyzed
 ```
 My next line of code should be (fill in the blanks):
-```
+```bash
 $ mv sucrose.dat matose.dat ___/___
 ```
 <details>
@@ -127,7 +129,7 @@ _In editor commands, the Control key is also called Ctrl or ^._
 
 ### Challenge Project
 Before heading on a trip, you want to back up your data and send some datasets to Claire.  Fill in the following commands to get the job done.  First, let's set up a directory and files.
-``` 
+```bash 
 # Hashtag denotes a comment. The line will be skipped
 
 # Change to your desktop 
@@ -154,7 +156,7 @@ nano 2020-06-09-calibration.txt
 The next piece is provided in the shell script `session2challenge.sh`.
 Copy it to your fake_data directory.
 
-```
+```bash
 # session2challenge.sh creates more fake data and callibration files
 
 fmonth="2020-06"
@@ -187,7 +189,7 @@ Now, it's your turn!
   
   #### Create a backup directory with subdirectories for data and calibration files
   - Hint: You will use `mkdir`
-  ```
+  ```bash
   mkdir ___
   mkdir ___/___
   mkdir ___/___
@@ -201,7 +203,7 @@ Now, it's your turn!
   
   #### Copy June 11th files to `send_to_claire/`. 
   - Hint:  Use the copy command `cp` with wildcards!
-  ```
+  ```bash
   cp *-11-*.txt send_to_claire/
   ```
 </details>
@@ -210,5 +212,8 @@ Now, it's your turn!
 This lesson is adapted from [The Unix Shell on Software Carpentry](http://swcarpentry.github.io/shell-novice/).
 
 
-[< home](/) | [< shell >](/shell/) | [lesson 3 >](/shell/shell-3/)
+<span class="lesson">
+    [ <a href="/shell/shell-1"> previous</a> ]
+    [ <a href="/shell/shell-3"> next</a> ]    
+</span>
 

@@ -1,5 +1,6 @@
-[< home](/) | [< get started >](/shell/shell-start/) | [lesson 1 >](/shell/shell-1/)
-
+---
+layout: shell
+---
 
 # Automate with Shell
 
@@ -22,5 +23,16 @@ Brandeis Community Access the [Zoom Session Recordings here](https://docs.google
 These lessons are based on [The Unix Shell on Software Carpentry](http://swcarpentry.github.io/shell-novice/).
 
 
-[< home](/) | [< get started >](/shell/shell-start/) | [lesson 1 >](/shell/shell-1/)
+<span class="lesson">
+    [ <a href="/shell">shell</a> ]
+    [ <a href="/shell/shell-start/">get started</a> ]
+    [ <a href="/shell/shell-1"> lesson 1</a> ]
+    [ <a href="/shell/shell-2"> lesson 2</a> ]
+    [ <a href="/shell/shell-3"> lesson 3</a> ]
+    [ <a href="/shell/shell-4"> lesson 4</a> ]
+    [ <a href="/shell/shell-5"> lesson 5</a> ]
+    [ <a href="/shell/shell-6"> lesson 6</a> ]
+    
+</span>
+
 

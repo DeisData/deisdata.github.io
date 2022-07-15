@@ -1,8 +1,7 @@
 ---
 title: Python Resources
+layout: single
 ---
-
-[< home](/)
 
 # Python Programming Workshop
 This repository contains the scripts and datasets used in the Python Programming workshops through Brandeis Library Data Services.
@@ -35,10 +34,4 @@ This workshop met during the summer of 2020.
 ## Viewing materials
 - Both GitHub and [Jupyter nbViewer](https://nbviewer.jupyter.org/) can be used to easily view Jupyter Notebook files by supplying the github link to session .ipynb files. 
 - To work along, launch Jupyter Notebook (or Spyder for .py scripts) from your Anaconda Navigator.  
-
-
-
-
-
-[< home](/)
 

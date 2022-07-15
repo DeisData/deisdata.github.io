@@ -1,5 +1,6 @@
-[< home](/) | [< shell >](/shell/) | [lesson 6 >](/shell/shell-6/)
-
+---
+layout: shell
+---
 
 # Session 5: Shell Scripts
 We finally see what makes the shell a powerful programming environment.  
@@ -17,7 +18,7 @@ We will take commands we repeat and save them in a **shell script**- a small pro
 
 ## Writing Shell Scripts
 ### Shabang the top line of a script:
-```
+```bash
 #!/bin/bash
 ```
 Uses the special marker `#!` and path `/bin/bash` the instruct the shell to pass the script to the bash program for execution.  
@@ -27,13 +28,13 @@ Other scripts may point to other shells (e.g. `#!/usr/bin/perl` will tell the sh
 For example, `$1` means the first argument on the command line in the script `header.sh`.
 
 **header.sh:**
-```
+```bash
 #!/bin/bash
 # This script prints the first 15 lines of the file named in the command line (datafile.txt)
 head -n 15 $1 
 ```
 **Command line:**
-```
+```bash
 $  bash header.sh datafile.txt
 ```
 
@@ -41,27 +42,27 @@ $  bash header.sh datafile.txt
 - Use double quotes around a variable in case a filename happens to contain spaces.
 - Use special variables `$1`, `$2`, and `$3`, etc.
 **header.sh:**
-```
+```bash
 #!/bin/bash
 # This script prints the top $2 lines of the file $1, then writes the top lines to file $3
 head -n "$2" "$1" > "$3" 
 ```
 **Command line:**
-```
+```bash
 $  bash header.sh datafile.txt 10 topdata.txt
 ```
 
 ### Use special syntax to handle one or more filenames
 - Use `$@` to indicate all of the command-line arguments to the shell script.  Add quotations in case of filename spaces `"$@"`
 **sorted.sh:**
-```
+```bash
 #!/bin/bash
 # Sort files by their length
 # USAGE: bash sorted.sh one_or_more_filenames
 wc -l "$@" | sort -n
 ```
 **Command line:**
-```
+```bash
 $  bash sorted.sh  *.pdb  ../creatures/*.dat
 ```
 
@@ -108,7 +109,7 @@ $  bash sorted.sh  *.pdb  ../creatures/*.dat
 - Piping Commands Together
   - `|` command **pipe** tells the shell to use the output of a command on the left as the input of the command on the right
 - Loop Structure: 
-```
+```bash
 for thing in list_of_things
 do
    operation_using $thing
@@ -119,4 +120,7 @@ done
 This lesson is adapted from [The Unix Shell on Software Carpentry](http://swcarpentry.github.io/shell-novice/).
 
 
-[< home](/) | [< shell >](/shell/) | [lesson 6 >](/shell/shell-6/)
+<span class="lesson">
+    [ <a href="/shell/shell-4"> previous</a> ]
+    [ <a href="/shell/shell-6"> next</a> ]   
+</span>

@@ -1,3 +1,7 @@
+---
+layout: single
+---
+
 # How Do I Use Brandeis Data Services?
 
 ## Meet your research community of support.
