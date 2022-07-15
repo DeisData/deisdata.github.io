@@ -37,6 +37,15 @@ plugins:
 github:
   is_project_page: false
 
+sass:
+  sass_dir: assets/css
+  load_paths:
+    - _sass
+  style: compressed
+
+include             : [".htaccess", "bootstrap-5.1.3"]
+exclude             : ["Gemfile", "Gemfile.lock", "vendor/bundle/", "vendor/cache/", "vendor/gems/", "vendor/ruby/"]
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

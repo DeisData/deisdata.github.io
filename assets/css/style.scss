@@ -1,0 +1,79 @@
+---
+---
+
+@import "{{ site.theme }}";
+@import "bootstrap/bootstrap";
+// @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+
+body {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+.main-content {
+    padding:0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    max-width: 100%;
+}
+
+nav {
+  .active {
+    background-color: rgb(56, 78, 179);
+
+  }
+  
+  ul {
+    list-style-type: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background-color: #333;
+    
+  }
+    
+  
+  li {
+    font-size: 16pt;
+    display: inline;
+    float: left;
+  }
+
+  li a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    padding: 14px 16px;
+    
+  }
+  li a:hover {
+    text-decoration: none;
+    background-color: #111;
+    color: white;
+  }
+  
+  
+}
+ul, ol {
+    margin-left: 40px;
+}
+
+#main {
+    padding-top: 20px;
+}
+
+.site-footer {
+    padding:10px;
+}
+
+.lesson {
+    font-size: 24px;
+    
+}
+
+a {
+    text-decoration: none;
+}
