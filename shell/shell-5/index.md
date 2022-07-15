@@ -1,4 +1,4 @@
-[< home](index.html) | [< shell >](shell.html) | [lesson 6 >](shell-6.html)
+[< home](/) | [< shell >](/shell/) | [lesson 6 >](/shell/shell-6/)
 
 
 # Session 5: Shell Scripts
@@ -10,7 +10,7 @@ We will take commands we repeat and save them in a **shell script**- a small pro
 
 ## Fun Resources
 - [Bash Help Sheet](https://www.shell-tips.com/sheets/bash-help-sheet.pdf) has shortcuts for quick navigating and editing in your shell
-- [Mastering Bash with Tips and Tricks](https://www.shell-tips.com/bash/) has some great examples of how scripts can be used in a variety of ways.v
+- [Mastering Bash with Tips and Tricks](https://www.shell-tips.com/shell/) has some great examples of how scripts can be used in a variety of ways.v
 - [30 Bash Script Examples](https://linuxhint.com/30_bash_script_examples/) depicts some basic to more complex scripting examples
 - [StackOverflow thread of most powerful examples of Unix Commands or Scripts every programmer should know](https://stackoverflow.com/questions/1102986/most-powerful-examples-of-unix-commands-or-scripts-every-programmer-should-know) is old but has some great examples.  In general, StackOverflow is a great community for technical questions.
 
@@ -119,4 +119,4 @@ done
 This lesson is adapted from [The Unix Shell on Software Carpentry](http://swcarpentry.github.io/shell-novice/).
 
 
-[< home](index.html) | [< shell >](shell.html) | [lesson 6 >](shell-6.html)
+[< home](/) | [< shell >](/shell/) | [lesson 6 >](/shell/shell-6/)

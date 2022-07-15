@@ -1,4 +1,8 @@
-[< home](index.html) | [< shell >](shell.html) | [lesson 2 >](shell-2.html)
+---
+title: Shell Workshop
+---
+
+[< home](/) | [< bash >](/shell/) | [lesson 2 >](/shell/shell-2/)
 
 # Session 1:  Shell for Navigating to Files and Directories
 
@@ -76,4 +80,4 @@ _Spaces are important between command and options. (But options can be combined 
 - [Intermediate Linux Commands](https://docs.google.com/document/d/1xY7fSNBzChx5PMPF_tGoBWOwXef5wVsH1Mf7vLdgJz0/edit?usp=sharing)
 - [Software Carpentry Unix Shell](http://swcarpentry.github.io/shell-novice/)
 
-[< home](index.html) | [< shell >](shell.html) | [lesson 2 >](shell-2.html)
+[< home](/) | [< shell >](/shell/) | [lesson 2 >](/shell/shell-2/)

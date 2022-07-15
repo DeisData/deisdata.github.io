@@ -1,4 +1,4 @@
-[< home](index.html) | [< shell >](shell.html) | [lesson 1 >](shell-1.html)
+[< home](/) | [< shell >](/shell/) | [lesson 1 >](/shell/shell-1/)
 
 _Adapted from [Software Carpentry]("https://software-carpentry.org")_
 # Opening a Unix Shell in Bash
@@ -73,4 +73,4 @@ using the Windows 10 command-line tool, or installing and using a Unix/Linux emu
 This lesson is adapted from [The Unix Shell on Software Carpentry](http://swcarpentry.github.io/shell-novice/).
 
 
-[< home](index.html) | [< shell >](shell.html) | [lesson 1 >](shell-1.html)
+[< home](/) | [< shell >](/shell/) | [lesson 1 >](/shell/shell-1/)

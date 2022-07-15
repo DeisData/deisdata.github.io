@@ -1,4 +1,8 @@
-[< home](index.html)
+---
+title: Python Resources
+---
+
+[< home](/)
 
 # Python Programming Workshop
 This repository contains the scripts and datasets used in the Python Programming workshops through Brandeis Library Data Services.
@@ -36,5 +40,5 @@ This workshop met during the summer of 2020.
 
 
 
-[< home](index.html)
+[< home](/)
 

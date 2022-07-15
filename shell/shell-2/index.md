@@ -1,4 +1,4 @@
-[< home](index.html) | [< shell >](shell.html) | [lesson 3 >](shell-3.html)
+[< home](/) | [< shell >](/shell/) | [lesson 3 >](/shell/shell-3/)
 
 # Session 2: Working with files and directories
 
@@ -210,5 +210,5 @@ Now, it's your turn!
 This lesson is adapted from [The Unix Shell on Software Carpentry](http://swcarpentry.github.io/shell-novice/).
 
 
-[< home](index.html) | [< shell >](shell.html) | [lesson 3 >](shell-3.html)
+[< home](/) | [< shell >](/shell/) | [lesson 3 >](/shell/shell-3/)
 
