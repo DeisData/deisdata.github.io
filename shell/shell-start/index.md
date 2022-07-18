@@ -76,6 +76,6 @@ This lesson is adapted from [The Unix Shell on Software Carpentry](http://swcarp
 
 
 <span class="lesson">
-    [ <a href="/shell">previous</a> ]
-    [ <a href="/shell/shell-1"> next</a> ]  
+    [&nbsp;<a href="/shell">previous</a>&nbsp;]
+    [&nbsp;<a href="/shell/shell-1">next</a>&nbsp;]  
 </span>

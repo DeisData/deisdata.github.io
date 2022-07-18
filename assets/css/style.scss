@@ -18,6 +18,10 @@ body {
     max-width: 100%;
 }
 
+.project-name {
+  font-weight: bold;
+}
+
 nav {
   .active {
     background-color: rgb(56, 78, 179);
@@ -60,7 +64,9 @@ nav {
 ul, ol {
     margin-left: 40px;
 }
-
+details {
+  margin-left: 60px;
+}
 #main {
     padding-top: 20px;
 }

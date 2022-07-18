@@ -121,6 +121,6 @@ This lesson is adapted from [The Unix Shell on Software Carpentry](http://swcarp
 
 
 <span class="lesson">
-    [ <a href="/shell/shell-4"> previous</a> ]
-    [ <a href="/shell/shell-6"> next</a> ]   
+    [&nbsp;<a href="/shell/shell-4">previous</a>&nbsp;]
+    [&nbsp;<a href="/shell/shell-6">next</a>&nbsp;]   
 </span>

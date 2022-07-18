@@ -4,7 +4,6 @@ layout: single
 
 # Brandeis Library Data Services
 
-[ < home](/)
 ## Summer 2020 Workshops
 - SummeR of R  [[materials](https://github.com/DeisData/summer-of-r)]
 - Python Programming  [[materials](https://github.com/DeisData/python) / [website](/python/)] 

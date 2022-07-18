@@ -189,6 +189,7 @@ Now, it's your turn!
   
   #### Create a backup directory with subdirectories for data and calibration files
   - Hint: You will use `mkdir`
+
   ```bash
   mkdir ___
   mkdir ___/___
@@ -213,7 +214,7 @@ This lesson is adapted from [The Unix Shell on Software Carpentry](http://swcarp
 
 
 <span class="lesson">
-    [ <a href="/shell/shell-1"> previous</a> ]
-    [ <a href="/shell/shell-3"> next</a> ]    
+    [&nbsp;<a href="/shell/shell-1"> previous</a>&nbsp;]
+    [&nbsp;<a href="/shell/shell-3"> next</a>&nbsp;]    
 </span>
 

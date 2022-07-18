@@ -80,6 +80,6 @@ _Spaces are important between command and options. (But options can be combined 
 - [Software Carpentry Unix Shell](http://swcarpentry.github.io/shell-novice/)
 
 <span class="lesson">
-    [ <a href="/shell/shell-start/">previous</a> ]
-    [ <a href="/shell/shell-2"> next</a> ]
+    [&nbsp;<a href="/shell/shell-start/">previous</a>&nbsp;]
+    [&nbsp;<a href="/shell/shell-2"> next</a>&nbsp;]
 </span>

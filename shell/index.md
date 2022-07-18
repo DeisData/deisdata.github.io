@@ -24,14 +24,14 @@ These lessons are based on [The Unix Shell on Software Carpentry](http://swcarpe
 
 
 <span class="lesson">
-    [ <a href="/shell">shell</a> ]
-    [ <a href="/shell/shell-start/">get started</a> ]
-    [ <a href="/shell/shell-1"> lesson 1</a> ]
-    [ <a href="/shell/shell-2"> lesson 2</a> ]
-    [ <a href="/shell/shell-3"> lesson 3</a> ]
-    [ <a href="/shell/shell-4"> lesson 4</a> ]
-    [ <a href="/shell/shell-5"> lesson 5</a> ]
-    [ <a href="/shell/shell-6"> lesson 6</a> ]
+    [&nbsp;<a href="/shell">shell</a>&nbsp;]
+    [&nbsp;<a href="/shell/shell-start/">get started</a>&nbsp;]
+    [&nbsp;<a href="/shell/shell-1"> 1</a>&nbsp;]
+    [&nbsp;<a href="/shell/shell-2"> 2</a>&nbsp;]
+    [&nbsp;<a href="/shell/shell-3"> 3</a>&nbsp;]
+    [&nbsp;<a href="/shell/shell-4"> 4</a>&nbsp;]
+    [&nbsp;<a href="/shell/shell-5"> 5</a>&nbsp;]
+    [&nbsp;<a href="/shell/shell-6"> 6</a>&nbsp;]
     
 </span>
 
