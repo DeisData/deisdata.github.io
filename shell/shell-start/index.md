@@ -66,7 +66,6 @@ using the Windows 10 command-line tool, or installing and using a Unix/Linux emu
     <li><a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Install the Windows Subsystem for Linux</a></li>
     <li><a href="http://faculty.smu.edu/reynolds/unixtut/windows.html">Using a Unix/Linux emulator (Cygwin) or Secure Shell (SSH) client (Putty)</a></li>
   </ul>
-</blockquote>
 <blockquote>
   <p>*Please note that commands in the Windows Subsystem for Linux (WSL) or Cygwin may differ slightly from those shown in the lesson or presented in the workshop.</p>
 </blockquote>

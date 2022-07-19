@@ -184,10 +184,10 @@ Now, it's your turn!
 
 [Add your code to the Jamboard!](https://jamboard.google.com/d/1d7hZeDHuvs4EnHiJFMrxhNPJDzQ_clPnqjzd_iBsAZ8/edit?usp=sharing)
 
-<details>
+<details markdown="1">
   <summary>Get a hint</summary>
   
-  #### Create a backup directory with subdirectories for data and calibration files
+  <h4>Create a backup directory with subdirectories for data and calibration files</h4>
   - Hint: You will use `mkdir`
 
   ```bash
@@ -196,14 +196,16 @@ Now, it's your turn!
   mkdir ___/___
   ```
   
-  #### Copy data files to `backup/data`. (Use a similiar approach for calibration files.)
+  <h4>Copy data files to `backup/data`. (Use a similiar approach for calibration files.)</h4>
   - Hint:  Use the copy command `cp` with wildcards
+  
   ```
   cp *-data.txt backup/___
   ```
   
-  #### Copy June 11th files to `send_to_claire/`. 
+  <h4>Copy June 11th files to `send_to_claire/`.</h4>
   - Hint:  Use the copy command `cp` with wildcards!
+  
   ```bash
   cp *-11-*.txt send_to_claire/
   ```
@@ -214,7 +216,7 @@ This lesson is adapted from [The Unix Shell on Software Carpentry](http://swcarp
 
 
 <span class="lesson">
-    [&nbsp;<a href="/shell/shell-1"> previous</a>&nbsp;]
-    [&nbsp;<a href="/shell/shell-3"> next</a>&nbsp;]    
+    [&nbsp;<a href="/shell/shell-1">previous</a>&nbsp;]
+    [&nbsp;<a href="/shell/shell-3">next</a>&nbsp;]    
 </span>
 

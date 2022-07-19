@@ -62,11 +62,18 @@ nav {
   
 }
 ul, ol {
-    margin-left: 40px;
+    margin-left: 20px;
 }
 details {
-  margin-left: 60px;
+  margin-left: 35px;
+  padding-bottom: 20px;
+
+  summary:hover{
+    color: grey;
+  }
+
 }
+
 #main {
     padding-top: 20px;
 }

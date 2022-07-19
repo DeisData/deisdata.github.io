@@ -92,6 +92,6 @@ This lesson is adapted from [The Unix Shell on Software Carpentry](http://swcarp
 
 
 <span class="lesson">
-    [&nbsp;<a href="/shell/shell-2"> previous</a>&nbsp;]
-    [&nbsp;<a href="/shell/shell-4"> next</a>&nbsp;]
+    [&nbsp;<a href="/shell/shell-2">previous</a>&nbsp;]
+    [&nbsp;<a href="/shell/shell-4">next</a>&nbsp;]
 </span>
