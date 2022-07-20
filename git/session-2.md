@@ -125,5 +125,6 @@ This will print out information on all of this repo's commits, including, the co
 
 - `git push`: send local commits to a remote repository
 - `git fetch`: retrieve commits from a remote repository (GitHub)
-- `git merge`: and merging them with local changes
+- `git merge`: merge remote commits with local changes
+- `git diff`: display the difference between working and committed file
 - `git log`: shows the history of commits

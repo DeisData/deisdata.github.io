@@ -13,12 +13,8 @@ In this workshop, we are using **Git** and [GitHub.com](https://github.com/).
 - Commit: (noun) A recorded version of your project. (verb) To record a new version of your project.
 - Repository (or repo): where your files are stored, can be on your computer (local) or on GitHub's servers (remote).
 
-<br>
-
 ## Register for a GitHub Account
 Go to [GitHub.com](https://github.com), register for an account, and verify it. 
-
-<br>
 
 ## Git Installation Instructions
 
@@ -38,9 +34,7 @@ If no path is printed, follow the instructions at [the Software Carpentry](https
 
 Open the terminal. Type `which git` and press Return. If it prints a path (e.g. `/usr/bin/git`), Git is already installed. If not, for Debian/Ubuntu run `sudo apt-get install git` and for Fedora run `sudo dnf install git`.
 
-<br>
-
-### Configure git global settings
+## Configure git global settings
 When we use Git on a new computer for the first time, we need to configure a few things. Below are a few examples of configurations we will set as we get started with Git:
 - our name and email address,
 - what our preferred text editor is,
@@ -98,7 +92,6 @@ Check your settings at any time with:
 ```bash
 $ git config --list
 ```
-<br>
 
 ## Create a remote repository on GitHub
 
@@ -121,8 +114,6 @@ Give your repo a short but descriptive name with no spaces or special characters
 You can choose whether or not to make your repository to be private. If you plan to collaborate with others, you are required to have a public repository unless you pay for a premium GitHub account.
 
 Make sure to initialize with a README, which will give general information about your repository. You can also initialize with a license, which defines what others can and cannot do with your code. For more information, see [the Software Carpentry's primer on licenses](https://swcarpentry.github.io/git-novice/11-licensing/index.html).
-
-<br>
 
 ## Clone the remote repository to your machine
 
@@ -160,8 +151,6 @@ $ ls
 ```
 
 You should see the names of the files `LICENSE` and `README.md` printed to the terminal. 
-
-<br>
 
 ## Alter the README 
 
@@ -201,8 +190,6 @@ $ git status
 
 This command prints out a lot of information. It says we are on the main branch (more on this in the future). It says we are up to date with `origin/main`. This means thats GitHub doesn't have any commits that aren't present locally, and we don't have any local commits that aren't reflected in GitHub. It then lists `README.md` in red as modified but not yet staged, as well the commands for how to stage it. Finally, it says that nothing has yet been added to commit yet.  
 
-<br>
-
 ### Stage modified file
 
 We want to stage our modified file. Staging a file means we want to commit it. To do this, we'll use the `git stage` command.
@@ -231,8 +218,6 @@ If we run `git status` again, we'll notice a few things.
 
 It now tells us that we no longer have any changes to commit in our local repository. It also is telling us that we are ahead of the upstream repository on GitHub by 1 commit. This is because our changes have not yet been sent or "pushed" to that remote repository yet. We will do this next session. 
 
-<br>
-
 ## Recap: Important Git commands
 - `git config --global`: set up your settings across all your repos
 - `git clone`: copy a remote repository locally
@@ -240,17 +225,13 @@ It now tells us that we no longer have any changes to commit in our local reposi
 - `git add file_name`: Moves a file to staging.
 - `git commit -m "Detailed log message goes here."`: Commits files in staging to history and documents message to the log.
 
-<br>
-
 ## Contact
 
 Please reach out to <dataservices@brandeis.edu> with any questions or concerns.
 
-<br>
-
 ## Resources
-- GitHub Docs: https://docs.github.com/en/get-started
-- Atlassian: https://www.atlassian.com/git/tutorials/setting-up-a-repository
+- GitHub Docs: <https://docs.github.com/en/get-started>
+- Atlassian: <https://www.atlassian.com/git/tutorials/setting-up-a-repository>
 
 
 This workshop has been adapted from [the Software Carpentry](https://software-carpentry.org/).
