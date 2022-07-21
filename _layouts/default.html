@@ -47,23 +47,30 @@
         } else {
           x.className = "topnav";
           x.style.paddingBottom = 0;
-          var subcontents = document.getElementsByClassName("subnav-content");
-          for (var i = 0; i < subcontents.length; i++){
-            subcontents[i].style.display = "none";
+          var subnavs = document.getElementsByClassName("subnav");
+          for (var i = 0; i < subnavs.length; i++){
+            subnavs[i].getElementsByTagName('button')[0].style.backgroundColor = "#333";
+            var subcontents = subnavs[i].getElementsByClassName("subnav-content");
+            for (var j = 0; j < subcontents.length; j++){
+              subcontents[j].style.display = "none";
+            }
           }
         }
       }
-      function subNav(id, off=false) {
+      function subNav(id, subnav) {
         var x = document.getElementById(id);
         var nav = document.getElementById("myTopnav")
-        if (x.style.display === "block" || off){
+        //  turn off subnav on
+        if (x.style.display === "block"){
           x.style.display = "none";
           nav.style.paddingBottom = "0";
+          subnav.style.backgroundColor = "#333";
+        // turn on subnav if off
         } else if (x.style.display === "" || x.style.display === "none" ) {
           x.style.display = "block";
           nav.style.paddingBottom = "40px";
+          subnav.style.backgroundColor = "#04AA6D";
         }  
-        
       }
     </script>
   </body>
