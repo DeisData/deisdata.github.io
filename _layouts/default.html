@@ -40,13 +40,30 @@
       </footer>
     </main>
     <script>
-      function myFunction() {
+      function reactiveNav() {
         var x = document.getElementById("myTopnav");
         if (x.className === "topnav") {
           x.className += " responsive";
         } else {
           x.className = "topnav";
+          x.style.paddingBottom = 0;
+          var subcontents = document.getElementsByClassName("subnav-content");
+          for (var i = 0; i < subcontents.length; i++){
+            subcontents[i].style.display = "none";
+          }
         }
+      }
+      function subNav(id, off=false) {
+        var x = document.getElementById(id);
+        var nav = document.getElementById("myTopnav")
+        if (x.style.display === "block" || off){
+          x.style.display = "none";
+          nav.style.paddingBottom = "0";
+        } else if (x.style.display === "" || x.style.display === "none" ) {
+          x.style.display = "block";
+          nav.style.paddingBottom = "40px";
+        }  
+        
       }
     </script>
   </body>
