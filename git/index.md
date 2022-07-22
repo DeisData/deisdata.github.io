@@ -5,9 +5,9 @@ layout: git
 # Git Version Control
 Workshop materials for a git and GitHub workshop series from Brandeis Library RIS.
 
-- Session 1: Getting started! [[notes](https://github.com/DeisData/git-version-control/blob/master/session-1.md)]
-- Session 2: Working with git [[commands](https://github.com/DeisData/git-version-control/blob/master/lesson2_git.txt)]
-- Session 3: Collaborating with git and GitHub [[notes](https://github.com/DeisData/git-version-control/blob/master/lesson3_git.txt)]
+- Session 1: [Getting started!](/git/git-1/)
+- Session 2: [Working with git](/git/git-2/)
+- Session 3: [Collaborating with git and GitHub](/git/git-3/)
 
 [Links to Session Recordings](https://docs.google.com/document/d/1gfG80ugHj3yOAZagHsRqNH8XnQjPHtHUCldsAerqbGY/edit?usp=sharing)
 
