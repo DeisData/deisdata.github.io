@@ -2,28 +2,7 @@
 layout: default
 ---
 
-<div class="topnav" id="myTopnav">
-    <a href="/" class="active">Home</a>
-    <a href="/python/">Python</a>
-    <a href="/r/">R</a>
-    <div class="subnav" >
-        <button onclick="subNav('shellSub', this)" class="subnavbtn">Unix Shell <i class="fa fa-caret-down"></i></button>
-        <div class="subnav-content" id="shellSub">
-            <a href="/shell">the shell</a>
-            <a href="/shell/shell-start/">get started</a>
-            <a href="/shell/shell-1">lesson 1</a>
-            <a href="/shell/shell-2">lesson 2</a>
-            <a href="/shell/shell-3">lesson 3</a>
-            <a href="/shell/shell-4">lesson 4</a>
-            <a href="/shell/shell-5">lesson 5</a>
-            <a href="/shell/shell-6">lesson 6</a>
-        </div>
-      </div> 
-    <a href="/git/">Git</a>
-    <a href="javascript:void(0);" class="icon" onclick="reactiveNav()">
-        <i class="fa fa-bars"></i>
-    </a>
-</div>
+{% include nav.html %}
 
 <div class="container" id="main">
     <div class="row container" id="mainrow">

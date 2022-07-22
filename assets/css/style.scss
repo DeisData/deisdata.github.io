@@ -77,7 +77,7 @@ a {
     color: black;
   }
 
-  .icon {
+  a.icon {
     display: none;
   }
 }
@@ -96,6 +96,12 @@ a {
     font-family: inherit;
     margin: 0;
   }
+
+  // .subnav {
+  .subnavbtn:hover {
+    background-color: #ddd !important;
+    color: black !important;
+  }
 }
 
 .subnav-content {
@@ -113,14 +119,8 @@ a {
   }
 
   a:hover {
-    background-color: #eee;
+    background-color: #ddd;
     color: black;
-  }
-}
-
-.subnav:hover {
-  .subnavbtn {
-    background-color: #04AA6D;
   }
 }
 

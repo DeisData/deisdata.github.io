@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: git
 ---
 
 # Git Version Control

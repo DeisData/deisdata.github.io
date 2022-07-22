@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: git
 ---
 
 # Session 2: Interacting with GitHub
