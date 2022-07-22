@@ -1,8 +1,8 @@
 function reactiveNav() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
+    var x = document.getElementById("myTopnav"); // grab the nav by ID
+    if (x.className === "topnav") { // if the nav is closed, open it
       x.className += " responsive";
-    } else {
+    } else { // close the nav if open
       x.className = "topnav";
       x.style.paddingBottom = 0;
       var subnavs = document.getElementsByClassName("subnav");
