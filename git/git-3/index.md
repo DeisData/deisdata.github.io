@@ -63,3 +63,35 @@ $ git checkout HEAD README.md
 
 ### Bonus
 Some text editors and Integrated Development Environments (IDEs) will label modified lines and can display the full differences within the editor, as well as having other Git integrations. [VS Code](https://code.visualstudio.com/) is one such example of a powerful editor with Git integration.
+
+## Ignoring files
+
+Sometimes you have some files in your repository that you don't want saved in version control and available publically on GitHub. We can specify files for Git to ignore in a file called `.gitignore`. 
+
+Let's make a new file with `touch` and pretend it has **super secret** and **private** information. `git status` will show that this newly created file has not been staged yet.
+
+```bash
+$ touch super_secret_private.csv
+```
+
+We do not currently have a `.gitignore` in our repository yet. We can make one with `nano` and add in our .csv file. 
+
+```
+$ nano .gitignore
+```
+![git ignore 1](/assets/images/git_ignore1.png)
+
+Save your changes, and if you run `git status` again, you will no longer see our private file available to be staged. Only `.gitignore` will be there. Feel free to stage and commit it.
+
+![git ignore status](/assets/images/git_ignore_status.png)
+
+We can also give `.gitignore` broader specifications for files to ignore using `*`, or the wildcard symbol. If we added `*.dat` to a new line in `.gitignore`, git will ignore all files with the .dat extension. If you specify `*secret*`, git will ignore all files with the word "secret" in their name. You can also tell have git ignore whole folders by specifying `FOLDER_NAME/`. Finally, you can combine these methods. `results/*secret*.dat` will result in git ignoring all files in the results folder that have secret in their title and .dat as their extension.
+
+![git ignore 2](/assets/images/git_ignore2.png)
+
+*Note: The wildcard essentially means "look for **anything**". If you had a line in `.gitignore` with only `*`, this would match all files, and git would ignore everything in the repo. `*.dat` looks for anything but must end in .dat.*
+
+Some files you may want to ignore might be program-specific files that show up in your repository when executing or building your program. When you initialize a repository on GitHub, you are given the option to initialize with a `.gitignore`. You can pick from what language your project will be in (like Python or R), and a `.gitignore` file will be created in the initial commit with some files already included (like `*.pyc` or `.Rhistory`).
+
+*Note: Adding files to .gitignore will remove their tracking from future staging in commits. However, if these files have already been previously committed, these committed versions will remain in future commits. If you need to completely remove a file from version history, see [this Stack Overflow post](https://stackoverflow.com/a/64563565).*
+
