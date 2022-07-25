@@ -95,3 +95,6 @@ Some files you may want to ignore might be program-specific files that show up i
 
 *Note: Adding files to .gitignore will remove their tracking from future staging in commits. However, if these files have already been previously committed, these committed versions will remain in future commits. If you need to completely remove a file from version history, see [this Stack Overflow post](https://stackoverflow.com/a/64563565).*
 
+## Recap:
+- `HEAD`: identifier that points to the most recent local commit
+- `.gitignore`: a file where you can list files you want left out of version control
