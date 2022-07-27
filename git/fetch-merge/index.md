@@ -37,7 +37,7 @@ To view the differences between our local file and the new commit, we can run th
 ```
 $ git diff HEAD origin/main README.md
 ```
-![git diff](/assets/images/git_diff.png)
+![git diff](/assets/images/git/fetch-merge/git_diff.png)
 
 This command and the output are somewhat complicated, so let's step through them.
 
@@ -55,7 +55,7 @@ We can now merge the file. A summary will print after we do so.
 $ git merge
 ```
 
-![git merge](/assets/images/git_merge.png)
+![git merge](/assets/images/git/fetch-merge/git_merge.png)
 
 *Note: The command `git pull` is equivalent to running `git fetch` immediately followed by `git merge`, though it may lead to some unexpected behavior at times. We will discuss this later.*
 
@@ -65,7 +65,7 @@ If you run `cat README.md` again, you will see the change present in our local f
 $ git log
 ```
 
-![git log](/assets/images/git_log.png)
+![git log](/assets/images/git/fetch-merge/git_log.png)
 
 This will print out information on all of this repo's commits, including, the commit ID, the author of the commit, when the commit was made, and its description. You can hit <kbd>Enter</kbd> to scroll down or use the arrow keys to go either direction. Hit <kbd>Q</kbd> to exit this view.
 

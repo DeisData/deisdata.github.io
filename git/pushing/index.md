@@ -50,7 +50,7 @@ Once you run this command, you will prompted to enter your GitHub username follo
 
 Once the push goes through, the terminal will print some information describing the pushing process, and your changes should now be reflected on GitHub. 
 
-![git push](/assets/images/git_push.png)
+![git push](/assets/images/git/pushing/git_push.png)
 
 ## Recap
 

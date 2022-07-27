@@ -13,7 +13,7 @@ Go to GitHub and create a new repository by clicking "New".
 
 <br>
 
-![Make a repo](/assets/images/github_newrepo.png)
+![Make a repo](/assets/images/git/quick-start/github_newrepo.png)
 
 <br>
 
@@ -21,7 +21,7 @@ Give your repo a short but descriptive name with no spaces or special characters
 
 <br>
 
-![Name your repo](/assets/images/github_reponame.png)
+![Name your repo](/assets/images/git/quick-start/github_reponame.png)
 
 <br>
 
@@ -35,7 +35,7 @@ To get this repository onto our local machine, we will clone it, which copies it
 
 <br>
 
-![clone repo](/assets/images/github_clone.png)
+![clone repo](/assets/images/git/quick-start/github_clone.png)
 
 <br>
 
@@ -80,7 +80,7 @@ $ nano README.md
 
 <br>
 
-![nano blank](/assets/images/nano1.png)
+![nano blank](/assets/images/git/quick-start/nano1.png)
 
 <br>
 
@@ -90,7 +90,7 @@ Note: use <kbd>Ctrl</kbd> regardless of your OS.
 
 <br>
 
-![nano blank](/assets/images/nano2.png)
+![nano blank](/assets/images/git/quick-start/nano2.png)
 
 <br>
 
@@ -100,7 +100,7 @@ Now that you've made a change, you can check the status of the repository with `
 $ git status
 ```
 
-![git status](/assets/images/git_status.png)
+![git status](/assets/images/git/quick-start/git_status.png)
 
 This command prints out a lot of information. It says we are on the main branch (more on this in the future). It says we are up to date with `origin/main`. This means thats GitHub doesn't have any commits that aren't present locally, and we don't have any local commits that aren't reflected in GitHub. It then lists `README.md` in red as modified but not yet staged, as well the commands for how to stage it. Finally, it says that nothing has yet been added to commit yet.  
 
@@ -114,7 +114,7 @@ $ git stage README.md
 
 If we run `git status` again, we'll see that `README.md` is now staged for commit and in green text.
 
-![git add](/assets/images/git_add.png)
+![git add](/assets/images/git/quick-start/git_add.png)
 
 ### Make a commit
 
@@ -128,7 +128,7 @@ The terminal will print out some information about your commit including how man
 
 If we run `git status` again, we'll notice a few things. 
 
-![post commit](/assets/images/post_commit.png)
+![post commit](/assets/images/git/quick-start/post_commit.png)
 
 It now tells us that we no longer have any changes to commit in our local repository. It also is telling us that we are ahead of the upstream repository on GitHub by 1 commit. This is because our changes have not yet been sent or "pushed" to that remote repository yet. We will do this next session. 
 

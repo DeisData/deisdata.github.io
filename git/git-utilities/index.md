@@ -13,7 +13,7 @@ Let's simulate making a poor change to our code by adding a line to our README w
 ```bash
 $ nano README.md
 ```
-![git log](/assets/images/bad_change.png)
+![git log](/assets/images/git/git-utilities/bad_change.png)
 
 In our specific case, it's pretty easy to remember what change we made and remove it. But if you are editing code across many lines of different files, it can be become more challenging finding where changes are. 
 
@@ -25,7 +25,7 @@ If we only want to see changes for a specific file, we can specify that filename
 $ git diff HEAD README.md
 ```
 
-![git diff bad](/assets/images/git_diff_bad.png)
+![git diff bad](/assets/images/git/git-utilities/git_diff_bad.png)
 
 *Note: If you don't include `HEAD` (`git diff`), the command will work only when the changes are unstaged. You can add `git diff --staged` for changes in staged files specifically.*
 
@@ -34,7 +34,7 @@ We can also see the difference between our uncommitted changes and several commi
 ```bash
 $ git diff HEAD~2 README.md
 ```
-![git head 2](/assets/images/git_head_2.png)
+![git head 2](/assets/images/git/git-utilities/git_head_2.png)
 
 This shows us the changes from 2 commits prior to `HEAD`, the current commit.
 
@@ -79,15 +79,15 @@ We do not currently have a `.gitignore` in our repository yet. We can make one w
 ```
 $ nano .gitignore
 ```
-![git ignore 1](/assets/images/git_ignore1.png)
+![git ignore 1](/assets/images/git/git-utilities/git_ignore1.png)
 
 Save your changes, and if you run `git status` again, you will no longer see our private file available to be staged. Only `.gitignore` will be there. Feel free to stage and commit it.
 
-![git ignore status](/assets/images/git_ignore_status.png)
+![git ignore status](/assets/images/git/git-utilities/git_ignore_status.png)
 
 We can also give `.gitignore` broader specifications for files to ignore using `*`, or the wildcard symbol. If we added `*.dat` to a new line in `.gitignore`, git will ignore all files with the .dat extension. If you specify `*secret*`, git will ignore all files with the word "secret" in their name. You can also tell have git ignore whole folders by specifying `FOLDER_NAME/`. Finally, you can combine these methods. `results/*secret*.dat` will result in git ignoring all files in the results folder that have secret in their title and .dat as their extension.
 
-![git ignore 2](/assets/images/git_ignore2.png)
+![git ignore 2](/assets/images/git/git-utilities/git_ignore2.png)
 
 *Note: The wildcard essentially means "look for **anything**". If you had a line in `.gitignore` with only `*`, this would match all files, and git would ignore everything in the repo. `*.dat` looks for anything but must end in .dat.*
 
