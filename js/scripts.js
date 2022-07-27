@@ -39,7 +39,7 @@ function subNav(id, subnavbtn) {
         subnavbtn.style.setProperty("color", "white");
 
         if (screen.width > 700){
-          nav.style.paddingBottom = "40px";
+          nav.style.paddingBottom = "50px";
         }
     }  
 
