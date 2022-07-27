@@ -2,7 +2,7 @@
 layout: git
 ---
 
-# Session 3: Repo History and Ignoring Files
+# Git Utilities
 
 ## git diff
 
