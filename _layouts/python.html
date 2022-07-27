@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+
+  {% include head.html %}
+
+  <body onload="subNav('pySub', document.getElementById('pybutton'));">
+  
+    {% include banner.html %}
+
+    <main id="content" class="main-content" role="main">
+        
+        {% include nav.html %}
+        
+        <div class="container" id="main">
+            <div class="row container" id="mainrow">
+                <div class="col-sm-12 col-md-11 col-lg-10 col-xxl-9 align-middle mx-auto d-block">
+                    {{ content }}
+                </div>
+            </div>
+        
+        </div>
+
+      {% include footer.html %}
+    </main>
+
+  </body>
+</html>
+
+
+
