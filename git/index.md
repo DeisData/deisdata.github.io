@@ -5,11 +5,13 @@ layout: git
 # Git Version Control
 Workshop materials for a git and GitHub workshop series from Brandeis Library RIS.
 
-- Session 1: [Getting started!](/git/git-1/)
-- Session 2: [Working with git](/git/git-2/)
-- Session 3: [Collaborating with git and GitHub](/git/git-3/)
-
-[Links to Session Recordings](https://docs.google.com/document/d/1gfG80ugHj3yOAZagHsRqNH8XnQjPHtHUCldsAerqbGY/edit?usp=sharing)
+1. [Setup & Install](/git/setup-install/)
+2. [Quick start](/git/quick-start/)
+3. [Pushing](/git/pushing/)
+4. [Fetch & Merge](/git/fetch-merge/)
+5. [Git Utilities](/git/git-utilities/)
+6. [Branching](/git/branching/)
+7. [Glossary](/git/glossary/)
 
 
 **More Resources:**
