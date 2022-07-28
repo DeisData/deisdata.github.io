@@ -20,7 +20,7 @@ You will installing [Git Bash](https://gitforwindows.org/) (also called Git for 
 
 ### MacOS
 
-Open Terminal. It should be located in `Applications/Utilities`. You use Spotlight to locate it as well (<kbd>cmd</kbd>+<kbd>space</kbd> and type "Terminal").
+Open Terminal. It should be located in `Applications/Utilities`. You use Spotlight to locate it as well (<kbd>cmd</kbd> + <kbd>space</kbd> and type "Terminal").
 
 Type `which git` and press Return. If it prints a path (e.g. `/usr/bin/git`), Git is already installed. 
 
@@ -57,7 +57,7 @@ $ git config --global user.name "InigoMontoya"
 - Click on your profile icon at the top right corner
 - Go to Settings
 - Click on Emails in the left menu
-- Select the check box "Keep my email addresses private" and use the private github.com-supplied email listed in the configuration below.  You can highlight and copy it with <kbd>Ctrl</kbd>+<kbd>C</kbd> or <kbd>cmd</kbd>+<kbd>C</kbd> (Mac), and paste to the command line with <kbd>Ctrl</kbd>+<kbd>V</kbd> or <kbd>cmd</kbd>+<kbd>V</kbd>.
+- Select the check box "Keep my email addresses private" and use the private github.com-supplied email listed in the configuration below.  You can highlight and copy it with <kbd>Ctrl</kbd> + <kbd>C</kbd> or <kbd>cmd</kbd> + <kbd>C</kbd> (Mac), and paste to the command line with <kbd>Ctrl</kbd> + <kbd>V</kbd> or <kbd>cmd</kbd> + <kbd>V</kbd>.
  
 ```bash
 $ git config --global user.email "1234username@users.noreply.github.com"

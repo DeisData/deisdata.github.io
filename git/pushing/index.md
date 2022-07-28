@@ -44,7 +44,7 @@ Now that we've created the token, we can push our changes to GitHub.
 $ git push
 ```
 
-Once you run this command, you will prompted to enter your GitHub username followed by the key for the token you just created. Hit <kbd>Enter</kbd> after typing in your username. Paste in the key with <kbd>Ctrl</kbd>+<kbd>V</kbd> or <kbd>cmd</kbd>+<kbd>V</kbd> (MacOS). Once you paste, it will not display the key in the terminal for security purposes. Hit <kbd>Enter</kbd> again. 
+Once you run this command, you will prompted to enter your GitHub username followed by the key for the token you just created. Hit <kbd>Enter</kbd> after typing in your username. Paste in the key with <kbd>Ctrl</kbd> + <kbd>V</kbd> or <kbd>cmd</kbd> + <kbd>V</kbd> (MacOS). Once you paste, it will not display the key in the terminal for security purposes. Hit <kbd>Enter</kbd> again. 
 
 *Note: The prompt for the key may ask for a password, but your account password will not work. Please use the personal access token regardless of the prompt's wording.*
 

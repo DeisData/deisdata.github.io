@@ -84,7 +84,7 @@ $ nano README.md
 
 <br>
 
-Tap the <kbd>&#8595;</kbd> key to get to a new line. Type whatever your heart desires ("Hello World!" is a classic). To save or "write" your changes, press <kbd>Ctrl</kbd>+<kbd>O</kbd>, and then hit <kbd>Return</kbd>. Press <kbd>Ctrl</kbd>+<kbd>X</kbd> to exit `nano`.
+Tap the <kbd>&#8595;</kbd> key to get to a new line. Type whatever your heart desires ("Hello World!" is a classic). To save or "write" your changes, press <kbd>Ctrl</kbd> + <kbd>O</kbd>, and then hit <kbd>Return</kbd>. Press <kbd>Ctrl</kbd> + <kbd>X</kbd> to exit `nano`.
 
 Note: use <kbd>Ctrl</kbd> regardless of your OS.
 
