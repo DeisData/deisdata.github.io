@@ -21,7 +21,7 @@ There are some downsides to Colab, however. It is not incredibly straightforward
 
 ### Installation
 
-Again, there is no installation process for Colab. Simply go to [research.google.com/colaboratory/](https://research.google.com/colaboratory/) and connect your Google Account to get started.
+Again, there is no installation process for Colab. Simply go to [research.google.com/colaboratory](https://research.google.com/colaboratory/) and connect your Google Account to get started.
 
 
 ## Anaconda (Most tools):
@@ -55,3 +55,5 @@ Because using `conda`, and therefore Miniconda, requires you to use terminal and
 ### Installation
 
 Follow the instructions for your operating system from [the conda docs](https://conda.io/projects/conda/en/latest/user-guide/install/index.html).
+
+You will also need a text editor or IDE. We recommend [Spyder](https://www.spyder-ide.org/), [VS Code](https://code.visualstudio.com/), or [PyCharm](https://www.jetbrains.com/pycharm/).
