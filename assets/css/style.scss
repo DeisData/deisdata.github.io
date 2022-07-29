@@ -3,25 +3,30 @@
 
 @import "{{ site.theme }}";
 @import "bootstrap/bootstrap";
-// @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+@import url("https://use.typekit.net/vqm1uhr.css");
 
-body {
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+body, .project-name, .project-tagline {
+  font-family: source-sans-pro, sans-serif;
 }
 
-
+body, .project-tagline {
+  font-weight: 300;
+}
 
 .main-content {
-    padding:0;
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 0;
-    max-width: 100%;
-    font-size: 16pt;
-    line-height: 1.6;
 
-    code { font-size: 0.95rem;}
-    pre{ code { font-size: 0.95rem;} }
+  padding:0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  max-width: 100%;
+  font-size: 16pt;
+  line-height: 1.6;
+  h1, h2, h3, h4, h5, h6 {
+    color: #04AA6D;
+  }
+  code { font-size: 0.95rem;}
+  pre{ code { font-size: 0.95rem;} }
 }
 
 .project-name {
@@ -62,6 +67,7 @@ a {
 .topnav {
   background-color: #333;
   overflow: hidden;
+  font-weight: 400;
 
   a {
     float: left;
