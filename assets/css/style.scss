@@ -36,7 +36,7 @@ footer.site-footer {
   h1, h2, h3, h4, h5, h6 {
     color: #04AA6D;
   }
-  code, kbd { font-size: 0.95rem;}
+  code, kbd { font-size: 0.95rem; white-space: pre;}
   pre{ code { font-size: 0.95rem;} }
 }
 
@@ -46,7 +46,7 @@ footer.site-footer {
 
 
 ul, ol {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 details {
   margin-left: 35px;
