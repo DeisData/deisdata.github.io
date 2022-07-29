@@ -13,6 +13,17 @@ body, .project-tagline {
   font-weight: 300;
 }
 
+footer.site-footer {
+  text-align: center;
+
+  a {
+    display: inline;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 14pt;    
+  }
+}
+
 .main-content {
 
   padding:0;
@@ -25,7 +36,7 @@ body, .project-tagline {
   h1, h2, h3, h4, h5, h6 {
     color: #04AA6D;
   }
-  code { font-size: 0.95rem;}
+  code, kbd { font-size: 0.95rem;}
   pre{ code { font-size: 0.95rem;} }
 }
 
