@@ -203,6 +203,31 @@ a {
   
 
 }
+
+.language-python.highlighter-rouge {
+  a.nav-link.active {
+    color: #b5bd68;
+  }
+}
+
+.highlighter-rouge {
+
+  .nav.nav-tabs {
+    margin-left: 0;
+
+  }
+
+  a.nav-link.active {
+    padding: 0.25rem 0.5rem;
+    font-size: 14pt;
+    color: white;
+    background-color: #333;
+  }
+  a.nav-link.active:hover {
+    text-decoration: none;
+  }
+
+}
  
 // .highlight .c { color: #969896 } /* Comment */
 .highlight .err { color: #cc6666 } /* Error */

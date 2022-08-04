@@ -45,3 +45,36 @@ function subNav(id, subnavbtn) {
 
     
 }
+
+
+function pythonBlocks() {
+
+  var hls=document.getElementsByClassName('highlighter-rouge');
+
+  for (var i=0; i<hls.length; i++){
+
+    if (hls[i].tagName==="CODE"){ continue; }
+
+    var ul=document.createElement("ul");
+    ul.className="nav nav-tabs";
+
+    var li=document.createElement("li");
+    li.className="nav-item";
+
+    var a=document.createElement("a");
+    a.className="nav-link active";
+
+    if (hls[i].className==="language-python highlighter-rouge"){
+
+      a.innerText="Python";
+
+    } else if (hls[i].className==="language-plaintext highlighter-rouge"){
+      a.innerText="Output";
+    }
+
+    li.appendChild(a);
+    ul.appendChild(a);
+    hls[i].insertBefore(ul, hls[i].firstChild);
+
+  }
+}
