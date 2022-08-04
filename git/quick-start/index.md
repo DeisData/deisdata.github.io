@@ -17,7 +17,7 @@ Go to GitHub and create a new repository by clicking "New".
 
 <br>
 
-Give your repo a short but descriptive name with no spaces or special characters. Note that your account cannot have two repos with exactly the same name. 
+Give your repo a short but descriptive name without spaces or special characters. Note that your account cannot have two repos with exactly the same name. 
 
 <br>
 
@@ -31,7 +31,7 @@ Make sure to initialize with a README, which will give general information about
 
 ## Clone the remote repository to your machine
 
-To get this repository onto our local machine, we will clone it, which copies its contents. Go to the repository you just made on GitHub. You will see a README.md file and a license file. Click on "Code", which opens a dropdown menu. Copy the HTTPS link, which will be `https://github.com/{USERNAME}/{REPO-NAME}.git`, with your username and repo name, respectively.
+To get this repository onto our local machine, we will clone it, which copies its contents. Go to the repository you just made on GitHub. You will see a `README.md` file and a license file. Click on "Code", which opens a dropdown menu. Copy the HTTPS link, which will be `https://github.com/{USERNAME}/{REPO-NAME}.git`, with your username and repo name, respectively.
 
 <br>
 
@@ -64,13 +64,13 @@ $ cd {REPO-NAME}
 $ ls
 ```
 
-You should see the names of the files `LICENSE` and `README.md` printed to the terminal. 
+You should see the names of the files `LICENSE` (if you made one) and `README.md` printed to the terminal. 
 
 ## Alter the README 
 
 You now have a local **downstream** repository on your machine. The remote GitHub repository is referred to as the **upstream** repository. If other users make changes reflected in the upstream repository, you will receive and implement them locally.
 
-We are going to write line to the README and commit that change to version control. In later sessions, we will push that change upstream to make it reflected in GitHub.
+We are going to write a line of text to the README and commit that change to version control. 
 
 First, we are going to use a text editor called `nano` to open `README.md`.
 
