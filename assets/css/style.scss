@@ -194,7 +194,7 @@ a {
   .highlight { background-color: #333}
   .n, .h, .nn{ color: #ffffff } /* Name,  Name.Namespace*/
   .c {color: grey;} // comment
-  .k, .o, .ow, .kn {color: #de935f} // keyword, operator, operator word, keyword namespace
+  .k, .o, .ow, .kn {color: #de935f; font-weight: normal;} // keyword, operator, operator word, keyword namespace
   .ge { font-style: italic; color: #de935f } /* Generic.Emph */
   .gs { font-weight: bold; color: #d92727} /* Generic.Strong */
   .gh, .gu { color: #8abeb7; font-weight: bold } /* Generic.Subheading */

@@ -10,6 +10,7 @@ Python is a very powerful tool for automating tasks that would otherwise be time
 
 ### Question 1.  Do it yourself!  Coding
 
+Write a message and print it out!
 
 ```python
 #  INSTRUCTIONS:   Write a message in the quotes.
@@ -42,7 +43,7 @@ You'll see the symbol `#` used often. These are comments, and they are used to w
 
 After we run a cell, an output is displayed below. 
 
-You may have noticed from that example that order of operations mattered for that calculation. You can parentheses too if you want to group calculations
+You may have noticed from that example that order of operations mattered for that calculation. You can parentheses too if you want to group calculations.
 
 
 ```python
@@ -70,8 +71,9 @@ Exponentiation (e.g. $2^3$) looks a little bit odd in Python as it uses `**` ins
 
 
 
-#### Question 2: Calculate the following value in Python: 
-$ \frac{25}{(35 - 3)^3} $
+#### Question 2: Writing math
+Calculate the following value in Python: 
+$$ \frac{25}{(35 - 3)^3} $$
 
 
 ```python
@@ -156,7 +158,7 @@ print(y)
 **Variables only change value when something is assigned to them.**
 They are **not** like spreadsheets where a cell can depend on another and update automatically.
 
-### Question 3.  Swapping Values
+### Question 3.  Swapping values
 Given the code below, what is the value of the variable `swap`?
 
 
@@ -179,7 +181,8 @@ y = swap
 </details>
 
 **What's in a name?** _Variable name conventions_
-- Use only letters, digits, and underscores _
+- Use only letters, digits, and underscores (_)
+- can use camelcase (capitalizeEveryWord)
 - Start with a letter (typically lower case)
 - Variable names are case sensitive
 - Use meaningful names!
@@ -190,15 +193,6 @@ y = swap
 ```python
 print(z) # we haven't initialized z yet!
 ```
-
-
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    /Users/fordfishman/GitHub/python/python-session1.ipynb Cell 26' in <cell line: 1>()
-    ----> <a href='vscode-notebook-cell:/Users/fordfishman/GitHub/python/python-session1.ipynb#ch0000020?line=0'>1</a> print(z)
-
 
     NameError: name 'z' is not defined
 
@@ -245,7 +239,9 @@ print("division:", x)
     division: 4.0
 
 
-#### Question 4: `a` has been initialized to be 25. Assign variable `b` to be 5 less than `a` without using `b = 20`. Print the value of b.
+#### Question 4
+
+`a` has been initialized to be 25. Assign variable `b` to be 5 less than `a` without using `b = 20`. Print the value of b.
 
 
 
@@ -314,7 +310,9 @@ print("I would like", num_balloons, "balloons.")
     I would like 25 balloons.
 
 
-#### Question 5: What will happen if you run this code?
+#### Question 5
+
+What will happen if you run the following code?
 
 
 ```python
@@ -372,15 +370,6 @@ print("several" + " concatenated" + " strings") # need to manually add spaces wh
 print(1 + "2") # adding string to int doesn't work
 ```
 
-
-    ---------------------------------------------------------------------------
-
-    TypeError                                 Traceback (most recent call last)
-
-    /Users/fordfishman/GitHub/python/python-session1.ipynb Cell 17' in <cell line: 1>()
-    ----> <a href='vscode-notebook-cell:/Users/fordfishman/GitHub/python/python-session1.ipynb#ch0000016?line=0'>1</a> print(1 + " hat")
-
-
     TypeError: unsupported operand type(s) for +: 'int' and 'str'
 
 
@@ -422,7 +411,7 @@ print( len("a long string") ) # spaces count in length
 
 
 ```python
-print( len(3.1415) ) # will get n error
+print( len(3.1415) ) # will get an error
 ```
 
 ### Division Types with numbers
@@ -442,7 +431,9 @@ print(5%3)
     2
 
 
-### Question 6.  Choose a type (`int`, `float`, `str`) that each of these descriptions should be:
+### Question 6.  
+
+Choose the type (`int`, `float`, `str`) that each of these descriptions should be:
 1. Time elapsed from the start of the year until now in days.
 2. Serial code of a piece of lab equipment
 3. A lab specimen's age
@@ -450,9 +441,9 @@ print(5%3)
 <details markdown="1">
   <summary>Solution</summary>
 
-    1. `int` if only considering full days, `float` otherwise.
-    2. `str`: Identifiers can often have letters or leading zeros.
-    3. Depends on the specimen. If using countable units, `int`, otherwise `float`.
+ 1. `int` if only considering full days, `float` otherwise.
+ 2. `str`: Identifiers can often have letters or leading zeros.
+ 3. Depends on the specimen. If using countable units, `int`, otherwise `float`.
 
 </details>
 
