@@ -78,5 +78,17 @@ function labelBlocks() {
     ul.appendChild(a);
     hls[i].insertBefore(ul, hls[i].firstChild);
 
+    var code=hls[i].getElementsByTagName("CODE")[0];
+    var len=code.innerHTML.split(/\r\n|\r|\n/).length;
+
+    console.log(len);
+    
+    if (len < 5){
+      for (var j=0; j < 5-len; j++){
+        code.innerHTML+="<br>";
+      }
+      
+    }
+
   }
 }
