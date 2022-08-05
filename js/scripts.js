@@ -48,37 +48,32 @@ function subNav(id, subnavbtn) {
 
 
 function labelBlocks() {
-
+  // grab elements all code elements (div class highlighter-rouge)
   var hls=document.getElementsByClassName('highlighter-rouge');
 
   for (var i=0; i<hls.length; i++){
-
+    // ignore code tags (inline code)
     if (hls[i].tagName==="CODE"){ continue; }
-
+    // create bootstrap elements -> mini nav tab
     var ul=document.createElement("ul");
     ul.className="nav nav-tabs";
-
     var li=document.createElement("li");
     li.className="nav-item";
-
     var a=document.createElement("a");
     a.className="nav-link active";
 
-    switch(hls[i].className){
+    switch(hls[i].className){ // different text for different code chunkså
       case "language-python highlighter-rouge":
         a.innerText="Python";
         break;
-      
       case "language-markdown highlighter-rouge":
         a.innerText="Markdown";
-        break;
-      
+        break; 
       case "language-plaintext highlighter-rouge":
         a.innerText="Output";
         break;
     }
-
-
+    // nest elements
     li.appendChild(a);
     ul.appendChild(a);
     hls[i].insertBefore(ul, hls[i].firstChild);
