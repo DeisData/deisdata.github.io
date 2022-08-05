@@ -47,7 +47,7 @@ function subNav(id, subnavbtn) {
 }
 
 
-function pythonBlocks() {
+function labelBlocks() {
 
   var hls=document.getElementsByClassName('highlighter-rouge');
 
@@ -64,13 +64,20 @@ function pythonBlocks() {
     var a=document.createElement("a");
     a.className="nav-link active";
 
-    if (hls[i].className==="language-python highlighter-rouge"){
-
-      a.innerText="Python";
-
-    } else if (hls[i].className==="language-plaintext highlighter-rouge"){
-      a.innerText="Output";
+    switch(hls[i].className){
+      case "language-python highlighter-rouge":
+        a.innerText="Python";
+        break;
+      
+      case "language-markdown highlighter-rouge":
+        a.innerText="Markdown";
+        break;
+      
+      case "language-plaintext highlighter-rouge":
+        a.innerText="Output";
+        break;
     }
+
 
     li.appendChild(a);
     ul.appendChild(a);
