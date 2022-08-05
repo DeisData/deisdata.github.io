@@ -70,12 +70,24 @@ Exponentiation (e.g. $2^3$) looks a little bit odd in Python as it uses `**` ins
 
 
 
-#### Question 2: Calculate the following value in Python: $ \frac{25}{(35 - 3)^3} $
+#### Question 2: Calculate the following value in Python: 
+$ \frac{25}{(35 - 3)^3} $
 
 
 ```python
 ### Put your answer below: 
 ```
+
+<details markdown="1">
+  <summary>Solution</summary>
+
+  Remember to include parentheses when needed, but Python also follows standard order of operatios. 
+
+  ```python
+  25/(35-3)**3
+  ```
+
+</details>
 
 ## Assigning Variables
 A foundational tool in Python is assigning values to variables. We do this with the `=` operator.
@@ -157,9 +169,14 @@ y = swap
 ```
 
 
-```python
-print(swap)
-```
+<details markdown="1">
+  <summary>Solution</summary>
+
+  The only statements here that effect the value of `swap` are `x = 1.0` and `swap = x`.
+
+    1.0
+  
+</details>
 
 **What's in a name?** _Variable name conventions_
 - Use only letters, digits, and underscores _
@@ -232,10 +249,24 @@ print("division:", x)
 
 
 
+
 ```python
 a = 25
 # write your code here:
 ```
+
+<details markdown="1">
+  <summary>Solution</summary>
+
+  We can use variable `a` to assign value of `a-5` to `b`.
+
+```python
+a = 25
+b = a - 5
+print(b)
+```
+  
+</details>
 
 ## Strings
 
@@ -291,17 +322,14 @@ last_name = Montoya
 print(last_name)
 ```
 
+<details markdown="1">
+  <summary>Solution</summary>
 
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    /Users/fordfishman/GitHub/python/python-session1.ipynb Cell 40' in <cell line: 1>()
-    ----> <a href='vscode-notebook-cell:/Users/fordfishman/GitHub/python/python-session1.ipynb#ch0000037?line=0'>1</a> last_name = Montoya
-          <a href='vscode-notebook-cell:/Users/fordfishman/GitHub/python/python-session1.ipynb#ch0000037?line=1'>2</a> print(last_name)
-
+  We receive a `NameError` because we have not defined the varable `Montoya` previously. You may also see additional text describing more details about the error, such as where it occurred.
 
     NameError: name 'Montoya' is not defined
+
+</details>
 
 
 ## Data Types:
@@ -414,10 +442,19 @@ print(5%3)
     2
 
 
-### Question 6.  Choose a type (int, float, str) that each of these descriptions should be:
-- Time elapsed from the start of the year until now in days.
-- Serial cod of a piece of lab equipment
-- A lab specimen's age
+### Question 6.  Choose a type (`int`, `float`, `str`) that each of these descriptions should be:
+1. Time elapsed from the start of the year until now in days.
+2. Serial code of a piece of lab equipment
+3. A lab specimen's age
+
+<details markdown="1">
+  <summary>Solution</summary>
+
+    1. `int` if only considering full days, `float` otherwise.
+    2. `str`: Identifiers can often have letters or leading zeros.
+    3. Depends on the specimen. If using countable units, `int`, otherwise `float`.
+
+</details>
 
 
 ## Challenge Project 
@@ -448,9 +485,6 @@ Which of the following will return the floating point number `2.0`?
 
     2.0
 
-
-
-Follow along with materials and sessions at <a href="https://deisdata.github.io">https://deisdata.github.io</a>.
 
 **Reference and Resource**
 
