@@ -76,14 +76,10 @@ Calculate the following value in Python:
 $$ \frac{25}{(35 - 3)^3} $$
 
 
-```python
-### Put your answer below: 
-```
-
 <details markdown="1">
   <summary>Solution</summary>
 
-  Remember to include parentheses when needed, but Python also follows standard order of operatios. 
+  Remember to include parentheses when needed, but Python also follows standard order of operations. 
 
   ```python
   25/(35-3)**3
