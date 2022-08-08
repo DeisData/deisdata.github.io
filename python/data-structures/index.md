@@ -1,3 +1,7 @@
+---
+layout: python
+---
+
 # Python Data Structures
 
 Going over the fundmentals, we learned how to store numbers and sets of characters as variables. Python also has built-in ways to store multiple strings and numberså, namely **lists**, **tuples**, **dictionaries**, and **sets**. These all allow you to groups of ints, floats, and strings in different arrangements. Here, we created a `list` of 5 ints called `x`.
@@ -21,7 +25,7 @@ We will dive into these in more detail below, focusing primarily on lists and di
 Lists are very common tools in Python. They allow us to store large amounts of data with an order. They come with very handy tools to reference different objects stored in them. We can also easily add items to them.
 
 ### Initialize a list
-There are two ways of initializing an empty list: `list()` and ` [] `. 
+There are two ways of initializing an empty list: `list()` and `[]`. 
 
 
 ```python
@@ -286,9 +290,9 @@ For each of the following examples, should you use a list, dictionary, tuple, or
 <details markdown="1">
   <summary>Solution</summary>
 
-  1. Dictionary: paired information works very well in dictionaries
+  1. Dictionary: paired information works very well in dictionaries.
   2. Tuple: Months are ordered, and you never need to change or add to the months of the year. (List would ok as well.)
-  3. List: You want an ordering to represent the rank, and you might change or add to the list
-  4. Set: Order does not matter; you just need to keep all the foods in one place
+  3. List: You want an ordering to represent the rank, and you might change or add to the list.
+  4. Set: Order does not matter; you just need to keep all the foods in one place.
 
 </details>
