@@ -25,7 +25,7 @@ print(message)
 
 ## Python as a calculator
 
-An incredibly simple yet pivotal role of Python is to perform math calculations (additional, subtraction, multiplication, etc.). We show how to basic action below.
+An incredibly simple yet pivotal role of Python is to perform math calculations (addition, subtraction, multiplication, etc.). We show how to basic action below.
 
 You'll see the symbol `#` used often. These are comments, and they are used to write descriptions. Any characters following `#` are not run or executed.
 
@@ -95,7 +95,8 @@ A foundational tool in Python is assigning values to variables. We do this with 
 x = 50 # x is 50
 ```
 
-This sets the variable `x` to be 50, an **integer**, or `int`. This become stored in our notebook, and we can access this value in other cells until the notebook is reset. For instance, subtracting 20 from `x` prints out a value of 30.
+This sets the variable `x` to be 50, an **integer**, or `int`. This value of x is now stored in our notebook, and we can access this value in other cells until the notebook is reset. For instance, subtracting 20 from `x` prints out a value of 30.
+
 
 
 ```python
@@ -155,7 +156,7 @@ print(y)
 They are **not** like spreadsheets where a cell can depend on another and update automatically.
 
 ### Question 3.  Swapping values
-Given the code below, what is the value of the variable `swap`?
+Given the code below, what is the value of the variable `swap` by the end of the block?
 
 
 ```python
