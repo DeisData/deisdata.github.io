@@ -1,9 +1,8 @@
 ---
 layout: shell
-title: Shell Workshop
 ---
 
-# Session 1:  Shell for Navigating to Files and Directories
+# Navigating to files and directories
 
 ## Your challenges of the day:
 1. Does type case matter?  Is there a difference between `ls -s` and `ls -S`?
@@ -80,6 +79,6 @@ _Spaces are important between command and options. (But options can be combined 
 - [Software Carpentry Unix Shell](http://swcarpentry.github.io/shell-novice/)
 
 <span class="lesson">
-    [&nbsp;<a href="/shell/shell-start/">previous</a>&nbsp;]
-    [&nbsp;<a href="/shell/shell-2">next</a>&nbsp;]
+    [&nbsp;<a href="/shell/setup/">previous</a>&nbsp;]
+    [&nbsp;<a href="/shell/alter-dir">next</a>&nbsp;]
 </span>

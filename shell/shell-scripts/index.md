@@ -2,7 +2,7 @@
 layout: shell
 ---
 
-# Session 5: Shell Scripts
+# Shell scripts
 We finally see what makes the shell a powerful programming environment.  
 We will take commands we repeat and save them in a **shell script**- a small program, so we can re-run operations with a single command.
 
@@ -121,6 +121,6 @@ This lesson is adapted from [The Unix Shell on Software Carpentry](http://swcarp
 
 
 <span class="lesson">
-    [&nbsp;<a href="/shell/shell-4">previous</a>&nbsp;]
-    [&nbsp;<a href="/shell/shell-6">next</a>&nbsp;]   
+    [&nbsp;<a href="/shell/loops">previous</a>&nbsp;]
+    [&nbsp;<a href="/shell/search-find">next</a>&nbsp;]   
 </span>

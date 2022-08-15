@@ -2,7 +2,7 @@
 layout: shell
 ---
 
-# Opening a Unix Shell in Bash
+# Bash Setup
 _Adapted from [Software Carpentry]("https://software-carpentry.org")_
 
 **Where to type commands: How to open a new shell**
@@ -36,6 +36,9 @@ Your default shell is available via the Terminal program within your Utilities f
   <p>To check if your machine is set up to use something other than Bash, type <code class="language-plaintext highlighter-rouge">echo $SHELL</code> in your terminal window.</p>
 
   <p>If your machine is set up to use something other than Bash, you can run it by opening a terminal and typing <code class="language-plaintext highlighter-rouge">bash</code>.</p>
+
+  To change the default shell, follow [these instructions](https://www.howtogeek.com/444596/how-to-change-the-default-shell-to-bash-in-macos-catalina/).
+
 
   <h4 id="reference">Reference</h4>
   <p><a href="http://www.macworld.co.uk/feature/mac-software/how-use-terminal-on-mac-3608274/">How to Use Terminal on a Mac</a></p>
@@ -76,5 +79,5 @@ This lesson is adapted from [The Unix Shell on Software Carpentry](http://swcarp
 
 <span class="lesson">
     [&nbsp;<a href="/shell">previous</a>&nbsp;]
-    [&nbsp;<a href="/shell/shell-1">next</a>&nbsp;]  
+    [&nbsp;<a href="/shell/navigating">next</a>&nbsp;]  
 </span>

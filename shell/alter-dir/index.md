@@ -2,7 +2,7 @@
 layout: shell
 ---
 
-# Session 2: Working with files and directories
+# Altering files and directories
 
 ## Questions of the day:
 - How can I create, copy, and delete files and directories?
@@ -216,7 +216,7 @@ This lesson is adapted from [The Unix Shell on Software Carpentry](http://swcarp
 
 
 <span class="lesson">
-    [&nbsp;<a href="/shell/shell-1">previous</a>&nbsp;]
-    [&nbsp;<a href="/shell/shell-3">next</a>&nbsp;]    
+    [&nbsp;<a href="/shell/navigating">previous</a>&nbsp;]
+    [&nbsp;<a href="/shell/pipes-filters">next</a>&nbsp;]    
 </span>
 

@@ -2,30 +2,81 @@
 layout: shell
 ---
 
-# Session 6: Finding Things!
+# Loops
+Linking together programs is why Unix has been so successful.
+Now, we improve productivity through automation -- with loops!
+All those commands we have learned will be put to use.
+
+### Nested Loops Challenge!
+What does this do?
+
+```bash
+$ for species in cubane ethane methane
+> do
+>     for temperature in 25 30 37 40
+>     do
+>         mkdir $species-$temperature
+>     done
+> done
+```
 
 ## Questions of the day:
-How can we find files?
-How can we find things in files?
+- How can I perform the same actions on many different files?
 
 ## Commands of the Day
-- `grep` is a contraction of global/regular expression/print.  It finds and prints lines in files that match a pattern.
-  - **regular expressions** are patterns that can include wildcards
-  - Usage: `grep pattern filename`
-  - `grep -w` limits to word boundaries
-  - `grep -n` prints the line numbers that match
-  - `grep -i` makes search case-insensitive
-  - `grep -v` inverts the search to output that does not contain the pattern
-  - `grep -E` notes that the pattern is an extended regular expression that can contain wildcards
+**Loop Structure**
+```bash
+for thing in list_of_things
+do
+   operation_using $thing
+done
+```
 
-- `find`  command finds files!
-  - `-type` d or f for directories or files
-  - `-name` matches a name, but look out for order of execution!  Filenames with wildcards need quotes.  For example, `find . -name "*.txt"`
-- `$()` to combine commands. Code inside this runs first! 
-  - For example, `wc -l $(find . -name "*.txt")`
-  
+## Loop Examples
 
-## Commands and Concepts We Already Know
+### List the contents of working directory one item at a time
+```bash
+for itemname in *
+do
+   ls $itemname
+done
+```
+
+### Output part of files in a directory
+```bash
+cd Desktop/data-shell/creatures
+for filename in basilisk.dat minotaur.dat unicorn.dat
+do 
+   head -n 2 $filename
+done
+```
+
+### Write files in a directory to a new file
+```bash
+cd Desktop/data-shell/creatures
+for filename in basilisk.dat minotaur.dat unicorn.dat
+do 
+   cat -n 2 $filename >> all.pdb
+done
+```
+
+### Repeat running a program with all your input data files
+Nell has files NENE00000A.txt and NENE00000B.txt that need needs to run through th program
+`goostats` one at a time.  The program `goostats` has two arguments, the input data file, and the output statistics file.
+
+```bash
+cd ../north-pacific-gyre/2012-07-03
+for datafile in NENE*[AB].txt
+do
+    echo $datafile
+    bash goostats $datafile stats-$datafile   #where stats-$datafile is the output of goostats program.
+done
+```
+
+### Checking on your loop before you run it!
+It can be a good idea to run your loop with `echo` in front of you commands, to make sure it will act the way you believe.  For example, in the loop above I may want to first run `echo "bash goostats $datafile stats-$datafile"` before I run the loop to execute the `goostats` program.  
+
+## Commands We Already Know
 - Navigating File System
   - `ls`: listing contents of working directory with many options: `-F` classify, `-a` list all, `-s` size, `-S` sort by size
   - `pwd` print working directory
@@ -67,28 +118,13 @@ How can we find things in files?
   - `uniq` filters out adjecent matching lines in a file.
 - Piping Commands Together
   - `|` command **pipe** tells the shell to use the output of a command on the left as the input of the command on the right
-- Loop Structure: 
-```bash
-for thing in list_of_things
-do
-   operation_using $thing
-done
-```
-- Writing Shell Scripts (See Session 5 notes)
+  
 
 ### Resources
 This lesson is adapted from [The Unix Shell on Software Carpentry](http://swcarpentry.github.io/shell-novice/).
 
 
 <span class="lesson">
-    [&nbsp;<a href="/shell">shell</a>&nbsp;]
-    [&nbsp;<a href="/shell/shell-start/">get started</a>&nbsp;]
-    [&nbsp;<a href="/shell/shell-1">lesson 1</a>&nbsp;]
-    [&nbsp;<a href="/shell/shell-2">lesson 2</a>&nbsp;]
-    [&nbsp;<a href="/shell/shell-3">lesson 3</a>&nbsp;]
-    [&nbsp;<a href="/shell/shell-4">lesson 4</a>&nbsp;]
-    [&nbsp;<a href="/shell/shell-5">lesson 5</a>&nbsp;]
-    [&nbsp;<a href="/shell/shell-6">lesson 6</a>&nbsp;]
+    [&nbsp;<a href="/shell/pipes-filters">previous</a>&nbsp;]
+    [&nbsp;<a href="/shell/shell-scripts">next</a>&nbsp;]    
 </span>
-
-

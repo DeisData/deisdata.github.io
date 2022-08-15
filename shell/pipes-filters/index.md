@@ -2,7 +2,7 @@
 layout: shell
 ---
 
-# Session 3: Pipes and Filters
+# Pipes and filters
 The idea of linking together programs is why Unix has been so successful.
 Instead of creating enormous programs that try to do many  different things, we focus on lots of simple tools that work well with each other.
 
@@ -92,6 +92,6 @@ This lesson is adapted from [The Unix Shell on Software Carpentry](http://swcarp
 
 
 <span class="lesson">
-    [&nbsp;<a href="/shell/shell-2">previous</a>&nbsp;]
-    [&nbsp;<a href="/shell/shell-4">next</a>&nbsp;]
+    [&nbsp;<a href="/shell/alter-dir">previous</a>&nbsp;]
+    [&nbsp;<a href="/shell/loops">next</a>&nbsp;]
 </span>
