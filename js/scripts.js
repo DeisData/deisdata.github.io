@@ -35,7 +35,7 @@ function subNav(id, subnavbtn) {
     // only open if closed
     if (open) {
         x.style.display = "block";
-        subnavbtn.style.setProperty("background-color", "#04AA6D", "important");
+        subnavbtn.style.setProperty("background-color", "#4D858D", "important");
         subnavbtn.style.setProperty("color", "white");
 
         if (screen.width > 700){

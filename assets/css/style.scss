@@ -13,6 +13,12 @@ body, .project-tagline {
   font-weight: 300;
 }
 
+.page-header{
+  color:#fff;
+  text-align:center;
+  background-color:#233a74;
+  background-image:linear-gradient(120deg, #233a74 , #4D858D)}
+
 footer.site-footer {
   text-align: center;
 
@@ -34,7 +40,7 @@ footer.site-footer {
   font-size: 16pt;
   line-height: 1.6;
   h1, h2, h3, h4, h5, h6 {
-    color: #04AA6D;
+    color: #233a74;
   }
   code, kbd { font-size: 0.95rem; white-space: pre;}
   pre{ code { font-size: 0.95rem;} }
@@ -91,7 +97,7 @@ a {
   }
 
   a.active {
-    background-color: #04AA6D;
+    background-color: #4D858D;
     color: white;
   }
 
@@ -103,6 +109,26 @@ a {
   a.icon {
     display: none;
   }
+
+  a.logo{
+    padding:0%;
+    line-height: 0;
+  }
+  a.logo:hover{
+    background-color: #333;
+  }
+}
+
+[class^="icons"] {
+  height: 53.59px;
+  width: 53.59px;
+  position: relative;
+  // vertical-align: -5px;
+}
+
+.icons-logo {
+  content: url('/favicon/android-chrome-256x256.png');
+  /* display: inline-block; */
 }
 
 .subnav {
@@ -131,7 +157,7 @@ a {
   display: none;
   position: absolute;
   left: 0;
-  background-color: #04AA6D;
+  background-color: #4D858D;
   width: 100%;
   z-index: 1;
 
