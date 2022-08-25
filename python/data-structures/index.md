@@ -296,3 +296,7 @@ For each of the following examples, should you use a list, dictionary, tuple, or
   4. Set: Order does not matter; you just need to keep all the foods in one place.
 
 </details>
+
+## Resources
+- [Data Structures Documentation](https://docs.python.org/3/tutorial/datastructures.html)
+- [Software Carpentry](https://swcarpentry.github.io/python-novice-inflammation/04-lists/index.html)

@@ -588,6 +588,15 @@ Print out the summary statistics for columns `age5_surviving`, `gdp_per_day`, an
 
 ```
 
+<details markdown="1">
+  <summary>Solution</summary>
+
+  ```python
+  df[['age5_surviving', 'gdp_per_day', 'gdp_per_capita']].describe()
+  ```
+
+</details>
+
 ## Manipulate data 
 
 #### Subset by row
@@ -706,11 +715,23 @@ Within that subset, calculate the mean GDP per 1000 people across entries.
 
 *Hint: Multiply per capita GDP by 1000.*
 
+<details markdown="1">
+  <summary>Solution</summary>
+
+  ```python
+  df_lth = df.loc[df['country']=='Lithuania',:]
+  df_lth['gdp_per_1000'] = 1000 * df_lth['gdp_per_capita']
+  print(df_lth['gdp_per_1000'].mean())
+  ```
+
+</details>
+
 
 ```python
 ### Your code here:
 
 ```
+
 
 ## Create your own data frame
 

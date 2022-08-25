@@ -116,6 +116,18 @@ Create two NumPy arrays of the same length and subtract one from the other.
 ### your code here:
 ```
 
+<details markdown="1">
+  <summary>Solution</summary>
+
+  ```python
+  x = numpy.array([0.5, 2.2, 12.3])
+  y = numpy.array([4.5, 2.1, -4.6])
+
+  x - y
+  ```
+
+</details>
+
 ## 2D Array
 
 NumPy arrays really come into their own when they're used as matrices. Let's first make a 3 x 3 array. To do this, we will call `numpy.array()` with a list that contains other lists, also called a **nested list**. 
@@ -228,7 +240,7 @@ For full usage of these functions and more, please visit the [NumPy reference ma
 
 #### Question: NumPy operations
 
-Create a 1D array called `a` with at least 5 values. Find its mean, medium, min, max, and standard deviation.
+Create a 1D array called `a` with at least 5 values. Find its mean, median, min, max, and standard deviation.
 
 Create another 1D array called `b` with the same length as `a`. Use `numpy.dot(a,b)` to find the dot product of `a` and `b`. 
 
@@ -236,6 +248,23 @@ Create another 1D array called `b` with the same length as `a`. Use `numpy.dot(a
 ```python
 ### your code here:
 ```
+
+<details markdown="1">
+  <summary>Solution</summary>
+
+  ```python
+  a = numpy.array([13, 15, 17, 19, 21])
+  print('mean:', numpy.mean(a))
+  print('median:', numpy.median(a))
+  print('min:', numpy.min(a))
+  print('max:', numpy.max(a))
+  print('std dev:', numpy.std(a))
+
+  b = numpy.array([120, 0, 1, -1, -27])
+  numpy.dot(a, b)
+  ```
+
+</details>
 
 ## Indexing and slicing in NumPy
 
@@ -324,6 +353,18 @@ What happens when you slice but do not include the first index (`i`), the last i
 ### try it out:
 ```
 
+<details markdown="1">
+  <summary>Solution</summary>
+
+  Using `[i:]` will return items from index `i` to the end of the array. 
+
+  `[:j]` returns items from the beginning of the array until **but not including** `j`.
+
+  `[:]` returns all items. 
+
+</details>
+
+
 ## NumPy constants
 
 Math has many constants and important terms that are not present in vanilla Python. Here is a short list of some important ones:
@@ -342,6 +383,17 @@ Calculate the difference between $+\infty$ and $\pi$.
 ```python
 ### your code here
 ```
+
+<details markdown="1">
+  <summary>Solution</summary>
+
+  ```python
+  numpy.inf - numpy.pi
+  ```
+
+</details>
+
+
 
 ## Resources
 
