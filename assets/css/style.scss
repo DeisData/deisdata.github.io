@@ -55,29 +55,23 @@ ul, ol {
   margin-left: 20px;
 }
 details {
-
+  margin: 20px 0 20px 0;
   background-color: rgb(210, 210, 210);
-
   summary {font-size: 18pt; margin-left: 5px;}
-
   summary:hover{color: #233a74;}
-
-  .container {
-    padding: 10px
-  }
-
+  .container {padding: 10px}
 }
 
 #main {
-    padding-top: 20px;
+  padding-top: 20px;
 }
 
 .site-footer {
-    padding:10px;
+  padding:10px;
 }
 
 .lesson {
-    font-size: 24px;
+  font-size: 24px;
     
 }
 

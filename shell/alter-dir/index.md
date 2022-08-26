@@ -10,7 +10,7 @@ layout: shell
 
 
 ## Challenge Questions
-1. Moving files.  We accidentally put the files `sucrose.dat` and `maltose.dat` into the wrong folder, `analyzed/`.  Fill in the blanks to move these files into the `raw/` folder.
+**(1) Moving files.** We accidentally put the files `sucrose.dat` and `maltose.dat` into the wrong folder, `analyzed/`. Fill in the blanks to move these files into the `raw/` folder.
 ```bash
 $ ls -F
   analyzed/  raw/
@@ -32,11 +32,11 @@ $ mv sucrose.dat matose.dat ___/___
   </div>
 </details>
 
-2. Renaming Files. We mispelled a filename!  Which of the following commands will correct our mistake?
-    - a. `cp statstics.txt statistics.txt`
-    - b. `mv statstics.txt statistics.txt`
-    - c. `mv statistics.txt . `
-    - d. `cp statstics.txt .`
+**(2) Renaming Files.** We mispelled a filename!  Which of the following commands will correct our mistake?
+- a. `cp statstics.txt statistics.txt`
+- b. `mv statstics.txt statistics.txt`
+- c. `mv statistics.txt . `
+- d. `cp statstics.txt .`
 
 <details>
   <summary>Solution</summary>
@@ -52,7 +52,7 @@ $ mv sucrose.dat matose.dat ___/___
 
 </details>
 
-3. Removal. What happens when we execute `rm -i thesis/finaldraft.txt`? Why would we want this protection when using `rm`?
+**(3) Removal.** What happens when we execute `rm -i thesis/finaldraft.txt`? Why would we want this protection when using `rm`?
 <details>
   <summary>Solution</summary>
 
@@ -63,7 +63,7 @@ $ mv sucrose.dat matose.dat ___/___
   </div>
 </details>
 
-4. Removal. What is wrong with the command `rm -i thesis`?
+**(4) Removal.** What is wrong with the command `rm -i thesis`?
 <details>
   <summary>Solution</summary>
   <div class="container" markdown="1">
@@ -72,7 +72,7 @@ $ mv sucrose.dat matose.dat ___/___
   </div>
 </details>
 
-5. Removal. What is wrong with the command `rm -r thesis`?
+**(5) Removal.** What is wrong with the command `rm -r thesis`?
 <details>
   <summary>Solution</summary>
 
@@ -84,11 +84,15 @@ $ mv sucrose.dat matose.dat ___/___
 
 </details>
 
-6. Wildcards.  Which of the following matches the file names `ethane.dat` and `methane.dat`?
-   - a. `ls ?ethane.dat`
-   - b. `ls *ethane.dat`
-   - c. `ls ???ane.dat`
-   - d. `ls ethane.*`
+**(6) Wildcards.**  Which of the following matches the file names `ethane.dat` and `methane.dat`?
+
+<ol type="a">
+  <li><code>ls ?ethane.dat</code></li>
+  <li><code>`ls *ethane.dat`</code></li>
+  <li><code>`ls ???ane.dat`</code></li>
+  <li><code>`ls ethane.*`</code></li>
+</ol>
+
 <details>
   <summary>Hint</summary>
 
@@ -103,14 +107,14 @@ $ mv sucrose.dat matose.dat ___/___
 
 ## Tips for good names for files and directories
 1. Don't use spaces.  Use `-` or `_` or _camelCase_.
-1. Don't begin a name with a `-` (dash).  It will look like a command option.  Names should start with letters or numbers.
-1. Avoid special characters.  Some have special meanings.
+2. Don't begin a name with a `-` (dash).  It will look like a command option.  Names should start with letters or numbers.
+3. Avoid special characters.  Some have special meanings.
 
 _If you need to refer to names of files or directories that have spaces, put them in quotes ("")._
 
 
 ### What's in a name?
-A **filename extension** is the second part of the filename after the dot (.).  They help us and programs tell different kinds of files apart.  A few examples:
+A **filename extension** is the second part of the filename after the dot (`.`).  They help us and programs tell different kinds of files apart.  A few examples:
  - .txt: plain text file
  - .csv: comma separated value file
  - .pdf: PDF document
