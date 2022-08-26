@@ -24,8 +24,12 @@ $ mv sucrose.dat matose.dat ___/___
 ```
 <details>
   <summary>Solution</summary>
-  Think about ../raw
-  Recall that .. refers to the parent directory (i.e. one above the current directory).
+
+  <div class="container" markdown="1">
+
+  Think about `../raw`
+  Recall that `..` refers to the parent directory (i.e. one above the current directory).
+  </div>
 </details>
 
 2. Renaming Files. We mispelled a filename!  Which of the following commands will correct our mistake?
@@ -36,27 +40,48 @@ $ mv sucrose.dat matose.dat ___/___
 
 <details>
   <summary>Solution</summary>
+
+  <div class="container" markdown="1">
+
+
   <p>(a.) Will copy the file, so we will end up with the mispelled and correct version.
   (b.) Will move (i.e. rename) the incorrect file name to a correct filename.
     (c.) and (d.) will not work. Remember . is the current directory.</p>
+
+  </div>
+
 </details>
 
 3. Removal. What happens when we execute `rm -i thesis/finaldraft.txt`? Why would we want this protection when using `rm`?
 <details>
   <summary>Solution</summary>
+
+  <div class="container" markdown="1">
+
   The program will confirm that we want to delete the thesis final draft file.  Remember, deletion is forever!  There is no trash can or recycle bin.
+
+  </div>
 </details>
 
 4. Removal. What is wrong with the command `rm -i thesis`?
 <details>
   <summary>Solution</summary>
+  <div class="container" markdown="1">
+
   The remove command will not act on a directory unless the recursive option (-r)is given. 
+  </div>
 </details>
 
 5. Removal. What is wrong with the command `rm -r thesis`?
 <details>
   <summary>Solution</summary>
+
+  <div class="container" markdown="1">
+
   This remove command will delete the directory thesis and all its contents, but we forgot to check for confirmation with the interaction option (-i).  Remember, deletion is permanent!
+  
+  </div>
+
 </details>
 
 6. Wildcards.  Which of the following matches the file names `ethane.dat` and `methane.dat`?
@@ -66,7 +91,12 @@ $ mv sucrose.dat matose.dat ___/___
    - d. `ls ethane.*`
 <details>
   <summary>Hint</summary>
+
+  <div class="container" markdown="1">
+
   Remember ? wildcard matches to exactly one character.  * wildcard can match to zero to many characters.
+
+  </div>
 </details>
 
  
@@ -182,33 +212,36 @@ Now, it's your turn!
 1.  Create a backup directory with separate subdirectories for data and calibration files. Copy files to the appropriate locations.
 1.  Create a directory named send_to_claire and copy all the data from June 11th to it. 
 
-[Add your code to the Jamboard!](https://jamboard.google.com/d/1d7hZeDHuvs4EnHiJFMrxhNPJDzQ_clPnqjzd_iBsAZ8/edit?usp=sharing)
 
 <details markdown="1">
   <summary>Get a hint</summary>
-  
-  <h4>Create a backup directory with subdirectories for data and calibration files</h4>
-  - Hint: You will use `mkdir`
 
-  ```bash
-  mkdir ___
-  mkdir ___/___
-  mkdir ___/___
-  ```
+  <div class="container" markdown="1">
+
   
-  <h4>Copy data files to `backup/data`. (Use a similiar approach for calibration files.)</h4>
-  - Hint:  Use the copy command `cp` with wildcards
+<h4>Create a backup directory with subdirectories for data and calibration files</h4>
+- Hint: You will use `mkdir`
+
+```bash
+mkdir ___
+mkdir ___/___
+mkdir ___/___
+```
   
-  ```
-  cp *-data.txt backup/___
-  ```
+<h4 markdown="1">Copy data files to `backup/data`. (Use a similiar approach for calibration files.)</h4>
+- Hint:  Use the copy command `cp` with wildcards
   
-  <h4>Copy June 11th files to `send_to_claire/`.</h4>
-  - Hint:  Use the copy command `cp` with wildcards!
+```bash
+cp *-data.txt backup/___
+```
   
-  ```bash
-  cp *-11-*.txt send_to_claire/
-  ```
+<h4 markdown="1">Copy June 11th files to `send_to_claire/`.</h4>
+- Hint:  Use the copy command `cp` with wildcards!
+  
+```bash
+cp *-11-*.txt send_to_claire/
+```
+  </div>
 </details>
 
 ### Resources

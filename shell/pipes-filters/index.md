@@ -23,8 +23,13 @@ Hint:  Build the pipeline up one command at a time to test your understanding.
 3.  `uniq` filters out adjecent matching lines in a file.  
 How can we extend the pipeline to find out what animals the file `data-shell/data/animals.txt` contains without any duplicates?
 <details>
-<summary>Solution</summary>
+  <summary>Solution</summary>
+  <div class="container" markdown="1">
+
+```bash
 cut -d , -f 2 animals.txt | sort | uniq > animals_unique.txt
+```
+  </div>
 </details>
 
 4. Assuming your current working directory is `data-shell/data/`, which command would you use to produce a table that shows the total count of each type of animal in the file `animals.txt`?

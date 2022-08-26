@@ -128,10 +128,14 @@ Create a list of numbers. Add the first number in the list to the last number of
 <details markdown="1">
   <summary>Solution</summary>
 
-  ```python
-  num_list = [25, 50, 75, 100]
-  num_list.append( num_list[0] + num_list[-1] )
-  ```
+  <div class="container" markdown="1">
+
+```python
+num_list = [25, 50, 75, 100]
+num_list.append( num_list[0] + num_list[-1] )
+```
+
+  </div>
 
 </details>
 
@@ -233,12 +237,17 @@ Assign the value of `giraffes` in `animal_dict` to a new key `rabbit` in the sam
 
 <details markdown="1">
   <summary>Solution</summary>
+  
+  <div class="container" markdown="1">
+
 
   Assigning dictionary values of different keys can be tricky. Remember to have write write key on the right side.
 
-  ```python
-  animal_dict['rabbit'] = animal_dict['giraffe']
-  ```
+```python
+animal_dict['rabbit'] = animal_dict['giraffe']
+```
+
+  </div>
 
 </details>
 
@@ -290,10 +299,15 @@ For each of the following examples, should you use a list, dictionary, tuple, or
 <details markdown="1">
   <summary>Solution</summary>
 
+  <div class="container" markdown="1">
+
+
   1. Dictionary: paired information works very well in dictionaries.
   2. Tuple: Months are ordered, and you never need to change or add to the months of the year. (List would ok as well.)
   3. List: You want an ordering to represent the rank, and you might change or add to the list.
   4. Set: Order does not matter; you just need to keep all the foods in one place.
+
+  </div>
 
 </details>
 

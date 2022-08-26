@@ -119,12 +119,17 @@ Create two NumPy arrays of the same length and subtract one from the other.
 <details markdown="1">
   <summary>Solution</summary>
 
-  ```python
-  x = numpy.array([0.5, 2.2, 12.3])
-  y = numpy.array([4.5, 2.1, -4.6])
+  <div class="container" markdown="1">
 
-  x - y
-  ```
+
+```python
+x = numpy.array([0.5, 2.2, 12.3])
+y = numpy.array([4.5, 2.1, -4.6])
+
+x - y
+```
+
+  </div>
 
 </details>
 
@@ -252,17 +257,21 @@ Create another 1D array called `b` with the same length as `a`. Use `numpy.dot(a
 <details markdown="1">
   <summary>Solution</summary>
 
-  ```python
-  a = numpy.array([13, 15, 17, 19, 21])
-  print('mean:', numpy.mean(a))
-  print('median:', numpy.median(a))
-  print('min:', numpy.min(a))
-  print('max:', numpy.max(a))
-  print('std dev:', numpy.std(a))
+  <div class="container" markdown="1">
 
-  b = numpy.array([120, 0, 1, -1, -27])
-  numpy.dot(a, b)
-  ```
+```python
+a = numpy.array([13, 15, 17, 19, 21])
+print('mean:', numpy.mean(a))
+print('median:', numpy.median(a))
+print('min:', numpy.min(a))
+print('max:', numpy.max(a))
+print('std dev:', numpy.std(a))
+
+b = numpy.array([120, 0, 1, -1, -27])
+numpy.dot(a, b)
+```
+
+  </div>
 
 </details>
 
@@ -356,11 +365,16 @@ What happens when you slice but do not include the first index (`i`), the last i
 <details markdown="1">
   <summary>Solution</summary>
 
+  <div class="container" markdown="1">
+
+
   Using `[i:]` will return items from index `i` to the end of the array. 
 
   `[:j]` returns items from the beginning of the array until **but not including** `j`.
 
   `[:]` returns all items. 
+
+  </div>
 
 </details>
 
@@ -387,9 +401,13 @@ Calculate the difference between $+\infty$ and $\pi$.
 <details markdown="1">
   <summary>Solution</summary>
 
-  ```python
-  numpy.inf - numpy.pi
-  ```
+  <div class="container" markdown="1">
+
+
+```python
+numpy.inf - numpy.pi
+```
+  </div>
 
 </details>
 

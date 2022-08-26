@@ -55,11 +55,15 @@ ul, ol {
   margin-left: 20px;
 }
 details {
-  margin-left: 35px;
-  padding-bottom: 20px;
 
-  summary:hover{
-    color: grey;
+  background-color: rgb(210, 210, 210);
+
+  summary {font-size: 18pt; margin-left: 5px;}
+
+  summary:hover{color: #233a74;}
+
+  .container {
+    padding: 10px
   }
 
 }
@@ -207,9 +211,6 @@ a {
 
   ul, ol {
     margin-left: 0px;
-  }
-  details {
-    margin-left: 20px;
   }
     
 }

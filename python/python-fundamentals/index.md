@@ -79,11 +79,15 @@ $$ \frac{25}{(35 - 3)^3} $$
 <details markdown="1">
   <summary>Solution</summary>
 
+  <div class="container" markdown="1">
+
   Remember to include parentheses when needed, but Python also follows standard order of operations. 
 
-  ```python
-  25/(35-3)**3
-  ```
+```python
+25/(35-3)**3
+```
+
+ </div>
 
 </details>
 
@@ -171,10 +175,15 @@ y = swap
 <details markdown="1">
   <summary>Solution</summary>
 
+  <div class="container" markdown="1">
+
+
   The only statements here that effect the value of `swap` are `x = 1.0` and `swap = x`.
 
     1.0
-  
+
+  </div>
+
 </details>
 
 **What's in a name?** _Variable name conventions_
@@ -251,6 +260,8 @@ a = 25
 <details markdown="1">
   <summary>Solution</summary>
 
+  <div class="container" markdown="1">
+
   We can use variable `a` to assign value of `a-5` to `b`.
 
 ```python
@@ -258,7 +269,9 @@ a = 25
 b = a - 5
 print(b)
 ```
-  
+
+  </div>
+
 </details>
 
 ## Strings
@@ -320,9 +333,13 @@ print(last_name)
 <details markdown="1">
   <summary>Solution</summary>
 
+  <div class="container" markdown="1">
+
   We receive a `NameError` because we have not defined the varable `Montoya` previously. You may also see additional text describing more details about the error, such as where it occurred.
 
     NameError: name 'Montoya' is not defined
+
+  </div>
 
 </details>
 
@@ -436,12 +453,17 @@ Choose the type (`int`, `float`, `str`) that each of these descriptions should b
 3. A lab specimen's age
 
 <details markdown="1">
+
+  <div class="container" markdown="1">
+
   <summary>Solution</summary>
 
  1. `int` if only considering full days, `float` otherwise.
  2. `str`: Identifiers can often have letters or leading zeros.
  3. Depends on the specimen. If using countable units, `int`, otherwise `float`.
 
+  </div>
+  
 </details>
 
 
