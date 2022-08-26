@@ -1485,6 +1485,55 @@ df_hungary.to_csv('gapminder_hungary.csv', index=False) # index = False makes su
 ```
 
 
+#### Question: Putting it together
+
+Create two data frames called `A` and `B` with at least 3 columns and 4 rows. Make one column in both `A` and `B` an identifier column, with at least one ID present in both data frames. Use a left join with `A` as the left data frame, and call the new data frame `C`. Display the data frame, and export it as a .csv file.
+
+```python
+### Your code here:
+
+```
+
+<details markdown="1">
+  <summary>Solution</summary>
+
+  <div class="container" markdown="1">
+
+
+```python
+A = pd.DataFrame({
+    'ident': [0, 1, 2, 3],
+    'size': [2.1, 5.2, 3.1, 1.5],
+    'location': ['IL', 'MA', 'CA', 'NE']
+    
+})
+
+B = pd.DataFrame({
+    'ident': [5, 4, 0, 1, 3],
+    'animal': ['monkey', 'giraffe', 'ape', 'lion', 'fish'],
+    'sex': ['M', 'F', 'F', 'F', 'M']
+})
+
+C = pd.merge(left=A, right=B, how='left', left_on='ident', right_on='ident')
+print(C)
+
+C.to_csv('joined_data.csv', index=False) 
+```
+
+```
+   ident  size location animal  sex
+0      0   2.1       IL    ape    F
+1      1   5.2       MA   lion    F
+2      2   3.1       CA    NaN  NaN
+3      3   1.5       NE   fish    M
+```
+
+  </div>
+
+</details>
+
+
+
 ## Resources
 - [Pandas docs](https://pandas.pydata.org/docs/)
 - [Pandas getting started](https://pandas.pydata.org/docs/getting_started/index.html#getting-started)

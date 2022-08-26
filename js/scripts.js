@@ -59,7 +59,7 @@ function labelBlocks() {
     var a=document.createElement("a");
     a.className="nav-link active";
 
-    switch(hls[i].className){ // different text for different code chunkså
+    switch(hls[i].className){ // different text for different code chunks
       case "language-python highlighter-rouge":
         a.innerText="Python";
         break;
