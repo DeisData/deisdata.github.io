@@ -31,22 +31,8 @@ df.head()
 ```
 
 
+<div class="table">
 
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -237,20 +223,8 @@ df[num_cols]
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="table">
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -361,20 +335,8 @@ df[num_cols].describe()
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="table">
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -450,20 +412,8 @@ grouped_data['population'].describe()
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="table">
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -762,20 +712,8 @@ pd.DataFrame(data_dict)
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="table">
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -825,20 +763,8 @@ pd.DataFrame(data_list, columns=['a', 'b', 'c'])
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="table">
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -891,20 +817,8 @@ my_df.sort_values(by=['b'])
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="table">
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -949,20 +863,8 @@ my_df.sort_values(by=['b'], ascending=False)
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="table">
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1007,20 +909,8 @@ my_df.sort_values(by=['b', 'a'], ascending=False)
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="table">
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1147,9 +1037,11 @@ The pandas function for performing joins is called `merge()` and an Inner join i
 
 Inner joins take all rows from both data frames that share values from an identifier column. In our case, this means that our joined data frame will only include rows with species identifiers present in `species_df` and `surveys_df`.
 
-<img src="/assets/images/python/pandas/innerjoin.png" alt="inner join" width=250px>
-
-
+<div class="row container">
+		<div class="col-12">
+			<img src="/assets/images/python/pandas/innerjoin.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="inner join">
+		</div>
+</div>
 
 
 
@@ -1171,20 +1063,8 @@ merged_inner
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="table">
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1382,7 +1262,11 @@ The result `merged_inner` data frame contains all of the columns from `surveys_d
 
 What if we want to add information from `species_df` to `surveys_df`without losing any of the information from `surveys_df`? In this case, we use a different type of join called a left join, where we keep all rows from the data frame we call left (in our case `surveys_df`) and only take rows from the right data frame (`species_df`) with species IDs in `surveys_df`.
 
-<img src="/assets/images/python/pandas/leftjoin.png" alt="left join" width=250px>
+<div class="row container">
+		<div class="col-12">
+			<img src="/assets/images/python/pandas/leftjoin.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="inner join">
+		</div>
+</div>
 
 A left join is performed in pandas by calling the same `merge()` function used for inner join, but using the `how='left'` argument.
 
@@ -1396,20 +1280,8 @@ merged_left
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="table">
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">

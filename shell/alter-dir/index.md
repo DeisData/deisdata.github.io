@@ -33,10 +33,12 @@ $ mv sucrose.dat matose.dat ___/___
 </details>
 
 **(2) Renaming Files.** We mispelled a filename!  Which of the following commands will correct our mistake?
-- a. `cp statstics.txt statistics.txt`
-- b. `mv statstics.txt statistics.txt`
-- c. `mv statistics.txt . `
-- d. `cp statstics.txt .`
+<ol type="a">
+  <li><code>cp statstics.txt statistics.txt</code></li>
+  <li><code>mv statstics.txt statistics.txt</code></li>
+  <li><code>lmv statistics.txt .</code></li>
+  <li><code>cp statstics.txt .</code></li>
+</ol>
 
 <details>
   <summary>Solution</summary>
@@ -88,9 +90,9 @@ $ mv sucrose.dat matose.dat ___/___
 
 <ol type="a">
   <li><code>ls ?ethane.dat</code></li>
-  <li><code>`ls *ethane.dat`</code></li>
-  <li><code>`ls ???ane.dat`</code></li>
-  <li><code>`ls ethane.*`</code></li>
+  <li><code>ls *ethane.dat</code></li>
+  <li><code>ls ???ane.dat</code></li>
+  <li><code>ls ethane.*</code></li>
 </ol>
 
 <details>

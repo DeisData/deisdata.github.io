@@ -1,9 +1,9 @@
 function reactiveNav() {
-    var x = document.getElementById("myTopnav"); // grab the nav by ID
+    var x=document.getElementById("myTopnav"); // grab the nav by ID
     if (x.className === "topnav") { // if the nav is closed, open it
       x.className+=" responsive";
     } else { // close the nav if open
-      x.className="topnav";
+      x.className="topnav";Å
       x.style.paddingBottom=0;
       var subnavs=document.getElementsByClassName("subnav");
       for (var i=0; i < subnavs.length; i++){
@@ -42,10 +42,7 @@ function subNav(id, subnavbtn) {
           nav.style.paddingBottom="50px";
         }
     }  
-
-    
 }
-
 
 function labelBlocks() {
   // grab elements all code elements (div class highlighter-rouge)
