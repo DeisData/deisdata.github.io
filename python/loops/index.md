@@ -308,6 +308,39 @@ number of multiples: 25
 
 </details>
 
+### Bonus: Nested `for` loops
+
+Just like you can use `if` statements in a `for` loop, you can also put `for` loops inside of other `for` loops. This is great if you want to use all combinations of two lists, for instance.
+
+
+```python
+hats = ['bowler', 'fedora', 'beret']
+shirts = ['plaid', 'striped', 'polka dot']
+
+print('Outfit combinations:')
+
+for shirt in shirts:
+    
+    for hat in hats:
+        
+        print(shirt, "shirt with a", hat)
+```
+
+    Outfit combinations:
+    plaid shirt with a bowler
+    plaid shirt with a fedora
+    plaid shirt with a beret
+    striped shirt with a bowler
+    striped shirt with a fedora
+    striped shirt with a beret
+    polka dot shirt with a bowler
+    polka dot shirt with a fedora
+    polka dot shirt with a beret
+
+
+Be careful, however. If you use very long collections of items and nest more than 2 loops, the runtime can become very slow.
+
+
 ### Bonus: Comprehensions
 
 If the outcome of your `for` loop is to produce a list, dictionary, set, or tuple, and you are using minimal code in your loop, then **comprehensions** may be perfect for you.
