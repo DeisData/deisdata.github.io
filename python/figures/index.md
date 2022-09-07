@@ -5,6 +5,11 @@ layout: python
 
 # Making figures in Python
 
+### Materials:
+
+- <a href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/figures-codealong.ipynb" target="_blank">Code-along Jupyter notebook</a>
+- <a href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/figures.ipynb" target="_blank">Filled-in Jupyter notebook</a>
+
 ## Matplotlib
 
 To create basic data visualizations in Python, we can use the `matplotlib` library, specifically a set of functions in a module called `pyplot`. 

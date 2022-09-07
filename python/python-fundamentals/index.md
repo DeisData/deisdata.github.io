@@ -6,6 +6,10 @@ layout: python
 
 Python is a very powerful tool for automating tasks that would otherwise be time-consuming or impossible to do by hand or other conventional tools. Here, we'll go over basic ways to use Python to introduce you to a slice of its potential.
 
+### Materials:
+
+- <a href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/python-fundamentals-codealong.ipynb" target="_blank">Code-along Jupyter notebook</a>
+- <a href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/python-fundamentals.ipynb" target="_blank">Filled-in Jupyter notebook</a>
 
 
 ### Question 1.  Do it yourself!  Coding

@@ -4,7 +4,12 @@ layout: python
 
 # Python Data Structures
 
-Going over the fundmentals, we learned how to store numbers and sets of characters as variables. Python also has built-in ways to store multiple strings and numberså, namely **lists**, **tuples**, **dictionaries**, and **sets**. These all allow you to groups of ints, floats, and strings in different arrangements. Here, we created a `list` of 5 ints called `x`.
+### Materials:
+
+- <a href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/data-structures-codealong.ipynb" target="_blank">Code-along Jupyter notebook</a>
+- <a href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/data-structures.ipynb" target="_blank">Filled-in Jupyter notebook</a>
+
+Going over the fundmentals, we learned how to store numbers and sets of characters as variables. Python also has built-in ways to store multiple strings and numbers, namely **lists**, **tuples**, **dictionaries**, and **sets**. These all allow you to groups of ints, floats, and strings in different arrangements. Here, we created a `list` of 5 ints called `x`.
 
 
 ```python

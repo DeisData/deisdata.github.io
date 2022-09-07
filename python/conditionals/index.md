@@ -4,6 +4,11 @@ layout: python
 
 # Booleans and conditionals
 
+### Materials:
+
+- <a href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/conditionals-codealong.ipynb" target="_blank">Code-along Jupyter notebook</a>
+- <a href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/conditionals.ipynb" target="_blank">Filled-in Jupyter notebook</a>
+
 Often in code, we want to take different actions based on the current state of our program (e.g., do we have more or less than 100 samples in our data?). We can ask yes or no questions about this state called **boolean expressions**. These questions are answered as **true** or **false**. We can design the program to perform an action based on the response, which is called a **conditional**. 
 
 ## Boolean

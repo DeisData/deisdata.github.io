@@ -4,6 +4,11 @@ layout: python
 
 # Loops
 
+### Materials:
+
+- <a href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/loops-codealong.ipynb" target="_blank">Code-along Jupyter notebook</a>
+- <a href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/loops.ipynb" target="_blank">Filled-in Jupyter notebook</a>
+
 Often, programs need to do the same task several times repeatedly. You may need to run a task just a handful of times, or maybe thousands of times.
 
 For example, say you want to print out all of the numbers 0 - 5. You could write `print()` 5 times:

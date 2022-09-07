@@ -4,6 +4,12 @@ layout: python
 
 # NumPy
 
+### Materials:
+
+- <a href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/numpy-pandas-codealong.ipynb" target="_blank">Code-along Jupyter notebook</a>
+- <a href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/numpy-pandas.ipynb" target="_blank">Filled-in Jupyter notebook</a>
+
+
 NumPy (Numerical Python) is a critical library for manipulating numbers, performing matrix operations, and mathematics in general. 
 
 To use this library, we first have to **import** it with the keyword `import`.
