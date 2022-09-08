@@ -4,7 +4,7 @@ layout: python
 
 # Python Setup and Installation
 
-There are many ways to use and install Python. Here we list some recommended ways to get started in order of complexity.
+There are many ways to use and install Python. Here we list some recommended ways to get started in increasing order of complexity.
 
 ## Google Colab (Easiest):
 
@@ -32,7 +32,7 @@ Anaconda also comes ready with the `conda` environment managing system. `conda` 
 
 ### Cons
 
-Anaconda's main downside is its large installation, due to the numerous packages and programs that come with it. Make sure you have at least 3 GB of disk space free before you install.
+Anaconda's main downside is its large installation size, due to the numerous packages and programs that come with it. Make sure you have at least 3 GB of disk space free before you install.
 
 With everything that is installed, it can also be a bit confusing which editor, IDE, or environment to use for the job. Spyder or Jupyter notebook are safe bets, and you can also use other environments like VS Code or PyCharm, as well.
 

@@ -20,43 +20,23 @@ layout: shell
 - How can I specify the location of a file or directory on my computer?
 
 ## What is Unix Shell?
-- _It is different from how we usually interact with our devices, on a **graphical user interface** (GUI)_
-- Shell is a **Command-Line Interface** (CLI) 
-  - Type commands in the **prompt** `$`
-  - Invoke complicated programs
-- Shell is a scripting language
-- We will use the Unix Shell: Bash (Bourne Again SHell by Stephen Bourne)
+We usually interact with our devices on a **graphical user interface** (GUI). 
+Shell is a **Command-Line Interface** (CLI), where we type commands in the **prompt** `$` 
+instead of pointing and clicking. We use it to invoke complicated programs. Shell is a scripting language, 
+and we will use the Unix Shell: Bash (Bourne Again SHell by Stephen Bourne).
 
 ## Why use Bash?
-- Combine existing tools into powerful pipelines and handle large volumes of data automatically. 
-- Sequences of commands can be written into a script, improving the reproducibility of workflows.
-- Essential to interface with hardware, HPCC, and remote machines.
-- Commands and the grammar of shell are used in other coding languages.
+Bash combines existing tools into powerful pipelines and handle large volumes of data automatically. We can write sequences of commands into a script, improving the reproducibility of workflows. It is essential to interface with hardware, HPCC, and remote machines.
 
 ## Navigating files and directories
-- **File System**: The part of the operating system responsible for managing files and directories
-  - **Files** hold information
-  - **Directories** (or **folders**) hhold files or other directories.  Thinks of them like _places_.
-- **Current working directory** is the place where you are in the file system when you are using the shell.
-- **Root directory** is the top directory that holds everything else.  It is refered to by a slash `/` on its own.  This is the leading slash in other directory paths, for example `/Users/claire/`
-- **Hidden files and directories** start with `.` like `.bash_profile`.  They are usually configuration settings and are hidden to prevent cluttering the terminal with a standard `ls` command.  Add the `-a` option see hidden files. 
--  
-## Commands of the day:
-- `ls`: listing.  This command will list the contents of the current directory
-  - `-F` option (switch or flag) tells ls to classify the output by adding a marker to file and directory names to indicate what they are.
-  - `-s` option displays the size of files and directories
-  - `-S` option will sort the files and directories by size
-  - `--help` option will tell us how to use the command and what options it accepts
-- `pwd`: print working directory.  Directories are like places, at any time while we are using shell, we are in one place, called our current working directory
-- `clear`:  clears the terminal if it gets to cluttered
-- up and down arrows can be used to access previous commands (or scroll)
-- `man` will give you the manual for a command, for example `man ls` will tell us all about listing
-- `cd` will change your working directory.  `cd` can only see sub-directories inside your current working directory.
-  - `cd ..` is a shortcut to move up one directory to the _parent directory_ of the one we are in
-  - `cd ~/` is a shortcut to move to the current user's home directory.  For example, if my home directory is `/Users/claire`, then `~/data` is equivalent to `Users/claire/data'
+The **file system** is the part of the operating system responsible for managing files and directories.
+  - **Files** hold information.
+  - **Directories** (or **folders**) hold files or other directories.  Thinks of them like _places_.
+  - The **current working directory** is the place where you are in the file system when you are using the shell.
+  - The **root directory** is the top directory that holds everything else.  It is refered to by a slash `/` on its own.  This is the leading slash in other directory paths, for example `/Users/claire/`
+  - **Hidden files and directories** start with `.` like `.bash_profile`.  They are usually configuration settings and are hidden to prevent cluttering the terminal with a standard `ls` command.  Add the `-a` option see hidden files. 
 
 ## General syntax of a shell command
-**Bash**
 ```bash
 $ ls -F /
 ```
@@ -65,13 +45,58 @@ $ ls -F /
 Arguments tell the command what to operate on (e.g. files and directories).
 Options and argements are refered to as **parameters**.
 
-_Type case is important._
-_Spaces are important between command and options. (But options can be combined with a single - and no spaces)_
+**Type case is important.**
+**Spaces are important between command and options. (But options can be combined with a single - and no spaces).**
 
-### Getting help
+## Listing
+
+We use the `ls` command to list the contents of the current directory.
+
+It has many options we can provide:
+  - `-F` option (switch or flag) tells ls to classify the output by adding a marker to file and directory names to indicate what they are.
+  - `-s` option displays the size of files and directories
+  - `-S` option will sort the files and directories by size
+  - `--help` option will tell us how to use the command and what options it accepts
+
+
+```bash
+$ ls -F
+```
+
+## Print working directory
+
+To check where you are, use `pwd` to print the path of the **working directory**. 
+
+```bash
+$ pwd
+```
+
+```
+/home/fordfishman/
+```
+
+## Change directory
+
+`cd` will change your working directory. `cd` can only see sub-directories inside your current working directory.
+- `cd ..` is a shortcut to move up one directory to the _parent directory_ of the one we are in
+- `cd ~/` is a shortcut to move to the current user's home directory.  For example, if my home directory is `/Users/claire`, then `~/data` is equivalent to `Users/claire/data'
+
+```bash
+$ cd ..
+$ pwd
+```
+
+```
+/home/
+```
+
+
+## Other commands
+
+- `clear`:  clears the terminal if it gets to cluttered
+- up and down arrows can be used to access previous commands (or scroll)
+- `man` will give you the manual for a command, for example `man ls` will tell us all about listing
 - The help option can be used with a command, for example `ls --help`
-- The manual (`man`) for a command can be accessed, for example `man ls`
-
 
 
 ### References

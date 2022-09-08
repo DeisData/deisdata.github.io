@@ -129,9 +129,9 @@ The **wildcard** `?` matches exactly one character.
 
 ## Commands of the Day
 - Creating Directories or Files:
-  - `mkdir path` creates a new directory
-  - `nano new` runs a text editor called Nano to create a new file by the new name given.  For example, `nano thesis.txt` creates a text file named `thesis.txt` in the working directory. 
-  - `touch new` creates an empty (0 byte) file by the new name given. Why bother? Some programs require empty files to populate with output.
+  - `mkdir path` creates a new directory (called path in this case)
+  - `nano filename.txt` runs a text editor called `nano` to create a new file by the name given. For example, `nano thesis.txt` creates a text file named `thesis.txt` in the working directory. 
+  - `touch filename.txt` creates an empty (0 byte) file by the new name given. Why bother? Some programs require empty files to populate with output.
 - Moving or Renaming directories or files safely:
   - `mv old new` command move has two arguments.  The first tells `mv` what we're moving, while the second is where it's to go.
   - `mv -i` or `mv -interactive` must be used to make `mv` ask for confirmation before overwriting any existing file or directory with the same name as the second argument. (Otherwise, Beware! It will silently overwrite.)

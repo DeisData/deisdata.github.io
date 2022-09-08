@@ -63,6 +63,9 @@ function labelBlocks() {
       case "language-python highlighter-rouge":
         a.innerText="Python";
         break;
+      case "language-bash highlighter-rouge":
+        a.innerText="Bash";
+        break; 
       case "language-markdown highlighter-rouge":
         a.innerText="Markdown";
         break; 

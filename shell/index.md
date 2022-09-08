@@ -7,12 +7,12 @@ layout: shell
 This repository contains the scripts and datasets used in the **Automate with Shell** workshops through Brandeis Library Data Services.
 
 ## Materials
-- Session 1 :  Introduction to Shell, Navigating to Files and Directories [[lesson](/shell/navigating/) / [dataset](https://github.com/DeisData/unix-shell/blob/master/data-shell.zip) / [setup instructions](/shell/setup/)]
-- Session 2 :  [Working with files and directories](/shell/alter-dir/)
-- Session 3 :  [Pipes and Filters](/shell/pipes-filters/)
-- Session 4 :  [Loops](/shell/loops/)
-- Session 5 :  [Shell Scripts](/shell/shell-scripts/)
-- Session 6 :  [Finding things!](/shell/search-find/)
+1. Introduction to Shell, Navigating to Files and Directories [[lesson](/shell/navigating/) / [dataset](https://github.com/DeisData/unix-shell/blob/master/data-shell.zip) / [setup instructions](/shell/setup/)]
+2. [Working with files and directories](/shell/alter-dir/)
+3. [Pipes and Filters](/shell/pipes-filters/)
+4. [Loops](/shell/loops/)
+5. [Shell Scripts](/shell/shell-scripts/)
+6. [Finding things!](/shell/search-find/)
 
 ## Getting Started  
 - [Open a Bash shell!](shell-start.html)
