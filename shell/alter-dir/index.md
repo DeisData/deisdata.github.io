@@ -8,6 +8,72 @@ layout: shell
 - How can I create, copy, and delete files and directories?
 - How can I edit files?
 
+## Creating Directories or Files
+`mkdir path` creates a new directory (called path in this case).
+
+
+`nano filename.txt` runs a text editor called `nano` to create a new file by the name given. For example, `nano thesis.txt` creates a text file named `thesis.txt` in the working directory. 
+ 
+ 
+`touch filename.txt` creates an empty (0 byte) file by the new name given. Why bother? Some programs require empty files to populate with output.
+  
+## Moving or Renaming directories or files safely
+
+`mv file.txt new_location` command move has two arguments.  The first tells `mv` what we're moving, while the second is where it's to go.
+
+`mv -i` or `mv -interactive` must be used to make `mv` ask for confirmation before overwriting any existing file or directory with the same name as the second argument. (Otherwise, Beware! It will silently overwrite.)
+  
+## Copying directories and/or files  
+
+`cp old new` command copies a file (first argument) to a new location (second argument)
+
+- `cp -r` adds the recursive option to copy a directory and all its contents to another directory (second argument).  For example, we can make a backup with `cp -r thesis thesis_backup`.
+- `cp` can be used on multiple filenames as long as a destination directory is the last argument. For example, `cp a.txt b.txt c.txt backup/` will copy the three text files into the subdirectory `backup/`.
+
+
+## Removing files and directories safely: **Deleting is forever**
+
+`rm` is used to remove items from a directory. Using it without any options, however, can be dangerous, as deleted items do not go to a trash or recycling bin.
+
+- `rm -i path` command for remove with interactive option to ask for confirmation before deleting.
+- `rm -i -r path` command with interactive option and recursive option will **remove a directory and all its contents** with confirmation prompts.    
+  
+
+## Tips for good names for files and directories
+1. Don't use spaces.  Use `-` or `_` or _camelCase_.
+2. Don't begin a name with a `-` (dash).  It will look like a command option.  Names should start with letters or numbers.
+3. Avoid special characters.  Some have special meanings.
+
+_If you need to refer to names of files or directories that have spaces, put them in quotes ("")._
+
+
+### What's in a name?
+A **filename extension** is the second part of the filename after the dot (`.`).  They help us and programs tell different kinds of files apart.  A few examples:
+- .txt: plain text file
+- .csv: comma separated value file
+- .pdf: PDF document
+- .cfg: configuration file of parameters for a program
+- .png: an image file
+
+The **wildcard** `*` matches zero or more characters.  For example, to access all the text files in a directory, use `*.txt`.
+
+The **wildcard** `?` matches exactly one character.
+  
+## Which editor should I use?
+`nano` is a built-in text editor that only works with plain character data (i.e. no tables, images, or other media).  It is the least complex, but you may want to try more powerful editors.
+
+**For Unix Systems (Linux and macOS)** 
+- [Emacs](http://www.gnu.org/software/emacs)
+- [Vim](http://vim.org/)
+- [Gedit](http://projects.gnome.org/gedit/) is a graphical editor
+
+**For Windows**
+- [Notepad++](http://notepad-plus-plus.org/)
+- `notepad` is built-in and can be run in the command line
+
+_If you start an editor from the shell, it will use your current working directory as its default location._
+
+_In editor commands, the Control key is also called Ctrl or ^._
 
 ## Challenge Questions
 **(1) Moving files.** We accidentally put the files `sucrose.dat` and `maltose.dat` into the wrong folder, `analyzed/`. Fill in the blanks to move these files into the `raw/` folder.
@@ -107,59 +173,6 @@ $ mv sucrose.dat matose.dat ___/___
 
  
 
-## Tips for good names for files and directories
-1. Don't use spaces.  Use `-` or `_` or _camelCase_.
-2. Don't begin a name with a `-` (dash).  It will look like a command option.  Names should start with letters or numbers.
-3. Avoid special characters.  Some have special meanings.
-
-_If you need to refer to names of files or directories that have spaces, put them in quotes ("")._
-
-
-### What's in a name?
-A **filename extension** is the second part of the filename after the dot (`.`).  They help us and programs tell different kinds of files apart.  A few examples:
- - .txt: plain text file
- - .csv: comma separated value file
- - .pdf: PDF document
- - .cfg: configuration file of parameters for a program
- - .png: an image file
-
-The **wildcard** `*` matches zero or more characters.  For example, to access all the text files in a directory, use `*.txt`.
-
-The **wildcard** `?` matches exactly one character. 
-
-## Commands of the Day
-- Creating Directories or Files:
-  - `mkdir path` creates a new directory (called path in this case)
-  - `nano filename.txt` runs a text editor called `nano` to create a new file by the name given. For example, `nano thesis.txt` creates a text file named `thesis.txt` in the working directory. 
-  - `touch filename.txt` creates an empty (0 byte) file by the new name given. Why bother? Some programs require empty files to populate with output.
-- Moving or Renaming directories or files safely:
-  - `mv old new` command move has two arguments.  The first tells `mv` what we're moving, while the second is where it's to go.
-  - `mv -i` or `mv -interactive` must be used to make `mv` ask for confirmation before overwriting any existing file or directory with the same name as the second argument. (Otherwise, Beware! It will silently overwrite.)
-- Copying directories and/or files:  
-  - `cp old new` command copies a file (first argument) to a new location (second argument)
-  - `cp -r` adds the recursive option to copy a directory and all its contents to another directory (second argument).  For example, we can make a backup with `cp -r thesis thesis_backup`.
-  - `cp` can be used on multiple filenames as long as a destination directory is the last argument. For example, `cp a.txt b.txt c.txt backup/` will copy the three text files into the subdirectory `backup/`.
-- Removing files and directories safely: **Deleting is forever**
-  - `rm -i path` command for remove with interactive option to ask for confirmation before deleting.
-  - `rm -i -r path` command with interactive option and recursive option will **remove a directory and all its contents** with confirmation prompts.    
-  
-
-  
-## Which editor should I use?
-- `nano` is a built-in text editor that only works with plain character data (i.e. no tables, images, or other media).  It is the least complex, but you may want to try more powerful editors.
-
-**For Unix Systems (Linux and macOS)** 
-- [Emacs](http://www.gnu.org/software/emacs)
-- [Vim](http://vim.org/)
-- [Gedit](http://projects.gnome.org/gedit/) is a graphical editor
-
-**For Windows**
-- [Notepad++](http://notepad-plus-plus.org/)
-- `notepad` is built-in and can be run in the command line
-
-_If you start an editor from the shell, it will use your current working directory as its default location._
-
-_In editor commands, the Control key is also called Ctrl or ^._
 
 
 

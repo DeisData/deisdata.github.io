@@ -90,7 +90,6 @@ $ pwd
 /home/
 ```
 
-
 ## Other commands
 
 - `clear`:  clears the terminal if it gets to cluttered

@@ -9,12 +9,6 @@ We will take commands we repeat and save them in a **shell script**- a small pro
 ## Questions of the day:
 - How can I save and re-use commands?
 
-## Fun Resources
-- [Bash Help Sheet](https://www.shell-tips.com/sheets/bash-help-sheet.pdf) has shortcuts for quick navigating and editing in your shell
-- [Mastering Bash with Tips and Tricks](https://www.shell-tips.com/shell/) has some great examples of how scripts can be used in a variety of ways.v
-- [30 Bash Script Examples](https://linuxhint.com/30_bash_script_examples/) depicts some basic to more complex scripting examples
-- [StackOverflow thread of most powerful examples of Unix Commands or Scripts every programmer should know](https://stackoverflow.com/questions/1102986/most-powerful-examples-of-unix-commands-or-scripts-every-programmer-should-know) is old but has some great examples.  In general, StackOverflow is a great community for technical questions.
-
 
 ## Writing Shell Scripts
 ### Shabang the top line of a script:
@@ -66,59 +60,12 @@ wc -l "$@" | sort -n
 $  bash sorted.sh  *.pdb  ../creatures/*.dat
 ```
 
-## Commands and Concepts We Already Know
-- Navigating File System
-  - `ls`: listing contents of working directory with many options: `-F` classify, `-a` list all, `-s` size, `-S` sort by size
-  - `pwd` print working directory
-  - `clear` the terminal
-  - `man` will give you the manual for a command
-  - `cd` will change working directory
-  - `cd ..` change up to parent directory
-  - `cd ~` change to home directory
-- Creating Directories or Files:
-  - `mkdir path` creates a new directory
-  - `nano new` runs a text editor 
-  - `touch new` creates an empty (0 byte) file
-- Moving or Renaming directories or files safely:
-  - `mv -i old new` 
-- Copying directories and/or files:  
-  - `cp old new` 
-  - `cp -r` to copy a directory and all contents
-- Removing / Deleting Safely: **Deleting is forever**
-  - `rm -i path` delete file with confirmation
-  - `rm -i -r path` delete directory and contents    
-- Wildcards
-  - `?` matches to one character
-  - `*` matches to zero to many characters
-- Filters 
-  - `wc` is the word count 
-  - `echo` prints text or the value of a variable
-  - `sort` sorts the contents of a file.  `sort -n ` sorts numerically.
-- Write to a file from Prompt
-  - `>` **redirects** a command's output to a file 
-  - `>>` **redirects* a command's output to append to end of a file 
-- View particular file contents
-  - `cat`concatentate prints the contents of files
-  - `less` displays a screenful of the file and then stops
-  - `head` shows the first few lines of a file
-  - `tail` shows the last few lines of a file
-  - `cut` removes or cuts out certain sections of each line in a file
-     - `-d` option specifies a delimeter 
-     - `-f` option specifies the column for extraction
-  - `uniq` filters out adjecent matching lines in a file.
-- Piping Commands Together
-  - `|` command **pipe** tells the shell to use the output of a command on the left as the input of the command on the right
-- Loop Structure: 
-```bash
-for thing in list_of_things
-do
-   operation_using $thing
-done
-```
-
 ### Resources
 This lesson is adapted from [The Unix Shell on Software Carpentry](http://swcarpentry.github.io/shell-novice/).
-
+- [Bash Help Sheet](https://www.shell-tips.com/sheets/bash-help-sheet.pdf) has shortcuts for quick navigating and editing in your shell
+- [Mastering Bash with Tips and Tricks](https://www.shell-tips.com/shell/) has some great examples of how scripts can be used in a variety of ways.v
+- [30 Bash Script Examples](https://linuxhint.com/30_bash_script_examples/) depicts some basic to more complex scripting examples
+- [StackOverflow thread of most powerful examples of Unix Commands or Scripts every programmer should know](https://stackoverflow.com/questions/1102986/most-powerful-examples-of-unix-commands-or-scripts-every-programmer-should-know) is old but has some great examples.  In general, StackOverflow is a great community for technical questions.
 
 <span class="lesson">
     [&nbsp;<a href="/shell/loops">previous</a>&nbsp;]

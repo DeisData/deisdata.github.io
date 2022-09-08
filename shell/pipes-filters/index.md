@@ -6,7 +6,33 @@ layout: shell
 The idea of linking together programs is why Unix has been so successful.
 Instead of creating enormous programs that try to do many  different things, we focus on lots of simple tools that work well with each other.
 
-### Challenge Questions:
+**Filters** are programs that transform a stream of input into a stream of output
+- `wc` is the word count command for number of lines, words, and characters in a file (left to right in that order)
+- `echo` prints a string or the value of a variable as output. The `echo` commmand prints text, and `echo $SHELL` prints the value of the variable `$SHELL` (a defined path).
+- `sort` sorts the contents of a file.  `sort -n ` sorts a numerical file.
+
+*Note*: To escape a mistake in the prompt, type <kbd>Ctrl</kbd> + <kbd>C</kbd>. 
+
+## Write to a file from the prompt
+- `>` **redirects** a command's output to a file instead of printing it to the screen.  DO NOT write to the same file.
+- `>>` **redirects* a command's output to append to the end of a file 
+
+## View particular file contents
+- `cat`is the concatentate (join together) command that prints the contents of files one after another
+- `less` displays a screenful of the file and then stops.  You can go forward one screenful by pressingthe spacebar, or back one by pressing [b] and [q] to quit.
+- `head` shows the first few lines of a file.  For example, `head -n 5` will show the first 5 lines.
+- `tail` shows the last few lines of a file
+- `cut` removes or cuts out certain sections of each line in a file
+   - `-d` option specifies a delimeter 
+   - `-f` option specifies the column for extraction
+- `uniq` filters out adjecent matching lines in a file.
+
+## Piping Commands Together
+- `|` command **pipe** tells the shell to use the output of a command on the left as the input of the command on the right
+- Chain pipes consecutively
+
+
+## Challenge Questions:
 1. In our current directory, we want to find the three files which have the least number of lines.  Which command listed below would work?
  - a.  `$  wc -l * > sort -n > head -n 3`
  - b.  `$  wc -l * | sort -n | head -n 1-3`
@@ -42,57 +68,8 @@ cut -d , -f 2 animals.txt | sort | uniq > animals_unique.txt
 ## Questions of the day:
 - How can I combine existing commands to do new things?
 - How can I write to a file from the shell prompt?
-   
-### Commands We Already Know
-- Navigating File System
-  - `ls`: listing contents of working directory with many options: `-F` classify, `-a` list all, `-s` size, `-S` sort by size
-  - `pwd` print working directory
-  - `clear` the terminal
-  - `man` will give you the manual for a command
-  - `cd` will change working directory
-  - `cd ..` change up to parent directory
-  - `cd ~` change to home directory
-- Creating Directories or Files:
-  - `mkdir path` creates a new directory
-  - `nano new` runs a text editor 
-  - `touch new` creates an empty (0 byte) file
-- Moving or Renaming directories or files safely:
-  - `mv -i old new` 
-- Copying directories and/or files:  
-  - `cp old new` 
-  - `cp -r` to copy a directory and all contents
-- Removing / Deleting Safely: **Deleting is forever**
-  - `rm -i path` delete file with confirmation
-  - `rm -i -r path` delete directory and contents    
-- Wildcards
-  - `$` matches to one character
-  - `*` matches to zero to many characters
-  
-  
-## Commands of the Day
-- **Filters** are programs that transform a stream of input into a stream of output
-  - `wc` is the word count command for number of lines, words, and characters in a file (left to right in that order)
-  - `echo` prints a string or the value of a variable as output.  For example 'echo The echo commmand prints text` or `echo $SHELL` prints the value of the variable `$SHELL` (a defined path)
-  - `sort` sorts the contents of a file.  `sort -n ` sorts a numerical file.
-- To escape a mistake in the prompt, type [Control] + [C] 
-- Write to a file from the prompt
-  - `>` **redirects** a command's output to a file instead of printing it to the screen.  DO NOT write to the same file.
-  - `>>` **redirects* a command's output to append to the end of a file 
-- View particular file contents
-  - `cat`is the concatentate (join together) command that prints the contents of files one after another
-  - `less` displays a screenful of the file and then stops.  You can go forward one screenful by pressingthe spacebar, or back one by pressing [b] and [q] to quit.
-  - `head` shows the first few lines of a file.  For example, `head -n 5` will show the first 5 lines.
-  - `tail` shows the last few lines of a file
-  - `cut` removes or cuts out certain sections of each line in a file
-     - `-d` option specifies a delimeter 
-     - `-f` option specifies the column for extraction
-  - `uniq` filters out adjecent matching lines in a file.
-- Piping Commands Together
-  - `|` command **pipe** tells the shell to use the output of a command on the left as the input of the command on the right
-  - Chain pipes consecutively
 
-
-### Resources
+## Resources
 This lesson is adapted from [The Unix Shell on Software Carpentry](http://swcarpentry.github.io/shell-novice/).
 
 
