@@ -7,15 +7,13 @@ layout: shell
 This repository contains the scripts and datasets used in the **Automate with Shell** workshops through Brandeis Library Data Services.
 
 ## Materials
-1. Introduction to Shell, Navigating to Files and Directories [[lesson](/shell/navigating/) / [dataset](https://github.com/DeisData/unix-shell/blob/master/data-shell.zip) / [setup instructions](/shell/setup/)]
-2. [Working with files and directories](/shell/alter-dir/)
-3. [Pipes and Filters](/shell/pipes-filters/)
-4. [Loops](/shell/loops/)
-5. [Shell Scripts](/shell/shell-scripts/)
-6. [Finding things!](/shell/search-find/)
 
-## Getting Started  
-- [Open a Bash shell!](shell-start.html)
+1. **<a href="/shell/navigating" target="_blank">Introduction to Shell, Navigating to Files and Directories</a>** **[** <a href="https://github.com/DeisData/unix-shell/blob/master/data-shell.zip" target="_blank">dataset</a> / <a href="/shell/setup" target="_blank">setup</a> **]**
+2. **<a href="/shell/alter-dir/" target="_blank">Working with files and directories</a>**
+3. **<a href="/shell/pipes-filters/" target="_blank">Pipes and filters</a>**
+4. **<a href="/shell/loops/" target="_blank">Loops</a>**
+5. **<a href="/shell/shell-scripts/" target="_blank">Shell scripts</a>**
+6. **<a href="/shell/search-find/" target="_blank">Finding things!</a>**
 
 ## Resources
 These lessons are based on [The Unix Shell on Software Carpentry](http://swcarpentry.github.io/shell-novice/).

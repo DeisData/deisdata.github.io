@@ -26,6 +26,7 @@ Each lesson includes a link to a page on this site, as well as links to filled-i
 We will be using [Google Colab](https://colab.research.google.com/) to run our code. No Python installation will be required for this workshop; you just need to be signed into a Google account.  
 
 **Saving notebooks to your drive**
+
 Once the notebook is open in Colab, click on “File” in the upper left. If you cannot see “File”, try clicking the down arrow in the top right. Click “Save a copy in Drive”. You can rename the file, and the copy will be located in a new folder in your Google Drive called “Colab Notebooks”. You can now freely save changes to your personal version of the file.
 
 If you would prefer not to use Colab, click on "File" and then "Download > Download .ipynb". You will need [Anaconda or Miniconda installed](/python/setup-install/). You can use a variety of different programs to interact with the notebook, such as [Spyder](https://www.spyder-ide.org/), [VS Code](https://code.visualstudio.com/), [PyCharm](https://www.jetbrains.com/pycharm/), and more.
