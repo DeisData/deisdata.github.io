@@ -8,12 +8,7 @@ layout: shell
 1. Does type case matter?  Is there a difference between `ls -s` and `ls -S`?
 1. Do spaces matter?  Is there a difference between `ls-F` and `ls -F`?
 
-**Explore more `ls` flags.**  
-1. What does `-l` option do? What if you use `-l` and `-h`?
-1. The default `ls` lists contents in alphabetical order.  What option do I use to see them by time of last change?
-
-
-## Questions of the day:
+## Questions to think about:
 - What is a command shell and why should I use one?
 - How can I move around on my computer?
 - How can I see what files and directories I have?
@@ -35,6 +30,20 @@ The **file system** is the part of the operating system responsible for managing
   - The **current working directory** is the place where you are in the file system when you are using the shell.
   - The **root directory** is the top directory that holds everything else.  It is refered to by a slash `/` on its own.  This is the leading slash in other directory paths, for example `/Users/claire/`
   - **Hidden files and directories** start with `.` like `.bash_profile`.  They are usually configuration settings and are hidden to prevent cluttering the terminal with a standard `ls` command.  Add the `-a` option see hidden files. 
+
+*Example of directory structure*
+
+```other
+Documents
+  | - Code
+  | | - analysis.py
+  | | - functions.py
+  | - Data
+  | | - info.csv
+  | description.txt
+  | .gitignore
+```
+
 
 ## General syntax of a shell command
 ```bash
@@ -62,6 +71,17 @@ It has many options we can provide:
 ```bash
 $ ls -F
 ```
+
+```
+Applications/		data_shell/		Music/
+Desktop/		data_shell.zip 		Pictures/
+Documents/		Library/
+Downloads/		Movies/
+```
+
+**Explore more `ls` flags.**  
+1. What does `-l` option do? What if you use `-l` and `-h`?
+1. The default `ls` lists contents in alphabetical order.  What option do I use to see them by time of last change?
 
 ## Print working directory
 

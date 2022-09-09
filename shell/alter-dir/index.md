@@ -4,28 +4,72 @@ layout: shell
 
 # Altering files and directories
 
-## Questions of the day:
+## Questions to think about:
 - How can I create, copy, and delete files and directories?
 - How can I edit files?
 
 ## Creating Directories or Files
-`mkdir path` creates a new directory (called path in this case).
+`mkdir` creates a new directory.
+
+```bash
+$ mkdir new_dir
+$ ls -F
+```
+
+```
+new_dir/
+```
 
 
 `nano filename.txt` runs a text editor called `nano` to create a new file by the name given. For example, `nano thesis.txt` creates a text file named `thesis.txt` in the working directory. 
  
+```bash
+$ nano filename.txt
+```
+
+![nano](/assets/images/shell/alter-dir/nano.png)
+
  
 `touch filename.txt` creates an empty (0 byte) file by the new name given. Why bother? Some programs require empty files to populate with output.
+
+```bash
+$ touch filename2.txt
+$ ls -F
+```
+
+```
+filename.txt
+filename2.txt
+```
   
 ## Moving or Renaming directories or files safely
 
-`mv file.txt new_location` command move has two arguments.  The first tells `mv` what we're moving, while the second is where it's to go.
+`mv filename.txt new_location` command move has two arguments.  The first tells `mv` what we're moving, while the second is where it's to go.
+
+```bash
+$ mv filename.txt new_dir
+$ ls -F new_dir
+```
+
+```
+filename.txt
+```
 
 `mv -i` or `mv -interactive` must be used to make `mv` ask for confirmation before overwriting any existing file or directory with the same name as the second argument. (Otherwise, Beware! It will silently overwrite.)
   
 ## Copying directories and/or files  
 
 `cp old new` command copies a file (first argument) to a new location (second argument)
+
+```
+$ cp filename2.txt new_dir
+$ ls -F
+```
+
+```
+filename2.txt
+new_dir/
+```
 
 - `cp -r` adds the recursive option to copy a directory and all its contents to another directory (second argument).  For example, we can make a backup with `cp -r thesis thesis_backup`.
 - `cp` can be used on multiple filenames as long as a destination directory is the last argument. For example, `cp a.txt b.txt c.txt backup/` will copy the three text files into the subdirectory `backup/`.
@@ -36,7 +80,16 @@ layout: shell
 `rm` is used to remove items from a directory. Using it without any options, however, can be dangerous, as deleted items do not go to a trash or recycling bin.
 
 - `rm -i path` command for remove with interactive option to ask for confirmation before deleting.
-- `rm -i -r path` command with interactive option and recursive option will **remove a directory and all its contents** with confirmation prompts.    
+- `rm -i -r path` command with interactive option and recursive option will **remove a directory and all its contents** with confirmation prompts.
+
+```bash
+$ rm -i -r new_dir
+$ ls
+```
+
+```
+filename2.txt
+```
   
 
 ## Tips for good names for files and directories
@@ -55,7 +108,7 @@ A **filename extension** is the second part of the filename after the dot (`.`).
 - .cfg: configuration file of parameters for a program
 - .png: an image file
 
-The **wildcard** `*` matches zero or more characters.  For example, to access all the text files in a directory, use `*.txt`.
+The **wildcard** `*` matches zero or more characters.  For example, to copy all text files in a directory, use `cp *.txt DIR_NAME`.
 
 The **wildcard** `?` matches exactly one character.
   
@@ -173,11 +226,8 @@ $ mv sucrose.dat matose.dat ___/___
 
  
 
-
-
-
 ### Challenge Project
-Before heading on a trip, you want to back up your data and send some datasets to Claire.  Fill in the following commands to get the job done.  First, let's set up a directory and files.
+Before heading on a trip, you want to back up your data and send some datasets to ford.  Fill in the following commands to get the job done.  First, let's set up a directory and files.
 ```bash 
 # Hashtag denotes a comment. The line will be skipped
 
@@ -229,7 +279,7 @@ done
 
 Now, it's your turn!
 1.  Create a backup directory with separate subdirectories for data and calibration files. Copy files to the appropriate locations.
-1.  Create a directory named send_to_claire and copy all the data from June 11th to it. 
+1.  Create a directory named send_to_ford and copy all the data from June 11th to it. 
 
 
 <details markdown="1">
@@ -254,11 +304,11 @@ mkdir ___/___
 cp *-data.txt backup/___
 ```
   
-<h4 markdown="1">Copy June 11th files to `send_to_claire/`.</h4>
+<h4 markdown="1">Copy June 11th files to `send_to_ford/`.</h4>
 - Hint:  Use the copy command `cp` with wildcards!
   
 ```bash
-cp *-11-*.txt send_to_claire/
+cp *-11-*.txt send_to_ford/
 ```
   </div>
 </details>

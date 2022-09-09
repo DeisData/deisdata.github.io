@@ -6,16 +6,39 @@ layout: shell
 The idea of linking together programs is why Unix has been so successful.
 Instead of creating enormous programs that try to do many  different things, we focus on lots of simple tools that work well with each other.
 
-**Filters** are programs that transform a stream of input into a stream of output
-- `wc` is the word count command for number of lines, words, and characters in a file (left to right in that order)
-- `echo` prints a string or the value of a variable as output. The `echo` commmand prints text, and `echo $SHELL` prints the value of the variable `$SHELL` (a defined path).
-- `sort` sorts the contents of a file.  `sort -n ` sorts a numerical file.
+**Filters** are programs that transform a stream of input into a stream of output.
+
+`wc` is the word count command for number of lines, words, and characters in a file (left to right in that order).
+
+```bash
+```
+
+```
+```
+
+`echo` prints a string or the value of a variable as output as text.
+
+```bash
+$ echo hello world
+```
+
+```
+hello world
+```
+
+`echo $SHELL` prints the value of the variable `$SHELL` (a defined path).
+
+```bash
+$ echo $SHELL
+```
+
+```
+/usr/local/bin/bash
+```
+
+`sort` sorts the contents of a file.  `sort -n` sorts a numerical file.
 
 *Note*: To escape a mistake in the prompt, type <kbd>Ctrl</kbd> + <kbd>C</kbd>. 
-
-## Write to a file from the prompt
-- `>` **redirects** a command's output to a file instead of printing it to the screen.  DO NOT write to the same file.
-- `>>` **redirects* a command's output to append to the end of a file 
 
 ## View particular file contents
 - `cat`is the concatentate (join together) command that prints the contents of files one after another
@@ -27,9 +50,13 @@ Instead of creating enormous programs that try to do many  different things, we 
    - `-f` option specifies the column for extraction
 - `uniq` filters out adjecent matching lines in a file.
 
+## Write to a file from the prompt
+- `>` **redirects** a command's output to a file instead of printing it to the screen.  DO NOT write to the same file.
+- `>>` **redirects** a command's output to append to the end of a file 
+
 ## Piping Commands Together
 - `|` command **pipe** tells the shell to use the output of a command on the left as the input of the command on the right
-- Chain pipes consecutively
+- You can chain pipes consecutively between multiple commands.
 
 
 ## Challenge Questions:

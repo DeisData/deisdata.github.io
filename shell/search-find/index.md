@@ -4,7 +4,7 @@ layout: shell
 
 # Searching and finding
 
-## Questions of the day:
+## Questions to think about:
 How can we find files?
 How can we find things in files?
 
@@ -28,16 +28,8 @@ How can we find things in files?
 ### Resources
 This lesson is adapted from [The Unix Shell on Software Carpentry](http://swcarpentry.github.io/shell-novice/).
 
-
 <span class="lesson">
-    [&nbsp;<a href="/shell">shell</a>&nbsp;]
-    [&nbsp;<a href="/shell/setup/">setup</a>&nbsp;]
-    [&nbsp;<a href="/shell/navigating">1</a>&nbsp;]
-    [&nbsp;<a href="/shell/alter-dir">2</a>&nbsp;]
-    [&nbsp;<a href="/shell/pipes-filters">3</a>&nbsp;]
-    [&nbsp;<a href="/shell/loops">4</a>&nbsp;]
-    [&nbsp;<a href="/shell/shell-scripts">5</a>&nbsp;]
-    [&nbsp;<a href="/shell/search-find">6</a>&nbsp;]
+    [&nbsp;<a href="/shell/shell-scripts">previous</a>&nbsp;]
 </span>
 
 
