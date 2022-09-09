@@ -504,3 +504,8 @@ Which of the following will return the floating point number `2.0`?
 
 This lesson is adapted from 
 <a href='http://swcarpentry.github.io/python-novice-gapminder/design/'>Software Carpentry.</a>
+
+<span class="lesson">
+    [&nbsp;<a href="/python/jupyter">previous</a>&nbsp;] 
+    [&nbsp;<a href="/python/data-structures">next</a>&nbsp;] 
+</span>

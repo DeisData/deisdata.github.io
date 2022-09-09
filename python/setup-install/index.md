@@ -57,3 +57,7 @@ Because using `conda`, and therefore Miniconda, requires you to use terminal and
 Follow the instructions for your operating system from [the conda docs](https://conda.io/projects/conda/en/latest/user-guide/install/index.html).
 
 You will also need a text editor or IDE. We recommend [Spyder](https://www.spyder-ide.org/), [VS Code](https://code.visualstudio.com/), or [PyCharm](https://www.jetbrains.com/pycharm/).
+
+<span class="lesson">
+    [&nbsp;<a href="/python/jupyter">next</a>&nbsp;] 
+</span>

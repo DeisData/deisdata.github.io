@@ -319,3 +319,8 @@ For each of the following examples, should you use a list, dictionary, tuple, or
 ## Resources
 - [Data Structures Documentation](https://docs.python.org/3/tutorial/datastructures.html)
 - [Software Carpentry](https://swcarpentry.github.io/python-novice-inflammation/04-lists/index.html)
+
+<span class="lesson">
+    [&nbsp;<a href="/python/python-fundamentals">previous</a>&nbsp;] 
+    [&nbsp;<a href="/python/conditionals">next</a>&nbsp;]
+</span>

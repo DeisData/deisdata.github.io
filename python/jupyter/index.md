@@ -106,3 +106,8 @@ To run a code cell, you should be able to click a button on the cell. You may al
 - Run cell: <kbd>Ctrl</kbd> + <kbd>Enter</kbd>
 - Add a cell above: <kbd>A</kbd> 
 - Add a cell below: <kbd>B</kbd>
+
+<span class="lesson">
+    [&nbsp;<a href="/python/setup-install">previous</a>&nbsp;] 
+    [&nbsp;<a href="/python/python-fundamentals">next</a>&nbsp;] 
+</span>

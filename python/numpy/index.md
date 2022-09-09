@@ -427,3 +427,8 @@ numpy.inf - numpy.pi
 
 This lesson is adapted from 
 [Software Carpentry](http://swcarpentry.github.io/python-novice-gapminder/design/).
+
+<span class="lesson">
+    [&nbsp;<a href="/python/loops">previous</a>&nbsp;]
+    [&nbsp;<a href="/python/pandas">next</a>&nbsp;]
+</span>

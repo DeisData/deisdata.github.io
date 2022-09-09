@@ -473,3 +473,7 @@ You can make virtually any plot and customization you can think of in Python. So
 - [More on Matplotlib](https://matplotlib.org/)
 - [More on Seaborn](https://seaborn.pydata.org/index.html)
 - [Python Graph Gallery](https://www.python-graph-gallery.com/)
+
+<span class="lesson">
+    [&nbsp;<a href="/python/pandas">previous</a>&nbsp;]
+</span>

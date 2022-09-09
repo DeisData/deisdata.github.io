@@ -517,3 +517,8 @@ elif x < 0:
 
 ## Resources
 - [Software Carpentry](https://swcarpentry.github.io/python-novice-inflammation/07-cond/index.html)
+
+<span class="lesson">
+    [&nbsp;<a href="/python/data-structures">previous</a>&nbsp;]
+    [&nbsp;<a href="/python/loops">next</a>&nbsp;]
+</span>

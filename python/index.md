@@ -38,3 +38,7 @@ If you would prefer not to use Colab, click on "File" and then "Download > Downl
   - [Python Statistics Essential Training on LinkedIn Learning](https://www.linkedin.com/learning/python-statistics-essential-training/)
   - [Python for Data Visualization on LinkedIn Learning](https://www.linkedin.com/learning/python-for-data-visualization/)
 - Feeling competitive?  Check out [Kaggle Competitions](https://www.kaggle.com/competitions)
+
+<span class="lesson">
+    [&nbsp;<a href="/python/setup-install">get started</a>&nbsp;] 
+</span>

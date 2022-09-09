@@ -1547,3 +1547,9 @@ C.to_csv('joined_data.csv', index=False)
 
 This lesson is adapted from 
 [Software Carpentry](http://swcarpentry.github.io/python-novice-gapminder/design/).
+
+<span class="lesson">
+    [&nbsp;<a href="/python/numpy">previous</a>&nbsp;]
+    [&nbsp;<a href="/python/figures">next</a>&nbsp;]
+</span>
+

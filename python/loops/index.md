@@ -377,3 +377,8 @@ If the outcome of your `for` loop is to produce a list, dictionary, set, or tupl
 ## Resources
 - [Software Carpentry](https://swcarpentry.github.io/python-novice-inflammation/05-loop/index.html)
 - [W3 School - List Comprehensions](https://www.w3schools.com/python/python_lists_comprehension.asp)
+
+<span class="lesson">
+    [&nbsp;<a href="/python/conditionals">previous</a>&nbsp;]
+    [&nbsp;<a href="/python/numpy">next</a>&nbsp;]
+</span>
