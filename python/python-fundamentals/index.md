@@ -350,7 +350,7 @@ print(last_name)
 
 ## Data Types:
 - integers (`int`) represent positive or negative whole numbers like 3 or -512
-- floating point numbers (`float`) represent real numbers like 3.12159 or -2.5 
+- floating point numbers (`float`) represent real numbers like 3.14159 or -2.5 
 - character strings (`str`) are text
    - written with single or double quotes (matching)
    - quotations aren't printed when the string is displayed

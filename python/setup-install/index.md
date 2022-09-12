@@ -39,8 +39,8 @@ With everything that is installed, it can also be a bit confusing which editor, 
 ### Installation
 1.   Download the installer for the free individual edition of Anaconda - Python 3.9 edition.  You will find installers for Windows, Mac, and Linux here:  <https://www.anaconda.com/distribution>.
 2.   Proceed through a standard installation, which will require several clicks.  
-3.   Once your installation is completed, open **Anaconda Navigator** from your applications. Here you will see lots of useful applications!
-![anaconda navigator](/assets/images/python/setup-install/anaconda_nav.jpeg)
+3.   Once your installation is completed, open **Anaconda Navigator** from your applications. Here you will see lots of useful applications!<br><br>
+![anaconda navigator](/assets/images/python/setup-install/anaconda_nav.jpeg) <br><br>
 4. In Anaconda Navigator on the Home tab, you will see a tile that says Jupyter Notebook. Click **Launch** (or **Install** and then **Launch**) to open Jupyter Notebook in a web browser.  
 5. Jupyter Notebook opens in a web browser but is running locally on your computer.  On the main tab **Files** you will see a location in your file system. This startup folder is called the root directory of the app. Make sure you have a folder you can navigate to where you can put any files and datasets you'll be using. 
 
