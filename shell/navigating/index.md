@@ -28,7 +28,7 @@ The **file system** is the part of the operating system responsible for managing
   - **Files** hold information.
   - **Directories** (or **folders**) hold files or other directories.  Thinks of them like _places_.
   - The **current working directory** is the place where you are in the file system when you are using the shell.
-  - The **root directory** is the top directory that holds everything else.  It is refered to by a slash `/` on its own.  This is the leading slash in other directory paths, for example `/Users/claire/`
+  - The **root directory** is the top directory that holds everything else.  It is refered to by a slash `/` on its own.  This is the leading slash in other directory paths, for example `/home/fordfishman/`
   - **Hidden files and directories** start with `.` like `.bash_profile`.  They are usually configuration settings and are hidden to prevent cluttering the terminal with a standard `ls` command.  Add the `-a` option see hidden files. 
 
 *Example of directory structure*
@@ -43,7 +43,9 @@ Documents
   | description.txt
   | .gitignore
 ```
+## Paths
 
+The path to a file displays the directories that file is a member of. For instance, if you have a file called `data.txt` on your Desktop, its path could be `/home/fordfishman/Desktop/data.txt`. This is an **absolute path** because it begins at the root directory. We also use **relative paths** that change based on our current working directory. If the working directory is `/home/fordfishman`, the relative path to the file is `Desktop/data.txt`.
 
 ## General syntax of a shell command
 ```bash
@@ -99,7 +101,7 @@ $ pwd
 
 `cd` will change your working directory. `cd` can only see sub-directories inside your current working directory.
 - `cd ..` is a shortcut to move up one directory to the _parent directory_ of the one we are in
-- `cd ~/` is a shortcut to move to the current user's home directory.  For example, if my home directory is `/Users/claire`, then `~/data` is equivalent to `Users/claire/data'
+- `cd ~/` is a shortcut to move to the current user's home directory.  For example, if my home directory is `/home/fordfishman`, then `~/data` is equivalent to `/home/fordfishman/data`
 
 ```bash
 $ cd ..

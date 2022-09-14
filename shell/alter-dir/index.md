@@ -20,6 +20,25 @@ $ ls -F
 new_dir/
 ```
 
+`mkdir -p` can be used to make subdirectories.
+
+```bash
+mkdir -p code/python/analysis
+ls -RF # displays subdirectory structure
+```
+
+```
+code/
+
+./code:
+python/
+
+./code/python:
+analysis/
+
+./code/python/analysis:
+```
+
 
 `nano filename.txt` runs a text editor called `nano` to create a new file by the name given. For example, `nano thesis.txt` creates a text file named `thesis.txt` in the working directory. 
  

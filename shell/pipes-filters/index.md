@@ -8,13 +8,7 @@ Instead of creating enormous programs that try to do many  different things, we 
 
 **Filters** are programs that transform a stream of input into a stream of output.
 
-`wc` is the word count command for number of lines, words, and characters in a file (left to right in that order).
-
-```bash
-```
-
-```
-```
+## echo
 
 `echo` prints a string or the value of a variable as output as text.
 
@@ -36,7 +30,65 @@ $ echo $SHELL
 /usr/local/bin/bash
 ```
 
+## wc
+
+`wc` is the word count command for number of lines, words, and characters in a file (left to right in that order). Let's try that out on some of files in `data-shell/molecules`
+
+```bash
+$ wc cubane.pdb
+```
+
+```
+      20     156    1158 cubane.pdb
+```
+
+To only get lines, words, or characters, we can specify the flags `-l`, `-w`, or `-c`, respectively.  
+
+
+## Write to a file from the prompt
+- `>` **redirects** a command's output to a file instead of printing it to the screen.  DO NOT write to the same file.
+- `>>` **redirects** a command's output to append to the end of a file 
+
+
+Here we get the number of lines in all of our files and redirect the output to a new file called `line_count.txt`. 
+
+```
+$ wc -l *.pdb > line_count.txt
+```
+
+We can use `cat` to show the contents of this new file.
+
+```bash
+$ cat line_count.txt
+```
+
+```
+      20 cubane.pdb
+      12 ethane.pdb
+       9 methane.pdb
+      30 octane.pdb
+      21 pentane.pdb
+      15 propane.pdb
+     107 total
+```
+
+## sort
+
 `sort` sorts the contents of a file.  `sort -n` sorts a numerical file.
+
+```bash
+$ sort -n line_count.txt
+```
+
+```
+       9 methane.pdb
+      12 ethane.pdb
+      15 propane.pdb
+      20 cubane.pdb
+      21 pentane.pdb
+      30 octane.pdb
+     107 total
+```
 
 *Note*: To escape a mistake in the prompt, type <kbd>Ctrl</kbd> + <kbd>C</kbd>. 
 
@@ -50,14 +102,40 @@ $ echo $SHELL
    - `-f` option specifies the column for extraction
 - `uniq` filters out adjecent matching lines in a file.
 
-## Write to a file from the prompt
-- `>` **redirects** a command's output to a file instead of printing it to the screen.  DO NOT write to the same file.
-- `>>` **redirects** a command's output to append to the end of a file 
-
 ## Piping Commands Together
-- `|` command **pipe** tells the shell to use the output of a command on the left as the input of the command on the right
-- You can chain pipes consecutively between multiple commands.
+The `|` command **pipe** tells the shell to use the output of a command on the left as the input of the command on the right. 
 
+Here, we take the output of `wc -l *.pdb` and feed that right into `sort -nr`. The `-r` reverses the order of the sort.
+
+```bash
+$ wc -l *.pdb | sort -nr 
+```
+
+```
+     107 total
+      30 octane.pdb
+      21 pentane.pdb
+      20 cubane.pdb
+      15 propane.pdb
+      12 ethane.pdb
+       9 methane.pdb
+```
+
+You can chain pipes consecutively between multiple commands. We do so here to grab the first line of the sort with `head -n 1`
+
+```bash
+$ wc -l *.pdb | sort -nr | head -n 1
+```
+
+```
+     107 total
+```
+
+We can then redirect this output to a new file.
+
+```bash
+$ wc -l *.pdb | sort -nr | head -n 1 > total_lines.txt
+```
 
 ## Challenge Questions:
 1. In our current directory, we want to find the three files which have the least number of lines.  Which command listed below would work?
@@ -66,7 +144,7 @@ $ echo $SHELL
  - c.  `$ wc -l * | head -n 3 | sort -n`
  - d.  `$ wc -l * | sort -n | head -n 3`
  
-2. See the file called `data-shell/data/animals.txt.` 
+2. See the file called `data-shell/data/animals.txt`. 
 What text passes through each of the pipes and the final redirect in the pipeline below?
 
 `$ cat animals.txt | head -n 5 | tail -n 3 | sort -r > final.txt`
