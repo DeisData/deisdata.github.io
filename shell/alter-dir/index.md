@@ -9,7 +9,7 @@ layout: shell
 - How can I edit files?
 
 ## Creating Directories or Files
-`mkdir` creates a new directory.
+`mkdir` creates a new directory, followed by the name of the new directory. 
 
 ```bash
 $ mkdir new_dir
@@ -61,9 +61,9 @@ filename.txt
 filename2.txt
 ```
   
-## Moving or Renaming directories or files safely
+## Moving or renaming directories or files safely
 
-`mv filename.txt new_location` command move has two arguments.  The first tells `mv` what we're moving, while the second is where it's to go.
+`mv filename.txt new_location` command move has two arguments.  The first tells `mv` what we're moving, while the second is where it will go.
 
 ```bash
 $ mv filename.txt new_dir
@@ -74,7 +74,7 @@ $ ls -F new_dir
 filename.txt
 ```
 
-`mv -i` or `mv -interactive` must be used to make `mv` ask for confirmation before overwriting any existing file or directory with the same name as the second argument. (Otherwise, Beware! It will silently overwrite.)
+`mv -i` or `mv -interactive` must be used to make `mv` ask for confirmation before overwriting any existing file or directory with the same name as the second argument. (Otherwise, beware! It will silently overwrite.)
   
 ## Copying directories and/or files  
 
@@ -184,9 +184,12 @@ $ mv sucrose.dat matose.dat ___/___
   <div class="container" markdown="1">
 
 
-  <p>(a.) Will copy the file, so we will end up with the mispelled and correct version.
-  (b.) Will move (i.e. rename) the incorrect file name to a correct filename.
-    (c.) and (d.) will not work. Remember . is the current directory.</p>
+<ol type="a">
+<li>Will copy the file, so we will end up with the mispelled and correct version.</li>
+<li>Will move (i.e. rename) the incorrect file name to a correct filename.</li>
+<li>Not a working command.</li>
+<li>Will not work. Remember <code>.</code> is the current directory.</li>
+</ol>
 
   </div>
 
@@ -208,7 +211,7 @@ $ mv sucrose.dat matose.dat ___/___
   <summary>Solution</summary>
   <div class="container" markdown="1">
 
-  The remove command will not act on a directory unless the recursive option (-r)is given. 
+  The remove command will not act on a directory unless the recursive option <code>-r</code> is given. 
   </div>
 </details>
 
@@ -218,7 +221,7 @@ $ mv sucrose.dat matose.dat ___/___
 
   <div class="container" markdown="1">
 
-  This remove command will delete the directory thesis and all its contents, but we forgot to check for confirmation with the interaction option (-i).  Remember, deletion is permanent!
+  This remove command will successfully delete the directory thesis and all its contents, but we forgot to check for confirmation with the interaction option (-i).  Remember, deletion is permanent!
   
   </div>
 
@@ -238,8 +241,19 @@ $ mv sucrose.dat matose.dat ___/___
 
   <div class="container" markdown="1">
 
-  Remember ? wildcard matches to exactly one character.  * wildcard can match to zero to many characters.
+  Remember the <code>?</code> wildcard matches to exactly one character. The <code>*</code> wildcard can match to zero to many characters.
 
+  </div>
+</details>
+<details>
+  <summary>Solution</summary>
+  <div class="container" markdown="1">
+<ol type="a">
+  <li>Matches <code>methane.dat</code> only (needs one character before <code>ethane.dat</code>).</li>
+  <li>Matches both, can have any number of characters (including zero) before <code>ethane.dat</code>.</li>
+  <li>Matches <code>ethane.dat</code> only (requires only 3 characters before <code>ane.dat</code>).</li>
+  <li>Matches <code>ethane.dat</code> only (requires no characters before <code>ethane</code>).</li>
+</ol>
   </div>
 </details>
 
