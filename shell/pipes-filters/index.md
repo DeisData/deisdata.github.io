@@ -4,9 +4,14 @@ layout: shell
 
 # Pipes and filters
 The idea of linking together programs is why Unix has been so successful.
-Instead of creating enormous programs that try to do many  different things, we focus on lots of simple tools that work well with each other.
+Instead of creating enormous programs that try to do many different things, we focus on lots of simple tools that work well with each other.
 
 **Filters** are programs that transform a stream of input into a stream of output.
+
+## Questions to think about:
+- How can I combine existing commands to do new things?
+- How can I write to a file from the shell prompt?
+
 
 ## echo
 
@@ -32,9 +37,10 @@ $ echo $SHELL
 
 ## wc
 
-`wc` is the word count command for number of lines, words, and characters in a file (left to right in that order). Let's try that out on some of files in `data-shell/molecules`
+`wc` is the word count command for number of lines, words, and characters in a file (left to right in that order). Let's try that out on some of files in `data-shell/molecules`.
 
 ```bash
+$ cd datashell/molecules
 $ wc cubane.pdb
 ```
 
@@ -94,7 +100,7 @@ $ sort -n line_count.txt
 
 ## View particular file contents
 - `cat`is the concatentate (join together) command that prints the contents of files one after another
-- `less` displays a screenful of the file and then stops.  You can go forward one screenful by pressingthe spacebar, or back one by pressing [b] and [q] to quit.
+- `less` displays a screenful of the file and then stops.  You can go forward one screenful by pressingthe spacebar, or back one by pressing <kbd>B</kbd> and <kbd>Q</kbd> to quit.
 - `head` shows the first few lines of a file.  For example, `head -n 5` will show the first 5 lines.
 - `tail` shows the last few lines of a file
 - `cut` removes or cuts out certain sections of each line in a file
@@ -138,42 +144,59 @@ $ wc -l *.pdb | sort -nr | head -n 1 > total_lines.txt
 ```
 
 ## Challenge Questions:
-1. In our current directory, we want to find the three files which have the least number of lines.  Which command listed below would work?
- - a.  `$  wc -l * > sort -n > head -n 3`
- - b.  `$  wc -l * | sort -n | head -n 1-3`
- - c.  `$ wc -l * | head -n 3 | sort -n`
- - d.  `$ wc -l * | sort -n | head -n 3`
- 
-2. See the file called `data-shell/data/animals.txt`. 
-What text passes through each of the pipes and the final redirect in the pipeline below?
 
+<ol>
+  <li>In our current directory, we want to find the three files which have the least number of lines.  Which command listed below would work?
+    <ol type="a">
+      <li><code>$ wc -l * > sort -n > head -n 3</code></li>
+      <li><code>$ wc -l * | sort -n | head -n 1-3</code></li>
+      <li><code>$ wc -l * | head -n 3 | sort -n</code></li>
+      <li><code>$ wc -l * | sort -n | head -n 3</code></li>
+
+    </ol>
+
+
+  </li>
+  <li markdown="1">
+  See the file called `data-shell/data/animals.txt`. What text passes through each of the pipes and the final redirect in the pipeline below? <br>
+  
 `$ cat animals.txt | head -n 5 | tail -n 3 | sort -r > final.txt`
+  
+  Hint:  Build the pipeline up one command at a time to test your understanding.
+  </li>
 
-Hint:  Build the pipeline up one command at a time to test your understanding.
- 
-3.  `uniq` filters out adjecent matching lines in a file.  
-How can we extend the pipeline to find out what animals the file `data-shell/data/animals.txt` contains without any duplicates?
-<details>
-  <summary>Solution</summary>
+  <li markdown="1">
+
+   `uniq` filters out adjecent matching lines in a file. How can we extend the pipeline to find out what animals the file `data-shell/data/animals.txt` contains without any duplicates? 
+
+   <details>
+    <summary>Solution</summary>
+    
   <div class="container" markdown="1">
-
-```bash
-cut -d , -f 2 animals.txt | sort | uniq > animals_unique.txt
-```
+    
+  `$ cut -d , -f 2 animals.txt | sort | uniq > animals_unique.txt`
+    
   </div>
-</details>
+  
+  </details>
 
-4. Assuming your current working directory is `data-shell/data/`, which command would you use to produce a table that shows the total count of each type of animal in the file `animals.txt`?
-  - a. `$ sort animals.txt | uniq -c`
-  - b. `$ sort -t, -k2, 2 animals.txt | uniq -c`
-  - c. `$ cut -d, -f 2 animals.txt | uniq -c`
-  - d. `$ cut -d, -f 2 animals.txt | sort | uniq -c`
-  - e. `$ cut -d, -f 2 animals.txt | sort | uniq -c | wc -l`
+  </li>
+ 
+  <li markdown="1">Assuming your current working directory is `data-shell/data/`, which command would you use to produce a table that shows the total count of each type of animal in the file `animals.txt.
 
-## Questions of the day:
-- How can I combine existing commands to do new things?
-- How can I write to a file from the shell prompt?
+  <ol type="a">
+    <li><code>$ sort animals.txt | uniq -c</code></li>
+    <li><code>$ sort -t, -k2, 2 animals.txt | uniq -c</code></li>
+    <li><code>$ cut -d, -f 2 animals.txt | uniq -c</code></li>
+    <li><code>$ cut -d, -f 2 animals.txt | sort | uniq -c</code></li>
+    <li><code>$ cut -d, -f 2 animals.txt | sort | uniq -c | wc -l</code></li>
 
+  </ol>
+
+
+  </li>
+
+</ol>
 ## Resources
 This lesson is adapted from [The Unix Shell on Software Carpentry](http://swcarpentry.github.io/shell-novice/).
 
