@@ -64,7 +64,7 @@ Boolean expressions essentially ask questions that evaluate as `True` or `False`
 
 Boolean expressions are best used between the same data types. You can easily get unexpected results when comparing strings and ints, for instance. 
 
-### Equality: `==`
+### Equality: ==
 
 
 ```python
@@ -92,7 +92,7 @@ Boolean expressions are best used between the same data types. You can easily ge
 
 *Note: checking for equality for floats can be tricky given common rounding errors. Try to avoid if possible, and test for inequality (see below).* 
 
-### Not equals: `!=`
+### Not equals: !=
 
 
 ```python
@@ -170,7 +170,7 @@ There are 4 different boolean operators for comparing inequalities: less than (`
 
 
 
-### Inclusivity: `in`
+### Inclusivity: in
 
 We can use the keyword `in` to check if an item is in a data structure (list, dictionary, set, tuple).
 
@@ -222,7 +222,7 @@ print('good movie' in 'star wars sequel trilogy')
     False
 
 
-### `not`
+### not
 Just as adding not in a sentence reverses its meaning (e.g., "The desk is red." vs "The desk is not red."), adding the keyword `not` in front of a boolean expression reverses the value returned -> `not 0 == 0` returns `False`.
 
 
@@ -263,7 +263,9 @@ not True
 
 ### Order of Operators
 
-Order of operations work with boolean expressions similarly to math. Comparisons run left to right, unless you put parentheses around the comparisons. 
+We can chain together boolean comparisons with `and` and `or`. 
+
+Putting `and` between two booleans will make the whole statement true only both statements are true. 
 
 
 ```python
@@ -275,7 +277,7 @@ Order of operations work with boolean expressions similarly to math. Comparisons
 
     True
 
-
+On the other hand, `or` only needs one of the statements to be true.
 
 
 ```python
@@ -287,7 +289,7 @@ Order of operations work with boolean expressions similarly to math. Comparisons
 
     True
 
-
+Order of operations work with boolean expressions similarly to math. Comparisons run left to right, unless you put parentheses around the comparisons. 
 
 
 ```python
