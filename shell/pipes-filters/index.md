@@ -197,6 +197,7 @@ $ wc -l *.pdb | sort -nr | head -n 1 > total_lines.txt
   </li>
 
 </ol>
+
 ## Resources
 This lesson is adapted from [The Unix Shell on Software Carpentry](http://swcarpentry.github.io/shell-novice/).
 
