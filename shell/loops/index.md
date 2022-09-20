@@ -57,19 +57,19 @@ $ for filename in basilisk.dat minotaur.dat unicorn.dat
 
 ### Repeat running a program with all your input data files
 
-Nell has files NENE00000A.txt and NENE00000B.txt that need needs to run through the script `goostats.sh` one at a time. The program `goostats.sh` has two arguments, the input data file, and the output statistics file.
+Nell has files NENE00000A.txt and NENE00000B.txt that need needs to run through the program `goostats` one at a time. The program `goostats` has two arguments, the input data file, and the output statistics file.
 
 ```bash
 $ cd ../north-pacific-gyre/2012-07-03
 $ for datafile in NENE*[AB].txt
 > do 
->    bash goostats.sh $datafile stats-$datafile   #where stats-$datafile is the output of goostats program.
+>    bash goostats $datafile stats-$datafile   #where stats-$datafile is the output of goostats program.
 >    echo output: stats-$datafile
 done
 ```
 
 ### Checking on your loop before you run it!
-It can be a good idea to run your loop with `echo` in front of you commands, to make sure it will act the way you believe.  For example, in the loop above I may want to first run `echo "bash goostats.sh $datafile stats-$datafile"` before I run the loop to execute the `goostats.sh` program.  
+It can be a good idea to run your loop with `echo` in front of you commands, to make sure it will act the way you believe.  For example, in the loop above I may want to first run `echo "bash goostats $datafile stats-$datafile"` before I run the loop to execute the `goostats` program.  
 
 
 ### Nested Loops Challenge!
