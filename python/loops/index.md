@@ -27,7 +27,7 @@ However, if you want to expand this even a few numbers further, it gets very ted
 
 To save us from having to have the same code duplicated over and over, we have **loops**. They are incredibly powerful tools for examining large amounts of information. Here we will be looking at **`while` loops** and **`for` loops**.
 
-## `while` loops
+## while loops
 
 `while` loops are somewhat similar to `if` statements as both depend on conditions to do actions. You can think of a `while` loop as an `if` statement that keeps on repeating as long as the condition stays true.
 
@@ -87,7 +87,7 @@ while notJimmy: # while notJimmy is True
     Jimmy , False
 
 
-#### Question: `while` loops:
+#### Question: while loops:
 
 Create a variable `x` with the value of 8. Divide `x` by 2 and re-assign this value to `x`. Continue to do this until `x` is less than 0.00001. Print out how many divisions this takes.
 
@@ -121,7 +121,7 @@ print(i)
 
 </details>
 
-## For loops
+## for loops
 
 `for` loops are one of the most powerful tools that base Python has to offer. `for` loops take **iterables** (lists, dictionaries, sets, tuples, even strings) and perform the same actions to each item contained within them.  
 
@@ -252,7 +252,7 @@ for food in my_breakfast:
     I sometimes like to eat toast.
 
 
-#### Question: `for` loops
+#### Question: for loops
 
 Iterate over all integers from 0 to 1000 and print all multiples of 41 (numbers that can be divided by 41 with no remainder). How many multiples are there?
 
@@ -313,7 +313,7 @@ number of multiples: 25
 
 </details>
 
-### Bonus: Nested `for` loops
+### Bonus: Nested for loops
 
 Just like you can use `if` statements in a `for` loop, you can also put `for` loops inside of other `for` loops. This is great if you want to use all combinations of two lists, for instance.
 
