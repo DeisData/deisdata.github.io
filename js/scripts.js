@@ -3,16 +3,8 @@ function reactiveNav() {
     if (x.className === "topnav") { // if the nav is closed, open it
       x.className+=" responsive";
     } else { // close the nav if open
-      x.className="topnav";Å
+      x.className="topnav";
       x.style.paddingBottom=0;
-      var subnavs=document.getElementsByClassName("subnav");
-      for (var i=0; i < subnavs.length; i++){
-        subnavs[i].getElementsByTagName('button')[0].style.backgroundColor = "#333";
-        var subcontents=subnavs[i].getElementsByClassName("subnav-content");
-        for (var j=0; j < subcontents.length; j++){
-          subcontents[j].style.display="none";
-        }
-      }
     }
 }
 function subNav(id, subnavbtn) {
@@ -22,19 +14,23 @@ function subNav(id, subnavbtn) {
     var subnavbtns=document.getElementsByClassName("subnavbtn");
     var open=true;
     // don't reopen if already open
-    if (x.style.display === "block"){
+    if (x.style.visibility === "visible"){
       nav.style.paddingBottom="0";
       open=false;
     }
     // close all subnavs
     for (var i=0; i < subnavbtns.length; i++){
-      subcontents[i].style.display="none";
+      // subcontents[i].style.display="none";
+      subcontents[i].style.visibility="hidden";
+      subcontents[i].style.opacity=0;
       subnavbtns[i].style.backgroundColor="#333";
     }
     // turn off subnav on
     // only open if closed
     if (open) {
-        x.style.display="block";
+        // x.style.display="block";
+        x.style.visibility="visible";
+        x.style.opacity=1;
         subnavbtn.style.setProperty("background-color", "#4D858D", "important");
         subnavbtn.style.setProperty("color", "white");
 
