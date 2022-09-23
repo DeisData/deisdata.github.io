@@ -216,7 +216,7 @@ len( pd.unique( df['country'] ) ) # this is called nesting functions -> calling 
 
 Numerical columns can be summarized in several ways. Let's find the mean first.
 
-To make things simpler, we'll just do calculations on the `population`, `life_expectancy`, and `babies_per_woman` columns. We can put those names in an arrangement called a`list` and then specify that list for the columns.
+To make things simpler, we'll just do calculations on the `population`, `life_expectancy`, and `babies_per_woman` columns. We can put those names in an arrangement called a `list` and then specify that list for the columns.
 
 
 ```python
