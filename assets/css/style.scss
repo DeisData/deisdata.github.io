@@ -162,7 +162,9 @@ a {
 }
 
 .subnav-content {
-  display: none;
+  display: block;
+  visibility: hidden;
+  opacity: 0;
   position: absolute;
   left: 0;
   background-color: #4D858D;
