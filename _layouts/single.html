@@ -1,10 +1,23 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en-US' }}">
 
-{% include nav.html %}
+  {% include head.html %}
 
-{% include main.html %}
+    <body onload="closeSubNavs();">
+  
+    {% include banner.html %}
+
+    <main id="content" class="main-content" role="main">
+        
+      {% include nav.html %}
+      
+      {% include main.html %}
+
+      {% include footer.html %}
+    </main>
+
+  </body>
+</html>
 
 
 
