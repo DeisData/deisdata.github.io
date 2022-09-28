@@ -31,7 +31,7 @@ Make sure to initialize with a README, which will give general information about
 
 ## Clone the remote repository to your machine
 
-To get this repository onto our local machine, we will clone it, which copies its contents. Go to the repository you just made on GitHub. You will see a `README.md` file and a license file. Click on "Code", which opens a dropdown menu. Copy the HTTPS link, which will be `https://github.com/{USERNAME}/{REPO-NAME}.git`, with your username and repo name, respectively.
+To get this repository onto our local machine, we will clone it, which copies its contents. Go to the repository you just made on GitHub. You will see a `README.md` file and a license file. Click on "Code", which opens a dropdown menu. Copy the **HTTPS** link, which will be `https://github.com/{USERNAME}/{REPO-NAME}.git`, with your username and repo name, respectively.
 
 <br>
 
@@ -130,7 +130,7 @@ If we run `git status` again, we'll notice a few things.
 
 ![post commit](/assets/images/git/quick-start/post_commit.png)
 
-It now tells us that we no longer have any changes to commit in our local repository. It also is telling us that we are ahead of the upstream repository on GitHub by 1 commit. This is because our changes have not yet been sent or "pushed" to that remote repository yet. We will do this next session. 
+It now tells us that we no longer have any changes to commit in our local repository. It also is telling us that we are ahead of the upstream repository on GitHub by 1 commit. This is because our changes have not yet been sent or "pushed" to that remote repository yet. 
 
 ## Recap
 - `git clone`: copy a remote repository locally

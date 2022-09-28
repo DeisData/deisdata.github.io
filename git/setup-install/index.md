@@ -5,9 +5,9 @@ layout: git
 # Setup and Installation
 In this workshop, we are using **Git** and [GitHub.com](https://github.com/).
 
-**Git** is a version control system that lets you track who made changes, when those changes were made, and what they were. It allows for for easily updating a version of your work. 
+**Git** is a version control system that lets you track who made changes, when those changes were made, and what they were. It allows for easily updating a version of your work. 
 
-**GitHub.com** allows you to host repositories online to collaborate with others on your projects. You will need a free account for part of this workshop. We will follow the instruction to keep your email address private at GitHub.
+**GitHub.com** allows you to host repositories online to collaborate with others on your projects. You will need a free GitHub account for part of this workshop.
 
 ## Register for a GitHub Account
 Go to [GitHub.com](https://github.com), register for an account, and verify it. 
@@ -36,7 +36,7 @@ When we use Git on a new computer for the first time, we need to configure a few
 - what our preferred text editor is
 - and that we want to use these settings globally (i.e., for every project).
 
-**Windows**:  Open the git shell "Git Bash" you downloaded through the bash installation procedures, or run the command `bash` in your Command Prompt.
+**Windows**:  Open "Git Bash", or run the command `bash` in your Command Prompt.
 
 **MacOS**:  Open a bash shell in Terminal.
 
