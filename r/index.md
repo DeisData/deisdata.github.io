@@ -86,5 +86,9 @@ On Mac, you can simply download and install the newest version of R. When you re
 - From within RStudio, go to Help > Check for Updates to install newer version of RStudio (if available, optional).
 - To update packages, go to Tools > Check for Package Updates. If updates are available, select All (or just tidyverse), and click Install Updates.
 
-You are ready for Data Science Essentials for R!
+## Data set and code
+
+1. Intro to R and Tidyverse [ <a href="https://drive.google.com/drive/folders/1e-8Qs_AZBH-QcQqmmCloT9ghZesV55z6" target="_blank">code and data</a> ]
+
+
 
