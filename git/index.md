@@ -22,3 +22,5 @@ Workshop materials for a git and GitHub workshop series from Brandeis Library RI
 - Extras: [Using GitHub from RStudio](http://swcarpentry.github.io/git-novice/14-supplemental-rstudio//)
 
 These sessions are tailored from [Software Carpentry](http://swcarpentry.github.io/git-novice/).
+
+[&nbsp;<a href="/git/setup-install/">get started</a>&nbsp;]

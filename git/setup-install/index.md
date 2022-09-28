@@ -98,3 +98,8 @@ $ git config --list
 
 
 This workshop has been adapted from [the Software Carpentry](https://software-carpentry.org/).
+
+<span class="lesson">
+    [&nbsp;<a href="/git/">previous</a>&nbsp;]
+    [&nbsp;<a href="/git/quick-start/">next</a>&nbsp;]    
+</span>

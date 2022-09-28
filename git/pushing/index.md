@@ -55,3 +55,8 @@ Once the push goes through, the terminal will print some information describing 
 ## Recap
 
 - `git push`: send local commits to a remote repository
+
+<span class="lesson">
+    [&nbsp;<a href="/git/quick-start/">previous</a>&nbsp;] 
+    [&nbsp;<a href="/git/fetch-merge/">next</a>&nbsp;] 
+</span>

@@ -75,3 +75,9 @@ This will print out information on all of this repo's commits, including, the co
 - `git merge`: merge remote commits with local changes
 - `git diff`: display the difference between working and committed file
 - `git log`: shows the history of commits
+
+
+<span class="lesson">
+    [&nbsp;<a href="/git/quick-start/">previous</a>&nbsp;]
+    [&nbsp;<a href="/git/git-utilities/">next</a>&nbsp;]    
+</span>

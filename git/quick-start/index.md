@@ -148,3 +148,8 @@ Please reach out to <dataservices@brandeis.edu> with any questions or concerns.
 
 
 This workshop has been adapted from [the Software Carpentry](https://software-carpentry.org/).
+
+<span class="lesson">
+    [&nbsp;<a href="/git/setup-install/">previous</a>&nbsp;]
+    [&nbsp;<a href="/git/pushing/">next</a>&nbsp;]    
+</span>

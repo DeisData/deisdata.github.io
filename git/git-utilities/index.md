@@ -98,3 +98,8 @@ Some files you may want to ignore might be program-specific files that show up i
 ## Recap:
 - `HEAD`: identifier that points to the most recent local commit
 - `.gitignore`: a file where you can list files you want left out of version control
+
+<span class="lesson">
+    [&nbsp;<a href="/git/fetch-merge/">previous</a>&nbsp;]
+    [&nbsp;<a href="/git/glossary/">next</a>&nbsp;]    
+</span>

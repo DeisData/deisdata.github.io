@@ -10,3 +10,7 @@ layout: git
 - `git status`: shows what is in staging and was is being commited.
 - `git add file_name`: Moves a file to staging.
 - `git commit -m "Detailed log message goes here."`: Commits files in staging to history and documents message to the log.
+
+<span class="lesson">
+    [&nbsp;<a href="/git/git-utilities/">previous</a>&nbsp;]    
+</span>
