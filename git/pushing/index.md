@@ -28,13 +28,13 @@ $ git status
 GitHub now requires users to use personal access tokens in order to push commits and perform other actions. To create a personal access token, follow these instructions:
 
 1. Go to GitHub.
-2. Click on your profile in the top right, and go to "Settings".
-3. Scroll to the bottom and click Developer Settings".
-4. Go to "Personal access tokens".
-5. Click "Generate new token".
+2. Click on your profile in the top right, and go to **Settings**.
+3. Scroll to the bottom and click **Developer Settings**.
+4. Go to **Personal access tokens**.
+5. Click **Generate new token**.
 6. Write a short note for what the token is used for (e.g., "My MacBook").
 7. (Optional) For maximum security, give an expiration to the token.
-8. Check the "repo" box. Make sure all the sub-boxes are checked, as well.
+8. Check the **repo** box. Make sure all the sub-boxes are checked, as well.
 9. Generate token, copy the key, and make sure to store it somewhere securely. You will need to paste it into the terminal when we run `git push`.
 
 ## Pushing to GitHub

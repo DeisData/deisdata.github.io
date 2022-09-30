@@ -15,7 +15,7 @@ $ nano README.md
 ```
 ![git log](/assets/images/git/git-utilities/bad_change.png)
 
-In our specific case, it's pretty easy to remember what change we made and remove it. But if you are editing code across many lines of different files, it can be become more challenging finding where changes are. 
+In our specific case, it's pretty easy to remember what change we made and remove it. But if you are editing code across many lines in different files, it can be become more challenging finding where changes are. 
 
 Running `git diff HEAD` will show you all unstaged changes across all of the files in the repository. `HEAD` is essentially a variable that by default references the last made commit. Thus, `git diff HEAD` shows the difference between the last commit and our uncommitted changes. 
 
@@ -29,7 +29,7 @@ $ git diff HEAD README.md
 
 *Note: If you don't include `HEAD` (`git diff`), the command will work only when the changes are unstaged. You can add `git diff --staged` for changes in staged files specifically.*
 
-We can also see the difference between our uncommitted changes and several commits ago by adding `~NUMBER` to `HEAD`.
+We can also see the difference between our uncommitted changes and several commits ago by adding `~{NUMBER}` to `HEAD`.
 
 ```bash
 $ git diff HEAD~2 README.md

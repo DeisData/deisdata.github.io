@@ -4,7 +4,11 @@ layout: git
 
 # Fetch and merge from GitHub
 
-If we are collaborating with others on a project, often our local repository will be out of sync with the remote GitHub repository. In the simplest case, we will simply be one or more commits behind what is on GitHub. To address this, we first want to **fetch**, or retrieve, any commits from GitHub and then **merge** them into our local repository. For instance, if someone has created a new file `data.text` and committed it to the GitHub repo, we can run `git fetch` followed by `git merge` to have that file reflected on our machine. If we are simply behind what is on GitHub, it will be a painless process that updates our local repository. When collaborating with others, it is a healthy practice to run these commands before we make any changes and before we push changes. 
+If we are collaborating with others on a project, often our local repository will be out of sync with the remote GitHub repository. In the simplest case, we will simply be one or more commits behind what is on GitHub. 
+
+To address this, we first want to **fetch**, or retrieve, any commits from GitHub and then **merge** them into our local repository. For instance, if someone has created a new file `data.text` and committed it to the GitHub repo, we can run `git fetch` followed by `git merge` to have that file reflected on our machine. 
+
+If we are simply behind what is on GitHub, it will be a painless process that updates our local repository. When collaborating with others, it is a healthy practice to run these commands before we make any changes and before we push changes. 
 
 ## Make changes to the README on GitHub
 
@@ -57,7 +61,7 @@ $ git merge
 
 ![git merge](/assets/images/git/fetch-merge/git_merge.png)
 
-*Note: The command `git pull` is equivalent to running `git fetch` immediately followed by `git merge`, though it may lead to some unexpected behavior at times. We will discuss this later.*
+*Note: The command `git pull` is equivalent to running `git fetch` immediately followed by `git merge`, though it may lead to some unexpected behavior at times.*
 
 If you run `cat README.md` again, you will see the change present in our local file. If we want to see a history of changes in this repository, you can use `git log`.
 
