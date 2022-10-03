@@ -106,10 +106,10 @@ This command prints out a lot of information. It says we are on the main branch 
 
 ### Stage modified file
 
-We want to stage our modified file. Staging a file means we want to commit it. To do this, we'll use the `git stage` command.
+We want to stage our modified file. Staging a file means we want to commit it. To do this, we'll use the `git add` command.
 
 ```bash
-$ git stage README.md
+$ git add README.md
 ```
 
 If we run `git status` again, we'll see that `README.md` is now staged for commit and in green text.

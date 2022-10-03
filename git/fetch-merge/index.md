@@ -46,7 +46,7 @@ $ git diff HEAD origin/main README.md
 This command and the output are somewhat complicated, so let's step through them.
 
 - `HEAD` specifies our local version of the file.
-- `origin/main` specifies the version of the file commited on GitHub. We'll get into exactly what this means in a later session.
+- `origin/main` specifies the version of the file commited on GitHub. We'll get into exactly what this means later.
 - Putting `HEAD` and `origin/main` in the command followed by `README.md` means that we want to compare the differences between the two versions of the README.
 - The output labels the `HEAD` version as `a/README.md` and the `origin/main` version as `b/README.md`.
 - Lines marked as `-` are present in the local file, and lines with `+` are the incoming version.
