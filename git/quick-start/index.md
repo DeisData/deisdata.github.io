@@ -9,7 +9,7 @@ This guide will show you the basics of making a repository on GitHub, cloning it
 
 ## Create a remote repository on GitHub
 
-Go to GitHub and create a new repository by clicking "New". 
+Go to GitHub and create a new repository by clicking **New**. 
 
 <br>
 
@@ -31,7 +31,7 @@ Make sure to initialize with a README, which will give general information about
 
 ## Clone the remote repository to your machine
 
-To get this repository onto our local machine, we will clone it, which copies its contents. Go to the repository you just made on GitHub. You will see a `README.md` file and a license file. Click on "Code", which opens a dropdown menu. Copy the **HTTPS** link, which will be `https://github.com/{USERNAME}/{REPO-NAME}.git`, with your username and repo name, respectively.
+To get this repository onto our local machine, we will clone it, which copies its contents. Go to the repository you just made on GitHub. You will see a `README.md` file and a license file. Click on **Code**, which opens a dropdown menu. Copy the **HTTPS** link, which will be `https://github.com/{USERNAME}/{REPO-NAME}.git`, with your username and repo name, respectively.
 
 <br>
 
