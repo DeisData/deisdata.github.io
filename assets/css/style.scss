@@ -249,6 +249,10 @@ div.table {
 
 
 .language-python.highlighter-rouge {
+  .highlight .p {
+    color: rgb(255, 215, 0)
+
+  }
   a.nav-link.active {
     color: #b5bd68;
   }
@@ -280,8 +284,8 @@ div.table {
  
 // .highlight .c { color: #969896 } /* Comment */
 .highlight .err { color: #cc6666 } /* Error */
-// .highlight .k { color: #b294bb } /* Keyword */
-.highlight .l { color: #de935f } /* Literal */
+.highlight .k, .l, .o { color: #de935f} /* Keyword, literal, assignment */
+// .highlight .l { color: #de935f } /* Literal */ 
 
 .highlight .p { color: #ffffff } /* Punctuation */
 .highlight .cm { color: #969896 } /* Comment.Multiline */
@@ -304,6 +308,7 @@ div.table {
 .highlight .s { color: #b5bd68 } /* Literal.String */
 .highlight .na { color: #81a2be } /* Name.Attribute */
 .highlight .nb { color: #ffffff } /* Name.Builtin */
+.highlight .nb { color: #81a2be } /* Name.Builtin */
 .highlight .nc { color: #f0c674 } /* Name.Class */
 .highlight .no { color: #cc6666 } /* Name.Constant */
 .highlight .nd { color: #8abeb7 } /* Name.Decorator */
