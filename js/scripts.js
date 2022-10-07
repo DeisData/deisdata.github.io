@@ -71,6 +71,9 @@ function labelBlocks() {
       case "language-bash highlighter-rouge":
         a.innerText="Bash";
         break; 
+      case "language-r highlighter-rouge":
+        a.innerText="R";
+        break;
       case "language-markdown highlighter-rouge":
         a.innerText="Markdown";
         break; 
