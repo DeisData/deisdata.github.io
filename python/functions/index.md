@@ -10,10 +10,13 @@ Thankfully, we can make this easier by breaking programs down into **functions**
 
 Custom functions help us understand larger/more complicated ideas by encapsulating separate parts of our program, allowing us to view each as a single “thing”. Importantly, it also lets us re-use pieces of code without having to duplicate dozens of lines of code over and over again. 
 
-Objectives:
+### Objectives:
 
 **Define a function using `def` with a name, parameters, and a block of code.**
 
+### Materials:
+
+- <a href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/functions.ipynb" target="_blank">Filled-in Jupyter notebook</a>
 
 
 
@@ -153,10 +156,20 @@ def another_function
 ```
 
 
-      Input In [70]
-        def another_function
-                            ^
-    SyntaxError: invalid syntax
+<details markdown="1">
+  <summary>Solution</summary>
+
+  <div class="container" markdown="1">
+
+The function definition is missing the correction punctuation (`()` and `:`):
+
+```python
+def another_function():
+    ...
+```
+  </div>
+
+</details>
 
 
 
@@ -171,7 +184,20 @@ def report(pressure):
 print('calling', report, 22.5)
 ```
 
-    calling <function report at 0x7fb43777e5e0> 22.5
+<details markdown="1">
+  <summary>Solution</summary>
+
+  <div class="container" markdown="1">
+
+Because we don't actually call the `report()` function, the `print()` statement in `report()` is not called. Printing `report` without the paretheses just returns information about the function, often called its **representation**. This includes its type (`function`), name (`report`), and its location in memory (e.g. `0x7fb43777e5e0`).
+
+```
+calling <function report at 0x7fb43777e5e0> 22.5
+```
+  </div>
+
+
+</details>
 
 
 ## Default values
@@ -227,7 +253,12 @@ fahr_to_celsius(32)
 def fahr_to_celsius(temp):
     return ((temp - 32) * (5/9))
 ```
+<details markdown="1">
+  <summary>Solution</summary>
 
+  <div class="container" markdown="1">
+
+It does matter! Because the function is called before it is defined, we will get an error here. Functions must be defined before they are called:
 
 ```python
 def fahr_to_celsius(temp):
@@ -235,11 +266,19 @@ def fahr_to_celsius(temp):
 
 print('freezing point of water:', fahr_to_celsius(32), 'C')
 print('boiling point of water:', fahr_to_celsius(212), 'C')
-
 ```
 
-    freezing point of water: 0.0 C
-    boiling point of water: 100.0 C
+```
+freezing point of water: 0.0 C
+boiling point of water: 100.0 C
+```
+
+</div>
+
+
+</details>
+
+
 
 
 ## Composing Functions
@@ -371,7 +410,7 @@ for base in dna_sequence1:
     elif base == 'C':
         Cs1 += 1
     
-print("GC%:", (Gs1+Cs1)/(Gs1+Cs1+Ts1+Cs1))
+print("GC%:", (Gs1+Cs1)/(Gs1+Cs1+Ts1+As1))
 
 # sequence 2
 As2 = 0
@@ -390,7 +429,7 @@ for base in dna_sequence2:
     elif base == 'C':
         Cs2 += 1
     
-print("GC%:", (Gs2+Cs2)/(Gs2+Cs2+Ts2+Cs2))
+print("GC%:", (Gs2+Cs2)/(Gs2+Cs2+Ts2+As2))
 
 
 # sequence 3
@@ -410,7 +449,7 @@ for base in dna_sequence3:
     elif base == 'C':
         Cs3 += 1
     
-print("GC%:", (Gs3+Cs3)/(Gs3+Cs3+Ts3+Cs3))
+print("GC%:", (Gs3+Cs3)/(Gs3+Cs3+Ts3+As3))
 
 # sequence 4
 As4 = 0
@@ -429,14 +468,66 @@ for base in dna_sequence4:
     elif base == 'C':
         Cs4 += 1
     
-print("GC%:", (Gs4+Cs4)/(Gs4+Cs4+Ts4+Cs4))
+print("GC%:", (Gs4+Cs4)/(Gs4+Cs4+Ts4+As4))
 ```
 
-    GC%: 0.5376344086021505
-    GC%: 0.5128205128205128
-    GC%: 0.43478260869565216
-    GC%: 0.5157894736842106
+    GC%: 0.5
+    GC%: 0.6
+    GC%: 0.4
+    GC%: 0.49
 
+
+<details markdown="1">
+  <summary>Solution</summary>
+
+  <div class="container" markdown="1">
+
+There are many ways to clean up this code. Here is one example.
+
+```python
+# initialize sequences
+dna_sequence1 = 'CGACCAATAGTGATCCACGGATTCTCTGAAGAGTCAGCATGCGGGAAATATACGCACAACTAACGGGACGGCGATTAACGCCAAGCCTGGGCTGAATATT'
+dna_sequence2 = 'TGCGGCAGGATTTCGGACCGAACCTTGTCACCCTTACATTCATGCATAGCAGGTTGCGTTGCGTGGCAGCGTGCCCACCACCTCCCGCTGGTTGCCCGTA'
+dna_sequence3 = 'AAAGTTGTGGTACTAATCGTATTGTTGCATTGACCCATAAAGATCCTCATTTTACAGAGCACATGAGATCCCGTTGGTATCAACGCCTGATTCTTATAGG'
+dna_sequence4 = 'GAGCGAGAGCTTACTGTGTGCTATCCCTCAAGATGCGTTGAAAAGTCAACTCACCAGATACTTAGGCCTGACGAGACATCGATTGCCGGTTCGAAAAGTG'
+
+def gc_analysis(sequence):
+    # make bases into a dictionary
+    bases = {
+        'A': 0,
+        'T': 0,
+        'G': 0,
+        'C': 0
+    }
+
+    for base in sequence: 
+        
+        bases[base] += 1 # use keys to remove conditional
+    
+    # make calculation have less clutter
+    GCs = bases['G']+bases['C']
+    total_bases = len(sequence)
+    
+    print("GC%:", GCs/total_bases)
+
+# create an iterable to use for loop
+dna_sequences = [dna_sequence1, dna_sequence2, dna_sequence3, dna_sequence4]
+
+for sequence in dna_sequences:
+    gc_analysis(sequence)
+```
+
+```
+GC%: 0.5
+GC%: 0.6
+GC%: 0.4
+GC%: 0.49
+```
+
+</div>
+
+
+</details>
 
 ## Add documentation to your functions
 
@@ -541,6 +632,18 @@ def std_dev(sample):
 
     return np.sqrt(sum_squared_devs / (len(sample) - 1))
 ```
+
+<details markdown="1">
+  <summary>Solution</summary>
+
+  <div class="container" markdown="1">
+
+`std_dev()` is better because the function name and variable names have meaning, making it easier to understand what is going on at a brief glance. `s()` would require extensive documentation to make sense to an outside party.
+
+</div>
+
+
+</details>
 
 #### Resources
 This lesson is developed from the following resources:
