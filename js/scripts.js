@@ -11,7 +11,6 @@ function reactiveNav() {
 function closeSubNavs() {
   var subcontents=document.getElementsByClassName("subnav-content");
   for (var i=0; i < subcontents.length; i++){
-    // subcontents[i].style.display="none";
     subcontents[i].style.visibility="hidden";
     subcontents[i].style.opacity=0;
   }
@@ -29,7 +28,6 @@ function subNav(id, subnavbtn) {
     }
     // close all subnavs
     for (var i=0; i < subnavbtns.length; i++){
-      // subcontents[i].style.display="none";
       subcontents[i].style.visibility="hidden";
       subcontents[i].style.opacity=0;
       subnavbtns[i].style.backgroundColor="#333";
@@ -37,7 +35,6 @@ function subNav(id, subnavbtn) {
     // turn off subnav on
     // only open if closed
     if (open) {
-        // x.style.display="block";
         x.style.visibility="visible";
         x.style.opacity=1;
         subnavbtn.style.setProperty("background-color", "#4D858D", "important");

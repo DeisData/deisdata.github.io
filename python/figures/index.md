@@ -476,4 +476,5 @@ You can make virtually any plot and customization you can think of in Python. So
 
 <span class="lesson">
     [&nbsp;<a href="/python/pandas">previous</a>&nbsp;]
+    [&nbsp;<a href="/python/functions">next</a>&nbsp;]
 </span>

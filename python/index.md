@@ -20,6 +20,8 @@ Each lesson includes a link to a page on this site, as well as links to filled-i
 8. **<a href="/python/pandas/" target="_blank">pandas</a>** **[** <a href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/numpy-pandas-codealong.ipynb" target="_blank">code-along notebook</a> / <a href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/numpy-pandas.ipynb" target="_blank">filled-in Jupyter notebook</a> **]**
 9.  **<a href="/python/figures/" target="_blank">figures</a>** **[** <a href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/figures-codealong.ipynb" target="_blank">code-along notebook</a> / <a href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/figures.ipynb" target="_blank">filled-in notebook</a>
  **]**
+10. **<a href="/python/functions/" target="_blank">functions</a>** **[** <a href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/functions.ipynb" target="_blank">filled-in notebook</a>
+ **]**
 
 ## Using Colab
 

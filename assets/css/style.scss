@@ -226,6 +226,9 @@ a {
 
 .highlight{
 
+  max-height: 35em;
+  overflow: scroll;
+
   pre.highlight code { color: #ffffff !important } // basic text
   .highlight { background-color: #333}
   .n, .h, .nn{ color: #ffffff } /* Name,  Name.Namespace*/
@@ -314,7 +317,7 @@ div.table {
 .highlight .nd { color: #8abeb7 } /* Name.Decorator */
 .highlight .ni { color: #ffffff } /* Name.Entity */
 .highlight .ne { color: #cc6666 } /* Name.Exception */
-.highlight .nf { color: #81a2be } /* Name.Function */
+.highlight .nf { color: rgb(255, 202, 112); font-weight: normal; } /* Name.Function */
 .highlight .nl { color: #ffffff } /* Name.Label */
 // .highlight .nn { color: #f0c674 } /* Name.Namespace */
 .highlight .nx { color: #81a2be } /* Name.Other */
