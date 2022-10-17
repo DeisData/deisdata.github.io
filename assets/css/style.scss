@@ -280,9 +280,13 @@ div.table {
 
 }
 
-.language-r.highlighter-rouge .highlight .nf {
-  color: white;
-  font-weight: normal;
+.language-r.highlighter-rouge .highlight{
+  .nf {
+    color: white;
+    font-weight: normal; 
+  }
+  .n { color:rgb(193, 194, 244);}
+  .m { color: #b5bd68;}
 }
  
 // .highlight .c { color: #969896 } /* Comment */
