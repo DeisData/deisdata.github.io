@@ -4,6 +4,8 @@ layout: r
 
 # Data wrangling with the Tidyverse
 
+[Workshop materials](https://drive.google.com/drive/folders/1e-8Qs_AZBH-QcQqmmCloT9ghZesV55z6)
+
 When running an analysis, data cleaning and pre-processing can often take longer than doing the statistical tests. R is an excellent tool to speed up this process, with many powerful tools to manipulate and prepare data for analysis and plotting.
 
 ## Install and Load Tidyverse Packages
