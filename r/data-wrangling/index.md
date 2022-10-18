@@ -4,7 +4,7 @@ layout: r
 
 # Data wrangling with the Tidyverse
 
-When running an analysis, data cleaning and pre-processing can often take longer than running the statistical tests. R is an excellent tool to speed up this process, with many powerful tools to manipulate and prepare data for analysis and plotting.
+When running an analysis, data cleaning and pre-processing can often take longer than doing the statistical tests. R is an excellent tool to speed up this process, with many powerful tools to manipulate and prepare data for analysis and plotting.
 
 ## Install and Load Tidyverse Packages
 
@@ -14,7 +14,7 @@ access the tools and functions in a package.
 
 ``` r
 # To install packages:
-# install.packages("tidyverse")
+install.packages("tidyverse")
 
 library(tidyverse)
 ```
@@ -39,11 +39,11 @@ penguins <- read_csv("penguins.csv")
 ## Data examination
 
 Tidyverse expects our data to be **tidy**: 
-1. Each column is a variable 
-2. Each row is an observation
-3. Each cell has a value
+1. Each column is a variable. 
+2. Each row is an observation.
+3. Each cell has a value.
 
-Our data conform to these rules. Let’s start to explore our data set, first using `glimpse()` to see a summary, showing the dimensions of the data, the column names, and what type of data live in each column. 
+Our data conform to these rules. Let’s start to explore our data set, first using `glimpse()` to see a summary that shows the dimensions of the data, the column names, and what type of data live in each column. 
 
 ``` r
 glimpse(penguins)
@@ -104,7 +104,7 @@ select(penguins, species:body_mass_g)
     ## 10 Adelie  Torgersen           42            20.2               190        4250
     ## # … with 334 more rows
 
-If we put a `-` before the column names, we will not include those columns. 
+If we put a `-` before the column names, we will include all but those columns. 
 
 ``` r
 select(penguins, -year, -island)
@@ -146,7 +146,7 @@ select(penguins, starts_with("bill"))
     ## 10           42            20.2
     ## # … with 334 more rows
 
-We can accomplish a similar tasks with `ends_with()`.
+We can accomplish a similar task with `ends_with()`.
 
 ``` r
 select(penguins, ends_with("mm"))
@@ -194,7 +194,7 @@ We can also use other conditions, like inequalities.
 - less than: `<`
 - less than or equal to: `<=`
 - greater than: `>`
-- greather than or equal to: `>=`
+- greater than or equal to: `>=`
 
 ``` r
 filter (penguins, year<=2008)
@@ -278,7 +278,7 @@ filter(penguins, species %in% c("Chinstrap", "Gentoo"))
     ## 10 Gentoo  Biscoe           46.8          15.4               215        5150
     ## # … with 182 more rows, and 2 more variables: sex <chr>, year <dbl>
 
-Data often contains missing values for various samples. We can check our missing data with `is.na()`.
+Data sets often contain missing values for various samples. We can check our missing data with `is.na()`.
 
 ``` r
 filter(penguins, is.na(sex))
@@ -300,7 +300,7 @@ filter(penguins, is.na(sex))
     ## 11 Gentoo  Biscoe              NA            NA                  NA          NA
     ## # … with 2 more variables: sex <chr>, year <dbl>
 
-We can also return only samples that don't contain missing data by `!`, which means "not".
+We can also only return samples without missing data using `!`, which means "not", before `is.na()`.
 
 ``` r
 filter(penguins, !is.na(sex))
@@ -321,14 +321,16 @@ filter(penguins, !is.na(sex))
     ## 10 Adelie  Torgersen           34.6          21.1               198        4400
     ## # … with 323 more rows, and 2 more variables: sex <chr>, year <dbl>
 
-## Tidyverse pipes
+## Tidyverse pipelines
 
-You can use *pipes*. Pipes let you take the output of one function and
+### Pipes
+
+**Pipes** let you take the output of one function and
 send it directly to the next, which is useful when you need to do many
-things to the same dataset. This means you don't need to include the name
+consecutive tasks to the same dataset. This means you don't need to include the name
 of the data frame within each function we use.
 
-Pipes in R look like `%>%`. Read the pipe like the word “then”.
+`%>%` is the pipe operator in R. You can read the pipe like the word “then”.
 
 ``` r
 # Using pipes
@@ -339,30 +341,42 @@ penguins_biscoe <- penguins %>%
 
 Notice there is no output for this command, since we are saving the resulting data frame as `penguins_biscoe`.
 
-#### Exercise:
+### Exercise:
 
 Create a new object with the data subset to include all species except Adelie and retain the species column and the ones relating to their bill.
+
+<details markdown="1">
+  <summary>Solution</summary>
+
+  <div class="container" markdown="1">
 
 ``` r
 penguins %>%
     filter(species != "Adelie") %>%
     select(species, bill_length_mm, bill_depth_mm)
 ```
+```
+## # A tibble: 192 × 3
+##    species bill_length_mm bill_depth_mm
+##    <chr>            <dbl>         <dbl>
+##  1 Gentoo            46.1          13.2
+##  2 Gentoo            50            16.3
+##  3 Gentoo            48.7          14.1
+##  4 Gentoo            50            15.2
+##  5 Gentoo            47.6          14.5
+##  6 Gentoo            46.5          13.5
+##  7 Gentoo            45.4          14.6
+##  8 Gentoo            46.7          15.3
+##  9 Gentoo            43.3          13.4
+## 10 Gentoo            46.8          15.4
+## # … with 182 more rows
+```
 
-    ## # A tibble: 192 × 3
-    ##    species bill_length_mm bill_depth_mm
-    ##    <chr>            <dbl>         <dbl>
-    ##  1 Gentoo            46.1          13.2
-    ##  2 Gentoo            50            16.3
-    ##  3 Gentoo            48.7          14.1
-    ##  4 Gentoo            50            15.2
-    ##  5 Gentoo            47.6          14.5
-    ##  6 Gentoo            46.5          13.5
-    ##  7 Gentoo            45.4          14.6
-    ##  8 Gentoo            46.7          15.3
-    ##  9 Gentoo            43.3          13.4
-    ## 10 Gentoo            46.8          15.4
-    ## # … with 182 more rows
+  </div>
+
+</details>
+
+### Mutate
 
 Frequently you’ll want to create new columns based on the values in
 existing columns for tasks like unit conversion or finding the
@@ -391,14 +405,14 @@ penguins %>%
     ## # … with 334 more rows, and 3 more variables: sex <chr>, year <dbl>,
     ## #   body_mass_kg <dbl>
 
-## Split-apply-combine data analysis and summarize
+### Split-apply-combine data analysis and summarize
 
 Many data analysis tasks can be approached using the split-apply-combine
 paradigm: split the data into groups, apply some analysis to each group,
 and then combine the results. `dplyr` makes this very easy through the
 use of the `group_by()` function.
 
-### The summarize() function
+#### The summarize() function
 
 `group_by()` is often used together with `summarize()`, which collapses
 each group into a single-row summary of that group.
@@ -453,7 +467,7 @@ When working with data, we often want to know the number of observations
 found for each factor or combination of factors. For this task, `dplyr`
 provides `count()`.
 
-If we wanted to count the number of penguins by species, we would do:
+If we wanted to count the number of penguins by species, we would do the following:
 
 ``` r
 penguins %>%
@@ -554,7 +568,7 @@ penguins %>%
     ## 10 Adelie  Torgers…        42            20.2              190        4250 <NA> 
     ## # … with 334 more rows, and 1 more variable: year <dbl>
 
-We can combine `mutate()` with the function `case_when()` to generate values in a new column based on conditions. For instance, here we make a new column called `body_type`. Values in this column are `small`, `normal`, or `large` based on the value in the same row of `body_mass_g`. 
+We can combine `mutate()` with the function `case_when()` to generate values in a new column based on conditions. For instance, here we make a new column called `body_type`. Values in this column are `small`, `normal`, or `large` based on the value in the same row of `body_mass_g`, which are specified as individual conditions. 
 
 ``` r
 penguins %>%
@@ -580,7 +594,9 @@ penguins %>%
     ## # … with 334 more rows, and 3 more variables: sex <chr>, year <dbl>,
     ## #   body_type <chr>
 
-Sometimes, it might be more useful to have data in a “wide” format,
+## Wide and long data transformation
+
+Sometimes, it might be more useful to have data in a **wide** format,
 where columns represent different values or levels of a variable. We can
 reshape our data using two tidyr functions, `pivot_wider()` and
 `pivot_longer()`.
@@ -605,7 +621,7 @@ penguins %>%
     ## 10 Adelie  Torgersen female  2007 bill_depth_mm       18  
     ## # … with 1,366 more rows
 
-Here we pivot the penguins data so that all the bill measurements are in the
+Here we pivot the penguin data so that all the bill measurements are in the
 same column.
 
 ``` r
@@ -651,7 +667,7 @@ penguins %>%
     ## 10 Adelie  Torgersen               190        3650 male    2007 bill_dept…  20.6
     ## # … with 674 more rows
 
-When making our data into a long format, we can split the former column names into other columns.
+When making our data into a long format, we can split the former column names into multiple new columns.
 ``` r
 penguins_long <- penguins %>% 
   pivot_longer(contains("_"),
@@ -711,15 +727,6 @@ penguins_long_simple %>%
               values_from = value)
 ```
 
-    ## Warning: Values from `value` are not uniquely identified; output will contain list-cols.
-    ## * Use `values_fn = list` to suppress this warning.
-    ## * Use `values_fn = {summary_fun}` to summarise duplicates.
-    ## * Use the following dplyr code to identify duplicates.
-    ##   {data} %>%
-    ##     dplyr::group_by(species, island, sex, year, name) %>%
-    ##     dplyr::summarise(n = dplyr::n(), .groups = "drop") %>%
-    ##     dplyr::filter(n > 1L)
-
     ## # A tibble: 35 × 8
     ##    species island    sex     year bill_length_mm bill_depth_mm flipper_length_mm
     ##    <chr>   <chr>     <chr>  <dbl> <list>         <list>        <list>           
@@ -739,7 +746,7 @@ However, the output looks a little strange. This is due to how `pivot_wider()` i
 
 To guarentee this does not happen, make sure to include the original row number in the long data set.
 
-Note the alternative pipe operator here (`|>`).
+Note the alternative pipe operator here (`|>`). This is equivalent to `%>%`.
 
 ``` r
 penguins_long_simple <- penguins |> 
@@ -829,6 +836,7 @@ region=c("Europe","Western Pacific", "Europe" ),
 urban_pop=c(76, 86, 94))
 
 data1
+data2
 ```
 
     ##     country          region life_exp
@@ -836,18 +844,14 @@ data1
     ## 2 Australia Western Pacific       83
     ## 3   Ecuador        Americas       75
 
-``` r
-data2
-```
-
     ##     country          region urban_pop
     ## 1   Germany          Europe        76
     ## 2 Australia Western Pacific        86
     ## 3   Iceland          Europe        94
 
-We can merge tables with various "join" functions. These join functions require us to provide at least one column to act as an identifier.
+We can merge tables with various **join** functions. These join functions require us to provide at least one column to act as an identifier.
 
-Inner joins return rows where both data sets have data, according to the identifier column. In the following example, we use `inner_join()`  to return rows with countries present in both data frames.
+**Inner joins** return rows where both data sets have data, according to the identifier column. In the following example, we use `inner_join()` to return rows with countries present in both data frames.
 
 ``` r
 inner_join(data1, data2, by="country")
@@ -857,7 +861,7 @@ inner_join(data1, data2, by="country")
     ## 1   Germany          Europe       81          Europe        76
     ## 2 Australia Western Pacific       83 Western Pacific        86
 
-A left join keeps what is in the first data frame and any matches to that in the second data frame.
+A **left join** keeps what is in the first data frame and any matches to that in the second data frame.
 
 
 ``` r
@@ -869,7 +873,7 @@ left_join(data1, data2, by="country")
     ## 2 Australia Western Pacific       83 Western Pacific        86
     ## 3   Ecuador        Americas       75            <NA>        NA
 
-A right join does just the opposite and keeps matches to items in the second data frame.
+A **right join** does just the opposite and keeps matches to items in the second data frame.
 
 ``` r
 right_join(data1, data2, by="country")
@@ -880,7 +884,7 @@ right_join(data1, data2, by="country")
     ## 2 Australia Western Pacific       83 Western Pacific        86
     ## 3   Iceland            <NA>       NA          Europe        94
 
-A full join will include all data from both data frames.
+A **full join** will include all data from both data frames.
 
 ``` r
 full_join(data1, data2, by="country")
@@ -915,7 +919,7 @@ anti_join(data1, data2, by="country")
 
 ### Combining
 
-Let's make two new data grame for the next examples.
+Let's make two new data frame for the next examples.
 
 ``` r
 data3<- data.frame(country=c("Germany","Ecuador"),
