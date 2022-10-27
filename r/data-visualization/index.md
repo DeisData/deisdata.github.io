@@ -16,7 +16,7 @@ cheatsheet](https://www.rstudio.com/resources/cheatsheets/#ggplot2).
 
 ### Elements in ggplot2 funtions
 
-The vocabulary of ggplot can be difficult to parse at first.
+The vocabulary of ggplot can be difficult to parse at first. Here are the essential components:
 
 -   Aesthetics: Visual properties of the objects in your plot, e.g. axis
     of data, size, shape, color, pattern, fill of variables, alpha
@@ -39,14 +39,14 @@ install.packages('tidyverse')
 # load tidyverse
 library(tidyverse)
 ```
-We will do a similar step with our penguin data we will be visualizing. 
+We will do a similar step with our penguin data that we will be visualizing. 
 
 ``` r
 install.packages("palmerpenguins")
 library(palmerpenguins)
 ```
 
-We use the `View()` function to look at your data frame and check that
+We use the `View()` function to look at the data frame and check that
 we have tidy data: each variable is a column and each observation is a
 row.
 
@@ -116,7 +116,7 @@ ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm, shape = speci
 ![](/assets/images/r/data-visualization/Adding%20shape-1.png)
 
 If we specify a color outside of aesthetics, such as within
-`geom_point()`. We pick the specific color in quotes.
+`geom_point()`, every data point will be that color. We pick the specific color in quotes.
 
 ``` r
 ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
@@ -133,8 +133,6 @@ ggplot(data = penguins, aes(x = species, y = bill_depth_mm)) +
   geom_boxplot()
 ```
 
-    ## Warning: Removed 2 rows containing non-finite values (stat_boxplot).
-
 ![](/assets/images/r/data-visualization/boxplot-1.png)
 
 We can make a histogram of bill depth with `geom_histogram`.
@@ -146,7 +144,7 @@ ggplot(data = penguins, aes(x = bill_depth_mm)) +
 
 ![](/assets/images/r/data-visualization/histogram-1.png)
 
-Like with our scatter plot, we can separate out species with colo, here
+Like with our scatter plot, we can separate out species with color, here
 specified with `fill`.
 
 ``` r
@@ -173,9 +171,9 @@ ggplot(data = penguins, aes(x = bill_depth_mm)) +
 ## Customizing our plot
 
 ggplot has many options for customizing plots. We will go into the very
-basics of that those options here.
+basics of those options here.
 
-We will start by saving a simple colored box plot to the variable
+We will start by saving a simple colored box plot to a variable named
 `myplot`.
 
 ``` r
@@ -186,7 +184,7 @@ myplot
 
 ![](/assets/images/r/data-visualization/unnamed-chunk-4-1.png)
 
-Once the plot is saved as a variable, We can add axes labels with
+Once the plot is saved as a variable, we can add axes labels with
 `xlab()` and `ylab()`.
 
 ``` r
@@ -270,9 +268,7 @@ Try to recreate the following plot from the penguins data set:
   <div class="container" markdown="1">
 
 ```r
-ggplot(data = penguins, 
-                       aes(x = flipper_length_mm,
-                           y = body_mass_g)) +
+ggplot(data = penguins, aes(x = flipper_length_mm,y = body_mass_g)) +
   geom_point(aes(color = species, 
                  shape = species),
              size = 3,
