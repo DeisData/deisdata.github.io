@@ -530,8 +530,11 @@ To make a simple scatter plot in R, we can use the `plot()` function.
 ```r
 plot(penguins$bill_depth_mm, penguins$bill_length_mm)
 ```
-
-![scatter plot](/assets/images/r/quick-start/scatter_example.png)
+<div class="row container">
+    <div class="col-12">
+        <img src="/assets/images/r/quick-start/scatter_example.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="scatter plot">
+    </div>
+</div>
 
 We can also use `ggplot2` to get nicer graphs with many customizations.
 
@@ -558,7 +561,12 @@ mass_flipper <- ggplot(data = penguins,
 mass_flipper
 ```
 
-![ggplot](/assets/images/r/quick-start/penguins.png)
+<div class="row container">
+    <div class="col-12">
+        <img src="/assets/images/r/quick-start/penguins.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="ggplot">
+    </div>
+</div>
+
 
 ## Useful Resources
 

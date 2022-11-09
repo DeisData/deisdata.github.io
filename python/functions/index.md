@@ -355,26 +355,31 @@ for filename in filenames:
 
 
 
-    
-![png](/assets/images/python/functions/functions_39_1.png)
+<div class="row container">
+    <div class="col-12">
+        <img src="/assets/images/python/functions/functions_39_1.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="png">
+    </div>
+</div>
     
 
 
 `https://raw.githubusercontent.com/DeisData/python/master/data/inflammation-02.csv`
 
 
-
-    
-![png](/assets/images/python/functions/functions_39_3.png)
-    
-
+<div class="row container">
+    <div class="col-12">
+        <img src="/assets/images/python/functions/functions_39_3.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="png">
+    </div>
+</div>
+        
 
 `https://raw.githubusercontent.com/DeisData/python/master/data/inflammation-03.csv`
 
-
-    
-![png](/assets/images/python/functions/functions_39_5.png)
-    
+<div class="row container">
+    <div class="col-12">
+        <img src="/assets/images/python/functions/functions_39_5.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="png">
+    </div>
+</div>    
 
 
 Limiting code duplication has an important benefit: if you need to change a feature of the code, you will only need to change it one place. 

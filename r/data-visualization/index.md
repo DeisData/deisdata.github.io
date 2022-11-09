@@ -8,8 +8,15 @@ ggplot2 is a visualization package included in the tidyverse. It follows
 the Grammar of Graphics (GoG), which involves building graphs from the
 following components:
 
-![](/assets/images/r/data-visualization/grammarofgraphics.png) Image from *The Grammar of Graphics by Leland
-Wilkinson*
+<div class="row container">
+    <div class="col-12">
+        <img src="/assets/images/r/data-visualization/grammarofgraphics.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="The Grammar of Graphics">
+    </div>
+</div>
+<figcaption class="figure-caption text-center" markdown="1">
+  Image from *The Grammar of Graphics by Leland Wilkinson* 
+</figcaption>
+
 
 Check out the [ggplot
 cheatsheet](https://www.rstudio.com/resources/cheatsheets/#ggplot2).
@@ -62,8 +69,11 @@ function. We add in our data, letting us create a blank plot.
 ``` r
 ggplot(data=penguins)
 ```
-
-![](/assets/images/r/data-visualization/firstlayer.png)
+<div class="row container">
+    <div class="col-12">
+        <img src="/assets/images/r/data-visualization/firstlayer.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="initial layer">
+    </div>
+</div>
 
 Now we need to add aesthetics and geometric objects. Aesthetics are what
 you plot (x, y, size, color, fill, shape), and geoms are how you plot
@@ -77,8 +87,11 @@ visualized, but the axes show the range of the data.
 ``` r
 ggplot(data=penguins,aes(x=bill_length_mm,y=bill_depth_mm))
 ```
-
-![](/assets/images/r/data-visualization/Adding%20aes()-1.png)
+<div class="row container">
+    <div class="col-12">
+        <img src="/assets/images/r/data-visualization/Adding%20aes()-1.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="adding aesthetics">
+    </div>
+</div>
 
 Now we can decide what kind of plot to make. Let’s start with a simple
 scatter plot. We need to add the geom (geometry), which here is
@@ -88,8 +101,11 @@ scatter plot. We need to add the geom (geometry), which here is
 ggplot(data=penguins,aes(x=bill_length_mm,y=bill_depth_mm))+
          geom_point()
 ```
-
-![](/assets/images/r/data-visualization/adding%20geom-1.png)
+<div class="row container">
+    <div class="col-12">
+        <img src="/assets/images/r/data-visualization/adding%20geom-1.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="adding geom">
+    </div>
+</div>
 
 We can now see our data! However, it is difficult to see any pattern at
 the moment.
@@ -103,7 +119,11 @@ ggplot(data=penguins,aes(x=bill_length_mm,y=bill_depth_mm, color=species))+
          geom_point()
 ```
 
-![](/assets/images/r/data-visualization/Adding%20color-1.png)
+<div class="row container">
+    <div class="col-12">
+        <img src="/assets/images/r/data-visualization/Adding%20color-1.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="adding color">
+    </div>
+</div>
 
 In addition to color, you also add other aesthetics: fill, shape,
 linewidth, and alpha (transparency).
@@ -112,8 +132,12 @@ linewidth, and alpha (transparency).
 ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm, shape = species)) +
   geom_point()
 ```
+<div class="row container">
+    <div class="col-12">
+        <img src="/assets/images/r/data-visualization/Adding%20shape-1.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="adding shape">
+    </div>
+</div>
 
-![](/assets/images/r/data-visualization/Adding%20shape-1.png)
 
 If we specify a color outside of aesthetics, such as within
 `geom_point()`, every data point will be that color. We pick the specific color in quotes.
@@ -123,7 +147,11 @@ ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
   geom_point(color = "red")
 ```
 
-![](/assets/images/r/data-visualization/adding%20color%20to%20geom-1.png)
+<div class="row container">
+    <div class="col-12">
+        <img src="/assets/images/r/data-visualization/adding%20color%20to%20geom-1.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="adding red">
+    </div>
+</div>
 
 Let’s try making another type of plot. Here, we make a boxplot of bill
 depth by species with `geom_boxplot()`.
@@ -132,8 +160,11 @@ depth by species with `geom_boxplot()`.
 ggplot(data = penguins, aes(x = species, y = bill_depth_mm)) +
   geom_boxplot()
 ```
-
-![](/assets/images/r/data-visualization/boxplot-1.png)
+<div class="row container">
+    <div class="col-12">
+        <img src="/assets/images/r/data-visualization/boxplot-1.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="box plot">
+    </div>
+</div>
 
 We can make a histogram of bill depth with `geom_histogram`.
 
@@ -142,7 +173,11 @@ ggplot(data = penguins, aes(x = bill_depth_mm)) +
   geom_histogram()
 ```
 
-![](/assets/images/r/data-visualization/histogram-1.png)
+<div class="row container">
+    <div class="col-12">
+        <img src="/assets/images/r/data-visualization/histogram-1.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="histogram 1">
+    </div>
+</div>
 
 Like with our scatter plot, we can separate out species with color, here
 specified with `fill`.
@@ -152,7 +187,11 @@ ggplot(data = penguins, aes(x=bill_depth_mm, fill=species)) +
   geom_histogram(binwidth = 0.25)
 ```
 
-![](/assets/images/r/data-visualization/unnamed-chunk-3-1.png)
+<div class="row container">
+    <div class="col-12">
+        <img src="/assets/images/r/data-visualization/unnamed-chunk-3-1.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="histogram 1">
+    </div>
+</div>
 
 ## Facets
 
@@ -166,7 +205,11 @@ ggplot(data = penguins, aes(x = bill_depth_mm)) +
   facet_wrap(~ species)
 ```
 
-![](/assets/images/r/data-visualization/creating%20multiple%20plots-1.png)
+<div class="row container">
+    <div class="col-12">
+        <img src="/assets/images/r/data-visualization/creating%20multiple%20plots-1.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="facet wrap">
+    </div>
+</div>
 
 ## Customizing our plot
 
@@ -181,8 +224,11 @@ myplot<- ggplot(data = penguins, aes(x = species, y = bill_depth_mm, color = spe
   geom_boxplot()
 myplot
 ```
-
-![](/assets/images/r/data-visualization/unnamed-chunk-4-1.png)
+<div class="row container">
+    <div class="col-12">
+        <img src="/assets/images/r/data-visualization/unnamed-chunk-4-1.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="box plot 2">
+    </div>
+</div>
 
 Once the plot is saved as a variable, we can add axes labels with
 `xlab()` and `ylab()`.
@@ -193,7 +239,11 @@ myplot+
   ylab("Bill Depth")
 ```
 
-![](/assets/images/r/data-visualization/adding%20adding%20labels-1.png)
+<div class="row container">
+    <div class="col-12">
+        <img src="/assets/images/r/data-visualization/adding%20adding%20labels-1.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="adding axis labels">
+    </div>
+</div>
 
 We can also change the title of the legend. Depending on various
 factors, such as how you are distinguishing groups, there are different
@@ -207,7 +257,12 @@ myplot+
   scale_color_discrete(name="Species of Penguin")
 ```
 
-![](/assets/images/r/data-visualization/Legends-1.png)
+<div class="row container">
+    <div class="col-12">
+        <img src="/assets/images/r/data-visualization/Legends-1.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="legend title">
+    </div>
+</div>
+
 ## Themes
 
 The default theme in ggplot has a light gray background with a faint
@@ -222,7 +277,11 @@ myplot+
     theme_minimal()
 ```
 
-![](/assets/images/r/data-visualization/Themes-1.png)
+<div class="row container">
+    <div class="col-12">
+        <img src="/assets/images/r/data-visualization/Themes-1.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="legend title">
+    </div>
+</div>
 
 This is one of many pre-built themes available. It is also possible to
 [make a custom
@@ -260,7 +319,11 @@ ggsave("penguins_plot.pdf", penguins_plot, device="pdf")
 
 Try to recreate the following plot from the penguins data set:
 
-![](/assets/images/r/data-visualization/challenge.png)
+<div class="row container">
+    <div class="col-12">
+        <img src="/assets/images/r/data-visualization/challenge.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="legend title">
+    </div>
+</div>
 
 <details markdown="1">
   <summary>Solution</summary>
