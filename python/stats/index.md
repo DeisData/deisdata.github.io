@@ -4,16 +4,16 @@ layout: python
 
 # Statistics with Python
 
-Objectives 
+### Objectives 
 * Import data into a `pandas` data frame
 * Import some standard and useful libraries for python
 * Introduce some model fitting
 
 
-**Reference and Resource**
+### Reference and Resource
 
 This lesson and data is adapted from 
-<a href='https://www.linkedin.com/learning/python-statistics-essential-training/'>LinkedIn Learning: Python Statistics Essential Training</a>.  See these lessons for more details including working with categorical data.
+<a href='https://www.linkedin.com/learning/python-statistics-essential-training/'>LinkedIn Learning: Python Statistics Essential Training</a>. See these lessons for more details including working with categorical data.
 
 
 ## Importing Libraries and Data
@@ -40,6 +40,7 @@ import statsmodels.formula.api as smf
 
 ```
 
+To find out more about a library and see the documentation, you can run `?LIBRARY_NAME`.
 
 ```python
 # Have a question about a package?
@@ -48,471 +49,6 @@ import statsmodels.formula.api as smf
 
 ?scipy.stats
 ```
-
-    [0;31mType:[0m        module
-    [0;31mString form:[0m <module 'scipy.stats' from '/Users/fordfishman/opt/anaconda3/envs/workshop/lib/python3.9/site-packages/scipy/stats/__init__.py'>
-    [0;31mFile:[0m        ~/opt/anaconda3/envs/workshop/lib/python3.9/site-packages/scipy/stats/__init__.py
-    [0;31mDocstring:[0m  
-    .. _statsrefmanual:
-    
-    ==========================================
-    Statistical functions (:mod:`scipy.stats`)
-    ==========================================
-    
-    .. currentmodule:: scipy.stats
-    
-    This module contains a large number of probability distributions,
-    summary and frequency statistics, correlation functions and statistical
-    tests, masked statistics, kernel density estimation, quasi-Monte Carlo
-    functionality, and more.
-    
-    Statistics is a very large area, and there are topics that are out of scope
-    for SciPy and are covered by other packages. Some of the most important ones
-    are:
-    
-    - `statsmodels <https://www.statsmodels.org/stable/index.html>`__:
-      regression, linear models, time series analysis, extensions to topics
-      also covered by ``scipy.stats``.
-    - `Pandas <https://pandas.pydata.org/>`__: tabular data, time series
-      functionality, interfaces to other statistical languages.
-    - `PyMC <https://docs.pymc.io/>`__: Bayesian statistical
-      modeling, probabilistic machine learning.
-    - `scikit-learn <https://scikit-learn.org/>`__: classification, regression,
-      model selection.
-    - `Seaborn <https://seaborn.pydata.org/>`__: statistical data visualization.
-    - `rpy2 <https://rpy2.github.io/>`__: Python to R bridge.
-    
-    
-    Probability distributions
-    =========================
-    
-    Each univariate distribution is an instance of a subclass of `rv_continuous`
-    (`rv_discrete` for discrete distributions):
-    
-    .. autosummary::
-       :toctree: generated/
-    
-       rv_continuous
-       rv_discrete
-       rv_histogram
-    
-    Continuous distributions
-    ------------------------
-    
-    .. autosummary::
-       :toctree: generated/
-    
-       alpha             -- Alpha
-       anglit            -- Anglit
-       arcsine           -- Arcsine
-       argus             -- Argus
-       beta              -- Beta
-       betaprime         -- Beta Prime
-       bradford          -- Bradford
-       burr              -- Burr (Type III)
-       burr12            -- Burr (Type XII)
-       cauchy            -- Cauchy
-       chi               -- Chi
-       chi2              -- Chi-squared
-       cosine            -- Cosine
-       crystalball       -- Crystalball
-       dgamma            -- Double Gamma
-       dweibull          -- Double Weibull
-       erlang            -- Erlang
-       expon             -- Exponential
-       exponnorm         -- Exponentially Modified Normal
-       exponweib         -- Exponentiated Weibull
-       exponpow          -- Exponential Power
-       f                 -- F (Snecdor F)
-       fatiguelife       -- Fatigue Life (Birnbaum-Saunders)
-       fisk              -- Fisk
-       foldcauchy        -- Folded Cauchy
-       foldnorm          -- Folded Normal
-       genlogistic       -- Generalized Logistic
-       gennorm           -- Generalized normal
-       genpareto         -- Generalized Pareto
-       genexpon          -- Generalized Exponential
-       genextreme        -- Generalized Extreme Value
-       gausshyper        -- Gauss Hypergeometric
-       gamma             -- Gamma
-       gengamma          -- Generalized gamma
-       genhalflogistic   -- Generalized Half Logistic
-       genhyperbolic     -- Generalized Hyperbolic
-       geninvgauss       -- Generalized Inverse Gaussian
-       gibrat            -- Gibrat
-       gompertz          -- Gompertz (Truncated Gumbel)
-       gumbel_r          -- Right Sided Gumbel, Log-Weibull, Fisher-Tippett, Extreme Value Type I
-       gumbel_l          -- Left Sided Gumbel, etc.
-       halfcauchy        -- Half Cauchy
-       halflogistic      -- Half Logistic
-       halfnorm          -- Half Normal
-       halfgennorm       -- Generalized Half Normal
-       hypsecant         -- Hyperbolic Secant
-       invgamma          -- Inverse Gamma
-       invgauss          -- Inverse Gaussian
-       invweibull        -- Inverse Weibull
-       johnsonsb         -- Johnson SB
-       johnsonsu         -- Johnson SU
-       kappa4            -- Kappa 4 parameter
-       kappa3            -- Kappa 3 parameter
-       ksone             -- Distribution of Kolmogorov-Smirnov one-sided test statistic
-       kstwo             -- Distribution of Kolmogorov-Smirnov two-sided test statistic
-       kstwobign         -- Limiting Distribution of scaled Kolmogorov-Smirnov two-sided test statistic.
-       laplace           -- Laplace
-       laplace_asymmetric    -- Asymmetric Laplace
-       levy              -- Levy
-       levy_l
-       levy_stable
-       logistic          -- Logistic
-       loggamma          -- Log-Gamma
-       loglaplace        -- Log-Laplace (Log Double Exponential)
-       lognorm           -- Log-Normal
-       loguniform        -- Log-Uniform
-       lomax             -- Lomax (Pareto of the second kind)
-       maxwell           -- Maxwell
-       mielke            -- Mielke's Beta-Kappa
-       moyal             -- Moyal
-       nakagami          -- Nakagami
-       ncx2              -- Non-central chi-squared
-       ncf               -- Non-central F
-       nct               -- Non-central Student's T
-       norm              -- Normal (Gaussian)
-       norminvgauss      -- Normal Inverse Gaussian
-       pareto            -- Pareto
-       pearson3          -- Pearson type III
-       powerlaw          -- Power-function
-       powerlognorm      -- Power log normal
-       powernorm         -- Power normal
-       rdist             -- R-distribution
-       rayleigh          -- Rayleigh
-       rice              -- Rice
-       recipinvgauss     -- Reciprocal Inverse Gaussian
-       semicircular      -- Semicircular
-       skewcauchy        -- Skew Cauchy
-       skewnorm          -- Skew normal
-       studentized_range    -- Studentized Range
-       t                 -- Student's T
-       trapezoid         -- Trapezoidal
-       triang            -- Triangular
-       truncexpon        -- Truncated Exponential
-       truncnorm         -- Truncated Normal
-       truncweibull_min  -- Truncated minimum Weibull distribution
-       tukeylambda       -- Tukey-Lambda
-       uniform           -- Uniform
-       vonmises          -- Von-Mises (Circular)
-       vonmises_line     -- Von-Mises (Line)
-       wald              -- Wald
-       weibull_min       -- Minimum Weibull (see Frechet)
-       weibull_max       -- Maximum Weibull (see Frechet)
-       wrapcauchy        -- Wrapped Cauchy
-    
-    Multivariate distributions
-    --------------------------
-    
-    .. autosummary::
-       :toctree: generated/
-    
-       multivariate_normal    -- Multivariate normal distribution
-       matrix_normal          -- Matrix normal distribution
-       dirichlet              -- Dirichlet
-       wishart                -- Wishart
-       invwishart             -- Inverse Wishart
-       multinomial            -- Multinomial distribution
-       special_ortho_group    -- SO(N) group
-       ortho_group            -- O(N) group
-       unitary_group          -- U(N) group
-       random_correlation     -- random correlation matrices
-       multivariate_t         -- Multivariate t-distribution
-       multivariate_hypergeom -- Multivariate hypergeometric distribution
-    
-    Discrete distributions
-    ----------------------
-    
-    .. autosummary::
-       :toctree: generated/
-    
-       bernoulli                -- Bernoulli
-       betabinom                -- Beta-Binomial
-       binom                    -- Binomial
-       boltzmann                -- Boltzmann (Truncated Discrete Exponential)
-       dlaplace                 -- Discrete Laplacian
-       geom                     -- Geometric
-       hypergeom                -- Hypergeometric
-       logser                   -- Logarithmic (Log-Series, Series)
-       nbinom                   -- Negative Binomial
-       nchypergeom_fisher       -- Fisher's Noncentral Hypergeometric
-       nchypergeom_wallenius    -- Wallenius's Noncentral Hypergeometric
-       nhypergeom               -- Negative Hypergeometric
-       planck                   -- Planck (Discrete Exponential)
-       poisson                  -- Poisson
-       randint                  -- Discrete Uniform
-       skellam                  -- Skellam
-       yulesimon                -- Yule-Simon
-       zipf                     -- Zipf (Zeta)
-       zipfian                  -- Zipfian
-    
-    An overview of statistical functions is given below.  Many of these functions
-    have a similar version in `scipy.stats.mstats` which work for masked arrays.
-    
-    Summary statistics
-    ==================
-    
-    .. autosummary::
-       :toctree: generated/
-    
-       describe          -- Descriptive statistics
-       gmean             -- Geometric mean
-       hmean             -- Harmonic mean
-       pmean             -- Power mean
-       kurtosis          -- Fisher or Pearson kurtosis
-       mode              -- Modal value
-       moment            -- Central moment
-       skew              -- Skewness
-       kstat             --
-       kstatvar          --
-       tmean             -- Truncated arithmetic mean
-       tvar              -- Truncated variance
-       tmin              --
-       tmax              --
-       tstd              --
-       tsem              --
-       variation         -- Coefficient of variation
-       find_repeats
-       trim_mean
-       gstd              -- Geometric Standard Deviation
-       iqr
-       sem
-       bayes_mvs
-       mvsdist
-       entropy
-       differential_entropy
-       median_abs_deviation
-    
-    Frequency statistics
-    ====================
-    
-    .. autosummary::
-       :toctree: generated/
-    
-       cumfreq
-       percentileofscore
-       scoreatpercentile
-       relfreq
-    
-    .. autosummary::
-       :toctree: generated/
-    
-       binned_statistic     -- Compute a binned statistic for a set of data.
-       binned_statistic_2d  -- Compute a 2-D binned statistic for a set of data.
-       binned_statistic_dd  -- Compute a d-D binned statistic for a set of data.
-    
-    Correlation functions
-    =====================
-    
-    .. autosummary::
-       :toctree: generated/
-    
-       f_oneway
-       alexandergovern
-       pearsonr
-       spearmanr
-       pointbiserialr
-       kendalltau
-       weightedtau
-       somersd
-       linregress
-       siegelslopes
-       theilslopes
-       multiscale_graphcorr
-    
-    Statistical tests
-    =================
-    
-    .. autosummary::
-       :toctree: generated/
-    
-       ttest_1samp
-       ttest_ind
-       ttest_ind_from_stats
-       ttest_rel
-       chisquare
-       cramervonmises
-       cramervonmises_2samp
-       power_divergence
-       kstest
-       ks_1samp
-       ks_2samp
-       epps_singleton_2samp
-       mannwhitneyu
-       tiecorrect
-       rankdata
-       ranksums
-       wilcoxon
-       kruskal
-       friedmanchisquare
-       brunnermunzel
-       combine_pvalues
-       jarque_bera
-       page_trend_test
-       tukey_hsd
-    
-    .. autosummary::
-       :toctree: generated/
-    
-       ansari
-       bartlett
-       levene
-       shapiro
-       anderson
-       anderson_ksamp
-       binom_test
-       binomtest
-       fligner
-       median_test
-       mood
-       skewtest
-       kurtosistest
-       normaltest
-    
-    
-    Quasi-Monte Carlo
-    =================
-    
-    .. toctree::
-       :maxdepth: 4
-    
-       stats.qmc
-    
-    Resampling Methods
-    ==================
-    
-    .. autosummary::
-       :toctree: generated/
-    
-       bootstrap
-       permutation_test
-       monte_carlo_test
-    
-    Masked statistics functions
-    ===========================
-    
-    .. toctree::
-    
-       stats.mstats
-    
-    
-    Other statistical functionality
-    ===============================
-    
-    Transformations
-    ---------------
-    
-    .. autosummary::
-       :toctree: generated/
-    
-       boxcox
-       boxcox_normmax
-       boxcox_llf
-       yeojohnson
-       yeojohnson_normmax
-       yeojohnson_llf
-       obrientransform
-       sigmaclip
-       trimboth
-       trim1
-       zmap
-       zscore
-       gzscore
-    
-    Statistical distances
-    ---------------------
-    
-    .. autosummary::
-       :toctree: generated/
-    
-       wasserstein_distance
-       energy_distance
-    
-    Sampling
-    --------
-    
-    .. toctree::
-       :maxdepth: 4
-    
-       stats.sampling
-    
-    Random variate generation / CDF Inversion
-    -----------------------------------------
-    
-    .. autosummary::
-       :toctree: generated/
-    
-       rvs_ratio_uniforms
-    
-    Distribution Fitting
-    --------------------
-    
-    .. autosummary::
-       :toctree: generated/
-    
-       fit
-    
-    Circular statistical functions
-    ------------------------------
-    
-    .. autosummary::
-       :toctree: generated/
-    
-       circmean
-       circvar
-       circstd
-    
-    Contingency table functions
-    ---------------------------
-    
-    .. autosummary::
-       :toctree: generated/
-    
-       chi2_contingency
-       contingency.crosstab
-       contingency.expected_freq
-       contingency.margins
-       contingency.relative_risk
-       contingency.association
-       fisher_exact
-       barnard_exact
-       boschloo_exact
-    
-    Plot-tests
-    ----------
-    
-    .. autosummary::
-       :toctree: generated/
-    
-       ppcc_max
-       ppcc_plot
-       probplot
-       boxcox_normplot
-       yeojohnson_normplot
-    
-    Univariate and multivariate kernel density estimation
-    -----------------------------------------------------
-    
-    .. autosummary::
-       :toctree: generated/
-    
-       gaussian_kde
-    
-    Warnings / Errors used in :mod:`scipy.stats`
-    --------------------------------------------
-    
-    .. autosummary::
-       :toctree: generated/
-    
-       DegenerateDataWarning
-       ConstantInputWarning
-       NearConstantInputWarning
-       FitError
 
 
 ## Describe and plot distributions
@@ -722,7 +258,7 @@ gapminder
 
 
 
-### Descriptive statistics
+## Descriptive statistics
 
 We can use built in functions in pandas to summarize key aspects of our data.
 
@@ -769,8 +305,12 @@ plt.show()
 ```
 
 
-    
-![png](/assets/images/python/stats/stats_13_0.png)
+<div class="row container">
+    <div class="col-12">
+        <img src="/assets/images/python/stats/stats_13_0.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="gapminder box plot">
+    </div>
+</div>
+
     
 
 
@@ -793,10 +333,12 @@ plt.ylabel('Percentage Surviving')
 plt.show()
 ```
 
-
-    
-![png](/assets/images/python/stats/stats_15_0.png)
-    
+<div class="row container">
+    <div class="col-12">
+        <img src="/assets/images/python/stats/stats_15_0.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="gapminder histogram">
+    </div>
+</div>
+        
 
 
 ### Hypothesis Testing
@@ -867,8 +409,11 @@ plotdata()
 ```
 
 
-    
-![png](/assets/images/python/stats/stats_24_0.png)
+<div class="row container">
+    <div class="col-12">
+        <img src="/assets/images/python/stats/stats_24_0.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="gapminder scatter">
+    </div>
+</div>
     
 
 
@@ -912,9 +457,11 @@ def plotfit(fit):
 plotfit(grandmean)
 ```
 
-
-    
-![png](/assets/images/python/stats/stats_30_0.png)
+<div class="row container">
+    <div class="col-12">
+        <img src="/assets/images/python/stats/stats_30_0.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="gapminder scatter">
+    </div>
+</div>
     
 
 
@@ -945,12 +492,14 @@ groupmeans = smf.ols(formula='babies_per_woman ~ -1 + region',data=gdata).fit()
 plotfit(groupmeans)
 ```
 
+  
+<div class="row container">
+    <div class="col-12">
+        <img src="/assets/images/python/stats/stats_34_0.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="gapminder group means">
+    </div>
+</div>
 
-    
-![png](/assets/images/python/stats/stats_34_0.png)
-    
-
-
+We can check the parameters of our fitted model to see the main effect of each region. 
 
 ```python
 groupmeans.params
@@ -964,6 +513,63 @@ groupmeans.params
     region[Asia]       4.775577
     region[Europe]     2.035682
     dtype: float64
+
+An ANOVA can be used to test if these effects are significant. 
+
+
+```python
+sm.stats.anova_lm(groupmeans)
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>df</th>
+      <th>sum_sq</th>
+      <th>mean_sq</th>
+      <th>F</th>
+      <th>PR(&gt;F)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>region</th>
+      <td>4.0</td>
+      <td>3927.702839</td>
+      <td>981.925710</td>
+      <td>655.512121</td>
+      <td>2.604302e-105</td>
+    </tr>
+    <tr>
+      <th>Residual</th>
+      <td>178.0</td>
+      <td>266.635461</td>
+      <td>1.497952</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
 
 
 
@@ -989,8 +595,11 @@ print(surviving.params)
 
 
 
-    
-![png](/assets/images/python/stats/stats_38_1.png)
+<div class="row container">
+    <div class="col-12">
+        <img src="/assets/images/python/stats/stats_38_1.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="gapminder scatter">
+    </div>
+</div>
     
 
 
@@ -1074,63 +683,4 @@ surviving.summary()
 
 
 We can also use the `anova_lm()` function with our model to estimate the importance of factors in our model.
-
-
-```python
-sm.stats.anova_lm(surviving, typ=2)
-```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>sum_sq</th>
-      <th>df</th>
-      <th>F</th>
-      <th>PR(&gt;F)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>region</th>
-      <td>973.988539</td>
-      <td>4.0</td>
-      <td>253.819435</td>
-      <td>3.707717e-72</td>
-    </tr>
-    <tr>
-      <th>life_expectancy</th>
-      <td>96.833677</td>
-      <td>1.0</td>
-      <td>100.938638</td>
-      <td>4.459475e-19</td>
-    </tr>
-    <tr>
-      <th>Residual</th>
-      <td>169.801784</td>
-      <td>177.0</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
 
