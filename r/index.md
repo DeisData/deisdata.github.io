@@ -22,19 +22,19 @@ You need to have RStudio installed, but it is less crucial that you are using th
 
 **Windows**:
 - Go to <https://cloud.r-project.org/bin/windows/base/>
-- Click the “Download R 4.2.1 for Windows” link.
+- Click the “Download R 4.2.2 for Windows” link.
 - When the file finishes downloading, double-click to install. You should be able to click “Next” to all dialogs to finish the installation.
   
 **Mac**:
 - Go to <https://cloud.r-project.org/bin/macosx/>.
-- Click the link “R-4.2.1.pkg”.
+- Click the link “R-4.2.2.pkg”.
 - When the file finishes downloading, double-click to install. You should be able to click “Next” to all dialogs to finish the installation.
   
 #### Installing RStudio
 - Go to <https://www.rstudio.com/products/rstudio/download/#download>.
 - Under “Installers for Supported Platforms” select the appropriate installer for your operating system:
-  - Windows: “RStudio 1.1.463 - Windows Vista/7/8/10”
-  - Mac: “RStudio 1.1.463 - Mac OS X 10.6+ (64-bit)”
+  - Windows: “RSTUDIO-2022.07.2-576.EXE”
+  - Mac: “RSTUDIO-2022.07.2-576.DMG”
 - When the file finishes downloading, double-click to install. You should be able to click “Next” to all dialogs to finish the installation.
 
 #### Installing tidyverse
