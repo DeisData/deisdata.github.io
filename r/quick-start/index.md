@@ -288,7 +288,7 @@ penguins <- read_csv("penguins.csv")
 
 ## Exploring your data
 
-We can use the `View()` function to look at our dataframe.
+We can use the `View()` function to look at our data frame.
 
 ```r
 View(penguins)
@@ -342,7 +342,7 @@ $ sex               <chr> "male", "female", "female", NA, "female", "male", "fem
 $ year              <dbl> 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2…
 ```
 
-We can use some build in functions in R to summarize the data, such as showing column names and the dimensions of the data frame.
+We can use some built-in functions in R to summarize the data, such as showing column names and the dimensions of the data frame.
 
 ```r
 class(penguins) # check to see that test is what we expect it to be

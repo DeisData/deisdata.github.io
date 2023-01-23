@@ -260,7 +260,7 @@ $ mv sucrose.dat matose.dat ___/___
  
 
 ### Challenge Project
-Before heading on a trip, you want to back up your data and send some datasets to ford.  Fill in the following commands to get the job done.  First, let's set up a directory and files.
+Before heading on a trip, you want to back up your data and send some datasets to Ford.  Fill in the following commands to get the job done.  First, let's set up a directory and files.
 ```bash 
 # Hashtag denotes a comment. The line will be skipped
 
@@ -286,7 +286,8 @@ nano 2020-06-09-data.txt
 nano 2020-06-09-calibration.txt
 ```
 The next piece is provided in the shell script `session2challenge.sh`.
-Copy it to your fake_data directory.
+
+While in your `fake_data` directory, copy and paste the code from this file and run it.
 
 ```bash
 # session2challenge.sh creates more fake data and callibration files
