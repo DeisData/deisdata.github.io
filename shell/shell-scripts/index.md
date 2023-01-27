@@ -12,7 +12,7 @@ We will take commands we repeat and save them in a **shell script**- a small pro
 ## Writing Shell Scripts
 ### Shebang the top line of a script:
 ```bash
-#!/bin/bash
+#!/usr/bin/env bash
 ```
 Uses the special marker `#!` and path `/bin/bash` the instruct the shell to pass the script to the bash program for execution.  
 
