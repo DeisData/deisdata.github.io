@@ -14,7 +14,7 @@ We will take commands we repeat and save them in a **shell script**- a small pro
 ```bash
 #!/usr/bin/env bash
 ```
-Uses the special marker `#!` and path `/bin/bash` the instruct the shell to pass the script to the bash program for execution.  
+Uses the special marker `#!` and path `#!/usr/bin/env bash` the instruct the shell to pass the script to the bash program for execution.  
 
 Other scripts may point to other shells (e.g. `#!/usr/bin/perl` will tell the shell to run a perl script.) 
 
@@ -23,7 +23,7 @@ For example, `$1` means the first argument on the command line in the script `he
 
 **header.sh:**
 ```bash
-#!/bin/bash
+#!/usr/bin/env bash
 # This script prints the first 15 lines of the file named in the command line (datafile.txt)
 head -n 15 $1 
 ```
@@ -38,7 +38,7 @@ $ bash header.sh datafile.txt
   
 **header.sh:**
 ```bash
-#!/bin/bash
+#!/usr/bin/env bash
 # This script prints the top $2 lines of the file $1, then writes the top lines to file $3
 head -n "$2" "$1" > "$3" 
 ```
@@ -52,7 +52,7 @@ $ bash header.sh datafile.txt 10 topdata.txt
   
 **sorted.sh:**
 ```bash
-#!/bin/bash
+#!/usr/bin/env bash
 # Sort files by their length
 # USAGE: bash sorted.sh one_or_more_filenames
 $ wc -l "$@" | sort -n
