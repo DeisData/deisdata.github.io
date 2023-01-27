@@ -21,6 +21,11 @@ Other scripts may point to other shells (e.g. `#!/usr/bin/perl` will tell the sh
 ### Use an argument on the command line executing a script
 For example, `$1` means the first argument on the command line in the script `header.sh`.
 
+### Running the script
+When we run an executable script in the command line, we need to provide the path to the script. This is because the system will not check all directories, including the working directory, for commands. 
+
+If you are running a script in the current working directory be sure to use `./` to ensure that it knows to look in the current working directory: `./myscript.sh`.
+
 **header.sh:**
 ```bash
 #!/usr/bin/env bash
@@ -29,7 +34,7 @@ head -n 15 $1
 ```
 **Command line:**
 ```bash
-$ bash header.sh datafile.txt
+$ ./header.sh datafile.txt
 ```
 
 ### Use multiple arguments on the command line executing a script
@@ -44,7 +49,7 @@ head -n "$2" "$1" > "$3"
 ```
 **Command line:**
 ```bash
-$ bash header.sh datafile.txt 10 topdata.txt
+$ ./header.sh datafile.txt 10 topdata.txt
 ```
 
 ### Use special syntax to handle one or more filenames
@@ -54,12 +59,12 @@ $ bash header.sh datafile.txt 10 topdata.txt
 ```bash
 #!/usr/bin/env bash
 # Sort files by their length
-# USAGE: bash sorted.sh one_or_more_filenames
+# USAGE: ./sorted.sh one_or_more_filenames
 $ wc -l "$@" | sort -n
 ```
 **Command line:**
 ```bash
-$ bash sorted.sh *.pdb ../creatures/*.dat
+$ ./sorted.sh *.pdb ../creatures/*.dat
 ```
 
 ### Resources
