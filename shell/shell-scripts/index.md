@@ -18,6 +18,15 @@ Uses the special marker `#!` and path `#!/usr/bin/env bash` the instruct the she
 
 Other scripts may point to other shells (e.g. `#!/usr/bin/perl` will tell the shell to run a perl script.) 
 
+### File permissions
+We need set permissions on executable files before we can run them. To run them we can use the `chmod` or "change mode" command.
+
+```
+chmod 755 header.sh
+```
+
+The `755` tells our system that the owner of the file can read (open), write (change), and execute (run) the file, but all others can only read and execute the file. These permissions mostly matter when working on a server with multiple people, like a supercomputing cluster. For more detailed information, please see [here](https://www.redhat.com/sysadmin/introduction-chmod).
+
 ### Use an argument on the command line executing a script
 For example, `$1` means the first argument on the command line in the script `header.sh`.
 
