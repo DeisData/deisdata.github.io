@@ -58,7 +58,7 @@ To only get lines, words, or characters, we can specify the flags `-l`, `-w`, or
 
 Here we get the number of lines in all of our files and redirect the output to a new file called `line_count.txt`. 
 
-```
+```bash
 $ wc -l *.pdb > line_count.txt
 ```
 
@@ -152,29 +152,66 @@ $ wc -l *.pdb | sort -nr | head -n 1 > total_lines.txt
       <li><code>$ wc -l * | sort -n | head -n 1-3</code></li>
       <li><code>$ wc -l * | head -n 3 | sort -n</code></li>
       <li><code>$ wc -l * | sort -n | head -n 3</code></li>
-
     </ol>
 
+<details>
+    <summary>Solution</summary>
+    
+  <div class="container" markdown="1">
+
+```bash 
+$ wc -l * | sort -n | head -n 3
+```
+    
+  </div>
+  
+  </details>
+
 
   </li>
   <li markdown="1">
+
   See the file called `data-shell/data/animals.txt`. What text passes through each of the pipes and the final redirect in the pipeline below? <br>
   
-`$ cat animals.txt | head -n 5 | tail -n 3 | sort -r > final.txt`
+```bash
+$ cat animals.txt | head -n 5 | tail -n 3 | sort -r > final.txt
+```
   
   Hint:  Build the pipeline up one command at a time to test your understanding.
+
+  <details>
+    <summary>Solution</summary>
+    
+  <div class="container" markdown="1">
+    
+  `cat animals.txt` returns the full text in the file `animals.txt`.
+
+  `| head -n 5` returns the first 5 lines of the file.
+
+  `| tail -n 3` gives the third, fourth, and fifth lines.
+
+  `| sort -r` sorts the lines in reverse alphabetical order.
+
+  `> final.txt` takes these lines and saves them to a file called `final.txt`.
+    
+  </div>
+  
+  </details>
   </li>
+  
 
   <li markdown="1">
 
-   `uniq` filters out adjecent matching lines in a file. How can we extend the pipeline to find out what animals the file `data-shell/data/animals.txt` contains without any duplicates? 
+   `uniq` filters out adjacent matching lines in a file. How can we extend the pipeline to find out what animals the file `data-shell/data/animals.txt` contains without any duplicates? 
 
    <details>
     <summary>Solution</summary>
     
   <div class="container" markdown="1">
     
-  `$ cut -d , -f 2 animals.txt | sort | uniq > animals_unique.txt`
+  ```bash
+  $ cut -d , -f 2 animals.txt | sort | uniq > animals_unique.txt
+  ```
     
   </div>
   
@@ -182,7 +219,9 @@ $ wc -l *.pdb | sort -nr | head -n 1 > total_lines.txt
 
   </li>
  
-  <li markdown="1">Assuming your current working directory is `data-shell/data/`, which command would you use to produce a table that shows the total count of each type of animal in the file `animals.txt.
+  <li markdown="1">
+
+  Assuming your current working directory is `data-shell/data/`, which command would you use to produce a table that shows the total count of each type of animal in the file `animals.txt`.
 
   <ol type="a">
     <li><code>$ sort animals.txt | uniq -c</code></li>
