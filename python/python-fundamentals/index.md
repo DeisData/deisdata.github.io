@@ -391,8 +391,7 @@ print(1 + "2") # adding string to int doesn't work
     TypeError: unsupported operand type(s) for +: 'int' and 'str'
 
 
-We can convert an `int` to a `string` with the `str()` functi
-on to combine them. We must convert numbers to strings or vice versa when operating on them. Consistency is key!
+We can convert an `int` to a `string` with the `str()` function to combine them. We must convert numbers to strings or vice versa when operating on them. Consistency is key!
 
 
 ```python

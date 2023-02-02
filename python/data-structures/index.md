@@ -225,7 +225,7 @@ print(animals_dict)
 
 
 ### Give a key a new value
-Giving keys new values works just like reassigning in lists. Note that this means that you cannot have two identical keys in the same dictionary.
+Giving a key a new value works just like reassigning an item in a list. Note that this means that you cannot have two identical keys in the same dictionary.
 
 
 ```python

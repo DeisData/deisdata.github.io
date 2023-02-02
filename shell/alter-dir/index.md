@@ -80,7 +80,7 @@ filename.txt
 
 `cp old new` command copies a file (first argument) to a new location (second argument)
 
-```
+```bash
 $ cp filename2.txt new_dir
 $ ls -F
 ```
