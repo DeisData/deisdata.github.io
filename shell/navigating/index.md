@@ -65,6 +65,7 @@ We use the `ls` command to list the contents of the current directory.
 
 It has many options we can provide:
   - `-F` option (switch or flag) tells ls to classify the output by adding a marker to file and directory names to indicate what they are.
+  - `-a` option displays all files, including hidden files (files starting with `.`)
   - `-s` option displays the size of files and directories
   - `-S` option will sort the files and directories by size
   - `--help` option will tell us how to use the command and what options it accepts
