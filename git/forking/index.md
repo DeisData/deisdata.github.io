@@ -30,6 +30,34 @@ If you have changes to suggest to original repository, you can click "Contribute
 
 If there have been commits made to the original repo, you can retrieve them by clicking "Sync fork".
 
+## Adding an a remote upstream repository
+
+We can also add the original repository to our local repository on our machine to update when there are changes to the original. We can specify **remote repositories** in git to check in on them.
+
+We can take a look at the current remote repositories connected to our repo.
+
+```bash
+$ git remote -v
+```
+
+```
+origin	https://github.com/fordfishman/assignment-1-main.git (fetch)
+origin	https://github.com/fordfishman/assignment-1-main.git (push)
+```
+
+`origin` is the default name for the repository we have cloned directly from GitHub. It is the forked repo. We can also add the original repo as an **upstream** repository.
+
+```bash
+git remote add upstream https://github.com/ENVS110a-SP23/assignment-1-main.git
+```
+
+To get changes from the original repo we've called `upstream`, we can use `git fetch` and `git merge`, specifying `upstream`.
+
+```bash
+git fetch upstream
+git merge upstream/main
+```
+
 ## Creating a pull request
 
 Once we make a commit to our forked repository, we can make a **pull request** to ask the owners of the original repo to review the changes. 
