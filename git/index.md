@@ -10,7 +10,7 @@ Workshop materials for a git and GitHub workshop series from Brandeis Library RI
 3. [Pushing](/git/pushing/)
 4. [Fetch & Merge](/git/fetch-merge/)
 5. [Git Utilities](/git/git-utilities/)
-6. [Branching](/git/branching/)
+6. [Forking](/git/forking/)
 7. [Glossary](/git/glossary/)
 
 
