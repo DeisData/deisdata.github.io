@@ -4,6 +4,10 @@ layout: python
 
 # Writing Functions
 
+### Materials
+- <a href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/functions-codealong.ipynb" target="_blank">Code-along Jupyter notebook</a>
+- <a href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/functions.ipynb" target="_blank">Filled-in Jupyter notebook</a>
+
 As humans, we can only keep a few items in our own working memory at a time. Trying to comprehend a Python script with hundreds of lines of code can be quite daunting.
 
 Thankfully, we can make this easier by breaking programs down into **functions** to make them easier to understand. We have used built-in functions, like `print()` in the past, but we can also write our own custom functions. 
