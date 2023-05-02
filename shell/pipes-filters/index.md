@@ -221,16 +221,35 @@ $ cat animals.txt | head -n 5 | tail -n 3 | sort -r > final.txt
  
   <li markdown="1">
 
-  Assuming your current working directory is `data-shell/data/`, which command would you use to produce a table that shows the total count of each type of animal in the file `animals.txt`.
+  Assuming your current working directory is `data-shell/data/`, which command would you use to produce a table that shows the total count of each type of animal in the file `animals.txt`?
 
   <ol type="a">
     <li><code>$ sort animals.txt | uniq -c</code></li>
-    <li><code>$ sort -t, -k2, 2 animals.txt | uniq -c</code></li>
+    <li><code>$ sort -t, -k 2 animals.txt | uniq -c</code></li>
     <li><code>$ cut -d, -f 2 animals.txt | uniq -c</code></li>
     <li><code>$ cut -d, -f 2 animals.txt | sort | uniq -c</code></li>
     <li><code>$ cut -d, -f 2 animals.txt | sort | uniq -c | wc -l</code></li>
 
   </ol>
+  <details>
+    <summary>Solution</summary>
+    
+  <div class="container" markdown="1">
+
+  <ol type="a">
+  <li>Sorts values, but includes date when trying to count all unique items</li>
+  <li>Still includes the dates</li>
+  <li>Because <code>uniq</code> only looks for lines repeated directly after each other, it does not work</li>
+  <li>Correct solution</li>
+  <li>Counts how many unique animals there are in the data set</li>
+
+  </ol>
+
+  
+    
+  </div>
+  
+  </details>
 
 
   </li>
