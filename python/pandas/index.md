@@ -120,7 +120,7 @@ df.head()
 
 
 
-We can see that this data frame has several different columns, with information about countries and demography
+We can see that this data frame has several different columns, with information about countries and demography.
 
 ## Summarize data frame
 

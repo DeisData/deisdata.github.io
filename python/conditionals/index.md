@@ -301,7 +301,7 @@ print(not (2 == 3 or 2 == 2)) # parentheses matter!
     False
 
 
-#### Question: Boolean expressions
+### Question: Boolean expressions
 
 Does the following code evalutate as `True` or `False`?
 
@@ -315,6 +315,7 @@ s2 = 'goodbye'
 
 not (n2 < n3 and s1 == s2 or n1 >= n3)
 ```
+
 
 <details markdown="1">
   <summary>Solution</summary>
@@ -337,6 +338,9 @@ False
 </details>
 
 
+
+### Question: Boolean types
+What happens when you compare different data types with `==`? What about `>`, `<`, `<=`, or `>=`?
 
 
 
@@ -426,7 +430,7 @@ if y < 100: # y less than 100
 
 elif y < 200: # y is 100-200 (excluding 200)
     
-    print('y ia between 100 and 200')
+    print('y is between 100 and 200')
 
 else: # y is 200 or larger
     
@@ -434,7 +438,7 @@ else: # y is 200 or larger
 
 ```
 
-    y ia between 100 and 200
+    y is between 100 and 200
 
 
 If we use `elif`, an `else` statement is not required. This will may result in neither the code associated with `if` nor `elif` running, however.
@@ -478,16 +482,27 @@ else:
 
     That belongs in a museum!!
 
+## Using data types in conditionals
 
-#### Question: Conditionals
+We can also use data types as conditions in if statements.
+
+```python
+should_be_num = 'banana'
+
+if type(should_be_num)!=int or type(should_be_num)!=float:
+    print('need input to be a number')
+
+else:
+    print(10**should_be_num)
+```
+
+### Question: Conditionals
 
 Write code that will prints the square root of `x` if x is larger than 20 and `0` if x is less than `0`.
 
 *Hint 1*: Taking the square root of a number is the same is raising it to the power of 0.5.
 
 **Bonus**: Print an error message if x is a string or a boolean. 
-
-*Hint 2*: Use `type(x)` or `isinstance(x, DATA_TYPE)`.
 
 ```python
 ### Your code here:
@@ -515,6 +530,58 @@ elif x < 0:
   </div>
 
 </details>
+```python
+### Your code here:
+```
+
+## Nested conditionals
+
+We can also put if statements inside of other if statements. Many times, these are unnecesary and can be replaced by `elif` statements, but not always.
+
+Make sure to add more indentation for the second layer of if statements.
+
+```python
+n = 22222 # some integer
+
+if n < 0: # if n is negative
+    
+    if n % 2 == 0:
+        print("n is a negative even integer")
+    
+    elif n % 2 == 1:
+        print("n is a negative odd integer")
+    
+    else:
+        print("n is a negative number")
+
+elif n > 0: # 
+    
+    if n % 2 == 0:
+        print("n is a positive even integer")
+    
+    elif n % 2 == 1:
+        print("n is a positive odd integer")
+    
+    else:
+        print("n is a positive number")
+
+else:
+    
+    print("n is zero")
+```
+
+### Question
+
+Create a list called `my_list` with four items in it. Create a variable called `x` with some value.
+
+Create a series of conditionals that check to see if the value in `x` is in `my_list`. 
+
+If this is the case, print out different text depending on what index the item is at in the list.
+
+0. "From zero to hero"
+1. "One is the loneliest number."
+2. "Two's company."
+3. "Three's a crowd."
 
 
 ## Resources

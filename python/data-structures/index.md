@@ -127,7 +127,7 @@ print(number_list)
     [2096, 0.2, 0.3, 0.4]
 
 
-#### Question 1: Lists
+### Question 1: Lists
 Create a list of numbers. Add the first number in the list to the last number of the list. Append this value to the list.
 
 <details markdown="1">
@@ -236,7 +236,7 @@ print(animals_dict)
     {'giraffes': 85, 'kangaroos': 32, 'moose': 43}
 
 
-#### Question 2: Dictionaries
+### Question 2: Dictionaries
 Assign the value of `giraffes` in `animal_dict` to a new key `rabbit` in the same dictionary.
 
 
@@ -292,7 +292,7 @@ print(new_set)
     {'oh my', 'tigers', 'lions', 'bears'}
 
 
-#### Question 3: Structures
+### Question 3: Structures
 
 For each of the following examples, should you use a list, dictionary, tuple, or set?
 
@@ -313,8 +313,115 @@ For each of the following examples, should you use a list, dictionary, tuple, or
   4. Set: Order does not matter; you just need to keep all the foods in one place.
 
   </div>
-
 </details>
+
+
+## Bonus: Nested structures
+
+We can place data structures within other data structures as well. These new structures are referred to as **nested data structures**, and they are powerful.
+
+We have lists containing lists, dictionaries containing dictionaries, dictionaries containing lists, and much more.
+
+```python
+# list of lists
+list1 = ['a', 'b', 'c']
+list2 = ['d', 'e', 'f', 'f']
+list3 = ['h', 'i', 'j']
+large_list = [list1, list2, list3]
+print(large_list)
+# dictionary of dictionaries
+
+sample1 = {
+    'co2': [10.2, 3.4, 10.1],
+    'n': 4,
+    'city': 'Waltham'
+}
+
+sample2 = {
+    'co2': [4.2, 2.3, 3.5, 23],
+    'a': 23,
+    'city': 'Watertown'
+}
+
+samples = {'s1': sample1, 's2':sample2}
+samples2 = dict()
+
+samples = {'s1': sample1, 's2':sample2}
+print(samples)
+```
+
+
+Indexing and referencing items in these nested structures can get quite complicated. It's important to know the full nested structure when doing these references.
+
+```python
+print(large_list[0][2])
+
+print(samples['s1']['city'])
+
+print(samples['s2']['co2'][0])
+```
+
+### Bonus Question 1: Nested structures pt. 1
+Create a list that contains an empty list, an empty dictionary, an empty tuple, and an empty set.
+
+Then, add any new item to the nested list and the set, and add a key-item pair to the dictionary.
+
+```python
+# your code here
+```
+
+<details markdown="1">
+  <summary>Solution</summary>
+
+  <div class="container" markdown="1">
+
+```python
+nested_list = [ list(), dict(), tuple(), set()]
+# or
+nested_list = [ [], {}, (), set()] # can't make an empty set the same way
+
+nested_list[0].append('a new item') # appending list
+nested_list[3].add('another new item')
+nested_list[1]['a new key'] = 'a new value'
+```
+
+  </div>
+</details>
+
+### Bonus Question 2: Nested structures pt. 2
+
+We want to store information regarding the ecological community in the local area.
+
+In Rivertown, there are 12 species of frogs, 2 species of snakes, and 20 species of birds. 
+
+In Spring Valley, there are 4 species of frogs, 1 species of snake, 2 species of birds, and 13 species of rodents.
+
+In Ice Town, there are 4 species of birds, 6 species of rodents, and 1 species of bear.
+
+Store this information in one nested data structure.
+
+```python
+# your code here
+```
+
+<details markdown="1">
+  <summary>Solution</summary>
+
+  <div class="container" markdown="1">
+
+```python
+# nested dictionary: dictionary of dictionaries
+ecosystem = {
+    'Rivertown': {'frogs':12, 'snakes':2, 'birds':20},
+    'Spring Valley': {'frogs':1, 'snakes': 1, 'birds': 2, 'rodents': 13},
+    'Ice Town': {'birds': 4, 'rodents':6, 'bear':1}
+}
+```
+
+  </div>
+</details>
+
+
 
 ## Resources
 - [Data Structures Documentation](https://docs.python.org/3/tutorial/datastructures.html)

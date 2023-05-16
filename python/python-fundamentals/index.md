@@ -457,9 +457,10 @@ Choose the type (`int`, `float`, `str`) that each of these descriptions should b
 
 <details markdown="1">
 
+  <summary>Solution</summary>
+
   <div class="container" markdown="1">
 
-  <summary>Solution</summary>
 
  1. `int` if only considering full days, `float` otherwise.
  2. `str`: Identifiers can often have letters or leading zeros.
@@ -469,8 +470,54 @@ Choose the type (`int`, `float`, `str`) that each of these descriptions should b
   
 </details>
 
+### Question 7: Quadratic formula 
 
-## Challenge Project 
+A quadratic equation has the following form:
+
+$$0 = ax^2 + bx + c$$
+
+We can use the quadratic forumula (below) to find the roots of a quadratic equation.
+
+$$x = \frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
+
+Create variables $a$, $b$, and $c$ with the value of $4$, $-25$, and $20$, respectively.
+
+Calculate the values of $x$ for a quadratic equation with $a=4$, $b=-25$, and $c = 20$. Remember to calculate the values for both plus and minus ($\pm$). 
+
+
+```python
+# your code below:
+
+```
+
+<details markdown="1">
+
+  <summary>Solution</summary>
+  
+  <div class="container" markdown="1">
+
+
+```python
+# initialize my variables
+a = 4
+b = -25
+c = 20
+
+# positive side
+x_p = (-b + (b**2-4*a*c)**0.5)/(2*a)
+
+# negative
+x_m = (-b - (b**2-4*a*c)**0.5)/(2*a)
+
+print(x_p)
+print(x_m)
+```
+
+  </div>
+  
+</details>
+
+### Question 8
 
 
 
