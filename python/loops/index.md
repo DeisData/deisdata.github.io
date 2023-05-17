@@ -87,7 +87,7 @@ while notJimmy: # while notJimmy is True
     Jimmy , False
 
 
-#### Question: while loops:
+### Question: while loops:
 
 Create a variable `x` with the value of 8. Divide `x` by 2 and re-assign this value to `x`. Continue to do this until `x` is less than 0.00001. Print out how many divisions this takes.
 
@@ -202,6 +202,80 @@ for food in my_breakfast: # for each string in the list of string
     I like to eat toast.
 
 
+We can use the `enumerate()` function to iterate over items in a list and get their indexes at the same time. 
+
+When use use `enumerate()`, we need to provide two variables names separated by a comma. The first represents the current index, and the second is the item at that index.
+
+```python
+for i, food in enumerate(my_breakfast):
+    print('index:', i)
+    print('food:', food)
+```
+
+    index: 0
+    food: eggs
+    index: 1
+    food: cereal
+    index: 2
+    food: oatmeal
+    index: 3
+    food: toast
+
+This is a very useful approach for iterating over multiple lists of the same length at once.
+
+```python
+my_lunch = ['sandwich', 'chips', 'fruit', 'juice']
+my_dinner = ['pasta', 'salad', 'bread', 'dessert']
+
+for i, breakfast in enumerate(my_breakfast):
+    lunch = my_lunch[i]
+    dinner = my_dinner[i]
+    
+    print("my food today:", breakfast, lunch, dinner, i)
+```
+    my food today: eggs sandwich pasta 0
+    my food today: cereal chips salad 1
+    my food today: oatmeal fruit bread 2
+    my food today: toast juice dessert 3
+
+### Question
+Below are four lists: `x1`, `x2`, `y1`, and `y2`.
+
+Using a single for loop, subtract the values of x1 and x2 at each index, and take the square of the difference. Do the same for `y1` and `y2`. Add the two squares together. Store all 4 squares in a list in the same order.
+
+
+```python
+x1 = [6.3, 7.1, 3.7, 3.2, 0.1]
+x2 = [-5.7, -17.5, -3.2, -19.3,-18.2]
+y1 = [34.6, 28.4, 60.0, 68.1, 83.9]
+y2 = [188.7,  75.9, 100.1, 61.1, 180.2]
+
+# your code here: 
+
+```
+
+<details markdown="1">
+  <summary>Solution</summary>
+
+<div class="container" markdown="1">
+
+```python
+vals = list()
+
+for i, x_1 in x1:
+    
+    x_2 = x2[i]
+    y_1 = y1[i]
+    y_2 = y2[i]
+    
+    val = (x_1 - x_2)**2 + (y_1 - y_2)**2
+    vals.append(val)
+```
+    
+</div>
+</details>
+
+## Adding in conditionals
 `for` loops can become quite powerful when you include conditionals that change behavior based on the item in the current iteration.
 
 
@@ -252,7 +326,7 @@ for food in my_breakfast:
     I sometimes like to eat toast.
 
 
-#### Question: for loops
+### Question: for loops
 
 Iterate over all integers from 0 to 1000 and print all multiples of 41 (numbers that can be divided by 41 with no remainder). How many multiples are there?
 

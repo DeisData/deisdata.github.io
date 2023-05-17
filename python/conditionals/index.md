@@ -496,6 +496,9 @@ else:
     print(10**should_be_num)
 ```
 
+
+    need input to be a number
+
 ### Question: Conditionals
 
 Write code that will prints the square root of `x` if x is larger than 20 and `0` if x is less than `0`.
