@@ -6,8 +6,8 @@ layout: python
 
 ### Materials:
 
-- <a href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/numpy-pandas-codealong.ipynb" target="_blank">Code-along Jupyter notebook</a>
-- <a href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/numpy-pandas.ipynb" target="_blank">Filled-in Jupyter notebook</a>
+- <a href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/numpy-codealong.ipynb" target="_blank">Code-along Jupyter notebook</a>
+- <a href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/numpy.ipynb" target="_blank">Filled-in Jupyter notebook</a>
 
 
 NumPy (Numerical Python) is a critical library for manipulating numbers, performing matrix operations, and mathematics in general. 
@@ -88,7 +88,7 @@ print( numpy.multiply(your_array, my_array) )
     [3 4 3]
 
 
-#### Bonus
+### Bonus
 It is common practice in Python to use `import numpy as np` when importing NumPy. This allows you to only need to type `np.` (e.g., `np.add()`) when using a tool within NumPy, which is a bit less clunky and faster.
 
 
@@ -113,7 +113,7 @@ You could technically import NumPy as any variable name, but **DO NOT DO THIS** 
 # import numpy as pandas
 ```
 
-#### Question: NumPy math
+### Question: NumPy math
 
 Create two NumPy arrays of the same length and subtract one from the other.
 
@@ -249,7 +249,7 @@ Here is non-exhaustive list of other useful operations you can calculate with Nu
 
 For full usage of these functions and more, please visit the [NumPy reference manual](https://numpy.org/doc/stable/reference/routines.linalg.html).
 
-#### Question: NumPy operations
+### Question: NumPy operations
 
 Create a 1D array called `a` with at least 5 values. Find its mean, median, min, max, and standard deviation.
 
@@ -359,7 +359,43 @@ print(z[1:3, 0:3]) # rows 2 and 3 for columns 1-3
      [ 9 10 11]]
 
 
-#### Question: Slicing
+### Question: Slicing
+
+Using slicing, create a variable containing the first two columns of `data`, and another variable containing the last two columns. Subtract the two sets of columns from each other and square the difference. 
+
+
+```python
+data = numpy.array([[0.37568486, 0.39360456, 0.83055883, 0.67256725],
+                    [0.68017832, 0.90546118, 0.79336985, 0.80561814],
+                    [0.31127419, 0.29518634, 0.48364838, 0.56015636],
+                    [0.75994716, 0.01312868, 0.15958863, 0.98516761],
+                    [0.76733493, 0.19900552, 0.03471678, 0.06886277]])
+
+### your code here:
+
+
+
+```
+
+<details markdown="1">
+  <summary>Solution</summary>
+
+  <div class="container" markdown="1">
+
+
+```python
+a = data[:,0:2]
+b = data[:,2:4]
+
+(a - b)**2
+```
+
+  </div>
+
+</details>
+
+
+### Question: Slicing syntax
 
 What happens when you slice but do not include the first index (`i`), the last index (`j`), or include neither?
 
@@ -385,6 +421,26 @@ What happens when you slice but do not include the first index (`i`), the last i
 </details>
 
 
+### Boolean indexing
+
+Because numpy is focused around numerical values, we can also subset based on conditions.
+
+If you want to get all values of an array greater than 0, you can say `array[array > 0]`.
+
+
+```python
+x = numpy.array([1., -1., -2., 3.])
+
+x[x > 0]
+```
+
+
+
+
+    array([1., 3.])
+
+
+
 ## NumPy constants
 
 Math has many constants and important terms that are not present in vanilla Python. Here is a short list of some important ones:
@@ -395,7 +451,7 @@ Math has many constants and important terms that are not present in vanilla Pyth
 - Missing values/ Not a Number (NaN): `np.nan` or `np.NaN` or `np.NAN`
 - pi ($\pi$): `np.pi`
 
-#### Question: Math
+### Question: Math
 
 Calculate the difference between $+\infty$ and $\pi$.
 
@@ -417,7 +473,222 @@ numpy.inf - numpy.pi
 
 </details>
 
+## Numpy random
 
+Numpy contains a submodule called `random`. It contains incredibly powerful tools for random sampling, randomizing list orders, and random number generation.
+
+We'll go through a few examples of how to use `numpy.random`.
+
+`np.random.rand()` generates random floats between 0 and 1.
+
+
+```python
+np.random.rand(10)
+```
+
+
+
+
+    array([0.25829512, 0.86059639, 0.51045683, 0.5108304 , 0.83965643,
+           0.69420288, 0.57987225, 0.8707505 , 0.1403405 , 0.84695063])
+
+
+
+We can provide one number for a 1D array output, or we can give a shape.
+
+
+```python
+np.random.rand(5,4)
+```
+
+
+
+
+    array([[0.405686  , 0.55911381, 0.10216565, 0.1176069 ],
+           [0.54399612, 0.89415105, 0.4038699 , 0.91464262],
+           [0.8727333 , 0.78070018, 0.8072012 , 0.95182085],
+           [0.45871726, 0.93649965, 0.70878889, 0.04117096],
+           [0.04581515, 0.27093262, 0.81162693, 0.85181647]])
+
+
+
+`np.random.randint()` gives us back a random integer between a low and a high number. It includes the low number and excludes the high number. The third argument is the shape of the output.
+
+
+```python
+np.random.randint(0, 100, (3,4))
+```
+
+
+
+
+    array([[66, 67, 61, 39],
+           [18, 42, 73, 35],
+           [59, 68, 24, 91]])
+
+
+
+`np.random.uniform()` gives you random floats between two intervals. All values between those intervals are equally likely.
+
+
+```python
+np.random.uniform(-100, 100, 5)
+```
+
+
+
+
+    array([ 78.88838389, -47.47066046,  78.50047554, -82.99434746,
+           -32.23190278])
+
+
+
+`np.random.normal()` gives numbers centered around a mean, which is the first value. The second number defines the spread, or how far from the mean the values can be. The last argument is the shape.
+
+
+```python
+np.random.normal(0, 0.5, 10)
+```
+
+
+
+
+    array([ 0.41727943,  0.16488726,  0.95159045, -0.164019  ,  0.6812153 ,
+           -0.49631379,  0.66193097, -0.53010887,  0.70356419, -0.53807628])
+
+
+
+You can get dramatically different values by changing the spread, or **standard deviation**.
+
+1/3 of all values will within 40 of 0 in the example below.
+
+
+```python
+np.random.normal(0, 40, 10)
+```
+
+
+
+
+    array([ 42.89262833, -41.19252505,  23.10369224,   7.86300809,
+            -1.06910399, -66.537476  ,   2.32921206,  15.6455084 ,
+           -47.75769822,  -5.7709003 ])
+
+
+
+`np.random.shuffle()` randomly rearranges orders. Here we use a list. 
+
+It re-generates the variable, overwriting the list we had.
+
+
+```python
+my_list = [0,1,2,3,4,5,6,7,8]
+
+np.random.shuffle(my_list)
+
+print(my_list)
+```
+
+    [1, 5, 2, 6, 3, 4, 8, 0, 7]
+
+
+`shuffle()` works on string lists, too.
+
+
+```python
+string_list = ["first", "second", "third", "fourth", "fifth"]
+
+np.random.shuffle(string_list)
+
+print(string_list)
+```
+
+    ['second', 'fifth', 'first', 'fourth', 'third']
+
+
+`np.random.choice()` by default takes a random item from a list that we give it.
+
+
+```python
+np.random.choice(my_list)
+```
+
+
+
+
+    6
+
+
+
+We can ask for more than one item, as well.
+
+
+```python
+np.random.choice(my_list, 3)
+```
+
+
+
+
+    array([8, 2, 5])
+
+
+
+We take from the list **with replacement** by default, meaning that we don't remove future possibilities by sampling more.
+
+
+```python
+np.random.choice(my_list, 20)
+```
+
+
+
+
+    array([6, 3, 6, 1, 1, 2, 6, 6, 8, 1, 1, 1, 1, 3, 4, 6, 4, 8, 8, 2])
+
+
+
+If we say `replace=False`, then we can only get each value once.
+
+
+```python
+np.random.choice(my_list, 8, replace=False)
+```
+
+
+
+
+    array([4, 2, 6, 0, 3, 5, 8, 7])
+
+
+
+### Question 
+
+Make a for loop that runs `np.random.normal()` to make arrays with a mean of 40, and a standard deviation of 20 with different sample sizes, and then calculates the mean and standard deviation of the random array you have generated.
+
+As you increase n, do you notice any change in the sample mean or standard deviation?
+
+
+<details markdown="1">
+  <summary>Solution</summary>
+
+  <div class="container" markdown="1">
+
+
+```python
+for n in [10, 100, 1000]:
+
+    sample = np.random.normal(40, 20, n)
+    print('sample size:',n)
+    print('sample mean:',np.mean(sample))
+    print('sample stdev:',np.std(sample))
+    print()
+
+```
+
+  </div>
+
+</details>
 
 ## Resources
 
