@@ -148,7 +148,7 @@ print('result of call is:', result)
     result of call is: None
 
 
-#### Question 1
+### Question 1
 What is the error in the code below?
 
 
@@ -177,7 +177,7 @@ def another_function():
 
 
 
-#### Question 2 
+### Question 2 
 What does this code return?
 
 
@@ -319,6 +319,68 @@ This is our first taste of how larger programs are built: we define basic operat
 
 ## Functions for tidying up code
 
+Functions are very useful for consolidating code for repurposing it. 
+
+Below we have an example of calculating the distance between two points without a function.
+
+```python
+point1 = [1, 4]
+point2 = [4,-2]
+
+distance = ((point1[0] - point2[0]) ** 2 + (point1[1] - point2[1]) ** 2) ** 0.5
+print(distance)
+```
+
+    6.708203932499369
+
+With this setup, if we want to calculate distance on any more points, we'll have to repeat the code several times. This is known as code duplication, and can cause issues if there are any typos in the original code or if you want to make a change to code. In these cases, you will need to change every instance you've run it.
+
+When you copy and paste to duplicate, you may also forget to update information.
+
+```python
+point3 = [5, 11]
+point4 = [2, 8]
+
+distance1 = ((point3[0] - point4[0]) ** 2 + (point3[1] - point4[1]) ** 2) ** 0.5
+print(distance1) 
+
+point5 = [5, 11]
+point6 = [2, 8]
+
+# easy to forget to change variable names!
+distance1 = ((point3[0] - point4[0]) ** 2 + (point3[1] - point4[1]) ** 2) ** 0.5 
+print(distance1) 
+```
+
+    4.242640687119285
+    4.242640687119285
+
+We can remove this by defining a function for calculating distance and simply running the function several times.
+
+Limiting code duplication has an important benefit: if you need to change a feature of the code, you will only need to change it one place. 
+
+Additionally, this helps clean up the code. We've given the function an informative name, and you can easily check to see what the function does.
+
+```python
+# Define a function to calculate the distance between two points
+def calculate_distance(x1, x2):
+    d = ((x1[0] - x2[0]) ** 2 + (x1[1] - x2[1]) ** 2) ** 0.5
+    return d
+
+# Calculate the distance between the points using the function
+print(calculate_distance(point1, point2))
+print(calculate_distance(point3, point4))
+print(calculate_distance(point5, point6))
+
+# Print the result
+print("Distance:", distance)
+```
+
+    6.708203932499369
+    4.242640687119285
+    4.242640687119285
+    Distance: 6.708203932499369
+
 Now that we know how to wrap bits of code up in functions, we can make our inflammation analysis easier to read and easier to reuse. First, let’s make a visualize function that generates our plots:
 
 
@@ -388,7 +450,7 @@ for filename in filenames:
 
 Limiting code duplication has an important benefit: if you need to change a feature of the code, you will only need to change it one place. 
 
-#### Question 4
+### Question 4
 
 The code below takes 4 short DNA sequences and calculates the percentage of DNA bases that are either G or C for each of them. This runs the same process for each sequence.
 
@@ -654,7 +716,7 @@ def std_dev(sample):
 
 </details>
 
-#### Resources
+### Resources
 This lesson is developed from the following resources:
 - http://swcarpentry.github.io/python-novice-gapminder/16-writing-functions/index.html
 - https://swcarpentry.github.io/python-novice-inflammation/08-func/index.html
