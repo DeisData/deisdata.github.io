@@ -6,8 +6,8 @@ layout: python
 
 ### Materials:
 
-- <a href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/numpy-pandas-codealong.ipynb" target="_blank">Code-along Jupyter notebook</a>
-- <a href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/numpy-pandas.ipynb" target="_blank">Filled-in Jupyter notebook</a>
+- <a href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/pandas-codealong.ipynb" target="_blank">Code-along Jupyter notebook</a>
+- <a href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/pandas.ipynb" target="_blank">Filled-in Jupyter notebook</a>
 
 While NumPy can be used to important data, it is optimized around numerical data. Many data sets include categorical variables. For these data sets, it is best to use a library called `pandas`, which focuses on creating and manipulating data frames. 
 
