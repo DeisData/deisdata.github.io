@@ -101,7 +101,7 @@ There are many more axis and plot customizations you can do. Be sure check out [
 
 Line plots are another simple visualization we can make through `matplotlib`.
 
-Let's a plot of life expectancy in Jamaica over time. First, we need to subset the data frame to only include data from Jamaica.
+Let's make a plot of life expectancy in Jamaica over time. First, we need to subset the data frame to only include data from Jamaica.
 
 Then, we make a plot just as we did before, but instead of using `ax.hist()`, we use `ax.plot(x, y)`, putting the year first to specify the x axis, followed by life expectancy for the y. 
 
