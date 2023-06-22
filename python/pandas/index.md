@@ -184,11 +184,10 @@ df['region']
 
 
 
-To identify unique entries in this column, we can use the `pd.unique()` function. 
-
+To identify unique entries in this column, we can use the `.unique()` function. 
 
 ```python
-pd.unique( df['region'] )
+df['region'].unique()
 ```
 
 
@@ -198,11 +197,10 @@ pd.unique( df['region'] )
 
 
 
-The `countries` column has many unique values, so we'll just use the `len()` function to see how many unique countries we have.
-
+The `countries` column has many unique values, so instead of `.unique()`, we can use `.nunique()` to find the number of unique countries in the data set. 
 
 ```python
-len( pd.unique( df['country'] ) ) # this is called nesting functions -> calling functions within other functions
+df['country'].nunique()
 ```
 
 
