@@ -9,7 +9,7 @@ layout: r
 To participate in Programming with R, 
 please bring a laptop with R and RStudio installed. 
 We recommend that you have the latest version of R.
-and of the tidyverse package. 
+
 You need to have RStudio installed, but it is less crucial that you are using the most recent version.
 
 ### Do you already have R and RStudio installed?
@@ -37,34 +37,23 @@ You need to have RStudio installed, but it is less crucial that you are using th
   - Mac: “RSTUDIO-2023.06.1-524.DMG”
 - When the file finishes downloading, double-click to install. You should be able to click “Next” to all dialogs to finish the installation.
 
-#### Installing tidyverse
-
-- Open RStudio. 
-- Go to Tools > Install Packages. 
-- Enter tidyverse, then select Install.
-
 You are ready for Data Science Essentials for R!
 
 ### Already Installed R
-The workshops run more smoothly when everyone is using the same version of R and tidyverse. Please update R and tidyverse, if necessary (and less crucially, RStudio).
+The workshops run more smoothly when everyone is using the same version of R. Please update R, if necessary (and less crucially, RStudio).
 
 #### Verify R version
 - Open RStudio. 
 - At the top of the Console you will see session info. The first line tells you which version of R you are using. 
 - If RStudio is already open and you’re deep in a session, type R.version.string to print out the R version.
 
-#### Do you have R version 4.3.1 ("Funny-Looking Kid") installed?
+#### Do you have R version 4.3.1 ("Beagle Scouts") installed?
 
 **No**: follow the instructions for “Updating R”.
 
-**Yes**: Great! Do you have tidyverse installed?
+**Yes**: You are ready for Data Science Essentials for R!
 
-- **No or I don’t know**: See “Installing tidyverse”.
-- **Yes**: Great! Go to Go to Tools > Check for Package Updates. If there’s an update available for tidyverse, install it.
-
-You are ready for Data Science Essentials for R!
-
-### Updating R/RStudio/Tidyverse
+### Updating R/RStudio
 **Windows**
 
 To update R on Windows, try using the package installr (only for Windows).
@@ -84,7 +73,6 @@ On Mac, you can simply download and install the newest version of R. When you re
 - Click the link “R-4.3.1.pkg”
 - When the file finishes downloading, double-click to install. You should be able to click “Next” to all dialogs to finish the installation.
 - From within RStudio, go to Help > Check for Updates to install newer version of RStudio (if available, optional).
-- To update packages, go to Tools > Check for Package Updates. If updates are available, select All (or just tidyverse), and click Install Updates.
 
 ## Data set and code
 
