@@ -62,7 +62,7 @@ ol {
   }
 }
 details {
-  margin: 20px 0 20px 0;
+  margin: 2em 0 2.5em 0;
   background-color: rgb(210, 210, 210);
   summary {font-size: 18pt; margin-left: 5px;}
   summary:hover{color: #233a74;}
@@ -228,6 +228,10 @@ li.nav-item {
     
 }
 
+.main-content .highlight{
+  margin-bottom: 2em;
+}
+
 .highlight{
 
   max-height: 35em;
@@ -266,6 +270,8 @@ div.table {
 }
 
 .highlighter-rouge {
+
+  margin-top: 2em;
 
   .nav.nav-tabs {
     margin-left: 0;
