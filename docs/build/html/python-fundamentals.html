@@ -1,0 +1,749 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Python" href="python.html" />
+
+    <link rel="shortcut icon" href="_static/favicon-32x32.png"/><!-- Generated with Sphinx 7.1.2 and Furo 2023.07.26 -->
+        <title>Fundamentals - DeisData 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">DeisData 0.1 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="_static/android-chrome-192x192.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">DeisData 0.1 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="usage.html">Usage</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Usage</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="test.html">Test</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="python.html">Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Fundamentals</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="fundamentals">
+<h1>Fundamentals<a class="headerlink" href="#fundamentals" title="Permalink to this heading">#</a></h1>
+<p>Python is a very powerful tool for automating tasks that would otherwise
+be time-consuming or impossible to do by hand or other conventional
+tools. Here, we’ll go over basic ways to use Python to introduce you to
+a slice of its potential.</p>
+<section id="materials">
+<h2>Materials:<a class="headerlink" href="#materials" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Code-along Jupyter notebook</p></li>
+<li><p>Filled-in Jupyter notebook</p></li>
+</ul>
+</section>
+<section id="question-1-do-it-yourself-coding">
+<h2>Question 1. Do it yourself! Coding<a class="headerlink" href="#question-1-do-it-yourself-coding" title="Permalink to this heading">#</a></h2>
+<p>Write a message and print it out!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#  INSTRUCTIONS:   Write a message in the quotes.</span>
+<span class="c1">#  type Shift+Enter to run the cell.</span>
+<span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="python-as-a-calculator">
+<h2>Python as a calculator<a class="headerlink" href="#python-as-a-calculator" title="Permalink to this heading">#</a></h2>
+<p>An incredibly simple yet pivotal role of Python is to perform math
+calculations (addition, subtraction, multiplication, etc.). We show how
+to basic action below.</p>
+<p>You’ll see the symbol <code class="docutils literal notranslate"><span class="pre">#</span></code> used often. These are comments, and they are
+used to write descriptions. Any characters following <code class="docutils literal notranslate"><span class="pre">#</span></code> are not run
+or executed.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">5</span>  <span class="c1"># addition and multiplication</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">23</span>
+</pre></div>
+</div>
+<p>After we run a cell, an output is displayed below.</p>
+<p>You may have noticed from that example that order of operations mattered
+for that calculation. You can parentheses too if you want to group
+calculations.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">12</span> <span class="o">/</span> <span class="p">(</span><span class="mi">6</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span> <span class="c1"># division and substraction</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">6.0</span>
+</pre></div>
+</div>
+<p>Exponentiation (e.g. <span class="math notranslate nohighlight">\(2^3\)</span>) looks a little bit odd in Python as it
+uses <code class="docutils literal notranslate"><span class="pre">**</span></code> instead of a more traditional <code class="docutils literal notranslate"><span class="pre">^</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span> <span class="c1"># exponentiation</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">8</span>
+</pre></div>
+</div>
+<section id="question-2-writing-math">
+<h3>Question 2: Writing math<a class="headerlink" href="#question-2-writing-math" title="Permalink to this heading">#</a></h3>
+<p>Calculate the following value in Python:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\frac{25}{(35 - 3)^3}\]</div>
+</div>
+<details><summary><p>Solution</p>
+</summary><div class="docutils container">
+<p>Remember to include parentheses when needed, but Python also follows
+standard order of operations.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">25</span><span class="o">/</span><span class="p">(</span><span class="mi">35</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</details></section>
+</section>
+<section id="assigning-variables">
+<h2>Assigning Variables<a class="headerlink" href="#assigning-variables" title="Permalink to this heading">#</a></h2>
+<p>A foundational tool in Python is assigning values to variables. We do
+this with the <code class="docutils literal notranslate"><span class="pre">=</span></code> operator.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">50</span> <span class="c1"># x is 50</span>
+</pre></div>
+</div>
+<p>This sets the variable <code class="docutils literal notranslate"><span class="pre">x</span></code> to be 50, an <strong>integer</strong>, or <code class="docutils literal notranslate"><span class="pre">int</span></code>. This
+value of x is now stored in our notebook, and we can access this value
+in other cells until the notebook is reset. For instance, subtracting 20
+from <code class="docutils literal notranslate"><span class="pre">x</span></code> prints out a value of 30.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># What if I use x again in a different cell?</span>
+<span class="n">x</span> <span class="o">-</span> <span class="mi">20</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">30</span>
+</pre></div>
+</div>
+<p><strong>Variables persist between cells once they have been run (executed).</strong></p>
+<p>If we ever want to check the value of any variable, we can use the
+built-in <code class="docutils literal notranslate"><span class="pre">print()</span></code> command to display the value.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mi">35</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">35</span>
+</pre></div>
+</div>
+<p>We can also assign the value of one variable to another variable. If we
+execute <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">y</span></code>, x takes the current value of <code class="docutils literal notranslate"><span class="pre">y</span></code> and assigns that
+to <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<p><em>Note: ``y`` will be unaffected by this assignment. ``x = y`` should be
+interpretted as “let x take the current value of y”.</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">y</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">35</span>
+<span class="mi">35</span>
+</pre></div>
+</div>
+<p>If we change <code class="docutils literal notranslate"><span class="pre">y</span></code> to be a different value, <code class="docutils literal notranslate"><span class="pre">x</span></code> will be unaffected.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mf">3.8</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># will not always be the same value as y</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">35</span>
+<span class="mf">3.8</span>
+</pre></div>
+</div>
+<p><strong>Variables only change value when something is assigned to them.</strong> They
+are <strong>not</strong> like spreadsheets where a cell can depend on another and
+update automatically.</p>
+<section id="question-3-swapping-values">
+<h3>Question 3. Swapping values<a class="headerlink" href="#question-3-swapping-values" title="Permalink to this heading">#</a></h3>
+<p>Given the code below, what is the value of the variable <code class="docutils literal notranslate"><span class="pre">swap</span></code> by the
+end of the block?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">3.0</span>
+<span class="n">swap</span> <span class="o">=</span> <span class="n">x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">y</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">swap</span>
+</pre></div>
+</div>
+<details><summary><p>Solution</p>
+</summary><div class="docutils container">
+<p>The only statements here that effect the value of <code class="docutils literal notranslate"><span class="pre">swap</span></code> are
+<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">1.0</span></code> and <code class="docutils literal notranslate"><span class="pre">swap</span> <span class="pre">=</span> <span class="pre">x</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.0</span>
+</pre></div>
+</div>
+</div>
+</details><p><strong>What’s in a name?</strong> <em>Variable name conventions</em> - Use only letters,
+digits, and underscores (_) - can use camelcase (capitalizeEveryWord) -
+Start with a letter (typically lower case) - Variable names are case
+sensitive - Use meaningful names!</p>
+<p><strong>Variables must be created before they are used.</strong> Otherwise, Python
+will throw an error.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="c1"># we haven&#39;t initialized z yet!</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;z&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
+</pre></div>
+</div>
+<p>In the following example, we specify a value for a variable after we
+print it. This will not work. Within a cell, the statements are executed
+from top to bottom. If the Python interpreter finds an error, execution
+stops.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">last_name</span><span class="p">)</span> <span class="c1"># last name does not exist yet</span>
+<span class="c1"># What happens if I try to correct my error in the same cell?</span>
+<span class="n">last_name</span><span class="o">=</span><span class="s1">&#39;Montoya&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">last_name</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If we want to increase a value of a variable by a certain, we can use
+the <code class="docutils literal notranslate"><span class="pre">+=</span></code> operator. Here, we add 2 to the current value of x.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># before incrementing</span>
+<span class="n">x</span> <span class="o">+=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># after incrementing</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">35</span>
+<span class="mi">37</span>
+</pre></div>
+</div>
+<p>This is equivalent to running <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">2</span></code>. We can also do similar
+operations with subtraction, multiplication, and division.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">x</span> <span class="o">-=</span> <span class="mi">2</span> <span class="c1"># 8 - 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;subtraction:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">*=</span> <span class="mi">4</span> <span class="c1"># 6 * 4</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;multiplication:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">/=</span> <span class="mi">6</span> <span class="c1"># 24 / 6</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;division:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">subtraction</span><span class="p">:</span> <span class="mi">6</span>
+<span class="n">multiplication</span><span class="p">:</span> <span class="mi">24</span>
+<span class="n">division</span><span class="p">:</span> <span class="mf">4.0</span>
+</pre></div>
+</div>
+<section id="question-4">
+<h4>Question 4<a class="headerlink" href="#question-4" title="Permalink to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">a</span></code> has been initialized to be 25. Assign variable <code class="docutils literal notranslate"><span class="pre">b</span></code> to be 5 less
+than <code class="docutils literal notranslate"><span class="pre">a</span></code> without using <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">20</span></code>. Print the value of b.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="c1"># write your code here:</span>
+</pre></div>
+</div>
+<details><summary><p>Solution</p>
+</summary><div class="docutils container">
+<p>We can use variable <code class="docutils literal notranslate"><span class="pre">a</span></code> to assign value of <code class="docutils literal notranslate"><span class="pre">a-5</span></code> to <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details></section>
+</section>
+</section>
+<section id="strings">
+<h2>Strings<a class="headerlink" href="#strings" title="Permalink to this heading">#</a></h2>
+<p>So far, we have only assigned integer values to variables. We can also
+assign values characters to variables. These are called <strong>strings</strong>. You
+can specify a string by putting text within either single quotation
+(<code class="docutils literal notranslate"><span class="pre">'single'</span></code>) or double quotation marks (<code class="docutils literal notranslate"><span class="pre">&quot;double&quot;</span></code>).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_name</span> <span class="o">=</span> <span class="s2">&quot;Inigo Montoya&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_name</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Inigo</span> <span class="n">Montoya</span>
+</pre></div>
+</div>
+<p>We can print out a string directly in <code class="docutils literal notranslate"><span class="pre">print()</span></code>, as well.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;My name is&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_name</span><span class="p">)</span> <span class="c1"># will print on a second line</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">My</span> <span class="n">name</span> <span class="ow">is</span>
+<span class="n">Inigo</span> <span class="n">Montoya</span>
+</pre></div>
+</div>
+<p>We can also print out multiple values in a single <code class="docutils literal notranslate"><span class="pre">print()</span></code> statement.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;My name is&quot;</span><span class="p">,</span> <span class="n">my_name</span><span class="p">)</span> <span class="c1"># print() adds a space between the values</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">My</span> <span class="n">name</span> <span class="ow">is</span> <span class="n">Inigo</span> <span class="n">Montoya</span>
+</pre></div>
+</div>
+<p>If we print out a string with an integer variable, it will convert the
+integer to a string in order to print it.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num_balloons</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I would like&quot;</span><span class="p">,</span> <span class="n">num_balloons</span><span class="p">,</span> <span class="s2">&quot;balloons.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">I</span> <span class="n">would</span> <span class="n">like</span> <span class="mi">25</span> <span class="n">balloons</span><span class="o">.</span>
+</pre></div>
+</div>
+<section id="question-5">
+<h3>Question 5<a class="headerlink" href="#question-5" title="Permalink to this heading">#</a></h3>
+<p>What will happen if you run the following code?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">last_name</span> <span class="o">=</span> <span class="n">Montoya</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">last_name</span><span class="p">)</span>
+</pre></div>
+</div>
+<details><summary><p>Solution</p>
+</summary><div class="docutils container">
+<p>We receive a <code class="docutils literal notranslate"><span class="pre">NameError</span></code> because we have not defined the varable
+<code class="docutils literal notranslate"><span class="pre">Montoya</span></code> previously. You may also see additional text describing
+more details about the error, such as where it occurred.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;Montoya&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
+</pre></div>
+</div>
+</div>
+</details></section>
+</section>
+<section id="data-types">
+<h2>Data Types:<a class="headerlink" href="#data-types" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>integers (<code class="docutils literal notranslate"><span class="pre">int</span></code>) represent positive or negative whole numbers like
+3 or -512</p></li>
+<li><p>floating point numbers (<code class="docutils literal notranslate"><span class="pre">float</span></code>) represent real numbers like
+3.14159 or -2.5</p></li>
+<li><p>character strings (<code class="docutils literal notranslate"><span class="pre">str</span></code>) are text</p>
+<ul>
+<li><p>written with single or double quotes (matching)</p></li>
+<li><p>quotations aren’t printed when the string is displayed</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find the type with function type()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">52</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;Inigo Montoya&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mf">3.14</span><span class="p">))</span>
+
+<span class="c1"># notice we are nesting functions -&gt; type() is inside of print()</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
+&lt;class &#39;int&#39;&gt;
+&lt;class &#39;str&#39;&gt;
+&lt;class &#39;float&#39;&gt;
+</pre></div>
+</div>
+<section id="combining-and-adding-data-types">
+<h3>Combining and adding data types<a class="headerlink" href="#combining-and-adding-data-types" title="Permalink to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">+</span></code> operator concatenates (adds) strings together. However if you
+try to add an integer and a string, you will receive an error.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;several&quot;</span> <span class="o">+</span> <span class="s2">&quot; concatenated&quot;</span> <span class="o">+</span> <span class="s2">&quot; strings&quot;</span><span class="p">)</span> <span class="c1"># need to manually add spaces when concatenating</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">several</span> <span class="n">concatenated</span> <span class="n">strings</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="s2">&quot;2&quot;</span><span class="p">)</span> <span class="c1"># adding string to int doesn&#39;t work</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ne">TypeError</span><span class="p">:</span> <span class="n">unsupported</span> <span class="n">operand</span> <span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="o">+</span><span class="p">:</span> <span class="s1">&#39;int&#39;</span> <span class="ow">and</span> <span class="s1">&#39;str&#39;</span>
+</pre></div>
+</div>
+<p>We can convert an <code class="docutils literal notranslate"><span class="pre">int</span></code> to a <code class="docutils literal notranslate"><span class="pre">string</span></code> with the <code class="docutils literal notranslate"><span class="pre">str()</span></code> function to
+combine them. We must convert numbers to strings or vice versa when
+operating on them. Consistency is key!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">))</span> <span class="c1"># convert string to int to do addition</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;2&#39;</span><span class="p">)</span> <span class="c1"># convert int to string to concatenate</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span>
+<span class="mi">12</span>
+</pre></div>
+</div>
+<p>However, we can mix integers and floats freely in operations. This will
+result in the final value being a float.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;half is&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mf">2.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;three squared is&#39;</span><span class="p">,</span> <span class="mf">3.0</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">half</span> <span class="ow">is</span> <span class="mf">0.5</span>
+<span class="n">three</span> <span class="n">squared</span> <span class="ow">is</span> <span class="mf">9.0</span>
+</pre></div>
+</div>
+</section>
+<section id="length">
+<h3>Length<a class="headerlink" href="#length" title="Permalink to this heading">#</a></h3>
+<p>Strings have length (how many characters long they are), which can find
+with <code class="docutils literal notranslate"><span class="pre">len()</span></code>. Floats and ints do not have length.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="s2">&quot;a long string&quot;</span><span class="p">)</span> <span class="p">)</span> <span class="c1"># spaces count in length</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">13</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="mf">3.1415</span><span class="p">)</span> <span class="p">)</span> <span class="c1"># will get an error</span>
+</pre></div>
+</div>
+</section>
+<section id="division-types-with-numbers">
+<h3>Division Types with numbers<a class="headerlink" href="#division-types-with-numbers" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">//</span></code> operator performs integer floor division (rounds down to
+nearest integer)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/</span></code> operator performs floating point division (returns a number
+with a decimal point)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%</span></code> modulo operator returns the remainder from integer division</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="o">//</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="o">%</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span>
+<span class="mf">1.6666666666666667</span>
+<span class="mi">2</span>
+</pre></div>
+</div>
+</section>
+<section id="question-6">
+<h3>Question 6.<a class="headerlink" href="#question-6" title="Permalink to this heading">#</a></h3>
+<p>Choose the type (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">str</span></code>) that each of these
+descriptions should be: 1. Time elapsed from the start of the year until
+now in days. 2. Serial code of a piece of lab equipment 3. A lab
+specimen’s age</p>
+<details><summary><p>Solution</p>
+</summary><div class="docutils container">
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code> if only considering full days, <code class="docutils literal notranslate"><span class="pre">float</span></code> otherwise.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str</span></code>: Identifiers can often have letters or leading zeros.</p></li>
+<li><p>Depends on the specimen. If using countable units, <code class="docutils literal notranslate"><span class="pre">int</span></code>,
+otherwise <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p></li>
+</ol>
+</div>
+</details></section>
+<section id="question-7-quadratic-formula">
+<h3>Question 7: Quadratic formula<a class="headerlink" href="#question-7-quadratic-formula" title="Permalink to this heading">#</a></h3>
+<p>A quadratic equation has the following form:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[0 = ax^2 + bx + c\]</div>
+</div>
+<p>We can use the quadratic forumula (below) to find the roots of a
+quadratic equation.</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[x = \frac{-b\pm\sqrt{b^2-4ac}}{2a}\]</div>
+</div>
+<p>Create variables <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, and <span class="math notranslate nohighlight">\(c\)</span> with the value of
+<span class="math notranslate nohighlight">\(4\)</span>, <span class="math notranslate nohighlight">\(-25\)</span>, and <span class="math notranslate nohighlight">\(20\)</span>, respectively.</p>
+<p>Calculate the values of <span class="math notranslate nohighlight">\(x\)</span> for a quadratic equation with
+<span class="math notranslate nohighlight">\(a=4\)</span>, <span class="math notranslate nohighlight">\(b=-25\)</span>, and <span class="math notranslate nohighlight">\(c = 20\)</span>. Remember to calculate
+the values for both plus and minus (<span class="math notranslate nohighlight">\(\pm\)</span>).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code below:</span>
+</pre></div>
+</div>
+<details><summary><p>Solution</p>
+</summary><div class="docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># initialize my variables</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mi">25</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">20</span>
+
+<span class="c1"># positive side</span>
+<span class="n">x_p</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
+
+<span class="c1"># negative</span>
+<span class="n">x_m</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="p">(</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x_p</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x_m</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details></section>
+<section id="question-8">
+<h3>Question 8<a class="headerlink" href="#question-8" title="Permalink to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">first</span>  <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">second</span> <span class="o">=</span> <span class="s2">&quot;1&quot;</span>
+<span class="n">third</span>  <span class="o">=</span> <span class="s2">&quot;1.1&quot;</span>
+</pre></div>
+</div>
+<p>Which of the following will return the floating point number <code class="docutils literal notranslate"><span class="pre">2.0</span></code>?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># first + float(second)          # choice a</span>
+<span class="c1"># float(second) + float(third)   # choice b</span>
+<span class="c1"># first + int(third)             # choice c</span>
+<span class="c1"># first + int(float(third))      # choice d</span>
+<span class="c1"># int(first) + int(float(third)) # choice e</span>
+<span class="c1"># 2.0 * second                   # choice f</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">2.0</span>
+</pre></div>
+</div>
+<p><strong>Reference and Resource</strong></p>
+<p>This lesson is adapted from Software Carpentry.</p>
+<p>[ previous ] [ next ]</p>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          <a class="prev-page" href="python.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Python</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Ford Fishman
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Fundamentals</a><ul>
+<li><a class="reference internal" href="#materials">Materials:</a></li>
+<li><a class="reference internal" href="#question-1-do-it-yourself-coding">Question 1. Do it yourself! Coding</a></li>
+<li><a class="reference internal" href="#python-as-a-calculator">Python as a calculator</a><ul>
+<li><a class="reference internal" href="#question-2-writing-math">Question 2: Writing math</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#assigning-variables">Assigning Variables</a><ul>
+<li><a class="reference internal" href="#question-3-swapping-values">Question 3. Swapping values</a><ul>
+<li><a class="reference internal" href="#question-4">Question 4</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#strings">Strings</a><ul>
+<li><a class="reference internal" href="#question-5">Question 5</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#data-types">Data Types:</a><ul>
+<li><a class="reference internal" href="#combining-and-adding-data-types">Combining and adding data types</a></li>
+<li><a class="reference internal" href="#length">Length</a></li>
+<li><a class="reference internal" href="#division-types-with-numbers">Division Types with numbers</a></li>
+<li><a class="reference internal" href="#question-6">Question 6.</a></li>
+<li><a class="reference internal" href="#question-7-quadratic-formula">Question 7: Quadratic formula</a></li>
+<li><a class="reference internal" href="#question-8">Question 8</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=e031e9a9"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/scripts/furo.js?v=32e29ea5"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>
