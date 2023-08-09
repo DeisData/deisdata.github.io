@@ -1,5 +1,5 @@
-Fundamentals
-============
+Python Fundamentals
+===================
 
 Python is a very powerful tool for automating tasks that would otherwise
 be time-consuming or impossible to do by hand or other conventional

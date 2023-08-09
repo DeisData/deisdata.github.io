@@ -49,15 +49,14 @@ Fishman <https://calendar.library.brandeis.edu/appointments/fordfishman>`__
 Liaison <https://www.brandeis.edu/library/research/help/liaison-subject.html>`__
 and we’ll help you sort it out.
 
-Check out the :doc:`usage` section for further information, including how to
-:ref:`install <installation>` the project.
-
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
    
-   usage
    python
+   git
+   r
+   shell
 
 
 

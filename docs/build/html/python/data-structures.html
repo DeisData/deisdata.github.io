@@ -1,0 +1,703 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Booleans and conditionals" href="conditionals.html" /><link rel="prev" title="Python Fundamentals" href="python-fundamentals.html" />
+
+    <link rel="shortcut icon" href="../_static/favicon-32x32.png"/><!-- Generated with Sphinx 4.5.0 and Furo 2023.05.20 -->
+        <title>Python Data Structures - DeisData 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">DeisData 0.1 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/android-chrome-192x192.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">DeisData 0.1 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../python.html">Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="setup-install.html">Setup and Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter.html">Jupyter Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-fundamentals.html">Fundamentals</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Python Data Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals.html">Booleans and conditionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loops.html">Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html">NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pandas.html">Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="figures.html">Making figures in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html">Writing Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stats.html">Statistics with Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../git.html">Git Version Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../r.html">Installing R</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell.html">Unix Shell</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="python-data-structures">
+<h1>Python Data Structures<a class="headerlink" href="#python-data-structures" title="Permalink to this headline">#</a></h1>
+<section id="materials">
+<h2>Materials:<a class="headerlink" href="#materials" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Code-along Jupyter notebook</p></li>
+<li><p>Filled-in Jupyter notebook</p></li>
+</ul>
+<p>Going over the fundmentals, we learned how to store numbers and sets of
+characters as variables. Python also has built-in ways to store multiple
+strings and numbers, namely <strong>lists</strong>, <strong>tuples</strong>, <strong>dictionaries</strong>, and
+<strong>sets</strong>. These all allow you to groups of ints, floats, and strings in
+different arrangements. Here, we created a <code class="docutils literal notranslate"><span class="pre">list</span></code> of 5 ints called
+<code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span> <span class="p">]</span> <span class="c1"># integers 1 - 5</span>
+</pre></div>
+</div>
+<p>Here are brief descriptions of the four structures.</p>
+<ul class="simple">
+<li><p>Lists: store data in a <strong>specific order</strong></p></li>
+<li><p>Dictionaries: store combinations of <strong>keys</strong> and <strong>values</strong> without
+any order</p></li>
+<li><p>Tuples: store data in a specific order and <strong>cannot</strong> be altered</p></li>
+<li><p>Sets: store unordered data</p></li>
+</ul>
+<p>We will dive into these in more detail below, focusing primarily on
+lists and dictionaries.</p>
+</section>
+<section id="lists">
+<h2>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">#</a></h2>
+<p>Lists are very common tools in Python. They allow us to store large
+amounts of data with an order. They come with very handy tools to
+reference different objects stored in them. We can also easily add items
+to them.</p>
+<section id="initialize-a-list">
+<h3>Initialize a list<a class="headerlink" href="#initialize-a-list" title="Permalink to this headline">#</a></h3>
+<p>There are two ways of initializing an empty list: <code class="docutils literal notranslate"><span class="pre">list()</span></code> and <code class="docutils literal notranslate"><span class="pre">[]</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># these do the same thing</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="n">your_list</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<p>To make a list with pre-populated with items, we can fill the brackets
+with comma-separated values.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number_list</span> <span class="o">=</span> <span class="p">[</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span> <span class="p">]</span> <span class="c1"># lists can hold numbers</span>
+<span class="n">string_list</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;rabbit&#39;</span> <span class="p">]</span> <span class="c1"># can also hold strings</span>
+</pre></div>
+</div>
+</section>
+<section id="referencing-to-items-in-a-list">
+<h3>Referencing to items in a list<a class="headerlink" href="#referencing-to-items-in-a-list" title="Permalink to this headline">#</a></h3>
+<p>Each item in a list has an <strong>index</strong>. If your list has 3 items, it has 3
+indexes (or indicies, depending on who you ask).</p>
+<p>In Python, indexes starts at 0. To reference the first item in
+<code class="docutils literal notranslate"><span class="pre">number_list</span></code>, we use <code class="docutils literal notranslate"><span class="pre">number_list[0]</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># get the first item from number_list</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0.1
+</pre></div>
+</div>
+<p>We can reference the rest of the numbers in the list with indexes 1
+through 3. Note that even though there are 4 items in the list, the
+index goes from 0 to 3.</p>
+<p>We also can use the items in a list the same way we can use variables to
+do math or other operations.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">number_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">number_list</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="p">)</span> <span class="c1"># 0.2 - 0.4</span>
+<span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;my favorite kind of animal is&#39;</span><span class="p">,</span> <span class="n">string_list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="p">)</span> <span class="c1"># prints rabbit</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-0.2
+my favorite kind of animal is rabbit
+</pre></div>
+</div>
+<p>If we try to reference an index that does not exist in a list, we get an
+error.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number_list</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>IndexError: list index out of range
+</pre></div>
+</div>
+<p>If we want to reference the last item in a list, we can do it two ways.
+We can use the length of list and subtract 1. Alternatively, we can also
+use <code class="docutils literal notranslate"><span class="pre">[-1]</span></code> as a shorthand for the last item.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">number_list</span><span class="p">[</span> <span class="nb">len</span><span class="p">(</span><span class="n">number_list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">]</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">number_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0.4
+0.4
+</pre></div>
+</div>
+</section>
+<section id="appending-to-a-list">
+<h3>Appending to a list<a class="headerlink" href="#appending-to-a-list" title="Permalink to this headline">#</a></h3>
+<p>If we want to add an item to the end of <code class="docutils literal notranslate"><span class="pre">string_list</span></code>, we can use
+<code class="docutils literal notranslate"><span class="pre">string_list.append()</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">string_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;bear&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">string_list</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;cat&#39;, &#39;dog&#39;, &#39;rabbit&#39;, &#39;bear&#39;]
+</pre></div>
+</div>
+</section>
+<section id="reassigning-an-item-in-a-list">
+<h3>Reassigning an item in a list<a class="headerlink" href="#reassigning-an-item-in-a-list" title="Permalink to this headline">#</a></h3>
+<p>We can also alter any item currently in a list.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2096</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">number_list</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[2096, 0.2, 0.3, 0.4]
+</pre></div>
+</div>
+</section>
+<section id="question-1-lists">
+<h3>Question 1: Lists<a class="headerlink" href="#question-1-lists" title="Permalink to this headline">#</a></h3>
+<p>Create a list of numbers. Add the first number in the list to the last
+number of the list. Append this value to the list.</p>
+<details><summary><p>Solution</p>
+</summary><div class="docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+<span class="n">num_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">num_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">num_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details></section>
+</section>
+<section id="dictionaries">
+<h2>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">#</a></h2>
+<p>Like lists, dictionaries are powerful ways to store items. However, the
+two structures are quite different from each other. Instead of storing
+items in a specific order, like a list, dictionaries store them as
+<strong>keys</strong> and <strong>values</strong>. For example, you might have a key <code class="docutils literal notranslate"><span class="pre">giraffes</span></code>
+paired with the value <code class="docutils literal notranslate"><span class="pre">25</span></code>, and the key <code class="docutils literal notranslate"><span class="pre">kangaroos</span></code> paired with the
+value <code class="docutils literal notranslate"><span class="pre">32</span></code>. We can do this with using brackets (<code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code>) and colons
+(<code class="docutils literal notranslate"><span class="pre">:</span></code>) with the format of <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">KEY1:</span> <span class="pre">VALUE1,</span> <span class="pre">KEY2:</span> <span class="pre">VALUE2,</span> <span class="pre">...</span> <span class="pre">}</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">animals_dict</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;giraffes&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;kangaroos&#39;</span><span class="p">:</span> <span class="mi">32</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>Notice that our keys are strings and our values here are ints. Keys and
+values can be any data types, though it tends to be best practice for
+keys to be strings.</p>
+<p>We can also write this vertically, putting key-value pairs on their own
+lines for visual clarity. You will still need to separate entries with a
+comma, however.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">animals_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;giraffes&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
+    <span class="s1">&#39;kangaroos&#39;</span><span class="p">:</span> <span class="mi">32</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Once we create a dictionary with keys and values, we can use the key to
+return the corresponding value. We do this by using <code class="docutils literal notranslate"><span class="pre">DICT[KEY]</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">animals_dict</span><span class="p">[</span><span class="s1">&#39;giraffes&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>25
+</pre></div>
+</div>
+<p>Similarly to lists, if we try to reference a key that is not present in
+the dictionary, we will get an error.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">animals_dict</span><span class="p">[</span><span class="s1">&#39;beaver&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>KeyError: &#39;beaver&#39;
+</pre></div>
+</div>
+<p>However, dictionaries have a way around this. We can use the <code class="docutils literal notranslate"><span class="pre">.get()</span></code>
+function to either return a value for a key or a default value that we
+specify. We run it with <code class="docutils literal notranslate"><span class="pre">DICT.get(KEY,</span> <span class="pre">DEFAULT_VALUE)</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">animals_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;beaver&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># will return 0 because beaver is not a key in this dictionary</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+<p>Making an empty dictionary is similar to making an empty list. We can
+either use <code class="docutils literal notranslate"><span class="pre">dict()</span></code> or <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># these do the same thing</span>
+<span class="n">my_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">your_dict</span> <span class="o">=</span> <span class="p">{}</span>
+</pre></div>
+</div>
+<section id="adding-to-a-dictionary">
+<h3>Adding to a dictionary<a class="headerlink" href="#adding-to-a-dictionary" title="Permalink to this headline">#</a></h3>
+<p>It is very simple to add a new item to a dictionary. Instead of using
+the colon notation, we can simply run <code class="docutils literal notranslate"><span class="pre">DICT[KEY]</span> <span class="pre">=</span> <span class="pre">VALUE</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">animals_dict</span><span class="p">[</span><span class="s1">&#39;moose&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">43</span> <span class="c1"># new key-value pair - moose: 43</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">animals_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;giraffes&#39;: 25, &#39;kangaroos&#39;: 32, &#39;moose&#39;: 43}
+</pre></div>
+</div>
+</section>
+<section id="give-a-key-a-new-value">
+<h3>Give a key a new value<a class="headerlink" href="#give-a-key-a-new-value" title="Permalink to this headline">#</a></h3>
+<p>Giving a key a new value works just like reassigning an item in a list.
+Note that this means that you cannot have two identical keys in the same
+dictionary.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">animals_dict</span><span class="p">[</span><span class="s1">&#39;giraffes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">85</span> <span class="c1"># key giraffes assigned the value of 85</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">animals_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;giraffes&#39;: 85, &#39;kangaroos&#39;: 32, &#39;moose&#39;: 43}
+</pre></div>
+</div>
+</section>
+<section id="question-2-dictionaries">
+<h3>Question 2: Dictionaries<a class="headerlink" href="#question-2-dictionaries" title="Permalink to this headline">#</a></h3>
+<p>Assign the value of <code class="docutils literal notranslate"><span class="pre">giraffes</span></code> in <code class="docutils literal notranslate"><span class="pre">animal_dict</span></code> to a new key
+<code class="docutils literal notranslate"><span class="pre">rabbit</span></code> in the same dictionary.</p>
+<details><summary><p>Solution</p>
+</summary><div class="docutils container">
+<p>Assigning dictionary values of different keys can be tricky. Remember
+to have write write key on the right side.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">animal_dict</span><span class="p">[</span><span class="s1">&#39;rabbit&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">animal_dict</span><span class="p">[</span><span class="s1">&#39;giraffe&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</details></section>
+</section>
+<section id="tuples">
+<h2>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">#</a></h2>
+<p>Tuples are a lot like lists. They are ordered collections of items that
+can be referenced with number indexing. However, they are <strong>immutable</strong>,
+meaning that once you create one, you cannot change it by adding to it
+or editing items in it. They are a somewhat more efficient to use, so
+they are situationally useful.</p>
+<p>You can create a new tuple with parentheses. Note that creating an empty
+tuple has little use, since it cannot be altered.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_tuple</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span> <span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="sets">
+<h2>Sets<a class="headerlink" href="#sets" title="Permalink to this headline">#</a></h2>
+<p>Sets are unordered collections of items. You can think about about them
+like dictionaries that only consist of keys. Like tuples, they are more
+situationally useful than lists or dictionaries. Like dictionaries, they
+also use <code class="docutils literal notranslate"><span class="pre">{}</span></code> but they do not use colons.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span> <span class="c1"># the only way to initialize an empty set</span>
+
+<span class="n">new_set</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;lions&#39;</span><span class="p">,</span> <span class="s1">&#39;tigers&#39;</span><span class="p">,</span> <span class="s1">&#39;bears&#39;</span> <span class="p">}</span> <span class="c1"># without colons, NOT a dictionary</span>
+</pre></div>
+</div>
+<p>We can add items to a list using <code class="docutils literal notranslate"><span class="pre">.add()</span></code>. However, if the item is
+already present in the set, only one copy will be kept in it. Therefore,
+sets keep a unique group of items.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s1">&#39;oh my&#39;</span><span class="p">)</span> <span class="c1"># oh my will now be a string in the set</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">new_set</span><span class="p">)</span>
+
+<span class="n">new_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s1">&#39;bears&#39;</span><span class="p">)</span> <span class="c1"># won&#39;t have two beats in the set</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">new_set</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;oh my&#39;, &#39;tigers&#39;, &#39;lions&#39;, &#39;bears&#39;}
+{&#39;oh my&#39;, &#39;tigers&#39;, &#39;lions&#39;, &#39;bears&#39;}
+</pre></div>
+</div>
+<section id="question-3-structures">
+<h3>Question 3: Structures<a class="headerlink" href="#question-3-structures" title="Permalink to this headline">#</a></h3>
+<p>For each of the following examples, should you use a list, dictionary,
+tuple, or set?</p>
+<ol class="arabic simple">
+<li><p>A group of employees and their IDs.</p></li>
+<li><p>All 12 months in order.</p></li>
+<li><p>Your favorite foods ranked.</p></li>
+<li><p>All of the foods you have tried.</p></li>
+</ol>
+<details><summary><p>Solution</p>
+</summary><div class="docutils container">
+<ol class="arabic simple">
+<li><p>Dictionary: paired information works very well in dictionaries.</p></li>
+<li><p>Tuple: Months are ordered, and you never need to change or add to
+the months of the year. (List would ok as well.)</p></li>
+<li><p>List: You want an ordering to represent the rank, and you might
+change or add to the list.</p></li>
+<li><p>Set: Order does not matter; you just need to keep all the foods in
+one place.</p></li>
+</ol>
+</div>
+</details></section>
+</section>
+<section id="bonus-nested-structures">
+<h2>Bonus: Nested structures<a class="headerlink" href="#bonus-nested-structures" title="Permalink to this headline">#</a></h2>
+<p>We can place data structures within other data structures as well. These
+new structures are referred to as <strong>nested data structures</strong>, and they
+are powerful.</p>
+<p>We have lists containing lists, dictionaries containing dictionaries,
+dictionaries containing lists, and much more.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># list of lists</span>
+<span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">]</span>
+<span class="n">list3</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;j&#39;</span><span class="p">]</span>
+<span class="n">large_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">,</span> <span class="n">list3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">large_list</span><span class="p">)</span>
+<span class="c1"># dictionary of dictionaries</span>
+
+<span class="n">sample1</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;co2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">10.2</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="mf">10.1</span><span class="p">],</span>
+    <span class="s1">&#39;n&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Waltham&#39;</span>
+<span class="p">}</span>
+
+<span class="n">sample2</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;co2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">4.2</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">23</span><span class="p">],</span>
+    <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span>
+    <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Watertown&#39;</span>
+<span class="p">}</span>
+
+<span class="n">samples</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;s1&#39;</span><span class="p">:</span> <span class="n">sample1</span><span class="p">,</span> <span class="s1">&#39;s2&#39;</span><span class="p">:</span><span class="n">sample2</span><span class="p">}</span>
+<span class="n">samples2</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+<span class="n">samples</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;s1&#39;</span><span class="p">:</span> <span class="n">sample1</span><span class="p">,</span> <span class="s1">&#39;s2&#39;</span><span class="p">:</span><span class="n">sample2</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Indexing and referencing items in these nested structures can get quite
+complicated. It’s important to know the full nested structure when doing
+these references.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">large_list</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">samples</span><span class="p">[</span><span class="s1">&#39;s1&#39;</span><span class="p">][</span><span class="s1">&#39;city&#39;</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">samples</span><span class="p">[</span><span class="s1">&#39;s2&#39;</span><span class="p">][</span><span class="s1">&#39;co2&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+<section id="bonus-question-1-nested-structures-pt-1">
+<h3>Bonus Question 1: Nested structures pt. 1<a class="headerlink" href="#bonus-question-1-nested-structures-pt-1" title="Permalink to this headline">#</a></h3>
+<p>Create a list that contains an empty list, an empty dictionary, an empty
+tuple, and an empty set.</p>
+<p>Then, add any new item to the nested list and the set, and add a
+key-item pair to the dictionary.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+</pre></div>
+</div>
+<details><summary><p>Solution</p>
+</summary><div class="docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nested_list</span> <span class="o">=</span> <span class="p">[</span> <span class="nb">list</span><span class="p">(),</span> <span class="nb">dict</span><span class="p">(),</span> <span class="nb">tuple</span><span class="p">(),</span> <span class="nb">set</span><span class="p">()]</span>
+<span class="c1"># or</span>
+<span class="n">nested_list</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[],</span> <span class="p">{},</span> <span class="p">(),</span> <span class="nb">set</span><span class="p">()]</span> <span class="c1"># can&#39;t make an empty set the same way</span>
+
+<span class="n">nested_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;a new item&#39;</span><span class="p">)</span> <span class="c1"># appending list</span>
+<span class="n">nested_list</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s1">&#39;another new item&#39;</span><span class="p">)</span>
+<span class="n">nested_list</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;a new key&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;a new value&#39;</span>
+</pre></div>
+</div>
+</div>
+</details></section>
+<section id="bonus-question-2-nested-structures-pt-2">
+<h3>Bonus Question 2: Nested structures pt. 2<a class="headerlink" href="#bonus-question-2-nested-structures-pt-2" title="Permalink to this headline">#</a></h3>
+<p>We want to store information regarding the ecological community in the
+local area.</p>
+<p>In Rivertown, there are 12 species of frogs, 2 species of snakes, and 20
+species of birds.</p>
+<p>In Spring Valley, there are 4 species of frogs, 1 species of snake, 2
+species of birds, and 13 species of rodents.</p>
+<p>In Ice Town, there are 4 species of birds, 6 species of rodents, and 1
+species of bear.</p>
+<p>Store this information in one nested data structure.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
+</pre></div>
+</div>
+<details><summary><p>Solution</p>
+</summary><div class="docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># nested dictionary: dictionary of dictionaries</span>
+<span class="n">ecosystem</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Rivertown&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;frogs&#39;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;snakes&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;birds&#39;</span><span class="p">:</span><span class="mi">20</span><span class="p">},</span>
+    <span class="s1">&#39;Spring Valley&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;frogs&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;snakes&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;birds&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;rodents&#39;</span><span class="p">:</span> <span class="mi">13</span><span class="p">},</span>
+    <span class="s1">&#39;Ice Town&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;birds&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;rodents&#39;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;bear&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</details></section>
+</section>
+<section id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html">Data Structures
+Documentation</a></p></li>
+<li><p><a class="reference external" href="https://swcarpentry.github.io/python-novice-inflammation/04-lists/index.html">Software
+Carpentry</a></p></li>
+</ul>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="conditionals.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Booleans and conditionals</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="python-fundamentals.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Python Fundamentals</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Ford Fishman
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Python Data Structures</a><ul>
+<li><a class="reference internal" href="#materials">Materials:</a></li>
+<li><a class="reference internal" href="#lists">Lists</a><ul>
+<li><a class="reference internal" href="#initialize-a-list">Initialize a list</a></li>
+<li><a class="reference internal" href="#referencing-to-items-in-a-list">Referencing to items in a list</a></li>
+<li><a class="reference internal" href="#appending-to-a-list">Appending to a list</a></li>
+<li><a class="reference internal" href="#reassigning-an-item-in-a-list">Reassigning an item in a list</a></li>
+<li><a class="reference internal" href="#question-1-lists">Question 1: Lists</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dictionaries">Dictionaries</a><ul>
+<li><a class="reference internal" href="#adding-to-a-dictionary">Adding to a dictionary</a></li>
+<li><a class="reference internal" href="#give-a-key-a-new-value">Give a key a new value</a></li>
+<li><a class="reference internal" href="#question-2-dictionaries">Question 2: Dictionaries</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tuples">Tuples</a></li>
+<li><a class="reference internal" href="#sets">Sets</a><ul>
+<li><a class="reference internal" href="#question-3-structures">Question 3: Structures</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bonus-nested-structures">Bonus: Nested structures</a><ul>
+<li><a class="reference internal" href="#bonus-question-1-nested-structures-pt-1">Bonus Question 1: Nested structures pt. 1</a></li>
+<li><a class="reference internal" href="#bonus-question-2-nested-structures-pt-2">Bonus Question 2: Nested structures pt. 2</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#resources">Resources</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    </body>
+</html>

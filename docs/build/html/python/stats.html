@@ -1,0 +1,878 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Git Version Control" href="../git.html" /><link rel="prev" title="Writing Functions" href="functions.html" />
+
+    <link rel="shortcut icon" href="../_static/favicon-32x32.png"/><!-- Generated with Sphinx 4.5.0 and Furo 2023.05.20 -->
+        <title>Statistics with Python - DeisData 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">DeisData 0.1 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/android-chrome-192x192.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">DeisData 0.1 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../python.html">Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="setup-install.html">Setup and Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter.html">Jupyter Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-fundamentals.html">Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-structures.html">Python Data Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conditionals.html">Booleans and conditionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loops.html">Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numpy.html">NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pandas.html">Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="figures.html">Making figures in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html">Writing Functions</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Statistics with Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../git.html">Git Version Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../r.html">Installing R</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell.html">Unix Shell</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="statistics-with-python">
+<h1>Statistics with Python<a class="headerlink" href="#statistics-with-python" title="Permalink to this headline">#</a></h1>
+<section id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Import data into a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> data frame</p></li>
+<li><p>Import some standard and useful libraries for python</p></li>
+<li><p>Introduce some model fitting</p></li>
+</ul>
+</section>
+<section id="reference-and-resource">
+<h2>Reference and Resource<a class="headerlink" href="#reference-and-resource" title="Permalink to this headline">#</a></h2>
+<p>This lesson and data is adapted from LinkedIn Learning: Python
+Statistics Essential Training. See these lessons for more details
+including working with categorical data.</p>
+</section>
+<section id="importing-libraries-and-data">
+<h2>Importing Libraries and Data<a class="headerlink" href="#importing-libraries-and-data" title="Permalink to this headline">#</a></h2>
+<p>We will use several packages for our statistical analyses. In
+particular, we will use <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> and <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> for running
+hypothesis testing and model fitting.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load standard libraries for data analysis</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># packages for statistics</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span>
+
+<span class="kn">import</span> <span class="nn">statsmodels</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+</pre></div>
+</div>
+<p>To find out more about a library and see the documentation, you can run
+<code class="docutils literal notranslate"><span class="pre">?LIBRARY_NAME</span></code>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>?scipy.stats
+</pre></div>
+</div>
+</section>
+<section id="describe-and-plot-distributions">
+<h2>Describe and plot distributions<a class="headerlink" href="#describe-and-plot-distributions" title="Permalink to this headline">#</a></h2>
+<p>Let’s first import our GapMinder data set and summarize it.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import data</span>
+<span class="n">gapminder</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/gapminder.csv&#39;</span><span class="p">)</span>
+<span class="n">gapminder</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 14740 entries, 0 to 14739
+Data columns (total 9 columns):
+ #   Column            Non-Null Count  Dtype
+---  ------            --------------  -----
+ 0   country           14740 non-null  object
+ 1   year              14740 non-null  int64
+ 2   region            14740 non-null  object
+ 3   population        14740 non-null  float64
+ 4   life_expectancy   14740 non-null  float64
+ 5   age5_surviving    14740 non-null  float64
+ 6   babies_per_woman  14740 non-null  float64
+ 7   gdp_per_capita    14740 non-null  float64
+ 8   gdp_per_day       14740 non-null  float64
+dtypes: float64(6), int64(1), object(2)
+memory usage: 1.0+ MB
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gapminder</span>
+</pre></div>
+</div>
+<div class="docutils container">
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style><table border="1" class="dataframe"><thead><tr style="text-align: right;"><th></th><th><p>country</p>
+</th><th><p>year</p>
+</th><th><p>region</p>
+</th><th><p>population</p>
+</th><th><p>life_expectancy</p>
+</th><th><p>age5_surviving</p>
+</th><th><p>babies_per_woman</p>
+</th><th><p>gdp_per_capita</p>
+</th><th><p>gdp_per_day</p>
+</th></tr></thead><tbody><tr><th><p>0</p>
+</th><td><p>Afghanistan</p>
+</td><td><p>1800</p>
+</td><td><p>Asia</p>
+</td><td><p>3280000.0</p>
+</td><td><p>28.21</p>
+</td><td><p>53.142</p>
+</td><td><p>7.00</p>
+</td><td><p>603.0</p>
+</td><td><p>1.650924</p>
+</td></tr><tr><th><p>1</p>
+</th><td><p>Afghanistan</p>
+</td><td><p>1810</p>
+</td><td><p>Asia</p>
+</td><td><p>3280000.0</p>
+</td><td><p>28.11</p>
+</td><td><p>53.002</p>
+</td><td><p>7.00</p>
+</td><td><p>604.0</p>
+</td><td><p>1.653662</p>
+</td></tr><tr><th><p>2</p>
+</th><td><p>Afghanistan</p>
+</td><td><p>1820</p>
+</td><td><p>Asia</p>
+</td><td><p>3323519.0</p>
+</td><td><p>28.01</p>
+</td><td><p>52.862</p>
+</td><td><p>7.00</p>
+</td><td><p>604.0</p>
+</td><td><p>1.653662</p>
+</td></tr><tr><th><p>3</p>
+</th><td><p>Afghanistan</p>
+</td><td><p>1830</p>
+</td><td><p>Asia</p>
+</td><td><p>3448982.0</p>
+</td><td><p>27.90</p>
+</td><td><p>52.719</p>
+</td><td><p>7.00</p>
+</td><td><p>625.0</p>
+</td><td><p>1.711157</p>
+</td></tr><tr><th><p>4</p>
+</th><td><p>Afghanistan</p>
+</td><td><p>1840</p>
+</td><td><p>Asia</p>
+</td><td><p>3625022.0</p>
+</td><td><p>27.80</p>
+</td><td><p>52.576</p>
+</td><td><p>7.00</p>
+</td><td><p>647.0</p>
+</td><td><p>1.771389</p>
+</td></tr><tr><th><p>…</p>
+</th><td><p>…</p>
+</td><td><p>…</p>
+</td><td><p>…</p>
+</td><td><p>…</p>
+</td><td><p>…</p>
+</td><td><p>…</p>
+</td><td><p>…</p>
+</td><td><p>…</p>
+</td><td><p>…</p>
+</td></tr><tr><th><p>14735</p>
+</th><td><p>Zimbabwe</p>
+</td><td><p>2011</p>
+</td><td><p>Africa</p>
+</td><td><p>14255592.0</p>
+</td><td><p>51.60</p>
+</td><td><p>90.800</p>
+</td><td><p>3.64</p>
+</td><td><p>1626.0</p>
+</td><td><p>4.451745</p>
+</td></tr><tr><th><p>14736</p>
+</th><td><p>Zimbabwe</p>
+</td><td><p>2012</p>
+</td><td><p>Africa</p>
+</td><td><p>14565482.0</p>
+</td><td><p>54.20</p>
+</td><td><p>91.330</p>
+</td><td><p>3.56</p>
+</td><td><p>1750.0</p>
+</td><td><p>4.791239</p>
+</td></tr><tr><th><p>14737</p>
+</th><td><p>Zimbabwe</p>
+</td><td><p>2013</p>
+</td><td><p>Africa</p>
+</td><td><p>14898092.0</p>
+</td><td><p>55.70</p>
+</td><td><p>91.670</p>
+</td><td><p>3.49</p>
+</td><td><p>1773.0</p>
+</td><td><p>4.854209</p>
+</td></tr><tr><th><p>14738</p>
+</th><td><p>Zimbabwe</p>
+</td><td><p>2014</p>
+</td><td><p>Africa</p>
+</td><td><p>15245855.0</p>
+</td><td><p>57.00</p>
+</td><td><p>91.900</p>
+</td><td><p>3.41</p>
+</td><td><p>1773.0</p>
+</td><td><p>4.854209</p>
+</td></tr><tr><th><p>14739</p>
+</th><td><p>Zimbabwe</p>
+</td><td><p>2015</p>
+</td><td><p>Africa</p>
+</td><td><p>15602751.0</p>
+</td><td><p>59.30</p>
+</td><td><p>92.040</p>
+</td><td><p>3.35</p>
+</td><td><p>1801.0</p>
+</td><td><p>4.930869</p>
+</td></tr></tbody></table><p><p>14740 rows × 9 columns</p>
+</p></div>
+</section>
+<section id="descriptive-statistics">
+<h2>Descriptive statistics<a class="headerlink" href="#descriptive-statistics" title="Permalink to this headline">#</a></h2>
+<p>We can use built in functions in pandas to summarize key aspects of our
+data.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">max_pop</span> <span class="o">=</span> <span class="n">gapminder</span><span class="o">.</span><span class="n">population</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">ave_bpw</span> <span class="o">=</span> <span class="n">gapminder</span><span class="o">.</span><span class="n">babies_per_woman</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">var_bpw</span> <span class="o">=</span> <span class="n">gapminder</span><span class="o">.</span><span class="n">babies_per_woman</span><span class="o">.</span><span class="n">var</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Max population:&#39;</span><span class="p">,</span> <span class="n">max_pop</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mean babies per woman:&#39;</span><span class="p">,</span> <span class="n">ave_bpw</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Variance in babies per woman:&#39;</span><span class="p">,</span> <span class="n">var_bpw</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Max population: 1376048943.0
+Mean babies per woman: 4.643471506105837
+Variance in babies per woman: 3.9793570162855287
+</pre></div>
+</div>
+<p>We examine quartiles using the <code class="docutils literal notranslate"><span class="pre">.quantile()</span></code> method and specifying
+0.25, 0.50 and 0.75.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gapminder</span><span class="o">.</span><span class="n">life_expectancy</span><span class="o">.</span><span class="n">quantile</span><span class="p">([</span><span class="mf">0.25</span><span class="p">,</span><span class="mf">0.50</span><span class="p">,</span><span class="mf">0.75</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0.25    44.23
+0.50    60.08
+0.75    70.38
+Name: life_expectancy, dtype: float64
+</pre></div>
+</div>
+<p>For very simple plots, we can plot directly from pandas, specifying the
+type of plot with the argument <code class="docutils literal notranslate"><span class="pre">kind</span></code>. Here we make a box plot and a
+histogram. We can then add labels with matplotlib.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gapminder</span><span class="o">.</span><span class="n">life_expectancy</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Percentage Surviving&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="row docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;div class=&quot;col-12&quot;&gt;
+    &lt;img src=&quot;/_static/images/python/stats/stats_13_0.png&quot; class=&quot;img-fluid rounded align-middle mx-auto d-block&quot; style=&quot;max-width:100%;&quot; alt=&quot;gapminder box plot&quot;&gt;
+&lt;/div&gt;
+</pre></div>
+</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gapminder</span><span class="o">.</span><span class="n">age5_surviving</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>84.45266533242852
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gapminder</span><span class="o">.</span><span class="n">life_expectancy</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Percentage Surviving&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="row docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;div class=&quot;col-12&quot;&gt;
+    &lt;img src=&quot;/_static/images/python/stats/stats_15_0.png&quot; class=&quot;img-fluid rounded align-middle mx-auto d-block&quot; style=&quot;max-width:100%;&quot; alt=&quot;gapminder histogram&quot;&gt;
+&lt;/div&gt;
+</pre></div>
+</div>
+</div>
+<section id="hypothesis-testing">
+<h3>Hypothesis Testing<a class="headerlink" href="#hypothesis-testing" title="Permalink to this headline">#</a></h3>
+<p>Statistical methods are used to test <strong>hypotheses</strong>. One of the most
+foundational hypotheses we can ask is “Is the mean of this sample
+different from some value?” Typically, the value we are comparing the
+mean to has some sort of relavence.</p>
+<p>While the actual mean of the sample might be different, we want to know
+if our data could have been generated if the true mean was a certain
+value. To do this, we use a <strong>1-sample t-test</strong>.</p>
+<p>To run a 1-sample t-test, we can use the <code class="docutils literal notranslate"><span class="pre">ttest_1sample()</span></code> function
+from the <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> module.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1 Sample t-test</span>
+<span class="c1"># Is the mean of the data 84.4?</span>
+<span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">ttest_1samp</span><span class="p">(</span><span class="n">gapminder</span><span class="p">[</span><span class="s1">&#39;life_expectancy&#39;</span><span class="p">],</span> <span class="mi">57</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Ttest_1sampResult(statistic=-1.2660253842508842, pvalue=0.20552400415951508)
+</pre></div>
+</div>
+<p>If we want to compare the means in two samples, we need to run a
+<strong>2-sample t-test</strong>, also called an <strong>independent samples t-test</strong>. We
+can use the function <code class="docutils literal notranslate"><span class="pre">ttest_ind()</span></code> for this.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2 sample t-test</span>
+<span class="n">gdata_us</span> <span class="o">=</span> <span class="n">gapminder</span><span class="p">[</span><span class="n">gapminder</span><span class="o">.</span><span class="n">country</span> <span class="o">==</span> <span class="s1">&#39;United States&#39;</span><span class="p">]</span>
+<span class="n">gdata_canada</span> <span class="o">=</span> <span class="n">gapminder</span><span class="p">[</span><span class="n">gapminder</span><span class="o">.</span><span class="n">country</span> <span class="o">==</span> <span class="s1">&#39;Canada&#39;</span><span class="p">]</span>
+
+<span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">ttest_ind</span><span class="p">(</span><span class="n">gdata_us</span><span class="o">.</span><span class="n">life_expectancy</span><span class="p">,</span> <span class="n">gdata_canada</span><span class="o">.</span><span class="n">life_expectancy</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Ttest_indResult(statistic=-0.741088317096773, pvalue=0.4597261729067277)
+</pre></div>
+</div>
+</section>
+</section>
+<section id="fitting-models-to-data">
+<h2>Fitting Models to Data<a class="headerlink" href="#fitting-models-to-data" title="Permalink to this headline">#</a></h2>
+<p>We have described the sample of a population with statistics. Now let’s
+understand what we can say about a population from a sample of data.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get data subset</span>
+<span class="n">gdata</span> <span class="o">=</span> <span class="n">gapminder</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;year == 1985&#39;</span><span class="p">)</span>
+<span class="c1"># grab population for point sizes</span>
+<span class="n">size</span> <span class="o">=</span> <span class="mf">1e-6</span> <span class="o">*</span> <span class="n">gdata</span><span class="o">.</span><span class="n">population</span>
+<span class="c1"># assign colors to regions</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">gdata</span><span class="o">.</span><span class="n">region</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s1">&#39;Africa&#39;</span><span class="p">:</span> <span class="s1">&#39;skyblue&#39;</span><span class="p">,</span> <span class="s1">&#39;Europe&#39;</span><span class="p">:</span> <span class="s1">&#39;gold&#39;</span><span class="p">,</span> <span class="s1">&#39;America&#39;</span><span class="p">:</span> <span class="s1">&#39;palegreen&#39;</span><span class="p">,</span> <span class="s1">&#39;Asia&#39;</span><span class="p">:</span> <span class="s1">&#39;coral&#39;</span><span class="p">})</span>
+
+<span class="c1"># create plotting function</span>
+<span class="k">def</span> <span class="nf">plotdata</span><span class="p">():</span>
+    <span class="n">gdata</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="s1">&#39;life_expectancy&#39;</span><span class="p">,</span><span class="s1">&#39;babies_per_woman&#39;</span><span class="p">,</span>
+                       <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="n">size</span><span class="p">,</span><span class="n">linewidths</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Using the custom function we just specified, let’s visualize the
+relationship between <code class="docutils literal notranslate"><span class="pre">age5_surviving</span></code> and <code class="docutils literal notranslate"><span class="pre">babies_per_woman</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plotdata</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="row docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;div class=&quot;col-12&quot;&gt;
+    &lt;img src=&quot;/_static/images/python/stats/stats_24_0.png&quot; class=&quot;img-fluid rounded align-middle mx-auto d-block&quot; style=&quot;max-width:100%;&quot; alt=&quot;gapminder scatter&quot;&gt;
+&lt;/div&gt;
+</pre></div>
+</div>
+</div>
+<p>We can see there seems to be some sort of negative relationship between
+the two variables. There also might be a relationship between region and
+<code class="docutils literal notranslate"><span class="pre">babies_per_woman</span></code>, as well.</p>
+</section>
+<section id="statmodels">
+<h2>statmodels<a class="headerlink" href="#statmodels" title="Permalink to this headline">#</a></h2>
+<p><strong>statsmodels</strong> has many capabilities.</p>
+<p>Here we will use Ordinary Least Squares (OLS). Least squares means
+models are fit by minimizing the squared difference between predictions
+and observations.</p>
+<p>statsmodels lets us specify models using the “tilda” notation (also used
+in R) response variable ~ model terms.</p>
+<p>For example: <code class="docutils literal notranslate"><span class="pre">babes_per_woman</span> <span class="pre">~</span> <span class="pre">age5surviving</span></code>.</p>
+<p>Below we use the formula <code class="docutils literal notranslate"><span class="pre">babies_per_woman</span> <span class="pre">~</span> <span class="pre">1</span></code>. This will essential
+just use the mean <code class="docutils literal notranslate"><span class="pre">babies_per_woman</span></code> value as the prediction for all
+data points.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ordinary least squares model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s1">&#39;babies_per_woman ~ 1&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">gdata</span><span class="p">)</span>
+<span class="c1">#    where babies per woman is the response variable and</span>
+<span class="c1">#    1 represents a constant</span>
+
+<span class="c1"># Next, we fit the model</span>
+<span class="n">grandmean</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Let’s make a new function to visualize these results, using the old
+function we just made and adding in our predictions from our model on
+top.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s make a function to plot the data against the model prediction</span>
+<span class="k">def</span> <span class="nf">plotfit</span><span class="p">(</span><span class="n">fit</span><span class="p">):</span>
+    <span class="n">plotdata</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">gdata</span><span class="o">.</span><span class="n">life_expectancy</span><span class="p">,</span> <span class="n">fit</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">gdata</span><span class="p">),</span>
+              <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span><span class="n">linewidths</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
+
+<span class="n">plotfit</span><span class="p">(</span><span class="n">grandmean</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="row docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;div class=&quot;col-12&quot;&gt;
+    &lt;img src=&quot;/_static/images/python/stats/stats_30_0.png&quot; class=&quot;img-fluid rounded align-middle mx-auto d-block&quot; style=&quot;max-width:100%;&quot; alt=&quot;gapminder scatter&quot;&gt;
+&lt;/div&gt;
+</pre></div>
+</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grandmean</span><span class="o">.</span><span class="n">params</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Intercept    4.360714
+dtype: float64
+</pre></div>
+</div>
+<p>Ever single data points get predicted to have the same value: 4.36.
+Thus, this is a very poor model.</p>
+<p>Let’s try a slightly better model, using the region to preduct babies
+per woman. We use <code class="docutils literal notranslate"><span class="pre">-1</span></code> in the formula to say we do not want to include
+a constant in the model.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">groupmeans</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s1">&#39;babies_per_woman ~ -1 + region&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">gdata</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plotfit</span><span class="p">(</span><span class="n">groupmeans</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="row docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;div class=&quot;col-12&quot;&gt;
+    &lt;img src=&quot;/_static/images/python/stats/stats_34_0.png&quot; class=&quot;img-fluid rounded align-middle mx-auto d-block&quot; style=&quot;max-width:100%;&quot; alt=&quot;gapminder group means&quot;&gt;
+&lt;/div&gt;
+</pre></div>
+</div>
+</div>
+<p>We can check the parameters of our fitted model to see the main effect
+of each region.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">groupmeans</span><span class="o">.</span><span class="n">params</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>region[Africa]     6.321321
+region[America]    3.658182
+region[Asia]       4.775577
+region[Europe]     2.035682
+dtype: float64
+</pre></div>
+</div>
+<p>An ANOVA can be used to test if these effects are significant.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sm</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">anova_lm</span><span class="p">(</span><span class="n">groupmeans</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="docutils container">
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style><table border="1" class="dataframe"><thead><tr style="text-align: right;"><th></th><th><p>df</p>
+</th><th><p>sum_sq</p>
+</th><th><p>mean_sq</p>
+</th><th><p>F</p>
+</th><th><p>PR(&gt;F)</p>
+</th></tr></thead><tbody><tr><th><p>region</p>
+</th><td><p>4.0</p>
+</td><td><p>3927.702839</p>
+</td><td><p>981.925710</p>
+</td><td><p>655.512121</p>
+</td><td><p>2.604302e-105</p>
+</td></tr><tr><th><p>Residual</p>
+</th><td><p>178.0</p>
+</td><td><p>266.635461</p>
+</td><td><p>1.497952</p>
+</td><td><p>NaN</p>
+</td><td><p>NaN</p>
+</td></tr></tbody></table></div>
+<p>This is a much more informed model, but we can still do a lot better.
+Let’s take <code class="docutils literal notranslate"><span class="pre">life_expectancy</span></code> into account in a new model.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">surviving</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s1">&#39;babies_per_woman ~ -1 + region + life_expectancy&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">gdata</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plotfit</span><span class="p">(</span><span class="n">surviving</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">surviving</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>region[Africa]     12.953805
+region[America]    11.885657
+region[Asia]       12.452629
+region[Europe]     10.703060
+life_expectancy    -0.119281
+dtype: float64
+</pre></div>
+</div>
+<div class="row docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;div class=&quot;col-12&quot;&gt;
+    &lt;img src=&quot;/_static/images/python/stats/stats_38_1.png&quot; class=&quot;img-fluid rounded align-middle mx-auto d-block&quot; style=&quot;max-width:100%;&quot; alt=&quot;gapminder scatter&quot;&gt;
+&lt;/div&gt;
+</pre></div>
+</div>
+</div>
+<p>Now, we have a much better model.</p>
+<p><strong>statsmodels</strong> provides a summary for the fit with Goodness of Fit
+statistics, and also provides an anova table for the significance of the
+added variables.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">surviving</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+<table class="simpletable"><caption><p>OLS Regression Results</p>
+</caption><tr><th><p>Dep. Variable:</p>
+</th><td><p>babies_per_woman</p>
+</td><th><p>R-squared:</p>
+</th><td><p>0.768</p>
+</td></tr><tr><th><p>Model:</p>
+</th><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;td&gt;OLS&lt;/td&gt;       &lt;th&gt;  Adj. R-squared:    &lt;/th&gt; &lt;td&gt;   0.763&lt;/td&gt;
+</pre></div>
+</div>
+</tr><tr><th><p>Method:</p>
+</th><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;td&gt;Least Squares&lt;/td&gt;  &lt;th&gt;  F-statistic:       &lt;/th&gt; &lt;td&gt;   146.9&lt;/td&gt;
+</pre></div>
+</div>
+</tr><tr><th><p>Date:</p>
+</th><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;td&gt;Tue, 08 Nov 2022&lt;/td&gt; &lt;th&gt;  Prob (F-statistic):&lt;/th&gt; &lt;td&gt;4.01e-55&lt;/td&gt;
+</pre></div>
+</div>
+</tr><tr><th><p>Time:</p>
+</th><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;td&gt;10:18:04&lt;/td&gt;     &lt;th&gt;  Log-Likelihood:    &lt;/th&gt; &lt;td&gt; -251.93&lt;/td&gt;
+</pre></div>
+</div>
+</tr><tr><th><p>No. Observations:</p>
+</th><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;td&gt;   182&lt;/td&gt;      &lt;th&gt;  AIC:               &lt;/th&gt; &lt;td&gt;   513.9&lt;/td&gt;
+</pre></div>
+</div>
+</tr><tr><th><p>Df Residuals:</p>
+</th><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;td&gt;   177&lt;/td&gt;      &lt;th&gt;  BIC:               &lt;/th&gt; &lt;td&gt;   529.9&lt;/td&gt;
+</pre></div>
+</div>
+</tr><tr><th><p>Df Model:</p>
+</th><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;td&gt;     4&lt;/td&gt;      &lt;th&gt;                     &lt;/th&gt;     &lt;td&gt; &lt;/td&gt;
+</pre></div>
+</div>
+</tr><tr><th><p>Covariance Type:</p>
+</th><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;td&gt;nonrobust&lt;/td&gt;    &lt;th&gt;                     &lt;/th&gt;     &lt;td&gt; &lt;/td&gt;
+</pre></div>
+</div>
+</tr></table><table class="simpletable"><tr><td></td><th><p>coef</p>
+</th><th><p>std err</p>
+</th><th><p>t</p>
+</th><th><p>P&gt;|t|</p>
+</th><th><p>[0.025]</p>
+</th></tr><tr><th><p>region[Africa]</p>
+</th><td><p>12.9538</p>
+</td><td><p>0.674</p>
+</td><td><p>19.227</p>
+</td><td><p>0.000</p>
+</td><td><p>11.624</p>
+</td><td><p>14.283</p>
+</td></tr><tr><th><p>region[America]</p>
+</th><td><p>11.8857</p>
+</td><td><p>0.836</p>
+</td><td><p>14.209</p>
+</td><td><p>0.000</p>
+</td><td><p>10.235</p>
+</td><td><p>13.536</p>
+</td></tr><tr><th><p>region[Asia]</p>
+</th><td><p>12.4526</p>
+</td><td><p>0.776</p>
+</td><td><p>16.045</p>
+</td><td><p>0.000</p>
+</td><td><p>10.921</p>
+</td><td><p>13.984</p>
+</td></tr><tr><th><p>region[Europe]</p>
+</th><td><p>10.7031</p>
+</td><td><p>0.875</p>
+</td><td><p>12.229</p>
+</td><td><p>0.000</p>
+</td><td><p>8.976</p>
+</td><td><p>12.430</p>
+</td></tr><tr><th><p>life_expectancy</p>
+</th><td><p>-0.1193</p>
+</td><td><p>0.012</p>
+</td><td><p>-10.047</p>
+</td><td><p>0.000</p>
+</td><td><p>-0.143</p>
+</td><td><p>-0.096</p>
+</td></tr></table><table class="simpletable"><tr><th><p>Omnibus:</p>
+</th><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;td&gt;19.859&lt;/td&gt; &lt;th&gt;  Durbin-Watson:     &lt;/th&gt; &lt;td&gt;   1.967&lt;/td&gt;
+</pre></div>
+</div>
+</tr><tr><th><p>Prob(Omnibus):</p>
+</th><td><p>0.000</p>
+</td><th><p>Jarque-Bera (JB):</p>
+</th><td><p>37.777</p>
+</td></tr><tr><th><p>Skew:</p>
+</th><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;td&gt; 0.529&lt;/td&gt; &lt;th&gt;  Prob(JB):          &lt;/th&gt; &lt;td&gt;6.26e-09&lt;/td&gt;
+</pre></div>
+</div>
+</tr><tr><th><p>Kurtosis:</p>
+</th><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;td&gt; 4.965&lt;/td&gt; &lt;th&gt;  Cond. No.          &lt;/th&gt; &lt;td&gt;1.41e+03&lt;/td&gt;
+</pre></div>
+</div>
+</tr></table><p>Notes:[1] Standard Errors assume that the covariance matrix of the
+errors is correctly specified.[2] The condition number is large,
+1.41e+03. This might indicate that there arestrong multicollinearity or
+other numerical problems.</p>
+<p>We can also use the <code class="docutils literal notranslate"><span class="pre">anova_lm()</span></code> function with our model to estimate
+the importance of factors in our model.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../git.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Git Version Control</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="functions.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Writing Functions</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Ford Fishman
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Statistics with Python</a><ul>
+<li><a class="reference internal" href="#objectives">Objectives</a></li>
+<li><a class="reference internal" href="#reference-and-resource">Reference and Resource</a></li>
+<li><a class="reference internal" href="#importing-libraries-and-data">Importing Libraries and Data</a></li>
+<li><a class="reference internal" href="#describe-and-plot-distributions">Describe and plot distributions</a></li>
+<li><a class="reference internal" href="#descriptive-statistics">Descriptive statistics</a><ul>
+<li><a class="reference internal" href="#hypothesis-testing">Hypothesis Testing</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#fitting-models-to-data">Fitting Models to Data</a></li>
+<li><a class="reference internal" href="#statmodels">statmodels</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    </body>
+</html>

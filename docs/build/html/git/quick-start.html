@@ -1,0 +1,470 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
+
+    <link rel="shortcut icon" href="../_static/favicon-32x32.png"/><!-- Generated with Sphinx 4.5.0 and Furo 2023.05.20 -->
+        <title>Quick Start to GitHub - DeisData 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">DeisData 0.1 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/android-chrome-192x192.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">DeisData 0.1 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../python.html">Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../python/setup-install.html">Setup and Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/jupyter.html">Jupyter Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/python-fundamentals.html">Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/data-structures.html">Python Data Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/conditionals.html">Booleans and conditionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/loops.html">Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/numpy.html">NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/pandas.html">Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/figures.html">Making figures in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/functions.html">Writing Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python/stats.html">Statistics with Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../git.html">Git Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../r.html">Installing R</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shell.html">Unix Shell</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="quick-start-to-github">
+<h1>Quick Start to GitHub<a class="headerlink" href="#quick-start-to-github" title="Permalink to this headline">#</a></h1>
+<section id="id1">
+<h2>Quick Start to GitHub<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>This guide will show you the basics of making a repository on GitHub,
+cloning it to your machine, and committing changes to version control.</p>
+<section id="create-a-remote-repository-on-github">
+<h3>Create a remote repository on GitHub<a class="headerlink" href="#create-a-remote-repository-on-github" title="Permalink to this headline">#</a></h3>
+<p>Go to GitHub and create a new repository by clicking <strong>New</strong>.</p>
+<figure class="align-default" id="id2">
+<img alt="Make a repo" src="../_images/github_newrepo.png" />
+<figcaption>
+<p><span class="caption-text">Make a repo</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Give your repo a short but descriptive name without spaces or special
+characters. Note that your account cannot have two repos with exactly
+the same name.</p>
+<figure class="align-default" id="id3">
+<img alt="Name your repo" src="../_images/github_reponame.png" />
+<figcaption>
+<p><span class="caption-text">Name your repo</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>You can choose whether or not to make your repository to be private. If
+you plan to collaborate with others, you are required to have a public
+repository unless you pay for a premium GitHub account.</p>
+<p>Make sure to initialize with a README, which will give general
+information about your repository. You can also initialize with a
+license, which defines what others can and cannot do with your code. For
+more information, see <a class="reference external" href="https://swcarpentry.github.io/git-novice/11-licensing/index.html">the Software Carpentry’s primer on
+licenses</a>.</p>
+</section>
+<section id="clone-the-remote-repository-to-your-machine">
+<h3>Clone the remote repository to your machine<a class="headerlink" href="#clone-the-remote-repository-to-your-machine" title="Permalink to this headline">#</a></h3>
+<p>To get this repository onto our local machine, we will clone it, which
+copies its contents. Go to the repository you just made on GitHub. You
+will see a <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file and a license file. Click on <strong>Code</strong>,
+which opens a dropdown menu. Copy the <strong>HTTPS</strong> link, which will be
+<code class="docutils literal notranslate"><span class="pre">https://github.com/{USERNAME}/{REPO-NAME}.git</span></code>, with your username
+and repo name, respectively.</p>
+<figure class="align-default" id="id4">
+<img alt="clone repo" src="../_images/github_clone.png" />
+<figcaption>
+<p><span class="caption-text">clone repo</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Go back to your terminal. Create a new <code class="docutils literal notranslate"><span class="pre">GitHub</span></code> folder in your home
+directory by running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mkdir<span class="w"> </span>~/GitHub
+</pre></div>
+</div>
+<p>This uses the Unix command <code class="docutils literal notranslate"><span class="pre">mkdir</span></code> (Make Directory) to create a new
+folder. We then want to go to that folder with the <code class="docutils literal notranslate"><span class="pre">cd</span></code> (Change
+Directory) command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/GitHub
+</pre></div>
+</div>
+<p>To clone your repository, run the following, again inserting your link:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/<span class="o">{</span>USERNAME<span class="o">}</span>/<span class="o">{</span>REPO-NAME<span class="o">}</span>.git
+</pre></div>
+</div>
+<p>Move to your newly cloned local repository and list the files with
+<code class="docutils literal notranslate"><span class="pre">ls</span></code> command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span><span class="o">{</span>REPO-NAME<span class="o">}</span>
+$<span class="w"> </span>ls
+</pre></div>
+</div>
+<p>You should see the names of the files <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> (if you made one) and
+<code class="docutils literal notranslate"><span class="pre">README.md</span></code> printed to the terminal.</p>
+</section>
+<section id="alter-the-readme">
+<h3>Alter the README<a class="headerlink" href="#alter-the-readme" title="Permalink to this headline">#</a></h3>
+<p>You now have a local <strong>downstream</strong> repository on your machine. The
+remote GitHub repository is referred to as the <strong>upstream</strong> repository.
+If other users make changes reflected in the upstream repository, you
+will receive and implement them locally.</p>
+<p>We are going to write a line of text to the README and commit that
+change to version control.</p>
+<p>First, we are going to use a text editor called <code class="docutils literal notranslate"><span class="pre">nano</span></code> to open
+<code class="docutils literal notranslate"><span class="pre">README.md</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>nano<span class="w"> </span>README.md
+</pre></div>
+</div>
+<figure class="align-default" id="id5">
+<img alt="nano blank" src="../_images/nano1.png" />
+<figcaption>
+<p><span class="caption-text">nano blank</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Tap the ↓ key to get to a new line. Type whatever your heart desires
+(“Hello World!” is a classic). To save or “write” your changes, press
+Ctrl + O, and then hit Return. Press Ctrl + X to exit <code class="docutils literal notranslate"><span class="pre">nano</span></code>.</p>
+<p>Note: use Ctrl regardless of your OS.</p>
+<figure class="align-default" id="id6">
+<img alt="nano blank" src="../_images/nano2.png" />
+<figcaption>
+<p><span class="caption-text">nano blank</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now that you’ve made a change, you can check the status of the
+repository with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>status
+</pre></div>
+</div>
+<figure class="align-default" id="id7">
+<img alt="git status" src="../_images/git_status.png" />
+<figcaption>
+<p><span class="caption-text">git status</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This command prints out a lot of information. It says we are on the main
+branch (more on this in the future). It says we are up to date with
+<code class="docutils literal notranslate"><span class="pre">origin/main</span></code>. This means thats GitHub doesn’t have any commits that
+aren’t present locally, and we don’t have any local commits that aren’t
+reflected in GitHub. It then lists <code class="docutils literal notranslate"><span class="pre">README.md</span></code> in red as modified but
+not yet staged, as well the commands for how to stage it. Finally, it
+says that nothing has yet been added to commit yet.</p>
+<section id="stage-modified-file">
+<h4>Stage modified file<a class="headerlink" href="#stage-modified-file" title="Permalink to this headline">#</a></h4>
+<p>We want to stage our modified file. Staging a file means we want to
+commit it. To do this, we’ll use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>README.md
+</pre></div>
+</div>
+<p>If we run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> again, we’ll see that <code class="docutils literal notranslate"><span class="pre">README.md</span></code> is now
+staged for commit and in green text.</p>
+<figure class="align-default" id="id8">
+<img alt="git add" src="../_images/git_add.png" />
+<figcaption>
+<p><span class="caption-text">git add</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="make-a-commit">
+<h4>Make a commit<a class="headerlink" href="#make-a-commit" title="Permalink to this headline">#</a></h4>
+<p>Now we are ready to commit these changes. We are going to use
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> with a message flag (<code class="docutils literal notranslate"><span class="pre">-m</span></code>). The message we write should
+give a short description of the changes you made in this commit.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Updated the README&quot;</span>
+</pre></div>
+</div>
+<p>The terminal will print out some information about your commit including
+how many files were changed and how many lines were inserted and
+deleted.</p>
+<p>If we run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> again, we’ll notice a few things.</p>
+<figure class="align-default" id="id9">
+<img alt="post commit" src="../_images/post_commit.png" />
+<figcaption>
+<p><span class="caption-text">post commit</span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>It now tells us that we no longer have any changes to commit in our
+local repository. It also is telling us that we are ahead of the
+upstream repository on GitHub by 1 commit. This is because our changes
+have not yet been sent or “pushed” to that remote repository yet.</p>
+</section>
+</section>
+<section id="recap">
+<h3>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code>: copy a remote repository locally</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>: shows what is in staging and was is being commited.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">file_name</span></code>: Moves a file to staging.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;Detailed</span> <span class="pre">log</span> <span class="pre">message</span> <span class="pre">goes</span> <span class="pre">here.&quot;</span></code>: Commits files in
+staging to history and documents message to the log.</p></li>
+</ul>
+</section>
+<section id="contact">
+<h3>Contact<a class="headerlink" href="#contact" title="Permalink to this headline">#</a></h3>
+<p>Please reach out to <a class="reference external" href="mailto:dataservices&#37;&#52;&#48;brandeis&#46;edu">dataservices<span>&#64;</span>brandeis<span>&#46;</span>edu</a> with any questions or
+concerns.</p>
+</section>
+<section id="resources">
+<h3>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>GitHub Docs: <a class="reference external" href="https://docs.github.com/en/get-started">https://docs.github.com/en/get-started</a></p></li>
+<li><p>Atlassian:
+<a class="reference external" href="https://www.atlassian.com/git/tutorials/setting-up-a-repository">https://www.atlassian.com/git/tutorials/setting-up-a-repository</a></p></li>
+</ul>
+<p>This workshop has been adapted from <a class="reference external" href="https://software-carpentry.org/">the Software
+Carpentry</a>.</p>
+<p>[ previous ] [ next ]</p>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Ford Fishman
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Quick Start to GitHub</a><ul>
+<li><a class="reference internal" href="#id1">Quick Start to GitHub</a><ul>
+<li><a class="reference internal" href="#create-a-remote-repository-on-github">Create a remote repository on GitHub</a></li>
+<li><a class="reference internal" href="#clone-the-remote-repository-to-your-machine">Clone the remote repository to your machine</a></li>
+<li><a class="reference internal" href="#alter-the-readme">Alter the README</a><ul>
+<li><a class="reference internal" href="#stage-modified-file">Stage modified file</a></li>
+<li><a class="reference internal" href="#make-a-commit">Make a commit</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#recap">Recap</a></li>
+<li><a class="reference internal" href="#contact">Contact</a></li>
+<li><a class="reference internal" href="#resources">Resources</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    </body>
+</html>

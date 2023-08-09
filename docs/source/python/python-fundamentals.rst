@@ -1,5 +1,5 @@
-Fundamentals
-============
+Python Fundamentals
+===================
 
 Python is a very powerful tool for automating tasks that would otherwise
 be time-consuming or impossible to do by hand or other conventional
@@ -40,7 +40,7 @@ or executed.
 
    3 + 4 * 5  # addition and multiplication 
 
-::
+.. code:: none
 
    23
 
@@ -54,7 +54,7 @@ calculations.
 
    12 / (6 - 4) # division and substraction
 
-::
+.. code:: none
 
    6.0
 
@@ -65,7 +65,7 @@ uses ``**`` instead of a more traditional ``^``.
 
    2 ** 3 # exponentiation
 
-::
+.. code:: none
 
    8
 
@@ -123,7 +123,7 @@ from ``x`` prints out a value of 30.
    # What if I use x again in a different cell?
    x - 20
 
-::
+.. code:: none
 
    30
 
@@ -137,7 +137,7 @@ built-in ``print()`` command to display the value.
    y = 35
    print(y)
 
-::
+.. code:: none
 
    35
 
@@ -154,7 +154,7 @@ interpretted as “let x take the current value of y”.*
    print(x)
    print(y)
 
-::
+.. code:: none
 
    35
    35
@@ -167,7 +167,7 @@ If we change ``y`` to be a different value, ``x`` will be unaffected.
    print(x) # will not always be the same value as y
    print(y)
 
-::
+.. code:: none
 
    35
    3.8
@@ -209,7 +209,7 @@ Solution
    The only statements here that effect the value of ``swap`` are
    ``x = 1.0`` and ``swap = x``.
 
-   ::
+   .. code:: none
 
       1.0
 
@@ -229,7 +229,7 @@ will throw an error.
 
    print(z) # we haven't initialized z yet!
 
-::
+.. code:: none
 
    NameError: name 'z' is not defined
 
@@ -254,7 +254,7 @@ the ``+=`` operator. Here, we add 2 to the current value of x.
    x += 2 
    print(x) # after incrementing
 
-::
+.. code:: none
 
    35
    37
@@ -272,7 +272,7 @@ operations with subtraction, multiplication, and division.
    x /= 6 # 24 / 6
    print("division:", x)
 
-::
+.. code:: none
 
    subtraction: 6
    multiplication: 24
@@ -330,7 +330,7 @@ can specify a string by putting text within either single quotation
    my_name = "Inigo Montoya"
    print(my_name)
 
-::
+.. code:: none
 
    Inigo Montoya
 
@@ -341,7 +341,7 @@ We can print out a string directly in ``print()``, as well.
    print("My name is")
    print(my_name) # will print on a second line
 
-::
+.. code:: none
 
    My name is
    Inigo Montoya
@@ -352,7 +352,7 @@ We can also print out multiple values in a single ``print()`` statement.
 
    print("My name is", my_name) # print() adds a space between the values
 
-::
+.. code:: none
 
    My name is Inigo Montoya
 
@@ -364,7 +364,7 @@ integer to a string in order to print it.
    num_balloons = 25
    print("I would like", num_balloons, "balloons.")
 
-::
+.. code:: none
 
    I would like 25 balloons.
 
@@ -378,33 +378,19 @@ What will happen if you run the following code?
    last_name = Montoya
    print(last_name)
 
-.. raw:: html
+.. collapse:: Solution
 
-   <details>
 
-.. raw:: html
+   .. container::
 
-   <summary>
+      We receive a ``NameError`` because we have not defined the varable
+      ``Montoya`` previously. You may also see additional text describing
+      more details about the error, such as where it occurred.
 
-Solution
+   .. code:: none
 
-.. raw:: html
+         NameError: name 'Montoya' is not defined
 
-   </summary>
-
-.. container::
-
-   We receive a ``NameError`` because we have not defined the varable
-   ``Montoya`` previously. You may also see additional text describing
-   more details about the error, such as where it occurred.
-
-   ::
-
-      NameError: name 'Montoya' is not defined
-
-.. raw:: html
-
-   </details>
 
 Data Types:
 -----------
@@ -427,7 +413,7 @@ Data Types:
 
    # notice we are nesting functions -> type() is inside of print()
 
-::
+.. code:: none
 
    <class 'int'>
    <class 'int'>
@@ -444,7 +430,7 @@ try to add an integer and a string, you will receive an error.
 
    print("several" + " concatenated" + " strings") # need to manually add spaces when concatenating
 
-::
+.. code:: none
 
    several concatenated strings
 
@@ -452,7 +438,7 @@ try to add an integer and a string, you will receive an error.
 
    print(1 + "2") # adding string to int doesn't work
 
-::
+.. code:: none
 
    TypeError: unsupported operand type(s) for +: 'int' and 'str'
 
@@ -465,7 +451,7 @@ operating on them. Consistency is key!
    print(1+int('2')) # convert string to int to do addition
    print(str(1)+'2') # convert int to string to concatenate
 
-::
+.. code:: none
 
    3
    12
@@ -478,7 +464,7 @@ result in the final value being a float.
    print('half is', 1/2.0
    print('three squared is', 3.0 ** 2)
 
-::
+.. code:: none
 
    half is 0.5
    three squared is 9.0
@@ -493,7 +479,7 @@ with ``len()``. Floats and ints do not have length.
 
    print( len("a long string") ) # spaces count in length
 
-::
+.. code:: none
 
    13
 
@@ -516,7 +502,7 @@ Division Types with numbers
    print(5/3)
    print(5%3)
 
-::
+.. code:: none
 
    1
    1.6666666666666667
@@ -634,7 +620,7 @@ Which of the following will return the floating point number ``2.0``?
    # int(first) + int(float(third)) # choice e
    # 2.0 * second                   # choice f
 
-::
+.. code:: none
 
    2.0
 
@@ -642,4 +628,3 @@ Which of the following will return the floating point number ``2.0``?
 
 This lesson is adapted from Software Carpentry.
 
-[ previous ] [ next ]

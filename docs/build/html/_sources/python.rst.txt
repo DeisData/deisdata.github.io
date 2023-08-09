@@ -75,10 +75,18 @@ Practice Examples and More Training
 -  Feeling competitive? Check out `Kaggle
    Competitions <https://www.kaggle.com/competitions>`__
 
-[ get started ]
-
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
    
-   python-fundamentals
+   Setup and Installation <python/setup-install>
+   Jupyter Notebooks <python/jupyter>
+   Fundamentals <python/python-fundamentals>
+   python/data-structures
+   python/conditionals
+   python/loops
+   python/numpy
+   python/pandas
+   python/figures
+   python/functions
+   python/stats
