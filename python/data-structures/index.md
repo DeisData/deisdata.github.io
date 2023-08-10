@@ -246,7 +246,7 @@ Assign the value of `giraffes` in `animal_dict` to a new key `rabbit` in the sam
   <div class="container" markdown="1">
 
 
-  Assigning dictionary values of different keys can be tricky. Remember to have write write key on the right side.
+  Assigning dictionary values of different keys can be tricky. Remember to have write key on the right side.
 
 ```python
 animal_dict['rabbit'] = animal_dict['giraffe']
