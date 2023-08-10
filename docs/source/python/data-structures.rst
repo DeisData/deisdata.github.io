@@ -156,13 +156,7 @@ number of the list. Append this value to the list.
 
 .. raw:: html
 
-   <summary>
-
-Solution
-
-.. raw:: html
-
-   </summary>
+   <summary>Solution</summary>
 
 .. container::
 
@@ -302,7 +296,7 @@ Solution
 .. container::
 
    Assigning dictionary values of different keys can be tricky. Remember
-   to have write write key on the right side.
+   to have write key on the right side.
 
    .. code:: python
 

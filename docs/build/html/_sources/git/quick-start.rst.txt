@@ -209,4 +209,3 @@ Resources
 This workshop has been adapted from `the Software
 Carpentry <https://software-carpentry.org/>`__.
 
-[ previous ] [ next ]

@@ -80,8 +80,6 @@ on GitHub.
 .. figure:: /_static/images/git/pushing/git_push.png
    :alt: git push
 
-   git push
-
 Recap
 -----
 

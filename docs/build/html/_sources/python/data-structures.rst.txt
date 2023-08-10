@@ -156,13 +156,7 @@ number of the list. Append this value to the list.
 
 .. raw:: html
 
-   <summary>
-
-Solution
-
-.. raw:: html
-
-   </summary>
+   <summary>Solution</summary>
 
 .. container::
 

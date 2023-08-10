@@ -1,0 +1,19 @@
+details {
+    margin: 2em 0 2.5em 0;
+    background-color: rgb(32, 32, 32);;
+    
+}
+
+details summary{
+    font-size: 18pt; 
+    margin-left: 10px;
+}
+
+details .container{
+    padding: 10px
+}
+
+details summary:hover{
+    color: #368ce2;
+}
+

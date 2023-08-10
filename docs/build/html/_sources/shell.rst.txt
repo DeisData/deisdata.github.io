@@ -33,4 +33,15 @@ Resources
 These lessons are based on `The Unix Shell on Software
 Carpentry <http://swcarpentry.github.io/shell-novice/>`__.
 
-[ shell ] [ setup ] [ 1 ] [ 2 ] [ 3 ] [ 4 ] [ 5 ] [ 6 ]
+.. toctree::
+    :maxdepth: 2
+    :caption: Contents:
+
+    shell/setup
+    shell/navigating
+    shell/alter-dir
+    shell/pipes-filters
+    shell/loops
+    shell/shell-scripts
+    shell/search-find
+

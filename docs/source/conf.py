@@ -28,5 +28,9 @@ exclude_patterns = []
 
 html_theme = 'furo'
 html_static_path = ['_static']
+html_css_files = [
+    'css/custom.css',
+]
 html_favicon = "../../favicon/favicon-32x32.png"
 html_logo = "../../favicon/android-chrome-192x192.png"
+html_title = "DeisData"

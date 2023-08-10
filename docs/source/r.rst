@@ -111,3 +111,12 @@ Data set and code
 -----------------
 
 1. Intro to R and Tidyverse [ code and data ]
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   r/quick-start
+   r/data-wrangling
+   r/data-visualization
+   r/text-mining

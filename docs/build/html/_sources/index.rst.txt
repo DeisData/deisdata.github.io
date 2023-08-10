@@ -55,7 +55,7 @@ and we’ll help you sort it out.
    
    python
    git
-   r
+   R <r>
    shell
 
 
