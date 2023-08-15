@@ -325,9 +325,13 @@ uses <code class="docutils literal notranslate"><span class="pre">**</span></cod
 <summary>Solution</summary><div class="docutils container">
 <p>Remember to include parentheses when needed, but Python also follows
 standard order of operations.</p>
-</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">25</span><span class="o">/</span><span class="p">(</span><span class="mi">35</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>
 </pre></div>
+</div>
+</div>
+</div>
 </div>
 </details></section>
 </section>
@@ -335,61 +339,99 @@ standard order of operations.</p>
 <h2>Assigning Variables<a class="headerlink" href="#assigning-variables" title="Permalink to this headline">#</a></h2>
 <p>A foundational tool in Python is assigning values to variables. We do
 this with the <code class="docutils literal notranslate"><span class="pre">=</span></code> operator.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">50</span> <span class="c1"># x is 50</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>This sets the variable <code class="docutils literal notranslate"><span class="pre">x</span></code> to be 50, an <strong>integer</strong>, or <code class="docutils literal notranslate"><span class="pre">int</span></code>. This
 value of x is now stored in our notebook, and we can access this value
 in other cells until the notebook is reset. For instance, subtracting 20
 from <code class="docutils literal notranslate"><span class="pre">x</span></code> prints out a value of 30.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># What if I use x again in a different cell?</span>
 <span class="n">x</span> <span class="o">-</span> <span class="mi">20</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>30
 </pre></div>
 </div>
-<p><strong>Variables persist between cells once they have been run (executed).</strong></p>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Variables persist between cells once they have been run (executed).</p>
+</div>
 <p>If we ever want to check the value of any variable, we can use the
 built-in <code class="docutils literal notranslate"><span class="pre">print()</span></code> command to display the value.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mi">35</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--7-input--2" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>35
 </pre></div>
+</div>
+</div>
 </div>
 <p>We can also assign the value of one variable to another variable. If we
 execute <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">y</span></code>, x takes the current value of <code class="docutils literal notranslate"><span class="pre">y</span></code> and assigns that
 to <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
-<p><em>Note: ``y`` will be unaffected by this assignment. ``x = y`` should be
-interpretted as “let x take the current value of y”.</em></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code class="docutils literal notranslate"><span class="pre">y</span></code> will be unaffected by this assignment. <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">y</span></code> should be
+interpretted as “let x take the current value of y”.</p>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">y</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--8-input--2" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>35
 35
 </pre></div>
 </div>
+</div>
+</div>
 <p>If we change <code class="docutils literal notranslate"><span class="pre">y</span></code> to be a different value, <code class="docutils literal notranslate"><span class="pre">x</span></code> will be unaffected.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mf">3.8</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># will not always be the same value as y</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--9-input--2" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>35
 3.8
 </pre></div>
 </div>
-<p><strong>Variables only change value when something is assigned to them.</strong> They
-are <strong>not</strong> like spreadsheets where a cell can depend on another and
+</div>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Variables only change value when something is assigned to them.</p>
+<p>They are <strong>not</strong> like spreadsheets where a cell can depend on another and
 update automatically.</p>
+</div>
 <section id="question-3-swapping-values">
 <h3>Question 3. Swapping values<a class="headerlink" href="#question-3-swapping-values" title="Permalink to this headline">#</a></h3>
 <p>Given the code below, what is the value of the variable <code class="docutils literal notranslate"><span class="pre">swap</span></code> by the
 end of the block?</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">1.0</span>
 <span class="n">y</span> <span class="o">=</span> <span class="mf">3.0</span>
 <span class="n">swap</span> <span class="o">=</span> <span class="n">x</span>
@@ -397,49 +439,79 @@ end of the block?</p>
 <span class="n">y</span> <span class="o">=</span> <span class="n">swap</span>
 </pre></div>
 </div>
+</div>
+</div>
 <details><summary><p>Solution</p>
 </summary><div class="docutils container">
 <p>The only statements here that effect the value of <code class="docutils literal notranslate"><span class="pre">swap</span></code> are
 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">1.0</span></code> and <code class="docutils literal notranslate"><span class="pre">swap</span> <span class="pre">=</span> <span class="pre">x</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1.0
 </pre></div>
 </div>
 </div>
-</details><p><strong>What’s in a name?</strong> <em>Variable name conventions</em> - Use only letters,
-digits, and underscores (_) - can use camelcase (capitalizeEveryWord) -
-Start with a letter (typically lower case) - Variable names are case
-sensitive - Use meaningful names!</p>
-<p><strong>Variables must be created before they are used.</strong> Otherwise, Python
+</div>
+</div>
+</details><div class="admonition-whats-in-a-name-variable-name-conventions admonition">
+<p class="admonition-title">What’s in a name? Variable name conventions</p>
+<ul class="simple">
+<li><p>Use only letters, digits, and underscores (_)</p></li>
+<li><p>can use camelcase (capitalizeEveryWord)</p></li>
+<li><p>Start with a letter (typically lower case)</p></li>
+<li><p>Variable names are case sensitive</p></li>
+<li><p>Use meaningful names!</p></li>
+</ul>
+</div>
+<p>Variables must be created before they are used. Otherwise, Python
 will throw an error.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="c1"># we haven&#39;t initialized z yet!</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--12-input--2" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>NameError: name &#39;z&#39; is not defined
 </pre></div>
+</div>
+</div>
 </div>
 <p>In the following example, we specify a value for a variable after we
 print it. This will not work. Within a cell, the statements are executed
 from top to bottom. If the Python interpreter finds an error, execution
 stops.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">last_name</span><span class="p">)</span> <span class="c1"># last name does not exist yet</span>
 <span class="c1"># What happens if I try to correct my error in the same cell?</span>
 <span class="n">last_name</span><span class="o">=</span><span class="s1">&#39;Montoya&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">last_name</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>If we want to increase a value of a variable by a certain, we can use
 the <code class="docutils literal notranslate"><span class="pre">+=</span></code> operator. Here, we add 2 to the current value of x.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># before incrementing</span>
 <span class="n">x</span> <span class="o">+=</span> <span class="mi">2</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># after incrementing</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--14-input--2" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>35
 37
 </pre></div>
 </div>
+</div>
+</div>
 <p>This is equivalent to running <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">2</span></code>. We can also do similar
 operations with subtraction, multiplication, and division.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio"><label class="tab-label" for="tab-set--15-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">8</span>
 <span class="n">x</span> <span class="o">-=</span> <span class="mi">2</span> <span class="c1"># 8 - 2</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;subtraction:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
@@ -449,26 +521,38 @@ operations with subtraction, multiplication, and division.</p>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;division:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--15-input--2" name="tab-set--15" type="radio"><label class="tab-label" for="tab-set--15-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>subtraction: 6
 multiplication: 24
 division: 4.0
 </pre></div>
 </div>
+</div>
+</div>
 <section id="question-4">
 <h4>Question 4<a class="headerlink" href="#question-4" title="Permalink to this headline">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">a</span></code> has been initialized to be 25. Assign variable <code class="docutils literal notranslate"><span class="pre">b</span></code> to be 5 less
 than <code class="docutils literal notranslate"><span class="pre">a</span></code> without using <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">20</span></code>. Print the value of b.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="c1"># write your code here:</span>
 </pre></div>
 </div>
+</div>
+</div>
 <details><summary><p>Solution</p>
 </summary><div class="docutils container">
 <p>We can use variable <code class="docutils literal notranslate"><span class="pre">a</span></code> to assign value of <code class="docutils literal notranslate"><span class="pre">a-5</span></code> to <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="mi">5</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 </div>
 </details></section>
@@ -480,53 +564,85 @@ than <code class="docutils literal notranslate"><span class="pre">a</span></code
 assign values characters to variables. These are called <strong>strings</strong>. You
 can specify a string by putting text within either single quotation
 (<code class="docutils literal notranslate"><span class="pre">'single'</span></code>) or double quotation marks (<code class="docutils literal notranslate"><span class="pre">&quot;double&quot;</span></code>).</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--18-input--1" name="tab-set--18" type="radio"><label class="tab-label" for="tab-set--18-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_name</span> <span class="o">=</span> <span class="s2">&quot;Inigo Montoya&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">my_name</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--18-input--2" name="tab-set--18" type="radio"><label class="tab-label" for="tab-set--18-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Inigo Montoya
 </pre></div>
 </div>
+</div>
+</div>
 <p>We can print out a string directly in <code class="docutils literal notranslate"><span class="pre">print()</span></code>, as well.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--19-input--1" name="tab-set--19" type="radio"><label class="tab-label" for="tab-set--19-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;My name is&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">my_name</span><span class="p">)</span> <span class="c1"># will print on a second line</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--19-input--2" name="tab-set--19" type="radio"><label class="tab-label" for="tab-set--19-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>My name is
 Inigo Montoya
 </pre></div>
 </div>
+</div>
+</div>
 <p>We can also print out multiple values in a single <code class="docutils literal notranslate"><span class="pre">print()</span></code> statement.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--20-input--1" name="tab-set--20" type="radio"><label class="tab-label" for="tab-set--20-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;My name is&quot;</span><span class="p">,</span> <span class="n">my_name</span><span class="p">)</span> <span class="c1"># print() adds a space between the values</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--20-input--2" name="tab-set--20" type="radio"><label class="tab-label" for="tab-set--20-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>My name is Inigo Montoya
 </pre></div>
 </div>
+</div>
+</div>
 <p>If we print out a string with an integer variable, it will convert the
 integer to a string in order to print it.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--21-input--1" name="tab-set--21" type="radio"><label class="tab-label" for="tab-set--21-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num_balloons</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I would like&quot;</span><span class="p">,</span> <span class="n">num_balloons</span><span class="p">,</span> <span class="s2">&quot;balloons.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--21-input--2" name="tab-set--21" type="radio"><label class="tab-label" for="tab-set--21-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>I would like 25 balloons.
 </pre></div>
+</div>
+</div>
 </div>
 <section id="question-5">
 <h3>Question 5<a class="headerlink" href="#question-5" title="Permalink to this headline">#</a></h3>
 <p>What will happen if you run the following code?</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--22-input--1" name="tab-set--22" type="radio"><label class="tab-label" for="tab-set--22-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">last_name</span> <span class="o">=</span> <span class="n">Montoya</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">last_name</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <details class="summary-solution">
 <summary>Solution</summary><div class="docutils container">
 <p>We receive a <code class="docutils literal notranslate"><span class="pre">NameError</span></code> because we have not defined the varable
 <code class="docutils literal notranslate"><span class="pre">Montoya</span></code> previously. You may also see additional text describing
 more details about the error, such as where it occurred.</p>
-</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--23-input--1" name="tab-set--23" type="radio"><label class="tab-label" for="tab-set--23-input--1">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>NameError: name &#39;Montoya&#39; is not defined
 </pre></div>
+</div>
+</div>
+</div>
 </div>
 </details></section>
 </section>
@@ -544,6 +660,8 @@ more details about the error, such as where it occurred.</p>
 </ul>
 </li>
 </ul>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--24-input--1" name="tab-set--24" type="radio"><label class="tab-label" for="tab-set--24-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find the type with function type()</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">52</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;Inigo Montoya&quot;</span><span class="p">))</span>
@@ -552,66 +670,103 @@ more details about the error, such as where it occurred.</p>
 <span class="c1"># notice we are nesting functions -&gt; type() is inside of print()</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--24-input--2" name="tab-set--24" type="radio"><label class="tab-label" for="tab-set--24-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
 &lt;class &#39;int&#39;&gt;
 &lt;class &#39;str&#39;&gt;
 &lt;class &#39;float&#39;&gt;
 </pre></div>
 </div>
+</div>
+</div>
 <section id="combining-and-adding-data-types">
 <h3>Combining and adding data types<a class="headerlink" href="#combining-and-adding-data-types" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">+</span></code> operator concatenates (adds) strings together. However if you
 try to add an integer and a string, you will receive an error.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--26-input--1" name="tab-set--26" type="radio"><label class="tab-label" for="tab-set--26-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;several&quot;</span> <span class="o">+</span> <span class="s2">&quot; concatenated&quot;</span> <span class="o">+</span> <span class="s2">&quot; strings&quot;</span><span class="p">)</span> <span class="c1"># need to manually add spaces when concatenating</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--26-input--2" name="tab-set--26" type="radio"><label class="tab-label" for="tab-set--26-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>several concatenated strings
 </pre></div>
 </div>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--25-input--1" name="tab-set--25" type="radio"><label class="tab-label" for="tab-set--25-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="s2">&quot;2&quot;</span><span class="p">)</span> <span class="c1"># adding string to int doesn&#39;t work</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--25-input--2" name="tab-set--25" type="radio"><label class="tab-label" for="tab-set--25-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>TypeError: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
 </pre></div>
+</div>
+</div>
 </div>
 <p>We can convert an <code class="docutils literal notranslate"><span class="pre">int</span></code> to a <code class="docutils literal notranslate"><span class="pre">string</span></code> with the <code class="docutils literal notranslate"><span class="pre">str()</span></code> function to
 combine them. We must convert numbers to strings or vice versa when
 operating on them. Consistency is key!</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--27-input--1" name="tab-set--27" type="radio"><label class="tab-label" for="tab-set--27-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">))</span> <span class="c1"># convert string to int to do addition</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;2&#39;</span><span class="p">)</span> <span class="c1"># convert int to string to concatenate</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--27-input--2" name="tab-set--27" type="radio"><label class="tab-label" for="tab-set--27-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>3
 12
 </pre></div>
 </div>
+</div>
+</div>
 <p>However, we can mix integers and floats freely in operations. This will
 result in the final value being a float.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--28-input--1" name="tab-set--28" type="radio"><label class="tab-label" for="tab-set--28-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;half is&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mf">2.0</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;three squared is&#39;</span><span class="p">,</span> <span class="mf">3.0</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--28-input--2" name="tab-set--28" type="radio"><label class="tab-label" for="tab-set--28-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>half is 0.5
 three squared is 9.0
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="length">
 <h3>Length<a class="headerlink" href="#length" title="Permalink to this headline">#</a></h3>
 <p>Strings have length (how many characters long they are), which can find
 with <code class="docutils literal notranslate"><span class="pre">len()</span></code>. Floats and ints do not have length.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--30-input--1" name="tab-set--30" type="radio"><label class="tab-label" for="tab-set--30-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="s2">&quot;a long string&quot;</span><span class="p">)</span> <span class="p">)</span> <span class="c1"># spaces count in length</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--30-input--2" name="tab-set--30" type="radio"><label class="tab-label" for="tab-set--30-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>13
 </pre></div>
 </div>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--29-input--1" name="tab-set--29" type="radio"><label class="tab-label" for="tab-set--29-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="mf">3.1415</span><span class="p">)</span> <span class="p">)</span> <span class="c1"># will get an error</span>
 </pre></div>
 </div>
-</section>
-<section id="division-types-with-numbers">
-<h3>Division Types with numbers<a class="headerlink" href="#division-types-with-numbers" title="Permalink to this headline">#</a></h3>
+</div>
+</div>
+<div class="admonition-division-types-with-numbers admonition">
+<p class="admonition-title">Division Types with numbers</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">//</span></code> operator performs integer floor division (rounds down to
 nearest integer)</p></li>
@@ -619,15 +774,22 @@ nearest integer)</p></li>
 with a decimal point)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">%</span></code> modulo operator returns the remainder from integer division</p></li>
 </ul>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--31-input--1" name="tab-set--31" type="radio"><label class="tab-label" for="tab-set--31-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="o">//</span><span class="mi">3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="o">%</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--31-input--2" name="tab-set--31" type="radio"><label class="tab-label" for="tab-set--31-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1
 1.6666666666666667
 2
 </pre></div>
+</div>
+</div>
+</div>
 </div>
 </section>
 <section id="question-6">
@@ -664,11 +826,17 @@ quadratic equation.</p>
 <p>Calculate the values of <span class="math notranslate nohighlight">\(x\)</span> for a quadratic equation with
 <span class="math notranslate nohighlight">\(a=4\)</span>, <span class="math notranslate nohighlight">\(b=-25\)</span>, and <span class="math notranslate nohighlight">\(c = 20\)</span>. Remember to calculate
 the values for both plus and minus (<span class="math notranslate nohighlight">\(\pm\)</span>).</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--32-input--1" name="tab-set--32" type="radio"><label class="tab-label" for="tab-set--32-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code below:</span>
 </pre></div>
 </div>
+</div>
+</div>
 <details><summary><p>Solution</p>
 </summary><div class="docutils container">
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--33-input--1" name="tab-set--33" type="radio"><label class="tab-label" for="tab-set--33-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># initialize my variables</span>
 <span class="n">a</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mi">25</span>
@@ -685,15 +853,23 @@ the values for both plus and minus (<span class="math notranslate nohighlight">\
 </pre></div>
 </div>
 </div>
+</div>
+</div>
 </details></section>
 <section id="question-8">
 <h3>Question 8<a class="headerlink" href="#question-8" title="Permalink to this headline">#</a></h3>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--34-input--1" name="tab-set--34" type="radio"><label class="tab-label" for="tab-set--34-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">first</span>  <span class="o">=</span> <span class="mf">1.0</span>
 <span class="n">second</span> <span class="o">=</span> <span class="s2">&quot;1&quot;</span>
 <span class="n">third</span>  <span class="o">=</span> <span class="s2">&quot;1.1&quot;</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Which of the following will return the floating point number <code class="docutils literal notranslate"><span class="pre">2.0</span></code>?</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--35-input--1" name="tab-set--35" type="radio"><label class="tab-label" for="tab-set--35-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># first + float(second)          # choice a</span>
 <span class="c1"># float(second) + float(third)   # choice b</span>
 <span class="c1"># first + int(third)             # choice c</span>
@@ -702,8 +878,12 @@ the values for both plus and minus (<span class="math notranslate nohighlight">\
 <span class="c1"># 2.0 * second                   # choice f</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--35-input--2" name="tab-set--35" type="radio"><label class="tab-label" for="tab-set--35-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>2.0
 </pre></div>
+</div>
+</div>
 </div>
 <p><strong>Reference and Resource</strong></p>
 <p>This lesson is adapted from Software Carpentry.</p>
@@ -789,7 +969,6 @@ the values for both plus and minus (<span class="math notranslate nohighlight">\
 <li><a class="reference internal" href="#data-types">Data Types:</a><ul>
 <li><a class="reference internal" href="#combining-and-adding-data-types">Combining and adding data types</a></li>
 <li><a class="reference internal" href="#length">Length</a></li>
-<li><a class="reference internal" href="#division-types-with-numbers">Division Types with numbers</a></li>
 <li><a class="reference internal" href="#question-6">Question 6.</a></li>
 <li><a class="reference internal" href="#question-7-quadratic-formula">Question 7: Quadratic formula</a></li>
 <li><a class="reference internal" href="#question-8">Question 8</a></li>

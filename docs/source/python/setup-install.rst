@@ -7,14 +7,6 @@ recommended ways to get started in increasing order of complexity.
 Google Colab (Easiest):
 -----------------------
 
-.. raw:: html
-
-   <!-- ![colab](/_static/images/python/setup-install/Colab.webp) -->
-
-.. raw:: html
-
-   <!-- <img src="/_static/images/python/setup-install/Colab.webp" alt="colab" width="200"/> -->
-
 Want to use Python without installing anything? Enter `Google
 Colab <https://research.google.com/colaboratory/>`__, a free environment
 for running Jupyter notebooks, allowing you to create text and code

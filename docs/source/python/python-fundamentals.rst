@@ -100,9 +100,11 @@ Calculate the following value in Python:
       Remember to include parentheses when needed, but Python also follows
       standard order of operations.
 
-   .. code:: python
+      .. tab:: Python
 
-      25/(35-3)**3
+         .. code:: python
+
+            25/(35-3)**3
 
 
 
@@ -112,72 +114,96 @@ Assigning Variables
 A foundational tool in Python is assigning values to variables. We do
 this with the ``=`` operator.
 
-.. code:: python
+.. tab:: Python
 
-   x = 50 # x is 50
+   .. code:: python
+
+      x = 50 # x is 50
 
 This sets the variable ``x`` to be 50, an **integer**, or ``int``. This
 value of x is now stored in our notebook, and we can access this value
 in other cells until the notebook is reset. For instance, subtracting 20
 from ``x`` prints out a value of 30.
 
-.. code:: python
+.. tab:: Python
 
-   # What if I use x again in a different cell?
-   x - 20
+   .. code:: python
 
-.. code:: none
+      # What if I use x again in a different cell?
+      x - 20
 
-   30
+.. tab:: Output
 
-**Variables persist between cells once they have been run (executed).**
+   .. code:: none
+
+      30
+
+.. note::
+
+   Variables persist between cells once they have been run (executed).
 
 If we ever want to check the value of any variable, we can use the
 built-in ``print()`` command to display the value.
 
-.. code:: python
+.. tab:: Python
 
-   y = 35
-   print(y)
+   .. code:: python
 
-.. code:: none
+      y = 35
+      print(y)
 
-   35
+.. tab:: Output
+
+   .. code:: none
+
+      35
 
 We can also assign the value of one variable to another variable. If we
 execute ``x = y``, x takes the current value of ``y`` and assigns that
 to ``x``.
 
-*Note: ``y`` will be unaffected by this assignment. ``x = y`` should be
-interpretted as “let x take the current value of y”.*
+.. warning::
 
-.. code:: python
+   ``y`` will be unaffected by this assignment. ``x = y`` should be
+   interpretted as “let x take the current value of y”.
 
-   x = y
-   print(x)
-   print(y)
+.. tab:: Python
 
-.. code:: none
+   .. code:: python
 
-   35
-   35
+      x = y
+      print(x)
+      print(y)
+
+.. tab:: Output
+
+   .. code:: none
+
+      35
+      35
 
 If we change ``y`` to be a different value, ``x`` will be unaffected.
 
-.. code:: python
+.. tab:: Python
 
-   y = 3.8
-   print(x) # will not always be the same value as y
-   print(y)
+   .. code:: python
 
-.. code:: none
+      y = 3.8
+      print(x) # will not always be the same value as y
+      print(y)
 
-   35
-   3.8
+.. tab:: Output
 
-**Variables only change value when something is assigned to them.** They
-are **not** like spreadsheets where a cell can depend on another and
-update automatically.
+   .. code:: none
+
+      35
+      3.8
+
+.. admonition:: Variables only change value when something is assigned to them. 
+   :class: warning
+
+   They are **not** like spreadsheets where a cell can depend on another and
+   update automatically.
 
 Question 3. Swapping values
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -185,13 +211,15 @@ Question 3. Swapping values
 Given the code below, what is the value of the variable ``swap`` by the
 end of the block?
 
-.. code:: python
+.. tab:: Python
 
-   x = 1.0
-   y = 3.0
-   swap = x
-   x = y
-   y = swap 
+   .. code:: python
+
+      x = 1.0
+      y = 3.0
+      swap = x
+      x = y
+      y = swap 
 
 .. raw:: html
 
@@ -212,74 +240,93 @@ Solution
    The only statements here that effect the value of ``swap`` are
    ``x = 1.0`` and ``swap = x``.
 
-   .. code:: none
+   .. tab:: Python
 
-      1.0
+      .. code:: none
+
+         1.0
 
 .. raw:: html
 
    </details>
 
-**What’s in a name?** *Variable name conventions* - Use only letters,
-digits, and underscores (\_) - can use camelcase (capitalizeEveryWord) -
-Start with a letter (typically lower case) - Variable names are case
-sensitive - Use meaningful names!
+.. admonition:: What’s in a name? Variable name conventions 
+   
+   - Use only letters, digits, and underscores (\_) 
+   - can use camelcase (capitalizeEveryWord) 
+   - Start with a letter (typically lower case) 
+   - Variable names are case sensitive 
+   - Use meaningful names!
 
-**Variables must be created before they are used.** Otherwise, Python
+Variables must be created before they are used. Otherwise, Python 
 will throw an error.
 
-.. code:: python
+.. tab:: Python
 
-   print(z) # we haven't initialized z yet!
+   .. code:: python
 
-.. code:: none
+      print(z) # we haven't initialized z yet!
 
-   NameError: name 'z' is not defined
+.. tab:: Output
+
+   .. code:: none
+
+      NameError: name 'z' is not defined
 
 In the following example, we specify a value for a variable after we
 print it. This will not work. Within a cell, the statements are executed
 from top to bottom. If the Python interpreter finds an error, execution
 stops.
 
-.. code:: python
+.. tab:: Python
 
-   print(last_name) # last name does not exist yet
-   # What happens if I try to correct my error in the same cell?
-   last_name='Montoya'
-   print(last_name)
+   .. code:: python
+
+      print(last_name) # last name does not exist yet
+      # What happens if I try to correct my error in the same cell?
+      last_name='Montoya'
+      print(last_name)
 
 If we want to increase a value of a variable by a certain, we can use
 the ``+=`` operator. Here, we add 2 to the current value of x.
 
-.. code:: python
+.. tab:: Python
 
-   print(x) # before incrementing
-   x += 2 
-   print(x) # after incrementing
+   .. code:: python
 
-.. code:: none
+      print(x) # before incrementing
+      x += 2 
+      print(x) # after incrementing
 
-   35
-   37
+.. tab:: Output
+
+   .. code:: none
+
+      35
+      37
 
 This is equivalent to running ``x = x + 2``. We can also do similar
 operations with subtraction, multiplication, and division.
 
-.. code:: python
+.. tab:: Python
 
-   x = 8
-   x -= 2 # 8 - 2
-   print("subtraction:", x)
-   x *= 4 # 6 * 4
-   print("multiplication:", x)
-   x /= 6 # 24 / 6
-   print("division:", x)
+   .. code:: python
 
-.. code:: none
+      x = 8
+      x -= 2 # 8 - 2
+      print("subtraction:", x)
+      x *= 4 # 6 * 4
+      print("multiplication:", x)
+      x /= 6 # 24 / 6
+      print("division:", x)
 
-   subtraction: 6
-   multiplication: 24
-   division: 4.0
+.. tab:: Output
+
+   .. code:: none
+
+      subtraction: 6
+      multiplication: 24
+      division: 4.0
 
 Question 4
 ^^^^^^^^^^
@@ -287,10 +334,12 @@ Question 4
 ``a`` has been initialized to be 25. Assign variable ``b`` to be 5 less
 than ``a`` without using ``b = 20``. Print the value of b.
 
-.. code:: python
+.. tab:: Python
 
-   a = 25
-   # write your code here:
+   .. code:: python
+
+      a = 25
+      # write your code here:
 
 .. raw:: html
 
@@ -310,11 +359,13 @@ Solution
 
    We can use variable ``a`` to assign value of ``a-5`` to ``b``.
 
-   .. code:: python
+   .. tab:: Python
 
-      a = 25
-      b = a - 5
-      print(b)
+      .. code:: python
+
+         a = 25
+         b = a - 5
+         print(b)
 
 .. raw:: html
 
@@ -328,58 +379,76 @@ assign values characters to variables. These are called **strings**. You
 can specify a string by putting text within either single quotation
 (``'single'``) or double quotation marks (``"double"``).
 
-.. code:: python
+.. tab:: Python
 
-   my_name = "Inigo Montoya"
-   print(my_name)
+   .. code:: python
 
-.. code:: none
+      my_name = "Inigo Montoya"
+      print(my_name)
 
-   Inigo Montoya
+.. tab:: Output
+
+   .. code:: none
+
+      Inigo Montoya
 
 We can print out a string directly in ``print()``, as well.
 
-.. code:: python
+.. tab:: Python
 
-   print("My name is")
-   print(my_name) # will print on a second line
+   .. code:: python
 
-.. code:: none
+      print("My name is")
+      print(my_name) # will print on a second line
 
-   My name is
-   Inigo Montoya
+.. tab:: Output
+
+   .. code:: none
+
+      My name is
+      Inigo Montoya
 
 We can also print out multiple values in a single ``print()`` statement.
 
-.. code:: python
+.. tab:: Python
 
-   print("My name is", my_name) # print() adds a space between the values
+   .. code:: python
 
-.. code:: none
+      print("My name is", my_name) # print() adds a space between the values
 
-   My name is Inigo Montoya
+.. tab:: Output
+
+   .. code:: none
+
+      My name is Inigo Montoya
 
 If we print out a string with an integer variable, it will convert the
 integer to a string in order to print it.
 
-.. code:: python
+.. tab:: Python
 
-   num_balloons = 25
-   print("I would like", num_balloons, "balloons.")
+   .. code:: python
 
-.. code:: none
+      num_balloons = 25
+      print("I would like", num_balloons, "balloons.")
 
-   I would like 25 balloons.
+.. tab:: Output
+
+   .. code:: none
+
+      I would like 25 balloons.
 
 Question 5
 ~~~~~~~~~~
 
 What will happen if you run the following code?
 
-.. code:: python
+.. tab:: Python
 
-   last_name = Montoya
-   print(last_name)
+   .. code:: python
+
+      last_name = Montoya
+      print(last_name)
 
 .. collapse:: Solution
 
@@ -390,9 +459,11 @@ What will happen if you run the following code?
       ``Montoya`` previously. You may also see additional text describing
       more details about the error, such as where it occurred.
 
-   .. code:: none
+      .. tab:: Output
 
-         NameError: name 'Montoya' is not defined
+         .. code:: none
+
+               NameError: name 'Montoya' is not defined
 
 
 Data Types:
@@ -407,21 +478,25 @@ Data Types:
    -  written with single or double quotes (matching)
    -  quotations aren’t printed when the string is displayed
 
-.. code:: python
+.. tab:: Python
 
-   # Find the type with function type()
-   print(type(52))
-   print(type("Inigo Montoya"))
-   print(type(3.14))
+   .. code:: python
 
-   # notice we are nesting functions -> type() is inside of print()
+      # Find the type with function type()
+      print(type(52))
+      print(type("Inigo Montoya"))
+      print(type(3.14))
 
-.. code:: none
+      # notice we are nesting functions -> type() is inside of print()
 
-   <class 'int'>
-   <class 'int'>
-   <class 'str'>
-   <class 'float'>
+.. tab:: Output
+
+   .. code:: none
+
+      <class 'int'>
+      <class 'int'>
+      <class 'str'>
+      <class 'float'>
 
 Combining and adding data types
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -429,48 +504,65 @@ Combining and adding data types
 The ``+`` operator concatenates (adds) strings together. However if you
 try to add an integer and a string, you will receive an error.
 
-.. code:: python
+.. tab:: Python
 
-   print("several" + " concatenated" + " strings") # need to manually add spaces when concatenating
+   .. code:: python
 
-.. code:: none
+      print("several" + " concatenated" + " strings") # need to manually add spaces when concatenating
 
-   several concatenated strings
+.. tab:: Output
 
-.. code:: python
+   .. code:: none
 
-   print(1 + "2") # adding string to int doesn't work
+      several concatenated strings
 
-.. code:: none
+.. tab:: Python
+   :new-set:
 
-   TypeError: unsupported operand type(s) for +: 'int' and 'str'
+   .. code:: python
+
+      print(1 + "2") # adding string to int doesn't work
+
+.. tab:: Output
+
+   .. code:: none
+
+      TypeError: unsupported operand type(s) for +: 'int' and 'str'
 
 We can convert an ``int`` to a ``string`` with the ``str()`` function to
 combine them. We must convert numbers to strings or vice versa when
 operating on them. Consistency is key!
 
-.. code:: python
+.. tab:: Python
 
-   print(1+int('2')) # convert string to int to do addition
-   print(str(1)+'2') # convert int to string to concatenate
+   .. code:: python
 
-.. code:: none
+      print(1+int('2')) # convert string to int to do addition
+      print(str(1)+'2') # convert int to string to concatenate
 
-   3
-   12
+.. tab:: Output
+
+   .. code:: none
+
+      3
+      12
 
 However, we can mix integers and floats freely in operations. This will
 result in the final value being a float.
 
-.. code:: python
+.. tab:: Python
 
-   print('half is', 1/2.0
-   print('three squared is', 3.0 ** 2)
+   .. code:: python
 
-.. code:: none
+      print('half is', 1/2.0
+      print('three squared is', 3.0 ** 2)
 
-   half is 0.5
-   three squared is 9.0
+.. tab:: Output
+
+   .. code:: none
+
+      half is 0.5
+      three squared is 9.0
 
 Length
 ~~~~~~
@@ -478,38 +570,48 @@ Length
 Strings have length (how many characters long they are), which can find
 with ``len()``. Floats and ints do not have length.
 
-.. code:: python
+.. tab:: Python
 
-   print( len("a long string") ) # spaces count in length
+   .. code:: python
 
-.. code:: none
+      print( len("a long string") ) # spaces count in length
 
-   13
+.. tab:: Output
 
-.. code:: python
+   .. code:: none
 
-   print( len(3.1415) ) # will get an error
+      13
 
-Division Types with numbers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. tab:: Python
+   :new-set:
 
--  ``//`` operator performs integer floor division (rounds down to
-   nearest integer)
--  ``/`` operator performs floating point division (returns a number
-   with a decimal point)
--  ``%`` modulo operator returns the remainder from integer division
+   .. code:: python
 
-.. code:: python
+      print( len(3.1415) ) # will get an error
 
-   print(5//3)
-   print(5/3)
-   print(5%3)
+.. admonition:: Division Types with numbers
 
-.. code:: none
+   *  ``//`` operator performs integer floor division (rounds down to
+      nearest integer)
+   *  ``/`` operator performs floating point division (returns a number
+      with a decimal point)
+   *  ``%`` modulo operator returns the remainder from integer division
 
-   1
-   1.6666666666666667
-   2
+   .. tab:: Python
+
+      .. code:: python
+
+         print(5//3)
+         print(5/3)
+         print(5%3)
+   
+   .. tab:: Output
+
+      .. code:: none
+
+         1
+         1.6666666666666667
+         2
 
 Question 6.
 ~~~~~~~~~~~
@@ -563,9 +665,11 @@ Calculate the values of :math:`x` for a quadratic equation with
 :math:`a=4`, :math:`b=-25`, and :math:`c = 20`. Remember to calculate
 the values for both plus and minus (:math:`\pm`).
 
-.. code:: python
+.. tab:: Python
 
-   # your code below:
+   .. code:: python
+
+      # your code below:
 
 .. raw:: html
 
@@ -583,21 +687,23 @@ Solution
 
 .. container::
 
-   .. code:: python
+   .. tab:: Python
 
-      # initialize my variables
-      a = 4
-      b = -25
-      c = 20
+      .. code:: python
 
-      # positive side
-      x_p = (-b + (b**2-4*a*c)**0.5)/(2*a)
+         # initialize my variables
+         a = 4
+         b = -25
+         c = 20
 
-      # negative
-      x_m = (-b - (b**2-4*a*c)**0.5)/(2*a)
+         # positive side
+         x_p = (-b + (b**2-4*a*c)**0.5)/(2*a)
 
-      print(x_p)
-      print(x_m)
+         # negative
+         x_m = (-b - (b**2-4*a*c)**0.5)/(2*a)
+
+         print(x_p)
+         print(x_m)
 
 .. raw:: html
 
@@ -606,26 +712,32 @@ Solution
 Question 8
 ~~~~~~~~~~
 
-.. code:: python
+.. tab:: Python
 
-   first  = 1.0
-   second = "1"
-   third  = "1.1"
+   .. code:: python
+
+      first  = 1.0
+      second = "1"
+      third  = "1.1"
 
 Which of the following will return the floating point number ``2.0``?
 
-.. code:: python
+.. tab:: Python
 
-   # first + float(second)          # choice a
-   # float(second) + float(third)   # choice b
-   # first + int(third)             # choice c
-   # first + int(float(third))      # choice d
-   # int(first) + int(float(third)) # choice e
-   # 2.0 * second                   # choice f
+   .. code:: python
 
-.. code:: none
+      # first + float(second)          # choice a
+      # float(second) + float(third)   # choice b
+      # first + int(third)             # choice c
+      # first + int(float(third))      # choice d
+      # int(first) + int(float(third)) # choice e
+      # 2.0 * second                   # choice f
 
-   2.0
+.. tab:: Output
+
+   .. code:: none
+
+      2.0
 
 **Reference and Resource**
 
