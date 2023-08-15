@@ -143,7 +143,7 @@ from ``x`` prints out a value of 30.
    Variables persist between cells once they have been run (executed).
 
 If we ever want to check the value of any variable, we can use the
-built-in ``print()`` command to display the value.
+built-in ``print()`` command to display the value. 
 
 .. tab:: Python
 
@@ -221,34 +221,20 @@ end of the block?
       x = y
       y = swap 
 
-.. raw:: html
 
-   <details>
+.. collapse:: Solution
 
-.. raw:: html
+   .. container::
 
-   <summary>
+      The only statements here that effect the value of ``swap`` are
+      ``x = 1.0`` and ``swap = x``.
 
-Solution
+      .. tab:: Python
 
-.. raw:: html
+         .. code:: none
 
-   </summary>
+            1.0
 
-.. container::
-
-   The only statements here that effect the value of ``swap`` are
-   ``x = 1.0`` and ``swap = x``.
-
-   .. tab:: Python
-
-      .. code:: none
-
-         1.0
-
-.. raw:: html
-
-   </details>
 
 .. admonition:: What’s in a name? Variable name conventions 
    
@@ -341,35 +327,20 @@ than ``a`` without using ``b = 20``. Print the value of b.
       a = 25
       # write your code here:
 
-.. raw:: html
+.. collapse:: Solution
 
-   <details>
+   .. container::
 
-.. raw:: html
+      We can use variable ``a`` to assign value of ``a-5`` to ``b``.
 
-   <summary>
+      .. tab:: Python
 
-Solution
+         .. code:: python
 
-.. raw:: html
+            a = 25
+            b = a - 5
+            print(b)
 
-   </summary>
-
-.. container::
-
-   We can use variable ``a`` to assign value of ``a-5`` to ``b``.
-
-   .. tab:: Python
-
-      .. code:: python
-
-         a = 25
-         b = a - 5
-         print(b)
-
-.. raw:: html
-
-   </details>
 
 Strings
 -------
@@ -451,7 +422,6 @@ What will happen if you run the following code?
       print(last_name)
 
 .. collapse:: Solution
-
 
    .. container::
 
@@ -617,34 +587,21 @@ Question 6.
 ~~~~~~~~~~~
 
 Choose the type (``int``, ``float``, ``str``) that each of these
-descriptions should be: 1. Time elapsed from the start of the year until
-now in days. 2. Serial code of a piece of lab equipment 3. A lab
-specimen’s age
+descriptions should be: 
+1. Time elapsed from the start of the year until
+now in days. 
+2. Serial code of a piece of lab equipment 
+3. A lab specimen’s age
 
-.. raw:: html
+.. collapse:: Solution
 
-   <details>
+   .. container::
 
-.. raw:: html
+      1. ``int`` if only considering full days, ``float`` otherwise.
+      2. ``str``: Identifiers can often have letters or leading zeros.
+      3. Depends on the specimen. If using countable units, ``int``,
+         otherwise ``float``.
 
-   <summary>
-
-Solution
-
-.. raw:: html
-
-   </summary>
-
-.. container::
-
-   1. ``int`` if only considering full days, ``float`` otherwise.
-   2. ``str``: Identifiers can often have letters or leading zeros.
-   3. Depends on the specimen. If using countable units, ``int``,
-      otherwise ``float``.
-
-.. raw:: html
-
-   </details>
 
 Question 7: Quadratic formula
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -671,43 +628,27 @@ the values for both plus and minus (:math:`\pm`).
 
       # your code below:
 
-.. raw:: html
+.. collapse:: Solution
 
-   <details>
+   .. container::
 
-.. raw:: html
+      .. tab:: Python
 
-   <summary>
+         .. code:: python
 
-Solution
+            # initialize my variables
+            a = 4
+            b = -25
+            c = 20
 
-.. raw:: html
+            # positive side
+            x_p = (-b + (b**2-4*a*c)**0.5)/(2*a)
 
-   </summary>
+            # negative
+            x_m = (-b - (b**2-4*a*c)**0.5)/(2*a)
 
-.. container::
-
-   .. tab:: Python
-
-      .. code:: python
-
-         # initialize my variables
-         a = 4
-         b = -25
-         c = 20
-
-         # positive side
-         x_p = (-b + (b**2-4*a*c)**0.5)/(2*a)
-
-         # negative
-         x_m = (-b - (b**2-4*a*c)**0.5)/(2*a)
-
-         print(x_p)
-         print(x_m)
-
-.. raw:: html
-
-   </details>
+            print(x_p)
+            print(x_m)
 
 Question 8
 ~~~~~~~~~~

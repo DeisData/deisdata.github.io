@@ -22,3 +22,11 @@ details pre{
     margin-bottom: 1em;
 }
 
+details .highlight{
+    background: var(--color-background-primary) !important;
+}
+
+details .tab-content.docutils.container {
+    background: var(--color-background-primary);
+}
+
