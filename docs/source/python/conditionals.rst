@@ -4,8 +4,8 @@ Booleans and conditionals
 Materials:
 ----------
 
--  Code-along Jupyter notebook
--  Filled-in Jupyter notebook
+-  `Code-along Jupyter notebook <https://colab.research.google.com/github/DeisData/python/blob/master/sequential/conditionals-codealong.ipynb>`__ 
+-  `Filled-in Jupyter notebook <https://colab.research.google.com/github/DeisData/python/blob/master/sequential/conditionals.ipynb>`__ 
 
 Often in code, we want to take different actions based on the current
 state of our program (e.g., do we have more or less than 100 samples in

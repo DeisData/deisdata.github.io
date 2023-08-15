@@ -3,12 +3,13 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Git Version Control" href="../git.html" /><link rel="prev" title="Writing Functions" href="functions.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Git Version Control" href="../git.html" /><link rel="prev" title="Writing functions" href="functions.html" />
 
     <link rel="shortcut icon" href="../_static/favicon-32x32.png"/><!-- Generated with Sphinx 4.5.0 and Furo 2023.05.20 -->
         <title>Statistics with Python - DeisData</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
     
@@ -147,7 +148,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../index.html">
   
   <div class="sidebar-logo-container">
-    <img class="sidebar-logo" src="../_static/android-chrome-192x192.png" alt="Logo"/>
+    <img class="sidebar-logo" src="../_static/DeisDatax1x_medium.png" alt="Logo"/>
   </div>
   
   <span class="sidebar-brand-text">DeisData</span>
@@ -161,17 +162,17 @@
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../python.html">Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="setup-install.html">Setup and Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="jupyter.html">Jupyter Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup-install.html">Setup and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter.html">Jupyter notebooks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python-fundamentals.html">Fundamentals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data-structures.html">Python Data Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-structures.html">Data structures</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conditionals.html">Booleans and conditionals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="loops.html">Loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="numpy.html">NumPy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pandas.html">Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="figures.html">Making figures in Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="functions.html">Writing Functions</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Statistics with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="figures.html">Matplotlib and seaborn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html">Writing functions</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Statistical tests</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../git.html">Git Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -245,14 +246,14 @@
 <li><p>Introduce some model fitting</p></li>
 </ul>
 </section>
-<section id="reference-and-resource">
-<h2>Reference and Resource<a class="headerlink" href="#reference-and-resource" title="Permalink to this headline">#</a></h2>
+<section id="reference-and-resources">
+<h2>Reference and resources<a class="headerlink" href="#reference-and-resources" title="Permalink to this headline">#</a></h2>
 <p>This lesson and data is adapted from LinkedIn Learning: Python
 Statistics Essential Training. See these lessons for more details
 including working with categorical data.</p>
 </section>
 <section id="importing-libraries-and-data">
-<h2>Importing Libraries and Data<a class="headerlink" href="#importing-libraries-and-data" title="Permalink to this headline">#</a></h2>
+<h2>Importing libraries and data<a class="headerlink" href="#importing-libraries-and-data" title="Permalink to this headline">#</a></h2>
 <p>We will use several packages for our statistical analyses. In
 particular, we will use <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> and <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> for running
 hypothesis testing and model fitting.</p>
@@ -838,7 +839,7 @@ the importance of factors in our model.</p>
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Writing Functions</div>
+                <div class="title">Writing functions</div>
                 
               </div>
             </a>
@@ -874,8 +875,8 @@ the importance of factors in our model.</p>
             <ul>
 <li><a class="reference internal" href="#">Statistics with Python</a><ul>
 <li><a class="reference internal" href="#objectives">Objectives</a></li>
-<li><a class="reference internal" href="#reference-and-resource">Reference and Resource</a></li>
-<li><a class="reference internal" href="#importing-libraries-and-data">Importing Libraries and Data</a></li>
+<li><a class="reference internal" href="#reference-and-resources">Reference and resources</a></li>
+<li><a class="reference internal" href="#importing-libraries-and-data">Importing libraries and data</a></li>
 <li><a class="reference internal" href="#describe-and-plot-distributions">Describe and plot distributions</a></li>
 <li><a class="reference internal" href="#descriptive-statistics">Descriptive statistics</a><ul>
 <li><a class="reference internal" href="#hypothesis-testing">Hypothesis Testing</a></li>
@@ -899,5 +900,6 @@ the importance of factors in our model.</p>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/scripts/furo.js"></script>
+    <script src="../_static/tabs.js"></script>
     </body>
 </html>

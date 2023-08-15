@@ -4,8 +4,8 @@ Making figures in Python
 Materials:
 ----------
 
--  Code-along Jupyter notebook
--  Filled-in Jupyter notebook
+-  `Code-along Jupyter notebook <https://colab.research.google.com/github/DeisData/python/blob/master/sequential/figures-codealong.ipynb>`__ 
+-  `Filled-in Jupyter notebook <https://colab.research.google.com/github/DeisData/python/blob/master/sequential/figures.ipynb>`__
 
 Matplotlib
 ----------

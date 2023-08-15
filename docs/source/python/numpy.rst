@@ -4,8 +4,8 @@ NumPy
 Materials:
 ----------
 
--  Code-along Jupyter notebook
--  Filled-in Jupyter notebook
+-  `Code-along Jupyter notebook <https://colab.research.google.com/github/DeisData/python/blob/master/sequential/numpy-codealong.ipynb>`__ 
+-  `Filled-in Jupyter notebook <https://colab.research.google.com/github/DeisData/python/blob/master/sequential/numpy.ipynb>`__ 
 
 NumPy (Numerical Python) is a critical library for manipulating numbers,
 performing matrix operations, and mathematics in general.

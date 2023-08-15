@@ -14,76 +14,40 @@ written in the language Markdown, which allows for straightforward text
 formatting. When it is executed, Markdown renders into HTML. Here is
 some basic ways to specify formatting in Markdown:
 
-.. code:: markdown
+.. tab:: Markdown
 
-   # Heading 1
-   ## Heading 2
-   ### Heading 3
+   .. code:: markdown
 
-   - unordered
-   - list
-   - of 
-   - things
+      # Heading 1
+      ## Heading 2
+      ### Heading 3
 
-   1. Ordered
-   2. list
-   3. of
-   4. things
+      - unordered
+      - list
+      - of 
+      - things
 
-   *italics*
+      1. Ordered
+      2. list
+      3. of
+      4. things
 
-   **boldface**
+      *italics*
 
-   [A link](www.google.com)
+      **boldface**
 
-   ![An image](https://www.palmpressinc.com/wp-content/uploads/cc_resize/3704-700x0.jpg)
+      [A link](www.google.com)
 
-   `Inline code`
+      ![An image](https://www.palmpressinc.com/wp-content/uploads/cc_resize/3704-700x0.jpg)
 
-   Inline LaTeX math equation: $x^2 + 3$
+      `Inline code`
 
-   Block LaTeX math equation:
-   $$ \frac{dy}{dx} = \sqrt{a^x} $$
+      Inline LaTeX math equation: $x^2 + 3$
+
+      Block LaTeX math equation:
+      $$ \frac{dy}{dx} = \sqrt{a^x} $$
 
 Here is how that gets rendered: :doc:`Markdown rendering<example-markdown>` 
-
-.. Heading 1
-.. =========
-
-.. Heading 2
-.. ---------
-
-.. Heading 3
-.. ~~~~~~~~~
-
-.. -  unordered
-.. -  list
-.. -  of
-.. -  things
-
-.. 1. Ordered
-.. 2. list
-.. 3. of
-.. 4. things
-
-.. *italics*
-
-.. **boldface**
-
-.. `A link <www.google.com>`__
-
-.. .. figure:: https://www.palmpressinc.com/wp-content/uploads/cc_resize/3704-700x0.jpg
-..    :alt: An image
-
-..    An image
-
-.. ``Inline code``
-
-.. Inline LaTeX math equation: :math:`x^2 + 3`
-
-.. Block LaTeX math equation:
-
-.. .. math::  \frac{dy}{dx} = \sqrt{a^x} 
 
 To run a cell and render it, hit Shift + Enter. You can re-edit this
 cell by selecting a cell and hitting Enter or by double clicking.
@@ -102,20 +66,24 @@ Below is a code block showing some Python code showing what code
 coloring might look like this, with the printed output of the process
 below it:
 
-.. code:: python
+.. tab:: Python
 
-   # a comment
-   my_list = [0, 1, 2]
+   .. code:: python
 
-   for x in my_list:
+      # a comment
+      my_list = [0, 1, 2]
 
-       print(x)
+      for x in my_list:
 
-.. code:: none
+         print(x)
 
-   0
-   1
-   2
+.. tab:: Output
+
+   .. code:: none
+
+      0
+      1
+      2
 
 To run a code cell, you should be able to click a button on the cell.
 You may also be able to alternate between putting a cell into Edit and

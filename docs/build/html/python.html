@@ -3,12 +3,13 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Python Setup and Installation" href="python/setup-install.html" /><link rel="prev" title="How Do I Use Brandeis Data Services?" href="index.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Python setup and installation" href="python/setup-install.html" /><link rel="prev" title="How Do I Use Brandeis Data Services?" href="index.html" />
 
     <link rel="shortcut icon" href="_static/favicon-32x32.png"/><!-- Generated with Sphinx 4.5.0 and Furo 2023.05.20 -->
         <title>Python - DeisData</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
     
@@ -147,7 +148,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand centered" href="index.html">
   
   <div class="sidebar-logo-container">
-    <img class="sidebar-logo" src="_static/android-chrome-192x192.png" alt="Logo"/>
+    <img class="sidebar-logo" src="_static/DeisDatax1x_medium.png" alt="Logo"/>
   </div>
   
   <span class="sidebar-brand-text">DeisData</span>
@@ -161,17 +162,17 @@
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="python/setup-install.html">Setup and Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/jupyter.html">Jupyter Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/setup-install.html">Setup and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/jupyter.html">Jupyter notebooks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python/python-fundamentals.html">Fundamentals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/data-structures.html">Python Data Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/data-structures.html">Data structures</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python/conditionals.html">Booleans and conditionals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python/loops.html">Loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python/numpy.html">NumPy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python/pandas.html">Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/figures.html">Making figures in Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/functions.html">Writing Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/stats.html">Statistics with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/figures.html">Matplotlib and seaborn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/functions.html">Writing functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/stats.html">Statistical tests</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="git.html">Git Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -249,21 +250,33 @@ that runs Python <strong>without any installation necessary</strong>.</p>
 <section id="topics">
 <h3>Topics<a class="headerlink" href="#topics" title="Permalink to this headline">#</a></h3>
 <ol class="arabic simple">
-<li><p><strong>setup &amp; install</strong></p></li>
-<li><p><strong>jupyter</strong></p></li>
-<li><p><strong>python fundamentals</strong> <strong>[** code-along notebook / filled-in
-notebook **]</strong></p></li>
-<li><p><strong>lists &amp; dictionaries</strong> <strong>[** code-along notebook / filled-in
-notebook **]</strong></p></li>
-<li><p><strong>conditionals</strong> <strong>[** code-along notebook / filled-in notebook
-**]</strong></p></li>
-<li><p><strong>loops</strong> <strong>[** code-along notebook / filled-in notebook **]</strong></p></li>
-<li><p><strong>numpy</strong> <strong>[** code-along notebook / filled-in Jupyter notebook
-**]</strong></p></li>
-<li><p><strong>pandas</strong> <strong>[** code-along notebook / filled-in Jupyter notebook
-**]</strong></p></li>
-<li><p><strong>figures</strong> <strong>[** code-along notebook / filled-in notebook **]</strong></p></li>
-<li><p><strong>functions</strong> <strong>[** filled-in notebook **]</strong></p></li>
+<li><p><a class="reference internal" href="python/setup-install.html"><span class="doc">Setup and installation</span></a></p></li>
+<li><p><a class="reference internal" href="python/jupyter.html"><span class="doc">Jupyter notebooks</span></a></p></li>
+<li><p><a class="reference internal" href="python/python-fundamentals.html"><span class="doc">Fundamentals</span></a>
+[ <a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/python-fundamentals-codealong.ipynb">code-along notebook</a>
+/ <a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/python-fundamentals.ipynb">filled-in notebook</a> ]</p></li>
+<li><p><a class="reference internal" href="python/data-structures.html"><span class="doc">Data structures</span></a>
+[ <a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/data-structures-codealong.ipynb">code-along notebook</a>
+/ <a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/data-structures.ipynb">filled-in notebook</a> ]</p></li>
+<li><p><a class="reference internal" href="python/conditionals.html"><span class="doc">Booleans and conditionals</span></a>
+[ <a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/conditionals-codealong.ipynb">code-along notebook</a>
+/ <a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/conditionals.ipynb">filled-in notebook</a> ]</p></li>
+<li><p><a class="reference internal" href="python/loops.html"><span class="doc">Loops</span></a>
+[ <a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/loops-codealong.ipynb">code-along notebook</a>
+/ <a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/loops.ipynb">filled-in notebook</a> ]</p></li>
+<li><p><a class="reference internal" href="python/numpy.html"><span class="doc">NumPy</span></a>
+[ <a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/numpy-codealong.ipynb">code-along notebook</a>
+/ <a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/numpy.ipynb">filled-in notebook</a> ]</p></li>
+<li><p><a class="reference internal" href="python/pandas.html"><span class="doc">Pandas</span></a>
+[ <a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/pandas-codealong.ipynb">code-along notebook</a>
+/ <a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/pandas.ipynb">filled-in Jupyter notebook</a> ]</p></li>
+<li><p><a class="reference internal" href="python/figures.html"><span class="doc">Matplotlib and seaborn</span></a>
+[ <a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/figures-codealong.ipynb">code-along notebook</a>
+/ <a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/figures.ipynb">filled-in notebook</a> ]</p></li>
+<li><p><a class="reference internal" href="python/functions.html"><span class="doc">Writing functions</span></a>
+[ <a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/functions-codealong.ipynb">code-along notebook</a>
+/ <a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/functions.ipynb">filled-in notebook</a> ]</p></li>
+<li><p><a class="reference internal" href="python/stats.html"><span class="doc">Statistical tests</span></a></p></li>
 </ol>
 </section>
 <section id="using-colab">
@@ -271,7 +284,8 @@ notebook **]</strong></p></li>
 <p>We will be using <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>
 to run our code. No Python installation will be required for this
 workshop; you just need to be signed into a Google account.</p>
-<p><strong>Saving notebooks to your drive</strong></p>
+<section id="saving-notebooks-to-your-drive">
+<h4>Saving notebooks to your drive<a class="headerlink" href="#saving-notebooks-to-your-drive" title="Permalink to this headline">#</a></h4>
 <p>Once the notebook is open in Colab, click on <strong>File</strong> in the upper left.
 If you cannot see <strong>File</strong>, try clicking the down arrow in the top
 right. Click <strong>Save a copy in Drive</strong>. You can rename the file, and the
@@ -285,6 +299,7 @@ different programs to interact with the notebook, such as
 <a class="reference external" href="https://www.spyder-ide.org/">Spyder</a>, <a class="reference external" href="https://code.visualstudio.com/">VS
 Code</a>,
 <a class="reference external" href="https://www.jetbrains.com/pycharm/">PyCharm</a>, and more.</p>
+</section>
 </section>
 <section id="practice-examples-and-more-training">
 <h3>Practice Examples and More Training<a class="headerlink" href="#practice-examples-and-more-training" title="Permalink to this headline">#</a></h3>
@@ -305,114 +320,6 @@ Learning</a></p></li>
 Competitions</a></p></li>
 </ul>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="python/setup-install.html">Setup and Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python/setup-install.html#google-colab-easiest">Google Colab (Easiest):</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/setup-install.html#anaconda-most-tools">Anaconda (Most tools):</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/setup-install.html#miniconda-most-streamlined">Miniconda (Most streamlined)</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="python/jupyter.html">Jupyter Notebooks</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python/jupyter.html#markdown">Markdown</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/jupyter.html#python">Python</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="python/python-fundamentals.html">Fundamentals</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python/python-fundamentals.html#materials">Materials:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/python-fundamentals.html#question-1-do-it-yourself-coding">Question 1. Do it yourself! Coding</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/python-fundamentals.html#python-as-a-calculator">Python as a calculator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/python-fundamentals.html#assigning-variables">Assigning Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/python-fundamentals.html#strings">Strings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/python-fundamentals.html#data-types">Data Types:</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="python/data-structures.html">Python Data Structures</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python/data-structures.html#materials">Materials:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/data-structures.html#lists">Lists</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/data-structures.html#dictionaries">Dictionaries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/data-structures.html#tuples">Tuples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/data-structures.html#sets">Sets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/data-structures.html#bonus-nested-structures">Bonus: Nested structures</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/data-structures.html#resources">Resources</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="python/conditionals.html">Booleans and conditionals</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python/conditionals.html#materials">Materials:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/conditionals.html#boolean">Boolean</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/conditionals.html#boolean-expressions">Boolean expressions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/conditionals.html#conditionals">Conditionals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/conditionals.html#using-data-types-in-conditionals">Using data types in conditionals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/conditionals.html#nested-conditionals">Nested conditionals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/conditionals.html#resources">Resources</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="python/loops.html">Loops</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python/loops.html#materials">Materials:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/loops.html#while-loops">while loops</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/loops.html#for-loops">for loops</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/loops.html#adding-in-conditionals">Adding in conditionals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/loops.html#resources">Resources</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="python/numpy.html">NumPy</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python/numpy.html#materials">Materials:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/numpy.html#bonus">Bonus</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/numpy.html#question-numpy-math">Question: NumPy math</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/numpy.html#d-array">2D Array</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/numpy.html#indexing-and-slicing-in-numpy">Indexing and slicing in NumPy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/numpy.html#numpy-constants">NumPy constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/numpy.html#numpy-random">Numpy random</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/numpy.html#resources">Resources</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="python/pandas.html">Pandas</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python/pandas.html#materials">Materials:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/pandas.html#read-data">Read data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/pandas.html#summarize-data-frame">Summarize data frame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/pandas.html#categorical-variables">Categorical variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/pandas.html#numerical-variables">Numerical variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/pandas.html#accessing-rows-and-specific-entries">Accessing rows and specific entries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/pandas.html#manipulate-data">Manipulate data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/pandas.html#create-your-own-data-frame">Create your own data frame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/pandas.html#sort-data-frame">Sort data frame</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/pandas.html#add-rows">Add rows</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/pandas.html#join-data-frames">Join data frames</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/pandas.html#export-data-frame-as-csv">Export data frame as .csv</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/pandas.html#resources">Resources</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="python/figures.html">Making figures in Python</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python/figures.html#materials">Materials:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/figures.html#matplotlib">Matplotlib</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/figures.html#seaborn">Seaborn</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/figures.html#resources">Resources</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="python/functions.html">Writing Functions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python/functions.html#materials">Materials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/functions.html#objectives">Objectives:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/functions.html#materials-1">Materials:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/functions.html#question-1">Question 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/functions.html#question-2">Question 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/functions.html#default-values">Default values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/functions.html#composing-functions">Composing Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/functions.html#functions-for-tidying-up-code">Functions for tidying up code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/functions.html#add-documentation-to-your-functions">Add documentation to your functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/functions.html#readable-functions">Readable Functions</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="python/stats.html">Statistics with Python</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python/stats.html#objectives">Objectives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/stats.html#reference-and-resource">Reference and Resource</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/stats.html#importing-libraries-and-data">Importing Libraries and Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/stats.html#describe-and-plot-distributions">Describe and plot distributions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/stats.html#descriptive-statistics">Descriptive statistics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/stats.html#fitting-models-to-data">Fitting Models to Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python/stats.html#statmodels">statmodels</a></li>
-</ul>
-</li>
-</ul>
 </div>
 </section>
 </section>
@@ -428,7 +335,7 @@ Competitions</a></p></li>
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Python Setup and Installation</div>
+                <div class="title">Python setup and installation</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -476,7 +383,10 @@ Competitions</a></p></li>
 <li><a class="reference internal" href="#">Python</a><ul>
 <li><a class="reference internal" href="#python-programming-workshop">Python Programming Workshop</a><ul>
 <li><a class="reference internal" href="#topics">Topics</a></li>
-<li><a class="reference internal" href="#using-colab">Using Colab</a></li>
+<li><a class="reference internal" href="#using-colab">Using Colab</a><ul>
+<li><a class="reference internal" href="#saving-notebooks-to-your-drive">Saving notebooks to your drive</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#practice-examples-and-more-training">Practice Examples and More Training</a></li>
 </ul>
 </li>
@@ -496,5 +406,6 @@ Competitions</a></p></li>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/scripts/furo.js"></script>
+    <script src="_static/tabs.js"></script>
     </body>
 </html>

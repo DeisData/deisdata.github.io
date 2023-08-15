@@ -1,6 +1,7 @@
 details {
     margin: 2em 0 2.5em 0;
-    background-color: rgb(32, 32, 32);;
+    /* background-color: rgb(32, 32, 32); */
+    background-color: var(--color-code-background);
     
 }
 
@@ -9,11 +10,15 @@ details summary{
     margin-left: 10px;
 }
 
-details .container{
-    padding: 10px
+details .docutils.container{
+    padding: 15px
 }
 
 details summary:hover{
     color: #368ce2;
+}
+
+details pre{
+    margin-bottom: 1em;
 }
 

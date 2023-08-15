@@ -4,8 +4,8 @@ Loops
 Materials:
 ----------
 
--  Code-along Jupyter notebook
--  Filled-in Jupyter notebook
+-  `Code-along Jupyter notebook <https://colab.research.google.com/github/DeisData/python/blob/master/sequential/loops-codealong.ipynb>`__ 
+-  `Filled-in Jupyter notebook <https://colab.research.google.com/github/DeisData/python/blob/master/sequential/loops.ipynb>`__ 
 
 Often, programs need to do the same task several times repeatedly. You
 may need to run a task just a handful of times, or maybe thousands of

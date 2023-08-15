@@ -1,4 +1,4 @@
-Python Fundamentals
+Python fundamentals
 ===================
 
 Python is a very powerful tool for automating tasks that would otherwise
@@ -9,21 +9,23 @@ a slice of its potential.
 Materials:
 ----------
 
--  Code-along Jupyter notebook
--  Filled-in Jupyter notebook
+-  `Code-along Jupyter notebook <https://colab.research.google.com/github/DeisData/python/blob/master/sequential/python-fundamentals-codealong.ipynb>`__
+-  `Filled-in Jupyter notebook <https://colab.research.google.com/github/DeisData/python/blob/master/sequential/python-fundamentals.ipynb>`__
 
-Question 1. Do it yourself! Coding
-----------------------------------
+Question 1: Do it yourself!
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Write a message and print it out!
 
-.. code:: python
+.. tab:: Python
 
-   #  INSTRUCTIONS:   Write a message in the quotes.
-   #  type Shift+Enter to run the cell.
-   message = ''
+   .. code:: python
 
-   print(message)
+      #  INSTRUCTIONS:   Write a message in the quotes.
+      #  type Shift+Enter to run the cell.
+      message = ''
+
+      print(message)
 
 Python as a calculator
 ----------------------
@@ -36,13 +38,18 @@ You’ll see the symbol ``#`` used often. These are comments, and they are
 used to write descriptions. Any characters following ``#`` are not run
 or executed.
 
-.. code:: python
+.. tab:: Python
 
-   3 + 4 * 5  # addition and multiplication 
+   .. code:: python
 
-.. code:: none
+      3 + 4 * 5  # addition and multiplication 
 
-   23
+
+.. tab:: Output
+   
+   .. code:: none
+
+      23
 
 After we run a cell, an output is displayed below.
 
@@ -50,24 +57,33 @@ You may have noticed from that example that order of operations mattered
 for that calculation. You can parentheses too if you want to group
 calculations.
 
-.. code:: python
+.. tab:: Python
 
-   12 / (6 - 4) # division and substraction
 
-.. code:: none
+   .. code:: python
 
-   6.0
+      12 / (6 - 4) # division and substraction
+
+.. tab:: Output
+
+   .. code:: none
+
+      6.0
 
 Exponentiation (e.g. :math:`2^3`) looks a little bit odd in Python as it
 uses ``**`` instead of a more traditional ``^``.
 
-.. code:: python
+.. tab:: Python
 
-   2 ** 3 # exponentiation
+   .. code:: python
 
-.. code:: none
+      2 ** 3 # exponentiation
 
-   8
+.. tab:: Output
+
+   .. code:: none
+
+      8
 
 Question 2: Writing math
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -76,32 +92,19 @@ Calculate the following value in Python:
 
 .. math::  \frac{25}{(35 - 3)^3} 
 
-.. raw:: html
 
-   <details>
+.. collapse:: Solution
 
-.. raw:: html
+   .. container::
 
-   <summary>
-
-Solution
-
-.. raw:: html
-
-   </summary>
-
-.. container::
-
-   Remember to include parentheses when needed, but Python also follows
-   standard order of operations.
+      Remember to include parentheses when needed, but Python also follows
+      standard order of operations.
 
    .. code:: python
 
       25/(35-3)**3
 
-.. raw:: html
 
-   </details>
 
 Assigning Variables
 -------------------

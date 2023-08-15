@@ -1,11 +1,11 @@
-Python Data Structures
+Python data structures
 ======================
 
 Materials:
 ----------
 
--  Code-along Jupyter notebook
--  Filled-in Jupyter notebook
+-  `Code-along Jupyter notebook <https://colab.research.google.com/github/DeisData/python/blob/master/sequential/data-structures-codealong.ipynb>`__
+-  `Filled-in Jupyter notebook <https://colab.research.google.com/github/DeisData/python/blob/master/sequential/data-structures.ipynb>`__
 
 Going over the fundmentals, we learned how to store numbers and sets of
 characters as variables. Python also has built-in ways to store multiple
@@ -296,7 +296,7 @@ Solution
 .. container::
 
    Assigning dictionary values of different keys can be tricky. Remember
-   to have write write key on the right side.
+   to have write key on the right side.
 
    .. code:: python
 

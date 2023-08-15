@@ -1,4 +1,4 @@
-Python Setup and Installation
+Python setup and installation
 =============================
 
 There are many ways to use and install Python. Here we list some

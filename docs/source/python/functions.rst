@@ -1,11 +1,11 @@
-Writing Functions
+Writing functions
 =================
 
 Materials
 ---------
 
--  Code-along Jupyter notebook
--  Filled-in Jupyter notebook
+-  `Code-along Jupyter notebook <https://colab.research.google.com/github/DeisData/python/blob/master/sequential/functions-codealong.ipynb>`__
+-  `Filled-in Jupyter notebook <https://colab.research.google.com/github/DeisData/python/blob/master/sequential/functions.ipynb>`__ 
 
 As humans, we can only keep a few items in our own working memory at a
 time. Trying to comprehend a Python script with hundreds of lines of
@@ -24,8 +24,7 @@ without having to duplicate dozens of lines of code over and over again.
 Objectives:
 -----------
 
-**Define a function using ``def`` with a name, parameters, and a block
-of code.**
+- Define a function using ``def`` with a name, parameters, and a block of code.
 
 .. _materials-1:
 

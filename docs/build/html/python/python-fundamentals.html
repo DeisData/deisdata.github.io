@@ -3,12 +3,13 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Python Data Structures" href="data-structures.html" /><link rel="prev" title="How to use a Jupyter notebook" href="jupyter.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Python data structures" href="data-structures.html" /><link rel="prev" title="How to use a Jupyter notebook" href="jupyter.html" />
 
     <link rel="shortcut icon" href="../_static/favicon-32x32.png"/><!-- Generated with Sphinx 4.5.0 and Furo 2023.05.20 -->
-        <title>Python Fundamentals - DeisData</title>
+        <title>Python fundamentals - DeisData</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
     
@@ -147,7 +148,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../index.html">
   
   <div class="sidebar-logo-container">
-    <img class="sidebar-logo" src="../_static/android-chrome-192x192.png" alt="Logo"/>
+    <img class="sidebar-logo" src="../_static/DeisDatax1x_medium.png" alt="Logo"/>
   </div>
   
   <span class="sidebar-brand-text">DeisData</span>
@@ -161,17 +162,17 @@
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../python.html">Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="setup-install.html">Setup and Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="jupyter.html">Jupyter Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup-install.html">Setup and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter.html">Jupyter notebooks</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Fundamentals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data-structures.html">Python Data Structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-structures.html">Data structures</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conditionals.html">Booleans and conditionals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="loops.html">Loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="numpy.html">NumPy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pandas.html">Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="figures.html">Making figures in Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="functions.html">Writing Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stats.html">Statistics with Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="figures.html">Matplotlib and seaborn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html">Writing functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stats.html">Statistical tests</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../git.html">Git Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -236,7 +237,7 @@
         </div>
         <article role="main">
           <section id="python-fundamentals">
-<h1>Python Fundamentals<a class="headerlink" href="#python-fundamentals" title="Permalink to this headline">#</a></h1>
+<h1>Python fundamentals<a class="headerlink" href="#python-fundamentals" title="Permalink to this headline">#</a></h1>
 <p>Python is a very powerful tool for automating tasks that would otherwise
 be time-consuming or impossible to do by hand or other conventional
 tools. Here, we’ll go over basic ways to use Python to introduce you to
@@ -244,13 +245,14 @@ a slice of its potential.</p>
 <section id="materials">
 <h2>Materials:<a class="headerlink" href="#materials" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Code-along Jupyter notebook</p></li>
-<li><p>Filled-in Jupyter notebook</p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/python-fundamentals-codealong.ipynb">Code-along Jupyter notebook</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/python-fundamentals.ipynb">Filled-in Jupyter notebook</a></p></li>
 </ul>
-</section>
-<section id="question-1-do-it-yourself-coding">
-<h2>Question 1. Do it yourself! Coding<a class="headerlink" href="#question-1-do-it-yourself-coding" title="Permalink to this headline">#</a></h2>
+<section id="question-1-do-it-yourself">
+<h3>Question 1: Do it yourself!<a class="headerlink" href="#question-1-do-it-yourself" title="Permalink to this headline">#</a></h3>
 <p>Write a message and print it out!</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#  INSTRUCTIONS:   Write a message in the quotes.</span>
 <span class="c1">#  type Shift+Enter to run the cell.</span>
 <span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
@@ -258,6 +260,9 @@ a slice of its potential.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
+</section>
 </section>
 <section id="python-as-a-calculator">
 <h2>Python as a calculator<a class="headerlink" href="#python-as-a-calculator" title="Permalink to this headline">#</a></h2>
@@ -267,29 +272,47 @@ to basic action below.</p>
 <p>You’ll see the symbol <code class="docutils literal notranslate"><span class="pre">#</span></code> used often. These are comments, and they are
 used to write descriptions. Any characters following <code class="docutils literal notranslate"><span class="pre">#</span></code> are not run
 or executed.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">5</span>  <span class="c1"># addition and multiplication</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>23
 </pre></div>
+</div>
+</div>
 </div>
 <p>After we run a cell, an output is displayed below.</p>
 <p>You may have noticed from that example that order of operations mattered
 for that calculation. You can parentheses too if you want to group
 calculations.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">12</span> <span class="o">/</span> <span class="p">(</span><span class="mi">6</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span> <span class="c1"># division and substraction</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>6.0
 </pre></div>
 </div>
+</div>
+</div>
 <p>Exponentiation (e.g. <span class="math notranslate nohighlight">\(2^3\)</span>) looks a little bit odd in Python as it
 uses <code class="docutils literal notranslate"><span class="pre">**</span></code> instead of a more traditional <code class="docutils literal notranslate"><span class="pre">^</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span> <span class="c1"># exponentiation</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>8
 </pre></div>
+</div>
+</div>
 </div>
 <section id="question-2-writing-math">
 <h3>Question 2: Writing math<a class="headerlink" href="#question-2-writing-math" title="Permalink to this headline">#</a></h3>
@@ -298,13 +321,13 @@ uses <code class="docutils literal notranslate"><span class="pre">**</span></cod
 <div class="math notranslate nohighlight">
 \[\frac{25}{(35 - 3)^3}\]</div>
 </div>
-<details><summary><p>Solution</p>
-</summary><div class="docutils container">
+<details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
 <p>Remember to include parentheses when needed, but Python also follows
 standard order of operations.</p>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">25</span><span class="o">/</span><span class="p">(</span><span class="mi">35</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>
 </pre></div>
-</div>
 </div>
 </details></section>
 </section>
@@ -698,7 +721,7 @@ the values for both plus and minus (<span class="math notranslate nohighlight">\
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Python Data Structures</div>
+                <div class="title">Python data structures</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -743,9 +766,11 @@ the values for both plus and minus (<span class="math notranslate nohighlight">\
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Python Fundamentals</a><ul>
-<li><a class="reference internal" href="#materials">Materials:</a></li>
-<li><a class="reference internal" href="#question-1-do-it-yourself-coding">Question 1. Do it yourself! Coding</a></li>
+<li><a class="reference internal" href="#">Python fundamentals</a><ul>
+<li><a class="reference internal" href="#materials">Materials:</a><ul>
+<li><a class="reference internal" href="#question-1-do-it-yourself">Question 1: Do it yourself!</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#python-as-a-calculator">Python as a calculator</a><ul>
 <li><a class="reference internal" href="#question-2-writing-math">Question 2: Writing math</a></li>
 </ul>
@@ -786,6 +811,7 @@ the values for both plus and minus (<span class="math notranslate nohighlight">\
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/scripts/furo.js"></script>
+    <script src="../_static/tabs.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>
