@@ -250,8 +250,12 @@ strings and numbers, namely <strong>lists</strong>, <strong>tuples</strong>, <st
 <strong>sets</strong>. These all allow you to groups of ints, floats, and strings in
 different arrangements. Here, we created a <code class="docutils literal notranslate"><span class="pre">list</span></code> of 5 ints called
 <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span> <span class="p">]</span> <span class="c1"># integers 1 - 5</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Here are brief descriptions of the four structures.</p>
 <ul class="simple">
@@ -273,16 +277,24 @@ to them.</p>
 <section id="initialize-a-list">
 <h3>Initialize a list<a class="headerlink" href="#initialize-a-list" title="Permalink to this headline">#</a></h3>
 <p>There are two ways of initializing an empty list: <code class="docutils literal notranslate"><span class="pre">list()</span></code> and <code class="docutils literal notranslate"><span class="pre">[]</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># these do the same thing</span>
 <span class="n">my_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
 <span class="n">your_list</span> <span class="o">=</span> <span class="p">[]</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>To make a list with pre-populated with items, we can fill the brackets
 with comma-separated values.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number_list</span> <span class="o">=</span> <span class="p">[</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span> <span class="p">]</span> <span class="c1"># lists can hold numbers</span>
 <span class="n">string_list</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;rabbit&#39;</span> <span class="p">]</span> <span class="c1"># can also hold strings</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="referencing-to-items-in-a-list">
@@ -291,76 +303,117 @@ with comma-separated values.</p>
 indexes (or indicies, depending on who you ask).</p>
 <p>In Python, indexes starts at 0. To reference the first item in
 <code class="docutils literal notranslate"><span class="pre">number_list</span></code>, we use <code class="docutils literal notranslate"><span class="pre">number_list[0]</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># get the first item from number_list</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0.1
 </pre></div>
+</div>
+</div>
 </div>
 <p>We can reference the rest of the numbers in the list with indexes 1
 through 3. Note that even though there are 4 items in the list, the
 index goes from 0 to 3.</p>
 <p>We also can use the items in a list the same way we can use variables to
 do math or other operations.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">number_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">number_list</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="p">)</span> <span class="c1"># 0.2 - 0.4</span>
 <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;my favorite kind of animal is&#39;</span><span class="p">,</span> <span class="n">string_list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="p">)</span> <span class="c1"># prints rabbit</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-0.2
 my favorite kind of animal is rabbit
 </pre></div>
 </div>
+</div>
+</div>
 <p>If we try to reference an index that does not exist in a list, we get an
 error.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number_list</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>IndexError: list index out of range
 </pre></div>
+</div>
+</div>
 </div>
 <p>If we want to reference the last item in a list, we can do it two ways.
 We can use the length of list and subtract 1. Alternatively, we can also
 use <code class="docutils literal notranslate"><span class="pre">[-1]</span></code> as a shorthand for the last item.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">number_list</span><span class="p">[</span> <span class="nb">len</span><span class="p">(</span><span class="n">number_list</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">]</span> <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span> <span class="n">number_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0.4
 0.4
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="appending-to-a-list">
 <h3>Appending to a list<a class="headerlink" href="#appending-to-a-list" title="Permalink to this headline">#</a></h3>
 <p>If we want to add an item to the end of <code class="docutils literal notranslate"><span class="pre">string_list</span></code>, we can use
 <code class="docutils literal notranslate"><span class="pre">string_list.append()</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">string_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;bear&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">string_list</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--7-input--2" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;cat&#39;, &#39;dog&#39;, &#39;rabbit&#39;, &#39;bear&#39;]
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="reassigning-an-item-in-a-list">
 <h3>Reassigning an item in a list<a class="headerlink" href="#reassigning-an-item-in-a-list" title="Permalink to this headline">#</a></h3>
 <p>We can also alter any item currently in a list.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2096</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">number_list</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--8-input--2" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[2096, 0.2, 0.3, 0.4]
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="question-1-lists">
 <h3>Question 1: Lists<a class="headerlink" href="#question-1-lists" title="Permalink to this headline">#</a></h3>
 <p>Create a list of numbers. Add the first number in the list to the last
 number of the list. Append this value to the list.</p>
-<details><summary>Solution</summary><div class="docutils container">
+<details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
 <span class="n">num_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">num_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">num_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 </div>
 </details></section>
@@ -374,8 +427,12 @@ items in a specific order, like a list, dictionaries store them as
 paired with the value <code class="docutils literal notranslate"><span class="pre">25</span></code>, and the key <code class="docutils literal notranslate"><span class="pre">kangaroos</span></code> paired with the
 value <code class="docutils literal notranslate"><span class="pre">32</span></code>. We can do this with using brackets (<code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code>) and colons
 (<code class="docutils literal notranslate"><span class="pre">:</span></code>) with the format of <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">KEY1:</span> <span class="pre">VALUE1,</span> <span class="pre">KEY2:</span> <span class="pre">VALUE2,</span> <span class="pre">...</span> <span class="pre">}</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">animals_dict</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;giraffes&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;kangaroos&#39;</span><span class="p">:</span> <span class="mi">32</span> <span class="p">}</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Notice that our keys are strings and our values here are ints. Keys and
 values can be any data types, though it tends to be best practice for
@@ -383,54 +440,86 @@ keys to be strings.</p>
 <p>We can also write this vertically, putting key-value pairs on their own
 lines for visual clarity. You will still need to separate entries with a
 comma, however.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">animals_dict</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;giraffes&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
-    <span class="s1">&#39;kangaroos&#39;</span><span class="p">:</span> <span class="mi">32</span>
+   <span class="s1">&#39;giraffes&#39;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
+   <span class="s1">&#39;kangaroos&#39;</span><span class="p">:</span> <span class="mi">32</span>
 <span class="p">}</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Once we create a dictionary with keys and values, we can use the key to
 return the corresponding value. We do this by using <code class="docutils literal notranslate"><span class="pre">DICT[KEY]</span></code>:</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">animals_dict</span><span class="p">[</span><span class="s1">&#39;giraffes&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--12-input--2" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>25
 </pre></div>
 </div>
+</div>
+</div>
 <p>Similarly to lists, if we try to reference a key that is not present in
 the dictionary, we will get an error.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">animals_dict</span><span class="p">[</span><span class="s1">&#39;beaver&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--13-input--2" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>KeyError: &#39;beaver&#39;
 </pre></div>
+</div>
+</div>
 </div>
 <p>However, dictionaries have a way around this. We can use the <code class="docutils literal notranslate"><span class="pre">.get()</span></code>
 function to either return a value for a key or a default value that we
 specify. We run it with <code class="docutils literal notranslate"><span class="pre">DICT.get(KEY,</span> <span class="pre">DEFAULT_VALUE)</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">animals_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;beaver&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># will return 0 because beaver is not a key in this dictionary</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--14-input--2" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0
 </pre></div>
 </div>
+</div>
+</div>
 <p>Making an empty dictionary is similar to making an empty list. We can
 either use <code class="docutils literal notranslate"><span class="pre">dict()</span></code> or <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio"><label class="tab-label" for="tab-set--15-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># these do the same thing</span>
 <span class="n">my_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
 <span class="n">your_dict</span> <span class="o">=</span> <span class="p">{}</span>
 </pre></div>
 </div>
+</div>
+</div>
 <section id="adding-to-a-dictionary">
 <h3>Adding to a dictionary<a class="headerlink" href="#adding-to-a-dictionary" title="Permalink to this headline">#</a></h3>
 <p>It is very simple to add a new item to a dictionary. Instead of using
 the colon notation, we can simply run <code class="docutils literal notranslate"><span class="pre">DICT[KEY]</span> <span class="pre">=</span> <span class="pre">VALUE</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">animals_dict</span><span class="p">[</span><span class="s1">&#39;moose&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">43</span> <span class="c1"># new key-value pair - moose: 43</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">animals_dict</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--16-input--2" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;giraffes&#39;: 25, &#39;kangaroos&#39;: 32, &#39;moose&#39;: 43}
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="give-a-key-a-new-value">
@@ -438,24 +527,34 @@ the colon notation, we can simply run <code class="docutils literal notranslate"
 <p>Giving a key a new value works just like reassigning an item in a list.
 Note that this means that you cannot have two identical keys in the same
 dictionary.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">animals_dict</span><span class="p">[</span><span class="s1">&#39;giraffes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">85</span> <span class="c1"># key giraffes assigned the value of 85</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">animals_dict</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--17-input--2" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--2">Python</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;giraffes&#39;: 85, &#39;kangaroos&#39;: 32, &#39;moose&#39;: 43}
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="question-2-dictionaries">
 <h3>Question 2: Dictionaries<a class="headerlink" href="#question-2-dictionaries" title="Permalink to this headline">#</a></h3>
 <p>Assign the value of <code class="docutils literal notranslate"><span class="pre">giraffes</span></code> in <code class="docutils literal notranslate"><span class="pre">animal_dict</span></code> to a new key
 <code class="docutils literal notranslate"><span class="pre">rabbit</span></code> in the same dictionary.</p>
-<details><summary><p>Solution</p>
-</summary><div class="docutils container">
+<details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
 <p>Assigning dictionary values of different keys can be tricky. Remember
 to have write key on the right side.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--18-input--1" name="tab-set--18" type="radio"><label class="tab-label" for="tab-set--18-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">animal_dict</span><span class="p">[</span><span class="s1">&#39;rabbit&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">animal_dict</span><span class="p">[</span><span class="s1">&#39;giraffe&#39;</span><span class="p">]</span>
 </pre></div>
+</div>
+</div>
 </div>
 </div>
 </details></section>
@@ -469,8 +568,12 @@ or editing items in it. They are a somewhat more efficient to use, so
 they are situationally useful.</p>
 <p>You can create a new tuple with parentheses. Note that creating an empty
 tuple has little use, since it cannot be altered.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--19-input--1" name="tab-set--19" type="radio"><label class="tab-label" for="tab-set--19-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_tuple</span> <span class="o">=</span> <span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span> <span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="sets">
@@ -479,14 +582,20 @@ tuple has little use, since it cannot be altered.</p>
 like dictionaries that only consist of keys. Like tuples, they are more
 situationally useful than lists or dictionaries. Like dictionaries, they
 also use <code class="docutils literal notranslate"><span class="pre">{}</span></code> but they do not use colons.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--20-input--1" name="tab-set--20" type="radio"><label class="tab-label" for="tab-set--20-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span> <span class="c1"># the only way to initialize an empty set</span>
 
 <span class="n">new_set</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;lions&#39;</span><span class="p">,</span> <span class="s1">&#39;tigers&#39;</span><span class="p">,</span> <span class="s1">&#39;bears&#39;</span> <span class="p">}</span> <span class="c1"># without colons, NOT a dictionary</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>We can add items to a list using <code class="docutils literal notranslate"><span class="pre">.add()</span></code>. However, if the item is
 already present in the set, only one copy will be kept in it. Therefore,
 sets keep a unique group of items.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--21-input--1" name="tab-set--21" type="radio"><label class="tab-label" for="tab-set--21-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s1">&#39;oh my&#39;</span><span class="p">)</span> <span class="c1"># oh my will now be a string in the set</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">new_set</span><span class="p">)</span>
 
@@ -494,9 +603,13 @@ sets keep a unique group of items.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">new_set</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--21-input--2" name="tab-set--21" type="radio"><label class="tab-label" for="tab-set--21-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;oh my&#39;, &#39;tigers&#39;, &#39;lions&#39;, &#39;bears&#39;}
 {&#39;oh my&#39;, &#39;tigers&#39;, &#39;lions&#39;, &#39;bears&#39;}
 </pre></div>
+</div>
+</div>
 </div>
 <section id="question-3-structures">
 <h3>Question 3: Structures<a class="headerlink" href="#question-3-structures" title="Permalink to this headline">#</a></h3>
@@ -508,8 +621,8 @@ tuple, or set?</p>
 <li><p>Your favorite foods ranked.</p></li>
 <li><p>All of the foods you have tried.</p></li>
 </ol>
-<details><summary><p>Solution</p>
-</summary><div class="docutils container">
+<details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
 <ol class="arabic simple">
 <li><p>Dictionary: paired information works very well in dictionaries.</p></li>
 <li><p>Tuple: Months are ordered, and you never need to change or add to
@@ -529,6 +642,8 @@ new structures are referred to as <strong>nested data structures</strong>, and t
 are powerful.</p>
 <p>We have lists containing lists, dictionaries containing dictionaries,
 dictionaries containing lists, and much more.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--22-input--1" name="tab-set--22" type="radio"><label class="tab-label" for="tab-set--22-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># list of lists</span>
 <span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
 <span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">]</span>
@@ -538,15 +653,15 @@ dictionaries containing lists, and much more.</p>
 <span class="c1"># dictionary of dictionaries</span>
 
 <span class="n">sample1</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;co2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">10.2</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="mf">10.1</span><span class="p">],</span>
-    <span class="s1">&#39;n&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
-    <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Waltham&#39;</span>
+   <span class="s1">&#39;co2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">10.2</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="mf">10.1</span><span class="p">],</span>
+   <span class="s1">&#39;n&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+   <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Waltham&#39;</span>
 <span class="p">}</span>
 
 <span class="n">sample2</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;co2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">4.2</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">23</span><span class="p">],</span>
-    <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span>
-    <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Watertown&#39;</span>
+   <span class="s1">&#39;co2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">4.2</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">23</span><span class="p">],</span>
+   <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span>
+   <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Watertown&#39;</span>
 <span class="p">}</span>
 
 <span class="n">samples</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;s1&#39;</span><span class="p">:</span> <span class="n">sample1</span><span class="p">,</span> <span class="s1">&#39;s2&#39;</span><span class="p">:</span><span class="n">sample2</span><span class="p">}</span>
@@ -556,9 +671,13 @@ dictionaries containing lists, and much more.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Indexing and referencing items in these nested structures can get quite
 complicated. It’s important to know the full nested structure when doing
 these references.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--23-input--1" name="tab-set--23" type="radio"><label class="tab-label" for="tab-set--23-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">large_list</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">samples</span><span class="p">[</span><span class="s1">&#39;s1&#39;</span><span class="p">][</span><span class="s1">&#39;city&#39;</span><span class="p">])</span>
@@ -566,17 +685,25 @@ these references.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">samples</span><span class="p">[</span><span class="s1">&#39;s2&#39;</span><span class="p">][</span><span class="s1">&#39;co2&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
+</div>
+</div>
 <section id="bonus-question-1-nested-structures-pt-1">
 <h3>Bonus Question 1: Nested structures pt. 1<a class="headerlink" href="#bonus-question-1-nested-structures-pt-1" title="Permalink to this headline">#</a></h3>
 <p>Create a list that contains an empty list, an empty dictionary, an empty
 tuple, and an empty set.</p>
 <p>Then, add any new item to the nested list and the set, and add a
 key-item pair to the dictionary.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--24-input--1" name="tab-set--24" type="radio"><label class="tab-label" for="tab-set--24-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
 </pre></div>
 </div>
-<details><summary><p>Solution</p>
-</summary><div class="docutils container">
+</div>
+</div>
+<details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--25-input--1" name="tab-set--25" type="radio"><label class="tab-label" for="tab-set--25-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nested_list</span> <span class="o">=</span> <span class="p">[</span> <span class="nb">list</span><span class="p">(),</span> <span class="nb">dict</span><span class="p">(),</span> <span class="nb">tuple</span><span class="p">(),</span> <span class="nb">set</span><span class="p">()]</span>
 <span class="c1"># or</span>
 <span class="n">nested_list</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[],</span> <span class="p">{},</span> <span class="p">(),</span> <span class="nb">set</span><span class="p">()]</span> <span class="c1"># can&#39;t make an empty set the same way</span>
@@ -585,6 +712,8 @@ key-item pair to the dictionary.</p>
 <span class="n">nested_list</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s1">&#39;another new item&#39;</span><span class="p">)</span>
 <span class="n">nested_list</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;a new key&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;a new value&#39;</span>
 </pre></div>
+</div>
+</div>
 </div>
 </div>
 </details></section>
@@ -599,18 +728,26 @@ species of birds, and 13 species of rodents.</p>
 <p>In Ice Town, there are 4 species of birds, 6 species of rodents, and 1
 species of bear.</p>
 <p>Store this information in one nested data structure.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--26-input--1" name="tab-set--26" type="radio"><label class="tab-label" for="tab-set--26-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code here</span>
 </pre></div>
 </div>
-<details><summary><p>Solution</p>
-</summary><div class="docutils container">
+</div>
+</div>
+<details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--27-input--1" name="tab-set--27" type="radio"><label class="tab-label" for="tab-set--27-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># nested dictionary: dictionary of dictionaries</span>
 <span class="n">ecosystem</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;Rivertown&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;frogs&#39;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;snakes&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;birds&#39;</span><span class="p">:</span><span class="mi">20</span><span class="p">},</span>
-    <span class="s1">&#39;Spring Valley&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;frogs&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;snakes&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;birds&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;rodents&#39;</span><span class="p">:</span> <span class="mi">13</span><span class="p">},</span>
-    <span class="s1">&#39;Ice Town&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;birds&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;rodents&#39;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;bear&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+   <span class="s1">&#39;Rivertown&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;frogs&#39;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;snakes&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;birds&#39;</span><span class="p">:</span><span class="mi">20</span><span class="p">},</span>
+   <span class="s1">&#39;Spring Valley&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;frogs&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;snakes&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;birds&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;rodents&#39;</span><span class="p">:</span> <span class="mi">13</span><span class="p">},</span>
+   <span class="s1">&#39;Ice Town&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;birds&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;rodents&#39;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;bear&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
+</div>
+</div>
 </div>
 </div>
 </details></section>

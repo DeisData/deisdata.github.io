@@ -14,9 +14,12 @@ strings and numbers, namely **lists**, **tuples**, **dictionaries**, and
 different arrangements. Here, we created a ``list`` of 5 ints called
 ``x``.
 
-.. code:: python
+.. tab:: Python
 
-   x = [ 1, 2, 3, 4, 5 ] # integers 1 - 5
+
+   .. code:: python
+
+      x = [ 1, 2, 3, 4, 5 ] # integers 1 - 5
 
 Here are brief descriptions of the four structures.
 
@@ -42,19 +45,23 @@ Initialize a list
 
 There are two ways of initializing an empty list: ``list()`` and ``[]``.
 
-.. code:: python
+.. tab:: Python
 
-   # these do the same thing
-   my_list = list() 
-   your_list = []
+   .. code:: python
+
+      # these do the same thing
+      my_list = list() 
+      your_list = []
 
 To make a list with pre-populated with items, we can fill the brackets
 with comma-separated values.
 
-.. code:: python
+.. tab:: Python
 
-   number_list = [ 0.1, 0.2, 0.3, 0.4 ] # lists can hold numbers
-   string_list = [ 'cat', 'dog', 'rabbit' ] # can also hold strings
+   .. code:: python
+
+      number_list = [ 0.1, 0.2, 0.3, 0.4 ] # lists can hold numbers
+      string_list = [ 'cat', 'dog', 'rabbit' ] # can also hold strings
 
 Referencing to items in a list
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -65,13 +72,17 @@ indexes (or indicies, depending on who you ask).
 In Python, indexes starts at 0. To reference the first item in
 ``number_list``, we use ``number_list[0]``.
 
-.. code:: python
+.. tab:: Python
 
-   number_list[0] # get the first item from number_list
+   .. code:: python
 
-.. code:: none
+      number_list[0] # get the first item from number_list
 
-   0.1
+.. tab:: Output
+
+   .. code:: none
+
+      0.1
 
 We can reference the rest of the numbers in the list with indexes 1
 through 3. Note that even though there are 4 items in the list, the
@@ -80,40 +91,52 @@ index goes from 0 to 3.
 We also can use the items in a list the same way we can use variables to
 do math or other operations.
 
-.. code:: python
+.. tab:: Python
 
-   print( number_list[1] - number_list[3] ) # 0.2 - 0.4 
-   print( 'my favorite kind of animal is', string_list[2] ) # prints rabbit
+   .. code:: python
 
-.. code:: none
+      print( number_list[1] - number_list[3] ) # 0.2 - 0.4 
+      print( 'my favorite kind of animal is', string_list[2] ) # prints rabbit
 
-   -0.2
-   my favorite kind of animal is rabbit
+.. tab:: Output
+
+   .. code:: none
+
+      -0.2
+      my favorite kind of animal is rabbit
 
 If we try to reference an index that does not exist in a list, we get an
 error.
 
-.. code:: python
+.. tab:: Python
 
-   number_list[4]
+   .. code:: python
 
-.. code:: none
+      number_list[4]
 
-   IndexError: list index out of range
+.. tab:: Output
+
+   .. code:: none
+
+      IndexError: list index out of range
 
 If we want to reference the last item in a list, we can do it two ways.
 We can use the length of list and subtract 1. Alternatively, we can also
 use ``[-1]`` as a shorthand for the last item.
 
-.. code:: python
+.. tab:: Python
 
-   print( number_list[ len(number_list) - 1 ] )
-   print( number_list[-1])
+   .. code:: python
 
-.. code:: none
+      print( number_list[ len(number_list) - 1 ] )
+      print( number_list[-1])
 
-   0.4
-   0.4
+.. tab:: Output
+
+   .. code:: none
+
+      0.4
+      0.4
 
 Appending to a list
 ~~~~~~~~~~~~~~~~~~~
@@ -121,28 +144,36 @@ Appending to a list
 If we want to add an item to the end of ``string_list``, we can use
 ``string_list.append()``.
 
-.. code:: python
+.. tab:: Python
 
-   string_list.append('bear')
-   print(string_list)
+   .. code:: python
 
-.. code:: none
+      string_list.append('bear')
+      print(string_list)
 
-   ['cat', 'dog', 'rabbit', 'bear']
+.. tab:: Output
+
+   .. code:: none
+
+      ['cat', 'dog', 'rabbit', 'bear']
 
 Reassigning an item in a list
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We can also alter any item currently in a list.
 
-.. code:: python
+.. tab:: Python
 
-   number_list[0] = 2096
-   print(number_list)
+   .. code:: python
 
-.. code:: none
+      number_list[0] = 2096
+      print(number_list)
 
-   [2096, 0.2, 0.3, 0.4]
+.. tab:: Output
+
+   .. code:: none
+
+      [2096, 0.2, 0.3, 0.4]
 
 Question 1: Lists
 ~~~~~~~~~~~~~~~~~
@@ -150,24 +181,18 @@ Question 1: Lists
 Create a list of numbers. Add the first number in the list to the last
 number of the list. Append this value to the list.
 
-.. raw:: html
+.. collapse:: Solution
 
-   <details>
+   .. container::
 
-.. raw:: html
+      .. tab:: Python
 
-   <summary>Solution</summary>
+         .. code:: python
 
-.. container::
+            num_list = [25, 50, 75, 100]
+            num_list.append( num_list[0] + num_list[-1] )
 
-   .. code:: python
 
-      num_list = [25, 50, 75, 100]
-      num_list.append( num_list[0] + num_list[-1] )
-
-.. raw:: html
-
-   </details>
 
 Dictionaries
 ------------
@@ -180,9 +205,11 @@ paired with the value ``25``, and the key ``kangaroos`` paired with the
 value ``32``. We can do this with using brackets (``{ }``) and colons
 (``:``) with the format of ``{ KEY1: VALUE1, KEY2: VALUE2, ... }``.
 
-.. code:: python
+.. tab:: Python
 
-   animals_dict = { 'giraffes': 25, 'kangaroos': 32 }
+   .. code:: python
+
+      animals_dict = { 'giraffes': 25, 'kangaroos': 32 }
 
 Notice that our keys are strings and our values here are ints. Keys and
 values can be any data types, though it tends to be best practice for
@@ -192,55 +219,72 @@ We can also write this vertically, putting key-value pairs on their own
 lines for visual clarity. You will still need to separate entries with a
 comma, however.
 
-.. code:: python
+.. tab:: Python
 
-   animals_dict = { 
-       'giraffes': 25, 
-       'kangaroos': 32 
-   }
+   .. code:: python
+
+      animals_dict = { 
+         'giraffes': 25, 
+         'kangaroos': 32 
+      }
 
 Once we create a dictionary with keys and values, we can use the key to
 return the corresponding value. We do this by using ``DICT[KEY]``:
 
-.. code:: python
+.. tab:: Python
 
-   animals_dict['giraffes']
+   .. code:: python
 
-.. code:: none
+      animals_dict['giraffes']
 
-   25
+.. tab:: Output
+
+   .. code:: none
+
+      25
 
 Similarly to lists, if we try to reference a key that is not present in
 the dictionary, we will get an error.
 
-.. code:: python
+.. tab:: Python
+   
+   .. code:: python
 
-   animals_dict['beaver']
+      animals_dict['beaver']
 
-.. code:: none
+.. tab:: Output
 
-   KeyError: 'beaver'
+   .. code:: none
+
+      KeyError: 'beaver'
 
 However, dictionaries have a way around this. We can use the ``.get()``
 function to either return a value for a key or a default value that we
 specify. We run it with ``DICT.get(KEY, DEFAULT_VALUE)``.
 
-.. code:: python
+.. tab:: Python
 
-   animals_dict.get('beaver', 0) # will return 0 because beaver is not a key in this dictionary
+   .. code:: python
 
-.. code:: none
+      animals_dict.get('beaver', 0) # will return 0 because beaver is not a key in this dictionary
 
-   0
+.. tab:: Output
+   
+   .. code:: none
+
+      0
 
 Making an empty dictionary is similar to making an empty list. We can
 either use ``dict()`` or ``{}``.
 
-.. code:: python
 
-   # these do the same thing
-   my_dict = dict()
-   your_dict = {}
+.. tab:: Python
+
+   .. code:: python
+
+      # these do the same thing
+      my_dict = dict()
+      your_dict = {}
 
 Adding to a dictionary
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -248,14 +292,18 @@ Adding to a dictionary
 It is very simple to add a new item to a dictionary. Instead of using
 the colon notation, we can simply run ``DICT[KEY] = VALUE``.
 
-.. code:: python
+.. tab:: Python
 
-   animals_dict['moose'] = 43 # new key-value pair - moose: 43
-   print(animals_dict)
+   .. code:: python
 
-.. code:: none
+      animals_dict['moose'] = 43 # new key-value pair - moose: 43
+      print(animals_dict)
 
-   {'giraffes': 25, 'kangaroos': 32, 'moose': 43}
+.. tab:: Output
+
+   .. code:: none
+
+      {'giraffes': 25, 'kangaroos': 32, 'moose': 43}
 
 Give a key a new value
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -264,14 +312,18 @@ Giving a key a new value works just like reassigning an item in a list.
 Note that this means that you cannot have two identical keys in the same
 dictionary.
 
-.. code:: python
+.. tab:: Python
 
-   animals_dict['giraffes'] = 85 # key giraffes assigned the value of 85
-   print(animals_dict)
+   .. code:: python
 
-.. code:: none
+      animals_dict['giraffes'] = 85 # key giraffes assigned the value of 85
+      print(animals_dict)
 
-   {'giraffes': 85, 'kangaroos': 32, 'moose': 43}
+.. tab:: Python
+
+   .. code:: none
+
+      {'giraffes': 85, 'kangaroos': 32, 'moose': 43}
 
 Question 2: Dictionaries
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -279,32 +331,21 @@ Question 2: Dictionaries
 Assign the value of ``giraffes`` in ``animal_dict`` to a new key
 ``rabbit`` in the same dictionary.
 
-.. raw:: html
 
-   <details>
 
-.. raw:: html
+.. collapse:: Solution
 
-   <summary>
+   .. container::
 
-Solution
+      Assigning dictionary values of different keys can be tricky. Remember
+      to have write key on the right side.
 
-.. raw:: html
+      .. tab:: Python
 
-   </summary>
+         .. code:: python
 
-.. container::
+            animal_dict['rabbit'] = animal_dict['giraffe']
 
-   Assigning dictionary values of different keys can be tricky. Remember
-   to have write key on the right side.
-
-   .. code:: python
-
-      animal_dict['rabbit'] = animal_dict['giraffe']
-
-.. raw:: html
-
-   </details>
 
 Tuples
 ------
@@ -318,9 +359,11 @@ they are situationally useful.
 You can create a new tuple with parentheses. Note that creating an empty
 tuple has little use, since it cannot be altered.
 
-.. code:: python
+.. tab:: Python
 
-   my_tuple = ( 0, 1, 2, 4, 8 ) 
+   .. code:: python
+
+      my_tuple = ( 0, 1, 2, 4, 8 ) 
 
 Sets
 ----
@@ -330,28 +373,34 @@ like dictionaries that only consist of keys. Like tuples, they are more
 situationally useful than lists or dictionaries. Like dictionaries, they
 also use ``{}`` but they do not use colons.
 
-.. code:: python
+.. tab:: Python
 
-   my_set = set() # the only way to initialize an empty set
+   .. code:: python
 
-   new_set = { 'lions', 'tigers', 'bears' } # without colons, NOT a dictionary
+      my_set = set() # the only way to initialize an empty set
+
+      new_set = { 'lions', 'tigers', 'bears' } # without colons, NOT a dictionary
 
 We can add items to a list using ``.add()``. However, if the item is
 already present in the set, only one copy will be kept in it. Therefore,
 sets keep a unique group of items.
 
-.. code:: python
+.. tab:: Python
 
-   new_set.add('oh my') # oh my will now be a string in the set
-   print(new_set)
+   .. code:: python
 
-   new_set.add('bears') # won't have two beats in the set
-   print(new_set)
+      new_set.add('oh my') # oh my will now be a string in the set
+      print(new_set)
 
-.. code:: none
+      new_set.add('bears') # won't have two beats in the set
+      print(new_set)
 
-   {'oh my', 'tigers', 'lions', 'bears'}
-   {'oh my', 'tigers', 'lions', 'bears'}
+.. tab:: Output
+
+   .. code:: none
+
+      {'oh my', 'tigers', 'lions', 'bears'}
+      {'oh my', 'tigers', 'lions', 'bears'}
 
 Question 3: Structures
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -364,33 +413,18 @@ tuple, or set?
 3. Your favorite foods ranked.
 4. All of the foods you have tried.
 
-.. raw:: html
+.. collapse:: Solution 
 
-   <details>
+   .. container::
 
-.. raw:: html
+      1. Dictionary: paired information works very well in dictionaries.
+      2. Tuple: Months are ordered, and you never need to change or add to
+         the months of the year. (List would ok as well.)
+      3. List: You want an ordering to represent the rank, and you might
+         change or add to the list.
+      4. Set: Order does not matter; you just need to keep all the foods in
+         one place.
 
-   <summary>
-
-Solution
-
-.. raw:: html
-
-   </summary>
-
-.. container::
-
-   1. Dictionary: paired information works very well in dictionaries.
-   2. Tuple: Months are ordered, and you never need to change or add to
-      the months of the year. (List would ok as well.)
-   3. List: You want an ordering to represent the rank, and you might
-      change or add to the list.
-   4. Set: Order does not matter; you just need to keep all the foods in
-      one place.
-
-.. raw:: html
-
-   </details>
 
 Bonus: Nested structures
 ------------------------
@@ -402,45 +436,49 @@ are powerful.
 We have lists containing lists, dictionaries containing dictionaries,
 dictionaries containing lists, and much more.
 
-.. code:: python
+.. tab:: Python
 
-   # list of lists
-   list1 = ['a', 'b', 'c']
-   list2 = ['d', 'e', 'f', 'f']
-   list3 = ['h', 'i', 'j']
-   large_list = [list1, list2, list3]
-   print(large_list)
-   # dictionary of dictionaries
+   .. code:: python
 
-   sample1 = {
-       'co2': [10.2, 3.4, 10.1],
-       'n': 4,
-       'city': 'Waltham'
-   }
+      # list of lists
+      list1 = ['a', 'b', 'c']
+      list2 = ['d', 'e', 'f', 'f']
+      list3 = ['h', 'i', 'j']
+      large_list = [list1, list2, list3]
+      print(large_list)
+      # dictionary of dictionaries
 
-   sample2 = {
-       'co2': [4.2, 2.3, 3.5, 23],
-       'a': 23,
-       'city': 'Watertown'
-   }
+      sample1 = {
+         'co2': [10.2, 3.4, 10.1],
+         'n': 4,
+         'city': 'Waltham'
+      }
 
-   samples = {'s1': sample1, 's2':sample2}
-   samples2 = dict()
+      sample2 = {
+         'co2': [4.2, 2.3, 3.5, 23],
+         'a': 23,
+         'city': 'Watertown'
+      }
 
-   samples = {'s1': sample1, 's2':sample2}
-   print(samples)
+      samples = {'s1': sample1, 's2':sample2}
+      samples2 = dict()
+
+      samples = {'s1': sample1, 's2':sample2}
+      print(samples)
 
 Indexing and referencing items in these nested structures can get quite
 complicated. It’s important to know the full nested structure when doing
 these references.
 
-.. code:: python
+.. tab:: Python
 
-   print(large_list[0][2])
+   .. code:: python
 
-   print(samples['s1']['city'])
+      print(large_list[0][2])
 
-   print(samples['s2']['co2'][0])
+      print(samples['s1']['city'])
+
+      print(samples['s2']['co2'][0])
 
 Bonus Question 1: Nested structures pt. 1
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -451,39 +489,28 @@ tuple, and an empty set.
 Then, add any new item to the nested list and the set, and add a
 key-item pair to the dictionary.
 
-.. code:: python
-
-   # your code here
-
-.. raw:: html
-
-   <details>
-
-.. raw:: html
-
-   <summary>
-
-Solution
-
-.. raw:: html
-
-   </summary>
-
-.. container::
+.. tab:: Python
 
    .. code:: python
 
-      nested_list = [ list(), dict(), tuple(), set()]
-      # or
-      nested_list = [ [], {}, (), set()] # can't make an empty set the same way
+      # your code here
 
-      nested_list[0].append('a new item') # appending list
-      nested_list[3].add('another new item')
-      nested_list[1]['a new key'] = 'a new value'
+.. collapse:: Solution
 
-.. raw:: html
+   .. container::
 
-   </details>
+      .. tab:: Python
+
+         .. code:: python
+
+            nested_list = [ list(), dict(), tuple(), set()]
+            # or
+            nested_list = [ [], {}, (), set()] # can't make an empty set the same way
+
+            nested_list[0].append('a new item') # appending list
+            nested_list[3].add('another new item')
+            nested_list[1]['a new key'] = 'a new value'
+
 
 Bonus Question 2: Nested structures pt. 2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -502,38 +529,28 @@ species of bear.
 
 Store this information in one nested data structure.
 
-.. code:: python
 
-   # your code here
-
-.. raw:: html
-
-   <details>
-
-.. raw:: html
-
-   <summary>
-
-Solution
-
-.. raw:: html
-
-   </summary>
-
-.. container::
+.. tab:: Python
 
    .. code:: python
 
-      # nested dictionary: dictionary of dictionaries
-      ecosystem = {
-          'Rivertown': {'frogs':12, 'snakes':2, 'birds':20},
-          'Spring Valley': {'frogs':1, 'snakes': 1, 'birds': 2, 'rodents': 13},
-          'Ice Town': {'birds': 4, 'rodents':6, 'bear':1}
-      }
+      # your code here
 
-.. raw:: html
+.. collapse:: Solution
 
-   </details>
+   .. container::
+
+      .. tab:: Python
+
+         .. code:: python
+
+            # nested dictionary: dictionary of dictionaries
+            ecosystem = {
+               'Rivertown': {'frogs':12, 'snakes':2, 'birds':20},
+               'Spring Valley': {'frogs':1, 'snakes': 1, 'birds': 2, 'rodents': 13},
+               'Ice Town': {'birds': 4, 'rodents':6, 'bear':1}
+            }
+
 
 Resources
 ---------
