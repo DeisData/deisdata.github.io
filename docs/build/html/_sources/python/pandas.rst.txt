@@ -12,9 +12,11 @@ numerical data. Many data sets include categorical variables. For these
 data sets, it is best to use a library called ``pandas``, which focuses
 on creating and manipulating data frames.
 
-.. code:: python
+.. tab:: Python
 
-   import pandas as pd
+   .. code:: python
+
+      import pandas as pd
 
 Read data
 ---------
@@ -27,17 +29,21 @@ with the path to a local file as a string.
 
 This saves the data in a structure called a DataFrame.
 
-.. code:: python
+.. tab:: Python
 
-   df = pd.read_csv("https://raw.githubusercontent.com/DeisData/python/master/data/gapminder.csv") # read in data
+   .. code:: python
+
+      df = pd.read_csv("https://raw.githubusercontent.com/DeisData/python/master/data/gapminder.csv") # read in data
 
 Our data is now saved as a data frame in Python as the variable ``df``.
 With the data now in the environment, we can take a look at the first
 few rows with ``df.head()``.
 
-.. code:: python
+.. tab:: Python
 
-   df.head()
+   .. code:: python
+
+      df.head()
 
 .. container:: table
 

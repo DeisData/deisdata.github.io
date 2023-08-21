@@ -248,8 +248,12 @@
 numerical data. Many data sets include categorical variables. For these
 data sets, it is best to use a library called <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, which focuses
 on creating and manipulating data frames.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="read-data">
@@ -259,14 +263,22 @@ function <code class="docutils literal notranslate"><span class="pre">read_csv()
 <p>In that function, we can specify the file we want to use with a URL or
 with the path to a local file as a string.</p>
 <p>This saves the data in a structure called a DataFrame.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/DeisData/python/master/data/gapminder.csv&quot;</span><span class="p">)</span> <span class="c1"># read in data</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Our data is now saved as a data frame in Python as the variable <code class="docutils literal notranslate"><span class="pre">df</span></code>.
 With the data now in the environment, we can take a look at the first
 few rows with <code class="docutils literal notranslate"><span class="pre">df.head()</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="table docutils container">
 <table border="1" class="dataframe"><thead><tr style="text-align: right;"><th></th><th><p>country</p>

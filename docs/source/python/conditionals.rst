@@ -23,51 +23,68 @@ type called **booleans**.
 Capitalization is critical. Booleans in Python have their first letter
 capitalized and the rest lower-case.
 
-.. code:: python
+.. tab:: Python
 
-   f = False
-   print(f)
+   .. code:: python
 
-.. code:: none
+      f = False
+      print(f)
 
-   False
+.. tab:: Output
 
-.. code:: python
+   .. code:: none
 
-   t = True
-   print(t)
+      False
 
-.. code:: none
+.. tab:: Python
+   :new-set:
 
-   True
+   .. code:: python
+
+      t = True
+      print(t)
+
+.. tab:: Output
+
+   .. code:: none
+
+      True
 
 We can convert other data types to booleans with the function
 ``bool()``. A number will only convert to ``False`` if it is exactly 0
 or 0.0. All other numbers convert to ``True``.
 
-.. code:: python
+.. tab:: Python
 
-   print(bool(0)) # False
-   print(bool(1)) # True
+   .. code:: python
 
-.. code:: none
+      print(bool(0)) # False
+      print(bool(1)) # True
 
-   False
-   True
+.. tab:: Output
+
+   .. code:: none
+
+      False
+      True
 
 Similarly, we can convert strings into booleans. Empty strings (``''``
 or ``""``) convert to ``False`` and any other string converts to
 ``True``.
 
-.. code:: python
+.. tab:: Python
 
-   print(bool(''))
-   print(bool(' '))
+   .. code:: python
 
-.. code:: none
+      print(bool(''))
+      print(bool(' '))
 
-   False
-   True
+.. tab:: Output
+
+   .. code:: none
+
+      False
+      True
 
 Boolean expressions
 -------------------
@@ -81,47 +98,65 @@ Boolean expressions are best used between the same data types. You can
 easily get unexpected results when comparing strings and ints, for
 instance.
 
-Equality: ==
-~~~~~~~~~~~~
+Equality: ``==``
+~~~~~~~~~~~~~~~~
 
-.. code:: python
+.. tab:: Python
 
-   "bad" == "bad"
+   .. code:: python
 
-.. code:: none
+      "bad" == "bad"
 
-   True
+.. tab:: Output
 
-.. code:: python
+   .. code:: none
 
-   2 == 3
+      True
 
-.. code:: none
+.. tab:: Python
+   :new-set:
 
-   False
+   .. code:: python
+
+      2 == 3
+
+.. tab:: Output
+
+   .. code:: none
+
+      False
 
 *Note: checking for equality for floats can be tricky given common
 rounding errors. Try to avoid if possible, and test for inequality (see
 below).*
 
-Not equals: !=
-~~~~~~~~~~~~~~
+Not equals: ``!=``
+~~~~~~~~~~~~~~~~~~
 
-.. code:: python
+.. tab:: Python
 
-   "bad" != "BAD" # capitalization matters!
+   .. code:: python
 
-.. code:: none
+      "bad" != "BAD" # capitalization matters!
 
-   True
+.. tab:: Output
 
-.. code:: python
+   .. code:: none
 
-   "bad" != "bad"
+      True
 
-.. code:: none
+.. tab:: Python
+   :new-set:
 
-   False
+   .. code:: python
+
+      "bad" != "bad"
+
+.. tab:: Output
+
+   .. code:: none
+
+      False
 
 Inequalities
 ~~~~~~~~~~~~
@@ -130,208 +165,252 @@ There are 4 different boolean operators for comparing inequalities: less
 than (``<``), less than or equal to (``<=``), greater than (``>``), and
 greater than or equal to (``>=``).
 
-.. code:: python
+.. tab:: Python
 
-   1 < 4
+   .. code:: python
 
-.. code:: none
+      1 < 4
 
-   True
+.. tab:: Python
 
-.. code:: python
+   .. code:: none
 
-   5.1 > 5.0
+      True
 
-.. code:: none
+.. tab:: Python
+   :new-set:
 
-   True
+   .. code:: python
 
-.. code:: python
+      5.1 > 5.0
 
-   3 >= 3
+.. tab:: Output
 
-.. code:: none
+   .. code:: none
 
-   True
+      True
 
-.. code:: python
+.. tab:: Python
+   :new-set:
 
-   7 <= 3
+   .. code:: python
 
-.. code:: none
+      3 >= 3
 
-   False
+.. tab:: Output
 
-Inclusivity: in
-~~~~~~~~~~~~~~~
+   .. code:: none
+
+      True
+
+.. tab:: Python
+   :new-set:
+
+   .. code:: python
+
+      7 <= 3
+
+.. tab:: Output
+
+   .. code:: none
+
+      False
+
+Inclusivity: ``in``
+~~~~~~~~~~~~~~~~~~~
 
 We can use the keyword ``in`` to check if an item is in a data structure
 (list, dictionary, set, tuple).
 
-.. code:: python
+.. tab:: Python
 
-   my_list = [ 'apple', 'pear', 'grape' ]
-   'apple' in my_list
+   .. code:: python
 
-.. code:: none
+      my_list = [ 'apple', 'pear', 'grape' ]
+      'apple' in my_list
 
-   True
+.. tab:: Output
+
+   .. code:: none
+
+      True
 
 Because sets are made of unique items, they are perfect for using
 ``in``.
 
-.. code:: python
+.. tab:: Python
 
-   my_set = { 'orange', 'berry', 'lemon' }
-   'apple' in my_set
+   .. code:: python
 
-.. code:: none
+      my_set = { 'orange', 'berry', 'lemon' }
+      'apple' in my_set
 
-   False
+.. tab:: Output
+
+   .. code:: none
+
+      False
 
 You can also use ``in`` to check if a smaller string is a part of a
 larger string.
 
-.. code:: python
+.. tab:: Python
 
-   print('i' in 'team')
-   print('i' in 'win')
+   .. code:: python
 
-.. code:: none
+      print('i' in 'team')
+      print('i' in 'win')
 
-   False
-   True
+.. tab:: Output
 
-.. code:: python
+   .. code:: none
 
-   print('good movie' in 'star wars sequel trilogy')
+      False
+      True
 
-.. code:: none
+.. tab:: Python
+   :new-set:
 
-   False
+   .. code:: python
 
-not
-~~~
+      print('good movie' in 'star wars sequel trilogy')
+
+.. tab:: Output
+
+   .. code:: none
+
+      False
+
+``not``
+~~~~~~~
 
 Just as adding not in a sentence reverses its meaning (e.g., “The desk
 is red.” vs “The desk is not red.”), adding the keyword ``not`` in front
 of a boolean expression reverses the value returned -> ``not 0 == 0``
 returns ``False``.
 
-.. code:: python
+.. tab:: Python
 
-   not 20 < 40
+   .. code:: python
 
-.. code:: none
+      not 20 < 40
 
-   False
+.. tab:: Output
 
-.. code:: python
+   .. code:: none
 
-   not 'apple' in 'grape'
+      False
 
-.. code:: none
+.. tab:: Python
+   :new-set:
 
-   True
+   .. code:: python
 
-.. code:: python
+      not 'apple' in 'grape'
 
-   not True
+.. tab:: Output
 
-.. code:: none
+   .. code:: none
 
-   False
+      True
 
-Order of Operators
-~~~~~~~~~~~~~~~~~~
+.. tab:: Python
+   :new-set:
+
+   .. code:: python
+
+      not True
+
+.. tab:: Output
+
+   .. code:: none
+
+      False
+
+Order of Operations
+~~~~~~~~~~~~~~~~~~~
 
 We can chain together boolean comparisons with ``and`` and ``or``.
 
 Putting ``and`` between two booleans will make the whole statement true
 only both statements are true.
 
-.. code:: python
+.. tab:: Python
 
-   3 < 4 and "banana" == "banana"
+   .. code:: python
 
-.. code:: none
+      3 < 4 and "banana" == "banana"
 
-   True
+.. tab:: Output
+
+   .. code:: none
+
+      True
 
 On the other hand, ``or`` only needs one of the statements to be true.
 
-.. code:: python
+.. tab:: Python
 
-   2 == 3 or 2 == 2
+   .. code:: python
 
-.. code:: none
+      2 == 3 or 2 == 2
 
-   True
+.. tab:: Output
+
+   .. code:: none
+
+      True
 
 Order of operations work with boolean expressions similarly to math.
 Comparisons run left to right, unless you put parentheses around the
 comparisons.
 
-.. code:: python
+.. tab:: Python
 
-   print(not 2 == 3 or 2 == 2)
-   print(not (2 == 3 or 2 == 2)) # parentheses matter!
+   .. code:: python
 
-.. code:: none
+      print(not 2 == 3 or 2 == 2)
+      print(not (2 == 3 or 2 == 2)) # parentheses matter!
 
-   True
-   False
+.. tab:: Output
+
+   .. code:: none
+
+      True
+      False
 
 Question: Boolean expressions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Does the following code evalutate as ``True`` or ``False``?
 
-.. code:: python
+.. tab:: Python
 
-   n1 = 45
-   n2 = -23
-   n3 = 0
-   s1 = 'hello'
-   s2 = 'goodbye'
+   .. code:: python
 
-   not (n2 < n3 and s1 == s2 or n1 >= n3)
+      n1 = 45
+      n2 = -23
+      n3 = 0
+      s1 = 'hello'
+      s2 = 'goodbye'
 
-.. raw:: html
+      not (n2 < n3 and s1 == s2 or n1 >= n3)
 
-   <details>
+.. collapse:: Solution
 
-.. raw:: html
+   .. container::
 
-   <summary>
-
-Solution
-
-.. raw:: html
-
-   </summary>
-
-.. container::
-
-   -  ``n2 < n3`` -> ``True``
-   -  ``s1 == s2`` -> ``False``
-   -  ``n1 >= n3`` -> ``True``
-   -  ``n2 < n3 and s1 == s2`` -> ``False``, because the first part is
-      not ``True``
-   -  That leaves us with ``n2 < n3 and s1 == s2 or n1 >= n3``. Because
-      ``n2 < n3 and s1 == s2`` is ``False`` and ``n1 >= n3`` is
-      ``True``, this whole expression is ``True``, as only of the two
-      needs to be ``True``
-   -  The ``not`` around the parentheses causes the final value to be
-      ``False``
-
-   .. code:: none
-
-      False
-
-.. raw:: html
-
-   </details>
+      -  ``n2 < n3`` -> ``True``
+      -  ``s1 == s2`` -> ``False``
+      -  ``n1 >= n3`` -> ``True``
+      -  ``n2 < n3 and s1 == s2`` -> ``False``, because the first part is
+         not ``True``
+      -  That leaves us with ``n2 < n3 and s1 == s2 or n1 >= n3``. Because
+         ``n2 < n3 and s1 == s2`` is ``False`` and ``n1 >= n3`` is
+         ``True``, this whole expression is ``True``, as only of the two
+         needs to be ``True``
+      -  The ``not`` around the parentheses causes the final value to be
+         ``False``
 
 Question: Boolean types
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -342,22 +421,26 @@ about ``>``, ``<``, ``<=``, or ``>=``?
 Conditionals
 ------------
 
-If statements
-~~~~~~~~~~~~~
+``if`` statements
+~~~~~~~~~~~~~~~~~
 
 The true power of boolean expressions is in making decisions based on
 whether they are true or false. We do this with ``if`` statements. The
 general syntax follows this format:
 
-.. code:: python
+.. tab:: Python
 
-   if 'a' != 'b':
-       
-       print('hello!')
+   .. code:: python
 
-.. code:: none
+      if 'a' != 'b':
+         
+         print('hello!')
 
-   hello!
+.. tab:: Output
+
+   .. code:: none
+
+      hello!
 
 To break this down: - ``if`` keyword is first word in line - Boolean
 expression (``'a' != 'b'``) followed by a colon - Code below that is
@@ -373,24 +456,28 @@ Here, nothing was printed, as 2 does not equal 1.
 
 We can also have more complicated boolean expressions, as well.
 
-.. code:: python
+.. tab:: Python
 
-   x = 0
-   a = 'a'
-   letters = ['a', 'b', 'c', 'd']
+   .. code:: python
 
-   if x > -1 and a in letters:
-       
-       print('My number:',x)
-       print('My letter:',a)
+      x = 0
+      a = 'a'
+      letters = ['a', 'b', 'c', 'd']
 
-.. code:: none
+      if x > -1 and a in letters:
+         
+         print('My number:',x)
+         print('My letter:',a)
 
-   My number: 0
-   My letter: a
+.. tab:: Output
 
-if-else statement
-~~~~~~~~~~~~~~~~~
+   .. code:: none
+
+      My number: 0
+      My letter: a
+
+``if-else`` statement
+~~~~~~~~~~~~~~~~~~~~~
 
 Often in coding, we want one thing to happen if an expression is true,
 and another to happen if it is false. To accomplish this, we can add an
@@ -398,21 +485,25 @@ and another to happen if it is false. To accomplish this, we can add an
 evaluated if the expression after ``if`` is ``False``, otherwise it will
 not run: the ``if`` and ``else`` are mutually exclusive.
 
-.. code:: python
+.. tab:: Python
 
-   x = 23
+   .. code:: python
 
-   if x < 20: # if x less than 20; False
-       
-       print('Less than 20')
+      x = 23
 
-   else: # x greater or equal to 20 
-       
-       print('Greater than 20')
+      if x < 20: # if x less than 20; False
+         
+         print('Less than 20')
 
-.. code:: none
+      else: # x greater or equal to 20 
+         
+         print('Greater than 20')
 
-   Greater than 20
+.. tab:: Output
+
+   .. code:: none
+
+      Greater than 20
 
 ``elif``
 ~~~~~~~~
@@ -425,88 +516,102 @@ boolean expression.
 Again, these options are all mutually exclusive. If the ``elif`` code is
 run, that means the ``if`` and ``else`` code do not run.
 
-.. code:: python
+.. tab:: Python
 
-   y = 101
+   .. code:: python
 
-   if y < 100: # y less than 100
-       
-       print('y is less than 100')
+      y = 101
 
-   elif y < 200: # y is 100-200 (excluding 200)
-       
-       print('y is between 100 and 200')
+      if y < 100: # y less than 100
+         
+         print('y is less than 100')
 
-   else: # y is 200 or larger
-       
-       print('y is a big number')
+      elif y < 200: # y is 100-200 (excluding 200)
+         
+         print('y is between 100 and 200')
 
-.. code:: none
+      else: # y is 200 or larger
+         
+         print('y is a big number')
 
-   y is between 100 and 200
+.. tab:: Output
+
+   .. code:: none
+
+      y is between 100 and 200
 
 If we use ``elif``, an ``else`` statement is not required. This will may
 result in neither the code associated with ``if`` nor ``elif`` running,
 however.
 
-.. code:: python
+.. tab:: Python
 
-   y = 400
+   .. code:: python
 
-   if y < 100:
-       
-       print('y is less than 100')
+      y = 400
 
-   elif y < 200:
-       
-       print('y ia between 100 and 200')
+      if y < 100:
+         
+         print('y is less than 100')
 
-   # nothing prints here
+      elif y < 200:
+         
+         print('y ia between 100 and 200')
+
+      # nothing prints here
 
 Regardless of if there is an ``else`` statement or not, we can also
 include as many ``elif`` conditions as we want.
 
-.. code:: python
+.. tab:: Python
 
-   favorite_movie = 'Indiana Jones'
+   .. code:: python
 
-   if favorite_movie == 'Batman':
-       print("I'm Batman.")
+      favorite_movie = 'Indiana Jones'
 
-   elif favorite_movie == 'Lord of the Rings':
-       print("And my axe!!")
+      if favorite_movie == 'Batman':
+         print("I'm Batman.")
 
-   elif favorite_movie == 'Indiana Jones':
-       print('That belongs in a museum!!')
+      elif favorite_movie == 'Lord of the Rings':
+         print("And my axe!!")
 
-   elif favorite_movie == 'The Matrix':
-       print('whoa')
+      elif favorite_movie == 'Indiana Jones':
+         print('That belongs in a museum!!')
 
-   else:
-       print('No quotes available :(')
+      elif favorite_movie == 'The Matrix':
+         print('whoa')
 
-.. code:: none
+      else:
+         print('No quotes available :(')
 
-   That belongs in a museum!!
+.. tab:: Output
+
+   .. code:: none
+
+      That belongs in a museum!!
 
 Using data types in conditionals
 --------------------------------
 
 We can also use data types as conditions in if statements.
 
-.. code:: python
+.. tab:: Python
 
-   should_be_num = 'banana'
+   .. code:: python
 
-   if type(should_be_num)!=int or type(should_be_num)!=float:
-       print('need input to be a number')
+      should_be_num = 'banana'
 
-   else:
-       print(10**should_be_num)
+      if type(should_be_num)!=int or type(should_be_num)!=float:
+         print('need input to be a number')
 
-.. code:: none
+      else:
+         print(10**should_be_num)
 
-   need input to be a number
+.. tab:: Output
+
+   .. code:: none
+
+      need input to be a number
 
 Question: Conditionals
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -519,46 +624,30 @@ to the power of 0.5.
 
 **Bonus**: Print an error message if x is a string or a boolean.
 
-.. code:: python
-
-   ### Your code here:
-
-.. raw:: html
-
-   <details>
-
-.. raw:: html
-
-   <summary>
-
-Solution
-
-.. raw:: html
-
-   </summary>
-
-.. container::
+.. tab:: Python
 
    .. code:: python
 
-      x = 22
+      ### Your code here:
 
-      if type(x) == str:
-          print('x needs to be a string.')
+.. collapse:: Solution
 
-      elif x >20:
-          print(x**1/2)
+   .. container::
 
-      elif x < 0:
-          print(0)
+      .. tab:: Python
 
-.. raw:: html
+         .. code:: python
 
-   </details>
+            x = 22
 
-.. code:: python
+            if type(x) == str:
+               print('x needs to be a string.')
 
-   ### Your code here:
+            elif x >20:
+               print(x**1/2)
+
+            elif x < 0:
+               print(0)
 
 Nested conditionals
 -------------------
@@ -569,35 +658,37 @@ always.
 
 Make sure to add more indentation for the second layer of if statements.
 
-.. code:: python
+.. tab:: Python
 
-   n = 22222 # some integer
+   .. code:: python
 
-   if n < 0: # if n is negative
-       
-       if n % 2 == 0:
-           print("n is a negative even integer")
-       
-       elif n % 2 == 1:
-           print("n is a negative odd integer")
-       
-       else:
-           print("n is a negative number")
+      n = 22222 # some integer
 
-   elif n > 0: # 
-       
-       if n % 2 == 0:
-           print("n is a positive even integer")
-       
-       elif n % 2 == 1:
-           print("n is a positive odd integer")
-       
-       else:
-           print("n is a positive number")
+      if n < 0: # if n is negative
+         
+         if n % 2 == 0:
+            print("n is a negative even integer")
+         
+         elif n % 2 == 1:
+            print("n is a negative odd integer")
+         
+         else:
+            print("n is a negative number")
 
-   else:
-       
-       print("n is zero")
+      elif n > 0: # 
+         
+         if n % 2 == 0:
+            print("n is a positive even integer")
+         
+         elif n % 2 == 1:
+            print("n is a positive odd integer")
+         
+         else:
+            print("n is a positive number")
+
+      else:
+         
+         print("n is zero")
 
 Question
 ~~~~~~~~

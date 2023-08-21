@@ -248,8 +248,12 @@
 performing matrix operations, and mathematics in general.</p>
 <p>To use this library, we first have to <strong>import</strong> it with the keyword
 <code class="docutils literal notranslate"><span class="pre">import</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>We now have access to the various tools and functions that NumPy has to
 offer. The foundation of NumPy is the array, a data structure for
@@ -257,48 +261,78 @@ holding numbers designed for math.</p>
 <p>The simplest array is a single dimensional vector, essentially a Python
 list that we can do math with. To make an array, we tend to create a
 list and convert it to an array with <code class="docutils literal notranslate"><span class="pre">numpy.array()</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="c1"># create list</span>
 
 <span class="n">my_array</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span> <span class="c1"># convert list to array</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">my_array</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[1 2 3]
 </pre></div>
 </div>
+</div>
+</div>
 <p>You can always do simple math operations between a number (int or float)
 and an array.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">20</span> <span class="o">*</span> <span class="n">my_array</span> <span class="c1"># 20 * [ 1, 2, 3 ]</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>array([20, 40, 60])
 </pre></div>
 </div>
+</div>
+</div>
 <p>If we have arrays of the same length, we can do the same operations on
 them between elements in the same positions.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">your_array</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="p">)</span> <span class="c1"># you can create the list within the array() function</span>
 
 <span class="n">my_array</span> <span class="o">+</span> <span class="n">your_array</span> <span class="c1"># [ 1, 2, 3 ] + [3, 2, 1]</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>array([4, 4, 4])
 </pre></div>
 </div>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_array</span> <span class="o">*</span> <span class="n">your_array</span> <span class="c1"># [ 1, 2, 3 ] * [3, 2, 1]</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>array([3, 4, 3])
 </pre></div>
 </div>
+</div>
+</div>
 <p>You can also use numpy functions like <code class="docutils literal notranslate"><span class="pre">add()</span></code> and <code class="docutils literal notranslate"><span class="pre">multiply()</span></code> to do
 these actions, as well.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">numpy</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">your_array</span><span class="p">,</span> <span class="n">my_array</span><span class="p">)</span> <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span> <span class="n">numpy</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">your_array</span><span class="p">,</span> <span class="n">my_array</span><span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[4 4 4]
 [3 4 3]
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="bonus">
@@ -307,30 +341,44 @@ these actions, as well.</p>
 importing NumPy. This allows you to only need to type <code class="docutils literal notranslate"><span class="pre">np.</span></code> (e.g.,
 <code class="docutils literal notranslate"><span class="pre">np.add()</span></code>) when using a tool within NumPy, which is a bit less clunky
 and faster.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span> <span class="c1"># a blank numpy array</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>array([], dtype=float64)
 </pre></div>
 </div>
+</div>
+</div>
 <p>You could technically import NumPy as any variable name, but <strong>DO NOT DO
 THIS</strong> to avoid confusion.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">### DONT RUN THIS</span>
-<span class="c1"># import numpy as pandas</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">pandas</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="question-numpy-math">
 <h2>Question: NumPy math<a class="headerlink" href="#question-numpy-math" title="Permalink to this headline">#</a></h2>
 <p>Create two NumPy arrays of the same length and subtract one from the
 other.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">### your code here:</span>
 </pre></div>
 </div>
-<details><summary><p>Solution</p>
-</summary><div class="docutils container">
+</div>
+</div>
+<details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="mf">12.3</span><span class="p">])</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">4.5</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.6</span><span class="p">])</span>
 
@@ -345,19 +393,27 @@ other.</p>
 Let’s first make a 3 x 3 array. To do this, we will call
 <code class="docutils literal notranslate"><span class="pre">numpy.array()</span></code> with a list that contains other lists, also called a
 <strong>nested list</strong>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># a 3 x 3 array - essentially a matrix</span>
 <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-              <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
-              <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span> <span class="p">)</span>
+            <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span> <span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--9-input--2" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>array([[1, 2, 3],
-       [4, 5, 6],
-       [7, 8, 9]])
+      [4, 5, 6],
+      [7, 8, 9]])
 </pre></div>
+</div>
+</div>
 </div>
 <p>We can get the dimensions of the array by checking the <code class="docutils literal notranslate"><span class="pre">.shape</span></code>
 attribute.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
                   <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
                   <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span> <span class="p">)</span>
@@ -365,54 +421,85 @@ attribute.</p>
 <span class="n">a</span><span class="o">.</span><span class="n">shape</span> <span class="c1"># the matrix dimensions, row by column</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--10-input--2" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(3, 3)
 </pre></div>
 </div>
+</div>
+</div>
 <p>Just like the single dimensional array, you can use the standard math
 operators between 2D arrays, though they have to be of the same shape.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
                   <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
                   <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">]]</span> <span class="p">)</span>
 <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="c1"># 1 + 10 nine times</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--11-input--2" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>array([[11, 11, 11],
-       [11, 11, 11],
-       [11, 11, 11]])
+      [11, 11, 11],
+      [11, 11, 11]])
 </pre></div>
 </div>
+</div>
+</div>
 <p>Like a 1D vector, you can also do math operations with a single number.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">-</span> <span class="mi">20</span> <span class="c1"># 10 - 20 nine times</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--12-input--2" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>array([[-10, -10, -10],
-       [-10, -10, -10],
-       [-10, -10, -10]])
+      [-10, -10, -10],
+      [-10, -10, -10]])
 </pre></div>
+</div>
+</div>
 </div>
 <p>NumPy comes with many tools to do various more complicated math
 operations as well. For instance, <code class="docutils literal notranslate"><span class="pre">numpy.matmul</span></code> can be used for
 matrix multiplication.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numpy</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--13-input--2" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>array([[30, 30, 30],
-       [30, 30, 30],
-       [30, 30, 30]])
+      [30, 30, 30],
+      [30, 30, 30]])
 </pre></div>
+</div>
+</div>
 </div>
 <p>Here is non-exhaustive list of other useful operations you can calculate
 with NumPy. Many of them use the submodule <code class="docutils literal notranslate"><span class="pre">linalg</span></code> that specializes
-in linear algebra operations. - Natural logarithm: <code class="docutils literal notranslate"><span class="pre">numpy.log()</span></code> -
-Base 10 log: <code class="docutils literal notranslate"><span class="pre">numpy.log10()</span></code> - Exponential (<span class="math notranslate nohighlight">\(e^x\)</span>):
-<code class="docutils literal notranslate"><span class="pre">numpy.exp()</span></code> - Mean: <code class="docutils literal notranslate"><span class="pre">numpy.mean()</span></code> - Median: <code class="docutils literal notranslate"><span class="pre">numpy.median()</span></code> -
-Maximum: <code class="docutils literal notranslate"><span class="pre">numpy.max()</span></code> - Minimum: <code class="docutils literal notranslate"><span class="pre">numpy.min()</span></code> - Standard
-deviation: <code class="docutils literal notranslate"><span class="pre">numpy.std()</span></code> - Variance: <code class="docutils literal notranslate"><span class="pre">numpy.var()</span></code> - Dot product:
-<code class="docutils literal notranslate"><span class="pre">numpy.dot()</span></code> - Determinant: <code class="docutils literal notranslate"><span class="pre">numpy.linalg.det()</span></code> - Vector/matrix
-norm: <code class="docutils literal notranslate"><span class="pre">numpy.linalg.norm()</span></code> - Matrix rank: <code class="docutils literal notranslate"><span class="pre">numpy.linalg.det()</span></code> -
-Matrix inverse: <code class="docutils literal notranslate"><span class="pre">numpy.linalg.inv()</span></code> - Eigenvalues/eigenvectors:
-<code class="docutils literal notranslate"><span class="pre">numpy.linalg.eig()</span></code> - Solutions to linear equations:
-<code class="docutils literal notranslate"><span class="pre">numpy.linalg.solve()</span></code></p>
+in linear algebra operations.</p>
+<ul class="simple">
+<li><p>Natural logarithm: <code class="docutils literal notranslate"><span class="pre">numpy.log()</span></code></p></li>
+<li><p>Base 10 log: <code class="docutils literal notranslate"><span class="pre">numpy.log10()</span></code></p></li>
+<li><p>Exponential (<span class="math notranslate nohighlight">\(e^x\)</span>): <code class="docutils literal notranslate"><span class="pre">numpy.exp()</span></code></p></li>
+<li><p>Mean: <code class="docutils literal notranslate"><span class="pre">numpy.mean()</span></code></p></li>
+<li><p>Median: <code class="docutils literal notranslate"><span class="pre">numpy.median()</span></code></p></li>
+<li><p>Maximum: <code class="docutils literal notranslate"><span class="pre">numpy.max()</span></code></p></li>
+<li><p>Minimum: <code class="docutils literal notranslate"><span class="pre">numpy.min()</span></code></p></li>
+<li><p>Standard deviation: <code class="docutils literal notranslate"><span class="pre">numpy.std()</span></code></p></li>
+<li><p>Variance: <code class="docutils literal notranslate"><span class="pre">numpy.var()</span></code></p></li>
+<li><p>Dot product: <code class="docutils literal notranslate"><span class="pre">numpy.dot()</span></code></p></li>
+<li><p>Determinant: <code class="docutils literal notranslate"><span class="pre">numpy.linalg.det()</span></code></p></li>
+<li><p>Vector/matrix norm: <code class="docutils literal notranslate"><span class="pre">numpy.linalg.norm()</span></code></p></li>
+<li><p>Matrix rank: <code class="docutils literal notranslate"><span class="pre">numpy.linalg.det()</span></code></p></li>
+<li><p>Matrix inverse: <code class="docutils literal notranslate"><span class="pre">numpy.linalg.inv()</span></code></p></li>
+<li><p>Eigenvalues/eigenvectors: <code class="docutils literal notranslate"><span class="pre">numpy.linalg.eig()</span></code></p></li>
+<li><p>Solutions to linear equations: <code class="docutils literal notranslate"><span class="pre">numpy.linalg.solve()</span></code></p></li>
+</ul>
 <p>For full usage of these functions and more, please visit the <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.linalg.html">NumPy
 reference
 manual</a>.</p>
@@ -422,11 +509,17 @@ manual</a>.</p>
 median, min, max, and standard deviation.</p>
 <p>Create another 1D array called <code class="docutils literal notranslate"><span class="pre">b</span></code> with the same length as <code class="docutils literal notranslate"><span class="pre">a</span></code>. Use
 <code class="docutils literal notranslate"><span class="pre">numpy.dot(a,b)</span></code> to find the dot product of <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">### your code here:</span>
 </pre></div>
 </div>
-<details><summary><p>Solution</p>
-</summary><div class="docutils container">
+</div>
+</div>
+<details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio"><label class="tab-label" for="tab-set--15-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">21</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean:&#39;</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;median:&#39;</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
@@ -439,82 +532,120 @@ median, min, max, and standard deviation.</p>
 </pre></div>
 </div>
 </div>
+</div>
+</div>
 </details></section>
 </section>
 <section id="indexing-and-slicing-in-numpy">
 <h2>Indexing and slicing in NumPy<a class="headerlink" href="#indexing-and-slicing-in-numpy" title="Permalink to this headline">#</a></h2>
 <p>Selecting a value in a 1D array is just like indexing in a Python list.
 If the array has a length of 4, indexes begin at 0 and end at 3.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">3.2</span><span class="p">,</span> <span class="mf">4.1</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">,</span> <span class="mf">8.3</span><span class="p">])</span>
 <span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="c1"># the fourth item in the array</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--16-input--2" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>8.3
 </pre></div>
+</div>
+</div>
 </div>
 <p>2D arrays can be indexed in a similar manner with separate column index
 and row index -&gt; array[row, col]. Both column and row numbers begin with
 0.</p>
 <p><img alt="array indexing" src="https://swcarpentry.github.io/python-novice-inflammation/fig/python-zero-index.svg" /> <em>Credit to</em> <a class="reference external" href="https://swcarpentry.github.io/python-novice-inflammation/02-numpy/index.html">Software
 Carpentry</a>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">],</span> <span class="c1"># adding the decimal makes them floats</span>
-              <span class="p">[</span><span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">,</span> <span class="mf">7.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">]])</span>
+            <span class="p">[</span><span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">,</span> <span class="mf">7.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">]])</span>
 <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="c1"># returns the last value (8.0)</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--17-input--2" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>8.0
 </pre></div>
+</div>
+</div>
 </div>
 <p>Also like lists, we can use <strong>negative indexing</strong> to get the last values
 of a column and/or row.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--18-input--1" name="tab-set--18" type="radio"><label class="tab-label" for="tab-set--18-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># last row, last column</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--18-input--2" name="tab-set--18" type="radio"><label class="tab-label" for="tab-set--18-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>8.0
 </pre></div>
+</div>
+</div>
 </div>
 <p>We can also using <strong>slicing</strong> to return portions of an array -&gt;
 <code class="docutils literal notranslate"><span class="pre">array[i:j]</span></code>. Slicing is <strong>inclusive</strong> for the first index (<code class="docutils literal notranslate"><span class="pre">i</span></code>) and
 <strong>exclusive</strong> for the last index (<code class="docutils literal notranslate"><span class="pre">j</span></code>). <code class="docutils literal notranslate"><span class="pre">array[i:j]</span></code> returns values
 from <code class="docutils literal notranslate"><span class="pre">i</span></code> to <code class="docutils literal notranslate"><span class="pre">j-1</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--19-input--1" name="tab-set--19" type="radio"><label class="tab-label" for="tab-set--19-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># returns values from 0 to 1</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--19-input--2" name="tab-set--19" type="radio"><label class="tab-label" for="tab-set--19-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[3.2 4.1]
 </pre></div>
 </div>
+</div>
+</div>
 <p>We can use this for 2D arrays, as well. We can slice rows, columns, or
 both at once.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--20-input--1" name="tab-set--20" type="radio"><label class="tab-label" for="tab-set--20-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
-                 <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
-                 <span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">],</span>
-                 <span class="p">[</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">16</span><span class="p">]])</span>
+               <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+               <span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">],</span>
+               <span class="p">[</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">16</span><span class="p">]])</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="c1"># first 2 rows of the third column</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># rows 2 and 3 for columns 1-3</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--20-input--2" name="tab-set--20" type="radio"><label class="tab-label" for="tab-set--20-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[3 7]
 [[ 5  6  7]
- [ 9 10 11]]
+[ 9 10 11]]
 </pre></div>
+</div>
+</div>
 </div>
 <section id="question-slicing">
 <h3>Question: Slicing<a class="headerlink" href="#question-slicing" title="Permalink to this headline">#</a></h3>
 <p>Using slicing, create a variable containing the first two columns of
 <code class="docutils literal notranslate"><span class="pre">data</span></code>, and another variable containing the last two columns. Subtract
 the two sets of columns from each other and square the difference.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--21-input--1" name="tab-set--21" type="radio"><label class="tab-label" for="tab-set--21-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.37568486</span><span class="p">,</span> <span class="mf">0.39360456</span><span class="p">,</span> <span class="mf">0.83055883</span><span class="p">,</span> <span class="mf">0.67256725</span><span class="p">],</span>
-                    <span class="p">[</span><span class="mf">0.68017832</span><span class="p">,</span> <span class="mf">0.90546118</span><span class="p">,</span> <span class="mf">0.79336985</span><span class="p">,</span> <span class="mf">0.80561814</span><span class="p">],</span>
-                    <span class="p">[</span><span class="mf">0.31127419</span><span class="p">,</span> <span class="mf">0.29518634</span><span class="p">,</span> <span class="mf">0.48364838</span><span class="p">,</span> <span class="mf">0.56015636</span><span class="p">],</span>
-                    <span class="p">[</span><span class="mf">0.75994716</span><span class="p">,</span> <span class="mf">0.01312868</span><span class="p">,</span> <span class="mf">0.15958863</span><span class="p">,</span> <span class="mf">0.98516761</span><span class="p">],</span>
-                    <span class="p">[</span><span class="mf">0.76733493</span><span class="p">,</span> <span class="mf">0.19900552</span><span class="p">,</span> <span class="mf">0.03471678</span><span class="p">,</span> <span class="mf">0.06886277</span><span class="p">]])</span>
+                  <span class="p">[</span><span class="mf">0.68017832</span><span class="p">,</span> <span class="mf">0.90546118</span><span class="p">,</span> <span class="mf">0.79336985</span><span class="p">,</span> <span class="mf">0.80561814</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mf">0.31127419</span><span class="p">,</span> <span class="mf">0.29518634</span><span class="p">,</span> <span class="mf">0.48364838</span><span class="p">,</span> <span class="mf">0.56015636</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mf">0.75994716</span><span class="p">,</span> <span class="mf">0.01312868</span><span class="p">,</span> <span class="mf">0.15958863</span><span class="p">,</span> <span class="mf">0.98516761</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mf">0.76733493</span><span class="p">,</span> <span class="mf">0.19900552</span><span class="p">,</span> <span class="mf">0.03471678</span><span class="p">,</span> <span class="mf">0.06886277</span><span class="p">]])</span>
 
 <span class="c1">### your code here:</span>
 </pre></div>
 </div>
-<details><summary><p>Solution</p>
-</summary><div class="docutils container">
+</div>
+</div>
+<details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--22-input--1" name="tab-set--22" type="radio"><label class="tab-label" for="tab-set--22-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
 
@@ -522,16 +653,22 @@ the two sets of columns from each other and square the difference.</p>
 </pre></div>
 </div>
 </div>
+</div>
+</div>
 </details></section>
 <section id="question-slicing-syntax">
 <h3>Question: Slicing syntax<a class="headerlink" href="#question-slicing-syntax" title="Permalink to this headline">#</a></h3>
 <p>What happens when you slice but do not include the first index (<code class="docutils literal notranslate"><span class="pre">i</span></code>),
 the last index (<code class="docutils literal notranslate"><span class="pre">j</span></code>), or include neither?</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--23-input--1" name="tab-set--23" type="radio"><label class="tab-label" for="tab-set--23-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">### try it out:</span>
 </pre></div>
 </div>
-<details><summary><p>Solution</p>
-</summary><div class="docutils container">
+</div>
+</div>
+<details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
 <p>Using <code class="docutils literal notranslate"><span class="pre">[i:]</span></code> will return items from index <code class="docutils literal notranslate"><span class="pre">i</span></code> to the end of the
 array.</p>
 <p><code class="docutils literal notranslate"><span class="pre">[:j]</span></code> returns items from the beginning of the array until <strong>but
@@ -545,13 +682,19 @@ not including</strong> <code class="docutils literal notranslate"><span class="p
 based on conditions.</p>
 <p>If you want to get all values of an array greater than 0, you can say
 <code class="docutils literal notranslate"><span class="pre">array[array</span> <span class="pre">&gt;</span> <span class="pre">0]</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--24-input--1" name="tab-set--24" type="radio"><label class="tab-label" for="tab-set--24-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">])</span>
 
 <span class="n">x</span><span class="p">[</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--24-input--2" name="tab-set--24" type="radio"><label class="tab-label" for="tab-set--24-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>array([1., 3.])
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -571,85 +714,131 @@ or <code class="docutils literal notranslate"><span class="pre">numpy.Infinity</
 <section id="question-math">
 <h3>Question: Math<a class="headerlink" href="#question-math" title="Permalink to this headline">#</a></h3>
 <p>Calculate the difference between <span class="math notranslate nohighlight">\(+\infty\)</span> and <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--25-input--1" name="tab-set--25" type="radio"><label class="tab-label" for="tab-set--25-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">### your code here</span>
 </pre></div>
 </div>
-<details><summary><p>Solution</p>
-</summary><div class="docutils container">
+</div>
+</div>
+<details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--26-input--1" name="tab-set--26" type="radio"><label class="tab-label" for="tab-set--26-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numpy</span><span class="o">.</span><span class="n">inf</span> <span class="o">-</span> <span class="n">numpy</span><span class="o">.</span><span class="n">pi</span>
 </pre></div>
 </div>
 </div>
+</div>
+</div>
 </details></section>
 </section>
-<section id="numpy-random">
-<h2>Numpy random<a class="headerlink" href="#numpy-random" title="Permalink to this headline">#</a></h2>
+<section id="numpy-random-module">
+<h2>NumPy <code class="docutils literal notranslate"><span class="pre">random</span></code> module<a class="headerlink" href="#numpy-random-module" title="Permalink to this headline">#</a></h2>
 <p>Numpy contains a submodule called <code class="docutils literal notranslate"><span class="pre">random</span></code>. It contains incredibly
 powerful tools for random sampling, randomizing list orders, and random
 number generation.</p>
 <p>We’ll go through a few examples of how to use <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">np.random.rand()</span></code> generates random floats between 0 and 1.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--27-input--1" name="tab-set--27" type="radio"><label class="tab-label" for="tab-set--27-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--27-input--2" name="tab-set--27" type="radio"><label class="tab-label" for="tab-set--27-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>array([0.25829512, 0.86059639, 0.51045683, 0.5108304 , 0.83965643,
-       0.69420288, 0.57987225, 0.8707505 , 0.1403405 , 0.84695063])
+      0.69420288, 0.57987225, 0.8707505 , 0.1403405 , 0.84695063])
 </pre></div>
 </div>
+</div>
+</div>
 <p>We can provide one number for a 1D array output, or we can give a shape.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--28-input--1" name="tab-set--28" type="radio"><label class="tab-label" for="tab-set--28-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--28-input--2" name="tab-set--28" type="radio"><label class="tab-label" for="tab-set--28-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>array([[0.405686  , 0.55911381, 0.10216565, 0.1176069 ],
-       [0.54399612, 0.89415105, 0.4038699 , 0.91464262],
-       [0.8727333 , 0.78070018, 0.8072012 , 0.95182085],
-       [0.45871726, 0.93649965, 0.70878889, 0.04117096],
-       [0.04581515, 0.27093262, 0.81162693, 0.85181647]])
+      [0.54399612, 0.89415105, 0.4038699 , 0.91464262],
+      [0.8727333 , 0.78070018, 0.8072012 , 0.95182085],
+      [0.45871726, 0.93649965, 0.70878889, 0.04117096],
+      [0.04581515, 0.27093262, 0.81162693, 0.85181647]])
 </pre></div>
+</div>
+</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">np.random.randint()</span></code> gives us back a random integer between a low and
 a high number. It includes the low number and excludes the high number.
 The third argument is the shape of the output.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--29-input--1" name="tab-set--29" type="radio"><label class="tab-label" for="tab-set--29-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--29-input--2" name="tab-set--29" type="radio"><label class="tab-label" for="tab-set--29-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>array([[66, 67, 61, 39],
-       [18, 42, 73, 35],
-       [59, 68, 24, 91]])
+      [18, 42, 73, 35],
+      [59, 68, 24, 91]])
 </pre></div>
+</div>
+</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">np.random.uniform()</span></code> gives you random floats between two intervals.
 All values between those intervals are equally likely.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--30-input--1" name="tab-set--30" type="radio"><label class="tab-label" for="tab-set--30-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--30-input--2" name="tab-set--30" type="radio"><label class="tab-label" for="tab-set--30-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 78.88838389, -47.47066046,  78.50047554, -82.99434746,
-       -32.23190278])
+      -32.23190278])
 </pre></div>
+</div>
+</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">np.random.normal()</span></code> gives numbers centered around a mean, which is
 the first value. The second number defines the spread, or how far from
 the mean the values can be. The last argument is the shape.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--31-input--1" name="tab-set--31" type="radio"><label class="tab-label" for="tab-set--31-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--31-input--2" name="tab-set--31" type="radio"><label class="tab-label" for="tab-set--31-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 0.41727943,  0.16488726,  0.95159045, -0.164019  ,  0.6812153 ,
-       -0.49631379,  0.66193097, -0.53010887,  0.70356419, -0.53807628])
+      -0.49631379,  0.66193097, -0.53010887,  0.70356419, -0.53807628])
 </pre></div>
+</div>
+</div>
 </div>
 <p>You can get dramatically different values by changing the spread, or
 <strong>standard deviation</strong>.</p>
 <p>1/3 of all values will within 40 of 0 in the example below.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--32-input--1" name="tab-set--32" type="radio"><label class="tab-label" for="tab-set--32-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--32-input--2" name="tab-set--32" type="radio"><label class="tab-label" for="tab-set--32-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 42.89262833, -41.19252505,  23.10369224,   7.86300809,
-        -1.06910399, -66.537476  ,   2.32921206,  15.6455084 ,
-       -47.75769822,  -5.7709003 ])
+      -1.06910399, -66.537476  ,   2.32921206,  15.6455084 ,
+      -47.75769822,  -5.7709003 ])
 </pre></div>
+</div>
+</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">np.random.shuffle()</span></code> randomly rearranges orders. Here we use a list.</p>
 <p>It re-generates the variable, overwriting the list we had.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--33-input--1" name="tab-set--33" type="radio"><label class="tab-label" for="tab-set--33-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
 
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
@@ -657,10 +846,16 @@ the mean the values can be. The last argument is the shape.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--33-input--2" name="tab-set--33" type="radio"><label class="tab-label" for="tab-set--33-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[1, 5, 2, 6, 3, 4, 8, 0, 7]
 </pre></div>
 </div>
+</div>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">shuffle()</span></code> works on string lists, too.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--34-input--1" name="tab-set--34" type="radio"><label class="tab-label" for="tab-set--34-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">string_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;first&quot;</span><span class="p">,</span> <span class="s2">&quot;second&quot;</span><span class="p">,</span> <span class="s2">&quot;third&quot;</span><span class="p">,</span> <span class="s2">&quot;fourth&quot;</span><span class="p">,</span> <span class="s2">&quot;fifth&quot;</span><span class="p">]</span>
 
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">string_list</span><span class="p">)</span>
@@ -668,38 +863,66 @@ the mean the values can be. The last argument is the shape.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">string_list</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--34-input--2" name="tab-set--34" type="radio"><label class="tab-label" for="tab-set--34-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;second&#39;, &#39;fifth&#39;, &#39;first&#39;, &#39;fourth&#39;, &#39;third&#39;]
 </pre></div>
 </div>
+</div>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">np.random.choice()</span></code> by default takes a random item from a list that
 we give it.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--35-input--1" name="tab-set--35" type="radio"><label class="tab-label" for="tab-set--35-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--35-input--2" name="tab-set--35" type="radio"><label class="tab-label" for="tab-set--35-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>6
 </pre></div>
 </div>
+</div>
+</div>
 <p>We can ask for more than one item, as well.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--36-input--1" name="tab-set--36" type="radio"><label class="tab-label" for="tab-set--36-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">my_list</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--36-input--2" name="tab-set--36" type="radio"><label class="tab-label" for="tab-set--36-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>array([8, 2, 5])
 </pre></div>
 </div>
+</div>
+</div>
 <p>We take from the list <strong>with replacement</strong> by default, meaning that we
 don’t remove future possibilities by sampling more.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--37-input--1" name="tab-set--37" type="radio"><label class="tab-label" for="tab-set--37-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">my_list</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--37-input--2" name="tab-set--37" type="radio"><label class="tab-label" for="tab-set--37-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>array([6, 3, 6, 1, 1, 2, 6, 6, 8, 1, 1, 1, 1, 3, 4, 6, 4, 8, 8, 2])
 </pre></div>
 </div>
+</div>
+</div>
 <p>If we say <code class="docutils literal notranslate"><span class="pre">replace=False</span></code>, then we can only get each value once.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--38-input--1" name="tab-set--38" type="radio"><label class="tab-label" for="tab-set--38-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">my_list</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--38-input--2" name="tab-set--38" type="radio"><label class="tab-label" for="tab-set--38-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>array([4, 2, 6, 0, 3, 5, 8, 7])
 </pre></div>
+</div>
+</div>
 </div>
 <section id="question">
 <h3>Question<a class="headerlink" href="#question" title="Permalink to this headline">#</a></h3>
@@ -709,16 +932,20 @@ and then calculates the mean and standard deviation of the random array
 you have generated.</p>
 <p>As you increase n, do you notice any change in the sample mean or
 standard deviation?</p>
-<details><summary><p>Solution</p>
-</summary><div class="docutils container">
+<details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--39-input--1" name="tab-set--39" type="radio"><label class="tab-label" for="tab-set--39-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">]:</span>
 
-    <span class="n">sample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sample size:&#39;</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sample mean:&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">sample</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sample stdev:&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">sample</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">()</span>
+   <span class="n">sample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sample size:&#39;</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sample mean:&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">sample</span><span class="p">))</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sample stdev:&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">sample</span><span class="p">))</span>
+   <span class="nb">print</span><span class="p">()</span>
 </pre></div>
+</div>
+</div>
 </div>
 </div>
 </details></section>
@@ -810,7 +1037,7 @@ Carpentry</a>.</p>
 <li><a class="reference internal" href="#question-math">Question: Math</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#numpy-random">Numpy random</a><ul>
+<li><a class="reference internal" href="#numpy-random-module">NumPy <code class="docutils literal notranslate"><span class="pre">random</span></code> module</a><ul>
 <li><a class="reference internal" href="#question">Question</a></li>
 </ul>
 </li>
