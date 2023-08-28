@@ -22,1410 +22,97 @@ We will use several packages for our statistical analyses. In
 particular, we will use ``scipy.stats`` and ``statsmodels`` for running
 hypothesis testing and model fitting.
 
-.. code:: python
+.. tab:: Python
 
-   # Load standard libraries for data analysis
-   import numpy as np
-   import pandas as pd
+   .. code:: python
 
-   import matplotlib
-   import matplotlib.pyplot as plt
+         # Load standard libraries for data analysis
+      import numpy as np
+      import pandas as pd
 
-   # packages for statistics
-   import scipy.stats
+      import matplotlib
+      import matplotlib.pyplot as plt
 
-   import statsmodels
-   import statsmodels.api as sm
-   import statsmodels.formula.api as smf
+      # packages for statistics
+      import scipy.stats
 
-   %matplotlib inline
+      import statsmodels
+      import statsmodels.api as sm
+      import statsmodels.formula.api as smf
+
+      %matplotlib inline
 
 To find out more about a library and see the documentation, you can run
 ``?LIBRARY_NAME``.
 
-.. code:: none
+.. tab:: Python
 
-   ?scipy.stats
+   .. code:: none
+
+      ?scipy.stats
 
 Describe and plot distributions
 -------------------------------
 
 Let’s first import our GapMinder data set and summarize it.
 
-.. code:: python
-
-   # Import data
-   gapminder = pd.read_csv('../data/gapminder.csv')
-   gapminder.info()
-
-.. code:: none
-
-   <class 'pandas.core.frame.DataFrame'>
-   RangeIndex: 14740 entries, 0 to 14739
-   Data columns (total 9 columns):
-    #   Column            Non-Null Count  Dtype  
-   ---  ------            --------------  -----  
-    0   country           14740 non-null  object 
-    1   year              14740 non-null  int64  
-    2   region            14740 non-null  object 
-    3   population        14740 non-null  float64
-    4   life_expectancy   14740 non-null  float64
-    5   age5_surviving    14740 non-null  float64
-    6   babies_per_woman  14740 non-null  float64
-    7   gdp_per_capita    14740 non-null  float64
-    8   gdp_per_day       14740 non-null  float64
-   dtypes: float64(6), int64(1), object(2)
-   memory usage: 1.0+ MB
-
-.. code:: python
-
-   gapminder
-
-.. container::
-
-   .. raw:: html
-
-      <style scoped>
-          .dataframe tbody tr th:only-of-type {
-              vertical-align: middle;
-          }
-
-          .dataframe tbody tr th {
-              vertical-align: top;
-          }
-
-          .dataframe thead th {
-              text-align: right;
-          }
-      </style>
-
-   .. raw:: html
-
-      <table border="1" class="dataframe">
-
-   .. raw:: html
-
-      <thead>
-
-   .. raw:: html
-
-      <tr style="text-align: right;">
-
-   .. raw:: html
-
-      <th>
-
-   .. raw:: html
-
-      </th>
-
-   .. raw:: html
-
-      <th>
-
-   country
-
-   .. raw:: html
-
-      </th>
-
-   .. raw:: html
-
-      <th>
-
-   year
-
-   .. raw:: html
-
-      </th>
-
-   .. raw:: html
-
-      <th>
-
-   region
-
-   .. raw:: html
-
-      </th>
-
-   .. raw:: html
-
-      <th>
-
-   population
-
-   .. raw:: html
-
-      </th>
-
-   .. raw:: html
-
-      <th>
-
-   life_expectancy
-
-   .. raw:: html
-
-      </th>
-
-   .. raw:: html
-
-      <th>
-
-   age5_surviving
-
-   .. raw:: html
-
-      </th>
-
-   .. raw:: html
-
-      <th>
-
-   babies_per_woman
-
-   .. raw:: html
-
-      </th>
-
-   .. raw:: html
-
-      <th>
-
-   gdp_per_capita
-
-   .. raw:: html
-
-      </th>
-
-   .. raw:: html
-
-      <th>
-
-   gdp_per_day
-
-   .. raw:: html
-
-      </th>
-
-   .. raw:: html
-
-      </tr>
-
-   .. raw:: html
-
-      </thead>
-
-   .. raw:: html
-
-      <tbody>
-
-   .. raw:: html
-
-      <tr>
-
-   .. raw:: html
-
-      <th>
-
-   0
-
-   .. raw:: html
-
-      </th>
-
-   .. raw:: html
-
-      <td>
-
-   Afghanistan
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   1800
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   Asia
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   3280000.0
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   28.21
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   53.142
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   7.00
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   603.0
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   1.650924
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      </tr>
-
-   .. raw:: html
-
-      <tr>
-
-   .. raw:: html
-
-      <th>
-
-   1
-
-   .. raw:: html
-
-      </th>
-
-   .. raw:: html
-
-      <td>
-
-   Afghanistan
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   1810
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   Asia
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   3280000.0
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   28.11
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   53.002
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   7.00
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   604.0
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   1.653662
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      </tr>
-
-   .. raw:: html
-
-      <tr>
-
-   .. raw:: html
-
-      <th>
-
-   2
-
-   .. raw:: html
-
-      </th>
-
-   .. raw:: html
-
-      <td>
-
-   Afghanistan
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   1820
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   Asia
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   3323519.0
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   28.01
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   52.862
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   7.00
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   604.0
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   1.653662
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      </tr>
-
-   .. raw:: html
-
-      <tr>
-
-   .. raw:: html
-
-      <th>
-
-   3
-
-   .. raw:: html
-
-      </th>
-
-   .. raw:: html
-
-      <td>
-
-   Afghanistan
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   1830
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   Asia
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   3448982.0
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   27.90
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   52.719
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   7.00
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   625.0
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   1.711157
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      </tr>
-
-   .. raw:: html
-
-      <tr>
-
-   .. raw:: html
-
-      <th>
-
-   4
-
-   .. raw:: html
-
-      </th>
-
-   .. raw:: html
-
-      <td>
-
-   Afghanistan
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   1840
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   Asia
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   3625022.0
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   27.80
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   52.576
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   7.00
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   647.0
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   1.771389
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      </tr>
-
-   .. raw:: html
-
-      <tr>
-
-   .. raw:: html
-
-      <th>
-
-   …
-
-   .. raw:: html
-
-      </th>
-
-   .. raw:: html
-
-      <td>
-
-   …
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   …
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   …
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   …
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   …
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   …
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   …
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   …
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   …
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      </tr>
-
-   .. raw:: html
-
-      <tr>
-
-   .. raw:: html
-
-      <th>
-
-   14735
-
-   .. raw:: html
-
-      </th>
-
-   .. raw:: html
-
-      <td>
-
-   Zimbabwe
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   2011
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   Africa
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   14255592.0
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   51.60
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   90.800
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   3.64
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   1626.0
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   4.451745
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      </tr>
-
-   .. raw:: html
-
-      <tr>
-
-   .. raw:: html
-
-      <th>
-
-   14736
-
-   .. raw:: html
-
-      </th>
-
-   .. raw:: html
-
-      <td>
-
-   Zimbabwe
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   2012
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   Africa
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   14565482.0
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   54.20
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   91.330
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   3.56
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   1750.0
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   4.791239
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      </tr>
-
-   .. raw:: html
-
-      <tr>
-
-   .. raw:: html
-
-      <th>
-
-   14737
-
-   .. raw:: html
-
-      </th>
-
-   .. raw:: html
-
-      <td>
-
-   Zimbabwe
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   2013
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   Africa
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   14898092.0
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   55.70
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   91.670
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   3.49
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   1773.0
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   4.854209
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      </tr>
-
-   .. raw:: html
-
-      <tr>
-
-   .. raw:: html
-
-      <th>
-
-   14738
-
-   .. raw:: html
-
-      </th>
-
-   .. raw:: html
-
-      <td>
-
-   Zimbabwe
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   2014
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   Africa
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   15245855.0
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   57.00
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   91.900
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   3.41
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   1773.0
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   4.854209
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      </tr>
-
-   .. raw:: html
-
-      <tr>
-
-   .. raw:: html
-
-      <th>
-
-   14739
-
-   .. raw:: html
-
-      </th>
-
-   .. raw:: html
-
-      <td>
-
-   Zimbabwe
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   2015
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   Africa
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   15602751.0
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   59.30
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   92.040
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   3.35
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   1801.0
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   4.930869
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      </tr>
-
-   .. raw:: html
-
-      </tbody>
-
-   .. raw:: html
-
-      </table>
-
-   .. raw:: html
-
-      <p>
+.. tab:: Python
+
+   .. code:: python
+
+      # Import data
+      gapminder = pd.read_csv('../data/gapminder.csv')
+      gapminder.info()
+
+.. tab:: Output
+
+   .. code:: none
+
+      <class 'pandas.core.frame.DataFrame'>
+      RangeIndex: 14740 entries, 0 to 14739
+      Data columns (total 9 columns):
+      #   Column            Non-Null Count  Dtype  
+      ---  ------            --------------  -----  
+      0   country           14740 non-null  object 
+      1   year              14740 non-null  int64  
+      2   region            14740 non-null  object 
+      3   population        14740 non-null  float64
+      4   life_expectancy   14740 non-null  float64
+      5   age5_surviving    14740 non-null  float64
+      6   babies_per_woman  14740 non-null  float64
+      7   gdp_per_capita    14740 non-null  float64
+      8   gdp_per_day       14740 non-null  float64
+      dtypes: float64(6), int64(1), object(2)
+      memory usage: 1.0+ MB
+
+
+
+.. tab:: Python
+   :new-set:
+
+   .. code:: python
+
+      gapminder
+
+.. tab:: Output
+
+   ====== =========== ====== ====== ========== =============== ============== ================ ============== ===========
+   \      country     year   region population life_expectancy age5_surviving babies_per_woman gdp_per_capita gdp_per_day
+   ====== =========== ====== ====== ========== =============== ============== ================ ============== ===========
+   0      Afghanistan 1800   Asia   3280000.0            28.21         53.142              7.0          603.0    1.650924
+   1      Afghanistan 1810   Asia   3280000.0            28.11         53.002              7.0          604.0    1.653662
+   2      Afghanistan 1820   Asia   3323519.0            28.01         52.862              7.0          604.0    1.653662
+   3      Afghanistan 1830   Asia   3448982.0            27.90         52.719              7.0          625.0    1.711157
+   4      Afghanistan 1840   Asia   3625022.0            27.80         52.576              7.0          647.0    1.771389
+   \.\.\. \.\.\.      \.\.\. \.\.\. \.\.\.              \.\.\.         \.\.\.           \.\.\.         \.\.\.      \.\.\.
+   14735  Zimbabwe    2011   Africa 14255592.0           51.60         90.800             3.64         1626.0    4.451745
+   14736  Zimbabwe    2012   Africa 14565482.0           54.20         91.330             3.56         1750.0    4.791239
+   14737  Zimbabwe    2013   Africa 14898092.0           55.70         91.670             3.49         1773.0    4.854209
+   14738  Zimbabwe    2014   Africa 15245855.0           57.00         91.900             3.41         1773.0    4.854209
+   14739  Zimbabwe    2015   Africa 15602751.0           59.30         92.040             3.35         1801.0    4.930869
+   ====== =========== ====== ====== ========== =============== ============== ================ ============== ===========
 
    14740 rows × 9 columns
-
-   .. raw:: html
-
-      </p>
 
 Descriptive statistics
 ----------------------
@@ -1433,74 +120,102 @@ Descriptive statistics
 We can use built in functions in pandas to summarize key aspects of our
 data.
 
-.. code:: python
+.. tab:: Python
 
-   max_pop = gapminder.population.max()
-   ave_bpw = gapminder.babies_per_woman.mean()
-   var_bpw = gapminder.babies_per_woman.var()
+   .. code:: python
 
-   print('Max population:', max_pop)
-   print('Mean babies per woman:', ave_bpw)
-   print('Variance in babies per woman:', var_bpw)
+      max_pop = gapminder.population.max()
+      ave_bpw = gapminder.babies_per_woman.mean()
+      var_bpw = gapminder.babies_per_woman.var()
 
-.. code:: none
+      print('Max population:', max_pop)
+      print('Mean babies per woman:', ave_bpw)
+      print('Variance in babies per woman:', var_bpw)
 
-   Max population: 1376048943.0
-   Mean babies per woman: 4.643471506105837
-   Variance in babies per woman: 3.9793570162855287
+.. tab:: Output
+
+      .. code:: none
+
+         Max population: 1376048943.0
+         Mean babies per woman: 4.643471506105837
+         Variance in babies per woman: 3.9793570162855287            
 
 We examine quartiles using the ``.quantile()`` method and specifying
 0.25, 0.50 and 0.75.
 
-.. code:: python
+.. tab:: Python
 
-   gapminder.life_expectancy.quantile([0.25,0.50,0.75])
+   .. code:: python
 
-.. code:: none
+      gapminder.life_expectancy.quantile([0.25,0.50,0.75])
 
-   0.25    44.23
-   0.50    60.08
-   0.75    70.38
-   Name: life_expectancy, dtype: float64
+.. tab:: Output
+
+   .. code:: none
+
+      0.25    44.23
+      0.50    60.08
+      0.75    70.38
+      Name: life_expectancy, dtype: float64
 
 For very simple plots, we can plot directly from pandas, specifying the
 type of plot with the argument ``kind``. Here we make a box plot and a
 histogram. We can then add labels with matplotlib.
 
-.. code:: python
+.. tab:: Python
 
-   gapminder.life_expectancy.plot(kind='box')
-   plt.ylabel('Percentage Surviving')
-   plt.show()
+   .. code:: python
 
-.. container:: row
+      gapminder.life_expectancy.plot(kind='box')
+      plt.ylabel('Percentage Surviving')
+      plt.show()
 
-   .. code:: none
+.. tab:: Output
+   :new-set:
 
-      <div class="col-12">
-          <img src="/_static/images/python/stats/stats_13_0.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="gapminder box plot">
+   .. raw:: html
+
+      <div style="background-color: white;">
+
+   |fig 13_0|      
+
+   .. raw:: html
+
       </div>
 
-.. code:: python
+.. tab:: Python
+   :new-set:
 
-   gapminder.age5_surviving.mean()
+   .. code:: python
 
-.. code:: none
+      gapminder.age5_surviving.mean()
 
-   84.45266533242852
-
-.. code:: python
-
-   gapminder.life_expectancy.plot(kind='hist')
-   plt.ylabel('Percentage Surviving')
-   plt.show()
-
-.. container:: row
+.. tab:: Output
 
    .. code:: none
 
-      <div class="col-12">
-          <img src="/_static/images/python/stats/stats_15_0.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="gapminder histogram">
+      84.45266533242852
+
+.. tab:: Python
+   :new-set:
+
+   .. code:: python
+
+      gapminder.life_expectancy.plot(kind='hist')
+      plt.ylabel('Percentage Surviving')
+      plt.show()
+
+.. tab:: Output
+   :new-set:
+
+   .. raw:: html
+
+      <div style="background-color: white;">
+
+   |fig 15_0|      
+
+   .. raw:: html
+
       </div>
 
 Hypothesis Testing
@@ -1518,31 +233,39 @@ value. To do this, we use a **1-sample t-test**.
 To run a 1-sample t-test, we can use the ``ttest_1sample()`` function
 from the ``scipy.stats`` module.
 
-.. code:: python
+.. tab:: Python
 
-   # 1 Sample t-test
-   # Is the mean of the data 84.4?
-   scipy.stats.ttest_1samp(gapminder['life_expectancy'], 57)
+   .. code:: python
 
-.. code:: none
+      # 1 Sample t-test
+      # Is the mean of the data 84.4?
+      scipy.stats.ttest_1samp(gapminder['life_expectancy'], 57)
 
-   Ttest_1sampResult(statistic=-1.2660253842508842, pvalue=0.20552400415951508)
+.. tab:: Output
+
+   .. code:: none
+
+      Ttest_1sampResult(statistic=-1.2660253842508842, pvalue=0.20552400415951508)
 
 If we want to compare the means in two samples, we need to run a
 **2-sample t-test**, also called an **independent samples t-test**. We
 can use the function ``ttest_ind()`` for this.
 
-.. code:: python
+.. tab:: Python
 
-   # 2 sample t-test
-   gdata_us = gapminder[gapminder.country == 'United States']
-   gdata_canada = gapminder[gapminder.country == 'Canada']
+   .. code:: python
 
-   scipy.stats.ttest_ind(gdata_us.life_expectancy, gdata_canada.life_expectancy)   
+      # 2 sample t-test
+      gdata_us = gapminder[gapminder.country == 'United States']
+      gdata_canada = gapminder[gapminder.country == 'Canada']
 
-.. code:: none
+      scipy.stats.ttest_ind(gdata_us.life_expectancy, gdata_canada.life_expectancy)   
 
-   Ttest_indResult(statistic=-0.741088317096773, pvalue=0.4597261729067277)
+.. tab:: Output
+
+   .. code:: none
+
+      Ttest_indResult(statistic=-0.741088317096773, pvalue=0.4597261729067277)
 
 Fitting Models to Data
 ----------------------
@@ -1550,43 +273,52 @@ Fitting Models to Data
 We have described the sample of a population with statistics. Now let’s
 understand what we can say about a population from a sample of data.
 
-.. code:: python
+.. tab:: Python
 
-   # Get data subset
-   gdata = gapminder.query('year == 1985')
-   # grab population for point sizes
-   size = 1e-6 * gdata.population
-   # assign colors to regions
-   colors = gdata.region.map({'Africa': 'skyblue', 'Europe': 'gold', 'America': 'palegreen', 'Asia': 'coral'})
+   .. code:: python
 
-   # create plotting function
-   def plotdata():
-       gdata.plot.scatter('life_expectancy','babies_per_woman',
-                          c=colors,s=size,linewidths=0.5,edgecolor='k',alpha=0.5)
+      # Get data subset
+      gdata = gapminder.query('year == 1985')
+      # grab population for point sizes
+      size = 1e-6 * gdata.population
+      # assign colors to regions
+      colors = gdata.region.map({'Africa': 'skyblue', 'Europe': 'gold', 'America': 'palegreen', 'Asia': 'coral'})
+
+      # create plotting function
+      def plotdata():
+         gdata.plot.scatter('life_expectancy','babies_per_woman',
+                           c=colors,s=size,linewidths=0.5,edgecolor='k',alpha=0.5)
 
 Using the custom function we just specified, let’s visualize the
 relationship between ``age5_surviving`` and ``babies_per_woman``.
 
-.. code:: python
+.. tab:: Python
 
-   plotdata()
+   .. code:: python
 
-.. container:: row
+      plotdata()
 
-   .. code:: none
+.. tab:: Output
+   :new-set:
 
-      <div class="col-12">
-          <img src="/_static/images/python/stats/stats_24_0.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="gapminder scatter">
+   .. raw:: html
+
+      <div style="background-color: white;">
+
+   |fig 24_0|      
+
+   .. raw:: html
+
       </div>
 
 We can see there seems to be some sort of negative relationship between
 the two variables. There also might be a relationship between region and
 ``babies_per_woman``, as well.
 
-statmodels
-----------
+``statmodels``
+--------------
 
-**statsmodels** has many capabilities.
+``statsmodels`` has many capabilities.
 
 Here we will use Ordinary Least Squares (OLS). Least squares means
 models are fit by minimizing the squared difference between predictions
@@ -1601,46 +333,60 @@ Below we use the formula ``babies_per_woman ~ 1``. This will essential
 just use the mean ``babies_per_woman`` value as the prediction for all
 data points.
 
-.. code:: python
+.. tab:: Python
 
-   # Ordinary least squares model
-   model = smf.ols(formula='babies_per_woman ~ 1',data=gdata)
-   #    where babies per woman is the response variable and
-   #    1 represents a constant
+   .. code:: python
 
-   # Next, we fit the model
-   grandmean = model.fit()
+      # Ordinary least squares model
+      model = smf.ols(formula='babies_per_woman ~ 1',data=gdata)
+      #    where babies per woman is the response variable and
+      #    1 represents a constant
+
+      # Next, we fit the model
+      grandmean = model.fit()
 
 Let’s make a new function to visualize these results, using the old
 function we just made and adding in our predictions from our model on
 top.
 
-.. code:: python
+.. tab:: Python
 
-   # Let's make a function to plot the data against the model prediction
-   def plotfit(fit):
-       plotdata()
-       plt.scatter(gdata.life_expectancy, fit.predict(gdata),
-                 c=colors,s=30,linewidths=0.5,edgecolor='k',marker='D')
-       
-   plotfit(grandmean)
+   .. code:: python
 
-.. container:: row
+      # Let's make a function to plot the data against the model prediction
+      def plotfit(fit):
+         plotdata()
+         plt.scatter(gdata.life_expectancy, fit.predict(gdata),
+                  c=colors,s=30,linewidths=0.5,edgecolor='k',marker='D')
+         
+      plotfit(grandmean)
+
+.. tab:: Output
+   :new-set:
+
+   .. raw:: html
+
+      <div style="background-color: white;">
+
+   |fig 30_0|      
+
+   .. raw:: html
+
+      </div>
+
+.. tab:: Python
+   :new-set:
+
+   .. code:: python
+
+      grandmean.params
+
+.. tab:: Output
 
    .. code:: none
 
-      <div class="col-12">
-          <img src="/_static/images/python/stats/stats_30_0.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="gapminder scatter">
-      </div>
-
-.. code:: python
-
-   grandmean.params
-
-.. code:: none
-
-   Intercept    4.360714
-   dtype: float64
+      Intercept    4.360714
+      dtype: float64
 
 Ever single data points get predicted to have the same value: 4.36.
 Thus, this is a very poor model.
@@ -1649,1153 +395,183 @@ Let’s try a slightly better model, using the region to preduct babies
 per woman. We use ``-1`` in the formula to say we do not want to include
 a constant in the model.
 
-.. code:: python
 
-   groupmeans = smf.ols(formula='babies_per_woman ~ -1 + region',data=gdata).fit()
+.. tab:: Python
 
-.. code:: python
+   .. code:: python
 
-   plotfit(groupmeans)
+      groupmeans = smf.ols(formula='babies_per_woman ~ -1 + region',data=gdata).fit()
 
-.. container:: row
+      plotfit(groupmeans)
 
-   .. code:: none
+.. tab:: Output
+   :new-set:
 
-      <div class="col-12">
-          <img src="/_static/images/python/stats/stats_34_0.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="gapminder group means">
+   .. raw:: html
+
+      <div style="background-color: white;">
+
+   |fig 34_0|      
+
+   .. raw:: html
+
       </div>
 
 We can check the parameters of our fitted model to see the main effect
 of each region.
 
-.. code:: python
+.. tab:: Python
 
-   groupmeans.params
+   .. code:: python
 
-.. code:: none
+      groupmeans.params
 
-   region[Africa]     6.321321
-   region[America]    3.658182
-   region[Asia]       4.775577
-   region[Europe]     2.035682
-   dtype: float64
+.. tab:: Output
+
+   .. code:: none
+
+      region[Africa]     6.321321
+      region[America]    3.658182
+      region[Asia]       4.775577
+      region[Europe]     2.035682
+      dtype: float64
 
 An ANOVA can be used to test if these effects are significant.
 
-.. code:: python
+.. tab:: Python
 
-   sm.stats.anova_lm(groupmeans)
+   .. code:: python
 
-.. container::
+      sm.stats.anova_lm(groupmeans)
 
-   .. raw:: html
+.. tab:: Output
 
-      <style scoped>
-          .dataframe tbody tr th:only-of-type {
-              vertical-align: middle;
-          }
-
-          .dataframe tbody tr th {
-              vertical-align: top;
-          }
-
-          .dataframe thead th {
-              text-align: right;
-          }
-      </style>
-
-   .. raw:: html
-
-      <table border="1" class="dataframe">
-
-   .. raw:: html
-
-      <thead>
-
-   .. raw:: html
-
-      <tr style="text-align: right;">
-
-   .. raw:: html
-
-      <th>
-
-   .. raw:: html
-
-      </th>
-
-   .. raw:: html
-
-      <th>
-
-   df
-
-   .. raw:: html
-
-      </th>
-
-   .. raw:: html
-
-      <th>
-
-   sum_sq
-
-   .. raw:: html
-
-      </th>
-
-   .. raw:: html
-
-      <th>
-
-   mean_sq
-
-   .. raw:: html
-
-      </th>
-
-   .. raw:: html
-
-      <th>
-
-   F
-
-   .. raw:: html
-
-      </th>
-
-   .. raw:: html
-
-      <th>
-
-   PR(>F)
-
-   .. raw:: html
-
-      </th>
-
-   .. raw:: html
-
-      </tr>
-
-   .. raw:: html
-
-      </thead>
-
-   .. raw:: html
-
-      <tbody>
-
-   .. raw:: html
-
-      <tr>
-
-   .. raw:: html
-
-      <th>
-
-   region
-
-   .. raw:: html
-
-      </th>
-
-   .. raw:: html
-
-      <td>
-
-   4.0
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   3927.702839
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   981.925710
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   655.512121
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   2.604302e-105
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      </tr>
-
-   .. raw:: html
-
-      <tr>
-
-   .. raw:: html
-
-      <th>
-
-   Residual
-
-   .. raw:: html
-
-      </th>
-
-   .. raw:: html
-
-      <td>
-
-   178.0
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   266.635461
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   1.497952
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   NaN
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      <td>
-
-   NaN
-
-   .. raw:: html
-
-      </td>
-
-   .. raw:: html
-
-      </tr>
-
-   .. raw:: html
-
-      </tbody>
-
-   .. raw:: html
-
-      </table>
+   ======== ===== =========== ========== ========== =============
+   \        df    sum_sq      mean_sq    F          PR(>F)
+   ======== ===== =========== ========== ========== =============
+   region   4.0   3927.702839 981.925710 655.512121 2.604302e-105
+   Residual 178.0 266.635461  1.497952   NaN        NaN
+   ======== ===== =========== ========== ========== =============
 
 This is a much more informed model, but we can still do a lot better.
 Let’s take ``life_expectancy`` into account in a new model.
 
-.. code:: python
+.. tab:: Python
 
-   surviving = smf.ols(formula='babies_per_woman ~ -1 + region + life_expectancy',data=gdata).fit()
+   .. code:: python
 
-.. code:: python
+      surviving = smf.ols(formula='babies_per_woman ~ -1 + region + life_expectancy',data=gdata).fit()
+      plotfit(surviving)
+      print(surviving.params)
 
-   plotfit(surviving)
-   print(surviving.params)
+.. tab:: Output
+   :new-set:
 
-.. code:: none
+      .. raw:: html
 
-   region[Africa]     12.953805
-   region[America]    11.885657
-   region[Asia]       12.452629
-   region[Europe]     10.703060
-   life_expectancy    -0.119281
-   dtype: float64
+         <div style="background-color: white;">
 
-.. container:: row
+      |fig 38_1|      
+
+      .. raw:: html
+
+         </div>
 
    .. code:: none
 
-      <div class="col-12">
-          <img src="/_static/images/python/stats/stats_38_1.png" class="img-fluid rounded align-middle mx-auto d-block" style="max-width:100%;" alt="gapminder scatter">
-      </div>
+      region[Africa]     12.953805
+      region[America]    11.885657
+      region[Asia]       12.452629
+      region[Europe]     10.703060
+      life_expectancy    -0.119281
+      dtype: float64
+
 
 Now, we have a much better model.
 
-**statsmodels** provides a summary for the fit with Goodness of Fit
+``statsmodels`` provides a summary for the fit with Goodness of Fit
 statistics, and also provides an anova table for the significance of the
 added variables.
 
-.. code:: python
-
-   surviving.summary()
-
-.. raw:: html
-
-   <table class="simpletable">
-
-.. raw:: html
-
-   <caption>
-
-OLS Regression Results
-
-.. raw:: html
-
-   </caption>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <th>
-
-Dep. Variable:
-
-.. raw:: html
-
-   </th>
-
-.. raw:: html
-
-   <td>
-
-babies_per_woman
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <th>
-
-R-squared:
-
-.. raw:: html
-
-   </th>
-
-.. raw:: html
-
-   <td>
-
-0.768
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <th>
-
-Model:
-
-.. raw:: html
-
-   </th>
-
-.. code:: none
-
-                <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.763</td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <th>
-
-Method:
-
-.. raw:: html
-
-   </th>
-
-.. code:: none
-
-          <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   146.9</td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <th>
-
-Date:
-
-.. raw:: html
-
-   </th>
-
-.. code:: none
-
-          <td>Tue, 08 Nov 2022</td> <th>  Prob (F-statistic):</th> <td>4.01e-55</td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <th>
-
-Time:
-
-.. raw:: html
-
-   </th>
-
-.. code:: none
-
-              <td>10:18:04</td>     <th>  Log-Likelihood:    </th> <td> -251.93</td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <th>
-
-No. Observations:
-
-.. raw:: html
-
-   </th>
-
-.. code:: none
-
-   <td>   182</td>      <th>  AIC:               </th> <td>   513.9</td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <th>
-
-Df Residuals:
-
-.. raw:: html
-
-   </th>
-
-.. code:: none
-
-       <td>   177</td>      <th>  BIC:               </th> <td>   529.9</td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <th>
-
-Df Model:
-
-.. raw:: html
-
-   </th>
-
-.. code:: none
-
-           <td>     4</td>      <th>                     </th>     <td> </td>   
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <th>
-
-Covariance Type:
-
-.. raw:: html
-
-   </th>
-
-.. code:: none
-
-   <td>nonrobust</td>    <th>                     </th>     <td> </td>   
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   </table>
-
-.. raw:: html
-
-   <table class="simpletable">
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <td>
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <th>
-
-coef
-
-.. raw:: html
-
-   </th>
-
-.. raw:: html
-
-   <th>
-
-std err
-
-.. raw:: html
-
-   </th>
-
-.. raw:: html
-
-   <th>
-
-t
-
-.. raw:: html
-
-   </th>
-
-.. raw:: html
-
-   <th>
-
-P>|t\|
-
-.. raw:: html
-
-   </th>
-
-.. raw:: html
-
-   <th>
-
-[0.025]
-
-.. raw:: html
-
-   </th>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <th>
-
-region[Africa]
-
-.. raw:: html
-
-   </th>
-
-.. raw:: html
-
-   <td>
-
-12.9538
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
-0.674
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
-19.227
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
-0.000
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
-11.624
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
-14.283
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <th>
-
-region[America]
-
-.. raw:: html
-
-   </th>
-
-.. raw:: html
-
-   <td>
-
-11.8857
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
-0.836
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
-14.209
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
-0.000
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
-10.235
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
-13.536
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <th>
-
-region[Asia]
-
-.. raw:: html
-
-   </th>
-
-.. raw:: html
-
-   <td>
-
-12.4526
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
-0.776
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
-16.045
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
-0.000
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
-10.921
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
-13.984
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <th>
-
-region[Europe]
-
-.. raw:: html
-
-   </th>
-
-.. raw:: html
-
-   <td>
-
-10.7031
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
-0.875
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
-12.229
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
-0.000
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
-8.976
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
-12.430
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <th>
-
-life_expectancy
-
-.. raw:: html
-
-   </th>
-
-.. raw:: html
-
-   <td>
-
--0.1193
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
-0.012
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
--10.047
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
-0.000
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
--0.143
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <td>
-
--0.096
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   </table>
-
-.. raw:: html
-
-   <table class="simpletable">
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <th>
-
-Omnibus:
-
-.. raw:: html
-
-   </th>
-
-.. code:: none
-
-    <td>19.859</td> <th>  Durbin-Watson:     </th> <td>   1.967</td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <th>
-
-Prob(Omnibus):
-
-.. raw:: html
-
-   </th>
-
-.. raw:: html
-
-   <td>
-
-0.000
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   <th>
-
-Jarque-Bera (JB):
-
-.. raw:: html
-
-   </th>
-
-.. raw:: html
-
-   <td>
-
-37.777
-
-.. raw:: html
-
-   </td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <th>
-
-Skew:
-
-.. raw:: html
-
-   </th>
-
-.. code:: none
-
-       <td> 0.529</td> <th>  Prob(JB):          </th> <td>6.26e-09</td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   <tr>
-
-.. raw:: html
-
-   <th>
-
-Kurtosis:
-
-.. raw:: html
-
-   </th>
-
-.. code:: none
-
-   <td> 4.965</td> <th>  Cond. No.          </th> <td>1.41e+03</td>
-
-.. raw:: html
-
-   </tr>
-
-.. raw:: html
-
-   </table>
+.. tab:: Python
+
+   .. code:: python
+
+      surviving.summary()
+
+.. tab:: Output
+
+   .. list-table:: OLS Regression Results
+      :align: center
+      :header-rows: 0
+
+      * - **Dep. Variable:**
+        - babies_per_woman 
+        - **R-squared**
+        - 0.768
+      * - **Model:** 
+        - OLS 
+        - **Adj. R-squared:** 
+        - 0.763
+      * - **Method:** 
+        - Least Squares 
+        - **F-statistic:** 
+        - 146.9
+      * - **Date:** 
+        - Tue, 08 Nov 2022 
+        - **Prob (F-statistic):** 
+        - 4.01e-55
+      * - **Time:** 
+        - 10:18:04 
+        - **Log-Likelihood:** 
+        - -251.93
+      * - **No. Observations:** 
+        - 182 
+        - **AIC:** 
+        - 513.9
+      * - **Df Residuals:** 
+        - 177 
+        - **BIC:** 
+        - 529.9
+      * - **Df Model:** 
+        - 4
+        -
+        -  
+      * - **Covariance Type:** 
+        - nonrobust  
+        -
+        -
+
+   =============== ======= ======= ======= ===== ====== ======
+   \               coef    std err t       P>|t| [0.025 0.975]
+   =============== ======= ======= ======= ===== ====== ======
+   region[Africa]  12.9538 0.674   19.227  0.000 11.624 14.283
+   region[America] 11.8857 0.836   14.209  0.000 10.235 13.536
+   region[Asia]    12.4526 0.776   16.045  0.000 10.921 13.984
+   region[Europe]  10.7031 0.875   12.229  0.000 8.976  12.430
+   life_expectancy -0.1193 0.012   -10.047 0.000 -0.143 -0.096
+   =============== ======= ======= ======= ===== ====== ======
+
+   .. list-table:: 
+      :align: center
+      :header-rows: 0
+
+      * - **Omnibus:**
+        - 19.859
+        - **Durbin-Watson:**
+        - 1.967
+      * - **Prob(Omnibus):** 
+        - 0.000 
+        - **Jarque-Bera (JB):** 
+        - 37.777
+      * - **Skew:** 
+        - 0.529 
+        - **Prob(JB):** 
+        - 6.26e-09
+      * - **Kurtosis:** 
+        - 4.965 
+        - **Cond. No.** 
+        - 1.41e+03
 
 Notes:[1] Standard Errors assume that the covariance matrix of the
 errors is correctly specified.[2] The condition number is large,
@@ -2804,3 +580,21 @@ other numerical problems.
 
 We can also use the ``anova_lm()`` function with our model to estimate
 the importance of factors in our model.
+
+.. |fig 13_0| image:: /_static/images/python/stats/stats_13_0.png
+   :align: middle
+
+.. |fig 15_0| image:: /_static/images/python/stats/stats_15_0.png
+   :align: middle
+
+.. |fig 24_0| image:: /_static/images/python/stats/stats_24_0.png
+   :align: middle
+
+.. |fig 30_0| image:: /_static/images/python/stats/stats_30_0.png
+   :align: middle
+
+.. |fig 34_0| image:: /_static/images/python/stats/stats_34_0.png
+   :align: middle
+
+.. |fig 38_1| image:: /_static/images/python/stats/stats_38_1.png
+   :align: middle

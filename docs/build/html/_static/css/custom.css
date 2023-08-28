@@ -11,7 +11,8 @@ details summary{
 }
 
 details .docutils.container{
-    padding: 15px
+    padding: 15px;
+    max-width: 96.5%;
 }
 
 details summary:hover{
@@ -24,9 +25,17 @@ details pre{
 
 details .highlight{
     background: var(--color-background-primary) !important;
+    max-width: 96.5%;
 }
 
 details .tab-content.docutils.container {
     background: var(--color-background-primary);
 }
 
+img.align-middle {
+    margin-left: auto;
+    margin-right: auto;
+    text-align:center;
+    display:block;
+ }
+ 
