@@ -40,30 +40,35 @@ Retrieve changes locally
 Go back to terminal and run ``git fetch`` to retrieve the changes. The
 terminal will print out some information about the process.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ git fetch
+   .. code:: bash
+
+      $ git fetch
 
 The commit is now in our local system, but the change is not yet
 reflected in our file yet. We can see this by running ``cat``, which
 will print out our file.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ cat README.md
+   .. code:: bash
+
+      $ cat README.md
 
 To view the differences between our local file and the new commit, we
 can run the ``git diff`` command with some specifications for the file
 we’re interested in and the two sources of the file.
 
-::
+.. tab:: Bash
 
-   $ git diff HEAD origin/main README.md
+   .. code:: bash
+
+      $ git diff HEAD origin/main README.md
 
 .. figure:: /_static/images/git/fetch-merge/git_diff.png
    :alt: git diff
 
-   git diff
 
 This command and the output are somewhat complicated, so let’s step
 through them.
@@ -87,31 +92,33 @@ locally.
 
 We can now merge the file. A summary will print after we do so.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ git merge
+   .. code:: bash
+
+      $ git merge
 
 .. figure:: /_static/images/git/fetch-merge/git_merge.png
    :alt: git merge
 
-   git merge
-
-*Note: The command ``git pull`` is equivalent to running ``git fetch``
-immediately followed by ``git merge``, though it may lead to some
-unexpected behavior at times.*
+.. note:: 
+   
+   The command ``git pull`` is equivalent to running ``git fetch``
+   immediately followed by ``git merge``, though it may lead to some
+   unexpected behavior at times.
 
 If you run ``cat README.md`` again, you will see the change present in
 our local file. If we want to see a history of changes in this
 repository, you can use ``git log``.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ git log
+   .. code:: bash
+
+      $ git log
 
 .. figure:: /_static/images/git/fetch-merge/git_log.png
    :alt: git log
-
-   git log
 
 This will print out information on all of this repo’s commits,
 including, the commit ID, the author of the commit, when the commit was

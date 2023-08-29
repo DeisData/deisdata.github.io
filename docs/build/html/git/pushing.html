@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Fetch and merge from GitHub" href="fetch-merge.html" /><link rel="prev" title="Quick Start to GitHub" href="quick-start.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Fetch and merge from GitHub" href="fetch-merge.html" /><link rel="prev" title="Quick start to Git and GitHub" href="quick-start.html" />
 
     <link rel="shortcut icon" href="../_static/favicon-32x32.png"/><!-- Generated with Sphinx 4.5.0 and Furo 2023.05.20 -->
         <title>Pushing changes - DeisData</title>
@@ -176,13 +176,13 @@
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../git.html">Git Version Control</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="setup-install.html">Setup and Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quick-start.html">Quick Start to GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup-install.html">Setup and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick-start.html">Quick start to Git and GitHub</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Pushing changes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fetch-merge.html">Fetch and merge from GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git-utilities.html">Git Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git-utilities.html">Git utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="forking.html">Forking in GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html">Git Vocabulary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html">Git Glossary</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../r.html">R</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of R</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -247,17 +247,25 @@ GitHub. This is known as <strong>pushing</strong>.</p>
 <code class="docutils literal notranslate"><span class="pre">touch</span></code> command to make a new empty file called <code class="docutils literal notranslate"><span class="pre">notes.txt</span></code>. Make
 sure you are in the directory containing your repository first. You can
 do this by running <code class="docutils literal notranslate"><span class="pre">pwd</span></code> (Print Working Directory) and then using
-<code class="docutils literal notranslate"><span class="pre">cd</span></code> to navigate to the repository.</p>
+<code class="docutils literal notranslate"><span class="pre">cd</span></code> (Change Directory) to navigate to the repository.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>touch<span class="w"> </span>notes.txt
 </pre></div>
+</div>
+</div>
 </div>
 <p>Running <code class="docutils literal notranslate"><span class="pre">ls</span></code> will show you that <code class="docutils literal notranslate"><span class="pre">notes.txt</span></code> is now in your working
 directory. Run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> to see that we can now stage and commit
 this file.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>notes.txt
 $<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Added notes files&quot;</span>
 $<span class="w"> </span>git<span class="w"> </span>status
 </pre></div>
+</div>
+</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> will let us know that all changes have been committed and
 that we are now 2 commits ahead of what is on GitHub.</p>
@@ -286,14 +294,18 @@ securely. You will need to paste it into the terminal when we run
 <section id="pushing-to-github">
 <h2>Pushing to GitHub<a class="headerlink" href="#pushing-to-github" title="Permalink to this headline">#</a></h2>
 <p>Now that we’ve created the token, we can push our changes to GitHub.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>push
 </pre></div>
 </div>
+</div>
+</div>
 <p>Once you run this command, you will prompted to enter your GitHub
 username followed by the key for the token you just created. Hit Enter
-after typing in your username. Paste in the key with Ctrl + V or cmd + V
+after typing in your username. Paste in the key with <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>+<kbd class="kbd docutils literal notranslate">V</kbd></kbd> or <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">cmd</kbd>+<kbd class="kbd docutils literal notranslate">V</kbd></kbd>
 (MacOS). Once you paste, it will not display the key in the terminal for
-security purposes. Hit Enter again.</p>
+security purposes. Hit <kbd class="kbd docutils literal notranslate">Enter</kbd> again.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The prompt for the key may ask for a password, but your account
@@ -336,7 +348,7 @@ on GitHub.</p>
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Quick Start to GitHub</div>
+                <div class="title">Quick start to Git and GitHub</div>
                 
               </div>
             </a>

@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Pushing changes" href="pushing.html" /><link rel="prev" title="Setup and Installation" href="setup-install.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Pushing changes" href="pushing.html" /><link rel="prev" title="Setup and installation" href="setup-install.html" />
 
     <link rel="shortcut icon" href="../_static/favicon-32x32.png"/><!-- Generated with Sphinx 4.5.0 and Furo 2023.05.20 -->
-        <title>Quick Start to GitHub - DeisData</title>
+        <title>Quick start to Git and GitHub - DeisData</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
@@ -176,13 +176,13 @@
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../git.html">Git Version Control</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="setup-install.html">Setup and Installation</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Quick Start to GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup-install.html">Setup and installation</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Quick start to Git and GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pushing.html">Pushing changes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fetch-merge.html">Fetch and merge from GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git-utilities.html">Git Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git-utilities.html">Git utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="forking.html">Forking in GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html">Git Vocabulary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html">Git Glossary</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../r.html">R</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of R</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -236,29 +236,21 @@
           </label>
         </div>
         <article role="main">
-          <section id="quick-start-to-github">
-<h1>Quick Start to GitHub<a class="headerlink" href="#quick-start-to-github" title="Permalink to this headline">#</a></h1>
-<section id="id1">
-<h2>Quick Start to GitHub<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+          <section id="quick-start-to-git-and-github">
+<h1>Quick start to Git and GitHub<a class="headerlink" href="#quick-start-to-git-and-github" title="Permalink to this headline">#</a></h1>
 <p>This guide will show you the basics of making a repository on GitHub,
 cloning it to your machine, and committing changes to version control.</p>
 <section id="create-a-remote-repository-on-github">
-<h3>Create a remote repository on GitHub<a class="headerlink" href="#create-a-remote-repository-on-github" title="Permalink to this headline">#</a></h3>
+<h2>Create a remote repository on GitHub<a class="headerlink" href="#create-a-remote-repository-on-github" title="Permalink to this headline">#</a></h2>
 <p>Go to GitHub and create a new repository by clicking <strong>New</strong>.</p>
-<figure class="align-default" id="id2">
+<figure class="align-default">
 <img alt="Make a repo" src="../_images/github_newrepo.png" />
-<figcaption>
-<p><span class="caption-text">Make a repo</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
-</figcaption>
 </figure>
 <p>Give your repo a short but descriptive name without spaces or special
 characters. Note that your account cannot have two repos with exactly
 the same name.</p>
-<figure class="align-default" id="id3">
+<figure class="align-default">
 <img alt="Name your repo" src="../_images/github_reponame.png" />
-<figcaption>
-<p><span class="caption-text">Name your repo</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
-</figcaption>
 </figure>
 <p>You can choose whether or not to make your repository to be private. If
 you plan to collaborate with others, you are required to have a public
@@ -270,45 +262,58 @@ more information, see <a class="reference external" href="https://swcarpentry.gi
 licenses</a>.</p>
 </section>
 <section id="clone-the-remote-repository-to-your-machine">
-<h3>Clone the remote repository to your machine<a class="headerlink" href="#clone-the-remote-repository-to-your-machine" title="Permalink to this headline">#</a></h3>
+<h2>Clone the remote repository to your machine<a class="headerlink" href="#clone-the-remote-repository-to-your-machine" title="Permalink to this headline">#</a></h2>
 <p>To get this repository onto our local machine, we will clone it, which
 copies its contents. Go to the repository you just made on GitHub. You
 will see a <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file and a license file. Click on <strong>Code</strong>,
 which opens a dropdown menu. Copy the <strong>HTTPS</strong> link, which will be
 <code class="docutils literal notranslate"><span class="pre">https://github.com/{USERNAME}/{REPO-NAME}.git</span></code>, with your username
-and repo name, respectively.</p>
-<figure class="align-default" id="id4">
+and repo name, respectively, with no brackets.</p>
+<figure class="align-default">
 <img alt="clone repo" src="../_images/github_clone.png" />
-<figcaption>
-<p><span class="caption-text">clone repo</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
-</figcaption>
 </figure>
 <p>Go back to your terminal. Create a new <code class="docutils literal notranslate"><span class="pre">GitHub</span></code> folder in your home
 directory by running:</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mkdir<span class="w"> </span>~/GitHub
 </pre></div>
+</div>
+</div>
 </div>
 <p>This uses the Unix command <code class="docutils literal notranslate"><span class="pre">mkdir</span></code> (Make Directory) to create a new
 folder. We then want to go to that folder with the <code class="docutils literal notranslate"><span class="pre">cd</span></code> (Change
 Directory) command.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/GitHub
 </pre></div>
 </div>
+</div>
+</div>
 <p>To clone your repository, run the following, again inserting your link:</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/<span class="o">{</span>USERNAME<span class="o">}</span>/<span class="o">{</span>REPO-NAME<span class="o">}</span>.git
 </pre></div>
 </div>
+</div>
+</div>
 <p>Move to your newly cloned local repository and list the files with
 <code class="docutils literal notranslate"><span class="pre">ls</span></code> command.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span><span class="o">{</span>REPO-NAME<span class="o">}</span>
 $<span class="w"> </span>ls
 </pre></div>
+</div>
+</div>
 </div>
 <p>You should see the names of the files <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> (if you made one) and
 <code class="docutils literal notranslate"><span class="pre">README.md</span></code> printed to the terminal.</p>
 </section>
 <section id="alter-the-readme">
-<h3>Alter the README<a class="headerlink" href="#alter-the-readme" title="Permalink to this headline">#</a></h3>
+<h2>Alter the README<a class="headerlink" href="#alter-the-readme" title="Permalink to this headline">#</a></h2>
 <p>You now have a local <strong>downstream</strong> repository on your machine. The
 remote GitHub repository is referred to as the <strong>upstream</strong> repository.
 If other users make changes reflected in the upstream repository, you
@@ -317,35 +322,34 @@ will receive and implement them locally.</p>
 change to version control.</p>
 <p>First, we are going to use a text editor called <code class="docutils literal notranslate"><span class="pre">nano</span></code> to open
 <code class="docutils literal notranslate"><span class="pre">README.md</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>nano<span class="w"> </span>README.md
 </pre></div>
 </div>
-<figure class="align-default" id="id5">
+</div>
+</div>
+<figure class="align-default">
 <img alt="nano blank" src="../_images/nano1.png" />
-<figcaption>
-<p><span class="caption-text">nano blank</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
-</figcaption>
 </figure>
-<p>Tap the ↓ key to get to a new line. Type whatever your heart desires
+<p>Tap the <kbd class="kbd docutils literal notranslate">↓</kbd> key to get to a new line. Type whatever your heart desires
 (“Hello World!” is a classic). To save or “write” your changes, press
-Ctrl + O, and then hit Return. Press Ctrl + X to exit <code class="docutils literal notranslate"><span class="pre">nano</span></code>.</p>
-<p>Note: use Ctrl regardless of your OS.</p>
-<figure class="align-default" id="id6">
+<kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>+<kbd class="kbd docutils literal notranslate">O</kbd></kbd>, and then hit Return. Press <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>+<kbd class="kbd docutils literal notranslate">X</kbd></kbd> to exit <code class="docutils literal notranslate"><span class="pre">nano</span></code>.</p>
+<p>Note: use <kbd class="kbd docutils literal notranslate">Ctrl</kbd> regardless of your OS.</p>
+<figure class="align-default">
 <img alt="nano blank" src="../_images/nano2.png" />
-<figcaption>
-<p><span class="caption-text">nano blank</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
-</figcaption>
 </figure>
 <p>Now that you’ve made a change, you can check the status of the
 repository with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>status
 </pre></div>
 </div>
-<figure class="align-default" id="id7">
+</div>
+</div>
+<figure class="align-default">
 <img alt="git status" src="../_images/git_status.png" />
-<figcaption>
-<p><span class="caption-text">git status</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
-</figcaption>
 </figure>
 <p>This command prints out a lot of information. It says we are on the main
 branch (more on this in the future). It says we are up to date with
@@ -355,38 +359,47 @@ reflected in GitHub. It then lists <code class="docutils literal notranslate"><s
 not yet staged, as well the commands for how to stage it. Finally, it
 says that nothing has yet been added to commit yet.</p>
 <section id="stage-modified-file">
-<h4>Stage modified file<a class="headerlink" href="#stage-modified-file" title="Permalink to this headline">#</a></h4>
+<h3>Stage modified file<a class="headerlink" href="#stage-modified-file" title="Permalink to this headline">#</a></h3>
 <p>We want to stage our modified file. Staging a file means we want to
 commit it. To do this, we’ll use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> command.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>README.md
 </pre></div>
 </div>
+</div>
+</div>
 <p>If we run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> again, we’ll see that <code class="docutils literal notranslate"><span class="pre">README.md</span></code> is now
 staged for commit and in green text.</p>
-<figure class="align-default" id="id8">
+<figure class="align-default">
 <img alt="git add" src="../_images/git_add.png" />
-<figcaption>
-<p><span class="caption-text">git add</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
-</figcaption>
 </figure>
 </section>
 <section id="make-a-commit">
-<h4>Make a commit<a class="headerlink" href="#make-a-commit" title="Permalink to this headline">#</a></h4>
+<h3>Make a commit<a class="headerlink" href="#make-a-commit" title="Permalink to this headline">#</a></h3>
 <p>Now we are ready to commit these changes. We are going to use
 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> with a message flag (<code class="docutils literal notranslate"><span class="pre">-m</span></code>). The message we write should
 give a short description of the changes you made in this commit.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Updated the README&quot;</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>The terminal will print out some information about your commit including
 how many files were changed and how many lines were inserted and
 deleted.</p>
 <p>If we run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> again, we’ll notice a few things.</p>
-<figure class="align-default" id="id9">
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">Bash</label><div class="tab-content docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>status
+</pre></div>
+</div>
+</div>
+</div>
+<figure class="align-default">
 <img alt="post commit" src="../_images/post_commit.png" />
-<figcaption>
-<p><span class="caption-text">post commit</span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
-</figcaption>
 </figure>
 <p>It now tells us that we no longer have any changes to commit in our
 local repository. It also is telling us that we are ahead of the
@@ -395,7 +408,7 @@ have not yet been sent or “pushed” to that remote repository yet.</p>
 </section>
 </section>
 <section id="recap">
-<h3>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">#</a></h3>
+<h2>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code>: copy a remote repository locally</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>: shows what is in staging and was is being commited.</p></li>
@@ -404,21 +417,14 @@ have not yet been sent or “pushed” to that remote repository yet.</p>
 staging to history and documents message to the log.</p></li>
 </ul>
 </section>
-<section id="contact">
-<h3>Contact<a class="headerlink" href="#contact" title="Permalink to this headline">#</a></h3>
-<p>Please reach out to <a class="reference external" href="mailto:dataservices&#37;&#52;&#48;brandeis&#46;edu">dataservices<span>&#64;</span>brandeis<span>&#46;</span>edu</a> with any questions or
-concerns.</p>
-</section>
 <section id="resources">
-<h3>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">#</a></h3>
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>GitHub Docs: <a class="reference external" href="https://docs.github.com/en/get-started">https://docs.github.com/en/get-started</a></p></li>
-<li><p>Atlassian:
-<a class="reference external" href="https://www.atlassian.com/git/tutorials/setting-up-a-repository">https://www.atlassian.com/git/tutorials/setting-up-a-repository</a></p></li>
+<li><p><a class="reference external" href="https://docs.github.com/en/get-started">GitHub Docs</a></p></li>
+<li><p><a class="reference external" href="https://www.atlassian.com/git/tutorials/setting-up-a-repository">Atlassian</a></p></li>
 </ul>
 <p>This workshop has been adapted from <a class="reference external" href="https://software-carpentry.org/">the Software
 Carpentry</a>.</p>
-</section>
 </section>
 </section>
 
@@ -443,7 +449,7 @@ Carpentry</a>.</p>
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Setup and Installation</div>
+                <div class="title">Setup and installation</div>
                 
               </div>
             </a>
@@ -477,8 +483,7 @@ Carpentry</a>.</p>
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Quick Start to GitHub</a><ul>
-<li><a class="reference internal" href="#id1">Quick Start to GitHub</a><ul>
+<li><a class="reference internal" href="#">Quick start to Git and GitHub</a><ul>
 <li><a class="reference internal" href="#create-a-remote-repository-on-github">Create a remote repository on GitHub</a></li>
 <li><a class="reference internal" href="#clone-the-remote-repository-to-your-machine">Clone the remote repository to your machine</a></li>
 <li><a class="reference internal" href="#alter-the-readme">Alter the README</a><ul>
@@ -487,10 +492,7 @@ Carpentry</a>.</p>
 </ul>
 </li>
 <li><a class="reference internal" href="#recap">Recap</a></li>
-<li><a class="reference internal" href="#contact">Contact</a></li>
 <li><a class="reference internal" href="#resources">Resources</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>

@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Git Vocabulary" href="glossary.html" /><link rel="prev" title="Git Utilities" href="git-utilities.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Git Glossary" href="glossary.html" /><link rel="prev" title="Git utilities" href="git-utilities.html" />
 
     <link rel="shortcut icon" href="../_static/favicon-32x32.png"/><!-- Generated with Sphinx 4.5.0 and Furo 2023.05.20 -->
         <title>Forking in GitHub - DeisData</title>
@@ -176,13 +176,13 @@
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../git.html">Git Version Control</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="setup-install.html">Setup and Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quick-start.html">Quick Start to GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup-install.html">Setup and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick-start.html">Quick start to Git and GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pushing.html">Pushing changes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fetch-merge.html">Fetch and merge from GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git-utilities.html">Git Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git-utilities.html">Git utilities</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Forking in GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html">Git Vocabulary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html">Git Glossary</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../r.html">R</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of R</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -254,20 +254,14 @@ changes, and create pull request to the main repo.</p>
 <h2>How to Fork<a class="headerlink" href="#how-to-fork" title="Permalink to this headline">#</a></h2>
 <p>Go to any account on GitHub (not your own) and pick a repository. Look
 in the top right where it says “Fork” and click the button.</p>
-<figure class="align-default" id="id1">
+<figure class="align-default">
 <img alt="Fork button" src="../_images/fork.png" />
-<figcaption>
-<p><span class="caption-text">Fork button</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
-</figcaption>
 </figure>
 <p>This will take you to a page for initializing the forked repository.
 Most often, you will keep the fork with the same name as the original
 repository.</p>
-<figure class="align-default" id="id2">
+<figure class="align-default">
 <img alt="New fork" src="../_images/new_fork.png" />
-<figcaption>
-<p><span class="caption-text">New fork</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
-</figcaption>
 </figure>
 <p>When you go to your forked repo, it will look slightly different from a
 normal repository. Underneath the repo name, GitHub tells you where the
@@ -276,11 +270,8 @@ repo was forked from.</p>
 that you are up to date with the original repository. This will likely
 change, both as you make commits, and as commits are made to the
 original repository.</p>
-<figure class="align-default" id="id3">
+<figure class="align-default">
 <img alt="forked repo" src="../_images/forked-repo.png" />
-<figcaption>
-<p><span class="caption-text">forked repo</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
-</figcaption>
 </figure>
 <p>If you have changes to suggest to original repository, you can click
 “Contribute” and create a pull request, which we will cover below.</p>
@@ -294,44 +285,52 @@ machine to update when there are changes to the original. We can specify
 <strong>remote repositories</strong> in git to check in on them.</p>
 <p>We can take a look at the current remote repositories connected to our
 repo.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>-v
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">origin</span>  <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">fordfishman</span><span class="o">/</span><span class="n">assignment</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">main</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">fetch</span><span class="p">)</span>
-<span class="n">origin</span>  <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">fordfishman</span><span class="o">/</span><span class="n">assignment</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">main</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">push</span><span class="p">)</span>
+</div>
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>origin  https://github.com/fordfishman/assignment-1-main.git (fetch)
+origin  https://github.com/fordfishman/assignment-1-main.git (push)
 </pre></div>
+</div>
+</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">origin</span></code> is the default name for the repository we have cloned
 directly from GitHub. It is the forked repo. We can also add the
 original repo as an <strong>upstream</strong> repository.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>upstream<span class="w"> </span>https://github.com/ENVS110a-SP23/assignment-1-main.git
 </pre></div>
 </div>
+</div>
+</div>
 <p>To get changes from the original repo we’ve called <code class="docutils literal notranslate"><span class="pre">upstream</span></code>, we can
 use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span></code>, specifying <code class="docutils literal notranslate"><span class="pre">upstream</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>fetch<span class="w"> </span>upstream
 git<span class="w"> </span>merge<span class="w"> </span>upstream/main
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="creating-a-pull-request">
 <h2>Creating a pull request<a class="headerlink" href="#creating-a-pull-request" title="Permalink to this headline">#</a></h2>
 <p>Once we make a commit to our forked repository, we can make a <strong>pull
 request</strong> to ask the owners of the original repo to review the changes.</p>
-<figure class="align-default" id="id4">
+<figure class="align-default">
 <img alt="pull request button" src="../_images/pull-req-button.png" />
-<figcaption>
-<p><span class="caption-text">pull request button</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
-</figcaption>
 </figure>
 <p>This will open up a form for you to give a name to the pull request and
 describe it. There are also options to add specific people to review the
 changes, if you would like.</p>
-<figure class="align-default" id="id5">
+<figure class="align-default">
 <img alt="pull request form" src="../_images/pull-request-form.png" />
-<figcaption>
-<p><span class="caption-text">pull request form</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
-</figcaption>
 </figure>
 </section>
 <section id="merging-a-pull-request">
@@ -339,11 +338,8 @@ changes, if you would like.</p>
 <p>You may also be interested in merged the changes from a pull request
 into the main repository yourself.</p>
 <p>You can see pending pull requests in the navigation of your repository.</p>
-<figure class="align-default" id="id6">
+<figure class="align-default">
 <img alt="pull request tab" src="../_images/pull-request-tab.png" />
-<figcaption>
-<p><span class="caption-text">pull request tab</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
-</figcaption>
 </figure>
 <p>You can open up the pending pull request here. Here, you can look at the
 commits made in detail, deciding if you want to add them or not. You can
@@ -351,11 +347,8 @@ provide feedback and close the pull request, if you will not be adding
 in the changes.</p>
 <p>Importantly, GitHub will check to make sure the changes can be
 implemented without causing any conflicts.</p>
-<figure class="align-default" id="id7">
+<figure class="align-default">
 <img alt="merge pull request form" src="../_images/merg-pull-req-button.png" />
-<figcaption>
-<p><span class="caption-text">merge pull request form</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
-</figcaption>
 </figure>
 </section>
 </section>
@@ -370,7 +363,7 @@ implemented without causing any conflicts.</p>
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Git Vocabulary</div>
+                <div class="title">Git Glossary</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -381,7 +374,7 @@ implemented without causing any conflicts.</p>
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Git Utilities</div>
+                <div class="title">Git utilities</div>
                 
               </div>
             </a>

@@ -25,16 +25,12 @@ in the top right where it says “Fork” and click the button.
 .. figure:: /_static/images/git/forking/fork.png
    :alt: Fork button
 
-   Fork button
-
 This will take you to a page for initializing the forked repository.
 Most often, you will keep the fork with the same name as the original
 repository.
 
 .. figure:: /_static/images/git/forking/new_fork.png
    :alt: New fork
-
-   New fork
 
 When you go to your forked repo, it will look slightly different from a
 normal repository. Underneath the repo name, GitHub tells you where the
@@ -47,8 +43,6 @@ original repository.
 
 .. figure:: /_static/images/git/forking/forked-repo.png
    :alt: forked repo
-
-   forked repo
 
 If you have changes to suggest to original repository, you can click
 “Contribute” and create a pull request, which we will cover below.
@@ -66,30 +60,38 @@ machine to update when there are changes to the original. We can specify
 We can take a look at the current remote repositories connected to our
 repo.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ git remote -v
+   .. code:: bash
 
-::
+      $ git remote -v
 
-   origin  https://github.com/fordfishman/assignment-1-main.git (fetch)
-   origin  https://github.com/fordfishman/assignment-1-main.git (push)
+.. tab:: Output
+
+   .. code:: none
+
+      origin  https://github.com/fordfishman/assignment-1-main.git (fetch)
+      origin  https://github.com/fordfishman/assignment-1-main.git (push)
 
 ``origin`` is the default name for the repository we have cloned
 directly from GitHub. It is the forked repo. We can also add the
 original repo as an **upstream** repository.
 
-.. code:: bash
+.. tab:: Bash
 
-   git remote add upstream https://github.com/ENVS110a-SP23/assignment-1-main.git
+   .. code:: bash
+
+      git remote add upstream https://github.com/ENVS110a-SP23/assignment-1-main.git
 
 To get changes from the original repo we’ve called ``upstream``, we can
 use ``git fetch`` and ``git merge``, specifying ``upstream``.
 
-.. code:: bash
+.. tab:: Bash
 
-   git fetch upstream
-   git merge upstream/main
+   .. code:: bash
+
+      git fetch upstream
+      git merge upstream/main
 
 Creating a pull request
 -----------------------
@@ -100,16 +102,12 @@ request** to ask the owners of the original repo to review the changes.
 .. figure:: /_static/images/git/forking/pull-req-button.png
    :alt: pull request button
 
-   pull request button
-
 This will open up a form for you to give a name to the pull request and
 describe it. There are also options to add specific people to review the
 changes, if you would like.
 
 .. figure:: /_static/images/git/forking/pull-request-form.png
    :alt: pull request form
-
-   pull request form
 
 Merging a pull request
 ----------------------
@@ -122,8 +120,6 @@ You can see pending pull requests in the navigation of your repository.
 .. figure:: /_static/images/git/forking/pull-request-tab.png
    :alt: pull request tab
 
-   pull request tab
-
 You can open up the pending pull request here. Here, you can look at the
 commits made in detail, deciding if you want to add them or not. You can
 provide feedback and close the pull request, if you will not be adding
@@ -134,5 +130,3 @@ implemented without causing any conflicts.
 
 .. figure:: /_static/images/git/forking/merg-pull-req-button.png
    :alt: merge pull request form
-
-   merge pull request form

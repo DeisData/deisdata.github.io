@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Git Utilities" href="git-utilities.html" /><link rel="prev" title="Pushing changes" href="pushing.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Git utilities" href="git-utilities.html" /><link rel="prev" title="Pushing changes" href="pushing.html" />
 
     <link rel="shortcut icon" href="../_static/favicon-32x32.png"/><!-- Generated with Sphinx 4.5.0 and Furo 2023.05.20 -->
         <title>Fetch and merge from GitHub - DeisData</title>
@@ -176,13 +176,13 @@
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../git.html">Git Version Control</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="setup-install.html">Setup and Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quick-start.html">Quick Start to GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup-install.html">Setup and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick-start.html">Quick start to Git and GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pushing.html">Pushing changes</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Fetch and merge from GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git-utilities.html">Git Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git-utilities.html">Git utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="forking.html">Forking in GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html">Git Vocabulary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html">Git Glossary</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../r.html">R</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of R</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -271,26 +271,35 @@ commit changes.</p></li>
 <h2>Retrieve changes locally<a class="headerlink" href="#retrieve-changes-locally" title="Permalink to this headline">#</a></h2>
 <p>Go back to terminal and run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code> to retrieve the changes. The
 terminal will print out some information about the process.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>fetch
 </pre></div>
+</div>
+</div>
 </div>
 <p>The commit is now in our local system, but the change is not yet
 reflected in our file yet. We can see this by running <code class="docutils literal notranslate"><span class="pre">cat</span></code>, which
 will print out our file.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span>README.md
 </pre></div>
+</div>
+</div>
 </div>
 <p>To view the differences between our local file and the new commit, we
 can run the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code> command with some specifications for the file
 we’re interested in and the two sources of the file.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git diff HEAD origin/main README.md
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Bash</label><div class="tab-content docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>diff<span class="w"> </span>HEAD<span class="w"> </span>origin/main<span class="w"> </span>README.md
 </pre></div>
 </div>
-<figure class="align-default" id="id1">
+</div>
+</div>
+<figure class="align-default">
 <img alt="git diff" src="../_images/git_diff.png" />
-<figcaption>
-<p><span class="caption-text">git diff</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
-</figcaption>
 </figure>
 <p>This command and the output are somewhat complicated, so let’s step
 through them.</p>
@@ -312,29 +321,34 @@ line, whereas in the new version, there is text. This means that if we
 run <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span></code>, this will cause the blank line to become text
 locally.</p>
 <p>We can now merge the file. A summary will print after we do so.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>merge
 </pre></div>
 </div>
-<figure class="align-default" id="id2">
+</div>
+</div>
+<figure class="align-default">
 <img alt="git merge" src="../_images/git_merge.png" />
-<figcaption>
-<p><span class="caption-text">git merge</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
-</figcaption>
 </figure>
-<p><em>Note: The command ``git pull`` is equivalent to running ``git fetch``
-immediately followed by ``git merge``, though it may lead to some
-unexpected behavior at times.</em></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> is equivalent to running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code>
+immediately followed by <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span></code>, though it may lead to some
+unexpected behavior at times.</p>
+</div>
 <p>If you run <code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">README.md</span></code> again, you will see the change present in
 our local file. If we want to see a history of changes in this
 repository, you can use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>log
 </pre></div>
 </div>
-<figure class="align-default" id="id3">
+</div>
+</div>
+<figure class="align-default">
 <img alt="git log" src="../_images/git_log.png" />
-<figcaption>
-<p><span class="caption-text">git log</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
-</figcaption>
 </figure>
 <p>This will print out information on all of this repo’s commits,
 including, the commit ID, the author of the commit, when the commit was
@@ -363,7 +377,7 @@ file</p></li>
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Git Utilities</div>
+                <div class="title">Git utilities</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>

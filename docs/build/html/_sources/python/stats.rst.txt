@@ -573,19 +573,13 @@ added variables.
         - **Cond. No.** 
         - 1.41e+03
 
-      
-      
-      
-      
-
-
 Notes:[1] Standard Errors assume that the covariance matrix of the
 errors is correctly specified.[2] The condition number is large,
 1.41e+03. This might indicate that there arestrong multicollinearity or
 other numerical problems.
 
 We can also use the ``anova_lm()`` function with our model to estimate
-the impor
+the importance of factors in our model.
 
 .. |fig 13_0| image:: /_static/images/python/stats/stats_13_0.png
    :align: middle

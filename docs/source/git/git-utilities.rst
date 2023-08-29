@@ -1,8 +1,8 @@
-Git Utilities
+Git utilities
 =============
 
-git diff
---------
+``git diff``
+------------
 
 Previously, we used ``git diff`` to see the difference between a local
 and incoming remote file. However, it can also be used more generally to
@@ -11,14 +11,14 @@ show differences across a file’s history.
 Let’s simulate making a poor change to our code by adding a line to our
 README with ``nano``.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ nano README.md
+   .. code:: bash
+
+      $ nano README.md
 
 .. figure:: /_static/images/git/git-utilities/bad_change.png
    :alt: git log
-
-   git log
 
 In our specific case, it’s pretty easy to remember what change we made
 and remove it. But if you are editing code across many lines in
@@ -34,30 +34,31 @@ changes.
 If we only want to see changes for a specific file, we can specify that
 filename, as well.
 
-::
+.. tab:: Bash
 
-   $ git diff HEAD README.md
+   .. code:: bash
+
+      $ git diff HEAD README.md
 
 .. figure:: /_static/images/git/git-utilities/git_diff_bad.png
    :alt: git diff bad
 
-   git diff bad
-
-*Note: If you don’t include ``HEAD`` (``git diff``), the command will
-work only when the changes are unstaged. You can add
-``git diff --staged`` for changes in staged files specifically.*
+.. warning:: 
+   If you don’t include ``HEAD`` (``git diff``), the command will
+   work only when the changes are unstaged. You can add
+   ``git diff --staged`` for changes in staged files specifically.
 
 We can also see the difference between our uncommitted changes and
 several commits ago by adding ``~{NUMBER}`` to ``HEAD``.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ git diff HEAD~2 README.md
+   .. code:: bash
+
+      $ git diff HEAD~2 README.md
 
 .. figure:: /_static/images/git/git-utilities/git_head_2.png
    :alt: git head 2
-
-   git head 2
 
 This shows us the changes from 2 commits prior to ``HEAD``, the current
 commit.
@@ -65,9 +66,11 @@ commit.
 You can also use the first 7 or so characters of the commit ID to
 compare.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ git diff 36237fea README.md
+   .. code:: bash
+
+      $ git diff 36237fea README.md
 
 Restoring old versions of files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -76,9 +79,11 @@ If we want to restore a previous commit of a file, we can use
 ``git checkout`` with the commit ID and filename. This will erase all
 uncommitted changes and revert the file.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ git checkout 36237fea README.md
+   .. code:: bash
+
+      $ git checkout 36237fea README.md
 
 If you run ``cat``, you can see the file has indeed changed. Running
 ``git status`` shows that our file has staged changes as well.
@@ -88,9 +93,11 @@ lines added after this commit.
 If we want to return to our last made commit, we can still do that, as
 well.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ git checkout HEAD README.md
+   .. code:: bash
+
+      $ git checkout HEAD README.md
 
 ``git status`` will now show no uncommitted changes.
 
@@ -114,21 +121,23 @@ Let’s make a new file with ``touch`` and pretend it has **super secret**
 and **private** information. ``git status`` will show that this newly
 created file has not been staged yet.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ touch super_secret_private.csv
+   .. code:: bash
+
+      $ touch super_secret_private.csv
 
 We do not currently have a ``.gitignore`` in our repository yet. We can
 make one with ``nano`` and add in our .csv file.
 
-::
+.. tab:: Bash
 
-   $ nano .gitignore
+   .. code:: bash
+
+      $ nano .gitignore
 
 .. figure:: /_static/images/git/git-utilities/git_ignore1.png
    :alt: git ignore 1
-
-   git ignore 1
 
 Save your changes, and if you run ``git status`` again, you will no
 longer see our private file available to be staged. Only ``.gitignore``
@@ -137,27 +146,26 @@ will be there. Feel free to stage and commit it.
 .. figure:: /_static/images/git/git-utilities/git_ignore_status.png
    :alt: git ignore status
 
-   git ignore status
-
 We can also give ``.gitignore`` broader specifications for files to
 ignore using ``*``, or the wildcard symbol. If we added ``*.dat`` to a
 new line in ``.gitignore``, git will ignore all files with the .dat
 extension. If you specify ``*secret*``, git will ignore all files with
-the word “secret” in their name. You can also tell have git ignore whole
-folders by specifying ``FOLDER_NAME/``. Finally, you can combine these
-methods. ``results/*secret*.dat`` will result in git ignoring all files
-in the results folder that have secret in their title and .dat as their
-extension.
+the word “secret” in their name. 
+
+You can also tell have git ignore whole folders by specifying ``FOLDER_NAME/``. 
+Finally, you can combine these methods. ``results/*secret*.dat`` will result 
+in git ignoring all files in the results folder that have secret in their title 
+and ``.dat`` as their extension.
 
 .. figure:: /_static/images/git/git-utilities/git_ignore2.png
    :alt: git ignore 2
 
-   git ignore 2
-
-*Note: The wildcard essentially means “look for **anything**”. If you
-had a line in ``.gitignore`` with only ``*``, this would match all
-files, and git would ignore everything in the repo. ``*.dat`` looks for
-anything but must end in .dat.*
+.. admonition:: Wildcards
+   
+   The wildcard essentially means “look for **anything**”. If you
+   had a line in ``.gitignore`` with only ``*``, this would match all
+   files, and git would ignore everything in the repo. ``*.dat`` looks for
+   anything but must end in ``.dat``.
 
 Some files you may want to ignore might be program-specific files that
 show up in your repository when executing or building your program. When
@@ -167,11 +175,13 @@ project will be in (like Python or R), and a ``.gitignore`` file will be
 created in the initial commit with some files already included (like
 ``*.pyc`` or ``.Rhistory``).
 
-*Note: Adding files to .gitignore will remove their tracking from future
-staging in commits. However, if these files have already been previously
-committed, these committed versions will remain in future commits. If
-you need to completely remove a file from version history, see* `this
-Stack Overflow post <https://stackoverflow.com/a/64563565>`__\ *.*
+.. warning:: 
+   
+   Adding files to .gitignore will remove their tracking from future
+   staging in commits. However, if these files have already been previously
+   committed, these committed versions will remain in future commits. If
+   you need to completely remove a file from version history, see `this
+   Stack Overflow post <https://stackoverflow.com/a/64563565>`__.
 
 Recap:
 ------

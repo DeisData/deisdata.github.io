@@ -1,5 +1,5 @@
-Git Vocabulary
-==============
+Git Glossary
+============
 
 -  Commit: (noun) A recorded version of your project. (verb) To record a
    new version of your project.

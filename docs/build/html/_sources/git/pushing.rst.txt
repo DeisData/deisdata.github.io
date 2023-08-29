@@ -12,21 +12,25 @@ Let’s practice making another change and commiting it. We’ll use the
 ``touch`` command to make a new empty file called ``notes.txt``. Make
 sure you are in the directory containing your repository first. You can
 do this by running ``pwd`` (Print Working Directory) and then using
-``cd`` to navigate to the repository.
+``cd`` (Change Directory) to navigate to the repository.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ touch notes.txt
+   .. code:: bash
+
+      $ touch notes.txt
 
 Running ``ls`` will show you that ``notes.txt`` is now in your working
 directory. Run ``git status`` to see that we can now stage and commit
 this file.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ git add notes.txt
-   $ git commit -m "Added notes files"
-   $ git status
+   .. code:: bash
+
+      $ git add notes.txt
+      $ git commit -m "Added notes files"
+      $ git status
 
 ``git status`` will let us know that all changes have been committed and
 that we are now 2 commits ahead of what is on GitHub.
@@ -57,15 +61,17 @@ Pushing to GitHub
 
 Now that we’ve created the token, we can push our changes to GitHub.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ git push
+   .. code:: bash
+
+      $ git push
 
 Once you run this command, you will prompted to enter your GitHub
 username followed by the key for the token you just created. Hit Enter
-after typing in your username. Paste in the key with Ctrl + V or cmd + V
+after typing in your username. Paste in the key with :kbd:`Ctrl+V` or :kbd:`cmd+V`
 (MacOS). Once you paste, it will not display the key in the terminal for
-security purposes. Hit Enter again.
+security purposes. Hit :kbd:`Enter` again.
 
 .. note::
 

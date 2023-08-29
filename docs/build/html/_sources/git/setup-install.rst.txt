@@ -1,4 +1,4 @@
-Setup and Installation
+Setup and installation
 ======================
 
 In this workshop, we are using **Git** and
@@ -55,9 +55,10 @@ Configure git global settings
 
 When we use Git on a new computer for the first time, we need to
 configure a few settings. Below are a few examples of configurations we
-will set as we get started with Git: - our name and email address - what
-our preferred text editor is - and that we want to use these settings
-globally (i.e., for every project).
+will set as we get started with Git: 
+- our name and email address 
+- what our preferred text editor is 
+- and that we want to use these settings globally (i.e., for every project).
 
 **Windows**: Open “Git Bash”, or run the command ``bash`` in your
 Command Prompt.
@@ -80,9 +81,11 @@ any of our future repositories.
 Name configuration
 ~~~~~~~~~~~~~~~~~~
 
-.. code:: bash
+.. tab:: Bash
 
-   $ git config --global user.name "InigoMontoya"
+   .. code:: bash
+
+      $ git config --global user.name "InigoMontoya"
 
 Email configuration
 ~~~~~~~~~~~~~~~~~~~
@@ -93,12 +96,14 @@ Email configuration
 -  Click on Emails in the left menu
 -  Select the check box “Keep my email addresses private” and use the
    private github.com-supplied email listed in the configuration below.
-   You can highlight and copy it with Ctrl + C or cmd + C (Mac), and
-   paste to the command line with Ctrl + V or cmd + V.
+   You can highlight and copy it with :kbd:`Ctrl+C` or :kbd:`cmd+C` (Mac), and
+   paste to the command line with :kbd:`Ctrl+V` or :kbd:`cmd+V`.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ git config --global user.email "1234username@users.noreply.github.com"
+   .. code:: bash
+
+      $ git config --global user.email "1234username@users.noreply.github.com"
 
 Line Heading configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -111,15 +116,19 @@ editing a file on different machines.
 
 **Windows**
 
-.. code:: bash
+.. tab:: Bash
 
-   $ git config --global core.autocrlf true
+   .. code:: bash
+
+      $ git config --global core.autocrlf true
 
 **MacOS and Linux**
 
-.. code:: bash
+.. tab:: Bash
 
-   $ git config --global core.autocrlf input
+   .. code:: bash
+
+      $ git config --global core.autocrlf input
 
 Editor configuration
 ~~~~~~~~~~~~~~~~~~~~
@@ -128,15 +137,19 @@ In these sessions, we will be using a basic editor called nano. There
 are other ways to configure for more popular editors
 `here <http://swcarpentry.github.io/git-novice/02-setup/index.html>`__.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ git config --global core.editor "nano -w"
+   .. code:: bash
+
+      $ git config --global core.editor "nano -w"
 
 Check your settings at any time with:
 
-.. code:: bash
+.. tab:: Bash
 
-   $ git config --list
+   .. code:: bash
+
+      $ git config --list
 
 Recap:
 ------
@@ -146,10 +159,8 @@ Recap:
 Resources
 ---------
 
--  GitHub Docs: https://docs.github.com/en/get-started
--  Atlassian:
-   https://www.atlassian.com/git/tutorials/setting-up-a-repository
+-  `GitHub Docs <https://docs.github.com/en/get-started>`__
+-  `Atlassian <https://www.atlassian.com/git/tutorials/setting-up-a-repository>`__
 
-This workshop has been adapted from `the Software
-Carpentry <https://software-carpentry.org/>`__.
+This workshop has been adapted from `the Software Carpentry <https://software-carpentry.org/>`__.
 

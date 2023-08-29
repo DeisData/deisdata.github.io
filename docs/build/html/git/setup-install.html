@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Quick Start to GitHub" href="quick-start.html" /><link rel="prev" title="Git Version Control" href="../git.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Quick start to Git and GitHub" href="quick-start.html" /><link rel="prev" title="Git Version Control" href="../git.html" />
 
     <link rel="shortcut icon" href="../_static/favicon-32x32.png"/><!-- Generated with Sphinx 4.5.0 and Furo 2023.05.20 -->
-        <title>Setup and Installation - DeisData</title>
+        <title>Setup and installation - DeisData</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
@@ -176,13 +176,13 @@
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../git.html">Git Version Control</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Setup and Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quick-start.html">Quick Start to GitHub</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Setup and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick-start.html">Quick start to Git and GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pushing.html">Pushing changes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fetch-merge.html">Fetch and merge from GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git-utilities.html">Git Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git-utilities.html">Git utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="forking.html">Forking in GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="glossary.html">Git Vocabulary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="glossary.html">Git Glossary</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../r.html">R</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of R</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -237,7 +237,7 @@
         </div>
         <article role="main">
           <section id="setup-and-installation">
-<h1>Setup and Installation<a class="headerlink" href="#setup-and-installation" title="Permalink to this headline">#</a></h1>
+<h1>Setup and installation<a class="headerlink" href="#setup-and-installation" title="Permalink to this headline">#</a></h1>
 <p>In this workshop, we are using <strong>Git</strong> and
 <a class="reference external" href="https://github.com/">GitHub.com</a>.</p>
 <p><strong>Git</strong> is a version control system that lets you track who made
@@ -282,9 +282,10 @@ Debian/Ubuntu run <code class="docutils literal notranslate"><span class="pre">s
 <h2>Configure git global settings<a class="headerlink" href="#configure-git-global-settings" title="Permalink to this headline">#</a></h2>
 <p>When we use Git on a new computer for the first time, we need to
 configure a few settings. Below are a few examples of configurations we
-will set as we get started with Git: - our name and email address - what
-our preferred text editor is - and that we want to use these settings
-globally (i.e., for every project).</p>
+will set as we get started with Git:
+- our name and email address
+- what our preferred text editor is
+- and that we want to use these settings globally (i.e., for every project).</p>
 <p><strong>Windows</strong>: Open “Git Bash”, or run the command <code class="docutils literal notranslate"><span class="pre">bash</span></code> in your
 Command Prompt.</p>
 <p><strong>MacOS</strong>: Open a bash shell in Terminal.</p>
@@ -300,8 +301,12 @@ will also add the flag <code class="docutils literal notranslate"><span class="p
 any of our future repositories.</p>
 <section id="name-configuration">
 <h3>Name configuration<a class="headerlink" href="#name-configuration" title="Permalink to this headline">#</a></h3>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;InigoMontoya&quot;</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="email-configuration">
@@ -313,11 +318,15 @@ any of our future repositories.</p>
 <li><p>Click on Emails in the left menu</p></li>
 <li><p>Select the check box “Keep my email addresses private” and use the
 private github.com-supplied email listed in the configuration below.
-You can highlight and copy it with Ctrl + C or cmd + C (Mac), and
-paste to the command line with Ctrl + V or cmd + V.</p></li>
+You can highlight and copy it with <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>+<kbd class="kbd docutils literal notranslate">C</kbd></kbd> or <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">cmd</kbd>+<kbd class="kbd docutils literal notranslate">C</kbd></kbd> (Mac), and
+paste to the command line with <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>+<kbd class="kbd docutils literal notranslate">V</kbd></kbd> or <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">cmd</kbd>+<kbd class="kbd docutils literal notranslate">V</kbd></kbd>.</p></li>
 </ul>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;1234username@users.noreply.github.com&quot;</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="line-heading-configuration">
@@ -328,12 +337,20 @@ different character(s) to represent the end of a line. Because Git uses
 these characters to compare files, it may cause unexpected issues when
 editing a file on different machines.</p>
 <p><strong>Windows</strong></p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>core.autocrlf<span class="w"> </span><span class="nb">true</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p><strong>MacOS and Linux</strong></p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>core.autocrlf<span class="w"> </span>input
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="editor-configuration">
@@ -341,12 +358,20 @@ editing a file on different machines.</p>
 <p>In these sessions, we will be using a basic editor called nano. There
 are other ways to configure for more popular editors
 <a class="reference external" href="http://swcarpentry.github.io/git-novice/02-setup/index.html">here</a>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>core.editor<span class="w"> </span><span class="s2">&quot;nano -w&quot;</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Check your settings at any time with:</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--list
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -359,12 +384,10 @@ are other ways to configure for more popular editors
 <section id="resources">
 <h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>GitHub Docs: <a class="reference external" href="https://docs.github.com/en/get-started">https://docs.github.com/en/get-started</a></p></li>
-<li><p>Atlassian:
-<a class="reference external" href="https://www.atlassian.com/git/tutorials/setting-up-a-repository">https://www.atlassian.com/git/tutorials/setting-up-a-repository</a></p></li>
+<li><p><a class="reference external" href="https://docs.github.com/en/get-started">GitHub Docs</a></p></li>
+<li><p><a class="reference external" href="https://www.atlassian.com/git/tutorials/setting-up-a-repository">Atlassian</a></p></li>
 </ul>
-<p>This workshop has been adapted from <a class="reference external" href="https://software-carpentry.org/">the Software
-Carpentry</a>.</p>
+<p>This workshop has been adapted from <a class="reference external" href="https://software-carpentry.org/">the Software Carpentry</a>.</p>
 </section>
 </section>
 
@@ -378,7 +401,7 @@ Carpentry</a>.</p>
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Quick Start to GitHub</div>
+                <div class="title">Quick start to Git and GitHub</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -423,7 +446,7 @@ Carpentry</a>.</p>
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Setup and Installation</a><ul>
+<li><a class="reference internal" href="#">Setup and installation</a><ul>
 <li><a class="reference internal" href="#register-for-a-github-account">Register for a GitHub Account</a></li>
 <li><a class="reference internal" href="#git-installation-instructions">Git Installation Instructions</a><ul>
 <li><a class="reference internal" href="#windows">Windows</a></li>
