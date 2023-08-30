@@ -25,15 +25,17 @@ Do you already have R and RStudio installed?
 Installing R
 ~~~~~~~~~~~~
 
-**Windows**: - Go to https://cloud.r-project.org/bin/windows/base/ -
-Click the “Download R 4.3.1 for Windows” link. - When the file finishes
-downloading, double-click to install. You should be able to click “Next”
-to all dialogs to finish the installation.
+**Windows**: 
 
-**Mac**: - Go to https://cloud.r-project.org/bin/macosx/. - Click the
-link “R-4.3.1.pkg”. - When the file finishes downloading, double-click
-to install. You should be able to click “Next” to all dialogs to finish
-the installation.
+- Go to https://cloud.r-project.org/bin/windows/base/ 
+- Click the “Download R X.X.X for Windows” link. The X's will be replaced with the numbers for most recent version of R. 
+- When the file finishes downloading, double-click to install. You should be able to click “Next” to all dialogs to finish the installation.
+
+**Mac**: 
+
+- Go to https://cloud.r-project.org/bin/macosx/. 
+- Click the link “R-X.X.X.pkg” (again, with the X's standing in the most recent version).
+- When the file finishes downloading, double-click to install. You should be able to click “Next” to all dialogs to finish the installation.
 
 Installing RStudio
 ^^^^^^^^^^^^^^^^^^
@@ -42,8 +44,8 @@ Installing RStudio
 -  Under “Installers for Supported Platforms” select the appropriate
    installer for your operating system:
 
-   -  Windows: “RSTUDIO-2023.06.1-524.EXE”
-   -  Mac: “RSTUDIO-2023.06.1-524.DMG”
+   -  Windows: “RSTUDIO-20xx.xx.x-xxx.EXE”
+   -  Mac: “RSTUDIO-20xx.xx.x-xxx.DMG”
 
 -  When the file finishes downloading, double-click to install. You
    should be able to click “Next” to all dialogs to finish the
@@ -66,8 +68,8 @@ Verify R version
 -  If RStudio is already open and you’re deep in a session, type
    R.version.string to print out the R version.
 
-Do you have R version 4.3.1 (“Beagle Scouts”) installed?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Do you have the most recent version of R installed?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **No**: follow the instructions for “Updating R”.
 
@@ -81,15 +83,15 @@ Updating R/RStudio
 To update R on Windows, try using the package installr (only for
 Windows).
 
-Install and load installr
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Install and load ``installr``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  install.packages(“installr”) and library(installr)
--  Call updateR() function. This will start the updating process of your
-   R installation by: “finding the latest R version, downloading it,
+-  ``install.packages(“installr”)`` and ``library(installr)``
+-  Call ``updateR()`` function. This will start the updating process of your
+   R installation by finding the latest R version, downloading it,
    running the installer, deleting the installation file, copy and
-   updating old packages to the new R installation.”
--  From within RStudio, go to Help > Check for Updates to install newer
+   updating old packages to the new R installation.
+-  From within RStudio, go to **Help** > **Check for Updates** to install newer
    version of RStudio (if available, optional).
 
 You are ready for Data Science Essentials for R!
@@ -100,23 +102,24 @@ On Mac, you can simply download and install the newest version of R.
 When you restart RStudio, it will use the updated version of R.
 
 -  Go to https://cloud.r-project.org/bin/macosx/
--  Click the link “R-4.3.1.pkg”
+-  Click the link “R-x.x.x.pkg”
 -  When the file finishes downloading, double-click to install. You
-   should be able to click “Next” to all dialogs to finish the
+   should be able to click **Next** to all dialogs to finish the
    installation.
--  From within RStudio, go to Help > Check for Updates to install newer
+-  From within RStudio, go to **Help** > **Check for Updates** to install newer
    version of RStudio (if available, optional).
 
 Data set and code
 -----------------
 
-1. Intro to R and Tidyverse [ code and data ]
+- Intro to R and Tidyverse [ `code and data <https://drive.google.com/drive/folders/1e-8Qs_AZBH-QcQqmmCloT9ghZesV55z6>`__ ]
 
 .. toctree::
+   :hidden:
    :maxdepth: 2
    :caption: Contents:
 
    r/quick-start
    r/data-wrangling
    r/data-visualization
-   r/text-mining
+   Text mining <r/text-mining>

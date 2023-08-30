@@ -176,20 +176,20 @@
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../git.html">Git Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../git/setup-install.html">Setup and Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../git/quick-start.html">Quick Start to GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/setup-install.html">Setup and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/quick-start.html">Quick start to Git and GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/pushing.html">Pushing changes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/fetch-merge.html">Fetch and merge from GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../git/git-utilities.html">Git Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/git-utilities.html">Git utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/forking.html">Forking in GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../git/glossary.html">Git Vocabulary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/glossary.html">Git Glossary</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../r.html">R</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of R</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Intro to R and the Tidyverse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data-wrangling.html">Data wrangling with the Tidyverse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data-visualization.html">ggplot2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="text-mining.html">Text Mining with R</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text-mining.html">Text mining</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../shell.html">Unix Shell</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Unix Shell</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -238,8 +238,7 @@
         <article role="main">
           <section id="intro-to-r-and-the-tidyverse">
 <h1>Intro to R and the Tidyverse<a class="headerlink" href="#intro-to-r-and-the-tidyverse" title="Permalink to this headline">#</a></h1>
-<p><a class="reference external" href="https://drive.google.com/drive/folders/1e-8Qs_AZBH-QcQqmmCloT9ghZesV55z6">Workshop
-materials</a></p>
+<p><a class="reference external" href="https://drive.google.com/drive/folders/1e-8Qs_AZBH-QcQqmmCloT9ghZesV55z6">Workshop materials</a></p>
 <section id="what-is-r">
 <h2>What is R?<a class="headerlink" href="#what-is-r" title="Permalink to this headline">#</a></h2>
 <p>R is a programming language designed for statistical computing. It is
@@ -251,15 +250,19 @@ not just a statistics package: it is a language.</p>
 cleaner and simpler than the default R GUI (graphical user interface).
 It has many useful features, like syntax highlighting and tab for
 suggested code auto-completion.</p>
-<p>Additionally, it has a 4-pane workspace: - Top left window: the R code
-editor - Bottom left: interactive console - Top right window: shows your
-workspace, including a list of objects currently in memory, history tab
-- Bottom right: shows plots, external packages available on your system,
-files in your working directory, and help files</p>
-<p><strong>Useful RStudio shortcuts:</strong> - tab: auto-complete function - ctrl + ↑
-or Cmd + ↑ (auto-complete tool that works only in the interactive
-console. - ctrl + enter or Cmd + return (executes the selected lines of
-code)</p>
+<p>Additionally, it has a 4-pane workspace:</p>
+<ul class="simple">
+<li><p>Top left window: the R code editor</p></li>
+<li><p>Bottom left: interactive console</p></li>
+<li><p>Top right window: shows your workspace, including a list of objects currently in memory, history tab</p></li>
+<li><p>Bottom right: shows plots, external packages available on your system, files in your working directory, and help files</p></li>
+</ul>
+<p><strong>Useful RStudio shortcuts:</strong></p>
+<ul class="simple">
+<li><p><kbd class="kbd docutils literal notranslate">tab</kbd>: auto-complete function</p></li>
+<li><p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>+<kbd class="kbd docutils literal notranslate">↑</kbd></kbd> or <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">cmd</kbd>+<kbd class="kbd docutils literal notranslate">↑</kbd></kbd> (auto-complete tool that works only in the interactive console)</p></li>
+<li><p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>+<kbd class="kbd docutils literal notranslate">enter</kbd></kbd> or <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">cmd</kbd>+<kbd class="kbd docutils literal notranslate">return</kbd></kbd> (executes the selected lines of code)</p></li>
+</ul>
 </section>
 <section id="things-to-keep-in-mind">
 <h2>Things to keep in mind<a class="headerlink" href="#things-to-keep-in-mind" title="Permalink to this headline">#</a></h2>
@@ -267,7 +270,7 @@ code)</p>
 <li><p>R is case sensitive, so be careful while typing.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">#</span></code> is used for comments</p>
 <ul>
-<li><p>Keyboard Shortcuts: Ctrl+Shift+C (Windows) Cmd+Shift+C (MacOS).</p></li>
+<li><p>Keyboard Shortcuts: <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>+<kbd class="kbd docutils literal notranslate">Shift</kbd>+<kbd class="kbd docutils literal notranslate">C</kbd></kbd> (Windows) <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Cmd</kbd>+<kbd class="kbd docutils literal notranslate">Shift</kbd>+<kbd class="kbd docutils literal notranslate">C</kbd></kbd> (MacOS).</p></li>
 </ul>
 </li>
 <li><p>R does not care about spaces between commands or arguments.</p></li>
@@ -280,55 +283,83 @@ code)</p>
 <h2>Working directory<a class="headerlink" href="#working-directory" title="Permalink to this headline">#</a></h2>
 <p>Your <strong>working directory</strong> is the folder on your computer in which you
 are working. We can find this with the <code class="docutils literal notranslate"><span class="pre">getwd()</span></code> command.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Current working directory</span>
 <span class="nf">getwd</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span><span class="n">User</span><span class="o">/</span><span class="n">fordfishman</span><span class="o">/</span>
+</div>
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[1] /User/fordfishman/
 </pre></div>
 </div>
+</div>
+</div>
 <p>We can also set our working directory with <code class="docutils literal notranslate"><span class="pre">setwd(PATH)</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># an example of the path to your workshop materials</span>
 <span class="c1"># USE YOUR OWN PATH</span>
 <span class="nf">setwd</span><span class="p">(</span><span class="s">&quot;Documents/Workshops/Intro to R and the Tidyverse 20220928/&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>To see the files in your working directory, you can use
 <code class="docutils literal notranslate"><span class="pre">list.files()</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">list.files</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="s2">&quot;IntroR_Tidyverse_code_along.R&quot;</span> <span class="s2">&quot;IntroR_Tidyverse_code.R&quot;</span>       <span class="s2">&quot;penguins.csv&quot;</span>
+</div>
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[1] &quot;IntroR_Tidyverse_code_along.R&quot; &quot;IntroR_Tidyverse_code.R&quot;       &quot;penguins.csv&quot;
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="creating-objects">
 <h2>Creating Objects<a class="headerlink" href="#creating-objects" title="Permalink to this headline">#</a></h2>
 <p>However, it would be more useful if we assigned values to objects. We
 create an object by giving it a name followed by the assignment <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code>
-operator. You can make <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> with the following shortcuts: Alt + -
-(Windows) or Option + - (Mac).</p>
+operator. You can make <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> with the following shortcuts: <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>+<kbd class="kbd docutils literal notranslate">-</kbd></kbd>
+(Windows) or <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Option</kbd>+<kbd class="kbd docutils literal notranslate">-</kbd></kbd> (Mac).</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">weight_kg</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">60</span>
 <span class="n">weight_lb</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">2.2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">weight_kg</span>
 <span class="n">weight_lb</span><span class="w"> </span><span class="c1"># Print the value of weight_lb</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mi">132</span>
+</div>
+<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[1] 132
 </pre></div>
+</div>
+</div>
 </div>
 <p>We can also reassign our variables to new values, but be careful, as
 there is no warning given for this.</p>
 <p>You can also remove a variable from your environment with the <code class="docutils literal notranslate"><span class="pre">rm()</span></code>
 command.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">weight_kg</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="c1"># Overwrites your object. Be careful! no warning is given</span>
 
 <span class="nf">rm</span><span class="p">(</span><span class="n">weight_lb</span><span class="p">)</span><span class="w"> </span><span class="c1"># Deletes that object</span>
 </pre></div>
 </div>
+</div>
+</div>
 <section id="storing-many-numbers-as-a-vector">
 <h3>Storing many numbers as a vector<a class="headerlink" href="#storing-many-numbers-as-a-vector" title="Permalink to this headline">#</a></h3>
 <p>We can use <code class="docutils literal notranslate"><span class="pre">c()</span></code> to combine or concatenate values together into a
 vector.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">Myvector1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="c1"># c for combine/concatenate</span>
 <span class="n">Myvector2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">7</span><span class="p">)</span>
 <span class="n">Myvector3</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">seq </span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="o">=</span><span class="m">0.5</span><span class="p">)</span>
@@ -338,14 +369,20 @@ vector.</p>
 <span class="n">Myvector3</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mi">1</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span>
+</div>
+<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[1] 1 3 4 5
 
-<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span>
+[1] 1 2 3 4 5 6 7
 
-<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mf">1.0</span> <span class="mf">1.5</span> <span class="mf">2.0</span> <span class="mf">2.5</span> <span class="mf">3.0</span> <span class="mf">3.5</span> <span class="mf">4.0</span> <span class="mf">4.5</span> <span class="mf">5.0</span> <span class="mf">5.5</span> <span class="mf">6.0</span>
+[1] 1.0 1.5 2.0 2.5 3.0 3.5 4.0 4.5 5.0 5.5 6.0
 </pre></div>
 </div>
+</div>
+</div>
 <p>You can also store characters and character vectors.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">greeting</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;hello&quot;</span>
 <span class="n">greeting</span>
 
@@ -353,42 +390,60 @@ vector.</p>
 <span class="n">days</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="s2">&quot;hello&quot;</span>
+</div>
+<input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[1] &quot;hello&quot;
 
-<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="s2">&quot;Sunday&quot;</span>    <span class="s2">&quot;Monday&quot;</span>    <span class="s2">&quot;Tuesday&quot;</span>   <span class="s2">&quot;Wednesday&quot;</span> <span class="s2">&quot;Thursday&quot;</span>  <span class="s2">&quot;Friday&quot;</span>    <span class="s2">&quot;Saturday&quot;</span>
+[1] &quot;Sunday&quot;    &quot;Monday&quot;    &quot;Tuesday&quot;   &quot;Wednesday&quot; &quot;Thursday&quot;  &quot;Friday&quot;    &quot;Saturday&quot;
 </pre></div>
+</div>
+</div>
 </div>
 <p>To extract individual elements of a vector, we use an <strong>index</strong> in
 square brackets. For instance, to get the third element of <code class="docutils literal notranslate"><span class="pre">days</span></code>, we
 can use <code class="docutils literal notranslate"><span class="pre">days[3]</span></code>. Unlike other programming languages, R indexes from
 1, not 0. Additionally, -1 will not get the last value: it excludes that
 item.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">days</span><span class="p">[</span><span class="m">3</span><span class="p">]</span>
 <span class="n">days</span><span class="p">[</span><span class="m">-1</span><span class="p">]</span>
 <span class="n">days</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">3</span><span class="p">)]</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="s2">&quot;Tuesday&quot;</span>
+</div>
+<input class="tab-input" id="tab-set--7-input--2" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[1] &quot;Tuesday&quot;
 
-<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="s2">&quot;Monday&quot;</span>    <span class="s2">&quot;Tuesday&quot;</span>   <span class="s2">&quot;Wednesday&quot;</span> <span class="s2">&quot;Thursday&quot;</span>  <span class="s2">&quot;Friday&quot;</span>    <span class="s2">&quot;Saturday&quot;</span>
+[1] &quot;Monday&quot;    &quot;Tuesday&quot;   &quot;Wednesday&quot; &quot;Thursday&quot;  &quot;Friday&quot;    &quot;Saturday&quot;
 
-<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="s2">&quot;Sunday&quot;</span>  <span class="s2">&quot;Tuesday&quot;</span>
+[1] &quot;Sunday&quot;  &quot;Tuesday&quot;
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="exercise-1">
 <h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
 <p>Extract Tuesday, Wednesday and Thursday from the <code class="docutils literal notranslate"><span class="pre">days</span></code> vector.</p>
-<details><summary><p>Solution</p>
-</summary><div class="docutils container">
+<details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
 <p>Note: these two solutions are equivalent.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">days</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">)]</span>
 
 <span class="n">days</span><span class="p">[</span><span class="m">3</span><span class="o">:</span><span class="m">5</span><span class="p">]</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="s2">&quot;Tuesday&quot;</span>   <span class="s2">&quot;Wednesday&quot;</span> <span class="s2">&quot;Thursday&quot;</span>
+</div>
+<input class="tab-input" id="tab-set--8-input--2" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[1] &quot;Tuesday&quot;   &quot;Wednesday&quot; &quot;Thursday&quot;
+
+[1] &quot;Tuesday&quot;   &quot;Wednesday&quot; &quot;Thursday&quot;
 </pre></div>
+</div>
+</div>
 </div>
 </div>
 </details></section>
@@ -396,17 +451,25 @@ item.</p>
 <section id="replacing-adding-new-elements">
 <h2>Replacing/adding new elements<a class="headerlink" href="#replacing-adding-new-elements" title="Permalink to this headline">#</a></h2>
 <p>We can also use indexing to replace or add new elements to a vector.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">greeting</span><span class="p">[</span><span class="m">2</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;How are you?&quot;</span>
 <span class="n">greeting</span>
 </pre></div>
 </div>
+</div>
+</div>
 <section id="exercise-2">
 <h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
 <p>Replace the 3rd element in <code class="docutils literal notranslate"><span class="pre">Myvector2</span></code> with a 10.</p>
-<details><summary><p>Solution</p>
-</summary><div class="docutils container">
+<details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">myvector2</span><span class="p">[</span><span class="m">3</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">10</span>
 </pre></div>
+</div>
+</div>
 </div>
 </div>
 </details></section>
@@ -415,38 +478,52 @@ item.</p>
 <h2>Data types<a class="headerlink" href="#data-types" title="Permalink to this headline">#</a></h2>
 <p>When we use <code class="docutils literal notranslate"><span class="pre">c()</span></code>, R assumes that everything in your vector is of the
 same data type (all # or all characters).</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">Myvector4</span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="s">&quot;hello&quot;</span><span class="p">)</span>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">Myvector4</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="s">&quot;hello&quot;</span><span class="p">)</span>
 <span class="n">Myvector4</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="s2">&quot;1&quot;</span>     <span class="s2">&quot;2&quot;</span>     <span class="s2">&quot;hello&quot;</span>
+</div>
+<input class="tab-input" id="tab-set--11-input--2" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[1] &quot;1&quot;     &quot;2&quot;     &quot;hello&quot;
 </pre></div>
+</div>
+</div>
 </div>
 <p>If we have different types of data we need to use the <code class="docutils literal notranslate"><span class="pre">list()</span></code>
 function.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">Mylist</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
 
 <span class="n">Mylist</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="mi">1</span><span class="p">]]</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mi">1</span>
+</div>
+<input class="tab-input" id="tab-set--12-input--2" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[[1]]
+[1] 1
 
-<span class="p">[[</span><span class="mi">2</span><span class="p">]]</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mi">3</span>
+[[2]]
+[1] 3
 
-<span class="p">[[</span><span class="mi">3</span><span class="p">]]</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="s2">&quot;hello&quot;</span>
+[[3]]
+[1] &quot;hello&quot;
 
-<span class="p">[[</span><span class="mi">4</span><span class="p">]]</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">TRUE</span>
+[[4]]
+[1] TRUE
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="functions">
 <h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h2>
 <p>A function is a piece of code to carry out a specified task. R has many
 built-in functions.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">sum</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">5</span><span class="p">)</span>
 <span class="nf">mean</span><span class="p">(</span><span class="n">Myvector1</span><span class="p">)</span>
 <span class="nf">length</span><span class="p">(</span><span class="n">Myvector1</span><span class="p">)</span>
@@ -454,22 +531,30 @@ built-in functions.</p>
 <span class="nf">rep</span><span class="p">(</span><span class="s">&quot;hi&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">times</span><span class="o">=</span><span class="m">3</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mi">9</span>
+</div>
+<input class="tab-input" id="tab-set--13-input--2" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[1] 9
 
-<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mf">3.25</span>
+[1] 3.25
 
-<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mi">4</span>
+[1] 4
 
-<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mi">5</span>
+[1] 5
 
-<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="s2">&quot;hi&quot;</span> <span class="s2">&quot;hi&quot;</span> <span class="s2">&quot;hi&quot;</span>
+[1] &quot;hi&quot; &quot;hi&quot; &quot;hi&quot;
 </pre></div>
+</div>
+</div>
 </div>
 <p>If we want to learn more about a function we can ask for help with
 <code class="docutils literal notranslate"><span class="pre">help()</span></code> or <code class="docutils literal notranslate"><span class="pre">?</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">help</span><span class="p">(</span><span class="n">mean</span><span class="p">)</span>
 <span class="o">?</span><span class="n">rep</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="packages">
@@ -492,13 +577,21 @@ and each column is a variable.</p>
 <p>To install a package we use the function
 <code class="docutils literal notranslate"><span class="pre">install.packages(&quot;package</span> <span class="pre">name&quot;)</span></code>. We only need to install a package
 once.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio"><label class="tab-label" for="tab-set--15-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;tidyverse&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>If we want to use the functions in a package, we need to load it in R
 using the <code class="docutils literal notranslate"><span class="pre">library()</span></code> function.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--1">Output</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="importing-data">
@@ -513,42 +606,56 @@ Antarctica, collected by Dr. Kristen Gorman with Palmer Station LTER.</p>
 <section id="exploring-your-data">
 <h2>Exploring your data<a class="headerlink" href="#exploring-your-data" title="Permalink to this headline">#</a></h2>
 <p>We can use the <code class="docutils literal notranslate"><span class="pre">View()</span></code> function to look at our data frame.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">View</span><span class="p">(</span><span class="n">penguins</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>A very important function is <code class="docutils literal notranslate"><span class="pre">str()</span></code>, which lets you can view the
 structure of data.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--18-input--1" name="tab-set--18" type="radio"><label class="tab-label" for="tab-set--18-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">str</span><span class="p">(</span><span class="n">penguins</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<input class="tab-input" id="tab-set--18-input--2" name="tab-set--18" type="radio"><label class="tab-label" for="tab-set--18-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>spec_tbl_df [344 × 8] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
- $ species          : chr [1:344] &quot;Adelie&quot; &quot;Adelie&quot; &quot;Adelie&quot; &quot;Adelie&quot; ...
- $ island           : chr [1:344] &quot;Torgersen&quot; &quot;Torgersen&quot; &quot;Torgersen&quot; &quot;Torgersen&quot; ...
- $ bill_length_mm   : num [1:344] 39.1 39.5 40.3 NA 36.7 39.3 38.9 39.2 34.1 42 ...
- $ bill_depth_mm    : num [1:344] 18.7 17.4 18 NA 19.3 20.6 17.8 19.6 18.1 20.2 ...
- $ flipper_length_mm: num [1:344] 181 186 195 NA 193 190 181 195 193 190 ...
- $ body_mass_g      : num [1:344] 3750 3800 3250 NA 3450 ...
- $ sex              : chr [1:344] &quot;male&quot; &quot;female&quot; &quot;female&quot; NA ...
- $ year             : num [1:344] 2007 2007 2007 2007 2007 ...
- - attr(*, &quot;spec&quot;)=
-  .. cols(
-  ..   species = col_character(),
-  ..   island = col_character(),
-  ..   bill_length_mm = col_double(),
-  ..   bill_depth_mm = col_double(),
-  ..   flipper_length_mm = col_double(),
-  ..   body_mass_g = col_double(),
-  ..   sex = col_character(),
-  ..   year = col_double()
-  .. )
- - attr(*, &quot;problems&quot;)=&lt;externalptr&gt;
+$ species          : chr [1:344] &quot;Adelie&quot; &quot;Adelie&quot; &quot;Adelie&quot; &quot;Adelie&quot; ...
+$ island           : chr [1:344] &quot;Torgersen&quot; &quot;Torgersen&quot; &quot;Torgersen&quot; &quot;Torgersen&quot; ...
+$ bill_length_mm   : num [1:344] 39.1 39.5 40.3 NA 36.7 39.3 38.9 39.2 34.1 42 ...
+$ bill_depth_mm    : num [1:344] 18.7 17.4 18 NA 19.3 20.6 17.8 19.6 18.1 20.2 ...
+$ flipper_length_mm: num [1:344] 181 186 195 NA 193 190 181 195 193 190 ...
+$ body_mass_g      : num [1:344] 3750 3800 3250 NA 3450 ...
+$ sex              : chr [1:344] &quot;male&quot; &quot;female&quot; &quot;female&quot; NA ...
+$ year             : num [1:344] 2007 2007 2007 2007 2007 ...
+- attr(*, &quot;spec&quot;)=
+.. cols(
+..   species = col_character(),
+..   island = col_character(),
+..   bill_length_mm = col_double(),
+..   bill_depth_mm = col_double(),
+..   flipper_length_mm = col_double(),
+..   body_mass_g = col_double(),
+..   sex = col_character(),
+..   year = col_double()
+.. )
+- attr(*, &quot;problems&quot;)=&lt;externalptr&gt;
 </pre></div>
 </div>
+</div>
+</div>
 <p>We can get the same information using <code class="docutils literal notranslate"><span class="pre">glimpse()</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--19-input--1" name="tab-set--19" type="radio"><label class="tab-label" for="tab-set--19-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">glimpse</span><span class="p">(</span><span class="n">penguins</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Rows: 344
+</div>
+<input class="tab-input" id="tab-set--19-input--2" name="tab-set--19" type="radio"><label class="tab-label" for="tab-set--19-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Rows: 344
 Columns: 8
 $ species           &lt;chr&gt; &quot;Adelie&quot;, &quot;Adelie&quot;, &quot;Adelie&quot;, &quot;Adelie&quot;, &quot;Adelie&quot;, &quot;Adelie&quot;, &quot;Adelie&quot;, &quot;Adelie&quot;, &quot;Adelie&quot;, &quot;Adelie…
 $ island            &lt;chr&gt; &quot;Torgersen&quot;, &quot;Torgersen&quot;, &quot;Torgersen&quot;, &quot;Torgersen&quot;, &quot;Torgersen&quot;, &quot;Torgersen&quot;, &quot;Torgersen&quot;, &quot;Torge…
@@ -560,204 +667,278 @@ $ sex               &lt;chr&gt; &quot;male&quot;, &quot;female&quot;, &quot;fema
 $ year              &lt;dbl&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2…
 </pre></div>
 </div>
+</div>
+</div>
 <p>We can use some built-in functions in R to summarize the data, such as
 showing column names and the dimensions of the data frame.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--20-input--1" name="tab-set--20" type="radio"><label class="tab-label" for="tab-set--20-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">class</span><span class="p">(</span><span class="n">penguins</span><span class="p">)</span><span class="w"> </span><span class="c1"># check to see that test is what we expect it to be</span>
 <span class="nf">dim</span><span class="p">(</span><span class="n">penguins</span><span class="p">)</span><span class="w"> </span><span class="c1"># how many rows and columns?</span>
 <span class="nf">names</span><span class="p">(</span><span class="n">penguins</span><span class="p">)</span><span class="w"> </span><span class="c1"># names of variables</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="s2">&quot;spec_tbl_df&quot;</span> <span class="s2">&quot;tbl_df&quot;</span>      <span class="s2">&quot;tbl&quot;</span>         <span class="s2">&quot;data.frame&quot;</span>
+</div>
+<input class="tab-input" id="tab-set--20-input--2" name="tab-set--20" type="radio"><label class="tab-label" for="tab-set--20-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[1] &quot;spec_tbl_df&quot; &quot;tbl_df&quot;      &quot;tbl&quot;         &quot;data.frame&quot;
 
-<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mi">344</span>   <span class="mi">8</span>
+[1] 344   8
 
-<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="s2">&quot;species&quot;</span>           <span class="s2">&quot;island&quot;</span>            <span class="s2">&quot;bill_length_mm&quot;</span>    <span class="s2">&quot;bill_depth_mm&quot;</span>     <span class="s2">&quot;flipper_length_mm&quot;</span> <span class="s2">&quot;body_mass_g&quot;</span>
-<span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="s2">&quot;sex&quot;</span>               <span class="s2">&quot;year&quot;</span>
+[1] &quot;species&quot;           &quot;island&quot;            &quot;bill_length_mm&quot;    &quot;bill_depth_mm&quot;     &quot;flipper_length_mm&quot; &quot;body_mass_g&quot;
+[7] &quot;sex&quot;               &quot;year&quot;
 </pre></div>
 </div>
+</div>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">head()</span></code> displays the first 6 rows of the data frame.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--21-input--1" name="tab-set--21" type="radio"><label class="tab-label" for="tab-set--21-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">head</span><span class="p">(</span><span class="n">penguins</span><span class="p">)</span><span class="w"> </span><span class="c1"># first 6 rows</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># A tibble: 6 × 8</span>
-  <span class="n">species</span> <span class="n">island</span>    <span class="n">bill_length_mm</span> <span class="n">bill_depth_mm</span> <span class="n">flipper_length_mm</span> <span class="n">body_mass_g</span> <span class="n">sex</span>     <span class="n">year</span>
-  <span class="o">&lt;</span><span class="nb">chr</span><span class="o">&gt;</span>   <span class="o">&lt;</span><span class="nb">chr</span><span class="o">&gt;</span>              <span class="o">&lt;</span><span class="n">dbl</span><span class="o">&gt;</span>         <span class="o">&lt;</span><span class="n">dbl</span><span class="o">&gt;</span>             <span class="o">&lt;</span><span class="n">dbl</span><span class="o">&gt;</span>       <span class="o">&lt;</span><span class="n">dbl</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nb">chr</span><span class="o">&gt;</span>  <span class="o">&lt;</span><span class="n">dbl</span><span class="o">&gt;</span>
-<span class="mi">1</span> <span class="n">Adelie</span>  <span class="n">Torgersen</span>           <span class="mf">39.1</span>          <span class="mf">18.7</span>               <span class="mi">181</span>        <span class="mi">3750</span> <span class="n">male</span>    <span class="mi">2007</span>
-<span class="mi">2</span> <span class="n">Adelie</span>  <span class="n">Torgersen</span>           <span class="mf">39.5</span>          <span class="mf">17.4</span>               <span class="mi">186</span>        <span class="mi">3800</span> <span class="n">female</span>  <span class="mi">2007</span>
-<span class="mi">3</span> <span class="n">Adelie</span>  <span class="n">Torgersen</span>           <span class="mf">40.3</span>          <span class="mi">18</span>                 <span class="mi">195</span>        <span class="mi">3250</span> <span class="n">female</span>  <span class="mi">2007</span>
-<span class="mi">4</span> <span class="n">Adelie</span>  <span class="n">Torgersen</span>           <span class="n">NA</span>            <span class="n">NA</span>                  <span class="n">NA</span>          <span class="n">NA</span> <span class="n">NA</span>      <span class="mi">2007</span>
-<span class="mi">5</span> <span class="n">Adelie</span>  <span class="n">Torgersen</span>           <span class="mf">36.7</span>          <span class="mf">19.3</span>               <span class="mi">193</span>        <span class="mi">3450</span> <span class="n">female</span>  <span class="mi">2007</span>
-<span class="mi">6</span> <span class="n">Adelie</span>  <span class="n">Torgersen</span>           <span class="mf">39.3</span>          <span class="mf">20.6</span>               <span class="mi">190</span>        <span class="mi">3650</span> <span class="n">male</span>    <span class="mi">2007</span>
+</div>
+<input class="tab-input" id="tab-set--21-input--2" name="tab-set--21" type="radio"><label class="tab-label" for="tab-set--21-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># A tibble: 6 × 8
+species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex     year
+&lt;chr&gt;   &lt;chr&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt;
+1 Adelie  Torgersen           39.1          18.7               181        3750 male    2007
+2 Adelie  Torgersen           39.5          17.4               186        3800 female  2007
+3 Adelie  Torgersen           40.3          18                 195        3250 female  2007
+4 Adelie  Torgersen           NA            NA                  NA          NA NA      2007
+5 Adelie  Torgersen           36.7          19.3               193        3450 female  2007
+6 Adelie  Torgersen           39.3          20.6               190        3650 male    2007
 </pre></div>
 </div>
+</div>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">tail()</span></code> similarly shows the last 6 rows.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--22-input--1" name="tab-set--22" type="radio"><label class="tab-label" for="tab-set--22-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">tail</span><span class="p">(</span><span class="n">penguins</span><span class="p">)</span><span class="w"> </span><span class="c1"># last 6 rows</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># A tibble: 6 × 8</span>
-  <span class="n">species</span>   <span class="n">island</span> <span class="n">bill_length_mm</span> <span class="n">bill_depth_mm</span> <span class="n">flipper_length_mm</span> <span class="n">body_mass_g</span> <span class="n">sex</span>     <span class="n">year</span>
-  <span class="o">&lt;</span><span class="nb">chr</span><span class="o">&gt;</span>     <span class="o">&lt;</span><span class="nb">chr</span><span class="o">&gt;</span>           <span class="o">&lt;</span><span class="n">dbl</span><span class="o">&gt;</span>         <span class="o">&lt;</span><span class="n">dbl</span><span class="o">&gt;</span>             <span class="o">&lt;</span><span class="n">dbl</span><span class="o">&gt;</span>       <span class="o">&lt;</span><span class="n">dbl</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="nb">chr</span><span class="o">&gt;</span>  <span class="o">&lt;</span><span class="n">dbl</span><span class="o">&gt;</span>
-<span class="mi">1</span> <span class="n">Chinstrap</span> <span class="n">Dream</span>            <span class="mf">45.7</span>          <span class="mi">17</span>                 <span class="mi">195</span>        <span class="mi">3650</span> <span class="n">female</span>  <span class="mi">2009</span>
-<span class="mi">2</span> <span class="n">Chinstrap</span> <span class="n">Dream</span>            <span class="mf">55.8</span>          <span class="mf">19.8</span>               <span class="mi">207</span>        <span class="mi">4000</span> <span class="n">male</span>    <span class="mi">2009</span>
-<span class="mi">3</span> <span class="n">Chinstrap</span> <span class="n">Dream</span>            <span class="mf">43.5</span>          <span class="mf">18.1</span>               <span class="mi">202</span>        <span class="mi">3400</span> <span class="n">female</span>  <span class="mi">2009</span>
-<span class="mi">4</span> <span class="n">Chinstrap</span> <span class="n">Dream</span>            <span class="mf">49.6</span>          <span class="mf">18.2</span>               <span class="mi">193</span>        <span class="mi">3775</span> <span class="n">male</span>    <span class="mi">2009</span>
-<span class="mi">5</span> <span class="n">Chinstrap</span> <span class="n">Dream</span>            <span class="mf">50.8</span>          <span class="mi">19</span>                 <span class="mi">210</span>        <span class="mi">4100</span> <span class="n">male</span>    <span class="mi">2009</span>
-<span class="mi">6</span> <span class="n">Chinstrap</span> <span class="n">Dream</span>            <span class="mf">50.2</span>          <span class="mf">18.7</span>               <span class="mi">198</span>        <span class="mi">3775</span> <span class="n">female</span>  <span class="mi">2009</span>
+</div>
+<input class="tab-input" id="tab-set--22-input--2" name="tab-set--22" type="radio"><label class="tab-label" for="tab-set--22-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># A tibble: 6 × 8
+species   island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex     year
+&lt;chr&gt;     &lt;chr&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt;
+1 Chinstrap Dream            45.7          17                 195        3650 female  2009
+2 Chinstrap Dream            55.8          19.8               207        4000 male    2009
+3 Chinstrap Dream            43.5          18.1               202        3400 female  2009
+4 Chinstrap Dream            49.6          18.2               193        3775 male    2009
+5 Chinstrap Dream            50.8          19                 210        4100 male    2009
+6 Chinstrap Dream            50.2          18.7               198        3775 female  2009
 </pre></div>
+</div>
+</div>
 </div>
 <p>We can use <code class="docutils literal notranslate"><span class="pre">summary()</span></code> to display some descriptive statistics, like
 minimum and maximum values, means, and medians.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--23-input--1" name="tab-set--23" type="radio"><label class="tab-label" for="tab-set--23-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">penguins</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">species</span>             <span class="n">island</span>          <span class="n">bill_length_mm</span>  <span class="n">bill_depth_mm</span>   <span class="n">flipper_length_mm</span>  <span class="n">body_mass_g</span>       <span class="n">sex</span>
-<span class="n">Length</span><span class="p">:</span><span class="mi">344</span>         <span class="n">Length</span><span class="p">:</span><span class="mi">344</span>         <span class="n">Min</span><span class="o">.</span>   <span class="p">:</span><span class="mf">32.10</span>   <span class="n">Min</span><span class="o">.</span>   <span class="p">:</span><span class="mf">13.10</span>   <span class="n">Min</span><span class="o">.</span>   <span class="p">:</span><span class="mf">172.0</span>     <span class="n">Min</span><span class="o">.</span>   <span class="p">:</span><span class="mi">2700</span>   <span class="n">Length</span><span class="p">:</span><span class="mi">344</span>
-<span class="n">Class</span> <span class="p">:</span><span class="n">character</span>   <span class="n">Class</span> <span class="p">:</span><span class="n">character</span>   <span class="mi">1</span><span class="n">st</span> <span class="n">Qu</span><span class="o">.</span><span class="p">:</span><span class="mf">39.23</span>   <span class="mi">1</span><span class="n">st</span> <span class="n">Qu</span><span class="o">.</span><span class="p">:</span><span class="mf">15.60</span>   <span class="mi">1</span><span class="n">st</span> <span class="n">Qu</span><span class="o">.</span><span class="p">:</span><span class="mf">190.0</span>     <span class="mi">1</span><span class="n">st</span> <span class="n">Qu</span><span class="o">.</span><span class="p">:</span><span class="mi">3550</span>   <span class="n">Class</span> <span class="p">:</span><span class="n">character</span>
-<span class="n">Mode</span>  <span class="p">:</span><span class="n">character</span>   <span class="n">Mode</span>  <span class="p">:</span><span class="n">character</span>   <span class="n">Median</span> <span class="p">:</span><span class="mf">44.45</span>   <span class="n">Median</span> <span class="p">:</span><span class="mf">17.30</span>   <span class="n">Median</span> <span class="p">:</span><span class="mf">197.0</span>     <span class="n">Median</span> <span class="p">:</span><span class="mi">4050</span>   <span class="n">Mode</span>  <span class="p">:</span><span class="n">character</span>
-                                      <span class="n">Mean</span>   <span class="p">:</span><span class="mf">43.92</span>   <span class="n">Mean</span>   <span class="p">:</span><span class="mf">17.15</span>   <span class="n">Mean</span>   <span class="p">:</span><span class="mf">200.9</span>     <span class="n">Mean</span>   <span class="p">:</span><span class="mi">4202</span>
-                                      <span class="mi">3</span><span class="n">rd</span> <span class="n">Qu</span><span class="o">.</span><span class="p">:</span><span class="mf">48.50</span>   <span class="mi">3</span><span class="n">rd</span> <span class="n">Qu</span><span class="o">.</span><span class="p">:</span><span class="mf">18.70</span>   <span class="mi">3</span><span class="n">rd</span> <span class="n">Qu</span><span class="o">.</span><span class="p">:</span><span class="mf">213.0</span>     <span class="mi">3</span><span class="n">rd</span> <span class="n">Qu</span><span class="o">.</span><span class="p">:</span><span class="mi">4750</span>
-                                      <span class="n">Max</span><span class="o">.</span>   <span class="p">:</span><span class="mf">59.60</span>   <span class="n">Max</span><span class="o">.</span>   <span class="p">:</span><span class="mf">21.50</span>   <span class="n">Max</span><span class="o">.</span>   <span class="p">:</span><span class="mf">231.0</span>     <span class="n">Max</span><span class="o">.</span>   <span class="p">:</span><span class="mi">6300</span>
-                                      <span class="n">NA</span><span class="s1">&#39;s   :2       NA&#39;</span><span class="n">s</span>   <span class="p">:</span><span class="mi">2</span>       <span class="n">NA</span><span class="s1">&#39;s   :2         NA&#39;</span><span class="n">s</span>   <span class="p">:</span><span class="mi">2</span>
-     <span class="n">year</span>
-<span class="n">Min</span><span class="o">.</span>   <span class="p">:</span><span class="mi">2007</span>
-<span class="mi">1</span><span class="n">st</span> <span class="n">Qu</span><span class="o">.</span><span class="p">:</span><span class="mi">2007</span>
-<span class="n">Median</span> <span class="p">:</span><span class="mi">2008</span>
-<span class="n">Mean</span>   <span class="p">:</span><span class="mi">2008</span>
-<span class="mi">3</span><span class="n">rd</span> <span class="n">Qu</span><span class="o">.</span><span class="p">:</span><span class="mi">2009</span>
-<span class="n">Max</span><span class="o">.</span>   <span class="p">:</span><span class="mi">2009</span>
+</div>
+<input class="tab-input" id="tab-set--23-input--2" name="tab-set--23" type="radio"><label class="tab-label" for="tab-set--23-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>   species             island          bill_length_mm  bill_depth_mm   flipper_length_mm  body_mass_g       sex
+Length:344         Length:344         Min.   :32.10   Min.   :13.10   Min.   :172.0     Min.   :2700   Length:344
+Class :character   Class :character   1st Qu.:39.23   1st Qu.:15.60   1st Qu.:190.0     1st Qu.:3550   Class :character
+Mode  :character   Mode  :character   Median :44.45   Median :17.30   Median :197.0     Median :4050   Mode  :character
+                                       Mean   :43.92   Mean   :17.15   Mean   :200.9     Mean   :4202
+                                       3rd Qu.:48.50   3rd Qu.:18.70   3rd Qu.:213.0     3rd Qu.:4750
+                                       Max.   :59.60   Max.   :21.50   Max.   :231.0     Max.   :6300
+                                       NA&#39;s   :2       NA&#39;s   :2       NA&#39;s   :2         NA&#39;s   :2
+      year
+Min.   :2007
+1st Qu.:2007
+Median :2008
+Mean   :2008
+3rd Qu.:2009
+Max.   :2009
 </pre></div>
+</div>
+</div>
 </div>
 <p>Note that the numerical variables are displayed different then the
 character variables. We can summarize the character variables better by
 converting them to factors.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--24-input--1" name="tab-set--24" type="radio"><label class="tab-label" for="tab-set--24-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins</span><span class="o">$</span><span class="n">species</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.factor</span><span class="p">(</span><span class="n">penguins</span><span class="o">$</span><span class="n">species</span><span class="p">)</span>
 <span class="n">penguins</span><span class="o">$</span><span class="n">island</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.factor</span><span class="p">(</span><span class="n">penguins</span><span class="o">$</span><span class="n">island</span><span class="p">)</span>
 <span class="n">penguins</span><span class="o">$</span><span class="n">sex</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.factor</span><span class="p">(</span><span class="n">penguins</span><span class="o">$</span><span class="n">sex</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Here we access columns of a data frame using <code class="docutils literal notranslate"><span class="pre">$</span></code>, which is the easiest
 way to do so.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--25-input--1" name="tab-set--25" type="radio"><label class="tab-label" for="tab-set--25-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins</span><span class="o">$</span><span class="n">species</span>
 <span class="n">penguins</span><span class="o">$</span><span class="n">island</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">]</span><span class="w"> </span><span class="c1"># first 10</span>
 <span class="nf">summary</span><span class="p">(</span><span class="n">penguins</span><span class="o">$</span><span class="n">body_mass_g</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">Adelie</span>    <span class="n">Adelie</span>    <span class="n">Adelie</span>    <span class="n">Adelie</span>    <span class="n">Adelie</span>    <span class="n">Adelie</span>    <span class="n">Adelie</span>    <span class="n">Adelie</span>    <span class="n">Adelie</span>    <span class="n">Adelie</span>    <span class="n">Adelie</span>    <span class="n">Adelie</span>
-<span class="p">[</span><span class="mi">13</span><span class="p">]</span> <span class="n">Adelie</span>    <span class="n">Adelie</span>    <span class="n">Adelie</span>    <span class="n">Adelie</span>    <span class="n">Adelie</span>    <span class="n">Adelie</span>    <span class="n">Adelie</span>    <span class="n">Adelie</span>    <span class="n">Adelie</span>    <span class="n">Adelie</span>    <span class="n">Adelie</span>    <span class="n">Adelie</span>
-<span class="p">[</span><span class="mi">25</span><span class="p">]</span> <span class="n">Adelie</span>    <span class="n">Adelie</span>    <span class="n">Adelie</span>    <span class="n">Adelie</span>    <span class="n">Adelie</span>    <span class="n">Adelie</span>    <span class="n">Adelie</span>    <span class="n">Adelie</span>    <span class="n">Adelie</span>    <span class="n">Adelie</span>    <span class="n">Adelie</span>    <span class="n">Adelie</span>   <span class="o">...</span>
-<span class="n">Levels</span><span class="p">:</span> <span class="n">Adelie</span> <span class="n">Chinstrap</span> <span class="n">Gentoo</span>
+</div>
+<input class="tab-input" id="tab-set--25-input--2" name="tab-set--25" type="radio"><label class="tab-label" for="tab-set--25-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[1] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie
+[13] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie
+[25] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   ...
+Levels: Adelie Chinstrap Gentoo
 
-<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">Torgersen</span> <span class="n">Torgersen</span> <span class="n">Torgersen</span> <span class="n">Torgersen</span> <span class="n">Torgersen</span> <span class="n">Torgersen</span> <span class="n">Torgersen</span> <span class="n">Torgersen</span> <span class="n">Torgersen</span> <span class="n">Torgersen</span>
-<span class="n">Levels</span><span class="p">:</span> <span class="n">Biscoe</span> <span class="n">Dream</span> <span class="n">Torgersen</span>
+[1] Torgersen Torgersen Torgersen Torgersen Torgersen Torgersen Torgersen Torgersen Torgersen Torgersen
+Levels: Biscoe Dream Torgersen
 
-   <span class="n">Min</span><span class="o">.</span> <span class="mi">1</span><span class="n">st</span> <span class="n">Qu</span><span class="o">.</span>  <span class="n">Median</span>    <span class="n">Mean</span> <span class="mi">3</span><span class="n">rd</span> <span class="n">Qu</span><span class="o">.</span>    <span class="n">Max</span><span class="o">.</span>    <span class="n">NA</span><span class="s1">&#39;s</span>
-   <span class="mi">2700</span>    <span class="mi">3550</span>    <span class="mi">4050</span>    <span class="mi">4202</span>    <span class="mi">4750</span>    <span class="mi">6300</span>       <span class="mi">2</span>
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s
+   2700    3550    4050    4202    4750    6300       2
 </pre></div>
+</div>
+</div>
 </div>
 <p>We can see the frequencies of a factor with <code class="docutils literal notranslate"><span class="pre">table()</span></code> or
 <code class="docutils literal notranslate"><span class="pre">summary()</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--26-input--1" name="tab-set--26" type="radio"><label class="tab-label" for="tab-set--26-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">table</span><span class="p">(</span><span class="n">penguins</span><span class="o">$</span><span class="n">species</span><span class="p">)</span><span class="w"> </span><span class="c1"># these give the same thing back</span>
 <span class="nf">summary</span><span class="p">(</span><span class="n">penguins</span><span class="o">$</span><span class="n">species</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Adelie</span> <span class="n">Chinstrap</span>    <span class="n">Gentoo</span>
-   <span class="mi">152</span>        <span class="mi">68</span>       <span class="mi">124</span>
+</div>
+<input class="tab-input" id="tab-set--26-input--2" name="tab-set--26" type="radio"><label class="tab-label" for="tab-set--26-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Adelie Chinstrap    Gentoo
+   152        68       124
 </pre></div>
 </div>
+</div>
+</div>
 <p>We can also sign numerical columns with a variety of functions.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--27-input--1" name="tab-set--27" type="radio"><label class="tab-label" for="tab-set--27-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">mean</span><span class="p">(</span><span class="n">penguins</span><span class="o">$</span><span class="n">body_mass_g</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span><span class="w"> </span><span class="c1"># na.rm makes sure to ignore missing data</span>
 <span class="nf">median</span><span class="p">(</span><span class="n">penguins</span><span class="o">$</span><span class="n">body_mass_g</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
 <span class="nf">sd</span><span class="p">(</span><span class="n">penguins</span><span class="o">$</span><span class="n">body_mass_g</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mf">4201.754</span>
+</div>
+<input class="tab-input" id="tab-set--27-input--2" name="tab-set--27" type="radio"><label class="tab-label" for="tab-set--27-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[1] 4201.754
 
-<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mi">4050</span>
+[1] 4050
 
-<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="mf">801.9545</span>
+[1] 801.9545
 </pre></div>
 </div>
+</div>
+</div>
 <p>We can use the <code class="docutils literal notranslate"><span class="pre">filter()</span></code> tidyverse function to subset our dataframe.</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">Gentoo</span><span class="o">&lt;-</span><span class="nf">filter</span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span><span class="n">species</span><span class="w"> </span><span class="o">==</span><span class="s">&quot;Gentoo&quot;</span><span class="p">)</span>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--28-input--1" name="tab-set--28" type="radio"><label class="tab-label" for="tab-set--28-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">Gentoo</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span><span class="n">species</span><span class="w"> </span><span class="o">==</span><span class="s">&quot;Gentoo&quot;</span><span class="p">)</span>
 
 <span class="n">Gentoo</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># A tibble: 124 × 8</span>
-   <span class="n">species</span> <span class="n">island</span> <span class="n">bill_length_mm</span> <span class="n">bill_depth_mm</span> <span class="n">flipper_length_mm</span> <span class="n">body_mass_g</span> <span class="n">sex</span>     <span class="n">year</span>
-   <span class="o">&lt;</span><span class="n">fct</span><span class="o">&gt;</span>   <span class="o">&lt;</span><span class="n">fct</span><span class="o">&gt;</span>           <span class="o">&lt;</span><span class="n">dbl</span><span class="o">&gt;</span>         <span class="o">&lt;</span><span class="n">dbl</span><span class="o">&gt;</span>             <span class="o">&lt;</span><span class="n">dbl</span><span class="o">&gt;</span>       <span class="o">&lt;</span><span class="n">dbl</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">fct</span><span class="o">&gt;</span>  <span class="o">&lt;</span><span class="n">dbl</span><span class="o">&gt;</span>
- <span class="mi">1</span> <span class="n">Gentoo</span>  <span class="n">Biscoe</span>           <span class="mf">46.1</span>          <span class="mf">13.2</span>               <span class="mi">211</span>        <span class="mi">4500</span> <span class="n">female</span>  <span class="mi">2007</span>
- <span class="mi">2</span> <span class="n">Gentoo</span>  <span class="n">Biscoe</span>           <span class="mi">50</span>            <span class="mf">16.3</span>               <span class="mi">230</span>        <span class="mi">5700</span> <span class="n">male</span>    <span class="mi">2007</span>
- <span class="mi">3</span> <span class="n">Gentoo</span>  <span class="n">Biscoe</span>           <span class="mf">48.7</span>          <span class="mf">14.1</span>               <span class="mi">210</span>        <span class="mi">4450</span> <span class="n">female</span>  <span class="mi">2007</span>
- <span class="mi">4</span> <span class="n">Gentoo</span>  <span class="n">Biscoe</span>           <span class="mi">50</span>            <span class="mf">15.2</span>               <span class="mi">218</span>        <span class="mi">5700</span> <span class="n">male</span>    <span class="mi">2007</span>
- <span class="mi">5</span> <span class="n">Gentoo</span>  <span class="n">Biscoe</span>           <span class="mf">47.6</span>          <span class="mf">14.5</span>               <span class="mi">215</span>        <span class="mi">5400</span> <span class="n">male</span>    <span class="mi">2007</span>
- <span class="mi">6</span> <span class="n">Gentoo</span>  <span class="n">Biscoe</span>           <span class="mf">46.5</span>          <span class="mf">13.5</span>               <span class="mi">210</span>        <span class="mi">4550</span> <span class="n">female</span>  <span class="mi">2007</span>
- <span class="mi">7</span> <span class="n">Gentoo</span>  <span class="n">Biscoe</span>           <span class="mf">45.4</span>          <span class="mf">14.6</span>               <span class="mi">211</span>        <span class="mi">4800</span> <span class="n">female</span>  <span class="mi">2007</span>
- <span class="mi">8</span> <span class="n">Gentoo</span>  <span class="n">Biscoe</span>           <span class="mf">46.7</span>          <span class="mf">15.3</span>               <span class="mi">219</span>        <span class="mi">5200</span> <span class="n">male</span>    <span class="mi">2007</span>
- <span class="mi">9</span> <span class="n">Gentoo</span>  <span class="n">Biscoe</span>           <span class="mf">43.3</span>          <span class="mf">13.4</span>               <span class="mi">209</span>        <span class="mi">4400</span> <span class="n">female</span>  <span class="mi">2007</span>
-<span class="mi">10</span> <span class="n">Gentoo</span>  <span class="n">Biscoe</span>           <span class="mf">46.8</span>          <span class="mf">15.4</span>               <span class="mi">215</span>        <span class="mi">5150</span> <span class="n">male</span>    <span class="mi">2007</span>
-<span class="c1"># … with 114 more rows</span>
+</div>
+<input class="tab-input" id="tab-set--28-input--2" name="tab-set--28" type="radio"><label class="tab-label" for="tab-set--28-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># A tibble: 124 × 8
+   species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex     year
+   &lt;fct&gt;   &lt;fct&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;  &lt;dbl&gt;
+1 Gentoo  Biscoe           46.1          13.2               211        4500 female  2007
+2 Gentoo  Biscoe           50            16.3               230        5700 male    2007
+3 Gentoo  Biscoe           48.7          14.1               210        4450 female  2007
+4 Gentoo  Biscoe           50            15.2               218        5700 male    2007
+5 Gentoo  Biscoe           47.6          14.5               215        5400 male    2007
+6 Gentoo  Biscoe           46.5          13.5               210        4550 female  2007
+7 Gentoo  Biscoe           45.4          14.6               211        4800 female  2007
+8 Gentoo  Biscoe           46.7          15.3               219        5200 male    2007
+9 Gentoo  Biscoe           43.3          13.4               209        4400 female  2007
+10 Gentoo  Biscoe           46.8          15.4               215        5150 male    2007
+# … with 114 more rows
 </pre></div>
+</div>
+</div>
 </div>
 <p>If we want to select specific columns, we can use the <code class="docutils literal notranslate"><span class="pre">select()</span></code>
 function.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--29-input--1" name="tab-set--29" type="radio"><label class="tab-label" for="tab-set--29-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins_subsetted</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">select</span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="n">species</span><span class="p">,</span><span class="w"> </span><span class="n">island</span><span class="p">,</span><span class="w"> </span><span class="n">bill_length_mm</span><span class="p">,</span><span class="w"> </span><span class="n">sex</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>We can add new columns with <code class="docutils literal notranslate"><span class="pre">mutate()</span></code>.</p>
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins_subsetted2</span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mutate</span><span class="p">(</span><span class="n">penguins_subsetted</span><span class="p">,</span><span class="w"> </span><span class="n">mass_flipper_ratio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">body_mass_g</span><span class="o">/</span><span class="n">flipper_length_mm</span><span class="p">)</span>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--30-input--1" name="tab-set--30" type="radio"><label class="tab-label" for="tab-set--30-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins_subsetted2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mutate</span><span class="p">(</span><span class="n">penguins_subsetted</span><span class="p">,</span><span class="w"> </span><span class="n">mass_flipper_ratio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">body_mass_g</span><span class="o">/</span><span class="n">flipper_length_mm</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>We can use <strong>pipes</strong> to chain tidyverse commands together. Pipes in R
 look like <code class="docutils literal notranslate"><span class="pre">%&gt;%</span></code>. Read the pipe like the word “and then”.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--31-input--1" name="tab-set--31" type="radio"><label class="tab-label" for="tab-set--31-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">female_penguins</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">penguins</span><span class="w"> </span><span class="o">%&gt;%</span>
-<span class="w">  </span><span class="nf">filter</span><span class="p">(</span><span class="n">sex</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;female&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
-<span class="w">  </span><span class="nf">mutate</span><span class="p">(</span><span class="n">mass_flipper_ratio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">body_mass_g</span><span class="o">/</span><span class="n">flipper_length_mm</span><span class="p">)</span>
+<span class="w">   </span><span class="nf">filter</span><span class="p">(</span><span class="n">sex</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;female&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">   </span><span class="nf">mutate</span><span class="p">(</span><span class="n">mass_flipper_ratio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">body_mass_g</span><span class="o">/</span><span class="n">flipper_length_mm</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="simple-graphs">
 <h2>Simple graphs<a class="headerlink" href="#simple-graphs" title="Permalink to this headline">#</a></h2>
 <p>To make a simple scatter plot in R, we can use the <code class="docutils literal notranslate"><span class="pre">plot()</span></code> function.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--33-input--1" name="tab-set--33" type="radio"><label class="tab-label" for="tab-set--33-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="n">penguins</span><span class="o">$</span><span class="n">bill_depth_mm</span><span class="p">,</span><span class="w"> </span><span class="n">penguins</span><span class="o">$</span><span class="n">bill_length_mm</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="row docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;col-12&quot;</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;/_static/images/r/quick-start/scatter_example.png&quot;</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;img-fluid rounded align-middle mx-auto d-block&quot;</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;max-width:100%;&quot;</span> <span class="n">alt</span><span class="o">=</span><span class="s2">&quot;scatter plot&quot;</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
-</pre></div>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--32-input--1" name="tab-set--32" type="radio"><label class="tab-label" for="tab-set--32-input--1">Output</label><div class="tab-content docutils container">
+<figure class="align-default">
+<img alt="../_images/scatter_example.png" src="../_images/scatter_example.png" />
+</figure>
 </div>
 </div>
 <p>We can also use <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> to get nicer graphs with many
 customizations.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--35-input--1" name="tab-set--35" type="radio"><label class="tab-label" for="tab-set--35-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">mass_flipper</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">penguins</span><span class="p">,</span>
 <span class="w">                       </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">flipper_length_mm</span><span class="p">,</span>
 <span class="w">                           </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">body_mass_g</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
-<span class="w">  </span><span class="nf">geom_point</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">species</span><span class="p">,</span>
-<span class="w">                 </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">species</span><span class="p">),</span>
-<span class="w">             </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">,</span>
-<span class="w">             </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.8</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
-<span class="w">  </span><span class="nf">scale_color_manual</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;darkorange&quot;</span><span class="p">,</span><span class="s">&quot;purple&quot;</span><span class="p">,</span><span class="s">&quot;cyan4&quot;</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
-<span class="w">  </span><span class="nf">labs</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Penguin size, Palmer Station LTER&quot;</span><span class="p">,</span>
-<span class="w">       </span><span class="n">subtitle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Flipper length and body mass for Adelie, Chinstrap and Gentoo Penguins&quot;</span><span class="p">,</span>
-<span class="w">       </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Flipper length (mm)&quot;</span><span class="p">,</span>
-<span class="w">       </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Body mass (g)&quot;</span><span class="p">,</span>
-<span class="w">       </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Penguin species&quot;</span><span class="p">,</span>
-<span class="w">       </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Penguin species&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
-<span class="w">  </span><span class="nf">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">0.2</span><span class="p">,</span><span class="w"> </span><span class="m">0.7</span><span class="p">),</span>
-<span class="w">        </span><span class="n">plot.title.position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;plot&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="n">plot.caption</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">hjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">face</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;italic&quot;</span><span class="p">),</span>
-<span class="w">        </span><span class="n">plot.caption.position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;plot&quot;</span><span class="p">)</span>
+<span class="w">   </span><span class="nf">geom_point</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">species</span><span class="p">,</span>
+<span class="w">                  </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">species</span><span class="p">),</span>
+<span class="w">                  </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">,</span>
+<span class="w">                  </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.8</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">   </span><span class="nf">scale_color_manual</span><span class="p">(</span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;darkorange&quot;</span><span class="p">,</span><span class="s">&quot;purple&quot;</span><span class="p">,</span><span class="s">&quot;cyan4&quot;</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">   </span><span class="nf">labs</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Penguin size, Palmer Station LTER&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="n">subtitle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Flipper length and body mass for Adelie, Chinstrap and Gentoo Penguins&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Flipper length (mm)&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Body mass (g)&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Penguin species&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Penguin species&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">   </span><span class="nf">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">0.2</span><span class="p">,</span><span class="w"> </span><span class="m">0.7</span><span class="p">),</span>
+<span class="w">         </span><span class="n">plot.title.position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;plot&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="n">plot.caption</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">hjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">face</span><span class="o">=</span><span class="w"> </span><span class="s">&quot;italic&quot;</span><span class="p">),</span>
+<span class="w">         </span><span class="n">plot.caption.position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;plot&quot;</span><span class="p">)</span>
 
 <span class="n">mass_flipper</span>
 </pre></div>
 </div>
-<div class="row docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;col-12&quot;</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;/_static/images/r/quick-start/penguins.png&quot;</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;img-fluid rounded align-middle mx-auto d-block&quot;</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;max-width:100%;&quot;</span> <span class="n">alt</span><span class="o">=</span><span class="s2">&quot;ggplot&quot;</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
-</pre></div>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--34-input--1" name="tab-set--34" type="radio"><label class="tab-label" for="tab-set--34-input--1">Output</label><div class="tab-content docutils container">
+<figure class="align-default">
+<img alt="../_images/penguins.png" src="../_images/penguins.png" />
+</figure>
 </div>
 </div>
 </section>
