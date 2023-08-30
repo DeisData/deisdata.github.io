@@ -176,25 +176,25 @@
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../git.html">Git Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../git/setup-install.html">Setup and Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../git/quick-start.html">Quick Start to GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/setup-install.html">Setup and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/quick-start.html">Quick start to Git and GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/pushing.html">Pushing changes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/fetch-merge.html">Fetch and merge from GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../git/git-utilities.html">Git Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/git-utilities.html">Git utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/forking.html">Forking in GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../git/glossary.html">Git Vocabulary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/glossary.html">Git Glossary</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../r.html">R</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of R</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../r/quick-start.html">Intro to R and the Tidyverse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../r/data-wrangling.html">Data wrangling with the Tidyverse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../r/data-visualization.html">ggplot2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../r/text-mining.html">Text Mining with R</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../r/text-mining.html">Text mining</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../shell.html">Unix Shell</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Unix Shell</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="setup.html">Bash Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="navigating.html">Navigating to files and directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="navigating.html">Navigating</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alter-dir.html">Altering files and directories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pipes-filters.html">Pipes and filters</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Loops</a></li>
@@ -250,11 +250,15 @@ we have learned will be put to use.</p>
 <section id="loop-structure">
 <h2>Loop Structure<a class="headerlink" href="#loop-structure" title="Permalink to this headline">#</a></h2>
 <p>Here is some pseudo-code showing the basic syntax of a for loop in bash.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>thing<span class="w"> </span><span class="k">in</span><span class="w"> </span>list_of_things
 &gt;<span class="w"> </span><span class="k">do</span>
 &gt;<span class="w">     </span>my_command<span class="w"> </span><span class="nv">$thing</span>
 &gt;<span class="w"> </span><span class="k">done</span>
 </pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">list_of_things</span></code> is some collection, like a group of files</p></li>
@@ -269,13 +273,19 @@ leading <code class="docutils literal notranslate"><span class="pre">$</span></c
 <h2>Loop Examples<a class="headerlink" href="#loop-examples" title="Permalink to this headline">#</a></h2>
 <p>The following for loop lists the contents of working directory one item
 at a time.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>itemname<span class="w"> </span><span class="k">in</span><span class="w"> </span>*
 &gt;<span class="w"> </span><span class="k">do</span>
 &gt;<span class="w">     </span>ls<span class="w"> </span><span class="nv">$itemname</span>
 &gt;<span class="w"> </span><span class="k">done</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>Here we grab the first two lines of 3 data files.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>Desktop/data-shell/creatures
 $<span class="w"> </span><span class="k">for</span><span class="w"> </span>filename<span class="w"> </span><span class="k">in</span><span class="w"> </span>basilisk.dat<span class="w"> </span>minotaur.dat<span class="w"> </span>unicorn.dat
 &gt;<span class="w"> </span><span class="k">do</span>
@@ -283,7 +293,11 @@ $<span class="w"> </span><span class="k">for</span><span class="w"> </span>filen
 &gt;<span class="w"> </span><span class="k">done</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p>We can make changes to files within loops, as well.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>Desktop/data-shell/creatures
 $<span class="w"> </span><span class="k">for</span><span class="w"> </span>filename<span class="w"> </span><span class="k">in</span><span class="w"> </span>basilisk.dat<span class="w"> </span>minotaur.dat<span class="w"> </span>unicorn.dat
 &gt;<span class="w"> </span><span class="k">do</span>
@@ -291,18 +305,24 @@ $<span class="w"> </span><span class="k">for</span><span class="w"> </span>filen
 &gt;<span class="w"> </span><span class="k">done</span>
 </pre></div>
 </div>
+</div>
+</div>
 <section id="repeat-running-a-program-with-all-your-input-data-files">
 <h3>Repeat running a program with all your input data files<a class="headerlink" href="#repeat-running-a-program-with-all-your-input-data-files" title="Permalink to this headline">#</a></h3>
-<p>Nell has files NENE00000A.txt and NENE00000B.txt that need needs to run
+<p>Nell has files <code class="docutils literal notranslate"><span class="pre">NENE00000A.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">NENE00000B.txt</span></code> that need needs to run
 through the program <code class="docutils literal notranslate"><span class="pre">goostats</span></code> one at a time. The program <code class="docutils literal notranslate"><span class="pre">goostats</span></code>
 has two arguments, the input data file, and the output statistics file.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>../north-pacific-gyre/2012-07-03
 $<span class="w"> </span><span class="k">for</span><span class="w"> </span>datafile<span class="w"> </span><span class="k">in</span><span class="w"> </span>NENE*<span class="o">[</span>AB<span class="o">]</span>.txt
 &gt;<span class="w"> </span><span class="k">do</span>
 &gt;<span class="w">    </span>bash<span class="w"> </span>goostats<span class="w"> </span><span class="nv">$datafile</span><span class="w"> </span>stats-<span class="nv">$datafile</span><span class="w">   </span><span class="c1">#where stats-$datafile is the output of goostats program.</span>
 &gt;<span class="w">    </span><span class="nb">echo</span><span class="w"> </span>output:<span class="w"> </span>stats-<span class="nv">$datafile</span>
-<span class="k">done</span>
+&gt;<span class="w"> </span><span class="k">done</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="checking-on-your-loop-before-you-run-it">
@@ -316,6 +336,8 @@ to execute the <code class="docutils literal notranslate"><span class="pre">goos
 <section id="nested-loops-challenge">
 <h3>Nested Loops Challenge!<a class="headerlink" href="#nested-loops-challenge" title="Permalink to this headline">#</a></h3>
 <p>What does this do?</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>species<span class="w"> </span><span class="k">in</span><span class="w"> </span>cubane<span class="w"> </span>ethane<span class="w"> </span>methane
 &gt;<span class="w"> </span><span class="k">do</span>
 &gt;<span class="w">     </span><span class="k">for</span><span class="w"> </span>temperature<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">25</span><span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">37</span><span class="w"> </span><span class="m">40</span>
@@ -324,6 +346,8 @@ to execute the <code class="docutils literal notranslate"><span class="pre">goos
 &gt;<span class="w">     </span><span class="k">done</span>
 &gt;<span class="w"> </span><span class="k">done</span>
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="resources">

@@ -176,25 +176,25 @@
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../git.html">Git Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../git/setup-install.html">Setup and Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../git/quick-start.html">Quick Start to GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/setup-install.html">Setup and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/quick-start.html">Quick start to Git and GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/pushing.html">Pushing changes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/fetch-merge.html">Fetch and merge from GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../git/git-utilities.html">Git Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/git-utilities.html">Git utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/forking.html">Forking in GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../git/glossary.html">Git Vocabulary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/glossary.html">Git Glossary</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../r.html">R</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of R</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../r/quick-start.html">Intro to R and the Tidyverse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../r/data-wrangling.html">Data wrangling with the Tidyverse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../r/data-visualization.html">ggplot2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../r/text-mining.html">Text Mining with R</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../r/text-mining.html">Text mining</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../shell.html">Unix Shell</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Unix Shell</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="setup.html">Bash Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="navigating.html">Navigating to files and directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="navigating.html">Navigating</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alter-dir.html">Altering files and directories</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Pipes and filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="loops.html">Loops</a></li>
@@ -252,34 +252,52 @@ of output.</p>
 </ul>
 </section>
 <section id="echo">
-<h2>echo<a class="headerlink" href="#echo" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">echo</span></code><a class="headerlink" href="#echo" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">echo</span></code> prints a string or the value of a variable as output as text.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>hello<span class="w"> </span>world
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hello</span> <span class="n">world</span>
+</div>
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>hello world
 </pre></div>
+</div>
+</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$SHELL</span></code> prints the value of the variable <code class="docutils literal notranslate"><span class="pre">$SHELL</span></code> (a defined
 path).</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$SHELL</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">bash</span>
+</div>
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>/usr/local/bin/bash
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="wc">
-<h2>wc<a class="headerlink" href="#wc" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">wc</span></code><a class="headerlink" href="#wc" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">wc</span></code> is the word count command for number of lines, words, and
 characters in a file (left to right in that order). Let’s try that out
 on some of files in <code class="docutils literal notranslate"><span class="pre">data-shell/molecules</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>datashell/molecules
 $<span class="w"> </span>wc<span class="w"> </span>cubane.pdb
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">20</span>     <span class="mi">156</span>    <span class="mi">1158</span> <span class="n">cubane</span><span class="o">.</span><span class="n">pdb</span>
+</div>
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>20     156    1158 cubane.pdb
 </pre></div>
+</div>
+</div>
 </div>
 <p>To only get lines, words, or characters, we can specify the flags
 <code class="docutils literal notranslate"><span class="pre">-l</span></code>, <code class="docutils literal notranslate"><span class="pre">-w</span></code>, or <code class="docutils literal notranslate"><span class="pre">-c</span></code>, respectively.</p>
@@ -294,40 +312,59 @@ file</p></li>
 </ul>
 <p>Here we get the number of lines in all of our files and redirect the
 output to a new file called <code class="docutils literal notranslate"><span class="pre">line_count.txt</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>wc<span class="w"> </span>-l<span class="w"> </span>*.pdb<span class="w"> </span>&gt;<span class="w"> </span>line_count.txt
 </pre></div>
 </div>
+</div>
+</div>
 <p>We can use <code class="docutils literal notranslate"><span class="pre">cat</span></code> to show the contents of this new file.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span>line_count.txt
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="mi">20</span> <span class="n">cubane</span><span class="o">.</span><span class="n">pdb</span>
- <span class="mi">12</span> <span class="n">ethane</span><span class="o">.</span><span class="n">pdb</span>
-  <span class="mi">9</span> <span class="n">methane</span><span class="o">.</span><span class="n">pdb</span>
- <span class="mi">30</span> <span class="n">octane</span><span class="o">.</span><span class="n">pdb</span>
- <span class="mi">21</span> <span class="n">pentane</span><span class="o">.</span><span class="n">pdb</span>
- <span class="mi">15</span> <span class="n">propane</span><span class="o">.</span><span class="n">pdb</span>
-<span class="mi">107</span> <span class="n">total</span>
+</div>
+<input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> 20 cubane.pdb
+ 12 ethane.pdb
+  9 methane.pdb
+ 30 octane.pdb
+ 21 pentane.pdb
+ 15 propane.pdb
+107 total
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="sort">
 <h2>sort<a class="headerlink" href="#sort" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">sort</span></code> sorts the contents of a file. <code class="docutils literal notranslate"><span class="pre">sort</span> <span class="pre">-n</span></code> sorts a numerical
 file.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sort<span class="w"> </span>-n<span class="w"> </span>line_count.txt
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="mi">9</span> <span class="n">methane</span><span class="o">.</span><span class="n">pdb</span>
- <span class="mi">12</span> <span class="n">ethane</span><span class="o">.</span><span class="n">pdb</span>
- <span class="mi">15</span> <span class="n">propane</span><span class="o">.</span><span class="n">pdb</span>
- <span class="mi">20</span> <span class="n">cubane</span><span class="o">.</span><span class="n">pdb</span>
- <span class="mi">21</span> <span class="n">pentane</span><span class="o">.</span><span class="n">pdb</span>
- <span class="mi">30</span> <span class="n">octane</span><span class="o">.</span><span class="n">pdb</span>
-<span class="mi">107</span> <span class="n">total</span>
+</div>
+<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  9 methane.pdb
+ 12 ethane.pdb
+ 15 propane.pdb
+ 20 cubane.pdb
+ 21 pentane.pdb
+ 30 octane.pdb
+107 total
 </pre></div>
 </div>
-<p><em>Note</em>: To escape a mistake in the prompt, type Ctrl + C.</p>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To escape a mistake in the prompt, type Ctrl + C.</p>
+</div>
 </section>
 <section id="view-particular-file-contents">
 <h2>View particular file contents<a class="headerlink" href="#view-particular-file-contents" title="Permalink to this headline">#</a></h2>
@@ -355,54 +392,82 @@ pressing B and Q to quit.</p></li>
 command on the left as the input of the command on the right.</p>
 <p>Here, we take the output of <code class="docutils literal notranslate"><span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">*.pdb</span></code> and feed that right into
 <code class="docutils literal notranslate"><span class="pre">sort</span> <span class="pre">-nr</span></code>. The <code class="docutils literal notranslate"><span class="pre">-r</span></code> reverses the order of the sort.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>wc<span class="w"> </span>-l<span class="w"> </span>*.pdb<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-nr
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">107</span> <span class="n">total</span>
- <span class="mi">30</span> <span class="n">octane</span><span class="o">.</span><span class="n">pdb</span>
- <span class="mi">21</span> <span class="n">pentane</span><span class="o">.</span><span class="n">pdb</span>
- <span class="mi">20</span> <span class="n">cubane</span><span class="o">.</span><span class="n">pdb</span>
- <span class="mi">15</span> <span class="n">propane</span><span class="o">.</span><span class="n">pdb</span>
- <span class="mi">12</span> <span class="n">ethane</span><span class="o">.</span><span class="n">pdb</span>
-  <span class="mi">9</span> <span class="n">methane</span><span class="o">.</span><span class="n">pdb</span>
+</div>
+<input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>107 total
+ 30 octane.pdb
+ 21 pentane.pdb
+ 20 cubane.pdb
+ 15 propane.pdb
+ 12 ethane.pdb
+  9 methane.pdb
 </pre></div>
+</div>
+</div>
 </div>
 <p>You can chain pipes consecutively between multiple commands. We do so
 here to grab the first line of the sort with <code class="docutils literal notranslate"><span class="pre">head</span> <span class="pre">-n</span> <span class="pre">1</span></code></p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>wc<span class="w"> </span>-l<span class="w"> </span>*.pdb<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-nr<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">107</span> <span class="n">total</span>
+</div>
+<input class="tab-input" id="tab-set--7-input--2" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>107 total
 </pre></div>
 </div>
+</div>
+</div>
 <p>We can then redirect this output to a new file.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>wc<span class="w"> </span>-l<span class="w"> </span>*.pdb<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-nr<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>&gt;<span class="w"> </span>total_lines.txt
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="challenge-questions">
 <h2>Challenge Questions:<a class="headerlink" href="#challenge-questions" title="Permalink to this headline">#</a></h2>
-<ol><li><p>In our current directory, we want to find the three files which have the
+<ol class="arabic">
+<li><p>In our current directory, we want to find the three files which have the
 least number of lines. Which command listed below would work?</p>
-<ol type="a"><li><p>$ wc -l * &gt; sort -n &gt; head -n 3</p>
-</li><li><p>$ wc -l * | sort -n | head -n 1-3</p>
-</li><li><p>$ wc -l * | head -n 3 | sort -n</p>
-</li><li><p>$ wc -l * | sort -n | head -n 3</p>
-</li></ol><details><summary><p>Solution</p>
-</summary><div class="docutils container">
+<ol class="loweralpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">\*</span> <span class="pre">&gt;</span> <span class="pre">sort</span> <span class="pre">-n</span> <span class="pre">&gt;</span> <span class="pre">head</span> <span class="pre">-n</span> <span class="pre">3</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">\*</span> <span class="pre">\|</span> <span class="pre">sort</span> <span class="pre">-n</span> <span class="pre">\|</span> <span class="pre">head</span> <span class="pre">-n</span> <span class="pre">1-3</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">\*</span> <span class="pre">\|</span> <span class="pre">head</span> <span class="pre">-n</span> <span class="pre">3</span> <span class="pre">\|</span> <span class="pre">sort</span> <span class="pre">-n</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">wc</span> <span class="pre">-l</span> <span class="pre">\*</span> <span class="pre">\|</span> <span class="pre">sort</span> <span class="pre">-n</span> <span class="pre">\|</span> <span class="pre">head</span> <span class="pre">-n</span> <span class="pre">3</span></code></p></li>
+</ol>
+<details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>wc<span class="w"> </span>-l<span class="w"> </span>*<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-n<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">3</span>
 </pre></div>
 </div>
 </div>
-</details></li><li><p>See the file called <code class="docutils literal notranslate"><span class="pre">data-shell/data/animals.txt</span></code>. What text passes
+</div>
+</div>
+</details></li>
+<li><p>See the file called <code class="docutils literal notranslate"><span class="pre">data-shell/data/animals.txt</span></code>. What text passes
 through each of the pipes and the final redirect in the pipeline below?</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cat<span class="w"> </span>animals.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-r<span class="w"> </span>&gt;<span class="w"> </span>final.txt
 </pre></div>
 </div>
+</div>
+</div>
 <p>Hint: Build the pipeline up one command at a time to test your
 understanding.</p>
-<details><summary><p>Solution</p>
-</summary><div class="docutils container">
+<details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
 <p><code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">animals.txt</span></code> returns the full text in the file
 <code class="docutils literal notranslate"><span class="pre">animals.txt</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">|</span> <span class="pre">head</span> <span class="pre">-n</span> <span class="pre">5</span></code> returns the first 5 lines of the file.</p>
@@ -411,33 +476,45 @@ understanding.</p>
 <p><code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">final.txt</span></code> takes these lines and saves them to a file called
 <code class="docutils literal notranslate"><span class="pre">final.txt</span></code>.</p>
 </div>
-</details></li><li><p><code class="docutils literal notranslate"><span class="pre">uniq</span></code> filters out adjacent matching lines in a file. How can we
+</details></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">uniq</span></code> filters out adjacent matching lines in a file. How can we
 extend the pipeline to find out what animals the file
 <code class="docutils literal notranslate"><span class="pre">data-shell/data/animals.txt</span></code> contains without any duplicates?</p>
-<details><summary><p>Solution</p>
-</summary><div class="docutils container">
+<details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span>,<span class="w"> </span>-f<span class="w"> </span><span class="m">2</span><span class="w"> </span>animals.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq<span class="w"> </span>&gt;<span class="w"> </span>animals_unique.txt
 </pre></div>
 </div>
 </div>
-</details></li><li><p>Assuming your current working directory is <code class="docutils literal notranslate"><span class="pre">data-shell/data/</span></code>, which
+</div>
+</div>
+</details></li>
+<li><p>Assuming your current working directory is <code class="docutils literal notranslate"><span class="pre">data-shell/data/</span></code>, which
 command would you use to produce a table that shows the total count of
 each type of animal in the file <code class="docutils literal notranslate"><span class="pre">animals.txt</span></code>?</p>
-<ol type="a"><li><p>$ sort animals.txt | uniq -c</p>
-</li><li><p>$ sort -t, -k 2 animals.txt | uniq -c</p>
-</li><li><p>$ cut -d, -f 2 animals.txt | uniq -c</p>
-</li><li><p>$ cut -d, -f 2 animals.txt | sort | uniq -c</p>
-</li><li><p>$ cut -d, -f 2 animals.txt | sort | uniq -c | wc -l</p>
-</li></ol><details><summary><p>Solution</p>
-</summary><div class="docutils container">
-<ol type="a"><li><p>Sorts values, but includes date when trying to count all unique items</p>
-</li><li><p>Still includes the dates</p>
-</li><li><p>Because uniq only looks for lines repeated directly after each other,
-it does not work</p>
-</li><li><p>Correct solution</p>
-</li><li><p>Counts how many unique animals there are in the data set</p>
-</li></ol></div>
-</details></li></ol></section>
+<ol class="loweralpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">sort</span> <span class="pre">animals.txt</span> <span class="pre">\|</span> <span class="pre">uniq</span> <span class="pre">-c</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">sort</span> <span class="pre">-t,</span> <span class="pre">-k</span> <span class="pre">2</span> <span class="pre">animals.txt</span> <span class="pre">\|</span> <span class="pre">uniq</span> <span class="pre">-c</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">cut</span> <span class="pre">-d,</span> <span class="pre">-f</span> <span class="pre">2</span> <span class="pre">animals.txt</span> <span class="pre">\|</span> <span class="pre">uniq</span> <span class="pre">-c</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">cut</span> <span class="pre">-d,</span> <span class="pre">-f</span> <span class="pre">2</span> <span class="pre">animals.txt</span> <span class="pre">\|</span> <span class="pre">sort</span> <span class="pre">\|</span> <span class="pre">uniq</span> <span class="pre">-c</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">cut</span> <span class="pre">-d,</span> <span class="pre">-f</span> <span class="pre">2</span> <span class="pre">animals.txt</span> <span class="pre">\|</span> <span class="pre">sort</span> <span class="pre">\|</span> <span class="pre">uniq</span> <span class="pre">-c</span> <span class="pre">\|</span> <span class="pre">wc</span> <span class="pre">-l</span></code></p></li>
+</ol>
+<details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
+<ol class="loweralpha simple">
+<li><p>Sorts values, but includes date when trying to count all unique items</p></li>
+<li><p>Still includes the dates</p></li>
+<li><p>Because uniq only looks for lines repeated directly after each other,
+it does not work</p></li>
+<li><p>Correct solution</p></li>
+<li><p>Counts how many unique animals there are in the data set</p></li>
+</ol>
+</div>
+</details></li>
+</ol>
+</section>
 <section id="resources">
 <h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">#</a></h2>
 <p>This lesson is adapted from <a class="reference external" href="http://swcarpentry.github.io/shell-novice/">The Unix Shell on Software
@@ -502,8 +579,8 @@ Carpentry</a>.</p>
             <ul>
 <li><a class="reference internal" href="#">Pipes and filters</a><ul>
 <li><a class="reference internal" href="#questions-to-think-about">Questions to think about:</a></li>
-<li><a class="reference internal" href="#echo">echo</a></li>
-<li><a class="reference internal" href="#wc">wc</a></li>
+<li><a class="reference internal" href="#echo"><code class="docutils literal notranslate"><span class="pre">echo</span></code></a></li>
+<li><a class="reference internal" href="#wc"><code class="docutils literal notranslate"><span class="pre">wc</span></code></a></li>
 <li><a class="reference internal" href="#write-to-a-file-from-the-prompt">Write to a file from the prompt</a></li>
 <li><a class="reference internal" href="#sort">sort</a></li>
 <li><a class="reference internal" href="#view-particular-file-contents">View particular file contents</a></li>

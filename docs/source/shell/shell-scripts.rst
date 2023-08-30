@@ -17,9 +17,11 @@ Writing Shell Scripts
 Shebang the top line of a script:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code:: bash
+.. tab:: Bash
 
-   #!/usr/bin/env bash
+   .. code:: bash
+
+      #!/usr/bin/env bash
 
 Uses the special marker ``#!`` and path ``#!/usr/bin/env bash`` the
 instruct the shell to pass the script to the bash program for execution.
@@ -33,9 +35,11 @@ File permissions
 We need set permissions on executable files before we can run them. To
 run them we can use the ``chmod`` or “change mode” command.
 
-::
+.. tab:: Bash
 
-   chmod 755 header.sh
+   .. code:: bash
+
+      chmod 755 header.sh
 
 The ``755`` tells our system that the owner of the file can read (open),
 write (change), and execute (run) the file, but all others can only read
@@ -63,17 +67,21 @@ directory: ``./myscript.sh``.
 
 **header.sh:**
 
-.. code:: bash
+.. tab:: Bash
 
-   #!/usr/bin/env bash
-   # This script prints the first 15 lines of the file named in the command line (datafile.txt)
-   head -n 15 $1 
+   .. code:: bash
+
+      #!/usr/bin/env bash
+      # This script prints the first 15 lines of the file named in the command line (datafile.txt)
+      head -n 15 $1 
 
 **Command line:**
 
-.. code:: bash
+.. tab:: Bash
 
-   $ ./header.sh datafile.txt
+   .. code:: bash
+
+      $ ./header.sh datafile.txt
 
 Use multiple arguments on the command line executing a script
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -84,17 +92,21 @@ Use multiple arguments on the command line executing a script
 
 **header.sh:**
 
-.. code:: bash
+.. tab:: Bash
 
-   #!/usr/bin/env bash
-   # This script prints the top $2 lines of the file $1, then writes the top lines to file $3
-   head -n "$2" "$1" > "$3" 
+   .. code:: bash
+
+      #!/usr/bin/env bash
+      # This script prints the top $2 lines of the file $1, then writes the top lines to file $3
+      head -n "$2" "$1" > "$3" 
 
 **Command line:**
 
-.. code:: bash
+.. tab:: Bash
 
-   $ ./header.sh datafile.txt 10 topdata.txt
+   .. code:: bash
+
+      $ ./header.sh datafile.txt 10 topdata.txt
 
 Use special syntax to handle one or more filenames
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -104,35 +116,36 @@ Use special syntax to handle one or more filenames
 
 **sorted.sh:**
 
-.. code:: bash
+.. tab:: Bash
 
-   #!/usr/bin/env bash
-   # Sort files by their length
-   # USAGE: ./sorted.sh one_or_more_filenames
-   $ wc -l "$@" | sort -n
+   .. code:: bash
+
+      #!/usr/bin/env bash
+      # Sort files by their length
+      # USAGE: ./sorted.sh one_or_more_filenames
+      $ wc -l "$@" | sort -n
 
 **Command line:**
 
-.. code:: bash
+.. tab:: Bash
 
-   $ ./sorted.sh *.pdb ../creatures/*.dat
+   .. code:: bash
+
+      $ ./sorted.sh *.pdb ../creatures/*.dat
 
 Resources
 ~~~~~~~~~
 
 This lesson is adapted from `The Unix Shell on Software
-Carpentry <http://swcarpentry.github.io/shell-novice/>`__. - `Bash Help
-Sheet <https://www.shell-tips.com/sheets/bash-help-sheet.pdf>`__ has
-shortcuts for quick navigating and editing in your shell - `Mastering
-Bash with Tips and Tricks <https://www.shell-tips.com/shell/>`__ has
-some great examples of how scripts can be used in a variety of ways. -
-`30 Bash Script
-Examples <https://linuxhint.com/30_bash_script_examples/>`__ depicts
-some basic to more complex scripting examples - `StackOverflow thread of
-most powerful examples of Unix Commands or Scripts every programmer
-should
-know <https://stackoverflow.com/questions/1102986/most-powerful-examples-of-unix-commands-or-scripts-every-programmer-should-know>`__
-is old but has some great examples. In general, StackOverflow is a great
-community for technical questions.
+Carpentry <http://swcarpentry.github.io/shell-novice/>`__. 
 
-[ previous ] [ next ]
+- `Bash Help Sheet <https://www.shell-tips.com/sheets/bash-help-sheet.pdf>`__ has
+  shortcuts for quick navigating and editing in your shell 
+- `Mastering Bash with Tips and Tricks <https://www.shell-tips.com/shell/>`__ has
+  some great examples of how scripts can be used in a variety of ways. 
+- `30 Bash Script Examples <https://linuxhint.com/30_bash_script_examples/>`__ depicts
+  some basic to more complex scripting examples 
+- `StackOverflow <https://stackoverflow.com/questions/1102986/most-powerful-examples-of-unix-commands-or-scripts-every-programmer-should-know>`__ thread of most powerful examples of Unix Commands or Scripts every programmer
+  should know. It is old but has some great examples. In general, StackOverflow is a great
+  community for technical questions.
+

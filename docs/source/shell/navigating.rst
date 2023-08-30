@@ -39,21 +39,24 @@ Navigating files and directories
 --------------------------------
 
 The **file system** is the part of the operating system responsible for
-managing files and directories. - **Files** hold information. -
-**Directories** (or **folders**) hold files or other directories. Thinks
-of them like *places*. - The **current working directory** is the place
-where you are in the file system when you are using the shell. - The
-**root directory** is the top directory that holds everything else. It
-is refered to by a slash ``/`` on its own. This is the leading slash in
-other directory paths, for example ``/home/fordfishman/`` - **Hidden
-files and directories** start with ``.`` like ``.bash_profile``. They
-are usually configuration settings and are hidden to prevent cluttering
-the terminal with a standard ``ls`` command. Add the ``-a`` option see
-hidden files.
+managing files and directories. 
+
+- **Files** hold information. 
+- **Directories** (or **folders**) hold files or other directories. Thinks
+  of them like *places*. 
+- The **current working directory** is the place
+  where you are in the file system when you are using the shell. 
+- The **root directory** is the top directory that holds everything else. It
+  is refered to by a slash ``/`` on its own. This is the leading slash in
+  other directory paths, for example ``/home/fordfishman/`` 
+- **Hidden files and directories** start with ``.`` like ``.bash_profile``. They
+  are usually configuration settings and are hidden to prevent cluttering
+  the terminal with a standard ``ls`` command. Add the ``-a`` option see
+  hidden files.
 
 Example of directory structure:
 
-::
+.. code:: none
 
    Documents
    ├── Code
@@ -78,9 +81,11 @@ the file is ``Desktop/data.txt``.
 General syntax of a shell command
 ---------------------------------
 
-.. code:: bash
+.. tab:: Bash
 
-   $ ls -F /
+   .. code:: bash
+
+      $ ls -F /
 
 ``ls`` is the **command**, with an **option** (or **switch** or
 **flag**) ``-F`` and an **argument** ``/``. **Options** start with a
@@ -89,37 +94,46 @@ the command. Arguments tell the command what to operate on (e.g. files
 and directories). Options and argements are refered to as
 **parameters**.
 
-**Type case is important.** **Spaces are important between command and
-options. (But options can be combined with a single - and no spaces).**
+.. note:: 
+   
+   Type case is important.Spaces are important between command and
+   options. (But options can be combined with a single - and no spaces).
 
 Listing
 -------
 
 We use the ``ls`` command to list the contents of the current directory.
 
-It has many options we can provide: - ``-F`` option (switch or flag)
-tells ls to classify the output by adding a marker to file and directory
-names to indicate what they are. - ``-a`` option displays all files,
-including hidden files (files starting with ``.``) - ``-s`` option
-displays the size of files and directories - ``-S`` option will sort the
-files and directories by size - ``--help`` option will tell us how to
-use the command and what options it accepts
+It has many options we can provide: 
 
-.. code:: bash
+- ``-F`` option (switch or flag) tells ls to classify the output by adding a marker to file and directory
+  names to indicate what they are. 
+- ``-a`` option displays all files, including hidden files (files starting with ``.``) 
+- ``-s`` option displays the size of files and directories 
+- ``-S`` option will sort the files and directories by size 
+- ``--help`` option will tell us how to use the command and what options it accepts
 
-   $ ls -F
+.. tab:: Bash
 
-::
+   .. code:: bash
 
-   Applications/       data_shell/     Music/
-   Desktop/        data_shell.zip      Pictures/
-   Documents/      Library/
-   Downloads/      Movies/
+      $ ls -F
 
-| **Explore more ``ls`` flags.**
-| 1. What does ``-l`` option do? What if you use ``-l`` and ``-h``? 1.
-  The default ``ls`` lists contents in alphabetical order. What option
-  do I use to see them by time of last change?
+.. tab:: Output
+
+   .. code:: none
+
+      Applications/   data_shell/      Music/
+      Desktop/        data_shell.zip   Pictures/
+      Documents/      Library/
+      Downloads/      Movies/
+
+Explore more ``ls`` flags.
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. What does ``-l`` option do? What if you use ``-l`` and ``-h``? 
+2. The default ``ls`` lists contents in alphabetical order. What option
+   do I use to see them by time of last change?
 
 Print working directory
 -----------------------
@@ -127,32 +141,42 @@ Print working directory
 To check where you are, use ``pwd`` to print the path of the **working
 directory**.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ pwd
+   .. code:: bash
 
-::
+      $ pwd
 
-   /home/fordfishman/
+.. tab:: Output
+
+   .. code:: none
+
+      /home/fordfishman/
 
 Change directory
 ----------------
 
 ``cd`` will change your working directory. ``cd`` can only see
-sub-directories inside your current working directory. - ``cd ..`` is a
-shortcut to move up one directory to the *parent directory* of the one
-we are in - ``cd ~/`` is a shortcut to move to the current user’s home
-directory. For example, if my home directory is ``/home/fordfishman``,
-then ``~/data`` is equivalent to ``/home/fordfishman/data``
+sub-directories inside your current working directory. 
 
-.. code:: bash
+- ``cd ..`` is a shortcut to move up one directory to the *parent directory* of the one
+  we are in 
+- ``cd ~/`` is a shortcut to move to the current user’s home
+  directory. For example, if my home directory is ``/home/fordfishman``,
+  then ``~/data`` is equivalent to ``/home/fordfishman/data``
 
-   $ cd ..
-   $ pwd
+.. tab:: Bash
 
-::
+   .. code:: bash
 
-   /home/
+      $ cd ..
+      $ pwd
+
+.. tab:: Output
+
+   .. code:: none
+
+      /home/
 
 Other commands
 --------------

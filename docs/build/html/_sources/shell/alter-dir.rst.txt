@@ -13,60 +13,72 @@ Creating Directories or Files
 ``mkdir`` creates a new directory, followed by the name of the new
 directory.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ mkdir new_dir
-   $ ls -F
+   .. code:: bash
 
-::
+      $ mkdir new_dir
+      $ ls -F
 
-   new_dir/
+.. tab:: Output
+
+   .. code:: none
+
+      new_dir/
 
 ``mkdir -p`` can be used to make subdirectories.
 
-.. code:: bash
+.. tab:: Bash
 
-   mkdir -p code/python/analysis
-   ls -RF # displays subdirectory structure
+   .. code:: bash
 
-::
+      mkdir -p code/python/analysis
+      ls -RF # displays subdirectory structure
 
-   code/
+.. tab:: Output
 
-   ./code:
-   python/
+   .. code:: none
 
-   ./code/python:
-   analysis/
+      code/
 
-   ./code/python/analysis:
+      ./code:
+      python/
+
+      ./code/python:
+      analysis/
+
+      ./code/python/analysis:
 
 ``nano filename.txt`` runs a text editor called ``nano`` to create a new
 file by the name given. For example, ``nano thesis.txt`` creates a text
 file named ``thesis.txt`` in the working directory.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ nano filename.txt
+   .. code:: bash
+
+      $ nano filename.txt
 
 .. figure:: /_static/images/shell/alter-dir/nano.png
    :alt: nano
-
-   nano
 
 ``touch filename.txt`` creates an empty (0 byte) file by the new name
 given. Why bother? Some programs require empty files to populate with
 output.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ touch filename2.txt
-   $ ls -F
+   .. code:: bash
 
-::
+      $ touch filename2.txt
+      $ ls -F
 
-   filename.txt
-   filename2.txt
+.. tab:: Output
+
+   .. code:: none
+
+      filename.txt
+      filename2.txt
 
 Moving or renaming directories or files safely
 ----------------------------------------------
@@ -75,14 +87,18 @@ Moving or renaming directories or files safely
 first tells ``mv`` what we’re moving, while the second is where it will
 go.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ mv filename.txt new_dir
-   $ ls -F new_dir
+   .. code:: bash
 
-::
+      $ mv filename.txt new_dir
+      $ ls -F new_dir
 
-   filename.txt
+.. tab:: Output
+
+   .. code:: none
+
+      filename.txt
 
 ``mv -i`` or ``mv -interactive`` must be used to make ``mv`` ask for
 confirmation before overwriting any existing file or directory with the
@@ -95,15 +111,19 @@ Copying directories and/or files
 ``cp old new`` command copies a file (first argument) to a new location
 (second argument)
 
-.. code:: bash
+.. tab:: Bash
 
-   $ cp filename2.txt new_dir
-   $ ls -F
+   .. code:: bash
 
-::
+      $ cp filename2.txt new_dir
+      $ ls -F
 
-   filename2.txt
-   new_dir/
+.. tab:: Output
+
+   .. code:: none
+
+      filename2.txt
+      new_dir/
 
 -  ``cp -r`` adds the recursive option to copy a directory and all its
    contents to another directory (second argument). For example, we can
@@ -126,14 +146,19 @@ trash or recycling bin.
    option will **remove a directory and all its contents** with
    confirmation prompts.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ rm -i -r new_dir
-   $ ls
+   .. code:: bash
 
-::
+      $ rm -i -r new_dir
+      $ ls
 
-   filename2.txt
+.. tab:: Output
+
+   .. code:: none
+
+
+      filename2.txt
 
 Tips for good names for files and directories
 ---------------------------------------------
@@ -143,17 +168,24 @@ Tips for good names for files and directories
    option. Names should start with letters or numbers.
 3. Avoid special characters. Some have special meanings.
 
-*If you need to refer to names of files or directories that have spaces,
-put them in quotes (““).*
+.. note::
+   
+   If you need to refer to names of files or directories that have spaces,
+   put them in quotes (““).
 
 What’s in a name?
 ~~~~~~~~~~~~~~~~~
 
 A **filename extension** is the second part of the filename after the
 dot (``.``). They help us and programs tell different kinds of files
-apart. A few examples: - .txt: plain text file - .csv: comma separated
-value file - .pdf: PDF document - .cfg: configuration file of parameters
-for a program - .png: an image file
+apart. A few examples: 
+
+- .txt: plain text file 
+- .csv: comma separated value file 
+- .pdf: PDF document 
+- .cfg: configuration file of parameters
+  for a program 
+- .png: an image file
 
 The **wildcard** ``*`` matches zero or more characters. For example, to
 copy all text files in a directory, use ``cp *.txt DIR_NAME``.
@@ -167,18 +199,23 @@ Which editor should I use?
 data (i.e. no tables, images, or other media). It is the least complex,
 but you may want to try more powerful editors.
 
-**For Unix Systems (Linux and macOS)** -
-`Emacs <http://www.gnu.org/software/emacs>`__ -
-`Vim <http://vim.org/>`__ - `Gedit <http://projects.gnome.org/gedit/>`__
-is a graphical editor
+**For Unix Systems (Linux and macOS)** 
 
-**For Windows** - `Notepad++ <http://notepad-plus-plus.org/>`__ -
-``notepad`` is built-in and can be run in the command line
+- `Emacs <http://www.gnu.org/software/emacs>`__ 
+- `Vim <http://vim.org/>`__ 
+- `Gedit <http://projects.gnome.org/gedit/>`__ is a graphical editor
 
-*If you start an editor from the shell, it will use your current working
-directory as its default location.*
+**For Windows** 
 
-*In editor commands, the Control key is also called Ctrl or ^.*
+- `Notepad++ <http://notepad-plus-plus.org/>`__ 
+- ``notepad`` is built-in and can be run in the command line
+
+.. admonition:: Editor tips
+
+   If you start an editor from the shell, it will use your current working
+   directory as its default location.
+
+   In editor commands, the Control key is also called Ctrl or ^.
 
 Challenge Questions
 -------------------
@@ -187,385 +224,107 @@ Challenge Questions
 ``maltose.dat`` into the wrong folder, ``analyzed/``. Fill in the blanks
 to move these files into the ``raw/`` folder.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ ls -F
-     analyzed/  raw/
-   $ ls -F analyzed/
-     fructose.dat glucose.dat maltose.dat sucrose.dat
-   $ cd analyzed
+   .. code:: bash
+
+      $ ls -F
+      analyzed/  raw/
+      $ ls -F analyzed/
+      fructose.dat glucose.dat maltose.dat sucrose.dat
+      $ cd analyzed
 
 My next line of code should be (fill in the blanks):
 
-.. code:: bash
+.. tab:: Bash
 
-   $ mv sucrose.dat matose.dat ___/___
+   .. code:: bash
 
-.. raw:: html
+      $ mv sucrose.dat matose.dat ___/___
 
-   <details>
 
-.. raw:: html
+.. collapse:: Solution 
 
-   <summary>
+   .. container::
 
-Solution
+      Think about ``../raw`` Recall that ``..`` refers to the parent
+      directory (i.e. one above the current directory).
 
-.. raw:: html
-
-   </summary>
-
-.. container::
-
-   Think about ``../raw`` Recall that ``..`` refers to the parent
-   directory (i.e. one above the current directory).
-
-.. raw:: html
-
-   </details>
 
 **(2) Renaming Files.** We mispelled a filename! Which of the following
 commands will correct our mistake?
 
-.. raw:: html
 
-   <ol type="a">
+a. ``cp statstics.txt statistics.txt``
+b. ``mv statstics.txt statistics.txt``
+c. ``lmv statistics.txt .``
+d. ``cp statstics.txt .``
 
-.. raw:: html
+.. collapse:: Solution
 
-   <li>
+   .. container::
 
-cp statstics.txt statistics.txt
-
-.. raw:: html
-
-   </li>
-
-.. raw:: html
-
-   <li>
-
-mv statstics.txt statistics.txt
-
-.. raw:: html
-
-   </li>
-
-.. raw:: html
-
-   <li>
-
-lmv statistics.txt .
-
-.. raw:: html
-
-   </li>
-
-.. raw:: html
-
-   <li>
-
-cp statstics.txt .
-
-.. raw:: html
-
-   </li>
-
-.. raw:: html
-
-   </ol>
-
-.. raw:: html
-
-   <details>
-
-.. raw:: html
-
-   <summary>
-
-Solution
-
-.. raw:: html
-
-   </summary>
-
-.. container::
-
-   .. raw:: html
-
-      <ol type="a">
-
-   .. raw:: html
-
-      <li>
-
-   Will copy the file, so we will end up with the mispelled and correct
-   version.
-
-   .. raw:: html
-
-      </li>
-
-   .. raw:: html
-
-      <li>
-
-   Will move (i.e. rename) the incorrect file name to a correct
-   filename.
-
-   .. raw:: html
-
-      </li>
-
-   .. raw:: html
-
-      <li>
-
-   Not a working command.
-
-   .. raw:: html
-
-      </li>
-
-   .. raw:: html
-
-      <li>
-
-   Will not work. Remember . is the current directory.
-
-   .. raw:: html
-
-      </li>
-
-   .. raw:: html
-
-      </ol>
-
-.. raw:: html
-
-   </details>
+      a. Will copy the file, so we will end up with the mispelled and correct version.
+      b. Will move (i.e. rename) the incorrect file name to a correct filename.
+      c. Not a working command.
+      d. Will not work. Remember ``.`` is the current directory.
 
 **(3) Removal.** What happens when we execute
 ``rm -i thesis/finaldraft.txt``? Why would we want this protection when
 using ``rm``?
 
-.. raw:: html
+.. collapse:: Solution
 
-   <details>
+   .. container::
 
-.. raw:: html
-
-   <summary>
-
-Solution
-
-.. raw:: html
-
-   </summary>
-
-.. container::
-
-   The program will confirm that we want to delete the thesis final
-   draft file. Remember, deletion is forever! There is no trash can or
-   recycle bin.
-
-.. raw:: html
-
-   </details>
+      The program will confirm that we want to delete the thesis final
+      draft file. Remember, deletion is forever! There is no trash can or
+      recycle bin.
 
 **(4) Removal.** What is wrong with the command ``rm -i thesis``?
 
-.. raw:: html
+.. collapse:: Solution
 
-   <details>
+   .. container::
 
-.. raw:: html
+      The remove command will not act on a directory unless the recursive
+      option ``-r`` is given.
 
-   <summary>
-
-Solution
-
-.. raw:: html
-
-   </summary>
-
-.. container::
-
-   The remove command will not act on a directory unless the recursive
-   option -r is given.
-
-.. raw:: html
-
-   </details>
 
 **(5) Removal.** What is wrong with the command ``rm -r thesis``?
 
-.. raw:: html
+.. collapse:: Solution
 
-   <details>
+   .. container::
 
-.. raw:: html
-
-   <summary>
-
-Solution
-
-.. raw:: html
-
-   </summary>
-
-.. container::
-
-   This remove command will successfully delete the directory thesis and
-   all its contents, but we forgot to check for confirmation with the
-   interaction option (-i). Remember, deletion is permanent!
-
-.. raw:: html
-
-   </details>
+      This remove command will successfully delete the directory thesis and
+      all its contents, but we forgot to check for confirmation with the
+      interaction option (-i). Remember, deletion is permanent!
 
 **(6) Wildcards.** Which of the following matches the file names
 ``ethane.dat`` and ``methane.dat``?
 
-.. raw:: html
+a. ``ls ?ethane.dat``
+b. ``ls *ethane.dat``
+c. ``ls ???ane.dat``
+d. ``ls ethane.*``
 
-   <ol type="a">
+.. collapse:: Hint
 
-.. raw:: html
+   .. container::
 
-   <li>
+      Remember the ``?`` wildcard matches to exactly one character. The ``*``
+      wildcard can match to zero to many characters.
 
-ls ?ethane.dat
+.. collapse:: Solution
 
-.. raw:: html
 
-   </li>
+   .. container::
 
-.. raw:: html
-
-   <li>
-
-ls \*ethane.dat
-
-.. raw:: html
-
-   </li>
-
-.. raw:: html
-
-   <li>
-
-ls ???ane.dat
-
-.. raw:: html
-
-   </li>
-
-.. raw:: html
-
-   <li>
-
-ls ethane.\*
-
-.. raw:: html
-
-   </li>
-
-.. raw:: html
-
-   </ol>
-
-.. raw:: html
-
-   <details>
-
-.. raw:: html
-
-   <summary>
-
-Hint
-
-.. raw:: html
-
-   </summary>
-
-.. container::
-
-   Remember the ? wildcard matches to exactly one character. The \*
-   wildcard can match to zero to many characters.
-
-.. raw:: html
-
-   </details>
-
-.. raw:: html
-
-   <details>
-
-.. raw:: html
-
-   <summary>
-
-Solution
-
-.. raw:: html
-
-   </summary>
-
-.. container::
-
-   .. raw:: html
-
-      <ol type="a">
-
-   .. raw:: html
-
-      <li>
-
-   Matches methane.dat only (needs one character before ethane.dat).
-
-   .. raw:: html
-
-      </li>
-
-   .. raw:: html
-
-      <li>
-
-   Matches both, can have any number of characters (including zero)
-   before ethane.dat.
-
-   .. raw:: html
-
-      </li>
-
-   .. raw:: html
-
-      <li>
-
-   Matches ethane.dat only (requires only 3 characters before ane.dat).
-
-   .. raw:: html
-
-      </li>
-
-   .. raw:: html
-
-      <li>
-
-   Matches ethane.dat only (requires no characters before ethane).
-
-   .. raw:: html
-
-      </li>
-
-   .. raw:: html
-
-      </ol>
-
-.. raw:: html
-
-   </details>
+      a. Matches ``methane.dat`` only (needs one character before ``ethane.dat``).
+      b. Matches both, can have any number of characters (including zero) before ``ethane.dat``.
+      c. Matches ``ethane.dat`` only (requires only 3 characters before ``ane.dat``).
+      d. Matches ``ethane.dat`` only (requires no characters before ``ethane``).
 
 Challenge Project
 ~~~~~~~~~~~~~~~~~
@@ -574,134 +333,105 @@ Before heading on a trip, you want to back up your data and send some
 datasets to Ford. Fill in the following commands to get the job done.
 First, let’s set up a directory and files.
 
-.. code:: bash
+.. tab:: Bash
 
-   # Hashtag denotes a comment. The line will be skipped
+   .. code:: bash
 
-   # Change to your desktop 
-   cd ~/Desktop
+      # Hashtag denotes a comment. The line will be skipped
 
-   # Make a new folder for our fake data
-   mkdir fake_data
-   cd fake_data
+      # Change to your desktop 
+      cd ~/Desktop
 
-   # Create some empty files.
-   touch 2020-06-09-data.txt
-   touch 2020-06-09-calibration.txt
+      # Make a new folder for our fake data
+      mkdir fake_data
+      cd fake_data
 
-   # Make sure the new files are created. Notice we can combine options)
-   ls -Fs
+      # Create some empty files.
+      touch 2020-06-09-data.txt
+      touch 2020-06-09-calibration.txt
 
-   # Let's add some info to our file and confirm it with the editor (spoiler alert - redirects!)
-   echo Hello World > 2020-06-09-data.txt
-   nano 2020-06-09-data.txt
+      # Make sure the new files are created. Notice we can combine options)
+      ls -Fs
 
-   # Let's edit and add information to another.
-   nano 2020-06-09-calibration.txt
+      # Let's add some info to our file and confirm it with the editor (spoiler alert - redirects!)
+      echo Hello World > 2020-06-09-data.txt
+      nano 2020-06-09-data.txt
+
+      # Let's edit and add information to another.
+      nano 2020-06-09-calibration.txt
 
 The next piece is provided in the shell script ``session2challenge.sh``.
 
 While in your ``fake_data`` directory, copy and paste the code from this
 file and run it.
 
-.. code:: bash
-
-   # session2challenge.sh creates more fake data and callibration files
-
-   fmonth="2020-06"
-   echo $fmonth
-
-   # Loop through days to create data files and calibration files
-   for i in `seq -w 10 30`
-   do
-     # Define the filename
-     printf -v fname '%s-%02d-data.txt' "$fmonth" "$i"
-     # Create an empty file
-     touch "$fname"
-     # Redirect in some data
-     echo data $i > "$fname"
-     
-     printf -v fname '%s-%02d-calibration.txt' "$fmonth" "$i"
-     touch "$fname"
-     echo $i > "$fname"
-   done
-
-Now, it’s your turn! 1. Create a backup directory with separate
-subdirectories for data and calibration files. Copy files to the
-appropriate locations. 1. Create a directory named send_to_ford and copy
-all the data from June 11th to it.
-
-.. raw:: html
-
-   <details>
-
-.. raw:: html
-
-   <summary>
-
-Get a hint
-
-.. raw:: html
-
-   </summary>
-
-.. container::
-
-   .. raw:: html
-
-      <h4>
-
-   Create a backup directory with subdirectories for data and
-   calibration files
-
-   .. raw:: html
-
-      </h4>
-
-   -  Hint: You will use ``mkdir``
+.. tab:: Bash
 
    .. code:: bash
 
-      mkdir ___
-      mkdir ___/___
-      mkdir ___/___
+      # session2challenge.sh creates more fake data and callibration files
 
-   .. raw:: html
+      fmonth="2020-06"
+      echo $fmonth
 
-      <h4>
+      # Loop through days to create data files and calibration files
+      for i in `seq -w 10 30`
+      do
+         # Define the filename
+         printf -v fname '%s-%02d-data.txt' "$fmonth" "$i"
+         # Create an empty file
+         touch "$fname"
+         # Redirect in some data
+         echo data $i > "$fname"
+         
+         printf -v fname '%s-%02d-calibration.txt' "$fmonth" "$i"
+         touch "$fname"
+         echo $i > "$fname"
+      done
 
-   Copy data files to ``backup/data``. (Use a similiar approach for
-   calibration files.)
+Now, it’s your turn! 
 
-   .. raw:: html
+1. Create a backup directory with separate
+   subdirectories for data and calibration files. Copy files to the
+   appropriate locations. 
+2. Create a directory named send_to_ford and copy all the data from June 11th to it.
 
-      </h4>
+.. collapse:: Hint
 
-   -  Hint: Use the copy command ``cp`` with wildcards
+   .. container::
 
-   .. code:: bash
+      Create a backup directory with subdirectories for data and calibration files
 
-      cp *-data.txt backup/___
+      -  Hint: You will use ``mkdir``
 
-   .. raw:: html
+      .. tab:: Bash
 
-      <h4>
+         .. code:: bash
 
-   Copy June 11th files to ``send_to_ford/``.
+            mkdir ___
+            mkdir ___/___
+            mkdir ___/___
 
-   .. raw:: html
+      Copy data files to ``backup/data``. (Use a similiar approach for calibration files.) 
 
-      </h4>
+      -  Hint: Use the copy command ``cp`` with wildcards
 
-   -  Hint: Use the copy command ``cp`` with wildcards!
+      .. tab:: Bash
 
-   .. code:: bash
+         .. code:: bash
 
-      cp *-11-*.txt send_to_ford/
+            cp *-data.txt backup/___
 
-.. raw:: html
+      Copy June 11th files to ``send_to_ford/``.
 
-   </details>
+      -  Hint: Use the copy command ``cp`` with wildcards!
+
+      .. tab:: Bash
+
+         .. code:: bash
+
+            cp *-11-*.txt send_to_ford/
+
 
 Resources
 ~~~~~~~~~

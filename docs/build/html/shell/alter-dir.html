@@ -176,25 +176,25 @@
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../git.html">Git Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../git/setup-install.html">Setup and Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../git/quick-start.html">Quick Start to GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/setup-install.html">Setup and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/quick-start.html">Quick start to Git and GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/pushing.html">Pushing changes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/fetch-merge.html">Fetch and merge from GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../git/git-utilities.html">Git Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/git-utilities.html">Git utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/forking.html">Forking in GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../git/glossary.html">Git Vocabulary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/glossary.html">Git Glossary</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../r.html">R</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of R</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../r/quick-start.html">Intro to R and the Tidyverse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../r/data-wrangling.html">Data wrangling with the Tidyverse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../r/data-visualization.html">ggplot2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../r/text-mining.html">Text Mining with R</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../r/text-mining.html">Text mining</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../shell.html">Unix Shell</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Unix Shell</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="setup.html">Bash Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="navigating.html">Navigating to files and directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="navigating.html">Navigating</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Altering files and directories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pipes-filters.html">Pipes and filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="loops.html">Loops</a></li>
@@ -249,51 +249,70 @@
 <h2>Creating Directories or Files<a class="headerlink" href="#creating-directories-or-files" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">mkdir</span></code> creates a new directory, followed by the name of the new
 directory.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mkdir<span class="w"> </span>new_dir
 $<span class="w"> </span>ls<span class="w"> </span>-F
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">new_dir</span><span class="o">/</span>
+</div>
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>new_dir/
 </pre></div>
 </div>
+</div>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">-p</span></code> can be used to make subdirectories.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span>code/python/analysis
 ls<span class="w"> </span>-RF<span class="w"> </span><span class="c1"># displays subdirectory structure</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">code</span><span class="o">/</span>
+</div>
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>code/
 
-<span class="o">./</span><span class="n">code</span><span class="p">:</span>
-<span class="n">python</span><span class="o">/</span>
+./code:
+python/
 
-<span class="o">./</span><span class="n">code</span><span class="o">/</span><span class="n">python</span><span class="p">:</span>
-<span class="n">analysis</span><span class="o">/</span>
+./code/python:
+analysis/
 
-<span class="o">./</span><span class="n">code</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">analysis</span><span class="p">:</span>
+./code/python/analysis:
 </pre></div>
+</div>
+</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">nano</span> <span class="pre">filename.txt</span></code> runs a text editor called <code class="docutils literal notranslate"><span class="pre">nano</span></code> to create a new
 file by the name given. For example, <code class="docutils literal notranslate"><span class="pre">nano</span> <span class="pre">thesis.txt</span></code> creates a text
 file named <code class="docutils literal notranslate"><span class="pre">thesis.txt</span></code> in the working directory.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>nano<span class="w"> </span>filename.txt
 </pre></div>
 </div>
-<figure class="align-default" id="id1">
+</div>
+</div>
+<figure class="align-default">
 <img alt="nano" src="../_images/nano.png" />
-<figcaption>
-<p><span class="caption-text">nano</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
-</figcaption>
 </figure>
 <p><code class="docutils literal notranslate"><span class="pre">touch</span> <span class="pre">filename.txt</span></code> creates an empty (0 byte) file by the new name
 given. Why bother? Some programs require empty files to populate with
 output.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>touch<span class="w"> </span>filename2.txt
 $<span class="w"> </span>ls<span class="w"> </span>-F
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">filename2</span><span class="o">.</span><span class="n">txt</span>
+</div>
+<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>filename.txt
+filename2.txt
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="moving-or-renaming-directories-or-files-safely">
@@ -301,12 +320,18 @@ $<span class="w"> </span>ls<span class="w"> </span>-F
 <p><code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">filename.txt</span> <span class="pre">new_location</span></code> command move has two arguments. The
 first tells <code class="docutils literal notranslate"><span class="pre">mv</span></code> what we’re moving, while the second is where it will
 go.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mv<span class="w"> </span>filename.txt<span class="w"> </span>new_dir
 $<span class="w"> </span>ls<span class="w"> </span>-F<span class="w"> </span>new_dir
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span><span class="o">.</span><span class="n">txt</span>
+</div>
+<input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>filename.txt
 </pre></div>
+</div>
+</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">-i</span></code> or <code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">-interactive</span></code> must be used to make <code class="docutils literal notranslate"><span class="pre">mv</span></code> ask for
 confirmation before overwriting any existing file or directory with the
@@ -317,13 +342,19 @@ overwrite.)</p>
 <h2>Copying directories and/or files<a class="headerlink" href="#copying-directories-and-or-files" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">old</span> <span class="pre">new</span></code> command copies a file (first argument) to a new location
 (second argument)</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cp<span class="w"> </span>filename2.txt<span class="w"> </span>new_dir
 $<span class="w"> </span>ls<span class="w"> </span>-F
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">filename2</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">new_dir</span><span class="o">/</span>
+</div>
+<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>filename2.txt
+new_dir/
 </pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">-r</span></code> adds the recursive option to copy a directory and all its
@@ -347,12 +378,18 @@ confirmation before deleting.</p></li>
 option will <strong>remove a directory and all its contents</strong> with
 confirmation prompts.</p></li>
 </ul>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>rm<span class="w"> </span>-i<span class="w"> </span>-r<span class="w"> </span>new_dir
 $<span class="w"> </span>ls
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">filename2</span><span class="o">.</span><span class="n">txt</span>
+</div>
+<input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>filename2.txt
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="tips-for-good-names-for-files-and-directories">
@@ -363,15 +400,24 @@ $<span class="w"> </span>ls
 option. Names should start with letters or numbers.</p></li>
 <li><p>Avoid special characters. Some have special meanings.</p></li>
 </ol>
-<p><em>If you need to refer to names of files or directories that have spaces,
-put them in quotes (““).</em></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you need to refer to names of files or directories that have spaces,
+put them in quotes (““).</p>
+</div>
 <section id="whats-in-a-name">
 <h3>What’s in a name?<a class="headerlink" href="#whats-in-a-name" title="Permalink to this headline">#</a></h3>
 <p>A <strong>filename extension</strong> is the second part of the filename after the
 dot (<code class="docutils literal notranslate"><span class="pre">.</span></code>). They help us and programs tell different kinds of files
-apart. A few examples: - .txt: plain text file - .csv: comma separated
-value file - .pdf: PDF document - .cfg: configuration file of parameters
-for a program - .png: an image file</p>
+apart. A few examples:</p>
+<ul class="simple">
+<li><p>.txt: plain text file</p></li>
+<li><p>.csv: comma separated value file</p></li>
+<li><p>.pdf: PDF document</p></li>
+<li><p>.cfg: configuration file of parameters
+for a program</p></li>
+<li><p>.png: an image file</p></li>
+</ul>
 <p>The <strong>wildcard</strong> <code class="docutils literal notranslate"><span class="pre">*</span></code> matches zero or more characters. For example, to
 copy all text files in a directory, use <code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">*.txt</span> <span class="pre">DIR_NAME</span></code>.</p>
 <p>The <strong>wildcard</strong> <code class="docutils literal notranslate"><span class="pre">?</span></code> matches exactly one character.</p>
@@ -382,98 +428,121 @@ copy all text files in a directory, use <code class="docutils literal notranslat
 <p><code class="docutils literal notranslate"><span class="pre">nano</span></code> is a built-in text editor that only works with plain character
 data (i.e. no tables, images, or other media). It is the least complex,
 but you may want to try more powerful editors.</p>
-<p><strong>For Unix Systems (Linux and macOS)</strong> -
-<a class="reference external" href="http://www.gnu.org/software/emacs">Emacs</a> -
-<a class="reference external" href="http://vim.org/">Vim</a> - <a class="reference external" href="http://projects.gnome.org/gedit/">Gedit</a>
-is a graphical editor</p>
-<p><strong>For Windows</strong> - <a class="reference external" href="http://notepad-plus-plus.org/">Notepad++</a> -
-<code class="docutils literal notranslate"><span class="pre">notepad</span></code> is built-in and can be run in the command line</p>
-<p><em>If you start an editor from the shell, it will use your current working
-directory as its default location.</em></p>
-<p><em>In editor commands, the Control key is also called Ctrl or ^.</em></p>
+<p><strong>For Unix Systems (Linux and macOS)</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.gnu.org/software/emacs">Emacs</a></p></li>
+<li><p><a class="reference external" href="http://vim.org/">Vim</a></p></li>
+<li><p><a class="reference external" href="http://projects.gnome.org/gedit/">Gedit</a> is a graphical editor</p></li>
+</ul>
+<p><strong>For Windows</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://notepad-plus-plus.org/">Notepad++</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">notepad</span></code> is built-in and can be run in the command line</p></li>
+</ul>
+<div class="admonition-editor-tips admonition">
+<p class="admonition-title">Editor tips</p>
+<p>If you start an editor from the shell, it will use your current working
+directory as its default location.</p>
+<p>In editor commands, the Control key is also called Ctrl or ^.</p>
+</div>
 </section>
 <section id="challenge-questions">
 <h2>Challenge Questions<a class="headerlink" href="#challenge-questions" title="Permalink to this headline">#</a></h2>
 <p><strong>(1) Moving files.</strong> We accidentally put the files <code class="docutils literal notranslate"><span class="pre">sucrose.dat</span></code> and
 <code class="docutils literal notranslate"><span class="pre">maltose.dat</span></code> into the wrong folder, <code class="docutils literal notranslate"><span class="pre">analyzed/</span></code>. Fill in the blanks
 to move these files into the <code class="docutils literal notranslate"><span class="pre">raw/</span></code> folder.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>-F
-<span class="w">  </span>analyzed/<span class="w">  </span>raw/
+analyzed/<span class="w">  </span>raw/
 $<span class="w"> </span>ls<span class="w"> </span>-F<span class="w"> </span>analyzed/
-<span class="w">  </span>fructose.dat<span class="w"> </span>glucose.dat<span class="w"> </span>maltose.dat<span class="w"> </span>sucrose.dat
+fructose.dat<span class="w"> </span>glucose.dat<span class="w"> </span>maltose.dat<span class="w"> </span>sucrose.dat
 $<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>analyzed
 </pre></div>
 </div>
+</div>
+</div>
 <p>My next line of code should be (fill in the blanks):</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mv<span class="w"> </span>sucrose.dat<span class="w"> </span>matose.dat<span class="w"> </span>___/___
 </pre></div>
 </div>
-<details><summary><p>Solution</p>
-</summary><div class="docutils container">
+</div>
+</div>
+<details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
 <p>Think about <code class="docutils literal notranslate"><span class="pre">../raw</span></code> Recall that <code class="docutils literal notranslate"><span class="pre">..</span></code> refers to the parent
 directory (i.e. one above the current directory).</p>
 </div>
 </details><p><strong>(2) Renaming Files.</strong> We mispelled a filename! Which of the following
 commands will correct our mistake?</p>
-<ol type="a"><li><p>cp statstics.txt statistics.txt</p>
-</li><li><p>mv statstics.txt statistics.txt</p>
-</li><li><p>lmv statistics.txt .</p>
-</li><li><p>cp statstics.txt .</p>
-</li></ol><details><summary><p>Solution</p>
-</summary><div class="docutils container">
-<ol type="a"><li><p>Will copy the file, so we will end up with the mispelled and correct
-version.</p>
-</li><li><p>Will move (i.e. rename) the incorrect file name to a correct
-filename.</p>
-</li><li><p>Not a working command.</p>
-</li><li><p>Will not work. Remember . is the current directory.</p>
-</li></ol></div>
+<ol class="loweralpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">statstics.txt</span> <span class="pre">statistics.txt</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">statstics.txt</span> <span class="pre">statistics.txt</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lmv</span> <span class="pre">statistics.txt</span> <span class="pre">.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">statstics.txt</span> <span class="pre">.</span></code></p></li>
+</ol>
+<details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
+<ol class="loweralpha simple">
+<li><p>Will copy the file, so we will end up with the mispelled and correct version.</p></li>
+<li><p>Will move (i.e. rename) the incorrect file name to a correct filename.</p></li>
+<li><p>Not a working command.</p></li>
+<li><p>Will not work. Remember <code class="docutils literal notranslate"><span class="pre">.</span></code> is the current directory.</p></li>
+</ol>
+</div>
 </details><p><strong>(3) Removal.</strong> What happens when we execute
 <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-i</span> <span class="pre">thesis/finaldraft.txt</span></code>? Why would we want this protection when
 using <code class="docutils literal notranslate"><span class="pre">rm</span></code>?</p>
-<details><summary><p>Solution</p>
-</summary><div class="docutils container">
+<details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
 <p>The program will confirm that we want to delete the thesis final
 draft file. Remember, deletion is forever! There is no trash can or
 recycle bin.</p>
 </div>
 </details><p><strong>(4) Removal.</strong> What is wrong with the command <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-i</span> <span class="pre">thesis</span></code>?</p>
-<details><summary><p>Solution</p>
-</summary><div class="docutils container">
+<details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
 <p>The remove command will not act on a directory unless the recursive
-option -r is given.</p>
+option <code class="docutils literal notranslate"><span class="pre">-r</span></code> is given.</p>
 </div>
 </details><p><strong>(5) Removal.</strong> What is wrong with the command <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-r</span> <span class="pre">thesis</span></code>?</p>
-<details><summary><p>Solution</p>
-</summary><div class="docutils container">
+<details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
 <p>This remove command will successfully delete the directory thesis and
 all its contents, but we forgot to check for confirmation with the
 interaction option (-i). Remember, deletion is permanent!</p>
 </div>
 </details><p><strong>(6) Wildcards.</strong> Which of the following matches the file names
 <code class="docutils literal notranslate"><span class="pre">ethane.dat</span></code> and <code class="docutils literal notranslate"><span class="pre">methane.dat</span></code>?</p>
-<ol type="a"><li><p>ls ?ethane.dat</p>
-</li><li><p>ls *ethane.dat</p>
-</li><li><p>ls ???ane.dat</p>
-</li><li><p>ls ethane.*</p>
-</li></ol><details><summary><p>Hint</p>
-</summary><div class="docutils container">
-<p>Remember the ? wildcard matches to exactly one character. The *
+<ol class="loweralpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">?ethane.dat</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">*ethane.dat</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">???ane.dat</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">ethane.*</span></code></p></li>
+</ol>
+<details class="summary-hint">
+<summary>Hint</summary><div class="docutils container">
+<p>Remember the <code class="docutils literal notranslate"><span class="pre">?</span></code> wildcard matches to exactly one character. The <code class="docutils literal notranslate"><span class="pre">*</span></code>
 wildcard can match to zero to many characters.</p>
 </div>
-</details><details><summary><p>Solution</p>
-</summary><div class="docutils container">
-<ol type="a"><li><p>Matches methane.dat only (needs one character before ethane.dat).</p>
-</li><li><p>Matches both, can have any number of characters (including zero)
-before ethane.dat.</p>
-</li><li><p>Matches ethane.dat only (requires only 3 characters before ane.dat).</p>
-</li><li><p>Matches ethane.dat only (requires no characters before ethane).</p>
-</li></ol></div>
+</details><details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
+<ol class="loweralpha simple">
+<li><p>Matches <code class="docutils literal notranslate"><span class="pre">methane.dat</span></code> only (needs one character before <code class="docutils literal notranslate"><span class="pre">ethane.dat</span></code>).</p></li>
+<li><p>Matches both, can have any number of characters (including zero) before <code class="docutils literal notranslate"><span class="pre">ethane.dat</span></code>.</p></li>
+<li><p>Matches <code class="docutils literal notranslate"><span class="pre">ethane.dat</span></code> only (requires only 3 characters before <code class="docutils literal notranslate"><span class="pre">ane.dat</span></code>).</p></li>
+<li><p>Matches <code class="docutils literal notranslate"><span class="pre">ethane.dat</span></code> only (requires no characters before <code class="docutils literal notranslate"><span class="pre">ethane</span></code>).</p></li>
+</ol>
+</div>
 </details><section id="challenge-project">
 <h3>Challenge Project<a class="headerlink" href="#challenge-project" title="Permalink to this headline">#</a></h3>
 <p>Before heading on a trip, you want to back up your data and send some
 datasets to Ford. Fill in the following commands to get the job done.
 First, let’s set up a directory and files.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hashtag denotes a comment. The line will be skipped</span>
 
 <span class="c1"># Change to your desktop</span>
@@ -498,9 +567,13 @@ nano<span class="w"> </span><span class="m">2020</span>-06-09-data.txt
 nano<span class="w"> </span><span class="m">2020</span>-06-09-calibration.txt
 </pre></div>
 </div>
+</div>
+</div>
 <p>The next piece is provided in the shell script <code class="docutils literal notranslate"><span class="pre">session2challenge.sh</span></code>.</p>
 <p>While in your <code class="docutils literal notranslate"><span class="pre">fake_data</span></code> directory, copy and paste the code from this
 file and run it.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># session2challenge.sh creates more fake data and callibration files</span>
 
 <span class="nv">fmonth</span><span class="o">=</span><span class="s2">&quot;2020-06&quot;</span>
@@ -509,49 +582,64 @@ file and run it.</p>
 <span class="c1"># Loop through days to create data files and calibration files</span>
 <span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="sb">`</span>seq<span class="w"> </span>-w<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">30</span><span class="sb">`</span>
 <span class="k">do</span>
-<span class="w">  </span><span class="c1"># Define the filename</span>
-<span class="w">  </span><span class="nb">printf</span><span class="w"> </span>-v<span class="w"> </span>fname<span class="w"> </span><span class="s1">&#39;%s-%02d-data.txt&#39;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$fmonth</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$i</span><span class="s2">&quot;</span>
-<span class="w">  </span><span class="c1"># Create an empty file</span>
-<span class="w">  </span>touch<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$fname</span><span class="s2">&quot;</span>
-<span class="w">  </span><span class="c1"># Redirect in some data</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span>data<span class="w"> </span><span class="nv">$i</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$fname</span><span class="s2">&quot;</span>
+<span class="w">   </span><span class="c1"># Define the filename</span>
+<span class="w">   </span><span class="nb">printf</span><span class="w"> </span>-v<span class="w"> </span>fname<span class="w"> </span><span class="s1">&#39;%s-%02d-data.txt&#39;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$fmonth</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$i</span><span class="s2">&quot;</span>
+<span class="w">   </span><span class="c1"># Create an empty file</span>
+<span class="w">   </span>touch<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$fname</span><span class="s2">&quot;</span>
+<span class="w">   </span><span class="c1"># Redirect in some data</span>
+<span class="w">   </span><span class="nb">echo</span><span class="w"> </span>data<span class="w"> </span><span class="nv">$i</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$fname</span><span class="s2">&quot;</span>
 
-<span class="w">  </span><span class="nb">printf</span><span class="w"> </span>-v<span class="w"> </span>fname<span class="w"> </span><span class="s1">&#39;%s-%02d-calibration.txt&#39;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$fmonth</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$i</span><span class="s2">&quot;</span>
-<span class="w">  </span>touch<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$fname</span><span class="s2">&quot;</span>
-<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$i</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$fname</span><span class="s2">&quot;</span>
+<span class="w">   </span><span class="nb">printf</span><span class="w"> </span>-v<span class="w"> </span>fname<span class="w"> </span><span class="s1">&#39;%s-%02d-calibration.txt&#39;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$fmonth</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$i</span><span class="s2">&quot;</span>
+<span class="w">   </span>touch<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$fname</span><span class="s2">&quot;</span>
+<span class="w">   </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$i</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$fname</span><span class="s2">&quot;</span>
 <span class="k">done</span>
 </pre></div>
 </div>
-<p>Now, it’s your turn! 1. Create a backup directory with separate
+</div>
+</div>
+<p>Now, it’s your turn!</p>
+<ol class="arabic simple">
+<li><p>Create a backup directory with separate
 subdirectories for data and calibration files. Copy files to the
-appropriate locations. 1. Create a directory named send_to_ford and copy
-all the data from June 11th to it.</p>
-<details><summary><p>Get a hint</p>
-</summary><div class="docutils container">
-<h4><p>Create a backup directory with subdirectories for data and
-calibration files</p>
-</h4><ul class="simple">
+appropriate locations.</p></li>
+<li><p>Create a directory named send_to_ford and copy all the data from June 11th to it.</p></li>
+</ol>
+<details class="summary-hint">
+<summary>Hint</summary><div class="docutils container">
+<p>Create a backup directory with subdirectories for data and calibration files</p>
+<ul class="simple">
 <li><p>Hint: You will use <code class="docutils literal notranslate"><span class="pre">mkdir</span></code></p></li>
 </ul>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>___
 mkdir<span class="w"> </span>___/___
 mkdir<span class="w"> </span>___/___
 </pre></div>
 </div>
-<h4><p>Copy data files to <code class="docutils literal notranslate"><span class="pre">backup/data</span></code>. (Use a similiar approach for
-calibration files.)</p>
-</h4><ul class="simple">
+</div>
+</div>
+<p>Copy data files to <code class="docutils literal notranslate"><span class="pre">backup/data</span></code>. (Use a similiar approach for calibration files.)</p>
+<ul class="simple">
 <li><p>Hint: Use the copy command <code class="docutils literal notranslate"><span class="pre">cp</span></code> with wildcards</p></li>
 </ul>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>*-data.txt<span class="w"> </span>backup/___
 </pre></div>
 </div>
-<h4><p>Copy June 11th files to <code class="docutils literal notranslate"><span class="pre">send_to_ford/</span></code>.</p>
-</h4><ul class="simple">
+</div>
+</div>
+<p>Copy June 11th files to <code class="docutils literal notranslate"><span class="pre">send_to_ford/</span></code>.</p>
+<ul class="simple">
 <li><p>Hint: Use the copy command <code class="docutils literal notranslate"><span class="pre">cp</span></code> with wildcards!</p></li>
 </ul>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>*-11-*.txt<span class="w"> </span>send_to_ford/
 </pre></div>
+</div>
+</div>
 </div>
 </div>
 </details></section>

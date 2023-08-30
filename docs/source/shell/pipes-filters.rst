@@ -15,43 +15,55 @@ Questions to think about:
 -  How can I combine existing commands to do new things?
 -  How can I write to a file from the shell prompt?
 
-echo
-----
+``echo``
+--------
 
 ``echo`` prints a string or the value of a variable as output as text.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ echo hello world
+   .. code:: bash
 
-::
+      $ echo hello world
 
-   hello world
+.. tab:: Output
+
+   .. code:: none
+
+      hello world
 
 ``echo $SHELL`` prints the value of the variable ``$SHELL`` (a defined
 path).
 
-.. code:: bash
+.. tab:: Bash
 
-   $ echo $SHELL
+   .. code:: bash
 
-::
+      $ echo $SHELL
 
-   /usr/local/bin/bash
+.. tab:: Output
 
-wc
---
+   .. code:: none
+
+      /usr/local/bin/bash
+
+``wc``
+------
 
 ``wc`` is the word count command for number of lines, words, and
 characters in a file (left to right in that order). Let’s try that out
 on some of files in ``data-shell/molecules``.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ cd datashell/molecules
-   $ wc cubane.pdb
+   .. code:: bash
 
-::
+      $ cd datashell/molecules
+      $ wc cubane.pdb
+
+.. tab:: Output
+
+   .. code:: none
 
          20     156    1158 cubane.pdb
 
@@ -69,17 +81,23 @@ Write to a file from the prompt
 Here we get the number of lines in all of our files and redirect the
 output to a new file called ``line_count.txt``.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ wc -l *.pdb > line_count.txt
+   .. code:: bash
+
+      $ wc -l *.pdb > line_count.txt
 
 We can use ``cat`` to show the contents of this new file.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ cat line_count.txt
+   .. code:: bash
 
-::
+      $ cat line_count.txt
+
+.. tab:: Output
+
+   .. code:: none
 
          20 cubane.pdb
          12 ethane.pdb
@@ -95,11 +113,15 @@ sort
 ``sort`` sorts the contents of a file. ``sort -n`` sorts a numerical
 file.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ sort -n line_count.txt
+   .. code:: bash
 
-::
+      $ sort -n line_count.txt
+
+.. tab:: Output
+
+   .. code:: none
 
           9 methane.pdb
          12 ethane.pdb
@@ -109,7 +131,9 @@ file.
          30 octane.pdb
         107 total
 
-*Note*: To escape a mistake in the prompt, type Ctrl + C.
+.. Note:: 
+   
+   To escape a mistake in the prompt, type Ctrl + C.
 
 View particular file contents
 -----------------------------
@@ -138,11 +162,16 @@ command on the left as the input of the command on the right.
 Here, we take the output of ``wc -l *.pdb`` and feed that right into
 ``sort -nr``. The ``-r`` reverses the order of the sort.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ wc -l *.pdb | sort -nr 
+   .. code:: bash
 
-::
+      $ wc -l *.pdb | sort -nr 
+
+.. tab:: Output
+
+   .. code:: none
+
 
         107 total
          30 octane.pdb
@@ -155,349 +184,113 @@ Here, we take the output of ``wc -l *.pdb`` and feed that right into
 You can chain pipes consecutively between multiple commands. We do so
 here to grab the first line of the sort with ``head -n 1``
 
-.. code:: bash
+.. tab:: Bash
 
-   $ wc -l *.pdb | sort -nr | head -n 1
+   .. code:: bash
 
-::
+      $ wc -l *.pdb | sort -nr | head -n 1
+
+.. tab:: Output
+
+   .. code:: none
+
 
         107 total
 
 We can then redirect this output to a new file.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ wc -l *.pdb | sort -nr | head -n 1 > total_lines.txt
+   .. code:: bash
+
+      $ wc -l *.pdb | sort -nr | head -n 1 > total_lines.txt
 
 Challenge Questions:
 --------------------
 
-.. raw:: html
+1. In our current directory, we want to find the three files which have the
+   least number of lines. Which command listed below would work?
 
-   <ol>
+   a. ``$ wc -l \* > sort -n > head -n 3``
+   b. ``$ wc -l \* \| sort -n \| head -n 1-3``
+   c. ``$ wc -l \* \| head -n 3 \| sort -n``
+   d. ``$ wc -l \* \| sort -n \| head -n 3``
 
-.. raw:: html
+   .. collapse:: Solution
 
-   <li>
+      .. container::
 
-In our current directory, we want to find the three files which have the
-least number of lines. Which command listed below would work?
+         .. tab:: Bash
 
-.. raw:: html
+            .. code:: bash
 
-   <ol type="a">
+               $ wc -l * | sort -n | head -n 3
 
-.. raw:: html
+2. See the file called ``data-shell/data/animals.txt``. What text passes
+   through each of the pipes and the final redirect in the pipeline below?
 
-   <li>
+   .. tab:: Bash
 
-$ wc -l \* > sort -n > head -n 3
+      .. code:: bash
 
-.. raw:: html
+         $ cat animals.txt | head -n 5 | tail -n 3 | sort -r > final.txt
 
-   </li>
+   Hint: Build the pipeline up one command at a time to test your
+   understanding.
 
-.. raw:: html
 
-   <li>
+   .. collapse:: Solution
 
-$ wc -l \* \| sort -n \| head -n 1-3
 
-.. raw:: html
+      .. container::
 
-   </li>
+         ``cat animals.txt`` returns the full text in the file
+         ``animals.txt``.
 
-.. raw:: html
+         ``| head -n 5`` returns the first 5 lines of the file.
 
-   <li>
+         ``| tail -n 3`` gives the third, fourth, and fifth lines.
 
-$ wc -l \* \| head -n 3 \| sort -n
+         ``| sort -r`` sorts the lines in reverse alphabetical order.
 
-.. raw:: html
+         ``> final.txt`` takes these lines and saves them to a file called
+         ``final.txt``.
 
-   </li>
+3. ``uniq`` filters out adjacent matching lines in a file. How can we
+   extend the pipeline to find out what animals the file
+   ``data-shell/data/animals.txt`` contains without any duplicates?
 
-.. raw:: html
+   .. collapse:: Solution
 
-   <li>
+      .. container::
 
-$ wc -l \* \| sort -n \| head -n 3
+         .. tab:: Bash
 
-.. raw:: html
+            .. code:: bash
 
-   </li>
+               $ cut -d , -f 2 animals.txt | sort | uniq > animals_unique.txt
 
-.. raw:: html
+4. Assuming your current working directory is ``data-shell/data/``, which
+   command would you use to produce a table that shows the total count of
+   each type of animal in the file ``animals.txt``?
 
-   </ol>
+   a. ``$ sort animals.txt \| uniq -c``
+   b. ``$ sort -t, -k 2 animals.txt \| uniq -c``
+   c. ``$ cut -d, -f 2 animals.txt \| uniq -c``
+   d. ``$ cut -d, -f 2 animals.txt \| sort \| uniq -c``
+   e. ``$ cut -d, -f 2 animals.txt \| sort \| uniq -c \| wc -l``
 
-.. raw:: html
+   .. collapse:: Solution
 
-   <details>
+      .. container::
 
-.. raw:: html
-
-   <summary>
-
-Solution
-
-.. raw:: html
-
-   </summary>
-
-.. container::
-
-   .. code:: bash
-
-      $ wc -l * | sort -n | head -n 3
-
-.. raw:: html
-
-   </details>
-
-.. raw:: html
-
-   </li>
-
-.. raw:: html
-
-   <li>
-
-See the file called ``data-shell/data/animals.txt``. What text passes
-through each of the pipes and the final redirect in the pipeline below?
-
-.. code:: bash
-
-   $ cat animals.txt | head -n 5 | tail -n 3 | sort -r > final.txt
-
-Hint: Build the pipeline up one command at a time to test your
-understanding.
-
-.. raw:: html
-
-   <details>
-
-.. raw:: html
-
-   <summary>
-
-Solution
-
-.. raw:: html
-
-   </summary>
-
-.. container::
-
-   ``cat animals.txt`` returns the full text in the file
-   ``animals.txt``.
-
-   ``| head -n 5`` returns the first 5 lines of the file.
-
-   ``| tail -n 3`` gives the third, fourth, and fifth lines.
-
-   ``| sort -r`` sorts the lines in reverse alphabetical order.
-
-   ``> final.txt`` takes these lines and saves them to a file called
-   ``final.txt``.
-
-.. raw:: html
-
-   </details>
-
-.. raw:: html
-
-   </li>
-
-.. raw:: html
-
-   <li>
-
-``uniq`` filters out adjacent matching lines in a file. How can we
-extend the pipeline to find out what animals the file
-``data-shell/data/animals.txt`` contains without any duplicates?
-
-.. raw:: html
-
-   <details>
-
-.. raw:: html
-
-   <summary>
-
-Solution
-
-.. raw:: html
-
-   </summary>
-
-.. container::
-
-   .. code:: bash
-
-      $ cut -d , -f 2 animals.txt | sort | uniq > animals_unique.txt
-
-.. raw:: html
-
-   </details>
-
-.. raw:: html
-
-   </li>
-
-.. raw:: html
-
-   <li>
-
-Assuming your current working directory is ``data-shell/data/``, which
-command would you use to produce a table that shows the total count of
-each type of animal in the file ``animals.txt``?
-
-.. raw:: html
-
-   <ol type="a">
-
-.. raw:: html
-
-   <li>
-
-$ sort animals.txt \| uniq -c
-
-.. raw:: html
-
-   </li>
-
-.. raw:: html
-
-   <li>
-
-$ sort -t, -k 2 animals.txt \| uniq -c
-
-.. raw:: html
-
-   </li>
-
-.. raw:: html
-
-   <li>
-
-$ cut -d, -f 2 animals.txt \| uniq -c
-
-.. raw:: html
-
-   </li>
-
-.. raw:: html
-
-   <li>
-
-$ cut -d, -f 2 animals.txt \| sort \| uniq -c
-
-.. raw:: html
-
-   </li>
-
-.. raw:: html
-
-   <li>
-
-$ cut -d, -f 2 animals.txt \| sort \| uniq -c \| wc -l
-
-.. raw:: html
-
-   </li>
-
-.. raw:: html
-
-   </ol>
-
-.. raw:: html
-
-   <details>
-
-.. raw:: html
-
-   <summary>
-
-Solution
-
-.. raw:: html
-
-   </summary>
-
-.. container::
-
-   .. raw:: html
-
-      <ol type="a">
-
-   .. raw:: html
-
-      <li>
-
-   Sorts values, but includes date when trying to count all unique items
-
-   .. raw:: html
-
-      </li>
-
-   .. raw:: html
-
-      <li>
-
-   Still includes the dates
-
-   .. raw:: html
-
-      </li>
-
-   .. raw:: html
-
-      <li>
-
-   Because uniq only looks for lines repeated directly after each other,
-   it does not work
-
-   .. raw:: html
-
-      </li>
-
-   .. raw:: html
-
-      <li>
-
-   Correct solution
-
-   .. raw:: html
-
-      </li>
-
-   .. raw:: html
-
-      <li>
-
-   Counts how many unique animals there are in the data set
-
-   .. raw:: html
-
-      </li>
-
-   .. raw:: html
-
-      </ol>
-
-.. raw:: html
-
-   </details>
-
-.. raw:: html
-
-   </li>
-
-.. raw:: html
-
-   </ol>
-
+         a. Sorts values, but includes date when trying to count all unique items
+         b. Still includes the dates
+         c. Because uniq only looks for lines repeated directly after each other,
+            it does not work
+         d. Correct solution
+         e. Counts how many unique animals there are in the data set
+ 
 Resources
 ---------
 

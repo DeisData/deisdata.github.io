@@ -176,25 +176,25 @@
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../git.html">Git Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../git/setup-install.html">Setup and Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../git/quick-start.html">Quick Start to GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/setup-install.html">Setup and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/quick-start.html">Quick start to Git and GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/pushing.html">Pushing changes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/fetch-merge.html">Fetch and merge from GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../git/git-utilities.html">Git Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/git-utilities.html">Git utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/forking.html">Forking in GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../git/glossary.html">Git Vocabulary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/glossary.html">Git Glossary</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../r.html">R</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of R</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../r/quick-start.html">Intro to R and the Tidyverse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../r/data-wrangling.html">Data wrangling with the Tidyverse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../r/data-visualization.html">ggplot2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../r/text-mining.html">Text Mining with R</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../r/text-mining.html">Text mining</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../shell.html">Unix Shell</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Unix Shell</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Bash Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="navigating.html">Navigating to files and directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="navigating.html">Navigating</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alter-dir.html">Altering files and directories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pipes-filters.html">Pipes and filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="loops.html">Loops</a></li>
@@ -238,72 +238,81 @@
         <article role="main">
           <section id="bash-setup">
 <h1>Bash Setup<a class="headerlink" href="#bash-setup" title="Permalink to this headline">#</a></h1>
-<p><em>Adapted from</em> <a class="reference external" href="%22https://software-carpentry.org%22">Software
+<p><em>Adapted from</em> <a class="reference external" href="https://software-carpentry.org">Software
 Carpentry</a></p>
-<p><strong>Where to type commands: How to open a new shell</strong></p>
-<p><p>The shell is a program that enables us to send commands to the computer
+<p>The shell is a program that enables us to send commands to the computer
 and receive output. It is also referred to as the terminal or command
 line.</p>
-</p><p><p>Some computers include a default Unix Shell program. The steps below
+<p>Some computers include a default Unix Shell program. The steps below
 describe some methods for identifying and opening a Unix Shell program
 if you already have one installed. There are also options for
 identifying and downloading a Unix Shell program, a Linux/UNIX emulator,
 or a program to access a Unix Shell on a server.</p>
-</p><p><p>If none of the options below address your circumstances, try an online
+<p>If none of the options below address your circumstances, try an online
 search for: Unix shell [your computer model] [your operating system].</p>
-</p><h3 id="linux"><p>Linux</p>
-</h3><p><p>The default Unix Shell for Linux operating systems is usually Bash. On
-most versions of Linux, it is accessible by running the (Gnome) Terminal
-or (KDE) Konsole or xterm, which can be found via the applications menu
+<section id="linux">
+<h2>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">#</a></h2>
+<p>The default Unix Shell for Linux operating systems is usually Bash. On
+most versions of Linux, it is accessible by running the <a class="reference external" href="https://help.gnome.org/users/gnome-terminal/stable/">(Gnome) Terminal</a>
+or <a class="reference external" href="https://konsole.kde.org/">(KDE) Konsole</a> or <a class="reference external" href="https://en.wikipedia.org/wiki/Xterm">xterm</a>,
+which can be found via the applications menu
 or the search bar. If your machine is set up to use something other than
-Bash, you can run it by opening a terminal and typing bash.</p>
-</p><h3 id="macos"><p>macOS</p>
-</h3><p><p>For a Mac computer running macOS Mojave or earlier releases, the default
+Bash, you can run it by opening a terminal and typing <code class="docutils literal notranslate"><span class="pre">bash</span></code>.</p>
+</section>
+<section id="macos">
+<h2>macOS<a class="headerlink" href="#macos" title="Permalink to this headline">#</a></h2>
+<p>For a Mac computer running macOS Mojave or earlier releases, the default
 Unix Shell is Bash. For a Mac computer running macOS Catalina or later
 releases, the default Unix Shell is Zsh. Your default shell is available
 via the Terminal program within your Utilities folder.</p>
-</p><p><p>To open Terminal, try one or both of the following:</p>
-</p><ul><li><p>In Finder, select the Go menu, then select Utilities. Locate Terminal in
-the Utilities folder and open it.</p>
-</li><li><p>Use the Mac ‘Spotlight’ computer search function. Search for: Terminal
-and press Return.</p>
-</li></ul><p><p>To check if your machine is set up to use something other than Bash,
-type echo $SHELL in your terminal window.</p>
-</p><p><p>If your machine is set up to use something other than Bash, you can run
-it by opening a terminal and typing bash.</p>
+<p>To open Terminal, try one or both of the following:</p>
+<ul class="simple">
+<li><p>In Finder, select the Go menu, then select Utilities.
+Locate Terminal in the Utilities folder and open it.</p></li>
+<li><p>Use the Mac ‘Spotlight’ computer search function. Search for: <strong>Terminal</strong>
+and press <kbd class="kbd docutils literal notranslate">Return</kbd>.</p></li>
+</ul>
+<p>To check if your machine is set up to use something other than Bash,
+type <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$SHELL</span></code> in your terminal window.</p>
+<p>If your machine is set up to use something other than Bash, you can run
+it by opening a terminal and typing <code class="docutils literal notranslate"><span class="pre">bash</span></code>.</p>
 </p><p>To change the default shell, follow <a class="reference external" href="https://www.howtogeek.com/444596/how-to-change-the-default-shell-to-bash-in-macos-catalina/">these
 instructions</a>.</p>
-<h4 id="reference"><p>Reference</p>
-</h4><p><p>How to Use Terminal on a Mac</p>
-</p><h3 id="windows"><p>Windows</p>
-</h3><p><p>Computers with Windows operating systems do not automatically have a
+</section>
+<section id="windows">
+<h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">#</a></h2>
+<p>Computers with Windows operating systems do not automatically have a
 Unix Shell program installed. In this lesson, we encourage you to use an
-emulator included in Git for Windows, which gives you access to both
-Bash shell commands and Git. If you are attending a Software Carpentry
+emulator included in <a class="reference external" href="https://git-for-windows.github.io/">Git for Windows</a>,
+which gives you access to both Bash shell commands and Git. If you are attending a Software Carpentry
 workshop session, it is likely you have already received instructions on
 how to install Git for Windows.</p>
-</p><p><p>Once installed, you can open a terminal by running the program Git Bash
+<p>Once installed, you can open a terminal by running the program Git Bash
 from the Windows start menu.</p>
-</p><p><p>Other solutions are available for running Bash commands on Windows.
+<p>Other solutions are available for running Bash commands on Windows.
 There is now a Bash shell command-line tool available for Windows 10.
 Additionally, you can run Bash commands on a remote computer or server
 that already has a Unix Shell, from your Windows machine. This can
 usually be done through a Secure Shell (SSH) client. One such client
-available for free for Windows computers is PuTTY. See the reference
+available for free for Windows computers is <a class="reference external" href="https://www.putty.org/">PuTTY</a>. See the reference
 below for information on installing and using PuTTY, using the Windows
 10 command-line tool, or installing and using a Unix/Linux emulator.</p>
-</p><h4 id="reference-1"><p>Reference</p>
-</h4><ul><li><p>Git for Windows - Recommended</p>
-</li></ul><h3 id="for-advanced-users-you-may-choose-one-of-the-following-alternatives"><p>For advanced users, you may choose one of the following alternatives:</p>
-</h3><ul><li><p>Install the Windows Subsystem for Linux</p>
-</li><li><p>Using a Unix/Linux emulator (Cygwin) or Secure Shell (SSH) client
-(Putty)</p>
-</li></ul><div class="admonition warning">
+<ul class="simple">
+<li><p><a class="reference external" href="https://git-for-windows.github.io/">Git for Windows - Recommended</a></p></li>
+</ul>
+<p>For advanced users, you may choose one of the following alternatives:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">Install the Windows Subsystem for Linux</a></p></li>
+<li><p><a class="reference external" href="http://faculty.smu.edu/reynolds/unixtut/windows.html">Using a Unix/Linux emulator (Cygwin) or Secure Shell (SSH) client
+(PuTTy)</a></p></li>
+</ul>
+<div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Please note that commands in the Windows Subsystem for Linux (WSL) or
 Cygwin may differ slightly from those shown in the lesson or presented
 in the workshop.</p>
 </div>
+</section>
 <section id="resources">
 <h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">#</a></h2>
 <p>This lesson is adapted from <a class="reference external" href="http://swcarpentry.github.io/shell-novice/">The Unix Shell on Software
@@ -367,6 +376,9 @@ Carpentry</a>.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Bash Setup</a><ul>
+<li><a class="reference internal" href="#linux">Linux</a></li>
+<li><a class="reference internal" href="#macos">macOS</a></li>
+<li><a class="reference internal" href="#windows">Windows</a></li>
 <li><a class="reference internal" href="#resources">Resources</a></li>
 </ul>
 </li>

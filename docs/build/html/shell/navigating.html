@@ -176,25 +176,25 @@
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../git.html">Git Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../git/setup-install.html">Setup and Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../git/quick-start.html">Quick Start to GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/setup-install.html">Setup and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/quick-start.html">Quick start to Git and GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/pushing.html">Pushing changes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/fetch-merge.html">Fetch and merge from GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../git/git-utilities.html">Git Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/git-utilities.html">Git utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/forking.html">Forking in GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../git/glossary.html">Git Vocabulary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/glossary.html">Git Glossary</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../r.html">R</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of R</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../r/quick-start.html">Intro to R and the Tidyverse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../r/data-wrangling.html">Data wrangling with the Tidyverse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../r/data-visualization.html">ggplot2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../r/text-mining.html">Text Mining with R</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../r/text-mining.html">Text mining</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../shell.html">Unix Shell</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Unix Shell</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="setup.html">Bash Setup</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Navigating to files and directories</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Navigating</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alter-dir.html">Altering files and directories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pipes-filters.html">Pipes and filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="loops.html">Loops</a></li>
@@ -275,19 +275,23 @@ interface with hardware, HPCC, and remote machines.</p>
 <section id="navigating-files-and-directories">
 <h2>Navigating files and directories<a class="headerlink" href="#navigating-files-and-directories" title="Permalink to this headline">#</a></h2>
 <p>The <strong>file system</strong> is the part of the operating system responsible for
-managing files and directories. - <strong>Files</strong> hold information. -
-<strong>Directories</strong> (or <strong>folders</strong>) hold files or other directories. Thinks
-of them like <em>places</em>. - The <strong>current working directory</strong> is the place
-where you are in the file system when you are using the shell. - The
-<strong>root directory</strong> is the top directory that holds everything else. It
+managing files and directories.</p>
+<ul class="simple">
+<li><p><strong>Files</strong> hold information.</p></li>
+<li><p><strong>Directories</strong> (or <strong>folders</strong>) hold files or other directories. Thinks
+of them like <em>places</em>.</p></li>
+<li><p>The <strong>current working directory</strong> is the place
+where you are in the file system when you are using the shell.</p></li>
+<li><p>The <strong>root directory</strong> is the top directory that holds everything else. It
 is refered to by a slash <code class="docutils literal notranslate"><span class="pre">/</span></code> on its own. This is the leading slash in
-other directory paths, for example <code class="docutils literal notranslate"><span class="pre">/home/fordfishman/</span></code> - <strong>Hidden
-files and directories</strong> start with <code class="docutils literal notranslate"><span class="pre">.</span></code> like <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code>. They
+other directory paths, for example <code class="docutils literal notranslate"><span class="pre">/home/fordfishman/</span></code></p></li>
+<li><p><strong>Hidden files and directories</strong> start with <code class="docutils literal notranslate"><span class="pre">.</span></code> like <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code>. They
 are usually configuration settings and are hidden to prevent cluttering
 the terminal with a standard <code class="docutils literal notranslate"><span class="pre">ls</span></code> command. Add the <code class="docutils literal notranslate"><span class="pre">-a</span></code> option see
-hidden files.</p>
+hidden files.</p></li>
+</ul>
 <p>Example of directory structure:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Documents
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Documents
 ├── Code
 │   ├── analysis.py
 │   └── functions.py
@@ -310,8 +314,12 @@ the file is <code class="docutils literal notranslate"><span class="pre">Desktop
 </section>
 <section id="general-syntax-of-a-shell-command">
 <h2>General syntax of a shell command<a class="headerlink" href="#general-syntax-of-a-shell-command" title="Permalink to this headline">#</a></h2>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>-F<span class="w"> </span>/
 </pre></div>
+</div>
+</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">ls</span></code> is the <strong>command</strong>, with an <strong>option</strong> (or <strong>switch</strong> or
 <strong>flag</strong>) <code class="docutils literal notranslate"><span class="pre">-F</span></code> and an <strong>argument</strong> <code class="docutils literal notranslate"><span class="pre">/</span></code>. <strong>Options</strong> start with a
@@ -319,60 +327,88 @@ single dash (<code class="docutils literal notranslate"><span class="pre">-</spa
 the command. Arguments tell the command what to operate on (e.g. files
 and directories). Options and argements are refered to as
 <strong>parameters</strong>.</p>
-<p><strong>Type case is important.</strong> <strong>Spaces are important between command and
-options. (But options can be combined with a single - and no spaces).</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Type case is important.Spaces are important between command and
+options. (But options can be combined with a single - and no spaces).</p>
+</div>
 </section>
 <section id="listing">
 <h2>Listing<a class="headerlink" href="#listing" title="Permalink to this headline">#</a></h2>
 <p>We use the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command to list the contents of the current directory.</p>
-<p>It has many options we can provide: - <code class="docutils literal notranslate"><span class="pre">-F</span></code> option (switch or flag)
-tells ls to classify the output by adding a marker to file and directory
-names to indicate what they are. - <code class="docutils literal notranslate"><span class="pre">-a</span></code> option displays all files,
-including hidden files (files starting with <code class="docutils literal notranslate"><span class="pre">.</span></code>) - <code class="docutils literal notranslate"><span class="pre">-s</span></code> option
-displays the size of files and directories - <code class="docutils literal notranslate"><span class="pre">-S</span></code> option will sort the
-files and directories by size - <code class="docutils literal notranslate"><span class="pre">--help</span></code> option will tell us how to
-use the command and what options it accepts</p>
+<p>It has many options we can provide:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-F</span></code> option (switch or flag) tells ls to classify the output by adding a marker to file and directory
+names to indicate what they are.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-a</span></code> option displays all files, including hidden files (files starting with <code class="docutils literal notranslate"><span class="pre">.</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-s</span></code> option displays the size of files and directories</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-S</span></code> option will sort the files and directories by size</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--help</span></code> option will tell us how to use the command and what options it accepts</p></li>
+</ul>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>-F
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Applications</span><span class="o">/</span>       <span class="n">data_shell</span><span class="o">/</span>     <span class="n">Music</span><span class="o">/</span>
-<span class="n">Desktop</span><span class="o">/</span>        <span class="n">data_shell</span><span class="o">.</span><span class="n">zip</span>      <span class="n">Pictures</span><span class="o">/</span>
-<span class="n">Documents</span><span class="o">/</span>      <span class="n">Library</span><span class="o">/</span>
-<span class="n">Downloads</span><span class="o">/</span>      <span class="n">Movies</span><span class="o">/</span>
+</div>
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Applications/   data_shell/      Music/
+Desktop/        data_shell.zip   Pictures/
+Documents/      Library/
+Downloads/      Movies/
 </pre></div>
 </div>
-<div class="line-block">
-<div class="line"><strong>Explore more ``ls`` flags.</strong></div>
-<div class="line">1. What does <code class="docutils literal notranslate"><span class="pre">-l</span></code> option do? What if you use <code class="docutils literal notranslate"><span class="pre">-l</span></code> and <code class="docutils literal notranslate"><span class="pre">-h</span></code>? 1.
-The default <code class="docutils literal notranslate"><span class="pre">ls</span></code> lists contents in alphabetical order. What option
-do I use to see them by time of last change?</div>
 </div>
+</div>
+<section id="explore-more-ls-flags">
+<h3>Explore more <code class="docutils literal notranslate"><span class="pre">ls</span></code> flags.<a class="headerlink" href="#explore-more-ls-flags" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p>What does <code class="docutils literal notranslate"><span class="pre">-l</span></code> option do? What if you use <code class="docutils literal notranslate"><span class="pre">-l</span></code> and <code class="docutils literal notranslate"><span class="pre">-h</span></code>?</p></li>
+<li><p>The default <code class="docutils literal notranslate"><span class="pre">ls</span></code> lists contents in alphabetical order. What option
+do I use to see them by time of last change?</p></li>
+</ol>
+</section>
 </section>
 <section id="print-working-directory">
 <h2>Print working directory<a class="headerlink" href="#print-working-directory" title="Permalink to this headline">#</a></h2>
 <p>To check where you are, use <code class="docutils literal notranslate"><span class="pre">pwd</span></code> to print the path of the <strong>working
 directory</strong>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">pwd</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">fordfishman</span><span class="o">/</span>
+</div>
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>/home/fordfishman/
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="change-directory">
 <h2>Change directory<a class="headerlink" href="#change-directory" title="Permalink to this headline">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">cd</span></code> will change your working directory. <code class="docutils literal notranslate"><span class="pre">cd</span></code> can only see
-sub-directories inside your current working directory. - <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code> is a
-shortcut to move up one directory to the <em>parent directory</em> of the one
-we are in - <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/</span></code> is a shortcut to move to the current user’s home
+sub-directories inside your current working directory.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code> is a shortcut to move up one directory to the <em>parent directory</em> of the one
+we are in</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/</span></code> is a shortcut to move to the current user’s home
 directory. For example, if my home directory is <code class="docutils literal notranslate"><span class="pre">/home/fordfishman</span></code>,
-then <code class="docutils literal notranslate"><span class="pre">~/data</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">/home/fordfishman/data</span></code></p>
+then <code class="docutils literal notranslate"><span class="pre">~/data</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">/home/fordfishman/data</span></code></p></li>
+</ul>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
 $<span class="w"> </span><span class="nb">pwd</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">home</span><span class="o">/</span>
+</div>
+<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>/home/
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="other-commands">
@@ -460,7 +496,10 @@ Shell</a></p></li>
 <li><a class="reference internal" href="#navigating-files-and-directories">Navigating files and directories</a></li>
 <li><a class="reference internal" href="#paths">Paths</a></li>
 <li><a class="reference internal" href="#general-syntax-of-a-shell-command">General syntax of a shell command</a></li>
-<li><a class="reference internal" href="#listing">Listing</a></li>
+<li><a class="reference internal" href="#listing">Listing</a><ul>
+<li><a class="reference internal" href="#explore-more-ls-flags">Explore more <code class="docutils literal notranslate"><span class="pre">ls</span></code> flags.</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#print-working-directory">Print working directory</a></li>
 <li><a class="reference internal" href="#change-directory">Change directory</a></li>
 <li><a class="reference internal" href="#other-commands">Other commands</a><ul>

@@ -15,12 +15,14 @@ Loop Structure
 
 Here is some pseudo-code showing the basic syntax of a for loop in bash.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ for thing in list_of_things
-   > do
-   >     my_command $thing
-   > done
+   .. code:: bash
+
+      $ for thing in list_of_things
+      > do
+      >     my_command $thing
+      > done
 
 -  ``list_of_things`` is some collection, like a group of files
 -  ``thing`` is a variable name we assign to each file, one at a time
@@ -35,48 +37,56 @@ Loop Examples
 The following for loop lists the contents of working directory one item
 at a time.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ for itemname in *
-   > do
-   >     ls $itemname
-   > done
+   .. code:: bash
+
+      $ for itemname in *
+      > do
+      >     ls $itemname
+      > done
 
 Here we grab the first two lines of 3 data files.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ cd Desktop/data-shell/creatures
-   $ for filename in basilisk.dat minotaur.dat unicorn.dat
-   > do 
-   >     head -n 2 $filename
-   > done
+   .. code:: bash
+
+      $ cd Desktop/data-shell/creatures
+      $ for filename in basilisk.dat minotaur.dat unicorn.dat
+      > do 
+      >     head -n 2 $filename
+      > done
 
 We can make changes to files within loops, as well.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ cd Desktop/data-shell/creatures
-   $ for filename in basilisk.dat minotaur.dat unicorn.dat
-   > do 
-   >    head -n 2 $filename >> all.pdb
-   > done
+   .. code:: bash
+
+      $ cd Desktop/data-shell/creatures
+      $ for filename in basilisk.dat minotaur.dat unicorn.dat
+      > do 
+      >    head -n 2 $filename >> all.pdb
+      > done
 
 Repeat running a program with all your input data files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Nell has files NENE00000A.txt and NENE00000B.txt that need needs to run
+Nell has files ``NENE00000A.txt`` and ``NENE00000B.txt`` that need needs to run
 through the program ``goostats`` one at a time. The program ``goostats``
 has two arguments, the input data file, and the output statistics file.
 
-.. code:: bash
+.. tab:: Bash
 
-   $ cd ../north-pacific-gyre/2012-07-03
-   $ for datafile in NENE*[AB].txt
-   > do 
-   >    bash goostats $datafile stats-$datafile   #where stats-$datafile is the output of goostats program.
-   >    echo output: stats-$datafile
-   done
+   .. code:: bash
+
+      $ cd ../north-pacific-gyre/2012-07-03
+      $ for datafile in NENE*[AB].txt
+      > do 
+      >    bash goostats $datafile stats-$datafile   #where stats-$datafile is the output of goostats program.
+      >    echo output: stats-$datafile
+      > done
 
 Checking on your loop before you run it!
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -92,15 +102,17 @@ Nested Loops Challenge!
 
 What does this do?
 
-.. code:: bash
+.. tab:: Bash
 
-   $ for species in cubane ethane methane
-   > do
-   >     for temperature in 25 30 37 40
-   >     do
-   >         mkdir $species-$temperature
-   >     done
-   > done
+   .. code:: bash
+
+      $ for species in cubane ethane methane
+      > do
+      >     for temperature in 25 30 37 40
+      >     do
+      >         mkdir $species-$temperature
+      >     done
+      > done
 
 Resources
 ~~~~~~~~~

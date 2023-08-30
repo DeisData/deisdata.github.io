@@ -176,25 +176,25 @@
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../git.html">Git Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../git/setup-install.html">Setup and Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../git/quick-start.html">Quick Start to GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/setup-install.html">Setup and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/quick-start.html">Quick start to Git and GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/pushing.html">Pushing changes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/fetch-merge.html">Fetch and merge from GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../git/git-utilities.html">Git Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/git-utilities.html">Git utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/forking.html">Forking in GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../git/glossary.html">Git Vocabulary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git/glossary.html">Git Glossary</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../r.html">R</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of R</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../r/quick-start.html">Intro to R and the Tidyverse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../r/data-wrangling.html">Data wrangling with the Tidyverse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../r/data-visualization.html">ggplot2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../r/text-mining.html">Text Mining with R</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../r/text-mining.html">Text mining</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../shell.html">Unix Shell</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Unix Shell</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="setup.html">Bash Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="navigating.html">Navigating to files and directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="navigating.html">Navigating</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alter-dir.html">Altering files and directories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pipes-filters.html">Pipes and filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="loops.html">Loops</a></li>
@@ -254,8 +254,12 @@ small program, so we can re-run operations with a single command.</div>
 <h2>Writing Shell Scripts<a class="headerlink" href="#writing-shell-scripts" title="Permalink to this headline">#</a></h2>
 <section id="shebang-the-top-line-of-a-script">
 <h3>Shebang the top line of a script:<a class="headerlink" href="#shebang-the-top-line-of-a-script" title="Permalink to this headline">#</a></h3>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>Uses the special marker <code class="docutils literal notranslate"><span class="pre">#!</span></code> and path <code class="docutils literal notranslate"><span class="pre">#!/usr/bin/env</span> <span class="pre">bash</span></code> the
 instruct the shell to pass the script to the bash program for execution.</p>
@@ -266,8 +270,12 @@ tell the shell to run a perl script.)</p>
 <h3>File permissions<a class="headerlink" href="#file-permissions" title="Permalink to this headline">#</a></h3>
 <p>We need set permissions on executable files before we can run them. To
 run them we can use the <code class="docutils literal notranslate"><span class="pre">chmod</span></code> or “change mode” command.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chmod</span> <span class="mi">755</span> <span class="n">header</span><span class="o">.</span><span class="n">sh</span>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Bash</label><div class="tab-content docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>header.sh
 </pre></div>
+</div>
+</div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">755</span></code> tells our system that the owner of the file can read (open),
 write (change), and execute (run) the file, but all others can only read
@@ -290,14 +298,22 @@ directories, including the working directory, for commands.</p>
 use <code class="docutils literal notranslate"><span class="pre">./</span></code> to ensure that it knows to look in the current working
 directory: <code class="docutils literal notranslate"><span class="pre">./myscript.sh</span></code>.</p>
 <p><strong>header.sh:</strong></p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 <span class="c1"># This script prints the first 15 lines of the file named in the command line (datafile.txt)</span>
 head<span class="w"> </span>-n<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="nv">$1</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p><strong>Command line:</strong></p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./header.sh<span class="w"> </span>datafile.txt
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="use-multiple-arguments-on-the-command-line-executing-a-script">
@@ -308,14 +324,22 @@ contain spaces.</p></li>
 <li><p>Use special variables <code class="docutils literal notranslate"><span class="pre">$1</span></code>, <code class="docutils literal notranslate"><span class="pre">$2</span></code>, and <code class="docutils literal notranslate"><span class="pre">$3</span></code>, etc.</p></li>
 </ul>
 <p><strong>header.sh:</strong></p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 <span class="c1"># This script prints the top $2 lines of the file $1, then writes the top lines to file $3</span>
 head<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$2</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$3</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
+</div>
+</div>
 <p><strong>Command line:</strong></p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./header.sh<span class="w"> </span>datafile.txt<span class="w"> </span><span class="m">10</span><span class="w"> </span>topdata.txt
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="use-special-syntax-to-handle-one-or-more-filenames">
@@ -325,34 +349,40 @@ head<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</s
 script. Add quotations in case of filename spaces <code class="docutils literal notranslate"><span class="pre">&quot;$&#64;&quot;</span></code></p></li>
 </ul>
 <p><strong>sorted.sh:</strong></p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 <span class="c1"># Sort files by their length</span>
 <span class="c1"># USAGE: ./sorted.sh one_or_more_filenames</span>
 $<span class="w"> </span>wc<span class="w"> </span>-l<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-n
 </pre></div>
 </div>
+</div>
+</div>
 <p><strong>Command line:</strong></p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./sorted.sh<span class="w"> </span>*.pdb<span class="w"> </span>../creatures/*.dat
 </pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="resources">
 <h3>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">#</a></h3>
 <p>This lesson is adapted from <a class="reference external" href="http://swcarpentry.github.io/shell-novice/">The Unix Shell on Software
-Carpentry</a>. - <a class="reference external" href="https://www.shell-tips.com/sheets/bash-help-sheet.pdf">Bash Help
-Sheet</a> has
-shortcuts for quick navigating and editing in your shell - <a class="reference external" href="https://www.shell-tips.com/shell/">Mastering
-Bash with Tips and Tricks</a> has
-some great examples of how scripts can be used in a variety of ways. -
-<a class="reference external" href="https://linuxhint.com/30_bash_script_examples/">30 Bash Script
-Examples</a> depicts
-some basic to more complex scripting examples - <a class="reference external" href="https://stackoverflow.com/questions/1102986/most-powerful-examples-of-unix-commands-or-scripts-every-programmer-should-know">StackOverflow thread of
-most powerful examples of Unix Commands or Scripts every programmer
-should
-know</a>
-is old but has some great examples. In general, StackOverflow is a great
-community for technical questions.</p>
-<p>[ previous ] [ next ]</p>
+Carpentry</a>.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.shell-tips.com/sheets/bash-help-sheet.pdf">Bash Help Sheet</a> has
+shortcuts for quick navigating and editing in your shell</p></li>
+<li><p><a class="reference external" href="https://www.shell-tips.com/shell/">Mastering Bash with Tips and Tricks</a> has
+some great examples of how scripts can be used in a variety of ways.</p></li>
+<li><p><a class="reference external" href="https://linuxhint.com/30_bash_script_examples/">30 Bash Script Examples</a> depicts
+some basic to more complex scripting examples</p></li>
+<li><p><a class="reference external" href="https://stackoverflow.com/questions/1102986/most-powerful-examples-of-unix-commands-or-scripts-every-programmer-should-know">StackOverflow</a> thread of most powerful examples of Unix Commands or Scripts every programmer
+should know. It is old but has some great examples. In general, StackOverflow is a great
+community for technical questions.</p></li>
+</ul>
 </section>
 </section>
 </section>
