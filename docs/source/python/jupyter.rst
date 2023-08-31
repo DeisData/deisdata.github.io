@@ -90,10 +90,10 @@ You may also be able to alternate between putting a cell into Edit and
 Command modes. Depending on where you are running Jupyter, you should
 also have very handy keyboard shortcuts. For instance:
 
--  Toggle between modes: Esc and Enter
--  Run cell: Ctrl + Enter
--  Add a cell above: A
--  Add a cell below: B
+-  Toggle between modes: :kbd:`Esc` and :kbd:`Enter`
+-  Run cell: :kbd:`Ctrl+Enter`
+-  Add a cell above: :kbd:`A`
+-  Add a cell below: :kbd:`B`
 
 
 

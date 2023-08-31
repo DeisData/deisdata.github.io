@@ -175,7 +175,24 @@
 <li class="toctree-l2"><a class="reference internal" href="../python/stats.html">Statistical tests</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../git.html">Git Version Control</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../r.html">R</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of R</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../r/quick-start.html">Intro to R and the Tidyverse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../r/data-wrangling.html">Data wrangling with the Tidyverse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../r/data-visualization.html">ggplot2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../r/text-mining.html">Text mining</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../shell.html">Unix Shell</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Unix Shell</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shell/setup.html">Bash Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/navigating.html">Navigating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/alter-dir.html">Altering files and directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/pipes-filters.html">Pipes and filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/loops.html">Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/shell-scripts.html">Shell scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/search-find.html">Searching and finding</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../git.html">Git Version Control</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Setup and installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quick-start.html">Quick start to Git and GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pushing.html">Pushing changes</a></li>
@@ -183,23 +200,6 @@
 <li class="toctree-l2"><a class="reference internal" href="git-utilities.html">Git utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="forking.html">Forking in GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="glossary.html">Git Glossary</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../r.html">R</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of R</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../r/quick-start.html">Intro to R and the Tidyverse</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../r/data-wrangling.html">Data wrangling with the Tidyverse</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../r/data-visualization.html">ggplot2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../r/text-mining.html">Text Mining with R</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../shell.html">Unix Shell</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Unix Shell</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../shell/setup.html">Bash Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../shell/navigating.html">Navigating to files and directories</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../shell/alter-dir.html">Altering files and directories</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../shell/pipes-filters.html">Pipes and filters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../shell/loops.html">Loops</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../shell/shell-scripts.html">Shell scripts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../shell/search-find.html">Searching and finding</a></li>
 </ul>
 </li>
 </ul>
@@ -282,10 +282,12 @@ Debian/Ubuntu run <code class="docutils literal notranslate"><span class="pre">s
 <h2>Configure git global settings<a class="headerlink" href="#configure-git-global-settings" title="Permalink to this headline">#</a></h2>
 <p>When we use Git on a new computer for the first time, we need to
 configure a few settings. Below are a few examples of configurations we
-will set as we get started with Git:
-- our name and email address
-- what our preferred text editor is
-- and that we want to use these settings globally (i.e., for every project).</p>
+will set as we get started with Git:</p>
+<ul class="simple">
+<li><p>our name and email address</p></li>
+<li><p>what our preferred text editor is</p></li>
+<li><p>and that we want to use these settings globally (i.e., for every project).</p></li>
+</ul>
 <p><strong>Windows</strong>: Open “Git Bash”, or run the command <code class="docutils literal notranslate"><span class="pre">bash</span></code> in your
 Command Prompt.</p>
 <p><strong>MacOS</strong>: Open a bash shell in Terminal.</p>

@@ -95,7 +95,7 @@ We can also use ``df.columns`` to display the column names.
    .. code:: none
 
       Index(['country', 'year', 'region', 'population', 'life_expectancy',
-            'age5_surviving', 'babies_per_woman', 'gdp_per_capita', 'gdp_per_day'],
+             'age5_surviving', 'babies_per_woman', 'gdp_per_capita', 'gdp_per_day'],
             dtype='object')
 
 Categorical variables
@@ -307,8 +307,8 @@ We can use ``.loc`` to find the value of specific entries, as well.
 
       'Afghanistan'
 
-Question
-~~~~~~~~
+Question 1: Summarizing data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Print out the summary statistics for columns ``age5_surviving``,
 ``gdp_per_day``, and ``gdp_per_capita``.
@@ -424,7 +424,7 @@ Here, we subtract the ``life_expectancy`` column from the
       df['life_difference'] = df['age5_surviving'] - df['life_expectancy'] 
       print(df['life_difference'])
 
-.. tab:: Python
+.. tab:: Output
 
    .. code:: none
 
@@ -454,12 +454,12 @@ This new column is now reflected in the data frame.
    .. code:: none
 
       Index(['country', 'year', 'region', 'population', 'life_expectancy',
-            'age5_surviving', 'babies_per_woman', 'gdp_per_capita', 'gdp_per_day',
-            'life_difference'],
+             'age5_surviving', 'babies_per_woman', 'gdp_per_capita', 'gdp_per_day',
+             'life_difference'],
             dtype='object')
 
-Question: Working with data
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Question 2: Working with data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Create a subset of data from Lithuania.
 
@@ -837,8 +837,8 @@ method that all pandas data frames have.
 
       df_hungary.to_csv('gapminder_hungary.csv', index=False) # index = False makes sure row names are not saved as their own columns
 
-Question: Putting it together
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Question 3: Putting it together
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Create two data frames called ``A`` and ``B`` with at least 3 columns
 and 4 rows. Make one column in both ``A`` and ``B`` an identifier

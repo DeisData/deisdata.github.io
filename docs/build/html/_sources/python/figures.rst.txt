@@ -210,15 +210,17 @@ First, let’s do a simple vertical column with 2 panels with
 ``plt.subplots(2,1)``. To make the different plots, you specify where
 with ``ax[i]``.
 
-.. code:: python
+.. tab:: Python
 
-   df_cb = df.loc[ df['country']=='Cuba', :]
-   # create plot
-   figure, ax = plt.subplots(2,1) # rows by columns
-   ax[0].plot(df_jm['year'], df_jm['life_expectancy'])
-   ax[1].plot(df_cb['year'], df_cb['life_expectancy'])
-   # figure.set_title('Life expectancy over time in Cuba')
-   plt.show()
+   .. code:: python
+
+      df_cb = df.loc[ df['country']=='Cuba', :]
+      # create plot
+      figure, ax = plt.subplots(2,1) # rows by columns
+      ax[0].plot(df_jm['year'], df_jm['life_expectancy'])
+      ax[1].plot(df_cb['year'], df_cb['life_expectancy'])
+      # figure.set_title('Life expectancy over time in Cuba')
+      plt.show()
 
 .. tab:: Output
    :new-set:
@@ -486,8 +488,8 @@ theme, Matplotlib will also use that theme.
 
       </div>
 
-Question
-~~~~~~~~
+Question: Multipanel figures
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Plot histograms of ``population`` for each region in the year 2000 in
 the ``gapminder.csv`` data set. You can do this in one or multiple

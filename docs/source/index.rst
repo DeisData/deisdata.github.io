@@ -28,17 +28,16 @@ Meet your research community of support.
    SPSS, Excel, Qualtrics, and more.
 
 How do I download a file from GitHub to my computer?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------------------------
 
--  To download a repository of materials, use the [Clone or Download]
-   button and select “Download ZIP”
+-  To download a repository of materials, use the **Clone or Download**
+   button and select **Download ZIP**.
 -  To download an individual file, click to open the file, and
-   right-click on the [RAW] button to “Save link as.” Make sure you
-   retain the intended file extension – sometimes raw files default to
-   \*.txt.
+   right-click on the **RAW** button to **Save link as**. Make sure you
+   retain the intended file extension, as sometimes raw files default to \*.txt.
 
 How to I get support?
-~~~~~~~~~~~~~~~~~~~~~
+---------------------
 
 Having trouble? **Make an appointment with your Data Analysis
 Specialists**, `Dr. Margarita
@@ -50,19 +49,20 @@ Liaison <https://www.brandeis.edu/library/research/help/liaison-subject.html>`__
 and we’ll help you sort it out.
 
 .. toctree::
+   :hidden:
    :maxdepth: 2
    :caption: Contents:
    
    python
-   git
    R <r>
    shell
+   git
 
 
 
-Indices and tables
-==================
+.. Indices and tables
+.. ==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. * :ref:`genindex`
+.. * :ref:`modindex`
+.. * :ref:`search`

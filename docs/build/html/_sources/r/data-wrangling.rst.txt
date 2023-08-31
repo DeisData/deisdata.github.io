@@ -263,15 +263,18 @@ a specific ``island`` using the ``==`` operator. Note that a single
       ## 10 Adelie  Torgersen           42            20.2               190        4250
       ## # … with 42 more rows, and 2 more variables: sex <chr>, year <dbl>
 
-We can also use other conditions, like inequalities. - less than: ``<``
-- less than or equal to: ``<=`` - greater than: ``>`` - greater than or
-equal to: ``>=``
+We can also use other conditions, like inequalities. 
+
+- less than: ``<``
+- less than or equal to: ``<=`` 
+- greater than: ``>`` 
+- greater than or equal to: ``>=``
 
 .. tab:: R
 
    .. code:: r
 
-      filter (penguins, year<=2008)
+      filter(penguins, year<=2008)
 
 .. tab:: Output
 
@@ -460,8 +463,8 @@ the data frame within each function we use.
 Notice there is no output for this command, since we are saving the
 resulting data frame as ``penguins_biscoe``.
 
-Exercise:
-~~~~~~~~~
+Exercise: subsetting and selection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Create a new object with the data subset to include all species except
 Adelie and retain the species column and the ones relating to their

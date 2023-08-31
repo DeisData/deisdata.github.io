@@ -64,14 +64,19 @@ Here is an example of a basic ``while`` loop:
       3
       4
 
-Let’s break down the code. - ``i = 0``: We initialize ``i`` as 0 before
-the ``while`` loop - ``while i < 5:``: This begins the ``while`` loop
-and specifies the condition being tested. Essentially it means as long
-as ``i`` is less than 5, keep doing the code below. - ``print(i)``:
-Print current value of ``i`` - ``i += 1``: We increase the value of
-``i`` at the end of each loop - Once ``i += 1`` runs, the ``while`` loop
-checks the current value of ``i`` - If ``i`` is less than 5, the code in
-the ``while`` loop runs again. Otherwise, the loop is over.
+Let’s break down the code. 
+
+- ``i = 0``: We initialize ``i`` as 0 before
+  the ``while`` loop 
+- ``while i < 5:``: This begins the ``while`` loop
+  and specifies the condition being tested. Essentially it means as long
+  as ``i`` is less than 5, keep doing the code below. 
+- ``print(i)``: Print current value of ``i`` 
+- ``i += 1``: We increase the value of ``i`` at the end of each loop 
+- Once ``i += 1`` runs, the ``while`` loop
+  checks the current value of ``i`` 
+- If ``i`` is less than 5, the code in
+  the ``while`` loop runs again. Otherwise, the loop is over.
 
 We have to be careful not to create an infinite loop. For instance, if
 you removed the line with ``i += 1``, ``i`` would never reach 5, and the
@@ -117,8 +122,8 @@ going; otherwise, it is finished.
       Jimbob , True
       Jimmy , False
 
-Question: ``while`` loops:
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Question 1: ``while`` loops:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Create a variable ``x`` with the value of 8. Divide ``x`` by 2 and
 re-assign this value to ``x``. Continue to do this until ``x`` is less
@@ -148,6 +153,8 @@ than 0.00001. Print out how many divisions this takes.
                i += 1
 
             print(i)
+      
+      .. tab:: Output
 
          .. code:: none
 
@@ -186,11 +193,15 @@ Note the keywords ``for`` and ``in``.
       24
       25
 
-Let’s break down this code: - ``num_list = [0, 1, 2, 3, 4, 5]``: Makes a
-list of integers 0-5. - ``for n in num_list:``: Take the first item in
-num_list and assign its value to ``n``. - ``print(n + 20)``: Add n and
-20 and print the sum. - We then go back to the start of the loop, take
-the next item, assign it to ``n``, and start all over again.
+Let’s break down this code: 
+
+- ``num_list = [0, 1, 2, 3, 4, 5]``: Makes a
+  list of integers 0-5. 
+- ``for n in num_list:``: Take the first item in
+  num_list and assign its value to ``n``. 
+- ``print(n + 20)``: Add n and 20 and print the sum. 
+- We then go back to the start of the loop, take
+  the next item, assign it to ``n``, and start all over again.
 
 For ordered iterables, like lists, tuples, and strings, ``for`` loops
 iterate over these groups in order.
@@ -313,8 +324,8 @@ same length at once.
       my food today: oatmeal fruit bread 2
       my food today: toast juice dessert 3
 
-Question
-~~~~~~~~
+Question 2: Looping with indexes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Below are four lists: ``x1``, ``x2``, ``y1``, and ``y2``.
 
@@ -413,8 +424,8 @@ We can even use full ``if``-``elif``-``else`` statements.
       I like to eat oatmeal.
       I sometimes like to eat toast.
 
-Question: ``for`` loops
-~~~~~~~~~~~~~~~~~~~~~~~
+Question 3: More loops
+~~~~~~~~~~~~~~~~~~~~~~
 
 Iterate over all integers from 0 to 1000 and print all multiples of 41
 (numbers that can be divided by 41 with no remainder). How many
@@ -477,77 +488,75 @@ multiples are there?
             984
             number of multiples: 25
 
-Bonus: Nested for loops
-~~~~~~~~~~~~~~~~~~~~~~~
+.. admonition:: Nested for loops
 
-Just like you can use ``if`` statements in a ``for`` loop, you can also
-put ``for`` loops inside of other ``for`` loops. This is great if you
-want to use all combinations of two lists, for instance.
+   Just like you can use ``if`` statements in a ``for`` loop, you can also
+   put ``for`` loops inside of other ``for`` loops. This is great if you
+   want to use all combinations of two lists, for instance.
 
-.. tab:: Python
+   .. tab:: Python
 
-   .. code:: python
+      .. code:: python
 
-      hats = ['bowler', 'fedora', 'beret']
-      shirts = ['plaid', 'striped', 'polka dot']
+         hats = ['bowler', 'fedora', 'beret']
+         shirts = ['plaid', 'striped', 'polka dot']
 
-      print('Outfit combinations:')
+         print('Outfit combinations:')
 
-      for shirt in shirts:
-         
-         for hat in hats:
+         for shirt in shirts:
             
-            print(shirt, "shirt with a", hat)
+            for hat in hats:
+               
+               print(shirt, "shirt with a", hat)
 
-.. tab:: Output
+   .. tab:: Output
 
-   .. code:: none
+      .. code:: none
 
-      Outfit combinations:
-      plaid shirt with a bowler
-      plaid shirt with a fedora
-      plaid shirt with a beret
-      striped shirt with a bowler
-      striped shirt with a fedora
-      striped shirt with a beret
-      polka dot shirt with a bowler
-      polka dot shirt with a fedora
-      polka dot shirt with a beret
+         Outfit combinations:
+         plaid shirt with a bowler
+         plaid shirt with a fedora
+         plaid shirt with a beret
+         striped shirt with a bowler
+         striped shirt with a fedora
+         striped shirt with a beret
+         polka dot shirt with a bowler
+         polka dot shirt with a fedora
+         polka dot shirt with a beret
 
-Be careful, however. If you use very long collections of items and nest
-more than 2 loops, the runtime can become very slow.
+   Be careful, however. If you use very long collections of items and nest
+   more than 2 loops, the runtime can become very slow.
 
-Bonus: Comprehensions
-~~~~~~~~~~~~~~~~~~~~~
+.. admonition:: Comprehensions
 
-If the outcome of your ``for`` loop is to produce a list, dictionary,
-set, or tuple, and you are using minimal code in your loop, then
-**comprehensions** may be perfect for you.
+   If the outcome of your ``for`` loop is to produce a list, dictionary,
+   set, or tuple, and you are using minimal code in your loop, then
+   **comprehensions** may be perfect for you.
 
-.. tab:: Python
+   .. tab:: Python
 
-   .. code:: python
+      .. code:: python
 
-      [ food + ' time' for food in my_breakfast ] # creates a list
+         [ food + ' time' for food in my_breakfast ] # creates a list
 
-.. tab:: Output
+   .. tab:: Output
 
-   .. code:: none
+      .. code:: none
 
-      ['eggs time', 'cereal time', 'oatmeal time', 'toast time']
+         ['eggs time', 'cereal time', 'oatmeal time', 'toast time']
 
-.. tab:: Python
-   :new-set:
+   .. tab:: Python
+      :new-set:
 
-   .. code:: python
+      .. code:: python
 
-      { food:len(food) for food in my_breakfast } # creates a dictionary
+         { food:len(food) for food in my_breakfast } # creates a dictionary
 
-.. tab:: Output
+   .. tab:: Output
 
-   .. code:: none
+      .. code:: none
 
-      {'eggs': 4, 'cereal': 6, 'oatmeal': 7, 'toast': 5}
+         {'eggs': 4, 'cereal': 6, 'oatmeal': 7, 'toast': 5}
 
 Resources
 ---------

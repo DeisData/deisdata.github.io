@@ -200,7 +200,9 @@ Dictionaries
 Like lists, dictionaries are powerful ways to store items. However, the
 two structures are quite different from each other. Instead of storing
 items in a specific order, like a list, dictionaries store them as
-**keys** and **values**. For example, you might have a key ``giraffes``
+**keys** and **values**. 
+
+For example, you might have a key ``giraffes``
 paired with the value ``25``, and the key ``kangaroos`` paired with the
 value ``32``. We can do this with using brackets (``{ }``) and colons
 (``:``) with the format of ``{ KEY1: VALUE1, KEY2: VALUE2, ... }``.
@@ -392,7 +394,7 @@ sets keep a unique group of items.
       new_set.add('oh my') # oh my will now be a string in the set
       print(new_set)
 
-      new_set.add('bears') # won't have two beats in the set
+      new_set.add('bears') # won't have two bears in the set
       print(new_set)
 
 .. tab:: Output

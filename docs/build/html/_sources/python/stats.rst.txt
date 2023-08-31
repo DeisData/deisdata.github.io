@@ -219,7 +219,7 @@ histogram. We can then add labels with matplotlib.
       </div>
 
 Hypothesis Testing
-~~~~~~~~~~~~~~~~~~
+------------------
 
 Statistical methods are used to test **hypotheses**. One of the most
 foundational hypotheses we can ask is “Is the mean of this sample

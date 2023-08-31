@@ -105,41 +105,40 @@ these actions, as well.
       [4 4 4]
       [3 4 3]
 
-Bonus
------
+.. admonition:: ``import numpy as np``
 
-It is common practice in Python to use ``import numpy as np`` when
-importing NumPy. This allows you to only need to type ``np.`` (e.g.,
-``np.add()``) when using a tool within NumPy, which is a bit less clunky
-and faster.
+   It is common practice in Python to use ``import numpy as np`` when
+   importing NumPy. This allows you to only need to type ``np.`` (e.g.,
+   ``np.add()``) when using a tool within NumPy, which is a bit less clunky
+   and faster.
 
-.. tab:: Python
+   .. tab:: Python
 
-   .. code:: python
+      .. code:: python
 
-      import numpy as np
+         import numpy as np
 
-      np.array([]) # a blank numpy array
+         np.array([]) # a blank numpy array
 
-.. tab:: Output
+   .. tab:: Output
 
-   .. code:: none
+      .. code:: none
 
-      array([], dtype=float64)
+         array([], dtype=float64)
 
-You could technically import NumPy as any variable name, but **DO NOT DO
-THIS** to avoid confusion.
+   You could technically import NumPy as any variable name, but **DO NOT DO
+   THIS** to avoid confusion.
 
-.. tab:: Python
+   .. tab:: Python
 
 
-   .. code:: python
+      .. code:: python
 
-      ### DONT RUN THIS
-      import numpy as pandas
+         ### DONT RUN THIS
+         import numpy as pandas
 
-Question: NumPy math
---------------------
+Question 1 : NumPy math
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Create two NumPy arrays of the same length and subtract one from the
 other.
@@ -175,16 +174,16 @@ Let’s first make a 3 x 3 array. To do this, we will call
 
       # a 3 x 3 array - essentially a matrix
       numpy.array( [[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]] )
+                    [4, 5, 6],
+                    [7, 8, 9]] )
 
 .. tab:: Output
 
    .. code:: none
 
       array([[1, 2, 3],
-            [4, 5, 6],
-            [7, 8, 9]])
+             [4, 5, 6],
+             [7, 8, 9]])
 
 We can get the dimensions of the array by checking the ``.shape``
 attribute.
@@ -222,8 +221,8 @@ operators between 2D arrays, though they have to be of the same shape.
    .. code:: none
 
       array([[11, 11, 11],
-            [11, 11, 11],
-            [11, 11, 11]])
+             [11, 11, 11],
+             [11, 11, 11]])
 
 Like a 1D vector, you can also do math operations with a single number.
 
@@ -238,8 +237,8 @@ Like a 1D vector, you can also do math operations with a single number.
    .. code:: none
 
       array([[-10, -10, -10],
-            [-10, -10, -10],
-            [-10, -10, -10]])
+             [-10, -10, -10],
+             [-10, -10, -10]])
 
 NumPy comes with many tools to do various more complicated math
 operations as well. For instance, ``numpy.matmul`` can be used for
@@ -256,8 +255,8 @@ matrix multiplication.
    .. code:: none
 
       array([[30, 30, 30],
-            [30, 30, 30],
-            [30, 30, 30]])
+             [30, 30, 30],
+             [30, 30, 30]])
 
 Here is non-exhaustive list of other useful operations you can calculate
 with NumPy. Many of them use the submodule ``linalg`` that specializes
@@ -284,8 +283,8 @@ For full usage of these functions and more, please visit the `NumPy
 reference
 manual <https://numpy.org/doc/stable/reference/routines.linalg.html>`__.
 
-Question: NumPy operations
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Question 2: NumPy operations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Create a 1D array called ``a`` with at least 5 values. Find its mean,
 median, min, max, and standard deviation.
@@ -348,7 +347,7 @@ Carpentry <https://swcarpentry.github.io/python-novice-inflammation/02-numpy/ind
    .. code:: python
 
       y = numpy.array([[1., 2., 3., 4.], # adding the decimal makes them floats
-                  [5., 6., 7., 8.]]) 
+                       [5., 6., 7., 8.]]) 
       y[1,3] # returns the last value (8.0)
 
 .. tab:: Output
@@ -397,9 +396,9 @@ both at once.
    .. code:: python
 
       z = numpy.array([[1, 2, 3, 4],
-                     [5, 6, 7, 8],
-                     [9,10,11,12],
-                     [13,14,15,16]])
+                       [5, 6, 7, 8],
+                       [9,10,11,12],
+                       [13,14,15,16]])
 
       print(z[0:2, 2]) # first 2 rows of the third column
       print(z[1:3, 0:3]) # rows 2 and 3 for columns 1-3
@@ -410,10 +409,10 @@ both at once.
 
       [3 7]
       [[ 5  6  7]
-      [ 9 10 11]]
+       [ 9 10 11]]
 
-Question: Slicing
-~~~~~~~~~~~~~~~~~
+Question 3: Slicing
+~~~~~~~~~~~~~~~~~~~
 
 Using slicing, create a variable containing the first two columns of
 ``data``, and another variable containing the last two columns. Subtract
@@ -424,10 +423,10 @@ the two sets of columns from each other and square the difference.
    .. code:: python
 
       data = numpy.array([[0.37568486, 0.39360456, 0.83055883, 0.67256725],
-                        [0.68017832, 0.90546118, 0.79336985, 0.80561814],
-                        [0.31127419, 0.29518634, 0.48364838, 0.56015636],
-                        [0.75994716, 0.01312868, 0.15958863, 0.98516761],
-                        [0.76733493, 0.19900552, 0.03471678, 0.06886277]])
+                          [0.68017832, 0.90546118, 0.79336985, 0.80561814],
+                          [0.31127419, 0.29518634, 0.48364838, 0.56015636],
+                          [0.75994716, 0.01312868, 0.15958863, 0.98516761],
+                          [0.76733493, 0.19900552, 0.03471678, 0.06886277]])
 
       ### your code here:
 
@@ -444,8 +443,8 @@ the two sets of columns from each other and square the difference.
 
             (a - b)**2
 
-Question: Slicing syntax
-~~~~~~~~~~~~~~~~~~~~~~~~
+Question 4: Slicing syntax
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 What happens when you slice but do not include the first index (``i``),
 the last index (``j``), or include neither?
@@ -548,7 +547,7 @@ We’ll go through a few examples of how to use ``numpy.random``.
    .. code:: none
 
       array([0.25829512, 0.86059639, 0.51045683, 0.5108304 , 0.83965643,
-            0.69420288, 0.57987225, 0.8707505 , 0.1403405 , 0.84695063])
+             0.69420288, 0.57987225, 0.8707505 , 0.1403405 , 0.84695063])
 
 We can provide one number for a 1D array output, or we can give a shape.
 
@@ -563,10 +562,10 @@ We can provide one number for a 1D array output, or we can give a shape.
    .. code:: none
 
       array([[0.405686  , 0.55911381, 0.10216565, 0.1176069 ],
-            [0.54399612, 0.89415105, 0.4038699 , 0.91464262],
-            [0.8727333 , 0.78070018, 0.8072012 , 0.95182085],
-            [0.45871726, 0.93649965, 0.70878889, 0.04117096],
-            [0.04581515, 0.27093262, 0.81162693, 0.85181647]])         
+             [0.54399612, 0.89415105, 0.4038699 , 0.91464262],
+             [0.8727333 , 0.78070018, 0.8072012 , 0.95182085],
+             [0.45871726, 0.93649965, 0.70878889, 0.04117096],
+             [0.04581515, 0.27093262, 0.81162693, 0.85181647]])         
 
 ``np.random.randint()`` gives us back a random integer between a low and
 a high number. It includes the low number and excludes the high number.
@@ -583,8 +582,8 @@ The third argument is the shape of the output.
    .. code:: none
 
       array([[66, 67, 61, 39],
-            [18, 42, 73, 35],
-            [59, 68, 24, 91]])
+             [18, 42, 73, 35],
+             [59, 68, 24, 91]])
 
 ``np.random.uniform()`` gives you random floats between two intervals.
 All values between those intervals are equally likely.
@@ -600,7 +599,7 @@ All values between those intervals are equally likely.
    .. code:: none
 
       array([ 78.88838389, -47.47066046,  78.50047554, -82.99434746,
-            -32.23190278])
+             -32.23190278])
 
 ``np.random.normal()`` gives numbers centered around a mean, which is
 the first value. The second number defines the spread, or how far from
@@ -617,7 +616,7 @@ the mean the values can be. The last argument is the shape.
    .. code:: none
 
       array([ 0.41727943,  0.16488726,  0.95159045, -0.164019  ,  0.6812153 ,
-            -0.49631379,  0.66193097, -0.53010887,  0.70356419, -0.53807628])
+             -0.49631379,  0.66193097, -0.53010887,  0.70356419, -0.53807628])
 
 You can get dramatically different values by changing the spread, or
 **standard deviation**.
@@ -635,8 +634,8 @@ You can get dramatically different values by changing the spread, or
    .. code:: none
 
       array([ 42.89262833, -41.19252505,  23.10369224,   7.86300809,
-            -1.06910399, -66.537476  ,   2.32921206,  15.6455084 ,
-            -47.75769822,  -5.7709003 ])
+              -1.06910399, -66.537476  ,   2.32921206,  15.6455084 ,
+             -47.75769822,  -5.7709003 ])
 
 ``np.random.shuffle()`` randomly rearranges orders. Here we use a list.
 
@@ -734,8 +733,8 @@ If we say ``replace=False``, then we can only get each value once.
 
       array([4, 2, 6, 0, 3, 5, 8, 7])
 
-Question
-~~~~~~~~
+Question 5: Using ``np.random``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Make a for loop that runs ``np.random.normal()`` to make arrays with a
 mean of 40, and a standard deviation of 20 with different sample sizes,

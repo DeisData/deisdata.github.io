@@ -175,7 +175,24 @@
 <li class="toctree-l2"><a class="reference internal" href="../python/stats.html">Statistical tests</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../git.html">Git Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../r.html">R</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of R</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="quick-start.html">Intro to R and the Tidyverse</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Data wrangling with the Tidyverse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-visualization.html">ggplot2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text-mining.html">Text mining</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../shell.html">Unix Shell</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Unix Shell</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shell/setup.html">Bash Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/navigating.html">Navigating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/alter-dir.html">Altering files and directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/pipes-filters.html">Pipes and filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/loops.html">Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/shell-scripts.html">Shell scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/search-find.html">Searching and finding</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../git.html">Git Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../git/setup-install.html">Setup and installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/quick-start.html">Quick start to Git and GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/pushing.html">Pushing changes</a></li>
@@ -183,23 +200,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../git/git-utilities.html">Git utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/forking.html">Forking in GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/glossary.html">Git Glossary</a></li>
-</ul>
-</li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../r.html">R</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of R</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="quick-start.html">Intro to R and the Tidyverse</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Data wrangling with the Tidyverse</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data-visualization.html">ggplot2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="text-mining.html">Text mining</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../shell.html">Unix Shell</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Unix Shell</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../shell/setup.html">Bash Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../shell/navigating.html">Navigating to files and directories</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../shell/alter-dir.html">Altering files and directories</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../shell/pipes-filters.html">Pipes and filters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../shell/loops.html">Loops</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../shell/shell-scripts.html">Shell scripts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../shell/search-find.html">Searching and finding</a></li>
 </ul>
 </li>
 </ul>
@@ -489,12 +489,16 @@ a specific <code class="docutils literal notranslate"><span class="pre">island</
 </div>
 </div>
 </div>
-<p>We can also use other conditions, like inequalities. - less than: <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>
-- less than or equal to: <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> - greater than: <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> - greater than or
-equal to: <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p>
+<p>We can also use other conditions, like inequalities.</p>
+<ul class="simple">
+<li><p>less than: <code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></li>
+<li><p>less than or equal to: <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p></li>
+<li><p>greater than: <code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></li>
+<li><p>greater than or equal to: <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></li>
+</ul>
 <div class="tab-set docutils container">
 <input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--1">R</label><div class="tab-content docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">filter </span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="n">year</span><span class="o">&lt;=</span><span class="m">2008</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">filter</span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="n">year</span><span class="o">&lt;=</span><span class="m">2008</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -678,8 +682,8 @@ the data frame within each function we use.</p>
 <p>Notice there is no output for this command, since we are saving the
 resulting data frame as <code class="docutils literal notranslate"><span class="pre">penguins_biscoe</span></code>.</p>
 </section>
-<section id="exercise">
-<h3>Exercise:<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h3>
+<section id="exercise-subsetting-and-selection">
+<h3>Exercise: subsetting and selection<a class="headerlink" href="#exercise-subsetting-and-selection" title="Permalink to this headline">#</a></h3>
 <p>Create a new object with the data subset to include all species except
 Adelie and retain the species column and the ones relating to their
 bill.</p>
@@ -1563,7 +1567,7 @@ dataframes.</p>
 <li><a class="reference internal" href="#filtering-rows">Filtering rows</a></li>
 <li><a class="reference internal" href="#tidyverse-pipelines">Tidyverse pipelines</a><ul>
 <li><a class="reference internal" href="#pipes">Pipes</a></li>
-<li><a class="reference internal" href="#exercise">Exercise:</a></li>
+<li><a class="reference internal" href="#exercise-subsetting-and-selection">Exercise: subsetting and selection</a></li>
 <li><a class="reference internal" href="#mutate">Mutate</a></li>
 <li><a class="reference internal" href="#split-apply-combine-data-analysis-and-summarize">Split-apply-combine data analysis and summarize</a><ul>
 <li><a class="reference internal" href="#the-summarize-function">The <code class="docutils literal notranslate"><span class="pre">summarize()</span></code> function</a></li>

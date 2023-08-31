@@ -14,8 +14,8 @@ our data?). We can ask yes or no questions about this state called
 **false**. We can design the program to perform an action based on the
 response, which is called a **conditional**.
 
-Boolean
--------
+Booleans
+--------
 
 ``True`` and ``False`` are keywords in Python. They are a unique data
 type called **booleans**.
@@ -101,6 +101,10 @@ instance.
 Equality: ``==``
 ~~~~~~~~~~~~~~~~
 
+The operator ``==`` is used to check if two items are equal to each other. 
+Note the distinction between ``=``, which is used for variable assignment, and 
+``==``, which checks for equality.
+
 .. tab:: Python
 
    .. code:: python
@@ -126,12 +130,17 @@ Equality: ``==``
 
       False
 
-*Note: checking for equality for floats can be tricky given common
-rounding errors. Try to avoid if possible, and test for inequality (see
-below).*
+.. warning:: 
+   
+   Checking for equality for floats can be tricky given common
+   rounding errors. Try to avoid if possible, and test for inequality (see
+   below).
 
 Not equals: ``!=``
 ~~~~~~~~~~~~~~~~~~
+
+Similar, we can use ``!=`` to check if two items are not equal to each other. 
+``!=``` will always return the opposite of ``==`` for any given comparison.
 
 .. tab:: Python
 
@@ -171,7 +180,7 @@ greater than or equal to (``>=``).
 
       1 < 4
 
-.. tab:: Python
+.. tab:: Output
 
    .. code:: none
 
@@ -379,8 +388,8 @@ comparisons.
       True
       False
 
-Question: Boolean expressions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Question 1: Boolean expressions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Does the following code evalutate as ``True`` or ``False``?
 
@@ -412,8 +421,8 @@ Does the following code evalutate as ``True`` or ``False``?
       -  The ``not`` around the parentheses causes the final value to be
          ``False``
 
-Question: Boolean types
-~~~~~~~~~~~~~~~~~~~~~~~
+Question 2: Boolean types
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 What happens when you compare different data types with ``==``? What
 about ``>``, ``<``, ``<=``, or ``>=``?
@@ -442,10 +451,14 @@ general syntax follows this format:
 
       hello!
 
-To break this down: - ``if`` keyword is first word in line - Boolean
-expression (``'a' != 'b'``) followed by a colon - Code below that is
-tabbed over - If the expression is true, the code that is below and
-tabbed is run - If the expression is false, nothing happens
+To break this down: 
+
+- ``if`` keyword is first word in line
+- Boolean expression (``'a' != 'b'``) followed by a colon 
+- Code below that is tabbed over 
+- If the expression is true, the code that is below and
+  tabbed is run 
+- If the expression is false, nothing happens
 
 .. code:: python
 

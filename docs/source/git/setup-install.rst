@@ -56,6 +56,7 @@ Configure git global settings
 When we use Git on a new computer for the first time, we need to
 configure a few settings. Below are a few examples of configurations we
 will set as we get started with Git: 
+
 - our name and email address 
 - what our preferred text editor is 
 - and that we want to use these settings globally (i.e., for every project).

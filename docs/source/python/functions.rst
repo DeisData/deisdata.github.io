@@ -21,8 +21,8 @@ encapsulating separate parts of our program, allowing us to view each as
 a single “thing”. Importantly, it also lets us re-use pieces of code
 without having to duplicate dozens of lines of code over and over again.
 
-Objectives:
------------
+Objectives
+----------
 
 - Define a function using ``def`` with a name, parameters, and a block of code.
 
@@ -34,6 +34,9 @@ Objectives:
       import numpy as np
       import pandas as pd 
       import matplotlib.pyplot as plt
+
+Function syntax
+---------------
 
 We can define a custom function using the keyword ``def`` (short for
 “define”), followed by the desired function name, parentheses, and a
@@ -196,8 +199,8 @@ return a value automatically returns ``None``.
       1871/3/19
       result of call is: None
 
-Question 1
-----------
+Question 1: Function syntax
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 What is the error in the code below?
 
@@ -225,8 +228,8 @@ What is the error in the code below?
                ...
 
 
-Question 2
-----------
+Question 2: Calling functions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 What does this code return?
 
@@ -306,8 +309,8 @@ go **after** those without them.
 
       -2.0
 
-Question 3
-~~~~~~~~~~
+Question 3: Calling functions before defining
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Does order of operations matter for defining and calling functions?
 
@@ -573,8 +576,8 @@ now read and reuse with a simple for loop:
 Limiting code duplication has an important benefit: if you need to
 change a feature of the code, you will only need to change it one place.
 
-Question 4
-~~~~~~~~~~
+Question 4: Code duplication
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The code below takes 4 short DNA sequences and calculates the percentage
 of DNA bases that are either G or C for each of them. This runs the same
@@ -720,14 +723,14 @@ one or more functions, or with other approaches.
             for sequence in dna_sequences:
                gc_analysis(sequence)
 
-         .. tab:: Output
-      
-            .. code:: none
+      .. tab:: Output
+   
+         .. code:: none
 
-               GC%: 0.5
-               GC%: 0.6
-               GC%: 0.4
-               GC%: 0.49
+            GC%: 0.5
+            GC%: 0.6
+            GC%: 0.4
+            GC%: 0.49
 
 Add documentation to your functions
 -----------------------------------
@@ -820,11 +823,8 @@ The general format is ``assert BOOLEAN_EXPRESSION, ERROR_MESSAGE``.
 
       AssertionError: Not a number is not int
 
-Readable Functions
-------------------
-
-Question 5:
-~~~~~~~~~~~
+Question 5: Readable functions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Which one of these functions is more readable - ``s()`` or
 ``std_dev()``? Why?

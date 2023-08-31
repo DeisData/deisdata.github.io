@@ -205,7 +205,7 @@ If we change ``y`` to be a different value, ``x`` will be unaffected.
    They are **not** like spreadsheets where a cell can depend on another and
    update automatically.
 
-Question 3. Swapping values
+Question 3: Swapping values
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Given the code below, what is the value of the variable ``swap`` by the
@@ -314,8 +314,8 @@ operations with subtraction, multiplication, and division.
       multiplication: 24
       division: 4.0
 
-Question 4
-^^^^^^^^^^
+Question 4: Using variables
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``a`` has been initialized to be 25. Assign variable ``b`` to be 5 less
 than ``a`` without using ``b = 20``. Print the value of b.
@@ -409,8 +409,8 @@ integer to a string in order to print it.
 
       I would like 25 balloons.
 
-Question 5
-~~~~~~~~~~
+Question 5: String syntax
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 What will happen if you run the following code?
 
@@ -436,8 +436,8 @@ What will happen if you run the following code?
                NameError: name 'Montoya' is not defined
 
 
-Data Types:
------------
+Data Types
+----------
 
 -  integers (``int``) represent positive or negative whole numbers like
    3 or -512
@@ -583,13 +583,14 @@ with ``len()``. Floats and ints do not have length.
          1.6666666666666667
          2
 
-Question 6.
-~~~~~~~~~~~
+Question 6: Picking between data types
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Choose the type (``int``, ``float``, ``str``) that each of these
-descriptions should be: 
+descriptions should be:
+
 1. Time elapsed from the start of the year until
-now in days. 
+   now in days. 
 2. Serial code of a piece of lab equipment 
 3. A lab specimen’s age
 
@@ -650,8 +651,8 @@ the values for both plus and minus (:math:`\pm`).
             print(x_p)
             print(x_m)
 
-Question 8
-~~~~~~~~~~
+Question 8: Converting data types
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tab:: Python
 

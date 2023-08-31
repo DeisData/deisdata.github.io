@@ -421,16 +421,16 @@ structure of data.
       $ sex              : chr [1:344] "male" "female" "female" NA ...
       $ year             : num [1:344] 2007 2007 2007 2007 2007 ...
       - attr(*, "spec")=
-      .. cols(
-      ..   species = col_character(),
-      ..   island = col_character(),
-      ..   bill_length_mm = col_double(),
-      ..   bill_depth_mm = col_double(),
-      ..   flipper_length_mm = col_double(),
-      ..   body_mass_g = col_double(),
-      ..   sex = col_character(),
-      ..   year = col_double()
-      .. )
+       .. cols(
+       ..   species = col_character(),
+       ..   island = col_character(),
+       ..   bill_length_mm = col_double(),
+       ..   bill_depth_mm = col_double(),
+       ..   flipper_length_mm = col_double(),
+       ..   body_mass_g = col_double(),
+       ..   sex = col_character(),
+       ..   year = col_double()
+       .. )
       - attr(*, "problems")=<externalptr> 
 
 We can get the same information using ``glimpse()``.
@@ -491,8 +491,8 @@ showing column names and the dimensions of the data frame.
    .. code:: none
 
       # A tibble: 6 × 8
-      species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex     year
-      <chr>   <chr>              <dbl>         <dbl>             <dbl>       <dbl> <chr>  <dbl>
+       species island     bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex     year
+        <chr>   <chr>              <dbl>         <dbl>             <dbl>       <dbl> <chr>  <dbl>
       1 Adelie  Torgersen           39.1          18.7               181        3750 male    2007
       2 Adelie  Torgersen           39.5          17.4               186        3800 female  2007
       3 Adelie  Torgersen           40.3          18                 195        3250 female  2007
@@ -536,9 +536,9 @@ minimum and maximum values, means, and medians.
    .. code:: none
 
          species             island          bill_length_mm  bill_depth_mm   flipper_length_mm  body_mass_g       sex           
-      Length:344         Length:344         Min.   :32.10   Min.   :13.10   Min.   :172.0     Min.   :2700   Length:344        
-      Class :character   Class :character   1st Qu.:39.23   1st Qu.:15.60   1st Qu.:190.0     1st Qu.:3550   Class :character  
-      Mode  :character   Mode  :character   Median :44.45   Median :17.30   Median :197.0     Median :4050   Mode  :character  
+      Length:344         Length:344          Min.   :32.10   Min.   :13.10   Min.   :172.0     Min.   :2700   Length:344        
+      Class :character   Class :character    1st Qu.:39.23   1st Qu.:15.60   1st Qu.:190.0     1st Qu.:3550   Class :character  
+      Mode  :character   Mode  :character    Median :44.45   Median :17.30   Median :197.0     Median :4050   Mode  :character  
                                              Mean   :43.92   Mean   :17.15   Mean   :200.9     Mean   :4202                     
                                              3rd Qu.:48.50   3rd Qu.:18.70   3rd Qu.:213.0     3rd Qu.:4750                     
                                              Max.   :59.60   Max.   :21.50   Max.   :231.0     Max.   :6300                     
@@ -578,7 +578,7 @@ way to do so.
    
    .. code:: none
 
-      [1] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   
+       [1] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   
       [13] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   
       [25] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   ...
       Levels: Adelie Chinstrap Gentoo

@@ -175,7 +175,24 @@
 <li class="toctree-l2"><a class="reference internal" href="../python/stats.html">Statistical tests</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../git.html">Git Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../r.html">R</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of R</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Intro to R and the Tidyverse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-wrangling.html">Data wrangling with the Tidyverse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data-visualization.html">ggplot2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="text-mining.html">Text mining</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../shell.html">Unix Shell</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Unix Shell</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../shell/setup.html">Bash Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/navigating.html">Navigating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/alter-dir.html">Altering files and directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/pipes-filters.html">Pipes and filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/loops.html">Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/shell-scripts.html">Shell scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell/search-find.html">Searching and finding</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../git.html">Git Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../git/setup-install.html">Setup and installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/quick-start.html">Quick start to Git and GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/pushing.html">Pushing changes</a></li>
@@ -183,23 +200,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../git/git-utilities.html">Git utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/forking.html">Forking in GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git/glossary.html">Git Glossary</a></li>
-</ul>
-</li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../r.html">R</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of R</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Intro to R and the Tidyverse</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data-wrangling.html">Data wrangling with the Tidyverse</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data-visualization.html">ggplot2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="text-mining.html">Text mining</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../shell.html">Unix Shell</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Unix Shell</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../shell/setup.html">Bash Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../shell/navigating.html">Navigating to files and directories</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../shell/alter-dir.html">Altering files and directories</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../shell/pipes-filters.html">Pipes and filters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../shell/loops.html">Loops</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../shell/shell-scripts.html">Shell scripts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../shell/search-find.html">Searching and finding</a></li>
 </ul>
 </li>
 </ul>
@@ -632,16 +632,16 @@ $ body_mass_g      : num [1:344] 3750 3800 3250 NA 3450 ...
 $ sex              : chr [1:344] &quot;male&quot; &quot;female&quot; &quot;female&quot; NA ...
 $ year             : num [1:344] 2007 2007 2007 2007 2007 ...
 - attr(*, &quot;spec&quot;)=
-.. cols(
-..   species = col_character(),
-..   island = col_character(),
-..   bill_length_mm = col_double(),
-..   bill_depth_mm = col_double(),
-..   flipper_length_mm = col_double(),
-..   body_mass_g = col_double(),
-..   sex = col_character(),
-..   year = col_double()
-.. )
+ .. cols(
+ ..   species = col_character(),
+ ..   island = col_character(),
+ ..   bill_length_mm = col_double(),
+ ..   bill_depth_mm = col_double(),
+ ..   flipper_length_mm = col_double(),
+ ..   body_mass_g = col_double(),
+ ..   sex = col_character(),
+ ..   year = col_double()
+ .. )
 - attr(*, &quot;problems&quot;)=&lt;externalptr&gt;
 </pre></div>
 </div>
@@ -699,8 +699,8 @@ showing column names and the dimensions of the data frame.</p>
 </div>
 <input class="tab-input" id="tab-set--21-input--2" name="tab-set--21" type="radio"><label class="tab-label" for="tab-set--21-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span># A tibble: 6 × 8
-species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex     year
-&lt;chr&gt;   &lt;chr&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt;
+ species island     bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex     year
+  &lt;chr&gt;   &lt;chr&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt;
 1 Adelie  Torgersen           39.1          18.7               181        3750 male    2007
 2 Adelie  Torgersen           39.5          17.4               186        3800 female  2007
 3 Adelie  Torgersen           40.3          18                 195        3250 female  2007
@@ -742,9 +742,9 @@ minimum and maximum values, means, and medians.</p>
 </div>
 <input class="tab-input" id="tab-set--23-input--2" name="tab-set--23" type="radio"><label class="tab-label" for="tab-set--23-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>   species             island          bill_length_mm  bill_depth_mm   flipper_length_mm  body_mass_g       sex
-Length:344         Length:344         Min.   :32.10   Min.   :13.10   Min.   :172.0     Min.   :2700   Length:344
-Class :character   Class :character   1st Qu.:39.23   1st Qu.:15.60   1st Qu.:190.0     1st Qu.:3550   Class :character
-Mode  :character   Mode  :character   Median :44.45   Median :17.30   Median :197.0     Median :4050   Mode  :character
+Length:344         Length:344          Min.   :32.10   Min.   :13.10   Min.   :172.0     Min.   :2700   Length:344
+Class :character   Class :character    1st Qu.:39.23   1st Qu.:15.60   1st Qu.:190.0     1st Qu.:3550   Class :character
+Mode  :character   Mode  :character    Median :44.45   Median :17.30   Median :197.0     Median :4050   Mode  :character
                                        Mean   :43.92   Mean   :17.15   Mean   :200.9     Mean   :4202
                                        3rd Qu.:48.50   3rd Qu.:18.70   3rd Qu.:213.0     3rd Qu.:4750
                                        Max.   :59.60   Max.   :21.50   Max.   :231.0     Max.   :6300
@@ -783,7 +783,7 @@ way to do so.</p>
 </div>
 </div>
 <input class="tab-input" id="tab-set--25-input--2" name="tab-set--25" type="radio"><label class="tab-label" for="tab-set--25-input--2">Output</label><div class="tab-content docutils container">
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[1] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> [1] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie
 [13] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie
 [25] Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie    Adelie   ...
 Levels: Adelie Chinstrap Gentoo
