@@ -1,0 +1,2 @@
+furo
+sphinx_inline_tabs
