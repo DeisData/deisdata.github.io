@@ -1,0 +1,411 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Python setup and installation" href="python/setup-install.html" /><link rel="prev" title="How Do I Use Brandeis Data Services?" href="index.html" />
+
+    <link rel="shortcut icon" href="_static/favicon-32x32.png"/><!-- Generated with Sphinx 4.5.0 and Furo 2023.05.20 -->
+        <title>Python - DeisData</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">DeisData</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="_static/DeisDatax1x_medium.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">DeisData</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="python/setup-install.html">Setup and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/jupyter.html">Jupyter notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/python-fundamentals.html">Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/data-structures.html">Data structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/conditionals.html">Booleans and conditionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/loops.html">Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/numpy.html">NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/pandas.html">Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/figures.html">Matplotlib and seaborn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/functions.html">Writing functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python/stats.html">Statistical tests</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="r.html">R</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of R</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="r/quick-start.html">Intro to R and the Tidyverse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="r/data-wrangling.html">Data wrangling with the Tidyverse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="r/data-visualization.html">ggplot2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="r/text-mining.html">Text mining</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="shell.html">Unix Shell</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Unix Shell</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="shell/setup.html">Bash Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell/navigating.html">Navigating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell/alter-dir.html">Altering files and directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell/pipes-filters.html">Pipes and filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell/loops.html">Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell/shell-scripts.html">Shell scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell/search-find.html">Searching and finding</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="git.html">Git Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="git/setup-install.html">Setup and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git/quick-start.html">Quick start to Git and GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git/pushing.html">Pushing changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git/fetch-merge.html">Fetch and merge from GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git/git-utilities.html">Git utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git/forking.html">Forking in GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git/glossary.html">Git Glossary</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="python">
+<h1>Python<a class="headerlink" href="#python" title="Permalink to this headline">#</a></h1>
+<section id="python-programming-workshop">
+<h2>Python Programming Workshop<a class="headerlink" href="#python-programming-workshop" title="Permalink to this headline">#</a></h2>
+<p>Welcome to the Brandeis Library Python Programming Workshop! Whether you
+are participating synchronously or asynchronously, all of the materials
+we will be using are listed below for each topic.</p>
+<p>Each lesson includes a link to a page on this site, as well as links to
+filled-in and code-along Python notebooks in <a class="reference external" href="https://colab.research.google.com/">Google
+Colab</a>, an online cloud-based app
+that runs Python <strong>without any installation necessary</strong>.</p>
+<section id="topics">
+<h3>Topics<a class="headerlink" href="#topics" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="python/setup-install.html"><span class="doc">Setup and installation</span></a></p></li>
+<li><p><a class="reference internal" href="python/jupyter.html"><span class="doc">Jupyter notebooks</span></a></p></li>
+<li><p><a class="reference internal" href="python/python-fundamentals.html"><span class="doc">Fundamentals</span></a>
+[ <a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/python-fundamentals-codealong.ipynb">code-along notebook</a>
+/ <a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/python-fundamentals.ipynb">filled-in notebook</a> ]</p></li>
+<li><p><a class="reference internal" href="python/data-structures.html"><span class="doc">Data structures</span></a>
+[ <a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/data-structures-codealong.ipynb">code-along notebook</a>
+/ <a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/data-structures.ipynb">filled-in notebook</a> ]</p></li>
+<li><p><a class="reference internal" href="python/conditionals.html"><span class="doc">Booleans and conditionals</span></a>
+[ <a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/conditionals-codealong.ipynb">code-along notebook</a>
+/ <a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/conditionals.ipynb">filled-in notebook</a> ]</p></li>
+<li><p><a class="reference internal" href="python/loops.html"><span class="doc">Loops</span></a>
+[ <a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/loops-codealong.ipynb">code-along notebook</a>
+/ <a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/loops.ipynb">filled-in notebook</a> ]</p></li>
+<li><p><a class="reference internal" href="python/numpy.html"><span class="doc">NumPy</span></a>
+[ <a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/numpy-codealong.ipynb">code-along notebook</a>
+/ <a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/numpy.ipynb">filled-in notebook</a> ]</p></li>
+<li><p><a class="reference internal" href="python/pandas.html"><span class="doc">Pandas</span></a>
+[ <a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/pandas-codealong.ipynb">code-along notebook</a>
+/ <a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/pandas.ipynb">filled-in Jupyter notebook</a> ]</p></li>
+<li><p><a class="reference internal" href="python/figures.html"><span class="doc">Matplotlib and seaborn</span></a>
+[ <a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/figures-codealong.ipynb">code-along notebook</a>
+/ <a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/figures.ipynb">filled-in notebook</a> ]</p></li>
+<li><p><a class="reference internal" href="python/functions.html"><span class="doc">Writing functions</span></a>
+[ <a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/functions-codealong.ipynb">code-along notebook</a>
+/ <a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/functions.ipynb">filled-in notebook</a> ]</p></li>
+<li><p><a class="reference internal" href="python/stats.html"><span class="doc">Statistical tests</span></a></p></li>
+</ol>
+</section>
+<section id="using-colab">
+<h3>Using Colab<a class="headerlink" href="#using-colab" title="Permalink to this headline">#</a></h3>
+<p>We will be using <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>
+to run our code. No Python installation will be required for this
+workshop; you just need to be signed into a Google account.</p>
+<section id="saving-notebooks-to-your-drive">
+<h4>Saving notebooks to your drive<a class="headerlink" href="#saving-notebooks-to-your-drive" title="Permalink to this headline">#</a></h4>
+<p>Once the notebook is open in Colab, click on <strong>File</strong> in the upper left.
+If you cannot see <strong>File</strong>, try clicking the down arrow in the top
+right. Click <strong>Save a copy in Drive</strong>. You can rename the file, and the
+copy will be located in a new folder in your Google Drive called <strong>Colab
+Notebooks</strong>. You can now freely save changes to your personal version of
+the file.</p>
+<p>If you would prefer not to use Colab, click on <strong>File</strong> and then
+<strong>Download &gt; Download .ipynb</strong>. You will need <a class="reference external" href="/python/setup-install/">Anaconda or Miniconda
+installed</a>. You can use a variety of
+different programs to interact with the notebook, such as
+<a class="reference external" href="https://www.spyder-ide.org/">Spyder</a>, <a class="reference external" href="https://code.visualstudio.com/">VS
+Code</a>,
+<a class="reference external" href="https://www.jetbrains.com/pycharm/">PyCharm</a>, and more.</p>
+</section>
+</section>
+<section id="practice-examples-and-more-training">
+<h3>Practice Examples and More Training<a class="headerlink" href="#practice-examples-and-more-training" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.practicepython.org/">Practice Python: 30 beginner examples and
+solutions</a></p></li>
+<li><p><a class="reference external" href="https://www.kaggle.com/learn/overview">Kaggle Courses</a></p></li>
+<li><p><a class="reference external" href="https://www.brandeis.edu/its/support/linkedin-learning/index.html">Brandeis LinkedIn
+Learning</a></p>
+<ul>
+<li><p><a class="reference external" href="https://www.linkedin.com/learning/python-statistics-essential-training/">Python Statistics Essential Training on LinkedIn
+Learning</a></p></li>
+<li><p><a class="reference external" href="https://www.linkedin.com/learning/python-for-data-visualization/">Python for Data Visualization on LinkedIn
+Learning</a></p></li>
+</ul>
+</li>
+<li><p>Feeling competitive? Check out <a class="reference external" href="https://www.kaggle.com/competitions">Kaggle
+Competitions</a></p></li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="python/setup-install.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Python setup and installation</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Home</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Ford Fishman
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Python</a><ul>
+<li><a class="reference internal" href="#python-programming-workshop">Python Programming Workshop</a><ul>
+<li><a class="reference internal" href="#topics">Topics</a></li>
+<li><a class="reference internal" href="#using-colab">Using Colab</a><ul>
+<li><a class="reference internal" href="#saving-notebooks-to-your-drive">Saving notebooks to your drive</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#practice-examples-and-more-training">Practice Examples and More Training</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    <script src="_static/tabs.js"></script>
+    </body>
+</html>
