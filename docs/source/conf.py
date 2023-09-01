@@ -27,7 +27,8 @@ release = '0.61'
 
 extensions = [
     'sphinx_toolbox.collapse',
-    'sphinx_inline_tabs'
+    'sphinx_inline_tabs',
+    'sphinx_reredirects'
 ]
 
 templates_path = ['_templates']
@@ -46,3 +47,9 @@ html_css_files = [
 html_favicon = "../../favicon/favicon-32x32.png"
 html_logo = "_static/images/DeisDatax1x_medium.png"
 html_title = "DeisData"
+
+# redirects
+
+redirects = {
+    # "/python/": '/python.html'
+}
