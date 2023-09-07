@@ -1,10 +1,9 @@
 Shell scripts
 =============
 
-| We finally see what makes the shell a powerful programming
-  environment.
-| We will take commands we repeat and save them in a **shell script**- a
-  small program, so we can re-run operations with a single command.
+We finally see what makes the shell a powerful programming environment. 
+Now, we will take commands we repeat and save them in a **shell script** - a
+small program, so we can re-run operations with a single command.
 
 Questions to think about:
 -------------------------
@@ -21,7 +20,8 @@ Shebang the top line of a script:
       #!/usr/bin/env bash
 
 You can use the special marker ``#!`` and path ``#!/usr/bin/env bash`` to
-instruct the shell to pass the script to the bash program for execution.
+instruct the shell to pass the script to the bash program for execution. This 
+line is known as a **shebang**. 
 
 Other scripts may point to other shells (e.g. ``#!/usr/bin/perl`` will
 tell the shell to run a perl script.)
@@ -103,7 +103,6 @@ We can write scripts to handle multiple arguments, as well. ``$1``
 corresponds to the first argument, ``$2`` for the second, ``$3``
 for the third, so on and so forth. It can be helpful to use double 
 quotes around a variable in case a filename happens to contain spaces.
-
 
 **header.sh:**
 
