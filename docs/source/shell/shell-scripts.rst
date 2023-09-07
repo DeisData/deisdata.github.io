@@ -11,11 +11,8 @@ Questions to think about:
 
 -  How can I save and re-use commands?
 
-Writing Shell Scripts
----------------------
-
 Shebang the top line of a script:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------
 
 .. tab:: Bash
 
@@ -23,14 +20,14 @@ Shebang the top line of a script:
 
       #!/usr/bin/env bash
 
-Uses the special marker ``#!`` and path ``#!/usr/bin/env bash`` to
+You can use the special marker ``#!`` and path ``#!/usr/bin/env bash`` to
 instruct the shell to pass the script to the bash program for execution.
 
 Other scripts may point to other shells (e.g. ``#!/usr/bin/perl`` will
 tell the shell to run a perl script.)
 
 File permissions
-~~~~~~~~~~~~~~~~
+----------------
 
 We need set permissions on executable files before we can run them. To
 run them we can use the ``chmod`` or “change mode” command.
@@ -39,7 +36,7 @@ run them we can use the ``chmod`` or “change mode” command.
 
    .. code:: bash
 
-      chmod 755 header.sh
+      $ chmod 755 header.sh
 
 The ``755`` tells our system that the owner of the file can read (open),
 write (change), and execute (run) the file, but all others can only read
@@ -48,14 +45,8 @@ server with multiple people, like a supercomputing cluster. For more
 detailed information, please see
 `here <https://www.redhat.com/sysadmin/introduction-chmod>`__.
 
-Use an argument on the command line executing a script
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-For example, ``$1`` means the first argument on the command line in the
-script ``header.sh``.
-
 Running the script
-~~~~~~~~~~~~~~~~~~
+------------------
 
 When we run an executable script in the command line, we need to provide
 the path to the script. This is because the system will not check all
@@ -64,6 +55,24 @@ directories, including the working directory, for commands.
 If you are running a script in the current working directory be sure to
 use ``./`` to ensure that it knows to look in the current working
 directory: ``./myscript.sh``.
+
+.. tab:: Bash
+
+   .. code:: bash
+
+      $ ./header.sh
+
+Arguments
+---------
+
+When creating shell scripts for use on the command line, we can allow 
+the user to specify certain conditions, as well. For instance, we can 
+write ``header.sh`` so that it can be used with any file path the user 
+provides.
+
+Information provided by the user is called an **argument**. Inside of 
+a script, ``$1`` means the first argument on the command line in the
+script ``header.sh``.
 
 **header.sh:**
 
@@ -83,12 +92,18 @@ directory: ``./myscript.sh``.
 
       $ ./header.sh datafile.txt
 
-Use multiple arguments on the command line executing a script
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Because the first text in the console after the name of the script is ``datafile.txt``, 
+this is considered to be the first argument. When we run the script, ``$1`` gets replaced
+by ``datafile.txt``.
 
--  Use double quotes around a variable in case a filename happens to
-   contain spaces.
--  Use special variables ``$1``, ``$2``, and ``$3``, etc.
+Multiple arguments
+~~~~~~~~~~~~~~~~~~
+
+We can write scripts to handle multiple arguments, as well. ``$1`` 
+corresponds to the first argument, ``$2`` for the second, ``$3``
+for the third, so on and so forth. It can be helpful to use double 
+quotes around a variable in case a filename happens to contain spaces.
+
 
 **header.sh:**
 
@@ -108,33 +123,32 @@ Use multiple arguments on the command line executing a script
 
       $ ./header.sh datafile.txt 10 topdata.txt
 
-Use special syntax to handle one or more filenames
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. admonition:: Use special syntax to handle one or more filenames
 
--  Use ``$@`` to indicate all of the command-line arguments to the shell
+   You can use ``$@`` to indicate all of the command-line arguments to the shell
    script. Add quotations in case of filename spaces ``"$@"``
 
-**sorted.sh:**
+   **sorted.sh:**
 
-.. tab:: Bash
+   .. tab:: Bash
 
-   .. code:: bash
+      .. code:: bash
 
-      #!/usr/bin/env bash
-      # Sort files by their length
-      # USAGE: ./sorted.sh one_or_more_filenames
-      $ wc -l "$@" | sort -n
+         #!/usr/bin/env bash
+         # Sort files by their length
+         # USAGE: ./sorted.sh one_or_more_filenames
+         $ wc -l "$@" | sort -n
 
-**Command line:**
+   **Command line:**
 
-.. tab:: Bash
+   .. tab:: Bash
 
-   .. code:: bash
+      .. code:: bash
 
-      $ ./sorted.sh *.pdb ../creatures/*.dat
+         $ ./sorted.sh *.pdb ../creatures/*.dat
 
 Resources
-~~~~~~~~~
+---------
 
 This lesson is adapted from `The Unix Shell on Software
 Carpentry <http://swcarpentry.github.io/shell-novice/>`__. 

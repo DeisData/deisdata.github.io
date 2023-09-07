@@ -250,10 +250,8 @@ small program, so we can re-run operations with a single command.</div>
 <li><p>How can I save and re-use commands?</p></li>
 </ul>
 </section>
-<section id="writing-shell-scripts">
-<h2>Writing Shell Scripts<a class="headerlink" href="#writing-shell-scripts" title="Permalink to this headline">#</a></h2>
 <section id="shebang-the-top-line-of-a-script">
-<h3>Shebang the top line of a script:<a class="headerlink" href="#shebang-the-top-line-of-a-script" title="Permalink to this headline">#</a></h3>
+<h2>Shebang the top line of a script:<a class="headerlink" href="#shebang-the-top-line-of-a-script" title="Permalink to this headline">#</a></h2>
 <div class="tab-set docutils container">
 <input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
@@ -261,18 +259,18 @@ small program, so we can re-run operations with a single command.</div>
 </div>
 </div>
 </div>
-<p>Uses the special marker <code class="docutils literal notranslate"><span class="pre">#!</span></code> and path <code class="docutils literal notranslate"><span class="pre">#!/usr/bin/env</span> <span class="pre">bash</span></code> to
+<p>You can use the special marker <code class="docutils literal notranslate"><span class="pre">#!</span></code> and path <code class="docutils literal notranslate"><span class="pre">#!/usr/bin/env</span> <span class="pre">bash</span></code> to
 instruct the shell to pass the script to the bash program for execution.</p>
 <p>Other scripts may point to other shells (e.g. <code class="docutils literal notranslate"><span class="pre">#!/usr/bin/perl</span></code> will
 tell the shell to run a perl script.)</p>
 </section>
 <section id="file-permissions">
-<h3>File permissions<a class="headerlink" href="#file-permissions" title="Permalink to this headline">#</a></h3>
+<h2>File permissions<a class="headerlink" href="#file-permissions" title="Permalink to this headline">#</a></h2>
 <p>We need set permissions on executable files before we can run them. To
 run them we can use the <code class="docutils literal notranslate"><span class="pre">chmod</span></code> or “change mode” command.</p>
 <div class="tab-set docutils container">
 <input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Bash</label><div class="tab-content docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>header.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>header.sh
 </pre></div>
 </div>
 </div>
@@ -284,22 +282,34 @@ server with multiple people, like a supercomputing cluster. For more
 detailed information, please see
 <a class="reference external" href="https://www.redhat.com/sysadmin/introduction-chmod">here</a>.</p>
 </section>
-<section id="use-an-argument-on-the-command-line-executing-a-script">
-<h3>Use an argument on the command line executing a script<a class="headerlink" href="#use-an-argument-on-the-command-line-executing-a-script" title="Permalink to this headline">#</a></h3>
-<p>For example, <code class="docutils literal notranslate"><span class="pre">$1</span></code> means the first argument on the command line in the
-script <code class="docutils literal notranslate"><span class="pre">header.sh</span></code>.</p>
-</section>
 <section id="running-the-script">
-<h3>Running the script<a class="headerlink" href="#running-the-script" title="Permalink to this headline">#</a></h3>
+<h2>Running the script<a class="headerlink" href="#running-the-script" title="Permalink to this headline">#</a></h2>
 <p>When we run an executable script in the command line, we need to provide
 the path to the script. This is because the system will not check all
 directories, including the working directory, for commands.</p>
 <p>If you are running a script in the current working directory be sure to
 use <code class="docutils literal notranslate"><span class="pre">./</span></code> to ensure that it knows to look in the current working
 directory: <code class="docutils literal notranslate"><span class="pre">./myscript.sh</span></code>.</p>
-<p><strong>header.sh:</strong></p>
 <div class="tab-set docutils container">
 <input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Bash</label><div class="tab-content docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./header.sh
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="arguments">
+<h2>Arguments<a class="headerlink" href="#arguments" title="Permalink to this headline">#</a></h2>
+<p>When creating shell scripts for use on the command line, we can allow
+the user to specify certain conditions, as well. For instance, we can
+write <code class="docutils literal notranslate"><span class="pre">header.sh</span></code> so that it can be used with any file path the user
+provides.</p>
+<p>Information provided by the user is called an <strong>argument</strong>. Inside of
+a script, <code class="docutils literal notranslate"><span class="pre">$1</span></code> means the first argument on the command line in the
+script <code class="docutils literal notranslate"><span class="pre">header.sh</span></code>.</p>
+<p><strong>header.sh:</strong></p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 <span class="c1"># This script prints the first 15 lines of the file named in the command line (datafile.txt)</span>
 head<span class="w"> </span>-n<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="nv">$1</span>
@@ -309,23 +319,24 @@ head<span class="w"> </span>-n<span class="w"> </span><span class="m">15</span><
 </div>
 <p><strong>Command line:</strong></p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Bash</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./header.sh<span class="w"> </span>datafile.txt
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="use-multiple-arguments-on-the-command-line-executing-a-script">
-<h3>Use multiple arguments on the command line executing a script<a class="headerlink" href="#use-multiple-arguments-on-the-command-line-executing-a-script" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>Use double quotes around a variable in case a filename happens to
-contain spaces.</p></li>
-<li><p>Use special variables <code class="docutils literal notranslate"><span class="pre">$1</span></code>, <code class="docutils literal notranslate"><span class="pre">$2</span></code>, and <code class="docutils literal notranslate"><span class="pre">$3</span></code>, etc.</p></li>
-</ul>
+<p>Because the first text in the console after the name of the script is <code class="docutils literal notranslate"><span class="pre">datafile.txt</span></code>,
+this is considered to be the first argument. When we run the script, <code class="docutils literal notranslate"><span class="pre">$1</span></code> gets replaced
+by <code class="docutils literal notranslate"><span class="pre">datafile.txt</span></code>.</p>
+<section id="multiple-arguments">
+<h3>Multiple arguments<a class="headerlink" href="#multiple-arguments" title="Permalink to this headline">#</a></h3>
+<p>We can write scripts to handle multiple arguments, as well. <code class="docutils literal notranslate"><span class="pre">$1</span></code>
+corresponds to the first argument, <code class="docutils literal notranslate"><span class="pre">$2</span></code> for the second, <code class="docutils literal notranslate"><span class="pre">$3</span></code>
+for the third, so on and so forth. It can be helpful to use double
+quotes around a variable in case a filename happens to contain spaces.</p>
 <p><strong>header.sh:</strong></p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">Bash</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 <span class="c1"># This script prints the top $2 lines of the file $1, then writes the top lines to file $3</span>
 head<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$2</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$3</span><span class="s2">&quot;</span>
@@ -335,22 +346,19 @@ head<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</s
 </div>
 <p><strong>Command line:</strong></p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">Bash</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./header.sh<span class="w"> </span>datafile.txt<span class="w"> </span><span class="m">10</span><span class="w"> </span>topdata.txt
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="use-special-syntax-to-handle-one-or-more-filenames">
-<h3>Use special syntax to handle one or more filenames<a class="headerlink" href="#use-special-syntax-to-handle-one-or-more-filenames" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">$&#64;</span></code> to indicate all of the command-line arguments to the shell
-script. Add quotations in case of filename spaces <code class="docutils literal notranslate"><span class="pre">&quot;$&#64;&quot;</span></code></p></li>
-</ul>
+<div class="admonition-use-special-syntax-to-handle-one-or-more-filenames admonition">
+<p class="admonition-title">Use special syntax to handle one or more filenames</p>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">$&#64;</span></code> to indicate all of the command-line arguments to the shell
+script. Add quotations in case of filename spaces <code class="docutils literal notranslate"><span class="pre">&quot;$&#64;&quot;</span></code></p>
 <p><strong>sorted.sh:</strong></p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">Bash</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 <span class="c1"># Sort files by their length</span>
 <span class="c1"># USAGE: ./sorted.sh one_or_more_filenames</span>
@@ -361,15 +369,17 @@ $<span class="w"> </span>wc<span class="w"> </span>-l<span class="w"> </span><sp
 </div>
 <p><strong>Command line:</strong></p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">Bash</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./sorted.sh<span class="w"> </span>*.pdb<span class="w"> </span>../creatures/*.dat
 </pre></div>
 </div>
 </div>
 </div>
+</div>
+</section>
 </section>
 <section id="resources">
-<h3>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">#</a></h3>
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">#</a></h2>
 <p>This lesson is adapted from <a class="reference external" href="http://swcarpentry.github.io/shell-novice/">The Unix Shell on Software
 Carpentry</a>.</p>
 <ul class="simple">
@@ -383,7 +393,6 @@ some basic to more complex scripting examples</p></li>
 should know. It is old but has some great examples. In general, StackOverflow is a great
 community for technical questions.</p></li>
 </ul>
-</section>
 </section>
 </section>
 
@@ -444,16 +453,14 @@ community for technical questions.</p></li>
             <ul>
 <li><a class="reference internal" href="#">Shell scripts</a><ul>
 <li><a class="reference internal" href="#questions-to-think-about">Questions to think about:</a></li>
-<li><a class="reference internal" href="#writing-shell-scripts">Writing Shell Scripts</a><ul>
 <li><a class="reference internal" href="#shebang-the-top-line-of-a-script">Shebang the top line of a script:</a></li>
 <li><a class="reference internal" href="#file-permissions">File permissions</a></li>
-<li><a class="reference internal" href="#use-an-argument-on-the-command-line-executing-a-script">Use an argument on the command line executing a script</a></li>
 <li><a class="reference internal" href="#running-the-script">Running the script</a></li>
-<li><a class="reference internal" href="#use-multiple-arguments-on-the-command-line-executing-a-script">Use multiple arguments on the command line executing a script</a></li>
-<li><a class="reference internal" href="#use-special-syntax-to-handle-one-or-more-filenames">Use special syntax to handle one or more filenames</a></li>
-<li><a class="reference internal" href="#resources">Resources</a></li>
+<li><a class="reference internal" href="#arguments">Arguments</a><ul>
+<li><a class="reference internal" href="#multiple-arguments">Multiple arguments</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#resources">Resources</a></li>
 </ul>
 </li>
 </ul>
