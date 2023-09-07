@@ -96,11 +96,11 @@ and directories). Options and argements are refered to as
 
 .. note:: 
    
-   Type case is important.Spaces are important between command and
-   options. (But options can be combined with a single - and no spaces).
+   Type case is important. Spaces are important between command and
+   options. (But options can be combined with a single ``-`` and no spaces -> ``-aF``).
 
-Listing
--------
+Listing: ``ls``
+---------------
 
 We use the ``ls`` command to list the contents of the current directory.
 
@@ -135,8 +135,8 @@ Explore more ``ls`` flags.
 2. The default ``ls`` lists contents in alphabetical order. What option
    do I use to see them by time of last change?
 
-Print working directory
------------------------
+Print working directory: ``pwd``
+--------------------------------
 
 To check where you are, use ``pwd`` to print the path of the **working
 directory**.
@@ -153,8 +153,8 @@ directory**.
 
       /home/fordfishman/
 
-Change directory
-----------------
+Change directory: ``cd``
+------------------------
 
 ``cd`` will change your working directory. ``cd`` can only see
 sub-directories inside your current working directory. 

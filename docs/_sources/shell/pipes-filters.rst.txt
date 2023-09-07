@@ -107,8 +107,8 @@ We can use ``cat`` to show the contents of this new file.
          15 propane.pdb
         107 total
 
-sort
-----
+``sort``
+--------
 
 ``sort`` sorts the contents of a file. ``sort -n`` sorts a numerical
 file.
@@ -133,12 +133,12 @@ file.
 
 .. Note:: 
    
-   To escape a mistake in the prompt, type Ctrl + C.
+   To escape a mistake in the prompt, type :kbd:`Ctrl+C` (same on Mac and PC).
 
 View particular file contents
 -----------------------------
 
--  ``cat``\ is the concatentate (join together) command that prints the
+-  ``cat`` is the concatentate (join together) command that prints the
    contents of files one after another
 -  ``less`` displays a screenful of the file and then stops. You can go
    forward one screenful by pressingthe spacebar, or back one by
@@ -156,7 +156,7 @@ View particular file contents
 Piping Commands Together
 ------------------------
 
-The ``|`` command **pipe** tells the shell to use the output of a
+The ``|`` character is called a **pipe**. It tells the shell to use the output of a
 command on the left as the input of the command on the right.
 
 Here, we take the output of ``wc -l *.pdb`` and feed that right into

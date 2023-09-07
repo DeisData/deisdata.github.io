@@ -27,7 +27,7 @@ most versions of Linux, it is accessible by running the `(Gnome) Terminal
 or `(KDE) Konsole <https://konsole.kde.org/>`__ or `xterm <https://en.wikipedia.org/wiki/Xterm>`__, 
 which can be found via the applications menu
 or the search bar. If your machine is set up to use something other than
-Bash, you can run it by opening a terminal and typing ``bash``.
+Bash, you can run it by opening a terminal and typing ``bash`` and hitting :kbd:`Enter`.
 
 macOS
 -----
@@ -45,16 +45,13 @@ To open Terminal, try one or both of the following:
   and press :kbd:`Return`.
 
 To check if your machine is set up to use something other than Bash,
-type ``echo $SHELL`` in your terminal window.
-
+type ``echo $SHELL`` in your terminal window. 
 
 
 If your machine is set up to use something other than Bash, you can run
-it by opening a terminal and typing ``bash``.
+it by opening a terminal and typing ``bash``. However, it is not strictly speaking necessary to 
+use bash for our purposes. Other shells, like ``zsh``, will work as well.
 
-.. raw:: html
-
-   </p>
 
 To change the default shell, follow `these
 instructions <https://www.howtogeek.com/444596/how-to-change-the-default-shell-to-bash-in-macos-catalina/>`__.

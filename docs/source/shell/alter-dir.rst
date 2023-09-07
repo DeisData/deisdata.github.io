@@ -215,7 +215,7 @@ but you may want to try more powerful editors.
    If you start an editor from the shell, it will use your current working
    directory as its default location.
 
-   In editor commands, the Control key is also called Ctrl or ^.
+   In editor commands, the Control key is also called :kbd:`Ctrl` or :kbd:`^`.
 
 Challenge Questions
 -------------------

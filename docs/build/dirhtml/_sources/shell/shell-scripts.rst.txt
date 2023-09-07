@@ -23,7 +23,7 @@ Shebang the top line of a script:
 
       #!/usr/bin/env bash
 
-Uses the special marker ``#!`` and path ``#!/usr/bin/env bash`` the
+Uses the special marker ``#!`` and path ``#!/usr/bin/env bash`` to
 instruct the shell to pass the script to the bash program for execution.
 
 Other scripts may point to other shells (e.g. ``#!/usr/bin/perl`` will
