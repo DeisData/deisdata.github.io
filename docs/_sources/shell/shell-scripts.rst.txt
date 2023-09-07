@@ -125,7 +125,7 @@ quotes around a variable in case a filename happens to contain spaces.
 .. admonition:: Use special syntax to handle one or more filenames
 
    You can use ``$@`` to indicate all of the command-line arguments to the shell
-   script. Add quotations in case of filename spaces ``"$@"``
+   script. You can still add quotations in case of filename spaces ``"$@"``. 
 
    **sorted.sh:**
 
