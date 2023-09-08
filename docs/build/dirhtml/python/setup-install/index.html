@@ -1,0 +1,430 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="How to use a Jupyter notebook" href="../jupyter/" /><link rel="prev" title="Python" href="../" />
+
+    <link rel="shortcut icon" href="../../_static/favicon-32x32.png"/><!-- Generated with Sphinx 4.5.0 and Furo 2023.05.20 -->
+        <title>Python setup and installation - DeisData</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../"><div class="brand">DeisData</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../../">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/DeisDatax1x_medium.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">DeisData</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search/" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../">Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Setup and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jupyter/">Jupyter notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python-fundamentals/">Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-structures/">Data structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../conditionals/">Booleans and conditionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../loops/">Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numpy/">NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pandas/">Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figures/">Matplotlib and seaborn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/">Writing functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stats/">Statistical tests</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../r/">R</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of R</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../r/quick-start/">Intro to R and the Tidyverse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../r/data-wrangling/">Data wrangling with the Tidyverse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../r/data-visualization/">ggplot2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../r/text-mining/">Text mining</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../shell/">Unix Shell</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Unix Shell</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/setup/">Bash Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/navigating/">Navigating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/alter-dir/">Altering files and directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/pipes-filters/">Pipes and filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/loops/">Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/shell-scripts/">Shell scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/search-find/">Searching and finding</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../git/">Git Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../git/setup-install/">Setup and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/quick-start/">Quick start to Git and GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/pushing/">Pushing changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/fetch-merge/">Fetch and merge from GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/git-utilities/">Git utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/forking/">Forking in GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/glossary/">Git Glossary</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="python-setup-and-installation">
+<h1>Python setup and installation<a class="headerlink" href="#python-setup-and-installation" title="Permalink to this headline">#</a></h1>
+<p>There are many ways to use and install Python. Here we list some
+recommended ways to get started in increasing order of complexity.</p>
+<section id="google-colab-easiest">
+<h2>Google Colab (Easiest):<a class="headerlink" href="#google-colab-easiest" title="Permalink to this headline">#</a></h2>
+<p>Want to use Python without installing anything? Enter <a class="reference external" href="https://research.google.com/colaboratory/">Google
+Colab</a>, a free environment
+for running Jupyter notebooks, allowing you to create text and code
+cells side by side with a Google account being all you need to start.</p>
+<p>Colab is a popular choice for quick and dirty data science projects. It
+has many popular libraries pre-installed, and you have the ability to
+install any others you need as well. You even have access to Google’s
+GPUs for free, which is great for many deep learning pipelines. Finally,
+it is incredibly easy to share your notebooks, with the same sharing
+tools as other Google Drive products.</p>
+<section id="cons">
+<h3>Cons<a class="headerlink" href="#cons" title="Permalink to this headline">#</a></h3>
+<p>There are some downsides to Colab, however. It is not incredibly
+straightforward to connect to <a class="reference external" href="/git/">version control</a>. Uploading
+data sets can also be a drag, as you have to re-upload your files every
+time you refresh the page, though you can connect your Google Drive to
+Colab to in theory get around this.</p>
+</section>
+<section id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h3>
+<p>Again, there is no installation process for Colab. Simply go to
+<a class="reference external" href="https://research.google.com/colaboratory/">research.google.com/colaboratory</a>
+and connect your Google Account to get started.</p>
+</section>
+</section>
+<section id="anaconda-most-tools">
+<h2>Anaconda (Most tools):<a class="headerlink" href="#anaconda-most-tools" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://www.anaconda.com/products/distribution">Anaconda</a> is an
+incredibly popular distribution of Python. It comes pre-loaded with a
+plethora of Python libraries, as well as environments in which to run
+your scripts and Jupyter notebooks, like JupyterLab and Spyder.</p>
+<p>Anaconda also comes ready with the <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment managing
+system. <code class="docutils literal notranslate"><span class="pre">conda</span></code> allows you to separately install and download versions
+of libraries and Python itself for individual projects. This can be
+incredibly useful if you need to use Python 3.7 to use <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code>
+for a project, which depends on 3.7, but would like to use 3.9 or other
+versions for other projects. <code class="docutils literal notranslate"><span class="pre">conda</span></code> makes sure your libraries always
+use the correct versions and dependencies for that environment.</p>
+<section id="cons-1">
+<span id="id1"></span><h3>Cons<a class="headerlink" href="#cons-1" title="Permalink to this headline">#</a></h3>
+<p>Anaconda’s main downside is its large installation size, due to the
+numerous packages and programs that come with it. Make sure you have at
+least 3 GB of disk space free before you install.</p>
+<p>With everything that is installed, it can also be a bit confusing which
+editor, IDE, or environment to use for the job. Spyder or Jupyter
+notebook are safe bets, and you can also use other environments like VS
+Code or PyCharm, as well.</p>
+</section>
+<section id="installation-1">
+<span id="id2"></span><h3>Installation<a class="headerlink" href="#installation-1" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p>Download the installer for the free individual edition of Anaconda -
+Python 3.9 edition. You will find installers for Windows, Mac, and
+Linux here: <a class="reference external" href="https://www.anaconda.com/distribution">https://www.anaconda.com/distribution</a>.</p></li>
+<li><p>Proceed through a standard installation, which will require several
+clicks.</p></li>
+<li><p>Once your installation is completed, open <strong>Anaconda Navigator</strong> from
+your applications. Here you will see lots of useful applications!
+<img alt="anaconda navigator" src="../../_images/anaconda_nav.jpeg" /></p></li>
+<li><p>In Anaconda Navigator on the Home tab, you will see a tile that says
+Jupyter Notebook. Click <strong>Launch</strong> (or <strong>Install</strong> and then
+<strong>Launch</strong>) to open Jupyter Notebook in a web browser.</p></li>
+<li><p>Jupyter Notebook opens in a web browser but is running locally on
+your computer. On the main tab <strong>Files</strong> you will see a location in
+your file system. This startup folder is called the root directory of
+the app. Make sure you have a folder you can navigate to where you
+can put any files and datasets you’ll be using.</p></li>
+</ol>
+</section>
+</section>
+<section id="miniconda-most-streamlined">
+<h2>Miniconda (Most streamlined)<a class="headerlink" href="#miniconda-most-streamlined" title="Permalink to this headline">#</a></h2>
+<p>Want access to Python conda without having to download 3 GB of programs
+and files?
+<a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a> is here
+for you. You get all of the environment control features of <code class="docutils literal notranslate"><span class="pre">conda</span></code>
+without any of the fluff you don’t specifically want.</p>
+<section id="cons-2">
+<span id="id3"></span><h3>Cons<a class="headerlink" href="#cons-2" title="Permalink to this headline">#</a></h3>
+<p>Because using <code class="docutils literal notranslate"><span class="pre">conda</span></code>, and therefore Miniconda, requires you to use
+terminal and the command line. That being said, the commands to run
+<code class="docutils literal notranslate"><span class="pre">conda</span></code> are relatively straightforward (e.g. <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">my-env</span></code>
+or <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">numpy</span></code>).</p>
+</section>
+<section id="installation-2">
+<span id="id4"></span><h3>Installation<a class="headerlink" href="#installation-2" title="Permalink to this headline">#</a></h3>
+<p>Follow the instructions for your operating system from <a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/install/index.html">the conda
+docs</a>.</p>
+<p>You will also need a text editor or IDE. We recommend
+<a class="reference external" href="https://www.spyder-ide.org/">Spyder</a>, <a class="reference external" href="https://code.visualstudio.com/">VS
+Code</a>, or
+<a class="reference external" href="https://www.jetbrains.com/pycharm/">PyCharm</a>.</p>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../jupyter/">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">How to use a Jupyter notebook</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Python</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Ford Fishman
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Python setup and installation</a><ul>
+<li><a class="reference internal" href="#google-colab-easiest">Google Colab (Easiest):</a><ul>
+<li><a class="reference internal" href="#cons">Cons</a></li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#anaconda-most-tools">Anaconda (Most tools):</a><ul>
+<li><a class="reference internal" href="#cons-1">Cons</a></li>
+<li><a class="reference internal" href="#installation-1">Installation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#miniconda-most-streamlined">Miniconda (Most streamlined)</a><ul>
+<li><a class="reference internal" href="#cons-2">Cons</a></li>
+<li><a class="reference internal" href="#installation-2">Installation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/scripts/furo.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    </body>
+</html>
