@@ -32,8 +32,8 @@ directory.
 
    .. code:: bash
 
-      mkdir -p code/python/analysis
-      ls -RF # displays subdirectory structure
+      $ mkdir -p code/python/analysis
+      $ ls -RF # displays subdirectory structure
 
 .. tab:: Output
 
