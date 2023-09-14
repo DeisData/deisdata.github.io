@@ -262,9 +262,9 @@ Carpentry</a>.</p>
 <section id="macos">
 <h3>MacOS<a class="headerlink" href="#macos" title="Permalink to this headline">#</a></h3>
 <p>Open Terminal. It should be located in <code class="docutils literal notranslate"><span class="pre">Applications/Utilities</span></code>. You
-can use Spotlight to locate it, as well (cmd + space and type
+can use Spotlight to locate it, as well (<kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">cmd</kbd>+<kbd class="kbd docutils literal notranslate">space</kbd></kbd> and type
 “Terminal”).</p>
-<p>Type <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">git</span></code> and press Return. If it prints a path
+<p>Type <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">git</span></code> and press <kbd class="kbd docutils literal notranslate">Return</kbd>. If it prints a path
 (e.g. <code class="docutils literal notranslate"><span class="pre">/usr/bin/git</span></code>), Git is already installed.</p>
 <p>If no path is printed, follow the instructions at <a class="reference external" href="https://carpentries.github.io/workshop-template/#git">Software
 Carpentry</a> for
@@ -303,6 +303,8 @@ will also add the flag <code class="docutils literal notranslate"><span class="p
 any of our future repositories.</p>
 <section id="name-configuration">
 <h3>Name configuration<a class="headerlink" href="#name-configuration" title="Permalink to this headline">#</a></h3>
+<p>To configure your username, run the following code, replacing “InigoMontoya”
+with your GitHub username.</p>
 <div class="tab-set docutils container">
 <input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;InigoMontoya&quot;</span>
@@ -319,10 +321,11 @@ any of our future repositories.</p>
 <li><p>Go to Settings</p></li>
 <li><p>Click on Emails in the left menu</p></li>
 <li><p>Select the check box “Keep my email addresses private” and use the
-private github.com-supplied email listed in the configuration below.
+private github.com-supplied email listed in the configuration below the check box.
 You can highlight and copy it with <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>+<kbd class="kbd docutils literal notranslate">C</kbd></kbd> or <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">cmd</kbd>+<kbd class="kbd docutils literal notranslate">C</kbd></kbd> (Mac), and
 paste to the command line with <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd>+<kbd class="kbd docutils literal notranslate">V</kbd></kbd> or <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">cmd</kbd>+<kbd class="kbd docutils literal notranslate">V</kbd></kbd>.</p></li>
 </ul>
+<p>Again, remember to replace the email listed below with the private email mentioned above.</p>
 <div class="tab-set docutils container">
 <input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;1234username@users.noreply.github.com&quot;</span>

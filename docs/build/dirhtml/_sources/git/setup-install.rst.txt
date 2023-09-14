@@ -32,10 +32,10 @@ MacOS
 ~~~~~
 
 Open Terminal. It should be located in ``Applications/Utilities``. You
-can use Spotlight to locate it, as well (cmd + space and type
+can use Spotlight to locate it, as well (:kbd:`cmd+space` and type
 “Terminal”).
 
-Type ``which git`` and press Return. If it prints a path
+Type ``which git`` and press :kbd:`Return`. If it prints a path
 (e.g. ``/usr/bin/git``), Git is already installed.
 
 If no path is printed, follow the instructions at `Software
@@ -82,6 +82,9 @@ any of our future repositories.
 Name configuration
 ~~~~~~~~~~~~~~~~~~
 
+To configure your username, run the following code, replacing "InigoMontoya"
+with your GitHub username.
+
 .. tab:: Bash
 
    .. code:: bash
@@ -96,9 +99,11 @@ Email configuration
 -  Go to Settings
 -  Click on Emails in the left menu
 -  Select the check box “Keep my email addresses private” and use the
-   private github.com-supplied email listed in the configuration below.
+   private github.com-supplied email listed in the configuration below the check box.
    You can highlight and copy it with :kbd:`Ctrl+C` or :kbd:`cmd+C` (Mac), and
    paste to the command line with :kbd:`Ctrl+V` or :kbd:`cmd+V`.
+
+Again, remember to replace the email listed below with the private email mentioned above.
 
 .. tab:: Bash
 
