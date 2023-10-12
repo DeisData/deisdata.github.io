@@ -562,8 +562,8 @@ So to compute the average body mass by species:
    .. code:: r
 
       penguins %>%
-      group_by(species) %>% 
-      summarize(body_mass_g_mean = mean(body_mass_g, na.rm=TRUE))
+         group_by(species) %>% 
+         summarize(body_mass_g_mean = mean(body_mass_g, na.rm=TRUE))
 
 .. tab:: Output
 
@@ -759,9 +759,9 @@ of ``body_mass_g``, which are specified as individual conditions.
       
       penguins %>%
          mutate(body_type = case_when(
-            body_mass_g < 3000 ~ "small",
-            body_mass_g >= 3000 & body_mass_g < 4500 ~ "normal",
-            body_mass_g >= 4500 ~ "large"))
+                body_mass_g < 3000 ~ "small",
+                body_mass_g >= 3000 & body_mass_g < 4500 ~ "normal",
+                body_mass_g >= 4500 ~ "large"))
 
 .. tab:: Output
 
@@ -854,7 +854,7 @@ We can remove NAs at the same time.
 
       penguins %>%
          pivot_longer(starts_with("bill"),
-                     values_drop_na = TRUE)
+                      values_drop_na = TRUE)
 
 .. tab:: Output
 
@@ -884,9 +884,9 @@ names into multiple new columns.
 
       penguins_long <- penguins %>% 
          pivot_longer(contains("_"),
-                     names_to = c("part", "measure" , "unit"),
-                     names_sep = "_",
-                     values_drop_na = TRUE)
+                      names_to = c("part", "measure" , "unit"),
+                      names_sep = "_",
+                      values_drop_na = TRUE)
       penguins_long
 
 .. tab:: Output
@@ -951,7 +951,7 @@ specifying the names of the columns we want to expand.
 
       penguins_long_simple %>% 
          pivot_wider(names_from = name, 
-                  values_from = value)
+                     values_from = value)
 
 .. tab:: Output
 
@@ -1018,9 +1018,9 @@ We can also use ``pivot_wider()`` across multiple columns.
       penguins_long <- penguins %>% 
          mutate(sample = row_number()) %>%
          pivot_longer(contains("_"),
-                     names_to = c("part", "measure" , "unit"),
-                     names_sep = "_",
-                     values_drop_na = TRUE)
+                      names_to = c("part", "measure" , "unit"),
+                      names_sep = "_",
+                      values_drop_na = TRUE)
       penguins_long
 
 .. tab:: Output
@@ -1049,8 +1049,8 @@ We can also use ``pivot_wider()`` across multiple columns.
 
       penguins_long %>% 
          pivot_wider(names_from = c("part", "measure", "unit"),
-                  names_sep = "_",
-                  values_from = value)
+                     names_sep = "_",
+                     values_from = value)
 
 .. tab:: Output
 
@@ -1085,13 +1085,13 @@ information.
 
    .. code:: r
 
-      data1<- data.frame(country=c("Germany","Australia", "Ecuador"),
-      region=c("Europe","Western Pacific", "Americas" ),
-      life_exp=c(81, 83, 75))
+      data1 <- data.frame(country=c("Germany","Australia", "Ecuador"),
+                          region=c("Europe","Western Pacific", "Americas" ),
+                          life_exp=c(81, 83, 75))
 
-      data2<-data.frame(country=c("Germany","Australia", "Iceland"),
-      region=c("Europe","Western Pacific", "Europe" ),
-      urban_pop=c(76, 86, 94))
+      data2 <- data.frame(country=c("Germany","Australia", "Iceland"),
+                          region=c("Europe","Western Pacific", "Europe" ),
+                          urban_pop=c(76, 86, 94))
 
       data1
       data2
@@ -1232,11 +1232,11 @@ Let’s make two new data frame for the next examples.
 
    .. code:: r
 
-      data3<- data.frame(country=c("Germany","Ecuador"),
-      life_exp=c(81,  75))
+      data3 <- data.frame(country=c("Germany","Ecuador"),
+                          life_exp=c(81,  75))
 
-      data4<-data.frame(country=c("Germany","Australia" ),
-      life_exp=c(81, 83 ))
+      data4 <- data.frame(country=c("Germany","Australia" ),
+                          life_exp=c(81, 83 ))
 
 If we simply want to add new rows on top of each other, we can use the
 ``bind_rows()`` function.

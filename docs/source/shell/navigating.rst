@@ -42,12 +42,12 @@ The **file system** is the part of the operating system responsible for
 managing files and directories. 
 
 - **Files** hold information. 
-- **Directories** (or **folders**) hold files or other directories. Thinks
+- **Directories** (or **folders**) hold files or other directories. Think
   of them like *places*. 
 - The **current working directory** is the place
   where you are in the file system when you are using the shell. 
 - The **root directory** is the top directory that holds everything else. It
-  is refered to by a slash ``/`` on its own. This is the leading slash in
+  is referred to by a slash ``/`` on its own. This is the leading slash in
   other directory paths, for example ``/home/fordfishman/`` 
 - **Hidden files and directories** start with ``.`` like ``.bash_profile``. They
   are usually configuration settings and are hidden to prevent cluttering

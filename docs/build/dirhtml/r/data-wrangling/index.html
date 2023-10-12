@@ -768,8 +768,8 @@ variables for which you want to calculate the summary statistics.</p>
 <div class="tab-set docutils container">
 <input checked="True" class="tab-input" id="tab-set--18-input--1" name="tab-set--18" type="radio"><label class="tab-label" for="tab-set--18-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins</span><span class="w"> </span><span class="o">%&gt;%</span>
-<span class="nf">group_by</span><span class="p">(</span><span class="n">species</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
-<span class="nf">summarize</span><span class="p">(</span><span class="n">body_mass_g_mean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">body_mass_g</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">))</span>
+<span class="w">   </span><span class="nf">group_by</span><span class="p">(</span><span class="n">species</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">   </span><span class="nf">summarize</span><span class="p">(</span><span class="n">body_mass_g_mean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">body_mass_g</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -959,9 +959,9 @@ of <code class="docutils literal notranslate"><span class="pre">body_mass_g</spa
 <input checked="True" class="tab-input" id="tab-set--25-input--1" name="tab-set--25" type="radio"><label class="tab-label" for="tab-set--25-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">mutate</span><span class="p">(</span><span class="n">body_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">case_when</span><span class="p">(</span>
-<span class="w">      </span><span class="n">body_mass_g</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">3000</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&quot;small&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="n">body_mass_g</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">3000</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">body_mass_g</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">4500</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&quot;normal&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="n">body_mass_g</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">4500</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&quot;large&quot;</span><span class="p">))</span>
+<span class="w">          </span><span class="n">body_mass_g</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">3000</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&quot;small&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="n">body_mass_g</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">3000</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">body_mass_g</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">4500</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&quot;normal&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="n">body_mass_g</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">4500</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&quot;large&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1051,7 +1051,7 @@ the same column.</p>
 <input checked="True" class="tab-input" id="tab-set--28-input--1" name="tab-set--28" type="radio"><label class="tab-label" for="tab-set--28-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">pivot_longer</span><span class="p">(</span><span class="nf">starts_with</span><span class="p">(</span><span class="s">&quot;bill&quot;</span><span class="p">),</span>
-<span class="w">               </span><span class="n">values_drop_na</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="w">                </span><span class="n">values_drop_na</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1080,9 +1080,9 @@ names into multiple new columns.</p>
 <input checked="True" class="tab-input" id="tab-set--29-input--1" name="tab-set--29" type="radio"><label class="tab-label" for="tab-set--29-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins_long</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">penguins</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">pivot_longer</span><span class="p">(</span><span class="nf">contains</span><span class="p">(</span><span class="s">&quot;_&quot;</span><span class="p">),</span>
-<span class="w">               </span><span class="n">names_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;part&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;measure&quot;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s">&quot;unit&quot;</span><span class="p">),</span>
-<span class="w">               </span><span class="n">names_sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;_&quot;</span><span class="p">,</span>
-<span class="w">               </span><span class="n">values_drop_na</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="w">                </span><span class="n">names_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;part&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;measure&quot;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s">&quot;unit&quot;</span><span class="p">),</span>
+<span class="w">                </span><span class="n">names_sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;_&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">values_drop_na</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
 <span class="n">penguins_long</span>
 </pre></div>
 </div>
@@ -1143,7 +1143,7 @@ specifying the names of the columns we want to expand.</p>
 <input checked="True" class="tab-input" id="tab-set--31-input--1" name="tab-set--31" type="radio"><label class="tab-label" for="tab-set--31-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins_long_simple</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">pivot_wider</span><span class="p">(</span><span class="n">names_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">,</span>
-<span class="w">            </span><span class="n">values_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">)</span>
+<span class="w">               </span><span class="n">values_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1206,9 +1206,9 @@ number in the long data set.</p>
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins_long</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">penguins</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">mutate</span><span class="p">(</span><span class="n">sample</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">row_number</span><span class="p">())</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">pivot_longer</span><span class="p">(</span><span class="nf">contains</span><span class="p">(</span><span class="s">&quot;_&quot;</span><span class="p">),</span>
-<span class="w">               </span><span class="n">names_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;part&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;measure&quot;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s">&quot;unit&quot;</span><span class="p">),</span>
-<span class="w">               </span><span class="n">names_sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;_&quot;</span><span class="p">,</span>
-<span class="w">               </span><span class="n">values_drop_na</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="w">                </span><span class="n">names_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;part&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;measure&quot;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s">&quot;unit&quot;</span><span class="p">),</span>
+<span class="w">                </span><span class="n">names_sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;_&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="n">values_drop_na</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
 <span class="n">penguins_long</span>
 </pre></div>
 </div>
@@ -1236,8 +1236,8 @@ number in the long data set.</p>
 <input checked="True" class="tab-input" id="tab-set--33-input--1" name="tab-set--33" type="radio"><label class="tab-label" for="tab-set--33-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins_long</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">pivot_wider</span><span class="p">(</span><span class="n">names_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;part&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;measure&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;unit&quot;</span><span class="p">),</span>
-<span class="w">            </span><span class="n">names_sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;_&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="n">values_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">)</span>
+<span class="w">               </span><span class="n">names_sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;_&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="n">values_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1271,13 +1271,13 @@ there are various methods for doing so.</p>
 information.</p>
 <div class="tab-set docutils container">
 <input checked="True" class="tab-input" id="tab-set--35-input--1" name="tab-set--35" type="radio"><label class="tab-label" for="tab-set--35-input--1">R</label><div class="tab-content docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">data1</span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">country</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Germany&quot;</span><span class="p">,</span><span class="s">&quot;Australia&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Ecuador&quot;</span><span class="p">),</span>
-<span class="n">region</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Europe&quot;</span><span class="p">,</span><span class="s">&quot;Western Pacific&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Americas&quot;</span><span class="w"> </span><span class="p">),</span>
-<span class="n">life_exp</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">81</span><span class="p">,</span><span class="w"> </span><span class="m">83</span><span class="p">,</span><span class="w"> </span><span class="m">75</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">data1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">country</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Germany&quot;</span><span class="p">,</span><span class="s">&quot;Australia&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Ecuador&quot;</span><span class="p">),</span>
+<span class="w">                    </span><span class="n">region</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Europe&quot;</span><span class="p">,</span><span class="s">&quot;Western Pacific&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Americas&quot;</span><span class="w"> </span><span class="p">),</span>
+<span class="w">                    </span><span class="n">life_exp</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">81</span><span class="p">,</span><span class="w"> </span><span class="m">83</span><span class="p">,</span><span class="w"> </span><span class="m">75</span><span class="p">))</span>
 
-<span class="n">data2</span><span class="o">&lt;-</span><span class="nf">data.frame</span><span class="p">(</span><span class="n">country</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Germany&quot;</span><span class="p">,</span><span class="s">&quot;Australia&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Iceland&quot;</span><span class="p">),</span>
-<span class="n">region</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Europe&quot;</span><span class="p">,</span><span class="s">&quot;Western Pacific&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Europe&quot;</span><span class="w"> </span><span class="p">),</span>
-<span class="n">urban_pop</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">76</span><span class="p">,</span><span class="w"> </span><span class="m">86</span><span class="p">,</span><span class="w"> </span><span class="m">94</span><span class="p">))</span>
+<span class="n">data2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">country</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Germany&quot;</span><span class="p">,</span><span class="s">&quot;Australia&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Iceland&quot;</span><span class="p">),</span>
+<span class="w">                    </span><span class="n">region</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Europe&quot;</span><span class="p">,</span><span class="s">&quot;Western Pacific&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Europe&quot;</span><span class="w"> </span><span class="p">),</span>
+<span class="w">                    </span><span class="n">urban_pop</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">76</span><span class="p">,</span><span class="w"> </span><span class="m">86</span><span class="p">,</span><span class="w"> </span><span class="m">94</span><span class="p">))</span>
 
 <span class="n">data1</span>
 <span class="n">data2</span>
@@ -1409,11 +1409,11 @@ first data frame that do not have entries in the second.</p>
 <p>Let’s make two new data frame for the next examples.</p>
 <div class="tab-set docutils container">
 <input checked="True" class="tab-input" id="tab-set--42-input--1" name="tab-set--42" type="radio"><label class="tab-label" for="tab-set--42-input--1">R</label><div class="tab-content docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">data3</span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">country</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Germany&quot;</span><span class="p">,</span><span class="s">&quot;Ecuador&quot;</span><span class="p">),</span>
-<span class="n">life_exp</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">81</span><span class="p">,</span><span class="w">  </span><span class="m">75</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">data3</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">country</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Germany&quot;</span><span class="p">,</span><span class="s">&quot;Ecuador&quot;</span><span class="p">),</span>
+<span class="w">                    </span><span class="n">life_exp</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">81</span><span class="p">,</span><span class="w">  </span><span class="m">75</span><span class="p">))</span>
 
-<span class="n">data4</span><span class="o">&lt;-</span><span class="nf">data.frame</span><span class="p">(</span><span class="n">country</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Germany&quot;</span><span class="p">,</span><span class="s">&quot;Australia&quot;</span><span class="w"> </span><span class="p">),</span>
-<span class="n">life_exp</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">81</span><span class="p">,</span><span class="w"> </span><span class="m">83</span><span class="w"> </span><span class="p">))</span>
+<span class="n">data4</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">country</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Germany&quot;</span><span class="p">,</span><span class="s">&quot;Australia&quot;</span><span class="w"> </span><span class="p">),</span>
+<span class="w">                    </span><span class="n">life_exp</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">81</span><span class="p">,</span><span class="w"> </span><span class="m">83</span><span class="w"> </span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
