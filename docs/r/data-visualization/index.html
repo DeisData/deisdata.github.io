@@ -343,7 +343,7 @@ scatter plot. We need to add the geom (geometry), which here is
 <div class="tab-set docutils container">
 <input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">penguins</span><span class="p">,</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">bill_length_mm</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">bill_depth_mm</span><span class="p">))</span><span class="o">+</span>
-<span class="w">         </span><span class="nf">geom_point</span><span class="p">()</span>
+<span class="w">       </span><span class="nf">geom_point</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -380,7 +380,7 @@ linewidth, and alpha (transparency).</p>
 <div class="tab-set docutils container">
 <input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bill_length_mm</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bill_depth_mm</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">species</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
-<span class="nf">geom_point</span><span class="p">()</span>
+<span class="w">   </span><span class="nf">geom_point</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -413,7 +413,7 @@ depth by species with <code class="docutils literal notranslate"><span class="pr
 <div class="tab-set docutils container">
 <input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio"><label class="tab-label" for="tab-set--15-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">species</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bill_depth_mm</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
-<span class="nf">geom_boxplot</span><span class="p">()</span>
+<span class="w">   </span><span class="nf">geom_boxplot</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -429,7 +429,7 @@ depth by species with <code class="docutils literal notranslate"><span class="pr
 <div class="tab-set docutils container">
 <input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bill_depth_mm</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
-<span class="nf">geom_histogram</span><span class="p">()</span>
+<span class="w">   </span><span class="nf">geom_histogram</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -548,10 +548,10 @@ grid. There are many other themes you can use in ggplot, such as
 <div class="tab-set docutils container">
 <input checked="True" class="tab-input" id="tab-set--28-input--1" name="tab-set--28" type="radio"><label class="tab-label" for="tab-set--28-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">myplot</span><span class="o">+</span>
-<span class="nf">xlab</span><span class="p">(</span><span class="s">&quot;Species&quot;</span><span class="p">)</span><span class="o">+</span>
-<span class="nf">ylab</span><span class="p">(</span><span class="s">&quot;Bill Depth&quot;</span><span class="p">)</span><span class="o">+</span>
-<span class="nf">scale_color_discrete</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Species of Penguin&quot;</span><span class="p">)</span><span class="o">+</span>
-<span class="w">   </span><span class="nf">theme_minimal</span><span class="p">()</span>
+<span class="w">   </span><span class="nf">xlab</span><span class="p">(</span><span class="s">&quot;Species&quot;</span><span class="p">)</span><span class="o">+</span>
+<span class="w">   </span><span class="nf">ylab</span><span class="p">(</span><span class="s">&quot;Bill Depth&quot;</span><span class="p">)</span><span class="o">+</span>
+<span class="w">   </span><span class="nf">scale_color_discrete</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&quot;Species of Penguin&quot;</span><span class="p">)</span><span class="o">+</span>
+<span class="w">      </span><span class="nf">theme_minimal</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>

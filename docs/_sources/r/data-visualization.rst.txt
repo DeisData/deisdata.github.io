@@ -112,7 +112,7 @@ scatter plot. We need to add the geom (geometry), which here is
    .. code:: r
 
       ggplot(data=penguins,aes(x=bill_length_mm,y=bill_depth_mm))+
-               geom_point()
+             geom_point()
 
 .. tab:: Output
    :new-set:
@@ -146,7 +146,7 @@ linewidth, and alpha (transparency).
    .. code:: r
 
       ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm, shape = species)) +
-      geom_point()
+         geom_point()
 
 .. tab:: Output
 
@@ -176,7 +176,7 @@ depth by species with ``geom_boxplot()``.
    .. code:: r
 
       ggplot(data = penguins, aes(x = species, y = bill_depth_mm)) +
-      geom_boxplot()
+         geom_boxplot()
 
 .. tab:: Output
    :new-set:
@@ -190,7 +190,7 @@ We can make a histogram of bill depth with ``geom_histogram``.
    .. code:: r
 
       ggplot(data = penguins, aes(x = bill_depth_mm)) +
-      geom_histogram()
+         geom_histogram()
 
 .. tab:: Output
    :new-set:
@@ -299,10 +299,10 @@ grid. There are many other themes you can use in ggplot, such as
    .. code:: r
 
       myplot+
-      xlab("Species")+
-      ylab("Bill Depth")+
-      scale_color_discrete(name="Species of Penguin")+
-         theme_minimal()
+         xlab("Species")+
+         ylab("Bill Depth")+
+         scale_color_discrete(name="Species of Penguin")+
+            theme_minimal()
 
 .. tab:: Output
    :new-set:
