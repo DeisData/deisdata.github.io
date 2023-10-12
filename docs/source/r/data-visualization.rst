@@ -161,7 +161,7 @@ specific color in quotes.
    .. code:: r
 
       ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
-      geom_point(color = "red")
+         geom_point(color = "red")
 
 .. tab:: Output
    :new-set:
