@@ -20,7 +20,7 @@ def setup(app):
 project = 'DeisData'
 copyright = '2023, Ford Fishman'
 author = 'Ford Fishman'
-release = '0.63'
+release = '1.01'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

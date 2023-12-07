@@ -1,0 +1,743 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Pipes and filters" href="../pipes-filters/" /><link rel="prev" title="Navigating to files and directories" href="../navigating/" />
+
+    <link rel="shortcut icon" href="../../_static/favicon-32x32.png"/><!-- Generated with Sphinx 4.5.0 and Furo 2023.05.20 -->
+        <title>Altering files and directories - DeisData</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../"><div class="brand">DeisData</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../../">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/DeisDatax1x_medium.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">DeisData</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search/" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../python/">Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../python/setup-install/">Setup and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/jupyter/">Jupyter notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/python-fundamentals/">Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/data-structures/">Data structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/conditionals/">Booleans and conditionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/loops/">Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/numpy/">NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/pandas/">Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/figures/">Matplotlib and seaborn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/functions/">Writing functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/stats/">Statistical tests</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../r/">R</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of R</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../r/quick-start/">Intro to R and the Tidyverse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../r/data-wrangling/">Data wrangling with the Tidyverse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../r/data-visualization/">ggplot2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../r/text-mining/">Text mining</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../">Unix Shell</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Unix Shell</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../setup/">Bash Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../navigating/">Navigating</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Altering files and directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pipes-filters/">Pipes and filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../loops/">Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../shell-scripts/">Shell scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../search-find/">Searching and finding</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../git/">Git Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../git/setup-install/">Setup and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/quick-start/">Quick start to Git and GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/pushing/">Pushing changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/fetch-merge/">Fetch and merge from GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/git-utilities/">Git utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/forking/">Forking in GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/glossary/">Git Glossary</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="altering-files-and-directories">
+<h1>Altering files and directories<a class="headerlink" href="#altering-files-and-directories" title="Permalink to this headline">#</a></h1>
+<section id="questions-to-think-about">
+<h2>Questions to think about:<a class="headerlink" href="#questions-to-think-about" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>How can I create, copy, and delete files and directories?</p></li>
+<li><p>How can I edit files?</p></li>
+</ul>
+</section>
+<section id="creating-directories-or-files">
+<h2>Creating Directories or Files<a class="headerlink" href="#creating-directories-or-files" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">mkdir</span></code> creates a new directory, followed by the name of the new
+directory.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Bash</label><div class="tab-content docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mkdir<span class="w"> </span>new_dir
+$<span class="w"> </span>ls<span class="w"> </span>-F
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>new_dir/
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">-p</span></code> can be used to make subdirectories.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Bash</label><div class="tab-content docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>code/python/analysis
+$<span class="w"> </span>ls<span class="w"> </span>-RF<span class="w"> </span><span class="c1"># displays subdirectory structure</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>code/
+
+./code:
+python/
+
+./code/python:
+analysis/
+
+./code/python/analysis:
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">nano</span> <span class="pre">filename.txt</span></code> runs a text editor called <code class="docutils literal notranslate"><span class="pre">nano</span></code> to create a new
+file by the name given. For example, <code class="docutils literal notranslate"><span class="pre">nano</span> <span class="pre">thesis.txt</span></code> creates a text
+file named <code class="docutils literal notranslate"><span class="pre">thesis.txt</span></code> in the working directory.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Bash</label><div class="tab-content docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>nano<span class="w"> </span>filename.txt
+</pre></div>
+</div>
+</div>
+</div>
+<figure class="align-default">
+<img alt="nano" src="../../_images/nano.png" />
+</figure>
+<p><code class="docutils literal notranslate"><span class="pre">touch</span> <span class="pre">filename.txt</span></code> creates an empty (0 byte) file by the new name
+given. Why bother? Some programs require empty files to populate with
+output.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Bash</label><div class="tab-content docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>touch<span class="w"> </span>filename2.txt
+$<span class="w"> </span>ls<span class="w"> </span>-F
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>filename.txt
+filename2.txt
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="moving-or-renaming-directories-or-files-safely">
+<h2>Moving or renaming directories or files safely<a class="headerlink" href="#moving-or-renaming-directories-or-files-safely" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">filename.txt</span> <span class="pre">new_location</span></code> command move has two arguments. The
+first tells <code class="docutils literal notranslate"><span class="pre">mv</span></code> what we’re moving, while the second is where it will
+go.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">Bash</label><div class="tab-content docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mv<span class="w"> </span>filename.txt<span class="w"> </span>new_dir
+$<span class="w"> </span>ls<span class="w"> </span>-F<span class="w"> </span>new_dir
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>filename.txt
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">-i</span></code> or <code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">-interactive</span></code> must be used to make <code class="docutils literal notranslate"><span class="pre">mv</span></code> ask for
+confirmation before overwriting any existing file or directory with the
+same name as the second argument. (Otherwise, beware! It will silently
+overwrite.)</p>
+</section>
+<section id="copying-directories-and-or-files">
+<h2>Copying directories and/or files<a class="headerlink" href="#copying-directories-and-or-files" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">old</span> <span class="pre">new</span></code> command copies a file (first argument) to a new location
+(second argument)</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">Bash</label><div class="tab-content docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cp<span class="w"> </span>filename2.txt<span class="w"> </span>new_dir
+$<span class="w"> </span>ls<span class="w"> </span>-F
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>filename2.txt
+new_dir/
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">-r</span></code> adds the recursive option to copy a directory and all its
+contents to another directory (second argument). For example, we can
+make a backup with <code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">-r</span> <span class="pre">thesis</span> <span class="pre">thesis_backup</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cp</span></code> can be used on multiple filenames as long as a destination
+directory is the last argument. For example,
+<code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">a.txt</span> <span class="pre">b.txt</span> <span class="pre">c.txt</span> <span class="pre">backup/</span></code> will copy the three text files into
+the subdirectory <code class="docutils literal notranslate"><span class="pre">backup/</span></code>.</p></li>
+</ul>
+</section>
+<section id="removing-files-and-directories-safely-deleting-is-forever">
+<h2>Removing files and directories safely: <strong>Deleting is forever</strong><a class="headerlink" href="#removing-files-and-directories-safely-deleting-is-forever" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">rm</span></code> is used to remove items from a directory. Using it without any
+options, however, can be dangerous, as deleted items do not go to a
+trash or recycling bin.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-i</span> <span class="pre">path</span></code> command for remove with interactive option to ask for
+confirmation before deleting.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-i</span> <span class="pre">-r</span> <span class="pre">path</span></code> command with interactive option and recursive
+option will <strong>remove a directory and all its contents</strong> with
+confirmation prompts.</p></li>
+</ul>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">Bash</label><div class="tab-content docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>rm<span class="w"> </span>-i<span class="w"> </span>-r<span class="w"> </span>new_dir
+$<span class="w"> </span>ls
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>filename2.txt
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="tips-for-good-names-for-files-and-directories">
+<h2>Tips for good names for files and directories<a class="headerlink" href="#tips-for-good-names-for-files-and-directories" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>Don’t use spaces. Use <code class="docutils literal notranslate"><span class="pre">-</span></code> or <code class="docutils literal notranslate"><span class="pre">_</span></code> or <em>camelCase</em>.</p></li>
+<li><p>Don’t begin a name with a <code class="docutils literal notranslate"><span class="pre">-</span></code> (dash). It will look like a command
+option. Names should start with letters or numbers.</p></li>
+<li><p>Avoid special characters. Some have special meanings.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you need to refer to names of files or directories that have spaces,
+put them in quotes (““).</p>
+</div>
+<section id="whats-in-a-name">
+<h3>What’s in a name?<a class="headerlink" href="#whats-in-a-name" title="Permalink to this headline">#</a></h3>
+<p>A <strong>filename extension</strong> is the second part of the filename after the
+dot (<code class="docutils literal notranslate"><span class="pre">.</span></code>). They help us and programs tell different kinds of files
+apart. A few examples:</p>
+<ul class="simple">
+<li><p>.txt: plain text file</p></li>
+<li><p>.csv: comma separated value file</p></li>
+<li><p>.pdf: PDF document</p></li>
+<li><p>.cfg: configuration file of parameters
+for a program</p></li>
+<li><p>.png: an image file</p></li>
+</ul>
+<p>The <strong>wildcard</strong> <code class="docutils literal notranslate"><span class="pre">*</span></code> matches zero or more characters. For example, to
+copy all text files in a directory, use <code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">*.txt</span> <span class="pre">DIR_NAME</span></code>.</p>
+<p>The <strong>wildcard</strong> <code class="docutils literal notranslate"><span class="pre">?</span></code> matches exactly one character.</p>
+</section>
+</section>
+<section id="which-editor-should-i-use">
+<h2>Which editor should I use?<a class="headerlink" href="#which-editor-should-i-use" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">nano</span></code> is a built-in text editor that only works with plain character
+data (i.e. no tables, images, or other media). It is the least complex,
+but you may want to try more powerful editors.</p>
+<p><strong>For Unix Systems (Linux and macOS)</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.gnu.org/software/emacs">Emacs</a></p></li>
+<li><p><a class="reference external" href="http://vim.org/">Vim</a></p></li>
+<li><p><a class="reference external" href="http://projects.gnome.org/gedit/">Gedit</a> is a graphical editor</p></li>
+</ul>
+<p><strong>For Windows</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://notepad-plus-plus.org/">Notepad++</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">notepad</span></code> is built-in and can be run in the command line</p></li>
+</ul>
+<div class="admonition-editor-tips admonition">
+<p class="admonition-title">Editor tips</p>
+<p>If you start an editor from the shell, it will use your current working
+directory as its default location.</p>
+<p>In editor commands, the Control key is also called <kbd class="kbd docutils literal notranslate">Ctrl</kbd> or <kbd class="kbd docutils literal notranslate">^</kbd>.</p>
+</div>
+</section>
+<section id="challenge-questions">
+<h2>Challenge Questions<a class="headerlink" href="#challenge-questions" title="Permalink to this headline">#</a></h2>
+<p><strong>(1) Moving files.</strong> We accidentally put the files <code class="docutils literal notranslate"><span class="pre">sucrose.dat</span></code> and
+<code class="docutils literal notranslate"><span class="pre">maltose.dat</span></code> into the wrong folder, <code class="docutils literal notranslate"><span class="pre">analyzed/</span></code>. Fill in the blanks
+to move these files into the <code class="docutils literal notranslate"><span class="pre">raw/</span></code> folder.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">Bash</label><div class="tab-content docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>-F
+analyzed/<span class="w">  </span>raw/
+$<span class="w"> </span>ls<span class="w"> </span>-F<span class="w"> </span>analyzed/
+fructose.dat<span class="w"> </span>glucose.dat<span class="w"> </span>maltose.dat<span class="w"> </span>sucrose.dat
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>analyzed
+</pre></div>
+</div>
+</div>
+</div>
+<p>My next line of code should be (fill in the blanks):</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">Bash</label><div class="tab-content docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mv<span class="w"> </span>sucrose.dat<span class="w"> </span>matose.dat<span class="w"> </span>___/___
+</pre></div>
+</div>
+</div>
+</div>
+<details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
+<p>Think about <code class="docutils literal notranslate"><span class="pre">../raw</span></code> Recall that <code class="docutils literal notranslate"><span class="pre">..</span></code> refers to the parent
+directory (i.e. one above the current directory).</p>
+</div>
+</details><p><strong>(2) Renaming Files.</strong> We mispelled a filename! Which of the following
+commands will correct our mistake?</p>
+<ol class="loweralpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">statstics.txt</span> <span class="pre">statistics.txt</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">statstics.txt</span> <span class="pre">statistics.txt</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lmv</span> <span class="pre">statistics.txt</span> <span class="pre">.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">statstics.txt</span> <span class="pre">.</span></code></p></li>
+</ol>
+<details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
+<ol class="loweralpha simple">
+<li><p>Will copy the file, so we will end up with the mispelled and correct version.</p></li>
+<li><p>Will move (i.e. rename) the incorrect file name to a correct filename.</p></li>
+<li><p>Not a working command.</p></li>
+<li><p>Will not work. Remember <code class="docutils literal notranslate"><span class="pre">.</span></code> is the current directory.</p></li>
+</ol>
+</div>
+</details><p><strong>(3) Removal.</strong> What happens when we execute
+<code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-i</span> <span class="pre">thesis/finaldraft.txt</span></code>? Why would we want this protection when
+using <code class="docutils literal notranslate"><span class="pre">rm</span></code>?</p>
+<details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
+<p>The program will confirm that we want to delete the thesis final
+draft file. Remember, deletion is forever! There is no trash can or
+recycle bin.</p>
+</div>
+</details><p><strong>(4) Removal.</strong> What is wrong with the command <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-i</span> <span class="pre">thesis</span></code>?</p>
+<details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
+<p>The remove command will not act on a directory unless the recursive
+option <code class="docutils literal notranslate"><span class="pre">-r</span></code> is given.</p>
+</div>
+</details><p><strong>(5) Removal.</strong> What is wrong with the command <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-r</span> <span class="pre">thesis</span></code>?</p>
+<details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
+<p>This remove command will successfully delete the directory thesis and
+all its contents, but we forgot to check for confirmation with the
+interaction option (-i). Remember, deletion is permanent!</p>
+</div>
+</details><p><strong>(6) Wildcards.</strong> Which of the following matches the file names
+<code class="docutils literal notranslate"><span class="pre">ethane.dat</span></code> and <code class="docutils literal notranslate"><span class="pre">methane.dat</span></code>?</p>
+<ol class="loweralpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">?ethane.dat</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">*ethane.dat</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">???ane.dat</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">ethane.*</span></code></p></li>
+</ol>
+<details class="summary-hint">
+<summary>Hint</summary><div class="docutils container">
+<p>Remember the <code class="docutils literal notranslate"><span class="pre">?</span></code> wildcard matches to exactly one character. The <code class="docutils literal notranslate"><span class="pre">*</span></code>
+wildcard can match to zero to many characters.</p>
+</div>
+</details><details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
+<ol class="loweralpha simple">
+<li><p>Matches <code class="docutils literal notranslate"><span class="pre">methane.dat</span></code> only (needs one character before <code class="docutils literal notranslate"><span class="pre">ethane.dat</span></code>).</p></li>
+<li><p>Matches both, can have any number of characters (including zero) before <code class="docutils literal notranslate"><span class="pre">ethane.dat</span></code>.</p></li>
+<li><p>Matches <code class="docutils literal notranslate"><span class="pre">ethane.dat</span></code> only (requires only 3 characters before <code class="docutils literal notranslate"><span class="pre">ane.dat</span></code>).</p></li>
+<li><p>Matches <code class="docutils literal notranslate"><span class="pre">ethane.dat</span></code> only (requires no characters before <code class="docutils literal notranslate"><span class="pre">ethane</span></code>).</p></li>
+</ol>
+</div>
+</details><section id="challenge-project">
+<h3>Challenge Project<a class="headerlink" href="#challenge-project" title="Permalink to this headline">#</a></h3>
+<p>Before heading on a trip, you want to back up your data and send some
+datasets to Ford. Fill in the following commands to get the job done.
+First, let’s set up a directory and files.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--1">Bash</label><div class="tab-content docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hashtag denotes a comment. The line will be skipped</span>
+
+<span class="c1"># Change to your desktop</span>
+<span class="nb">cd</span><span class="w"> </span>~/Desktop
+
+<span class="c1"># Make a new folder for our fake data</span>
+mkdir<span class="w"> </span>fake_data
+<span class="nb">cd</span><span class="w"> </span>fake_data
+
+<span class="c1"># Create some empty files.</span>
+touch<span class="w"> </span><span class="m">2020</span>-06-09-data.txt
+touch<span class="w"> </span><span class="m">2020</span>-06-09-calibration.txt
+
+<span class="c1"># Make sure the new files are created. Notice we can combine options)</span>
+ls<span class="w"> </span>-Fs
+
+<span class="c1"># Let&#39;s add some info to our file and confirm it with the editor (spoiler alert - redirects!)</span>
+<span class="nb">echo</span><span class="w"> </span>Hello<span class="w"> </span>World<span class="w"> </span>&gt;<span class="w"> </span><span class="m">2020</span>-06-09-data.txt
+nano<span class="w"> </span><span class="m">2020</span>-06-09-data.txt
+
+<span class="c1"># Let&#39;s edit and add information to another.</span>
+nano<span class="w"> </span><span class="m">2020</span>-06-09-calibration.txt
+</pre></div>
+</div>
+</div>
+</div>
+<p>The next piece is provided in the shell script <code class="docutils literal notranslate"><span class="pre">session2challenge.sh</span></code>.</p>
+<p>While in your <code class="docutils literal notranslate"><span class="pre">fake_data</span></code> directory, copy and paste the code from this
+file and run it.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--1">Bash</label><div class="tab-content docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># session2challenge.sh creates more fake data and callibration files</span>
+
+<span class="nv">fmonth</span><span class="o">=</span><span class="s2">&quot;2020-06&quot;</span>
+<span class="nb">echo</span><span class="w"> </span><span class="nv">$fmonth</span>
+
+<span class="c1"># Loop through days to create data files and calibration files</span>
+<span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="sb">`</span>seq<span class="w"> </span>-w<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">30</span><span class="sb">`</span>
+<span class="k">do</span>
+<span class="w">   </span><span class="c1"># Define the filename</span>
+<span class="w">   </span><span class="nb">printf</span><span class="w"> </span>-v<span class="w"> </span>fname<span class="w"> </span><span class="s1">&#39;%s-%02d-data.txt&#39;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$fmonth</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$i</span><span class="s2">&quot;</span>
+<span class="w">   </span><span class="c1"># Create an empty file</span>
+<span class="w">   </span>touch<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$fname</span><span class="s2">&quot;</span>
+<span class="w">   </span><span class="c1"># Redirect in some data</span>
+<span class="w">   </span><span class="nb">echo</span><span class="w"> </span>data<span class="w"> </span><span class="nv">$i</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$fname</span><span class="s2">&quot;</span>
+
+<span class="w">   </span><span class="nb">printf</span><span class="w"> </span>-v<span class="w"> </span>fname<span class="w"> </span><span class="s1">&#39;%s-%02d-calibration.txt&#39;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$fmonth</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$i</span><span class="s2">&quot;</span>
+<span class="w">   </span>touch<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$fname</span><span class="s2">&quot;</span>
+<span class="w">   </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$i</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$fname</span><span class="s2">&quot;</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, it’s your turn!</p>
+<ol class="arabic simple">
+<li><p>Create a backup directory with separate
+subdirectories for data and calibration files. Copy files to the
+appropriate locations.</p></li>
+<li><p>Create a directory named send_to_ford and copy all the data from June 11th to it.</p></li>
+</ol>
+<details class="summary-hint">
+<summary>Hint</summary><div class="docutils container">
+<p>Create a backup directory with subdirectories for data and calibration files</p>
+<ul class="simple">
+<li><p>Hint: You will use <code class="docutils literal notranslate"><span class="pre">mkdir</span></code></p></li>
+</ul>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--1">Bash</label><div class="tab-content docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>___
+mkdir<span class="w"> </span>___/___
+mkdir<span class="w"> </span>___/___
+</pre></div>
+</div>
+</div>
+</div>
+<p>Copy data files to <code class="docutils literal notranslate"><span class="pre">backup/data</span></code>. (Use a similiar approach for calibration files.)</p>
+<ul class="simple">
+<li><p>Hint: Use the copy command <code class="docutils literal notranslate"><span class="pre">cp</span></code> with wildcards</p></li>
+</ul>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--1">Bash</label><div class="tab-content docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>*-data.txt<span class="w"> </span>backup/___
+</pre></div>
+</div>
+</div>
+</div>
+<p>Copy June 11th files to <code class="docutils literal notranslate"><span class="pre">send_to_ford/</span></code>.</p>
+<ul class="simple">
+<li><p>Hint: Use the copy command <code class="docutils literal notranslate"><span class="pre">cp</span></code> with wildcards!</p></li>
+</ul>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--1">Bash</label><div class="tab-content docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>*-11-*.txt<span class="w"> </span>send_to_ford/
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</details></section>
+<section id="resources">
+<h3>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">#</a></h3>
+<p>This lesson is adapted from <a class="reference external" href="http://swcarpentry.github.io/shell-novice/">The Unix Shell on Software
+Carpentry</a>.</p>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../pipes-filters/">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Pipes and filters</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../navigating/">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Navigating to files and directories</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Ford Fishman
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Altering files and directories</a><ul>
+<li><a class="reference internal" href="#questions-to-think-about">Questions to think about:</a></li>
+<li><a class="reference internal" href="#creating-directories-or-files">Creating Directories or Files</a></li>
+<li><a class="reference internal" href="#moving-or-renaming-directories-or-files-safely">Moving or renaming directories or files safely</a></li>
+<li><a class="reference internal" href="#copying-directories-and-or-files">Copying directories and/or files</a></li>
+<li><a class="reference internal" href="#removing-files-and-directories-safely-deleting-is-forever">Removing files and directories safely: <strong>Deleting is forever</strong></a></li>
+<li><a class="reference internal" href="#tips-for-good-names-for-files-and-directories">Tips for good names for files and directories</a><ul>
+<li><a class="reference internal" href="#whats-in-a-name">What’s in a name?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#which-editor-should-i-use">Which editor should I use?</a></li>
+<li><a class="reference internal" href="#challenge-questions">Challenge Questions</a><ul>
+<li><a class="reference internal" href="#challenge-project">Challenge Project</a></li>
+<li><a class="reference internal" href="#resources">Resources</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/scripts/furo.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    </body>
+</html>
