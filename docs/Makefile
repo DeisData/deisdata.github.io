@@ -21,4 +21,4 @@ help:
 
 github:
 	@make dirhtml
-	@cp -a build/dirhtml/. ../docs
+	@cp -a build/dirhtml/. ../_build
