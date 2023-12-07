@@ -15,14 +15,16 @@ We will be using several external libraries to do our text analysis.
 
       install.packages("readtext")
       install.packages("quanteda")
-      install.packages("wordcloud")
-      install.packages("tidytext")
+      install.packages("quanteda.textmodels")
+      install.packages("quanteda.textstats")
+      install.packages("quanteda.textplots")
       install.packages("tidyverse")
 
       library(readtext)
       library(quanteda)
-      library(wordcloud)
-      library(tidytext)
+      library(quanteda.textmodels)
+      library(quanteda.textstats)
+      library(quanteda.textplots)
       library(tidyverse)
 
 Import data
@@ -35,7 +37,7 @@ We are going to analyze the State of the Union Addresses from 1934 to
 
    .. code:: r
 
-      setwd('~/Documents/Workshops/TM2022/')
+      setwd('~/Documents/Workshops/TM2023/') # replace with the appropriate directory
       sotu<- readtext ("texts")
       sotu
 
@@ -629,9 +631,8 @@ The next step is tokenization, where we break down text into individual
 tokens: words, characters, and symbols. Here, we do remove numbers,
 punctuation, and symbols first.
 
-We also remove stopwords, which are words that are not particularly
-useful for understanding the meaning of the text, like “an”, “have”, and
-“about”. Finally, we convert the tokens to lowercase.
+Finally, we convert the tokens to lowercase and visualize the first
+tokens of the first document.
 
 .. tab:: R
 
@@ -639,7 +640,7 @@ useful for understanding the meaning of the text, like “an”, “have”, and
 
       sotu_toks <-tokens(sotu_corp)# It removes separators (whitespaces)but we can remove numbers,punctuation, symbols
 
-      sotu_toks <- tokens(sotu_corp, remove_numbers = TRUE, remove_punct = TRUE, remove_symbols = TRUE)
+      sotu_toks <- tokens(sotu_corp, remove_punct = TRUE)
       print(sotu_toks)
 
 .. tab:: Output
@@ -687,7 +688,123 @@ useful for understanding the meaning of the text, like “an”, “have”, and
 
    .. code:: r
 
-      sotu_toks <- tokens_remove(sotu_toks, pattern = stopwords("english"))
+      sotu_toks <- tokens_tolower(sotu_toks)
+
+      sotu_toks [[1]][1:20]# first 20 tokens of document 1
+
+.. tab:: Output
+
+   .. code:: none
+
+       [1] "madam"     "speaker"   "mr"        "vice"      "president"
+       [6] "members"   "of"        "congress"  "the"       "first"    
+      [11] "lady"      "of"        "the"       "united"    "states"   
+      [16] "she's"     "around"    "here"      "somewhere" "i"      
+
+Keywords in context
+-------------------
+
+To examine how a word is used in a wider context, we can search for keywords in context.
+``kwic()`` allows you to identify a keyword of interest, and see a number of words before and after it. 
+We can specify the number of context words to be displayed with the argument ``window``.
+
+The argument pattern also takes a wild card \(``*``\) and multiple keywords in a character vector.
+
+.. tab:: R
+   :new-set:
+
+   .. code:: R
+
+      kw_health <- kwic(sotu_toks, pattern="health*", window = 10)
+      head(kw_health)
+
+.. tab:: Output
+
+   .. code:: none
+
+      Keyword-in-context with 6 matches.                              
+       [barack-obama-2009.txt, 448]
+       [barack-obama-2009.txt, 585]
+       [barack-obama-2009.txt, 683]
+       [barack-obama-2009.txt, 916]
+      [barack-obama-2009.txt, 1026]
+      [barack-obama-2009.txt, 2371]
+                                                                                       
+                         import more oil today than ever before the cost of | health  |
+                                 sake of a quick profit at the expense of a | healthy |
+               job creation restart lending and invest in areas like energy | health  |
+                           who can now keep their jobs and educate our kids | health  |
+       will be able to receive extended unemployment benefits and continued | health  |
+                              of our dependence on oil and the high cost of | health  |
+                                                                     
+      care eats up more and more of our savings each                
+      market people bought homes they knew they couldn't afford from
+      care and education that will grow our economy even as         
+      care professionals can continue caring for our sick there are 
+      care coverage to help them weather this storm now i           
+      care the schools that aren't preparing our children and the 
+
+Using a vector, we can search for multiple patterns at once.
+
+.. tab:: R
+   :new-set:
+
+   .. code:: R
+
+      kw_health2 <- kwic(sotu_toks, pattern=c("health*","care"), window = 10)
+      head(kw_health2)
+
+.. tab:: Output
+
+   .. code:: none
+
+      Keyword-in-context with 6 matches.                              
+      [barack-obama-2009.txt, 448]
+      [barack-obama-2009.txt, 449]
+      [barack-obama-2009.txt, 585]
+      [barack-obama-2009.txt, 683]
+      [barack-obama-2009.txt, 684]
+      [barack-obama-2009.txt, 916]
+                                                                                       
+
+                   import more oil today than ever before the cost of | health  |
+                   more oil today than ever before the cost of health |  care   |
+                           sake of a quick profit at the expense of a | healthy |
+         job creation restart lending and invest in areas like energy | health  |
+      creation restart lending and invest in areas like energy health |  care   |
+                     who can now keep their jobs and educate our kids | health  |
+                                                                     
+      care eats up more and more of our savings each                
+      eats up more and more of our savings each year                
+      market people bought homes they knew they couldn't afford from
+      care and education that will grow our economy even as         
+      and education that will grow our economy even as we           
+      care professionals can continue caring for our sick there are
+
+We can also search for multi-word expressions.
+
+.. tab:: R
+   :new-set:
+
+   .. code:: R
+
+      kw_healthcare<- kwic(sotu_toks, pattern=phrase("health care"))
+
+Select tokens
+-------------
+
+We also remove stopwords, which are words that are not particularly
+useful for understanding the meaning of the text, like “an”, “have”, and
+“about”. The command for this is ``tokens_select()``.
+
+.. tab:: R
+   :new-set:
+
+   .. code:: r
+
+      sotu_toks_nostop <- tokens_select(sotu_toks, 
+                                        pattern = stopwords("english"),
+                                        selection="remove")
       stopwords("english")
 
 .. tab:: Output
@@ -728,26 +845,141 @@ useful for understanding the meaning of the text, like “an”, “have”, and
       [156] "any"        "both"       "each"       "few"        "more"      
       [161] "most"       "other"      "some"       "such"       "no"        
       [166] "nor"        "not"        "only"       "own"        "same"      
-      [171] "so"         "than"       "too"        "very"       "will"      
+      [171] "so"         "than"       "too"        "very"       "will"          
 
 .. tab:: R
    :new-set:
 
    .. code:: r
 
-      sotu_toks <- tokens_tolower(sotu_toks)
-
-      sotu_toks [[1]][1:20]# first 20 tokens of document 1
+      sotu_toks_nostop
 
 .. tab:: Output
 
    .. code:: none
 
-       [1] "madam"         "speaker"       "mr"            "vice"         
-       [5] "president"     "members"       "congress"      "first"        
-       [9] "lady"          "united"        "states"        "around"       
-      [13] "somewhere"     "come"          "tonight"       "address"      
-      [17] "distinguished" "men"           "women"         "great"        
+      Tokens consisting of 96 documents.
+      barack-obama-2009.txt :
+       [1] "madam"     "speaker"   "mr"        "vice"      "president" "members"   "congress" 
+       [8] "first"     "lady"      "united"    "states"    "around"   
+      [ ... and 3,000 more ]
+
+      barack-obama-2010.txt :
+       [1] "madam"         "speaker"       "vice"          "president"     "biden"        
+       [6] "members"       "congress"      "distinguished" "guests"        "fellow"       
+      [11] "americans"     "constitution" 
+      [ ... and 3,698 more ]
+
+      barack-obama-2011.txt :
+       [1] "mr"            "speaker"       "mr"            "vice"          "president"    
+       [6] "members"       "congress"      "distinguished" "guests"        "fellow"       
+      [11] "americans"     "tonight"      
+      [ ... and 3,512 more ]
+
+      barack-obama-2012.txt :
+       [1] "mr"            "speaker"       "mr"            "vice"          "president"    
+       [6] "members"       "congress"      "distinguished" "guests"        "fellow"       
+      [11] "americans"     "last"         
+      [ ... and 3,690 more ]
+
+      barack-obama-2013.txt :
+       [1] "please"    "everybody" "seat"      "mr"        "speaker"   "mr"        "vice"     
+       [8] "president" "members"   "congress"  "fellow"    "americans"
+      [ ... and 3,653 more ]
+
+      barack-obama-2014.txt :
+       [1] "president" "mr"        "speaker"   "mr"        "vice"      "president" "members"  
+       [8] "congress"  "fellow"    "americans" "today"     "america"  
+      [ ... and 3,767 more ]
+
+      [ reached max_ndoc ... 90 more documents ]
+
+We can do the same with ``tokens_remove( ,pattern=stopwords("en"))``.
+
+Generating n-grams
+------------------
+
+An n-gram is a contiguous sequence of n items in a text.
+
+``tokens_ngrams()`` generates a set of n-grams (tokens in sequence) from a tokenized text object. 
+It gives all possible combinations of tokens.
+
+.. tab:: R
+   :new-set:
+
+   .. code:: r
+
+      toks_ngram <- tokens_ngrams(sotu_toks_nostop, n = 2:4)
+      head(toks_ngram[[1]], 30)
+      tail(toks_ngram[[1]], 30)
+
+.. tab:: Output
+
+   .. code:: none
+
+       [1] "madam_speaker"         "speaker_mr"            "mr_vice"              
+       [4] "vice_president"        "president_members"     "members_congress"     
+       [7] "congress_first"        "first_lady"            "lady_united"          
+      [10] "united_states"         "states_around"         "around_somewhere"     
+      [13] "somewhere_come"        "come_tonight"          "tonight_address"      
+      [16] "address_distinguished" "distinguished_men"     "men_women"            
+      [19] "women_great"           "great_chamber"         "chamber_speak"        
+      [22] "speak_frankly"         "frankly_directly"      "directly_men"         
+      [25] "men_women"             "women_sent"            "sent_us"              
+      [28] "us_know"               "know_many"             "many_americans" 
+
+       [1] "fear_challenges_time_summon"         "challenges_time_summon_enduring"    
+       [3] "time_summon_enduring_spirit"         "summon_enduring_spirit_america"     
+       [5] "enduring_spirit_america_quit"        "spirit_america_quit_someday"        
+       [7] "america_quit_someday_years"          "quit_someday_years_now"             
+       [9] "someday_years_now_children"          "years_now_children_can"             
+      [11] "now_children_can_tell"               "children_can_tell_children"         
+      [13] "can_tell_children_time"              "tell_children_time_performed"       
+      [15] "children_time_performed_words"       "time_performed_words_carved"        
+      [17] "performed_words_carved_chamber"      "words_carved_chamber_something"     
+      [19] "carved_chamber_something_worthy"     "chamber_something_worthy_remembered"
+      [21] "something_worthy_remembered_thank"   "worthy_remembered_thank_god"        
+      [23] "remembered_thank_god_bless"          "thank_god_bless_may"                
+      [25] "god_bless_may_god"                   "bless_may_god_bless"                
+      [27] "may_god_bless_united"                "god_bless_united_states"            
+      [29] "bless_united_states_america"         "united_states_america_thank"       
+
+``tokens_compound()`` generates n-grams more selectively. For example, you can make bi-grams using ``phrase()`` and a wild card \(``*``\)
+
+.. tab:: R
+   :new-set:
+
+   .. code:: r
+
+      toks_neg_bigram <- tokens_compound(sotu_toks_nostop, pattern = phrase("united *"))
+      toks_neg_bigram_select <- tokens_select(toks_neg_bigram, pattern = phrase("united_*"))
+
+Collocations
+------------
+
+A collocation is a sequence of words or terms that co-occur more often than would be expected by chance. 
+Collocations can be more informative or meaningful than ngrams as they allow us to evaluate the strength 
+and significance of the association between sequences of words.
+
+.. tab:: R
+   :new-set:
+
+   .. code:: r
+
+      sotu_collocations <- textstat_collocations(sotu_toks_nostop, method = "lambda", size = 2, min_count = 2,smoothing = 0.5)
+      head(sotu_collocations)
+
+.. tab:: Output
+
+   .. code:: none
+
+               collocation count count_nested length   lambda        z
+      1      united states   709            0      2 7.885126 87.41215
+      2          last year   388            0      2 4.996601 70.81536
+      3        health care   235            0      2 6.353499 63.41266
+      4    american people   328            0      2 4.183064 61.56281
+      5    social security   231            0      2 6.452656 60.44997
+      6 federal government   277            0      2 4.307875 58.60510
 
 Document feature matrix
 -----------------------
@@ -762,14 +994,26 @@ per cell.
    .. code:: r
 
       sotu_dfm <- dfm(sotu_toks)
+      sotu_dfm
 
       dim(sotu_dfm)
 
 .. tab:: Output
 
    .. code:: none
+      
+      Document-feature matrix of: 96 documents, 20,805 features (92.39% sparse) and 0 docvars.
+                             features
+      docs                    madam speaker mr vice president members  of congress the first
+        barack-obama-2009.txt     1       1  1    2         5       1 161       10 269     8
+        barack-obama-2010.txt     1       1  0    2         6       2 166       10 336     5
+        barack-obama-2011.txt     0       3  2    1         2       2 195       10 354    11
+        barack-obama-2012.txt     0       2  2    2         5       3 170       15 294     8
+        barack-obama-2013.txt     0       1  2    1         2       1 172       17 302     6
+        barack-obama-2014.txt     0       2  2    2         7       3 154       20 284    14
+      [ reached max_ndoc ... 90 more documents, reached max_nfeat ... 20,795 more features ]
 
-      [1]    96 18344
+      [1]    96 20805
 
 .. tab:: R
    :new-set:
@@ -777,6 +1021,9 @@ per cell.
    .. code:: r
 
       ndoc(sotu_dfm)
+      nfeat(sotu_dfm)
+      topfeatures(sotu_dfm, 10)
+
 
 .. tab:: Output
 
@@ -784,54 +1031,86 @@ per cell.
 
       [1] 96
 
-.. tab:: R
-   :new-set:
+      [1] 20805
 
-   .. code:: r
+        the    of   and    to    in     a    we   our  that   for 
+      37864 23162 22842 21779 13935 10702 10156  9866  7908  7569 
 
-      tidy_sotu <- tidy(sotu_dfm)
+TF-IDF analysis
+---------------
 
-      head(tidy_sotu)
-
-.. tab:: Output
-
-   .. code:: none
-
-      # A tibble: 6 × 3
-         document              term  count
-         <chr>                 <chr> <dbl>
-      1 barack-obama-2009.txt  madam     1
-      2 barack-obama-2010.txt  madam     1
-      3 donald-trump-2019.txt  madam     1
-      4 donald-trump-2020.txt  madam     1
-      5 george-w-bush-2007.txt madam     3
-      6 george-w-bush-2008.txt madam     1
+We can also do TF-IDF analysis (Term frequency-Inverse Document
+Frequency). The purpose of this type of analysis is to find a document’s
+most distinctive terms: How frequent a term is in a doc/how frequent it
+is across all docs. (High score=distinctive, Low score=not distinctive).
 
 .. tab:: R
    :new-set:
 
    .. code:: r
 
-      #A cleaner table
-      term_freq_sotu<-tidy_sotu%>%
-         select(-document) %>%
-         arrange(desc(count))
+      # Add a tf-idf on a dfm to determine a document's most distinctive words
+      sotu_tf_idf <- dfm_tfidf(sotu_dfm)
+      sotu_tf_idf
 
-      head(term_freq_sotu)
 
 .. tab:: Output
 
    .. code:: none
 
-      # A tibble: 6 × 2
-        term     count
-        <chr>    <dbl>
-      1 dollars    206
-      2 congress   204
-      3 war        195
-      4 year       183
-      5 year       176
-      6 federal    139
+      Document-feature matrix of: 96 documents, 20,805 features (92.39% sparse) and 0 docvars.
+                             features
+      docs                      madam    speaker         mr      vice  president    members of
+        barack-obama-2009.txt 1.20412 0.07918125 0.08464414 0.5841503 0.14014362 0.02802872  0
+        barack-obama-2010.txt 1.20412 0.07918125 0          0.5841503 0.16817234 0.05605745  0
+        barack-obama-2011.txt 0       0.23754374 0.16928828 0.2920752 0.05605745 0.05605745  0
+        barack-obama-2012.txt 0       0.15836249 0.16928828 0.5841503 0.14014362 0.08408617  0
+        barack-obama-2013.txt 0       0.07918125 0.16928828 0.2920752 0.05605745 0.02802872  0
+        barack-obama-2014.txt 0       0.15836249 0.16928828 0.5841503 0.19620107 0.08408617  0
+                             features
+      docs                    congress the      first
+        barack-obama-2009.txt        0   0 0.07314704
+        barack-obama-2010.txt        0   0 0.04571690
+        barack-obama-2011.txt        0   0 0.10057717
+        barack-obama-2012.txt        0   0 0.07314704
+        barack-obama-2013.txt        0   0 0.05486028
+        barack-obama-2014.txt        0   0 0.12800731
+      [ reached max_ndoc ... 90 more documents, reached max_nfeat ... 20,795 more features ]
+
+.. tab:: R
+   :new-set:
+
+   .. code:: r
+
+      #Simple frequency analysis
+      sotu_freq <- textstat_frequency(sotu_dfm)
+      head(sotu_freq, 20)
+
+.. tab:: Output
+
+   .. code:: none
+
+         feature frequency rank docfreq group
+      1      the     37864    1      96   all
+      2       of     23162    2      96   all
+      3      and     22842    3      96   all
+      4       to     21779    4      96   all
+      5       in     13935    5      96   all
+      6        a     10702    6      96   all
+      7       we     10156    7      96   all
+      8      our      9866    8      96   all
+      9     that      7908    9      96   all
+      10     for      7569   10      96   all
+      11      is      5905   11      96   all
+      12    will      5334   12      96   all
+      13       i      5230   13      96   all
+      14    this      5104   14      96   all
+      15    have      4886   15      96   all
+      16      be      4083   16      96   all
+      17     are      3991   17      96   all
+      18    with      3722   18      96   all
+      19      on      3637   19      96   all
+      20      it      3528   20      96   all
 
 Create a word cloud
 -------------------
@@ -841,10 +1120,11 @@ first version will likely time out, so make sure to stop the process to
 see the output.
 
 .. tab:: R
+   :new-set:
 
    .. code:: r
 
-      wordcloud(tidy_sotu$term, tidy_sotu$count)
+      textplot_wordcloud(sotu_dfm)
 
 .. tab:: Output
    :new-set:
@@ -859,20 +1139,44 @@ and to provide some aesthetic value. You shouldn’t need to halt this
 process.
 
 .. tab:: R
+   :new-set: 
 
    .. code:: r
 
-      wordcloud(tidy_sotu$term, tidy_sotu$count, 
-                max.words = 50,
-                scale = c(2,0.2), 
-                random.order = F,
-                random.color = F,
-                colors = brewer.pal(9,"Blues")) 
+      textplot_wordcloud(sotu_dfm,
+                        rotation = 0.25, #proportion of words with 90 degree rotation
+                        color = rev(RColorBrewer::brewer.pal(10, "RdBu")))
 
 .. tab:: Output
    :new-set:
    
-   .. figure:: /_static/images/r/text-mining/unnamed-chunk-8-1.png
+   .. figure:: /_static/images/r/text-mining/wordcloud2.png
+
+Lexical diversity
+-----------------
+
+Lexical diversity is a measure of how many times a word appears in a text 
+and where it appears relative to the beginning of the document
+
+.. tab:: R
+   :new-set: 
+
+   .. code:: r
+
+      sotu_lexdiv <- textstat_lexdiv(sotu_dfm)
+      head(sotu_lexdiv)    
+
+.. tab:: Output
+
+   .. code:: none
+
+                     document       TTR
+      1 barack-obama-2009.txt 0.2487967
+      2 barack-obama-2010.txt 0.2373709
+      3 barack-obama-2011.txt 0.2491568
+      4 barack-obama-2012.txt 0.2465636
+      5 barack-obama-2013.txt 0.2554831
+      6 barack-obama-2014.txt 0.2607883
 
 Working with a subset
 ---------------------
@@ -882,6 +1186,7 @@ some additional pre-processing, before we create a subset containing
 only President Obama’s speeches.
 
 .. tab:: R
+   :new-set:
 
    .. code:: r
 
@@ -907,6 +1212,7 @@ only President Obama’s speeches.
 From here, we can repeat the same steps we did above.
 
 .. tab:: R
+   :new-set:
 
    .. code:: r
 
@@ -916,169 +1222,33 @@ From here, we can repeat the same steps we did above.
       obama_toks <- tokens_tolower(obama_toks)
       obama_dfm <- dfm(obama_toks)
 
-      tidy_obama<- tidy(obama_dfm)
-
-Sentiment analysis
-------------------
-
-We can use sentiment analysis to label text by its tone. We use a
-lexicon to determine whether words can be labeled as positive, negative,
-or neutral. The three general-purpose lexicons are AFINN, bing, and nrc.
-
-.. tab:: R
-
-   .. code:: r
-
-      get_sentiments("bing")
+      obama_dfm
 
 .. tab:: Output
 
    .. code:: none
 
-      # A tibble: 6,786 × 2
-           word     sentiment
-          <chr>         <chr>    
-       1 2-faces     negative 
-       2 abnormal    negative 
-       3 abolish     negative 
-       4 abominable  negative 
-       5 abominably  negative 
-       6 abominate   negative 
-       7 abomination negative 
-       8 abort       negative 
-       9 aborted     negative 
-       10 aborts      negative 
-      # … with 6,776 more rows
-
-.. tab:: R
-   :new-set:
-
-   .. code:: r
-
-      tidy_obama$word<-tidy_obama$term
-
-      obama_sentiment<-tidy_obama%>%
-         inner_join(get_sentiments("bing"))%>%
-         count(term, sentiment)%>%
-         pivot_wider(names_from=sentiment, values_from=n, values_fill=0)%>%
-         mutate(sentiment=positive-negative)
-
-.. tab:: Output
-
-   .. code:: none
-
-      Joining, by = "word"
-
-.. tab:: R
-   :new-set:
-
-   .. code:: r
-
-      head(obama_sentiment)
-
-.. tab:: Output
-
-   .. code:: none
-
-      # A tibble: 6 × 4
-        term        negative positive sentiment
-        <chr>          <int>    <int>     <int>
-      1 absence            1        0        -1
-      2 abuse              3        0        -3
-      3 abuses             1        0        -1
-      4 abusive            2        0        -2
-      5 accomplish         0        2         2
-      6 achievement        0        4         4
-
-.. tab:: R
-   :new-set:
-
-   .. code:: r
-
-      ggplot(obama_sentiment,aes(sentiment)) + geom_bar(stat="count",width=0.7, fill="steelblue")+
-      theme_minimal()
-
-.. tab:: Output
-   :new-set:
-
-   .. figure:: /_static/images/r/text-mining/unnamed-chunk-11-1.png
-
-TF-IDF analysis
----------------
-
-We can also do TF-IDF analysis (Term frequency-Inverse Document
-Frequency). The purpose of this type of analysis is to find a document’s
-most distinctive terms: How frequent a term is in a doc/how frequent it
-is across all docs. (High score=distinctive, Low score=not distinctive).
-
-.. tab:: R
-
-   .. code:: r
-
-      # Add a tf-idf on a dfm to determine a document's most distinctive words
-      sotu_tf_idf <- dfm_tfidf(sotu_dfm)
+      Document-feature matrix of: 8 documents, 5,104 features (69.68% sparse) and 3 docvars.
+                             features
+      docs                    madam speaker mr vice president members congress first lady
+        barack-obama-2009.txt     1       1  1    2         5       1       10     8    1
+        barack-obama-2010.txt     1       1  0    2         6       2       10     5    1
+        barack-obama-2011.txt     0       3  2    1         2       2       10    11    0
+        barack-obama-2012.txt     0       2  2    2         5       3       15     8    0
+        barack-obama-2013.txt     0       1  2    1         2       1       17     6    0
+        barack-obama-2014.txt     0       2  2    2         7       3       20    14    1
+                             features
+      docs                    united
+        barack-obama-2009.txt      5
+        barack-obama-2010.txt      7
+        barack-obama-2011.txt      4
+        barack-obama-2012.txt      6
+        barack-obama-2013.txt     10
+        barack-obama-2014.txt      6
+      [ reached max_ndoc ... 2 more documents, reached max_nfeat ... 5,094 more features ]
 
 
-      # We want to see the most distinctive words for Obama's 2016 SOTU address (# 8 in the list):
-
-      topfeatures(sotu_tf_idf[8,])
-
-.. tab:: Output
-
-   .. code:: none
-
-           isil    voices politics-  laughter everybody       lot       got   retrain 
-      13.449930  7.224720  5.043724  4.958715  4.668908  4.418186  4.158986  3.964542 
-         muster   dirtier 
-       3.964542  3.362482 
-
-| Once you turn text into a clean set of tokens, you can look at term
-  collocations. We can use the ``textstat_collocations()`` function in
-  the ``quanteda`` package to do this.
-
-.. tab:: R
-
-   .. code:: r
-
-      ### Find term collocations (words that tend to appear together) from tokens
-      library(quanteda.textstats)
-      obama_coll_2 <- textstat_collocations(obama_toks, method = "lambda", size = 2, min_count = 2,smoothing = 0.5)
-      head(obama_coll_2)
-
-.. tab:: Output
-
-   .. code:: none
-
-            collocation count count_nested length   lambda        z
-      1     health care    42            0      2 7.496213 23.47189
-      2 american people    44            0      2 4.089652 21.38966
-      3   united states    39            0      2 8.165109 20.77366
-      4       right now    38            0      2 4.397017 20.66316
-      5       last year    27            0      2 4.754410 19.05865
-      6       make sure    32            0      2 6.316684 18.77043
-
-.. tab:: R
-   :new-set:
-
-   .. code:: r
-
-      # Graph the top 20 collocations using tidyverse 
-
-      obama_coll_2 %>%
-         top_n(., n=20) %>%   # select the top 20 terms
-         ggplot(., aes(x=reorder(collocation, count), y=count)) + geom_col() + coord_flip() +
-         labs(title = "Top 20 Collocations in Obama Speeches") +
-         theme_classic()
-
-.. tab:: Output
-   :new-set:
-
-   .. code:: none
-
-      Selecting by z
-
-
-   .. figure:: /_static/images/r/text-mining/unnamed-chunk-14-1.png
+We can look at keywords in context for this subset, as well. 
 
 .. tab:: R
    :new-set:
@@ -1123,12 +1293,13 @@ is across all docs. (High score=distinctive, Low score=not distinctive).
        care coverage help weather storm now know chamber watching home                
        care schools preparing children mountain debt stand inherit responsibility next
 
+We can make a lexical dispersion plot to visualize where our keyword is appearing across the documents. 
+
 .. tab:: R
    :new-set:
 
    .. code:: r
 
-      library (quanteda.textplots)
       textplot_xray(kw_health)
    
 .. tab:: Output
