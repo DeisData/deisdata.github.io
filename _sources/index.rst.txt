@@ -24,7 +24,7 @@ Meet your research community of support.
 
 -  `Register for Library
    Workshops <https://calendar.library.brandeis.edu/calendar/workshops/>`__,
-   including Bash Shell, R and Python, LaTeX, Git and GitHub, STATA,
+   including Bash Shell, R, Python, LaTeX, Git and GitHub, STATA,
    SPSS, Excel, Qualtrics, and more.
 
 How do I download a file from GitHub to my computer?
