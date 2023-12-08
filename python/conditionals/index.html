@@ -1,16 +1,16 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" data-content_root="">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Loops" href="../loops/" /><link rel="prev" title="Python data structures" href="../data-structures/" />
 
-    <link rel="shortcut icon" href="../../_static/favicon-32x32.png"/><meta name="generator" content="sphinx-7.1.2, furo 2021.11.16"/>
+    <link rel="shortcut icon" href="../../_static/favicon-32x32.png"/><!-- Generated with Sphinx 7.1.2 and Furo 2023.09.10 -->
         <title>Booleans and conditionals - DeisData</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=916d6ed8f59335acffa15474ff504849343d4c76" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=934bd528" />
     
     
@@ -22,38 +22,38 @@
   --color-code-foreground: black;
   
   }
-  body[data-theme="dark"] {
-    --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-  }
-  @media (prefers-color-scheme: dark) {
-    body:not([data-theme="light"]) {
+  @media not print {
+    body[data-theme="dark"] {
       --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
   
     }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -62,14 +62,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -84,7 +84,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -92,7 +92,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -154,14 +154,14 @@
   <span class="sidebar-brand-text">DeisData</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../">Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../">Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../setup-install/">Setup and installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jupyter/">Jupyter notebooks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../python-fundamentals/">Fundamentals</a></li>
@@ -175,14 +175,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../stats/">Statistical tests</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../r/">R</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../r/">R</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of R</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../r/quick-start/">Intro to R and the Tidyverse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../r/data-wrangling/">Data wrangling with the Tidyverse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../r/data-visualization/">ggplot2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../r/text-mining/">Text mining</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../shell/">Unix Shell</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../shell/">Unix Shell</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Unix Shell</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../shell/setup/">Bash Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../shell/navigating/">Navigating</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../shell/alter-dir/">Altering files and directories</a></li>
@@ -192,7 +192,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../shell/search-find/">Searching and finding</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../git/">Git Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../git/">Git Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../git/setup-install/">Setup and installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../git/quick-start/">Quick start to Git and GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../git/pushing/">Pushing changes</a></li>
@@ -206,6 +206,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -213,8 +214,15 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -229,9 +237,9 @@
         </div>
         <article role="main">
           <section id="booleans-and-conditionals">
-<h1>Booleans and conditionals<a class="headerlink" href="#booleans-and-conditionals" title="Permalink to this heading">¶</a></h1>
+<h1>Booleans and conditionals<a class="headerlink" href="#booleans-and-conditionals" title="Permalink to this heading">#</a></h1>
 <section id="materials">
-<h2>Materials:<a class="headerlink" href="#materials" title="Permalink to this heading">¶</a></h2>
+<h2>Materials:<a class="headerlink" href="#materials" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/conditionals-codealong.ipynb">Code-along Jupyter notebook</a></p></li>
 <li><p><a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/conditionals.ipynb">Filled-in Jupyter notebook</a></p></li>
@@ -244,32 +252,32 @@ our data?). We can ask yes or no questions about this state called
 response, which is called a <strong>conditional</strong>.</p>
 </section>
 <section id="booleans">
-<h2>Booleans<a class="headerlink" href="#booleans" title="Permalink to this heading">¶</a></h2>
+<h2>Booleans<a class="headerlink" href="#booleans" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> are keywords in Python. They are a unique data
 type called <strong>booleans</strong>.</p>
 <p>Capitalization is critical. Booleans in Python have their first letter
 capitalized and the rest lower-case.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"/><label class="tab-label" for="tab-set--1-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"/><label class="tab-label" for="tab-set--1-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
 </div>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"/><label class="tab-label" for="tab-set--0-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"/><label class="tab-label" for="tab-set--0-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
@@ -279,13 +287,13 @@ capitalized and the rest lower-case.</p>
 <code class="docutils literal notranslate"><span class="pre">bool()</span></code>. A number will only convert to <code class="docutils literal notranslate"><span class="pre">False</span></code> if it is exactly 0
 or 0.0. All other numbers convert to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"/><label class="tab-label" for="tab-set--2-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># False</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># True</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"/><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>False
 True
 </pre></div>
@@ -293,16 +301,16 @@ True
 </div>
 </div>
 <p>Similarly, we can convert strings into booleans. Empty strings (<code class="docutils literal notranslate"><span class="pre">''</span></code>
-or <code class="docutils literal notranslate"><span class="pre">""</span></code>) convert to <code class="docutils literal notranslate"><span class="pre">False</span></code> and any other string converts to
+or <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>) convert to <code class="docutils literal notranslate"><span class="pre">False</span></code> and any other string converts to
 <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"/><label class="tab-label" for="tab-set--3-input--1">Python</label><div class="tab-content docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="s1">''</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="s1">' '</span><span class="p">))</span>
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"/><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>False
 True
 </pre></div>
@@ -311,7 +319,7 @@ True
 </div>
 </section>
 <section id="boolean-expressions">
-<h2>Boolean expressions<a class="headerlink" href="#boolean-expressions" title="Permalink to this heading">¶</a></h2>
+<h2>Boolean expressions<a class="headerlink" href="#boolean-expressions" title="Permalink to this heading">#</a></h2>
 <p>Boolean expressions essentially ask questions that evaluate as <code class="docutils literal notranslate"><span class="pre">True</span></code>
 or <code class="docutils literal notranslate"><span class="pre">False</span></code>. These can examine whether two values are equal, if one is
 larger than another, or similar questions. To ask these questions we
@@ -320,29 +328,29 @@ need to use special boolean operators that you’ll see below.</p>
 easily get unexpected results when comparing strings and ints, for
 instance.</p>
 <section id="equality">
-<h3>Equality: <code class="docutils literal notranslate"><span class="pre">==</span></code><a class="headerlink" href="#equality" title="Permalink to this heading">¶</a></h3>
+<h3>Equality: <code class="docutils literal notranslate"><span class="pre">==</span></code><a class="headerlink" href="#equality" title="Permalink to this heading">#</a></h3>
 <p>The operator <code class="docutils literal notranslate"><span class="pre">==</span></code> is used to check if two items are equal to each other.
 Note the distinction between <code class="docutils literal notranslate"><span class="pre">=</span></code>, which is used for variable assignment, and
 <code class="docutils literal notranslate"><span class="pre">==</span></code>, which checks for equality.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"/><label class="tab-label" for="tab-set--5-input--1">Python</label><div class="tab-content docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s2">"bad"</span> <span class="o">==</span> <span class="s2">"bad"</span>
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;bad&quot;</span> <span class="o">==</span> <span class="s2">&quot;bad&quot;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio"/><label class="tab-label" for="tab-set--5-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"/><label class="tab-label" for="tab-set--4-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">==</span> <span class="mi">3</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio"/><label class="tab-label" for="tab-set--4-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
 </div>
@@ -356,28 +364,28 @@ below).</p>
 </div>
 </section>
 <section id="not-equals">
-<h3>Not equals: <code class="docutils literal notranslate"><span class="pre">!=</span></code><a class="headerlink" href="#not-equals" title="Permalink to this heading">¶</a></h3>
+<h3>Not equals: <code class="docutils literal notranslate"><span class="pre">!=</span></code><a class="headerlink" href="#not-equals" title="Permalink to this heading">#</a></h3>
 <p>Similar, we can use <code class="docutils literal notranslate"><span class="pre">!=</span></code> to check if two items are not equal to each other.
 <code class="docutils literal notranslate"><span class="pre">!=`</span></code> will always return the opposite of <code class="docutils literal notranslate"><span class="pre">==</span></code> for any given comparison.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"/><label class="tab-label" for="tab-set--7-input--1">Python</label><div class="tab-content docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s2">"bad"</span> <span class="o">!=</span> <span class="s2">"BAD"</span> <span class="c1"># capitalization matters!</span>
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;bad&quot;</span> <span class="o">!=</span> <span class="s2">&quot;BAD&quot;</span> <span class="c1"># capitalization matters!</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--7-input--2" name="tab-set--7" type="radio"/><label class="tab-label" for="tab-set--7-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--7-input--2" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"/><label class="tab-label" for="tab-set--6-input--1">Python</label><div class="tab-content docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s2">"bad"</span> <span class="o">!=</span> <span class="s2">"bad"</span>
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;bad&quot;</span> <span class="o">!=</span> <span class="s2">&quot;bad&quot;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio"/><label class="tab-label" for="tab-set--6-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
 </div>
@@ -385,53 +393,53 @@ below).</p>
 </div>
 </section>
 <section id="inequalities">
-<h3>Inequalities<a class="headerlink" href="#inequalities" title="Permalink to this heading">¶</a></h3>
+<h3>Inequalities<a class="headerlink" href="#inequalities" title="Permalink to this heading">#</a></h3>
 <p>There are 4 different boolean operators for comparing inequalities: less
 than (<code class="docutils literal notranslate"><span class="pre">&lt;</span></code>), less than or equal to (<code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>), greater than (<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>), and
 greater than or equal to (<code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>).</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio"/><label class="tab-label" for="tab-set--11-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">4</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--11-input--2" name="tab-set--11" type="radio"/><label class="tab-label" for="tab-set--11-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--11-input--2" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio"/><label class="tab-label" for="tab-set--10-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mf">5.1</span> <span class="o">&gt;</span> <span class="mf">5.0</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--10-input--2" name="tab-set--10" type="radio"/><label class="tab-label" for="tab-set--10-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--10-input--2" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"/><label class="tab-label" for="tab-set--9-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">&gt;=</span> <span class="mi">3</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--9-input--2" name="tab-set--9" type="radio"/><label class="tab-label" for="tab-set--9-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--9-input--2" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"/><label class="tab-label" for="tab-set--8-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span> <span class="o">&lt;=</span> <span class="mi">3</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--8-input--2" name="tab-set--8" type="radio"/><label class="tab-label" for="tab-set--8-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--8-input--2" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
 </div>
@@ -439,17 +447,17 @@ greater than or equal to (<code class="docutils literal notranslate"><span class
 </div>
 </section>
 <section id="inclusivity-in">
-<h3>Inclusivity: <code class="docutils literal notranslate"><span class="pre">in</span></code><a class="headerlink" href="#inclusivity-in" title="Permalink to this heading">¶</a></h3>
+<h3>Inclusivity: <code class="docutils literal notranslate"><span class="pre">in</span></code><a class="headerlink" href="#inclusivity-in" title="Permalink to this heading">#</a></h3>
 <p>We can use the keyword <code class="docutils literal notranslate"><span class="pre">in</span></code> to check if an item is in a data structure
 (list, dictionary, set, tuple).</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio"/><label class="tab-label" for="tab-set--12-input--1">Python</label><div class="tab-content docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">'apple'</span><span class="p">,</span> <span class="s1">'pear'</span><span class="p">,</span> <span class="s1">'grape'</span> <span class="p">]</span>
-<span class="s1">'apple'</span> <span class="ow">in</span> <span class="n">my_list</span>
+<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;pear&#39;</span><span class="p">,</span> <span class="s1">&#39;grape&#39;</span> <span class="p">]</span>
+<span class="s1">&#39;apple&#39;</span> <span class="ow">in</span> <span class="n">my_list</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--12-input--2" name="tab-set--12" type="radio"/><label class="tab-label" for="tab-set--12-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--12-input--2" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
@@ -458,13 +466,13 @@ greater than or equal to (<code class="docutils literal notranslate"><span class
 <p>Because sets are made of unique items, they are perfect for using
 <code class="docutils literal notranslate"><span class="pre">in</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio"/><label class="tab-label" for="tab-set--13-input--1">Python</label><div class="tab-content docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_set</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">'orange'</span><span class="p">,</span> <span class="s1">'berry'</span><span class="p">,</span> <span class="s1">'lemon'</span> <span class="p">}</span>
-<span class="s1">'apple'</span> <span class="ow">in</span> <span class="n">my_set</span>
+<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_set</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;berry&#39;</span><span class="p">,</span> <span class="s1">&#39;lemon&#39;</span> <span class="p">}</span>
+<span class="s1">&#39;apple&#39;</span> <span class="ow">in</span> <span class="n">my_set</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--13-input--2" name="tab-set--13" type="radio"/><label class="tab-label" for="tab-set--13-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--13-input--2" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
 </div>
@@ -473,13 +481,13 @@ greater than or equal to (<code class="docutils literal notranslate"><span class
 <p>You can also use <code class="docutils literal notranslate"><span class="pre">in</span></code> to check if a smaller string is a part of a
 larger string.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio"/><label class="tab-label" for="tab-set--15-input--1">Python</label><div class="tab-content docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'i'</span> <span class="ow">in</span> <span class="s1">'team'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'i'</span> <span class="ow">in</span> <span class="s1">'win'</span><span class="p">)</span>
+<input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio"><label class="tab-label" for="tab-set--15-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;i&#39;</span> <span class="ow">in</span> <span class="s1">&#39;team&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;i&#39;</span> <span class="ow">in</span> <span class="s1">&#39;win&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--15-input--2" name="tab-set--15" type="radio"/><label class="tab-label" for="tab-set--15-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--15-input--2" name="tab-set--15" type="radio"><label class="tab-label" for="tab-set--15-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>False
 True
 </pre></div>
@@ -487,12 +495,12 @@ True
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio"/><label class="tab-label" for="tab-set--14-input--1">Python</label><div class="tab-content docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'good movie'</span> <span class="ow">in</span> <span class="s1">'star wars sequel trilogy'</span><span class="p">)</span>
+<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;good movie&#39;</span> <span class="ow">in</span> <span class="s1">&#39;star wars sequel trilogy&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--14-input--2" name="tab-set--14" type="radio"/><label class="tab-label" for="tab-set--14-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--14-input--2" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
 </div>
@@ -500,42 +508,42 @@ True
 </div>
 </section>
 <section id="not">
-<h3><code class="docutils literal notranslate"><span class="pre">not</span></code><a class="headerlink" href="#not" title="Permalink to this heading">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">not</span></code><a class="headerlink" href="#not" title="Permalink to this heading">#</a></h3>
 <p>Just as adding not in a sentence reverses its meaning (e.g., “The desk
 is red.” vs “The desk is not red.”), adding the keyword <code class="docutils literal notranslate"><span class="pre">not</span></code> in front
 of a boolean expression reverses the value returned -&gt; <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">0</span> <span class="pre">==</span> <span class="pre">0</span></code>
 returns <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--18-input--1" name="tab-set--18" type="radio"/><label class="tab-label" for="tab-set--18-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--18-input--1" name="tab-set--18" type="radio"><label class="tab-label" for="tab-set--18-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ow">not</span> <span class="mi">20</span> <span class="o">&lt;</span> <span class="mi">40</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--18-input--2" name="tab-set--18" type="radio"/><label class="tab-label" for="tab-set--18-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--18-input--2" name="tab-set--18" type="radio"><label class="tab-label" for="tab-set--18-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
 </div>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio"/><label class="tab-label" for="tab-set--17-input--1">Python</label><div class="tab-content docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ow">not</span> <span class="s1">'apple'</span> <span class="ow">in</span> <span class="s1">'grape'</span>
+<input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ow">not</span> <span class="s1">&#39;apple&#39;</span> <span class="ow">in</span> <span class="s1">&#39;grape&#39;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--17-input--2" name="tab-set--17" type="radio"/><label class="tab-label" for="tab-set--17-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--17-input--2" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio"/><label class="tab-label" for="tab-set--16-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ow">not</span> <span class="kc">True</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--16-input--2" name="tab-set--16" type="radio"/><label class="tab-label" for="tab-set--16-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--16-input--2" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
 </div>
@@ -543,17 +551,17 @@ returns <code class="docutils literal notranslate"><span class="pre">False</span
 </div>
 </section>
 <section id="order-of-operations">
-<h3>Order of Operations<a class="headerlink" href="#order-of-operations" title="Permalink to this heading">¶</a></h3>
+<h3>Order of Operations<a class="headerlink" href="#order-of-operations" title="Permalink to this heading">#</a></h3>
 <p>We can chain together boolean comparisons with <code class="docutils literal notranslate"><span class="pre">and</span></code> and <code class="docutils literal notranslate"><span class="pre">or</span></code>.</p>
 <p>Putting <code class="docutils literal notranslate"><span class="pre">and</span></code> between two booleans will make the whole statement true
 only both statements are true.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--19-input--1" name="tab-set--19" type="radio"/><label class="tab-label" for="tab-set--19-input--1">Python</label><div class="tab-content docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">&lt;</span> <span class="mi">4</span> <span class="ow">and</span> <span class="s2">"banana"</span> <span class="o">==</span> <span class="s2">"banana"</span>
+<input checked="True" class="tab-input" id="tab-set--19-input--1" name="tab-set--19" type="radio"><label class="tab-label" for="tab-set--19-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">&lt;</span> <span class="mi">4</span> <span class="ow">and</span> <span class="s2">&quot;banana&quot;</span> <span class="o">==</span> <span class="s2">&quot;banana&quot;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--19-input--2" name="tab-set--19" type="radio"/><label class="tab-label" for="tab-set--19-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--19-input--2" name="tab-set--19" type="radio"><label class="tab-label" for="tab-set--19-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
@@ -561,12 +569,12 @@ only both statements are true.</p>
 </div>
 <p>On the other hand, <code class="docutils literal notranslate"><span class="pre">or</span></code> only needs one of the statements to be true.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--20-input--1" name="tab-set--20" type="radio"/><label class="tab-label" for="tab-set--20-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--20-input--1" name="tab-set--20" type="radio"><label class="tab-label" for="tab-set--20-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">or</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">2</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--20-input--2" name="tab-set--20" type="radio"/><label class="tab-label" for="tab-set--20-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--20-input--2" name="tab-set--20" type="radio"><label class="tab-label" for="tab-set--20-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
@@ -576,13 +584,13 @@ only both statements are true.</p>
 Comparisons run left to right, unless you put parentheses around the
 comparisons.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--21-input--1" name="tab-set--21" type="radio"/><label class="tab-label" for="tab-set--21-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--21-input--1" name="tab-set--21" type="radio"><label class="tab-label" for="tab-set--21-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">or</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="p">(</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">or</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">2</span><span class="p">))</span> <span class="c1"># parentheses matter!</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--21-input--2" name="tab-set--21" type="radio"/><label class="tab-label" for="tab-set--21-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--21-input--2" name="tab-set--21" type="radio"><label class="tab-label" for="tab-set--21-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>True
 False
 </pre></div>
@@ -591,15 +599,15 @@ False
 </div>
 </section>
 <section id="question-1-boolean-expressions">
-<h3>Question 1: Boolean expressions<a class="headerlink" href="#question-1-boolean-expressions" title="Permalink to this heading">¶</a></h3>
+<h3>Question 1: Boolean expressions<a class="headerlink" href="#question-1-boolean-expressions" title="Permalink to this heading">#</a></h3>
 <p>Does the following code evalutate as <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>?</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--22-input--1" name="tab-set--22" type="radio"/><label class="tab-label" for="tab-set--22-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--22-input--1" name="tab-set--22" type="radio"><label class="tab-label" for="tab-set--22-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n1</span> <span class="o">=</span> <span class="mi">45</span>
 <span class="n">n2</span> <span class="o">=</span> <span class="o">-</span><span class="mi">23</span>
 <span class="n">n3</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">s1</span> <span class="o">=</span> <span class="s1">'hello'</span>
-<span class="n">s2</span> <span class="o">=</span> <span class="s1">'goodbye'</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="s1">&#39;hello&#39;</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s1">&#39;goodbye&#39;</span>
 
 <span class="ow">not</span> <span class="p">(</span><span class="n">n2</span> <span class="o">&lt;</span> <span class="n">n3</span> <span class="ow">and</span> <span class="n">s1</span> <span class="o">==</span> <span class="n">s2</span> <span class="ow">or</span> <span class="n">n1</span> <span class="o">&gt;=</span> <span class="n">n3</span><span class="p">)</span>
 </pre></div>
@@ -624,27 +632,27 @@ needs to be <code class="docutils literal notranslate"><span class="pre">True</s
 </div>
 </details></section>
 <section id="question-2-boolean-types">
-<h3>Question 2: Boolean types<a class="headerlink" href="#question-2-boolean-types" title="Permalink to this heading">¶</a></h3>
+<h3>Question 2: Boolean types<a class="headerlink" href="#question-2-boolean-types" title="Permalink to this heading">#</a></h3>
 <p>What happens when you compare different data types with <code class="docutils literal notranslate"><span class="pre">==</span></code>? What
 about <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, or <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>?</p>
 </section>
 </section>
 <section id="conditionals">
-<h2>Conditionals<a class="headerlink" href="#conditionals" title="Permalink to this heading">¶</a></h2>
+<h2>Conditionals<a class="headerlink" href="#conditionals" title="Permalink to this heading">#</a></h2>
 <section id="if-statements">
-<h3><code class="docutils literal notranslate"><span class="pre">if</span></code> statements<a class="headerlink" href="#if-statements" title="Permalink to this heading">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">if</span></code> statements<a class="headerlink" href="#if-statements" title="Permalink to this heading">#</a></h3>
 <p>The true power of boolean expressions is in making decisions based on
 whether they are true or false. We do this with <code class="docutils literal notranslate"><span class="pre">if</span></code> statements. The
 general syntax follows this format:</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--23-input--1" name="tab-set--23" type="radio"/><label class="tab-label" for="tab-set--23-input--1">Python</label><div class="tab-content docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s1">'a'</span> <span class="o">!=</span> <span class="s1">'b'</span><span class="p">:</span>
+<input checked="True" class="tab-input" id="tab-set--23-input--1" name="tab-set--23" type="radio"><label class="tab-label" for="tab-set--23-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s1">&#39;a&#39;</span> <span class="o">!=</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span>
 
-   <span class="nb">print</span><span class="p">(</span><span class="s1">'hello!'</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--23-input--2" name="tab-set--23" type="radio"/><label class="tab-label" for="tab-set--23-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--23-input--2" name="tab-set--23" type="radio"><label class="tab-label" for="tab-set--23-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>hello!
 </pre></div>
 </div>
@@ -660,25 +668,25 @@ tabbed is run</p></li>
 <li><p>If the expression is false, nothing happens</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Here, nothing was printed, as 2 does not equal 1.</p>
 <p>We can also have more complicated boolean expressions, as well.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--24-input--1" name="tab-set--24" type="radio"/><label class="tab-label" for="tab-set--24-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--24-input--1" name="tab-set--24" type="radio"><label class="tab-label" for="tab-set--24-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">a</span> <span class="o">=</span> <span class="s1">'a'</span>
-<span class="n">letters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">]</span>
+<span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span>
+<span class="n">letters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span>
 
 <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">letters</span><span class="p">:</span>
 
-   <span class="nb">print</span><span class="p">(</span><span class="s1">'My number:'</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
-   <span class="nb">print</span><span class="p">(</span><span class="s1">'My letter:'</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My number:&#39;</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My letter:&#39;</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--24-input--2" name="tab-set--24" type="radio"/><label class="tab-label" for="tab-set--24-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--24-input--2" name="tab-set--24" type="radio"><label class="tab-label" for="tab-set--24-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>My number: 0
 My letter: a
 </pre></div>
@@ -687,27 +695,27 @@ My letter: a
 </div>
 </section>
 <section id="if-else-statement">
-<h3><code class="docutils literal notranslate"><span class="pre">if-else</span></code> statement<a class="headerlink" href="#if-else-statement" title="Permalink to this heading">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">if-else</span></code> statement<a class="headerlink" href="#if-else-statement" title="Permalink to this heading">#</a></h3>
 <p>Often in coding, we want one thing to happen if an expression is true,
 and another to happen if it is false. To accomplish this, we can add an
 <code class="docutils literal notranslate"><span class="pre">else</span></code> statement below the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. This will always be
 evaluated if the expression after <code class="docutils literal notranslate"><span class="pre">if</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>, otherwise it will
 not run: the <code class="docutils literal notranslate"><span class="pre">if</span></code> and <code class="docutils literal notranslate"><span class="pre">else</span></code> are mutually exclusive.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--25-input--1" name="tab-set--25" type="radio"/><label class="tab-label" for="tab-set--25-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--25-input--1" name="tab-set--25" type="radio"><label class="tab-label" for="tab-set--25-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">23</span>
 
 <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">:</span> <span class="c1"># if x less than 20; False</span>
 
-   <span class="nb">print</span><span class="p">(</span><span class="s1">'Less than 20'</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Less than 20&#39;</span><span class="p">)</span>
 
 <span class="k">else</span><span class="p">:</span> <span class="c1"># x greater or equal to 20</span>
 
-   <span class="nb">print</span><span class="p">(</span><span class="s1">'Greater than 20'</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Greater than 20&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--25-input--2" name="tab-set--25" type="radio"/><label class="tab-label" for="tab-set--25-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--25-input--2" name="tab-set--25" type="radio"><label class="tab-label" for="tab-set--25-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Greater than 20
 </pre></div>
 </div>
@@ -715,7 +723,7 @@ not run: the <code class="docutils literal notranslate"><span class="pre">if</sp
 </div>
 </section>
 <section id="elif">
-<h3><code class="docutils literal notranslate"><span class="pre">elif</span></code><a class="headerlink" href="#elif" title="Permalink to this heading">¶</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">elif</span></code><a class="headerlink" href="#elif" title="Permalink to this heading">#</a></h3>
 <p>What if you want to differentiate between more than 2 conditions? We can
 use the <code class="docutils literal notranslate"><span class="pre">elif</span></code> keyword, which stands for <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code>. This goes
 between the <code class="docutils literal notranslate"><span class="pre">if</span></code> and the <code class="docutils literal notranslate"><span class="pre">else</span></code> statements, and must include a new
@@ -723,24 +731,24 @@ boolean expression.</p>
 <p>Again, these options are all mutually exclusive. If the <code class="docutils literal notranslate"><span class="pre">elif</span></code> code is
 run, that means the <code class="docutils literal notranslate"><span class="pre">if</span></code> and <code class="docutils literal notranslate"><span class="pre">else</span></code> code do not run.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--26-input--1" name="tab-set--26" type="radio"/><label class="tab-label" for="tab-set--26-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--26-input--1" name="tab-set--26" type="radio"><label class="tab-label" for="tab-set--26-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mi">101</span>
 
 <span class="k">if</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span> <span class="c1"># y less than 100</span>
 
-   <span class="nb">print</span><span class="p">(</span><span class="s1">'y is less than 100'</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y is less than 100&#39;</span><span class="p">)</span>
 
 <span class="k">elif</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="mi">200</span><span class="p">:</span> <span class="c1"># y is 100-200 (excluding 200)</span>
 
-   <span class="nb">print</span><span class="p">(</span><span class="s1">'y is between 100 and 200'</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y is between 100 and 200&#39;</span><span class="p">)</span>
 
 <span class="k">else</span><span class="p">:</span> <span class="c1"># y is 200 or larger</span>
 
-   <span class="nb">print</span><span class="p">(</span><span class="s1">'y is a big number'</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y is a big number&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--26-input--2" name="tab-set--26" type="radio"/><label class="tab-label" for="tab-set--26-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--26-input--2" name="tab-set--26" type="radio"><label class="tab-label" for="tab-set--26-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>y is between 100 and 200
 </pre></div>
 </div>
@@ -750,16 +758,16 @@ run, that means the <code class="docutils literal notranslate"><span class="pre"
 result in neither the code associated with <code class="docutils literal notranslate"><span class="pre">if</span></code> nor <code class="docutils literal notranslate"><span class="pre">elif</span></code> running,
 however.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--27-input--1" name="tab-set--27" type="radio"/><label class="tab-label" for="tab-set--27-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--27-input--1" name="tab-set--27" type="radio"><label class="tab-label" for="tab-set--27-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mi">400</span>
 
 <span class="k">if</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
 
-   <span class="nb">print</span><span class="p">(</span><span class="s1">'y is less than 100'</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y is less than 100&#39;</span><span class="p">)</span>
 
 <span class="k">elif</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="mi">200</span><span class="p">:</span>
 
-   <span class="nb">print</span><span class="p">(</span><span class="s1">'y ia between 100 and 200'</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y ia between 100 and 200&#39;</span><span class="p">)</span>
 
 <span class="c1"># nothing prints here</span>
 </pre></div>
@@ -769,27 +777,27 @@ however.</p>
 <p>Regardless of if there is an <code class="docutils literal notranslate"><span class="pre">else</span></code> statement or not, we can also
 include as many <code class="docutils literal notranslate"><span class="pre">elif</span></code> conditions as we want.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--28-input--1" name="tab-set--28" type="radio"/><label class="tab-label" for="tab-set--28-input--1">Python</label><div class="tab-content docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">favorite_movie</span> <span class="o">=</span> <span class="s1">'Indiana Jones'</span>
+<input checked="True" class="tab-input" id="tab-set--28-input--1" name="tab-set--28" type="radio"><label class="tab-label" for="tab-set--28-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">favorite_movie</span> <span class="o">=</span> <span class="s1">&#39;Indiana Jones&#39;</span>
 
-<span class="k">if</span> <span class="n">favorite_movie</span> <span class="o">==</span> <span class="s1">'Batman'</span><span class="p">:</span>
-   <span class="nb">print</span><span class="p">(</span><span class="s2">"I'm Batman."</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">favorite_movie</span> <span class="o">==</span> <span class="s1">&#39;Batman&#39;</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m Batman.&quot;</span><span class="p">)</span>
 
-<span class="k">elif</span> <span class="n">favorite_movie</span> <span class="o">==</span> <span class="s1">'Lord of the Rings'</span><span class="p">:</span>
-   <span class="nb">print</span><span class="p">(</span><span class="s2">"And my axe!!"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">favorite_movie</span> <span class="o">==</span> <span class="s1">&#39;Lord of the Rings&#39;</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;And my axe!!&quot;</span><span class="p">)</span>
 
-<span class="k">elif</span> <span class="n">favorite_movie</span> <span class="o">==</span> <span class="s1">'Indiana Jones'</span><span class="p">:</span>
-   <span class="nb">print</span><span class="p">(</span><span class="s1">'That belongs in a museum!!'</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">favorite_movie</span> <span class="o">==</span> <span class="s1">&#39;Indiana Jones&#39;</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;That belongs in a museum!!&#39;</span><span class="p">)</span>
 
-<span class="k">elif</span> <span class="n">favorite_movie</span> <span class="o">==</span> <span class="s1">'The Matrix'</span><span class="p">:</span>
-   <span class="nb">print</span><span class="p">(</span><span class="s1">'whoa'</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">favorite_movie</span> <span class="o">==</span> <span class="s1">&#39;The Matrix&#39;</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;whoa&#39;</span><span class="p">)</span>
 
 <span class="k">else</span><span class="p">:</span>
-   <span class="nb">print</span><span class="p">(</span><span class="s1">'No quotes available :('</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No quotes available :(&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--28-input--2" name="tab-set--28" type="radio"/><label class="tab-label" for="tab-set--28-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--28-input--2" name="tab-set--28" type="radio"><label class="tab-label" for="tab-set--28-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>That belongs in a museum!!
 </pre></div>
 </div>
@@ -798,35 +806,35 @@ include as many <code class="docutils literal notranslate"><span class="pre">eli
 </section>
 </section>
 <section id="using-data-types-in-conditionals">
-<h2>Using data types in conditionals<a class="headerlink" href="#using-data-types-in-conditionals" title="Permalink to this heading">¶</a></h2>
+<h2>Using data types in conditionals<a class="headerlink" href="#using-data-types-in-conditionals" title="Permalink to this heading">#</a></h2>
 <p>We can also use data types as conditions in if statements.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--29-input--1" name="tab-set--29" type="radio"/><label class="tab-label" for="tab-set--29-input--1">Python</label><div class="tab-content docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">should_be_num</span> <span class="o">=</span> <span class="s1">'banana'</span>
+<input checked="True" class="tab-input" id="tab-set--29-input--1" name="tab-set--29" type="radio"><label class="tab-label" for="tab-set--29-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">should_be_num</span> <span class="o">=</span> <span class="s1">&#39;banana&#39;</span>
 
 <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">should_be_num</span><span class="p">)</span><span class="o">!=</span><span class="nb">int</span> <span class="ow">or</span> <span class="nb">type</span><span class="p">(</span><span class="n">should_be_num</span><span class="p">)</span><span class="o">!=</span><span class="nb">float</span><span class="p">:</span>
-   <span class="nb">print</span><span class="p">(</span><span class="s1">'need input to be a number'</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;need input to be a number&#39;</span><span class="p">)</span>
 
 <span class="k">else</span><span class="p">:</span>
    <span class="nb">print</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="n">should_be_num</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--29-input--2" name="tab-set--29" type="radio"/><label class="tab-label" for="tab-set--29-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--29-input--2" name="tab-set--29" type="radio"><label class="tab-label" for="tab-set--29-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>need input to be a number
 </pre></div>
 </div>
 </div>
 </div>
 <section id="question-conditionals">
-<h3>Question: Conditionals<a class="headerlink" href="#question-conditionals" title="Permalink to this heading">¶</a></h3>
+<h3>Question: Conditionals<a class="headerlink" href="#question-conditionals" title="Permalink to this heading">#</a></h3>
 <p>Write code that will prints the square root of <code class="docutils literal notranslate"><span class="pre">x</span></code> if x is larger than
 20 and <code class="docutils literal notranslate"><span class="pre">0</span></code> if x is less than <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
 <p><em>Hint 1</em>: Taking the square root of a number is the same is raising it
 to the power of 0.5.</p>
 <p><strong>Bonus</strong>: Print an error message if x is a string or a boolean.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--30-input--1" name="tab-set--30" type="radio"/><label class="tab-label" for="tab-set--30-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--30-input--1" name="tab-set--30" type="radio"><label class="tab-label" for="tab-set--30-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">### Your code here:</span>
 </pre></div>
 </div>
@@ -835,11 +843,11 @@ to the power of 0.5.</p>
 <details class="summary-solution">
 <summary>Solution</summary><div class="docutils container">
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--31-input--1" name="tab-set--31" type="radio"/><label class="tab-label" for="tab-set--31-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--31-input--1" name="tab-set--31" type="radio"><label class="tab-label" for="tab-set--31-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">22</span>
 
 <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">:</span>
-   <span class="nb">print</span><span class="p">(</span><span class="s1">'x needs to be a string.'</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x needs to be a string.&#39;</span><span class="p">)</span>
 
 <span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;</span><span class="mi">20</span><span class="p">:</span>
    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
@@ -854,46 +862,46 @@ to the power of 0.5.</p>
 </details></section>
 </section>
 <section id="nested-conditionals">
-<h2>Nested conditionals<a class="headerlink" href="#nested-conditionals" title="Permalink to this heading">¶</a></h2>
+<h2>Nested conditionals<a class="headerlink" href="#nested-conditionals" title="Permalink to this heading">#</a></h2>
 <p>We can also put if statements inside of other if statements. Many times,
 these are unnecesary and can be replaced by <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements, but not
 always.</p>
 <p>Make sure to add more indentation for the second layer of if statements.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--32-input--1" name="tab-set--32" type="radio"/><label class="tab-label" for="tab-set--32-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--32-input--1" name="tab-set--32" type="radio"><label class="tab-label" for="tab-set--32-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">22222</span> <span class="c1"># some integer</span>
 
 <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># if n is negative</span>
 
    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s2">"n is a negative even integer"</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n is a negative even integer&quot;</span><span class="p">)</span>
 
    <span class="k">elif</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s2">"n is a negative odd integer"</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n is a negative odd integer&quot;</span><span class="p">)</span>
 
    <span class="k">else</span><span class="p">:</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s2">"n is a negative number"</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n is a negative number&quot;</span><span class="p">)</span>
 
 <span class="k">elif</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> <span class="c1">#</span>
 
    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s2">"n is a positive even integer"</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n is a positive even integer&quot;</span><span class="p">)</span>
 
    <span class="k">elif</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s2">"n is a positive odd integer"</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n is a positive odd integer&quot;</span><span class="p">)</span>
 
    <span class="k">else</span><span class="p">:</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s2">"n is a positive number"</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n is a positive number&quot;</span><span class="p">)</span>
 
 <span class="k">else</span><span class="p">:</span>
 
-   <span class="nb">print</span><span class="p">(</span><span class="s2">"n is zero"</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n is zero&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <section id="question">
-<h3>Question<a class="headerlink" href="#question" title="Permalink to this heading">¶</a></h3>
+<h3>Question<a class="headerlink" href="#question" title="Permalink to this heading">#</a></h3>
 <p>Create a list called <code class="docutils literal notranslate"><span class="pre">my_list</span></code> with four items in it. Create a
 variable called <code class="docutils literal notranslate"><span class="pre">x</span></code> with some value.</p>
 <p>Create a series of conditionals that check to see if the value in <code class="docutils literal notranslate"><span class="pre">x</span></code>
@@ -909,7 +917,7 @@ the item is at in the list.</p>
 </section>
 </section>
 <section id="resources">
-<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this heading">¶</a></h2>
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://swcarpentry.github.io/python-novice-inflammation/07-cond/index.html">Software
 Carpentry</a></p></li>
@@ -929,10 +937,10 @@ Carpentry</a></p></li>
                 </div>
                 <div class="title">Loops</div>
               </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
           <a class="prev-page" href="../data-structures/">
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
@@ -943,15 +951,19 @@ Carpentry</a></p></li>
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; 2023, Ford Fishman |
-          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../../_sources/python/conditionals.rst.txt"
-               rel="nofollow">
-              Show Source
-            </a>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Ford Fishman
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
         </div>
         
       </footer>
@@ -962,7 +974,7 @@ Carpentry</a></p></li>
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            On this page
           </span>
         </div>
         <div class="toc-tree-container">
@@ -1011,7 +1023,7 @@ Carpentry</a></p></li>
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=fbdbc327"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
-    <script src="../../_static/scripts/furo.js?v=818c8f69"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="../../_static/tabs.js?v=3ee01567"></script>
     </body>
 </html>

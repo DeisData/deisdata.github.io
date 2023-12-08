@@ -1,16 +1,16 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" data-content_root="">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Unix Shell" href="../../shell/" /><link rel="prev" title="ggplot2" href="../data-visualization/" />
 
-    <link rel="shortcut icon" href="../../_static/favicon-32x32.png"/><meta name="generator" content="sphinx-7.1.2, furo 2021.11.16"/>
+    <link rel="shortcut icon" href="../../_static/favicon-32x32.png"/><!-- Generated with Sphinx 7.1.2 and Furo 2023.09.10 -->
         <title>Text Mining with R - DeisData</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=916d6ed8f59335acffa15474ff504849343d4c76" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=934bd528" />
     
     
@@ -22,38 +22,38 @@
   --color-code-foreground: black;
   
   }
-  body[data-theme="dark"] {
-    --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-  }
-  @media (prefers-color-scheme: dark) {
-    body:not([data-theme="light"]) {
+  @media not print {
+    body[data-theme="dark"] {
       --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
   
     }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -62,14 +62,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -84,7 +84,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -92,7 +92,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -154,14 +154,14 @@
   <span class="sidebar-brand-text">DeisData</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../python/">Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../python/">Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../python/setup-install/">Setup and installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../python/jupyter/">Jupyter notebooks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../python/python-fundamentals/">Fundamentals</a></li>
@@ -175,14 +175,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../../python/stats/">Statistical tests</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../">R</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../">R</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of R</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../quick-start/">Intro to R and the Tidyverse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../data-wrangling/">Data wrangling with the Tidyverse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../data-visualization/">ggplot2</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Text mining</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../shell/">Unix Shell</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../shell/">Unix Shell</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Unix Shell</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../shell/setup/">Bash Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../shell/navigating/">Navigating</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../shell/alter-dir/">Altering files and directories</a></li>
@@ -192,7 +192,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../shell/search-find/">Searching and finding</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../git/">Git Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../git/">Git Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../git/setup-install/">Setup and installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../git/quick-start/">Quick start to Git and GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../git/pushing/">Pushing changes</a></li>
@@ -206,6 +206,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -213,8 +214,15 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -229,20 +237,20 @@
         </div>
         <article role="main">
           <section id="text-mining-with-r">
-<h1>Text Mining with R<a class="headerlink" href="#text-mining-with-r" title="Permalink to this heading">¶</a></h1>
+<h1>Text Mining with R<a class="headerlink" href="#text-mining-with-r" title="Permalink to this heading">#</a></h1>
 <section id="setup">
-<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">¶</a></h2>
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h2>
 <section id="install-and-load-packages">
-<h3>Install and load packages<a class="headerlink" href="#install-and-load-packages" title="Permalink to this heading">¶</a></h3>
+<h3>Install and load packages<a class="headerlink" href="#install-and-load-packages" title="Permalink to this heading">#</a></h3>
 <p>We will be using several external libraries to do our text analysis.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"/><label class="tab-label" for="tab-set--0-input--1">R</label><div class="tab-content docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">"readtext"</span><span class="p">)</span>
-<span class="nf">install.packages</span><span class="p">(</span><span class="s">"quanteda"</span><span class="p">)</span>
-<span class="nf">install.packages</span><span class="p">(</span><span class="s">"quanteda.textmodels"</span><span class="p">)</span>
-<span class="nf">install.packages</span><span class="p">(</span><span class="s">"quanteda.textstats"</span><span class="p">)</span>
-<span class="nf">install.packages</span><span class="p">(</span><span class="s">"quanteda.textplots"</span><span class="p">)</span>
-<span class="nf">install.packages</span><span class="p">(</span><span class="s">"tidyverse"</span><span class="p">)</span>
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;readtext&quot;</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;quanteda&quot;</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;quanteda.textmodels&quot;</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;quanteda.textstats&quot;</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;quanteda.textplots&quot;</span><span class="p">)</span>
+<span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;tidyverse&quot;</span><span class="p">)</span>
 
 <span class="nf">library</span><span class="p">(</span><span class="n">readtext</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">quanteda</span><span class="p">)</span>
@@ -256,28 +264,28 @@
 </div>
 </section>
 <section id="import-data">
-<h3>Import data<a class="headerlink" href="#import-data" title="Permalink to this heading">¶</a></h3>
+<h3>Import data<a class="headerlink" href="#import-data" title="Permalink to this heading">#</a></h3>
 <p>We are going to analyze the State of the Union Addresses from 1934 to
 2020. First, set your working directory to the location of your files.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"/><label class="tab-label" for="tab-set--1-input--1">R</label><div class="tab-content docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">setwd</span><span class="p">(</span><span class="s">'~/Documents/Workshops/TM2023/'</span><span class="p">)</span><span class="w"> </span><span class="c1"># replace with the appropriate directory</span>
-<span class="n">sotu</span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">readtext </span><span class="p">(</span><span class="s">"texts"</span><span class="p">)</span>
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">setwd</span><span class="p">(</span><span class="s">&#39;~/Documents/Workshops/TM2023/&#39;</span><span class="p">)</span><span class="w"> </span><span class="c1"># replace with the appropriate directory</span>
+<span class="n">sotu</span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">readtext </span><span class="p">(</span><span class="s">&quot;texts&quot;</span><span class="p">)</span>
 <span class="n">sotu</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"/><label class="tab-label" for="tab-set--1-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>readtext object consisting of 96 documents and 0 docvars.
 # Description: df [96 × 2]
 doc_id                text
 &lt;chr&gt;                 &lt;chr&gt;
-1 barack-obama-2009.txt "\"Madam Spea\"..."
-2 barack-obama-2010.txt "\"Madam Spea\"..."
-3 barack-obama-2011.txt "\"Mr. Speake\"..."
-4 barack-obama-2012.txt "\"Mr. Speake\"..."
-5 barack-obama-2013.txt "\"Please, ev\"..."
-6 barack-obama-2014.txt "\"The Presid\"..."
+1 barack-obama-2009.txt &quot;\&quot;Madam Spea\&quot;...&quot;
+2 barack-obama-2010.txt &quot;\&quot;Madam Spea\&quot;...&quot;
+3 barack-obama-2011.txt &quot;\&quot;Mr. Speake\&quot;...&quot;
+4 barack-obama-2012.txt &quot;\&quot;Mr. Speake\&quot;...&quot;
+5 barack-obama-2013.txt &quot;\&quot;Please, ev\&quot;...&quot;
+6 barack-obama-2014.txt &quot;\&quot;The Presid\&quot;...&quot;
 # … with 90 more rows
 </pre></div>
 </div>
@@ -286,35 +294,35 @@ doc_id                text
 </section>
 </section>
 <section id="create-a-corpus">
-<h2>Create a corpus<a class="headerlink" href="#create-a-corpus" title="Permalink to this heading">¶</a></h2>
+<h2>Create a corpus<a class="headerlink" href="#create-a-corpus" title="Permalink to this heading">#</a></h2>
 <p>A corpus is a structure for text analysis that retains the position of
 the words.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"/><label class="tab-label" for="tab-set--2-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sotu_corp</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">corpus</span><span class="p">(</span><span class="n">sotu</span><span class="p">)</span>
 <span class="n">sotu_corp</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"/><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Corpus consisting of 96 documents.
 barack-obama-2009.txt :
-"Madam Speaker, Mr. Vice President, Members of Congress, the ..."
+&quot;Madam Speaker, Mr. Vice President, Members of Congress, the ...&quot;
 
 barack-obama-2010.txt :
-"Madam Speaker, Vice President Biden, Members of Congress, di..."
+&quot;Madam Speaker, Vice President Biden, Members of Congress, di...&quot;
 
 barack-obama-2011.txt :
-"Mr. Speaker, Mr. Vice President, Members of Congress, distin..."
+&quot;Mr. Speaker, Mr. Vice President, Members of Congress, distin...&quot;
 
 barack-obama-2012.txt :
-"Mr. Speaker, Mr. Vice President, Members of Congress, distin..."
+&quot;Mr. Speaker, Mr. Vice President, Members of Congress, distin...&quot;
 
 barack-obama-2013.txt :
-"Please, everybody, have a seat. Mr. Speaker, Mr. Vice Presid..."
+&quot;Please, everybody, have a seat. Mr. Speaker, Mr. Vice Presid...&quot;
 
 barack-obama-2014.txt :
-"The President. Mr. Speaker, Mr. Vice President, Members of C..."
+&quot;The President. Mr. Speaker, Mr. Vice President, Members of C...&quot;
 
 [ reached max_ndoc ... 90 more documents ]
 </pre></div>
@@ -323,83 +331,83 @@ barack-obama-2014.txt :
 </div>
 <p>Let’s take a look at a few statistics describing the corpus.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"/><label class="tab-label" for="tab-set--9-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ndoc</span><span class="p">(</span><span class="n">sotu_corp</span><span class="p">)</span><span class="w"> </span><span class="c1"># document count</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--9-input--2" name="tab-set--9" type="radio"/><label class="tab-label" for="tab-set--9-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--9-input--2" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[1] 96
 </pre></div>
 </div>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"/><label class="tab-label" for="tab-set--8-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">docnames</span><span class="p">(</span><span class="n">sotu_corp</span><span class="p">)</span><span class="w"> </span><span class="c1"># unique document identifiers</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--8-input--2" name="tab-set--8" type="radio"/><label class="tab-label" for="tab-set--8-input--2">Output</label><div class="tab-content docutils container">
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> [1] "barack-obama-2009.txt"          "barack-obama-2010.txt"
- [3] "barack-obama-2011.txt"          "barack-obama-2012.txt"
- [5] "barack-obama-2013.txt"          "barack-obama-2014.txt"
- [7] "barack-obama-2015.txt"          "barack-obama-2016.txt"
- [9] "donald-trump-2017.txt"          "donald-trump-2018.txt"
-[11] "donald-trump-2019.txt"          "donald-trump-2020.txt"
-[13] "dwight-d-eisenhower-1953.txt"   "dwight-d-eisenhower-1954.txt"
-[15] "dwight-d-eisenhower-1955.txt"   "dwight-d-eisenhower-1956a.txt"
-[17] "dwight-d-eisenhower-1956b.txt"  "dwight-d-eisenhower-1957.txt"
-[19] "dwight-d-eisenhower-1958.txt"   "dwight-d-eisenhower-1959.txt"
-[21] "dwight-d-eisenhower-1960.txt"   "dwight-d-eisenhower-1961.txt"
-[23] "franklin-d-roosevelt-1934.txt"  "franklin-d-roosevelt-1935.txt"
-[25] "franklin-d-roosevelt-1936.txt"  "franklin-d-roosevelt-1937.txt"
-[27] "franklin-d-roosevelt-1938.txt"  "franklin-d-roosevelt-1939.txt"
-[29] "franklin-d-roosevelt-1940.txt"  "franklin-d-roosevelt-1941.txt"
-[31] "franklin-d-roosevelt-1942.txt"  "franklin-d-roosevelt-1943.txt"
-[33] "franklin-d-roosevelt-1944.txt"  "franklin-d-roosevelt-1945a.txt"
-[35] "franklin-d-roosevelt-1945b.txt" "george-bush-1989.txt"
-[37] "george-bush-1990.txt"           "george-bush-1991.txt"
-[39] "george-bush-1992.txt"           "george-w-bush-2001.txt"
-[41] "george-w-bush-2002.txt"         "george-w-bush-2003.txt"
-[43] "george-w-bush-2004.txt"         "george-w-bush-2005.txt"
-[45] "george-w-bush-2006.txt"         "george-w-bush-2007.txt"
-[47] "george-w-bush-2008.txt"         "gerald-r-ford-1975.txt"
-[49] "gerald-r-ford-1976.txt"         "gerald-r-ford-1977.txt"
-[51] "harry-s-truman-1946.txt"        "harry-s-truman-1947.txt"
-[53] "harry-s-truman-1948.txt"        "harry-s-truman-1949.txt"
-[55] "harry-s-truman-1950.txt"        "harry-s-truman-1951.txt"
-[57] "harry-s-truman-1952.txt"        "harry-s-truman-1953.txt"
-[59] "jimmy-carter-1978a.txt"         "jimmy-carter-1978b.txt"
-[61] "jimmy-carter-1979a.txt"         "jimmy-carter-1979b.txt"
-[63] "jimmy-carter-1980a.txt"         "jimmy-carter-1980b.txt"
-[65] "jimmy-carter-1981.txt"          "john-f-kennedy-1961.txt"
-[67] "john-f-kennedy-1962.txt"        "john-f-kennedy-1963.txt"
-[69] "lyndon-b-johnson-1964.txt"      "lyndon-b-johnson-1965.txt"
-[71] "lyndon-b-johnson-1966.txt"      "lyndon-b-johnson-1967.txt"
-[73] "lyndon-b-johnson-1968.txt"      "lyndon-b-johnson-1969.txt"
-[75] "richard-m-nixon-1970.txt"       "richard-m-nixon-1971.txt"
-[77] "richard-m-nixon-1972a.txt"      "richard-m-nixon-1972b.txt"
-[79] "richard-m-nixon-1974a.txt"      "richard-m-nixon-1974b.txt"
-[81] "ronald-reagan-1981.txt"         "ronald-reagan-1982.txt"
-[83] "ronald-reagan-1983.txt"         "ronald-reagan-1984.txt"
-[85] "ronald-reagan-1985.txt"         "ronald-reagan-1986.txt"
-[87] "ronald-reagan-1987.txt"         "ronald-reagan-1988.txt"
-[89] "william-j-clinton-1993.txt"     "william-j-clinton-1994.txt"
-[91] "william-j-clinton-1995.txt"     "william-j-clinton-1996.txt"
-[93] "william-j-clinton-1997.txt"     "william-j-clinton-1998.txt"
-[95] "william-j-clinton-1999.txt"     "william-j-clinton-2000.txt"
+<input class="tab-input" id="tab-set--8-input--2" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> [1] &quot;barack-obama-2009.txt&quot;          &quot;barack-obama-2010.txt&quot;
+ [3] &quot;barack-obama-2011.txt&quot;          &quot;barack-obama-2012.txt&quot;
+ [5] &quot;barack-obama-2013.txt&quot;          &quot;barack-obama-2014.txt&quot;
+ [7] &quot;barack-obama-2015.txt&quot;          &quot;barack-obama-2016.txt&quot;
+ [9] &quot;donald-trump-2017.txt&quot;          &quot;donald-trump-2018.txt&quot;
+[11] &quot;donald-trump-2019.txt&quot;          &quot;donald-trump-2020.txt&quot;
+[13] &quot;dwight-d-eisenhower-1953.txt&quot;   &quot;dwight-d-eisenhower-1954.txt&quot;
+[15] &quot;dwight-d-eisenhower-1955.txt&quot;   &quot;dwight-d-eisenhower-1956a.txt&quot;
+[17] &quot;dwight-d-eisenhower-1956b.txt&quot;  &quot;dwight-d-eisenhower-1957.txt&quot;
+[19] &quot;dwight-d-eisenhower-1958.txt&quot;   &quot;dwight-d-eisenhower-1959.txt&quot;
+[21] &quot;dwight-d-eisenhower-1960.txt&quot;   &quot;dwight-d-eisenhower-1961.txt&quot;
+[23] &quot;franklin-d-roosevelt-1934.txt&quot;  &quot;franklin-d-roosevelt-1935.txt&quot;
+[25] &quot;franklin-d-roosevelt-1936.txt&quot;  &quot;franklin-d-roosevelt-1937.txt&quot;
+[27] &quot;franklin-d-roosevelt-1938.txt&quot;  &quot;franklin-d-roosevelt-1939.txt&quot;
+[29] &quot;franklin-d-roosevelt-1940.txt&quot;  &quot;franklin-d-roosevelt-1941.txt&quot;
+[31] &quot;franklin-d-roosevelt-1942.txt&quot;  &quot;franklin-d-roosevelt-1943.txt&quot;
+[33] &quot;franklin-d-roosevelt-1944.txt&quot;  &quot;franklin-d-roosevelt-1945a.txt&quot;
+[35] &quot;franklin-d-roosevelt-1945b.txt&quot; &quot;george-bush-1989.txt&quot;
+[37] &quot;george-bush-1990.txt&quot;           &quot;george-bush-1991.txt&quot;
+[39] &quot;george-bush-1992.txt&quot;           &quot;george-w-bush-2001.txt&quot;
+[41] &quot;george-w-bush-2002.txt&quot;         &quot;george-w-bush-2003.txt&quot;
+[43] &quot;george-w-bush-2004.txt&quot;         &quot;george-w-bush-2005.txt&quot;
+[45] &quot;george-w-bush-2006.txt&quot;         &quot;george-w-bush-2007.txt&quot;
+[47] &quot;george-w-bush-2008.txt&quot;         &quot;gerald-r-ford-1975.txt&quot;
+[49] &quot;gerald-r-ford-1976.txt&quot;         &quot;gerald-r-ford-1977.txt&quot;
+[51] &quot;harry-s-truman-1946.txt&quot;        &quot;harry-s-truman-1947.txt&quot;
+[53] &quot;harry-s-truman-1948.txt&quot;        &quot;harry-s-truman-1949.txt&quot;
+[55] &quot;harry-s-truman-1950.txt&quot;        &quot;harry-s-truman-1951.txt&quot;
+[57] &quot;harry-s-truman-1952.txt&quot;        &quot;harry-s-truman-1953.txt&quot;
+[59] &quot;jimmy-carter-1978a.txt&quot;         &quot;jimmy-carter-1978b.txt&quot;
+[61] &quot;jimmy-carter-1979a.txt&quot;         &quot;jimmy-carter-1979b.txt&quot;
+[63] &quot;jimmy-carter-1980a.txt&quot;         &quot;jimmy-carter-1980b.txt&quot;
+[65] &quot;jimmy-carter-1981.txt&quot;          &quot;john-f-kennedy-1961.txt&quot;
+[67] &quot;john-f-kennedy-1962.txt&quot;        &quot;john-f-kennedy-1963.txt&quot;
+[69] &quot;lyndon-b-johnson-1964.txt&quot;      &quot;lyndon-b-johnson-1965.txt&quot;
+[71] &quot;lyndon-b-johnson-1966.txt&quot;      &quot;lyndon-b-johnson-1967.txt&quot;
+[73] &quot;lyndon-b-johnson-1968.txt&quot;      &quot;lyndon-b-johnson-1969.txt&quot;
+[75] &quot;richard-m-nixon-1970.txt&quot;       &quot;richard-m-nixon-1971.txt&quot;
+[77] &quot;richard-m-nixon-1972a.txt&quot;      &quot;richard-m-nixon-1972b.txt&quot;
+[79] &quot;richard-m-nixon-1974a.txt&quot;      &quot;richard-m-nixon-1974b.txt&quot;
+[81] &quot;ronald-reagan-1981.txt&quot;         &quot;ronald-reagan-1982.txt&quot;
+[83] &quot;ronald-reagan-1983.txt&quot;         &quot;ronald-reagan-1984.txt&quot;
+[85] &quot;ronald-reagan-1985.txt&quot;         &quot;ronald-reagan-1986.txt&quot;
+[87] &quot;ronald-reagan-1987.txt&quot;         &quot;ronald-reagan-1988.txt&quot;
+[89] &quot;william-j-clinton-1993.txt&quot;     &quot;william-j-clinton-1994.txt&quot;
+[91] &quot;william-j-clinton-1995.txt&quot;     &quot;william-j-clinton-1996.txt&quot;
+[93] &quot;william-j-clinton-1997.txt&quot;     &quot;william-j-clinton-1998.txt&quot;
+[95] &quot;william-j-clinton-1999.txt&quot;     &quot;william-j-clinton-2000.txt&quot;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"/><label class="tab-label" for="tab-set--7-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ntoken</span><span class="p">(</span><span class="n">sotu_corp</span><span class="p">)</span><span class="w"> </span><span class="c1"># tokens in each document</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--7-input--2" name="tab-set--7" type="radio"/><label class="tab-label" for="tab-set--7-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--7-input--2" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>         barack-obama-2009.txt          barack-obama-2010.txt
                           6743                           8151
          barack-obama-2011.txt          barack-obama-2012.txt
@@ -501,12 +509,12 @@ franklin-d-roosevelt-1945b.txt           george-bush-1989.txt
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"/><label class="tab-label" for="tab-set--6-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ntype</span><span class="p">(</span><span class="n">sotu_corp</span><span class="p">)</span><span class="w"> </span><span class="c1"># types (unique tokens) in each document</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio"/><label class="tab-label" for="tab-set--6-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>         barack-obama-2009.txt          barack-obama-2010.txt
                           1587                           1844
          barack-obama-2011.txt          barack-obama-2012.txt
@@ -608,12 +616,12 @@ franklin-d-roosevelt-1945b.txt           george-bush-1989.txt
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"/><label class="tab-label" for="tab-set--5-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">nsentence</span><span class="p">(</span><span class="n">sotu_corp</span><span class="p">)</span><span class="w"> </span><span class="c1"># sentences in each document</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio"/><label class="tab-label" for="tab-set--5-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>         barack-obama-2009.txt          barack-obama-2010.txt
                            286                            419
          barack-obama-2011.txt          barack-obama-2012.txt
@@ -715,12 +723,12 @@ franklin-d-roosevelt-1945b.txt           george-bush-1989.txt
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"/><label class="tab-label" for="tab-set--4-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">sotu_corp</span><span class="p">)</span><span class="c1"># to get types, tokens, sentences</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio"/><label class="tab-label" for="tab-set--4-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  Corpus consisting of 96 documents, showing 96 documents:
 
                           Text Types Tokens Sentences
@@ -825,12 +833,12 @@ franklin-d-roosevelt-1945b.txt  2084   8895       338
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"/><label class="tab-label" for="tab-set--3-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">sotu_corp</span><span class="p">,</span><span class="m">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"/><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Corpus consisting of 96 documents, showing 5 documents:
 
                  Text Types Tokens Sentences
@@ -845,14 +853,14 @@ barack-obama-2013.txt  1865   7580       361
 </div>
 </section>
 <section id="tokenize-the-corpus">
-<h2>Tokenize the corpus<a class="headerlink" href="#tokenize-the-corpus" title="Permalink to this heading">¶</a></h2>
+<h2>Tokenize the corpus<a class="headerlink" href="#tokenize-the-corpus" title="Permalink to this heading">#</a></h2>
 <p>The next step is tokenization, where we break down text into individual
 tokens: words, characters, and symbols. Here, we do remove numbers,
 punctuation, and symbols first.</p>
 <p>Finally, we convert the tokens to lowercase and visualize the first
 tokens of the first document.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio"/><label class="tab-label" for="tab-set--11-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sotu_toks</span><span class="w"> </span><span class="o">&lt;-</span><span class="nf">tokens</span><span class="p">(</span><span class="n">sotu_corp</span><span class="p">)</span><span class="c1"># It removes separators (whitespaces)but we can remove numbers,punctuation, symbols</span>
 
 <span class="n">sotu_toks</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">tokens</span><span class="p">(</span><span class="n">sotu_corp</span><span class="p">,</span><span class="w"> </span><span class="n">remove_punct</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
@@ -860,39 +868,39 @@ tokens of the first document.</p>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--11-input--2" name="tab-set--11" type="radio"/><label class="tab-label" for="tab-set--11-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--11-input--2" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Tokens consisting of 96 documents.
 barack-obama-2009.txt :
- [1] "Madam"     "Speaker"   "Mr"        "Vice"      "President" "Members"
- [7] "of"        "Congress"  "the"       "First"     "Lady"      "of"
+ [1] &quot;Madam&quot;     &quot;Speaker&quot;   &quot;Mr&quot;        &quot;Vice&quot;      &quot;President&quot; &quot;Members&quot;
+ [7] &quot;of&quot;        &quot;Congress&quot;  &quot;the&quot;       &quot;First&quot;     &quot;Lady&quot;      &quot;of&quot;
 [ ... and 6,028 more ]
 
 barack-obama-2010.txt :
- [1] "Madam"         "Speaker"       "Vice"          "President"
- [5] "Biden"         "Members"       "of"            "Congress"
- [9] "distinguished" "guests"        "and"           "fellow"
+ [1] &quot;Madam&quot;         &quot;Speaker&quot;       &quot;Vice&quot;          &quot;President&quot;
+ [5] &quot;Biden&quot;         &quot;Members&quot;       &quot;of&quot;            &quot;Congress&quot;
+ [9] &quot;distinguished&quot; &quot;guests&quot;        &quot;and&quot;           &quot;fellow&quot;
 [ ... and 7,172 more ]
 
 barack-obama-2011.txt :
- [1] "Mr"            "Speaker"       "Mr"            "Vice"
- [5] "President"     "Members"       "of"            "Congress"
- [9] "distinguished" "guests"        "and"           "fellow"
+ [1] &quot;Mr&quot;            &quot;Speaker&quot;       &quot;Mr&quot;            &quot;Vice&quot;
+ [5] &quot;President&quot;     &quot;Members&quot;       &quot;of&quot;            &quot;Congress&quot;
+ [9] &quot;distinguished&quot; &quot;guests&quot;        &quot;and&quot;           &quot;fellow&quot;
 [ ... and 6,823 more ]
 
 barack-obama-2012.txt :
- [1] "Mr"            "Speaker"       "Mr"            "Vice"
- [5] "President"     "Members"       "of"            "Congress"
- [9] "distinguished" "guests"        "and"           "fellow"
+ [1] &quot;Mr&quot;            &quot;Speaker&quot;       &quot;Mr&quot;            &quot;Vice&quot;
+ [5] &quot;President&quot;     &quot;Members&quot;       &quot;of&quot;            &quot;Congress&quot;
+ [9] &quot;distinguished&quot; &quot;guests&quot;        &quot;and&quot;           &quot;fellow&quot;
 [ ... and 6,975 more ]
 
 barack-obama-2013.txt :
- [1] "Please"    "everybody" "have"      "a"         "seat"      "Mr"
- [7] "Speaker"   "Mr"        "Vice"      "President" "Members"   "of"
+ [1] &quot;Please&quot;    &quot;everybody&quot; &quot;have&quot;      &quot;a&quot;         &quot;seat&quot;      &quot;Mr&quot;
+ [7] &quot;Speaker&quot;   &quot;Mr&quot;        &quot;Vice&quot;      &quot;President&quot; &quot;Members&quot;   &quot;of&quot;
 [ ... and 6,736 more ]
 
 barack-obama-2014.txt :
- [1] "The"       "President" "Mr"        "Speaker"   "Mr"        "Vice"
- [7] "President" "Members"   "of"        "Congress"  "my"        "fellow"
+ [1] &quot;The&quot;       &quot;President&quot; &quot;Mr&quot;        &quot;Speaker&quot;   &quot;Mr&quot;        &quot;Vice&quot;
+ [7] &quot;President&quot; &quot;Members&quot;   &quot;of&quot;        &quot;Congress&quot;  &quot;my&quot;        &quot;fellow&quot;
 [ ... and 6,945 more ]
 
 [ reached max_ndoc ... 90 more documents ]
@@ -901,37 +909,37 @@ barack-obama-2014.txt :
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio"/><label class="tab-label" for="tab-set--10-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sotu_toks</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">tokens_tolower</span><span class="p">(</span><span class="n">sotu_toks</span><span class="p">)</span>
 
 <span class="n">sotu_toks</span><span class="w"> </span><span class="p">[[</span><span class="m">1</span><span class="p">]][</span><span class="m">1</span><span class="o">:</span><span class="m">20</span><span class="p">]</span><span class="c1"># first 20 tokens of document 1</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--10-input--2" name="tab-set--10" type="radio"/><label class="tab-label" for="tab-set--10-input--2">Output</label><div class="tab-content docutils container">
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> [1] "madam"     "speaker"   "mr"        "vice"      "president"
- [6] "members"   "of"        "congress"  "the"       "first"
-[11] "lady"      "of"        "the"       "united"    "states"
-[16] "she's"     "around"    "here"      "somewhere" "i"
+<input class="tab-input" id="tab-set--10-input--2" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> [1] &quot;madam&quot;     &quot;speaker&quot;   &quot;mr&quot;        &quot;vice&quot;      &quot;president&quot;
+ [6] &quot;members&quot;   &quot;of&quot;        &quot;congress&quot;  &quot;the&quot;       &quot;first&quot;
+[11] &quot;lady&quot;      &quot;of&quot;        &quot;the&quot;       &quot;united&quot;    &quot;states&quot;
+[16] &quot;she&#39;s&quot;     &quot;around&quot;    &quot;here&quot;      &quot;somewhere&quot; &quot;i&quot;
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="keywords-in-context">
-<h2>Keywords in context<a class="headerlink" href="#keywords-in-context" title="Permalink to this heading">¶</a></h2>
+<h2>Keywords in context<a class="headerlink" href="#keywords-in-context" title="Permalink to this heading">#</a></h2>
 <p>To examine how a word is used in a wider context, we can search for keywords in context.
 <code class="docutils literal notranslate"><span class="pre">kwic()</span></code> allows you to identify a keyword of interest, and see a number of words before and after it.
 We can specify the number of context words to be displayed with the argument <code class="docutils literal notranslate"><span class="pre">window</span></code>.</p>
 <p>The argument pattern also takes a wild card (<code class="docutils literal notranslate"><span class="pre">*</span></code>) and multiple keywords in a character vector.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio"/><label class="tab-label" for="tab-set--12-input--1">R</label><div class="tab-content docutils container">
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">kw_health</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">kwic</span><span class="p">(</span><span class="n">sotu_toks</span><span class="p">,</span><span class="w"> </span><span class="n">pattern</span><span class="o">=</span><span class="s">"health*"</span><span class="p">,</span><span class="w"> </span><span class="n">window</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">)</span>
+<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">kw_health</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">kwic</span><span class="p">(</span><span class="n">sotu_toks</span><span class="p">,</span><span class="w"> </span><span class="n">pattern</span><span class="o">=</span><span class="s">&quot;health*&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">window</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">)</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">kw_health</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--12-input--2" name="tab-set--12" type="radio"/><label class="tab-label" for="tab-set--12-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--12-input--2" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Keyword-in-context with 6 matches.
  [barack-obama-2009.txt, 448]
  [barack-obama-2009.txt, 585]
@@ -948,24 +956,24 @@ We can specify the number of context words to be displayed with the argument <co
                         of our dependence on oil and the high cost of | health  |
 
 care eats up more and more of our savings each
-market people bought homes they knew they couldn't afford from
+market people bought homes they knew they couldn&#39;t afford from
 care and education that will grow our economy even as
 care professionals can continue caring for our sick there are
 care coverage to help them weather this storm now i
-care the schools that aren't preparing our children and the
+care the schools that aren&#39;t preparing our children and the
 </pre></div>
 </div>
 </div>
 </div>
 <p>Using a vector, we can search for multiple patterns at once.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio"/><label class="tab-label" for="tab-set--13-input--1">R</label><div class="tab-content docutils container">
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">kw_health2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">kwic</span><span class="p">(</span><span class="n">sotu_toks</span><span class="p">,</span><span class="w"> </span><span class="n">pattern</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">"health*"</span><span class="p">,</span><span class="s">"care"</span><span class="p">),</span><span class="w"> </span><span class="n">window</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">)</span>
+<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">kw_health2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">kwic</span><span class="p">(</span><span class="n">sotu_toks</span><span class="p">,</span><span class="w"> </span><span class="n">pattern</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;health*&quot;</span><span class="p">,</span><span class="s">&quot;care&quot;</span><span class="p">),</span><span class="w"> </span><span class="n">window</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">)</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">kw_health2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--13-input--2" name="tab-set--13" type="radio"/><label class="tab-label" for="tab-set--13-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--13-input--2" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Keyword-in-context with 6 matches.
 [barack-obama-2009.txt, 448]
 [barack-obama-2009.txt, 449]
@@ -984,7 +992,7 @@ creation restart lending and invest in areas like energy health |  care   |
 
 care eats up more and more of our savings each
 eats up more and more of our savings each year
-market people bought homes they knew they couldn't afford from
+market people bought homes they knew they couldn&#39;t afford from
 care and education that will grow our economy even as
 and education that will grow our economy even as we
 care professionals can continue caring for our sick there are
@@ -994,106 +1002,106 @@ care professionals can continue caring for our sick there are
 </div>
 <p>We can also search for multi-word expressions.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio"/><label class="tab-label" for="tab-set--14-input--1">R</label><div class="tab-content docutils container">
-<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">kw_healthcare</span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">kwic</span><span class="p">(</span><span class="n">sotu_toks</span><span class="p">,</span><span class="w"> </span><span class="n">pattern</span><span class="o">=</span><span class="nf">phrase</span><span class="p">(</span><span class="s">"health care"</span><span class="p">))</span>
+<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-R notranslate"><div class="highlight"><pre><span></span><span class="n">kw_healthcare</span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">kwic</span><span class="p">(</span><span class="n">sotu_toks</span><span class="p">,</span><span class="w"> </span><span class="n">pattern</span><span class="o">=</span><span class="nf">phrase</span><span class="p">(</span><span class="s">&quot;health care&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="select-tokens">
-<h2>Select tokens<a class="headerlink" href="#select-tokens" title="Permalink to this heading">¶</a></h2>
+<h2>Select tokens<a class="headerlink" href="#select-tokens" title="Permalink to this heading">#</a></h2>
 <p>We also remove stopwords, which are words that are not particularly
 useful for understanding the meaning of the text, like “an”, “have”, and
 “about”. The command for this is <code class="docutils literal notranslate"><span class="pre">tokens_select()</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio"/><label class="tab-label" for="tab-set--16-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sotu_toks_nostop</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">tokens_select</span><span class="p">(</span><span class="n">sotu_toks</span><span class="p">,</span>
-<span class="w">                                  </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">stopwords</span><span class="p">(</span><span class="s">"english"</span><span class="p">),</span>
-<span class="w">                                  </span><span class="n">selection</span><span class="o">=</span><span class="s">"remove"</span><span class="p">)</span>
-<span class="nf">stopwords</span><span class="p">(</span><span class="s">"english"</span><span class="p">)</span>
+<span class="w">                                  </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">stopwords</span><span class="p">(</span><span class="s">&quot;english&quot;</span><span class="p">),</span>
+<span class="w">                                  </span><span class="n">selection</span><span class="o">=</span><span class="s">&quot;remove&quot;</span><span class="p">)</span>
+<span class="nf">stopwords</span><span class="p">(</span><span class="s">&quot;english&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--16-input--2" name="tab-set--16" type="radio"/><label class="tab-label" for="tab-set--16-input--2">Output</label><div class="tab-content docutils container">
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  [1] "i"          "me"         "my"         "myself"     "we"
-  [6] "our"        "ours"       "ourselves"  "you"        "your"
- [11] "yours"      "yourself"   "yourselves" "he"         "him"
- [16] "his"        "himself"    "she"        "her"        "hers"
- [21] "herself"    "it"         "its"        "itself"     "they"
- [26] "them"       "their"      "theirs"     "themselves" "what"
- [31] "which"      "who"        "whom"       "this"       "that"
- [36] "these"      "those"      "am"         "is"         "are"
- [41] "was"        "were"       "be"         "been"       "being"
- [46] "have"       "has"        "had"        "having"     "do"
- [51] "does"       "did"        "doing"      "would"      "should"
- [56] "could"      "ought"      "i'm"        "you're"     "he's"
- [61] "she's"      "it's"       "we're"      "they're"    "i've"
- [66] "you've"     "we've"      "they've"    "i'd"        "you'd"
- [71] "he'd"       "she'd"      "we'd"       "they'd"     "i'll"
- [76] "you'll"     "he'll"      "she'll"     "we'll"      "they'll"
- [81] "isn't"      "aren't"     "wasn't"     "weren't"    "hasn't"
- [86] "haven't"    "hadn't"     "doesn't"    "don't"      "didn't"
- [91] "won't"      "wouldn't"   "shan't"     "shouldn't"  "can't"
- [96] "cannot"     "couldn't"   "mustn't"    "let's"      "that's"
-[101] "who's"      "what's"     "here's"     "there's"    "when's"
-[106] "where's"    "why's"      "how's"      "a"          "an"
-[111] "the"        "and"        "but"        "if"         "or"
-[116] "because"    "as"         "until"      "while"      "of"
-[121] "at"         "by"         "for"        "with"       "about"
-[126] "against"    "between"    "into"       "through"    "during"
-[131] "before"     "after"      "above"      "below"      "to"
-[136] "from"       "up"         "down"       "in"         "out"
-[141] "on"         "off"        "over"       "under"      "again"
-[146] "further"    "then"       "once"       "here"       "there"
-[151] "when"       "where"      "why"        "how"        "all"
-[156] "any"        "both"       "each"       "few"        "more"
-[161] "most"       "other"      "some"       "such"       "no"
-[166] "nor"        "not"        "only"       "own"        "same"
-[171] "so"         "than"       "too"        "very"       "will"
+<input class="tab-input" id="tab-set--16-input--2" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  [1] &quot;i&quot;          &quot;me&quot;         &quot;my&quot;         &quot;myself&quot;     &quot;we&quot;
+  [6] &quot;our&quot;        &quot;ours&quot;       &quot;ourselves&quot;  &quot;you&quot;        &quot;your&quot;
+ [11] &quot;yours&quot;      &quot;yourself&quot;   &quot;yourselves&quot; &quot;he&quot;         &quot;him&quot;
+ [16] &quot;his&quot;        &quot;himself&quot;    &quot;she&quot;        &quot;her&quot;        &quot;hers&quot;
+ [21] &quot;herself&quot;    &quot;it&quot;         &quot;its&quot;        &quot;itself&quot;     &quot;they&quot;
+ [26] &quot;them&quot;       &quot;their&quot;      &quot;theirs&quot;     &quot;themselves&quot; &quot;what&quot;
+ [31] &quot;which&quot;      &quot;who&quot;        &quot;whom&quot;       &quot;this&quot;       &quot;that&quot;
+ [36] &quot;these&quot;      &quot;those&quot;      &quot;am&quot;         &quot;is&quot;         &quot;are&quot;
+ [41] &quot;was&quot;        &quot;were&quot;       &quot;be&quot;         &quot;been&quot;       &quot;being&quot;
+ [46] &quot;have&quot;       &quot;has&quot;        &quot;had&quot;        &quot;having&quot;     &quot;do&quot;
+ [51] &quot;does&quot;       &quot;did&quot;        &quot;doing&quot;      &quot;would&quot;      &quot;should&quot;
+ [56] &quot;could&quot;      &quot;ought&quot;      &quot;i&#39;m&quot;        &quot;you&#39;re&quot;     &quot;he&#39;s&quot;
+ [61] &quot;she&#39;s&quot;      &quot;it&#39;s&quot;       &quot;we&#39;re&quot;      &quot;they&#39;re&quot;    &quot;i&#39;ve&quot;
+ [66] &quot;you&#39;ve&quot;     &quot;we&#39;ve&quot;      &quot;they&#39;ve&quot;    &quot;i&#39;d&quot;        &quot;you&#39;d&quot;
+ [71] &quot;he&#39;d&quot;       &quot;she&#39;d&quot;      &quot;we&#39;d&quot;       &quot;they&#39;d&quot;     &quot;i&#39;ll&quot;
+ [76] &quot;you&#39;ll&quot;     &quot;he&#39;ll&quot;      &quot;she&#39;ll&quot;     &quot;we&#39;ll&quot;      &quot;they&#39;ll&quot;
+ [81] &quot;isn&#39;t&quot;      &quot;aren&#39;t&quot;     &quot;wasn&#39;t&quot;     &quot;weren&#39;t&quot;    &quot;hasn&#39;t&quot;
+ [86] &quot;haven&#39;t&quot;    &quot;hadn&#39;t&quot;     &quot;doesn&#39;t&quot;    &quot;don&#39;t&quot;      &quot;didn&#39;t&quot;
+ [91] &quot;won&#39;t&quot;      &quot;wouldn&#39;t&quot;   &quot;shan&#39;t&quot;     &quot;shouldn&#39;t&quot;  &quot;can&#39;t&quot;
+ [96] &quot;cannot&quot;     &quot;couldn&#39;t&quot;   &quot;mustn&#39;t&quot;    &quot;let&#39;s&quot;      &quot;that&#39;s&quot;
+[101] &quot;who&#39;s&quot;      &quot;what&#39;s&quot;     &quot;here&#39;s&quot;     &quot;there&#39;s&quot;    &quot;when&#39;s&quot;
+[106] &quot;where&#39;s&quot;    &quot;why&#39;s&quot;      &quot;how&#39;s&quot;      &quot;a&quot;          &quot;an&quot;
+[111] &quot;the&quot;        &quot;and&quot;        &quot;but&quot;        &quot;if&quot;         &quot;or&quot;
+[116] &quot;because&quot;    &quot;as&quot;         &quot;until&quot;      &quot;while&quot;      &quot;of&quot;
+[121] &quot;at&quot;         &quot;by&quot;         &quot;for&quot;        &quot;with&quot;       &quot;about&quot;
+[126] &quot;against&quot;    &quot;between&quot;    &quot;into&quot;       &quot;through&quot;    &quot;during&quot;
+[131] &quot;before&quot;     &quot;after&quot;      &quot;above&quot;      &quot;below&quot;      &quot;to&quot;
+[136] &quot;from&quot;       &quot;up&quot;         &quot;down&quot;       &quot;in&quot;         &quot;out&quot;
+[141] &quot;on&quot;         &quot;off&quot;        &quot;over&quot;       &quot;under&quot;      &quot;again&quot;
+[146] &quot;further&quot;    &quot;then&quot;       &quot;once&quot;       &quot;here&quot;       &quot;there&quot;
+[151] &quot;when&quot;       &quot;where&quot;      &quot;why&quot;        &quot;how&quot;        &quot;all&quot;
+[156] &quot;any&quot;        &quot;both&quot;       &quot;each&quot;       &quot;few&quot;        &quot;more&quot;
+[161] &quot;most&quot;       &quot;other&quot;      &quot;some&quot;       &quot;such&quot;       &quot;no&quot;
+[166] &quot;nor&quot;        &quot;not&quot;        &quot;only&quot;       &quot;own&quot;        &quot;same&quot;
+[171] &quot;so&quot;         &quot;than&quot;       &quot;too&quot;        &quot;very&quot;       &quot;will&quot;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio"/><label class="tab-label" for="tab-set--15-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio"><label class="tab-label" for="tab-set--15-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sotu_toks_nostop</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--15-input--2" name="tab-set--15" type="radio"/><label class="tab-label" for="tab-set--15-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--15-input--2" name="tab-set--15" type="radio"><label class="tab-label" for="tab-set--15-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Tokens consisting of 96 documents.
 barack-obama-2009.txt :
- [1] "madam"     "speaker"   "mr"        "vice"      "president" "members"   "congress"
- [8] "first"     "lady"      "united"    "states"    "around"
+ [1] &quot;madam&quot;     &quot;speaker&quot;   &quot;mr&quot;        &quot;vice&quot;      &quot;president&quot; &quot;members&quot;   &quot;congress&quot;
+ [8] &quot;first&quot;     &quot;lady&quot;      &quot;united&quot;    &quot;states&quot;    &quot;around&quot;
 [ ... and 3,000 more ]
 
 barack-obama-2010.txt :
- [1] "madam"         "speaker"       "vice"          "president"     "biden"
- [6] "members"       "congress"      "distinguished" "guests"        "fellow"
-[11] "americans"     "constitution"
+ [1] &quot;madam&quot;         &quot;speaker&quot;       &quot;vice&quot;          &quot;president&quot;     &quot;biden&quot;
+ [6] &quot;members&quot;       &quot;congress&quot;      &quot;distinguished&quot; &quot;guests&quot;        &quot;fellow&quot;
+[11] &quot;americans&quot;     &quot;constitution&quot;
 [ ... and 3,698 more ]
 
 barack-obama-2011.txt :
- [1] "mr"            "speaker"       "mr"            "vice"          "president"
- [6] "members"       "congress"      "distinguished" "guests"        "fellow"
-[11] "americans"     "tonight"
+ [1] &quot;mr&quot;            &quot;speaker&quot;       &quot;mr&quot;            &quot;vice&quot;          &quot;president&quot;
+ [6] &quot;members&quot;       &quot;congress&quot;      &quot;distinguished&quot; &quot;guests&quot;        &quot;fellow&quot;
+[11] &quot;americans&quot;     &quot;tonight&quot;
 [ ... and 3,512 more ]
 
 barack-obama-2012.txt :
- [1] "mr"            "speaker"       "mr"            "vice"          "president"
- [6] "members"       "congress"      "distinguished" "guests"        "fellow"
-[11] "americans"     "last"
+ [1] &quot;mr&quot;            &quot;speaker&quot;       &quot;mr&quot;            &quot;vice&quot;          &quot;president&quot;
+ [6] &quot;members&quot;       &quot;congress&quot;      &quot;distinguished&quot; &quot;guests&quot;        &quot;fellow&quot;
+[11] &quot;americans&quot;     &quot;last&quot;
 [ ... and 3,690 more ]
 
 barack-obama-2013.txt :
- [1] "please"    "everybody" "seat"      "mr"        "speaker"   "mr"        "vice"
- [8] "president" "members"   "congress"  "fellow"    "americans"
+ [1] &quot;please&quot;    &quot;everybody&quot; &quot;seat&quot;      &quot;mr&quot;        &quot;speaker&quot;   &quot;mr&quot;        &quot;vice&quot;
+ [8] &quot;president&quot; &quot;members&quot;   &quot;congress&quot;  &quot;fellow&quot;    &quot;americans&quot;
 [ ... and 3,653 more ]
 
 barack-obama-2014.txt :
- [1] "president" "mr"        "speaker"   "mr"        "vice"      "president" "members"
- [8] "congress"  "fellow"    "americans" "today"     "america"
+ [1] &quot;president&quot; &quot;mr&quot;        &quot;speaker&quot;   &quot;mr&quot;        &quot;vice&quot;      &quot;president&quot; &quot;members&quot;
+ [8] &quot;congress&quot;  &quot;fellow&quot;    &quot;americans&quot; &quot;today&quot;     &quot;america&quot;
 [ ... and 3,767 more ]
 
 [ reached max_ndoc ... 90 more documents ]
@@ -1101,75 +1109,75 @@ barack-obama-2014.txt :
 </div>
 </div>
 </div>
-<p>We can do the same with <code class="docutils literal notranslate"><span class="pre">tokens_remove(</span> <span class="pre">,pattern=stopwords("en"))</span></code>.</p>
+<p>We can do the same with <code class="docutils literal notranslate"><span class="pre">tokens_remove(</span> <span class="pre">,pattern=stopwords(&quot;en&quot;))</span></code>.</p>
 </section>
 <section id="generating-n-grams">
-<h2>Generating n-grams<a class="headerlink" href="#generating-n-grams" title="Permalink to this heading">¶</a></h2>
+<h2>Generating n-grams<a class="headerlink" href="#generating-n-grams" title="Permalink to this heading">#</a></h2>
 <p>An n-gram is a contiguous sequence of n items in a text.</p>
 <p><code class="docutils literal notranslate"><span class="pre">tokens_ngrams()</span></code> generates a set of n-grams (tokens in sequence) from a tokenized text object.
 It gives all possible combinations of tokens.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio"/><label class="tab-label" for="tab-set--17-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">toks_ngram</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">tokens_ngrams</span><span class="p">(</span><span class="n">sotu_toks_nostop</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="o">:</span><span class="m">4</span><span class="p">)</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">toks_ngram</span><span class="p">[[</span><span class="m">1</span><span class="p">]],</span><span class="w"> </span><span class="m">30</span><span class="p">)</span>
 <span class="nf">tail</span><span class="p">(</span><span class="n">toks_ngram</span><span class="p">[[</span><span class="m">1</span><span class="p">]],</span><span class="w"> </span><span class="m">30</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--17-input--2" name="tab-set--17" type="radio"/><label class="tab-label" for="tab-set--17-input--2">Output</label><div class="tab-content docutils container">
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> [1] "madam_speaker"         "speaker_mr"            "mr_vice"
- [4] "vice_president"        "president_members"     "members_congress"
- [7] "congress_first"        "first_lady"            "lady_united"
-[10] "united_states"         "states_around"         "around_somewhere"
-[13] "somewhere_come"        "come_tonight"          "tonight_address"
-[16] "address_distinguished" "distinguished_men"     "men_women"
-[19] "women_great"           "great_chamber"         "chamber_speak"
-[22] "speak_frankly"         "frankly_directly"      "directly_men"
-[25] "men_women"             "women_sent"            "sent_us"
-[28] "us_know"               "know_many"             "many_americans"
+<input class="tab-input" id="tab-set--17-input--2" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> [1] &quot;madam_speaker&quot;         &quot;speaker_mr&quot;            &quot;mr_vice&quot;
+ [4] &quot;vice_president&quot;        &quot;president_members&quot;     &quot;members_congress&quot;
+ [7] &quot;congress_first&quot;        &quot;first_lady&quot;            &quot;lady_united&quot;
+[10] &quot;united_states&quot;         &quot;states_around&quot;         &quot;around_somewhere&quot;
+[13] &quot;somewhere_come&quot;        &quot;come_tonight&quot;          &quot;tonight_address&quot;
+[16] &quot;address_distinguished&quot; &quot;distinguished_men&quot;     &quot;men_women&quot;
+[19] &quot;women_great&quot;           &quot;great_chamber&quot;         &quot;chamber_speak&quot;
+[22] &quot;speak_frankly&quot;         &quot;frankly_directly&quot;      &quot;directly_men&quot;
+[25] &quot;men_women&quot;             &quot;women_sent&quot;            &quot;sent_us&quot;
+[28] &quot;us_know&quot;               &quot;know_many&quot;             &quot;many_americans&quot;
 
- [1] "fear_challenges_time_summon"         "challenges_time_summon_enduring"
- [3] "time_summon_enduring_spirit"         "summon_enduring_spirit_america"
- [5] "enduring_spirit_america_quit"        "spirit_america_quit_someday"
- [7] "america_quit_someday_years"          "quit_someday_years_now"
- [9] "someday_years_now_children"          "years_now_children_can"
-[11] "now_children_can_tell"               "children_can_tell_children"
-[13] "can_tell_children_time"              "tell_children_time_performed"
-[15] "children_time_performed_words"       "time_performed_words_carved"
-[17] "performed_words_carved_chamber"      "words_carved_chamber_something"
-[19] "carved_chamber_something_worthy"     "chamber_something_worthy_remembered"
-[21] "something_worthy_remembered_thank"   "worthy_remembered_thank_god"
-[23] "remembered_thank_god_bless"          "thank_god_bless_may"
-[25] "god_bless_may_god"                   "bless_may_god_bless"
-[27] "may_god_bless_united"                "god_bless_united_states"
-[29] "bless_united_states_america"         "united_states_america_thank"
+ [1] &quot;fear_challenges_time_summon&quot;         &quot;challenges_time_summon_enduring&quot;
+ [3] &quot;time_summon_enduring_spirit&quot;         &quot;summon_enduring_spirit_america&quot;
+ [5] &quot;enduring_spirit_america_quit&quot;        &quot;spirit_america_quit_someday&quot;
+ [7] &quot;america_quit_someday_years&quot;          &quot;quit_someday_years_now&quot;
+ [9] &quot;someday_years_now_children&quot;          &quot;years_now_children_can&quot;
+[11] &quot;now_children_can_tell&quot;               &quot;children_can_tell_children&quot;
+[13] &quot;can_tell_children_time&quot;              &quot;tell_children_time_performed&quot;
+[15] &quot;children_time_performed_words&quot;       &quot;time_performed_words_carved&quot;
+[17] &quot;performed_words_carved_chamber&quot;      &quot;words_carved_chamber_something&quot;
+[19] &quot;carved_chamber_something_worthy&quot;     &quot;chamber_something_worthy_remembered&quot;
+[21] &quot;something_worthy_remembered_thank&quot;   &quot;worthy_remembered_thank_god&quot;
+[23] &quot;remembered_thank_god_bless&quot;          &quot;thank_god_bless_may&quot;
+[25] &quot;god_bless_may_god&quot;                   &quot;bless_may_god_bless&quot;
+[27] &quot;may_god_bless_united&quot;                &quot;god_bless_united_states&quot;
+[29] &quot;bless_united_states_america&quot;         &quot;united_states_america_thank&quot;
 </pre></div>
 </div>
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">tokens_compound()</span></code> generates n-grams more selectively. For example, you can make bi-grams using <code class="docutils literal notranslate"><span class="pre">phrase()</span></code> and a wild card (<code class="docutils literal notranslate"><span class="pre">*</span></code>)</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--18-input--1" name="tab-set--18" type="radio"/><label class="tab-label" for="tab-set--18-input--1">R</label><div class="tab-content docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">toks_neg_bigram</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">tokens_compound</span><span class="p">(</span><span class="n">sotu_toks_nostop</span><span class="p">,</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">phrase</span><span class="p">(</span><span class="s">"united *"</span><span class="p">))</span>
-<span class="n">toks_neg_bigram_select</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">tokens_select</span><span class="p">(</span><span class="n">toks_neg_bigram</span><span class="p">,</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">phrase</span><span class="p">(</span><span class="s">"united_*"</span><span class="p">))</span>
+<input checked="True" class="tab-input" id="tab-set--18-input--1" name="tab-set--18" type="radio"><label class="tab-label" for="tab-set--18-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">toks_neg_bigram</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">tokens_compound</span><span class="p">(</span><span class="n">sotu_toks_nostop</span><span class="p">,</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">phrase</span><span class="p">(</span><span class="s">&quot;united *&quot;</span><span class="p">))</span>
+<span class="n">toks_neg_bigram_select</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">tokens_select</span><span class="p">(</span><span class="n">toks_neg_bigram</span><span class="p">,</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">phrase</span><span class="p">(</span><span class="s">&quot;united_*&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="collocations">
-<h2>Collocations<a class="headerlink" href="#collocations" title="Permalink to this heading">¶</a></h2>
+<h2>Collocations<a class="headerlink" href="#collocations" title="Permalink to this heading">#</a></h2>
 <p>A collocation is a sequence of words or terms that co-occur more often than would be expected by chance.
 Collocations can be more informative or meaningful than ngrams as they allow us to evaluate the strength
 and significance of the association between sequences of words.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--19-input--1" name="tab-set--19" type="radio"/><label class="tab-label" for="tab-set--19-input--1">R</label><div class="tab-content docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sotu_collocations</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">textstat_collocations</span><span class="p">(</span><span class="n">sotu_toks_nostop</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"lambda"</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">min_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="n">smoothing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">)</span>
+<input checked="True" class="tab-input" id="tab-set--19-input--1" name="tab-set--19" type="radio"><label class="tab-label" for="tab-set--19-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sotu_collocations</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">textstat_collocations</span><span class="p">(</span><span class="n">sotu_toks_nostop</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;lambda&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">min_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="n">smoothing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">)</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">sotu_collocations</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--19-input--2" name="tab-set--19" type="radio"/><label class="tab-label" for="tab-set--19-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--19-input--2" name="tab-set--19" type="radio"><label class="tab-label" for="tab-set--19-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>         collocation count count_nested length   lambda        z
 1      united states   709            0      2 7.885126 87.41215
 2          last year   388            0      2 4.996601 70.81536
@@ -1183,13 +1191,13 @@ and significance of the association between sequences of words.</p>
 </div>
 </section>
 <section id="document-feature-matrix">
-<h2>Document feature matrix<a class="headerlink" href="#document-feature-matrix" title="Permalink to this heading">¶</a></h2>
+<h2>Document feature matrix<a class="headerlink" href="#document-feature-matrix" title="Permalink to this heading">#</a></h2>
 <p>We are going to create a document feature matrix (dfm) from a tokens
 object. We will then turn the dfm into a tidy data frame. A tidy data
 frame means one variable per column, one observation per row, one value
 per cell.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--21-input--1" name="tab-set--21" type="radio"/><label class="tab-label" for="tab-set--21-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--21-input--1" name="tab-set--21" type="radio"><label class="tab-label" for="tab-set--21-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sotu_dfm</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">dfm</span><span class="p">(</span><span class="n">sotu_toks</span><span class="p">)</span>
 <span class="n">sotu_dfm</span>
 
@@ -1197,7 +1205,7 @@ per cell.</p>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--21-input--2" name="tab-set--21" type="radio"/><label class="tab-label" for="tab-set--21-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--21-input--2" name="tab-set--21" type="radio"><label class="tab-label" for="tab-set--21-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Document-feature matrix of: 96 documents, 20,805 features (92.39% sparse) and 0 docvars.
                        features
 docs                    madam speaker mr vice president members  of congress the first
@@ -1215,14 +1223,14 @@ docs                    madam speaker mr vice president members  of congress the
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--20-input--1" name="tab-set--20" type="radio"/><label class="tab-label" for="tab-set--20-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--20-input--1" name="tab-set--20" type="radio"><label class="tab-label" for="tab-set--20-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ndoc</span><span class="p">(</span><span class="n">sotu_dfm</span><span class="p">)</span>
 <span class="nf">nfeat</span><span class="p">(</span><span class="n">sotu_dfm</span><span class="p">)</span>
 <span class="nf">topfeatures</span><span class="p">(</span><span class="n">sotu_dfm</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--20-input--2" name="tab-set--20" type="radio"/><label class="tab-label" for="tab-set--20-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--20-input--2" name="tab-set--20" type="radio"><label class="tab-label" for="tab-set--20-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[1] 96
 
 [1] 20805
@@ -1235,20 +1243,20 @@ docs                    madam speaker mr vice president members  of congress the
 </div>
 </section>
 <section id="tf-idf-analysis">
-<h2>TF-IDF analysis<a class="headerlink" href="#tf-idf-analysis" title="Permalink to this heading">¶</a></h2>
+<h2>TF-IDF analysis<a class="headerlink" href="#tf-idf-analysis" title="Permalink to this heading">#</a></h2>
 <p>We can also do TF-IDF analysis (Term frequency-Inverse Document
 Frequency). The purpose of this type of analysis is to find a document’s
 most distinctive terms: How frequent a term is in a doc/how frequent it
 is across all docs. (High score=distinctive, Low score=not distinctive).</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--23-input--1" name="tab-set--23" type="radio"/><label class="tab-label" for="tab-set--23-input--1">R</label><div class="tab-content docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add a tf-idf on a dfm to determine a document's most distinctive words</span>
+<input checked="True" class="tab-input" id="tab-set--23-input--1" name="tab-set--23" type="radio"><label class="tab-label" for="tab-set--23-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add a tf-idf on a dfm to determine a document&#39;s most distinctive words</span>
 <span class="n">sotu_tf_idf</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">dfm_tfidf</span><span class="p">(</span><span class="n">sotu_dfm</span><span class="p">)</span>
 <span class="n">sotu_tf_idf</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--23-input--2" name="tab-set--23" type="radio"/><label class="tab-label" for="tab-set--23-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--23-input--2" name="tab-set--23" type="radio"><label class="tab-label" for="tab-set--23-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Document-feature matrix of: 96 documents, 20,805 features (92.39% sparse) and 0 docvars.
                        features
 docs                      madam    speaker         mr      vice  president    members of
@@ -1272,14 +1280,14 @@ docs                    congress the      first
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--22-input--1" name="tab-set--22" type="radio"/><label class="tab-label" for="tab-set--22-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--22-input--1" name="tab-set--22" type="radio"><label class="tab-label" for="tab-set--22-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Simple frequency analysis</span>
 <span class="n">sotu_freq</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">textstat_frequency</span><span class="p">(</span><span class="n">sotu_dfm</span><span class="p">)</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">sotu_freq</span><span class="p">,</span><span class="w"> </span><span class="m">20</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--22-input--2" name="tab-set--22" type="radio"/><label class="tab-label" for="tab-set--22-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--22-input--2" name="tab-set--22" type="radio"><label class="tab-label" for="tab-set--22-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>   feature frequency rank docfreq group
 1      the     37864    1      96   all
 2       of     23162    2      96   all
@@ -1307,21 +1315,21 @@ docs                    congress the      first
 </div>
 </section>
 <section id="create-a-word-cloud">
-<h2>Create a word cloud<a class="headerlink" href="#create-a-word-cloud" title="Permalink to this heading">¶</a></h2>
+<h2>Create a word cloud<a class="headerlink" href="#create-a-word-cloud" title="Permalink to this heading">#</a></h2>
 <p>We can use word clouds as a simple way to represent our corpus. This
 first version will likely time out, so make sure to stop the process to
 see the output.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--25-input--1" name="tab-set--25" type="radio"/><label class="tab-label" for="tab-set--25-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--25-input--1" name="tab-set--25" type="radio"><label class="tab-label" for="tab-set--25-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">textplot_wordcloud</span><span class="p">(</span><span class="n">sotu_dfm</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--24-input--1" name="tab-set--24" type="radio"/><label class="tab-label" for="tab-set--24-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--24-input--1" name="tab-set--24" type="radio"><label class="tab-label" for="tab-set--24-input--1">Output</label><div class="tab-content docutils container">
 <figure class="align-default">
-<img alt="../../_images/wordcloud1.png" src="../../_images/wordcloud1.png"/>
+<img alt="../../_images/wordcloud1.png" src="../../_images/wordcloud1.png" />
 </figure>
 </div>
 </div>
@@ -1330,34 +1338,34 @@ see the output.</p>
 and to provide some aesthetic value. You shouldn’t need to halt this
 process.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--27-input--1" name="tab-set--27" type="radio"/><label class="tab-label" for="tab-set--27-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--27-input--1" name="tab-set--27" type="radio"><label class="tab-label" for="tab-set--27-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">textplot_wordcloud</span><span class="p">(</span><span class="n">sotu_dfm</span><span class="p">,</span>
 <span class="w">                  </span><span class="n">rotation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.25</span><span class="p">,</span><span class="w"> </span><span class="c1">#proportion of words with 90 degree rotation</span>
-<span class="w">                  </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">rev</span><span class="p">(</span><span class="n">RColorBrewer</span><span class="o">::</span><span class="nf">brewer.pal</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="s">"RdBu"</span><span class="p">)))</span>
+<span class="w">                  </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">rev</span><span class="p">(</span><span class="n">RColorBrewer</span><span class="o">::</span><span class="nf">brewer.pal</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;RdBu&quot;</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--26-input--1" name="tab-set--26" type="radio"/><label class="tab-label" for="tab-set--26-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--26-input--1" name="tab-set--26" type="radio"><label class="tab-label" for="tab-set--26-input--1">Output</label><div class="tab-content docutils container">
 <figure class="align-default">
-<img alt="../../_images/wordcloud2.png" src="../../_images/wordcloud2.png"/>
+<img alt="../../_images/wordcloud2.png" src="../../_images/wordcloud2.png" />
 </figure>
 </div>
 </div>
 </section>
 <section id="lexical-diversity">
-<h2>Lexical diversity<a class="headerlink" href="#lexical-diversity" title="Permalink to this heading">¶</a></h2>
+<h2>Lexical diversity<a class="headerlink" href="#lexical-diversity" title="Permalink to this heading">#</a></h2>
 <p>Lexical diversity is a measure of how many times a word appears in a text
 and where it appears relative to the beginning of the document</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--28-input--1" name="tab-set--28" type="radio"/><label class="tab-label" for="tab-set--28-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--28-input--1" name="tab-set--28" type="radio"><label class="tab-label" for="tab-set--28-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sotu_lexdiv</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">textstat_lexdiv</span><span class="p">(</span><span class="n">sotu_dfm</span><span class="p">)</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">sotu_lexdiv</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--28-input--2" name="tab-set--28" type="radio"/><label class="tab-label" for="tab-set--28-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--28-input--2" name="tab-set--28" type="radio"><label class="tab-label" for="tab-set--28-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>               document       TTR
 1 barack-obama-2009.txt 0.2487967
 2 barack-obama-2010.txt 0.2373709
@@ -1371,40 +1379,40 @@ and where it appears relative to the beginning of the document</p>
 </div>
 </section>
 <section id="working-with-a-subset">
-<h2>Working with a subset<a class="headerlink" href="#working-with-a-subset" title="Permalink to this heading">¶</a></h2>
+<h2>Working with a subset<a class="headerlink" href="#working-with-a-subset" title="Permalink to this heading">#</a></h2>
 <p>We can also work with a subset of the texts in the corpus. Here we do
 some additional pre-processing, before we create a subset containing
 only President Obama’s speeches.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--29-input--1" name="tab-set--29" type="radio"/><label class="tab-label" for="tab-set--29-input--1">R</label><div class="tab-content docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sotu2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">readtext</span><span class="p">(</span><span class="s">"texts"</span><span class="p">,</span>
-<span class="w">                  </span><span class="n">docvarsfrom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"filenames"</span><span class="p">)</span>
+<input checked="True" class="tab-input" id="tab-set--29-input--1" name="tab-set--29" type="radio"><label class="tab-label" for="tab-set--29-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sotu2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">readtext</span><span class="p">(</span><span class="s">&quot;texts&quot;</span><span class="p">,</span>
+<span class="w">                  </span><span class="n">docvarsfrom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;filenames&quot;</span><span class="p">)</span>
 
 <span class="n">sotu2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">sotu2</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">mutate</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="w"> </span><span class="nf">str_sub</span><span class="p">(</span><span class="n">.</span><span class="o">$</span><span class="n">docvar1</span><span class="p">,</span><span class="w"> </span><span class="m">-5</span><span class="p">))</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="c1"># create year column</span>
 <span class="w">   </span><span class="nf">mutate</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="w"> </span><span class="nf">str_sub</span><span class="p">(</span><span class="n">.</span><span class="o">$</span><span class="n">docvar1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">-6</span><span class="p">))</span><span class="w"> </span><span class="c1"># create name column</span>
 
 <span class="n">sotu2</span><span class="o">$</span><span class="n">year</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">sotu2</span><span class="o">$</span><span class="n">year</span><span class="w"> </span><span class="o">%&gt;%</span>
-<span class="w">   </span><span class="nf">str_replace_all</span><span class="p">(</span><span class="s">"[-ab]"</span><span class="p">,</span><span class="w"> </span><span class="s">""</span><span class="p">)</span><span class="w"> </span><span class="c1"># remove unwanted characters from the year column</span>
+<span class="w">   </span><span class="nf">str_replace_all</span><span class="p">(</span><span class="s">&quot;[-ab]&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1"># remove unwanted characters from the year column</span>
 
 <span class="n">sotu2</span><span class="o">$</span><span class="n">year</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.integer</span><span class="p">(</span><span class="n">sotu2</span><span class="o">$</span><span class="n">year</span><span class="p">)</span>
 
 <span class="n">sotu2</span><span class="o">$</span><span class="n">name</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">sotu2</span><span class="o">$</span><span class="n">name</span><span class="w"> </span><span class="o">%&gt;%</span>
-<span class="w">   </span><span class="nf">str_replace_all</span><span class="p">(</span><span class="s">"-"</span><span class="p">,</span><span class="w"> </span><span class="s">" "</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">   </span><span class="nf">str_replace_all</span><span class="p">(</span><span class="s">&quot;-&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">trimws</span><span class="p">()</span><span class="w">  </span><span class="c1">#trim leading and trailing whitespace from terms in name field\</span>
 
 <span class="n">sotu_corp2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">corpus</span><span class="p">(</span><span class="n">sotu2</span><span class="p">)</span>
-<span class="n">obama_corpus</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">corpus_subset</span><span class="p">(</span><span class="n">sotu_corp2</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">==</span><span class="s">"barack obama"</span><span class="p">)</span>
+<span class="n">obama_corpus</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">corpus_subset</span><span class="p">(</span><span class="n">sotu_corp2</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">==</span><span class="s">&quot;barack obama&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>From here, we can repeat the same steps we did above.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--30-input--1" name="tab-set--30" type="radio"/><label class="tab-label" for="tab-set--30-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--30-input--1" name="tab-set--30" type="radio"><label class="tab-label" for="tab-set--30-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Clean the tokens, create a dfm, and make it tidy</span>
 <span class="n">obama_toks</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">tokens</span><span class="p">(</span><span class="n">obama_corpus</span><span class="p">,</span><span class="w"> </span><span class="n">remove_numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">remove_punct</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
-<span class="n">obama_toks</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">tokens_remove</span><span class="p">(</span><span class="n">obama_toks</span><span class="p">,</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">stopwords</span><span class="p">(</span><span class="s">"english"</span><span class="p">))</span>
+<span class="n">obama_toks</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">tokens_remove</span><span class="p">(</span><span class="n">obama_toks</span><span class="p">,</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">stopwords</span><span class="p">(</span><span class="s">&quot;english&quot;</span><span class="p">))</span>
 <span class="n">obama_toks</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">tokens_tolower</span><span class="p">(</span><span class="n">obama_toks</span><span class="p">)</span>
 <span class="n">obama_dfm</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">dfm</span><span class="p">(</span><span class="n">obama_toks</span><span class="p">)</span>
 
@@ -1412,7 +1420,7 @@ only President Obama’s speeches.</p>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--30-input--2" name="tab-set--30" type="radio"/><label class="tab-label" for="tab-set--30-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--30-input--2" name="tab-set--30" type="radio"><label class="tab-label" for="tab-set--30-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Document-feature matrix of: 8 documents, 5,104 features (69.68% sparse) and 3 docvars.
                        features
 docs                    madam speaker mr vice president members congress first lady
@@ -1437,15 +1445,15 @@ docs                    united
 </div>
 <p>We can look at keywords in context for this subset, as well.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--31-input--1" name="tab-set--31" type="radio"/><label class="tab-label" for="tab-set--31-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--31-input--1" name="tab-set--31" type="radio"><label class="tab-label" for="tab-set--31-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#####Keywords in Context: What words immediately precede and follow terms of interest</span>
 
-<span class="n">kw_health</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">kwic</span><span class="p">(</span><span class="n">obama_toks</span><span class="p">,</span><span class="w"> </span><span class="s">"health*"</span><span class="p">,</span><span class="w"> </span><span class="n">window</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">)</span>
+<span class="n">kw_health</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">kwic</span><span class="p">(</span><span class="n">obama_toks</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;health*&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">window</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">)</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">kw_health</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--31-input--2" name="tab-set--31" type="radio"/><label class="tab-label" for="tab-set--31-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--31-input--2" name="tab-set--31" type="radio"><label class="tab-label" for="tab-set--31-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Keyword-in-context with 6 matches.
  [barack-obama-2009.txt, 206]
  [barack-obama-2009.txt, 270]
@@ -1480,16 +1488,16 @@ docs                    united
 </div>
 <p>We can make a lexical dispersion plot to visualize where our keyword is appearing across the documents.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--33-input--1" name="tab-set--33" type="radio"/><label class="tab-label" for="tab-set--33-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--33-input--1" name="tab-set--33" type="radio"><label class="tab-label" for="tab-set--33-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">textplot_xray</span><span class="p">(</span><span class="n">kw_health</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--32-input--1" name="tab-set--32" type="radio"/><label class="tab-label" for="tab-set--32-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--32-input--1" name="tab-set--32" type="radio"><label class="tab-label" for="tab-set--32-input--1">Output</label><div class="tab-content docutils container">
 <figure class="align-default">
-<img alt="../../_images/unnamed-chunk-14-2.png" src="../../_images/unnamed-chunk-14-2.png"/>
+<img alt="../../_images/unnamed-chunk-14-2.png" src="../../_images/unnamed-chunk-14-2.png" />
 </figure>
 </div>
 </div>
@@ -1508,10 +1516,10 @@ docs                    united
                 </div>
                 <div class="title">Unix Shell</div>
               </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
           <a class="prev-page" href="../data-visualization/">
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
@@ -1522,15 +1530,19 @@ docs                    united
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; 2023, Ford Fishman |
-          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../../_sources/r/text-mining.rst.txt"
-               rel="nofollow">
-              Show Source
-            </a>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Ford Fishman
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
         </div>
         
       </footer>
@@ -1541,7 +1553,7 @@ docs                    united
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            On this page
           </span>
         </div>
         <div class="toc-tree-container">
@@ -1578,7 +1590,7 @@ docs                    united
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=fbdbc327"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
-    <script src="../../_static/scripts/furo.js?v=818c8f69"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="../../_static/tabs.js?v=3ee01567"></script>
     </body>
 </html>

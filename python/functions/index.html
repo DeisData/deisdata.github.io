@@ -1,16 +1,16 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" data-content_root="">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Statistics with Python" href="../stats/" /><link rel="prev" title="Making figures in Python" href="../figures/" />
 
-    <link rel="shortcut icon" href="../../_static/favicon-32x32.png"/><meta name="generator" content="sphinx-7.1.2, furo 2021.11.16"/>
+    <link rel="shortcut icon" href="../../_static/favicon-32x32.png"/><!-- Generated with Sphinx 7.1.2 and Furo 2023.09.10 -->
         <title>Writing functions - DeisData</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=916d6ed8f59335acffa15474ff504849343d4c76" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=934bd528" />
     
     
@@ -22,38 +22,38 @@
   --color-code-foreground: black;
   
   }
-  body[data-theme="dark"] {
-    --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-  }
-  @media (prefers-color-scheme: dark) {
-    body:not([data-theme="light"]) {
+  @media not print {
+    body[data-theme="dark"] {
       --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
   
     }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -62,14 +62,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -84,7 +84,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -92,7 +92,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -154,14 +154,14 @@
   <span class="sidebar-brand-text">DeisData</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../">Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../">Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../setup-install/">Setup and installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jupyter/">Jupyter notebooks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../python-fundamentals/">Fundamentals</a></li>
@@ -175,14 +175,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../stats/">Statistical tests</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../r/">R</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../r/">R</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of R</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../r/quick-start/">Intro to R and the Tidyverse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../r/data-wrangling/">Data wrangling with the Tidyverse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../r/data-visualization/">ggplot2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../r/text-mining/">Text mining</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../shell/">Unix Shell</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../shell/">Unix Shell</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Unix Shell</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../shell/setup/">Bash Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../shell/navigating/">Navigating</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../shell/alter-dir/">Altering files and directories</a></li>
@@ -192,7 +192,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../shell/search-find/">Searching and finding</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../git/">Git Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../git/">Git Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../git/setup-install/">Setup and installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../git/quick-start/">Quick start to Git and GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../git/pushing/">Pushing changes</a></li>
@@ -206,6 +206,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -213,8 +214,15 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -229,9 +237,9 @@
         </div>
         <article role="main">
           <section id="writing-functions">
-<h1>Writing functions<a class="headerlink" href="#writing-functions" title="Permalink to this heading">¶</a></h1>
+<h1>Writing functions<a class="headerlink" href="#writing-functions" title="Permalink to this heading">#</a></h1>
 <section id="materials">
-<h2>Materials<a class="headerlink" href="#materials" title="Permalink to this heading">¶</a></h2>
+<h2>Materials<a class="headerlink" href="#materials" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/functions-codealong.ipynb">Code-along Jupyter notebook</a></p></li>
 <li><p><a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/functions.ipynb">Filled-in Jupyter notebook</a></p></li>
@@ -249,12 +257,12 @@ a single “thing”. Importantly, it also lets us re-use pieces of code
 without having to duplicate dozens of lines of code over and over again.</p>
 </section>
 <section id="objectives">
-<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this heading">¶</a></h2>
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Define a function using <code class="docutils literal notranslate"><span class="pre">def</span></code> with a name, parameters, and a block of code.</p></li>
 </ul>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"/><label class="tab-label" for="tab-set--0-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import libraries</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -265,14 +273,14 @@ without having to duplicate dozens of lines of code over and over again.</p>
 </div>
 </section>
 <section id="function-syntax">
-<h2>Function syntax<a class="headerlink" href="#function-syntax" title="Permalink to this heading">¶</a></h2>
+<h2>Function syntax<a class="headerlink" href="#function-syntax" title="Permalink to this heading">#</a></h2>
 <p>We can define a custom function using the keyword <code class="docutils literal notranslate"><span class="pre">def</span></code> (short for
 “define”), followed by the desired function name, parentheses, and a
 colon.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"/><label class="tab-label" for="tab-set--1-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_greeting</span><span class="p">():</span>
-   <span class="nb">print</span><span class="p">(</span><span class="s1">'Hello!'</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -280,12 +288,12 @@ colon.</p>
 <p>Defining a function does not run the code within it. You need to
 <strong>call</strong> the function to run it.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"/><label class="tab-label" for="tab-set--2-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">print_greeting</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"/><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Hello!
 </pre></div>
 </div>
@@ -302,16 +310,16 @@ function.</p>
 <strong>arguments</strong> are their values in the function call. However, if you mix
 them up, people will still know what you’re talking about!</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"/><label class="tab-label" for="tab-set--3-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_date</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">day</span><span class="p">):</span>
-   <span class="n">joined</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'/'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">month</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'/'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">day</span><span class="p">)</span>
+   <span class="n">joined</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">month</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">day</span><span class="p">)</span>
    <span class="nb">print</span><span class="p">(</span><span class="n">joined</span><span class="p">)</span>
 
 <span class="n">print_date</span><span class="p">(</span><span class="mi">1871</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"/><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1871/3/19
 </pre></div>
 </div>
@@ -320,12 +328,12 @@ them up, people will still know what you’re talking about!</p>
 <p>Or, we can name the arguments when we call the function, which allows us
 to specify them in any order:</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"/><label class="tab-label" for="tab-set--4-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">print_date</span><span class="p">(</span><span class="n">month</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">19</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mi">1871</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio"/><label class="tab-label" for="tab-set--4-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1871/3/19
 </pre></div>
 </div>
@@ -335,18 +343,18 @@ to specify them in any order:</p>
 <code class="docutils literal notranslate"><span class="pre">return</span></code>. Here we define a function called <code class="docutils literal notranslate"><span class="pre">average()</span></code> that takes a
 list and returns the mean.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"/><label class="tab-label" for="tab-set--5-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
    <span class="n">s</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="c1"># sum</span>
    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="c1"># number of vals</span>
    <span class="k">return</span> <span class="n">s</span><span class="o">/</span><span class="n">n</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="n">average</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'average:'</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;average:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio"/><label class="tab-label" for="tab-set--5-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>average: 2.6666666666666665
 </pre></div>
 </div>
@@ -355,12 +363,12 @@ list and returns the mean.</p>
 <p>We need to be careful defining functions. If this function is called on
 an empty list, for instance, we will get an error.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"/><label class="tab-label" for="tab-set--6-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">average</span><span class="p">([])</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio"/><label class="tab-label" for="tab-set--6-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
 
 ZeroDivisionError                         Traceback (most recent call last)
@@ -377,7 +385,7 @@ ZeroDivisionError: division by zero
 <p>We can design functions in ways to avoid these errors by adding in
 conditionals.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"/><label class="tab-label" for="tab-set--7-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">better_average</span><span class="p">(</span><span class="n">values</span><span class="p">):</span>
    <span class="n">average</span> <span class="o">=</span> <span class="kc">None</span>
 
@@ -392,7 +400,7 @@ conditionals.</p>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--7-input--2" name="tab-set--7" type="radio"/><label class="tab-label" for="tab-set--7-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--7-input--2" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>None
 </pre></div>
 </div>
@@ -403,13 +411,13 @@ equivalent to <code class="docutils literal notranslate"><span class="pre">0</sp
 <p>Every function returns something. A function that doesn’t explicitly
 return a value automatically returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"/><label class="tab-label" for="tab-set--8-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">print_date</span><span class="p">(</span><span class="mi">1871</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'result of call is:'</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;result of call is:&#39;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--8-input--2" name="tab-set--8" type="radio"/><label class="tab-label" for="tab-set--8-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--8-input--2" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1871/3/19
 result of call is: None
 </pre></div>
@@ -417,14 +425,14 @@ result of call is: None
 </div>
 </div>
 <section id="question-1-function-syntax">
-<h3>Question 1: Function syntax<a class="headerlink" href="#question-1-function-syntax" title="Permalink to this heading">¶</a></h3>
+<h3>Question 1: Function syntax<a class="headerlink" href="#question-1-function-syntax" title="Permalink to this heading">#</a></h3>
 <p>What is the error in the code below?</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"/><label class="tab-label" for="tab-set--9-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">another_function</span>
-   <span class="nb">print</span><span class="p">(</span><span class="s2">"Syntax errors are annoying."</span><span class="p">)</span>
-   <span class="nb">print</span><span class="p">(</span><span class="s2">"But at least python tells us about them!"</span><span class="p">)</span>
-   <span class="nb">print</span><span class="p">(</span><span class="s2">"So they are usually not too hard to fix."</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Syntax errors are annoying.&quot;</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;But at least python tells us about them!&quot;</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;So they are usually not too hard to fix.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -434,7 +442,7 @@ result of call is: None
 <p>The function definition is missing the correction punctuation (<code class="docutils literal notranslate"><span class="pre">()</span></code>
 and <code class="docutils literal notranslate"><span class="pre">:</span></code>):</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio"/><label class="tab-label" for="tab-set--10-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">another_function</span><span class="p">():</span>
    <span class="o">...</span>
 </pre></div>
@@ -444,14 +452,14 @@ and <code class="docutils literal notranslate"><span class="pre">:</span></code>
 </div>
 </details></section>
 <section id="question-2-calling-functions">
-<h3>Question 2: Calling functions<a class="headerlink" href="#question-2-calling-functions" title="Permalink to this heading">¶</a></h3>
+<h3>Question 2: Calling functions<a class="headerlink" href="#question-2-calling-functions" title="Permalink to this heading">#</a></h3>
 <p>What does this code return?</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio"/><label class="tab-label" for="tab-set--11-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">report</span><span class="p">(</span><span class="n">pressure</span><span class="p">):</span>
-   <span class="nb">print</span><span class="p">(</span><span class="s1">'pressure is'</span><span class="p">,</span> <span class="n">pressure</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pressure is&#39;</span><span class="p">,</span> <span class="n">pressure</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">'calling'</span><span class="p">,</span> <span class="n">report</span><span class="p">,</span> <span class="mf">22.5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;calling&#39;</span><span class="p">,</span> <span class="n">report</span><span class="p">,</span> <span class="mf">22.5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -465,7 +473,7 @@ function, often called its <strong>representation</strong>. This includes its ty
 (<code class="docutils literal notranslate"><span class="pre">function</span></code>), name (<code class="docutils literal notranslate"><span class="pre">report</span></code>), and its location in memory
 (e.g. <code class="docutils literal notranslate"><span class="pre">0x7fb43777e5e0</span></code>).</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio"/><label class="tab-label" for="tab-set--12-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--1">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>calling &lt;function report at 0x7fb43777e5e0&gt; 22.5
 </pre></div>
 </div>
@@ -475,19 +483,19 @@ function, often called its <strong>representation</strong>. This includes its ty
 </details></section>
 </section>
 <section id="default-values">
-<h2>Default values<a class="headerlink" href="#default-values" title="Permalink to this heading">¶</a></h2>
+<h2>Default values<a class="headerlink" href="#default-values" title="Permalink to this heading">#</a></h2>
 <p>For the parameters we have defined, we can also provide default values.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio"/><label class="tab-label" for="tab-set--13-input--1">Python</label><div class="tab-content docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">happy_birthday</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Fred'</span><span class="p">):</span>
-   <span class="nb">print</span><span class="p">(</span><span class="s1">'Happy Birthday,'</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">happy_birthday</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Fred&#39;</span><span class="p">):</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Happy Birthday,&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 
-<span class="n">happy_birthday</span><span class="p">(</span><span class="s1">'Sarah'</span><span class="p">)</span>
+<span class="n">happy_birthday</span><span class="p">(</span><span class="s1">&#39;Sarah&#39;</span><span class="p">)</span>
 <span class="n">happy_birthday</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--13-input--2" name="tab-set--13" type="radio"/><label class="tab-label" for="tab-set--13-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--13-input--2" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Happy Birthday, Sarah
 Happy Birthday, Fred
 </pre></div>
@@ -498,7 +506,7 @@ Happy Birthday, Fred
 and without default values. However, parameters with default values must
 go <strong>after</strong> those without them.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio"/><label class="tab-label" for="tab-set--14-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">quadratic_equation</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">negative</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
    <span class="n">sqr_rt</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 
@@ -514,17 +522,17 @@ go <strong>after</strong> those without them.</p>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--14-input--2" name="tab-set--14" type="radio"/><label class="tab-label" for="tab-set--14-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--14-input--2" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-2.0
 </pre></div>
 </div>
 </div>
 </div>
 <section id="question-3-calling-functions-before-defining">
-<h3>Question 3: Calling functions before defining<a class="headerlink" href="#question-3-calling-functions-before-defining" title="Permalink to this heading">¶</a></h3>
+<h3>Question 3: Calling functions before defining<a class="headerlink" href="#question-3-calling-functions-before-defining" title="Permalink to this heading">#</a></h3>
 <p>Does order of operations matter for defining and calling functions?</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio"/><label class="tab-label" for="tab-set--15-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio"><label class="tab-label" for="tab-set--15-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fahr_to_celsius</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">fahr_to_celsius</span><span class="p">(</span><span class="n">temp</span><span class="p">):</span>
@@ -539,16 +547,16 @@ go <strong>after</strong> those without them.</p>
 we will get an error here. Functions must be defined before they are
 called:</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio"/><label class="tab-label" for="tab-set--16-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fahr_to_celsius</span><span class="p">(</span><span class="n">temp</span><span class="p">):</span>
    <span class="k">return</span> <span class="p">((</span><span class="n">temp</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">9</span><span class="p">))</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">'freezing point of water:'</span><span class="p">,</span> <span class="n">fahr_to_celsius</span><span class="p">(</span><span class="mi">32</span><span class="p">),</span> <span class="s1">'C'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'boiling point of water:'</span><span class="p">,</span> <span class="n">fahr_to_celsius</span><span class="p">(</span><span class="mi">212</span><span class="p">),</span> <span class="s1">'C'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;freezing point of water:&#39;</span><span class="p">,</span> <span class="n">fahr_to_celsius</span><span class="p">(</span><span class="mi">32</span><span class="p">),</span> <span class="s1">&#39;C&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;boiling point of water:&#39;</span><span class="p">,</span> <span class="n">fahr_to_celsius</span><span class="p">(</span><span class="mi">212</span><span class="p">),</span> <span class="s1">&#39;C&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--16-input--2" name="tab-set--16" type="radio"/><label class="tab-label" for="tab-set--16-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--16-input--2" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>freezing point of water: 0.0 C
 boiling point of water: 100.0 C
 </pre></div>
@@ -559,19 +567,19 @@ boiling point of water: 100.0 C
 </details></section>
 </section>
 <section id="composing-functions">
-<h2>Composing Functions<a class="headerlink" href="#composing-functions" title="Permalink to this heading">¶</a></h2>
+<h2>Composing Functions<a class="headerlink" href="#composing-functions" title="Permalink to this heading">#</a></h2>
 <p>Now that we’ve seen how to turn Fahrenheit into Celsius, we can also
 write the function to turn Celsius into Kelvin:</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio"/><label class="tab-label" for="tab-set--17-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">celsius_to_kelvin</span><span class="p">(</span><span class="n">temp_c</span><span class="p">):</span>
    <span class="k">return</span> <span class="n">temp_c</span> <span class="o">+</span> <span class="mf">273.15</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">'freezing point of water in Kelvin:'</span><span class="p">,</span> <span class="n">celsius_to_kelvin</span><span class="p">(</span><span class="mf">0.</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;freezing point of water in Kelvin:&#39;</span><span class="p">,</span> <span class="n">celsius_to_kelvin</span><span class="p">(</span><span class="mf">0.</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--17-input--2" name="tab-set--17" type="radio"/><label class="tab-label" for="tab-set--17-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--17-input--2" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>freezing point of water in Kelvin: 273.15
 </pre></div>
 </div>
@@ -581,17 +589,17 @@ write the function to turn Celsius into Kelvin:</p>
 formula, but we don’t need to. Instead, we can compose the two functions
 we have already created:</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--18-input--1" name="tab-set--18" type="radio"/><label class="tab-label" for="tab-set--18-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--18-input--1" name="tab-set--18" type="radio"><label class="tab-label" for="tab-set--18-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fahr_to_kelvin</span><span class="p">(</span><span class="n">temp_f</span><span class="p">):</span>
    <span class="n">temp_c</span> <span class="o">=</span> <span class="n">fahr_to_celsius</span><span class="p">(</span><span class="n">temp_f</span><span class="p">)</span>
    <span class="n">temp_k</span> <span class="o">=</span> <span class="n">celsius_to_kelvin</span><span class="p">(</span><span class="n">temp_c</span><span class="p">)</span>
    <span class="k">return</span> <span class="n">temp_k</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">'boiling point of water in Kelvin:'</span><span class="p">,</span> <span class="n">fahr_to_kelvin</span><span class="p">(</span><span class="mf">212.0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;boiling point of water in Kelvin:&#39;</span><span class="p">,</span> <span class="n">fahr_to_kelvin</span><span class="p">(</span><span class="mf">212.0</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--18-input--2" name="tab-set--18" type="radio"/><label class="tab-label" for="tab-set--18-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--18-input--2" name="tab-set--18" type="radio"><label class="tab-label" for="tab-set--18-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>boiling point of water in Kelvin: 373.15
 </pre></div>
 </div>
@@ -605,12 +613,12 @@ shouldn’t ever be much longer than that, or the next person who reads it
 won’t be able to understand what’s going on.</p>
 </section>
 <section id="functions-for-tidying-up-code">
-<h2>Functions for tidying up code<a class="headerlink" href="#functions-for-tidying-up-code" title="Permalink to this heading">¶</a></h2>
+<h2>Functions for tidying up code<a class="headerlink" href="#functions-for-tidying-up-code" title="Permalink to this heading">#</a></h2>
 <p>Functions are very useful for consolidating code for repurposing it.</p>
 <p>Below we have an example of calculating the distance between two points
 without a function.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--19-input--1" name="tab-set--19" type="radio"/><label class="tab-label" for="tab-set--19-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--19-input--1" name="tab-set--19" type="radio"><label class="tab-label" for="tab-set--19-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">point1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 <span class="n">point2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
 
@@ -619,7 +627,7 @@ without a function.</p>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--19-input--2" name="tab-set--19" type="radio"/><label class="tab-label" for="tab-set--19-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--19-input--2" name="tab-set--19" type="radio"><label class="tab-label" for="tab-set--19-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>6.708203932499369
 </pre></div>
 </div>
@@ -633,7 +641,7 @@ need to change every instance you’ve run it.</p>
 <p>When you copy and paste to duplicate, you may also forget to update
 information.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--20-input--1" name="tab-set--20" type="radio"/><label class="tab-label" for="tab-set--20-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--20-input--1" name="tab-set--20" type="radio"><label class="tab-label" for="tab-set--20-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">point3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">]</span>
 <span class="n">point4</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
 
@@ -649,7 +657,7 @@ information.</p>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--20-input--2" name="tab-set--20" type="radio"/><label class="tab-label" for="tab-set--20-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--20-input--2" name="tab-set--20" type="radio"><label class="tab-label" for="tab-set--20-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>4.242640687119285
 4.242640687119285
 </pre></div>
@@ -664,7 +672,7 @@ change a feature of the code, you will only need to change it one place.</p>
 informative name, and you can easily check to see what the function
 does.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--21-input--1" name="tab-set--21" type="radio"/><label class="tab-label" for="tab-set--21-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--21-input--1" name="tab-set--21" type="radio"><label class="tab-label" for="tab-set--21-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define a function to calculate the distance between two points</span>
 <span class="k">def</span> <span class="nf">calculate_distance</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
    <span class="n">d</span> <span class="o">=</span> <span class="p">((</span><span class="n">x1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">x2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">x1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">x2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span>
@@ -676,11 +684,11 @@ does.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">calculate_distance</span><span class="p">(</span><span class="n">point5</span><span class="p">,</span> <span class="n">point6</span><span class="p">))</span>
 
 <span class="c1"># Print the result</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Distance:"</span><span class="p">,</span> <span class="n">distance</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Distance:&quot;</span><span class="p">,</span> <span class="n">distance</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--21-input--2" name="tab-set--21" type="radio"/><label class="tab-label" for="tab-set--21-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--21-input--2" name="tab-set--21" type="radio"><label class="tab-label" for="tab-set--21-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>6.708203932499369
 4.242640687119285
 4.242640687119285
@@ -693,7 +701,7 @@ Distance: 6.708203932499369
 our inflammation analysis easier to read and easier to reuse. First,
 let’s make a visualize function that generates our plots:</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--22-input--1" name="tab-set--22" type="radio"/><label class="tab-label" for="tab-set--22-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--22-input--1" name="tab-set--22" type="radio"><label class="tab-label" for="tab-set--22-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">visualize</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
 
    <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="c1"># read in file</span>
@@ -701,13 +709,13 @@ let’s make a visualize function that generates our plots:</p>
    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">))</span> <span class="c1"># make blank plot</span>
 
    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
-   <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'average'</span><span class="p">)</span>
+   <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;average&#39;</span><span class="p">)</span>
 
    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
-   <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'max'</span><span class="p">)</span>
+   <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;max&#39;</span><span class="p">)</span>
 
    <span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
-   <span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'min'</span><span class="p">)</span>
+   <span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;min&#39;</span><span class="p">)</span>
 
    <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -718,10 +726,10 @@ let’s make a visualize function that generates our plots:</p>
 <p>Rather than jumbling this code together in one giant for loop, we can
 now read and reuse with a simple for loop:</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--24-input--1" name="tab-set--24" type="radio"/><label class="tab-label" for="tab-set--24-input--1">Python</label><div class="tab-content docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">partial_url</span> <span class="o">=</span> <span class="s2">"https://raw.githubusercontent.com/DeisData/python/master/data/inflammation-0"</span> <span class="c1"># the part of the link all of the csv's share</span>
+<input checked="True" class="tab-input" id="tab-set--24-input--1" name="tab-set--24" type="radio"><label class="tab-label" for="tab-set--24-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">partial_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/DeisData/python/master/data/inflammation-0&quot;</span> <span class="c1"># the part of the link all of the csv&#39;s share</span>
 
-<span class="n">filenames</span> <span class="o">=</span> <span class="p">[</span> <span class="n">partial_url</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s2">".csv"</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="p">]</span> <span class="c1"># generates .../inflammation-01.csv through .../inflammation-04.csv</span>
+<span class="n">filenames</span> <span class="o">=</span> <span class="p">[</span> <span class="n">partial_url</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.csv&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="p">]</span> <span class="c1"># generates .../inflammation-01.csv through .../inflammation-04.csv</span>
 
 <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">:</span>
    <span class="nb">print</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
@@ -731,31 +739,31 @@ now read and reuse with a simple for loop:</p>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--23-input--1" name="tab-set--23" type="radio"/><label class="tab-label" for="tab-set--23-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--23-input--1" name="tab-set--23" type="radio"><label class="tab-label" for="tab-set--23-input--1">Output</label><div class="tab-content docutils container">
 <p><code class="docutils literal notranslate"><span class="pre">https://raw.githubusercontent.com/DeisData/python/master/data/inflammation-01.csv</span></code></p>
-<div style="background-color: white;"><p><img alt="fig 39_1" class="align-middle" src="../../_images/functions_39_1.png"/></p>
+<div style="background-color: white;"><p><img alt="fig 39_1" class="align-middle" src="../../_images/functions_39_1.png" /></p>
 </div><p><code class="docutils literal notranslate"><span class="pre">https://raw.githubusercontent.com/DeisData/python/master/data/inflammation-02.csv</span></code></p>
-<div style="background-color: white;"><p><img alt="fig 39_3" class="align-middle" src="../../_images/functions_39_3.png"/></p>
+<div style="background-color: white;"><p><img alt="fig 39_3" class="align-middle" src="../../_images/functions_39_3.png" /></p>
 </div><p><code class="docutils literal notranslate"><span class="pre">https://raw.githubusercontent.com/DeisData/python/master/data/inflammation-03.csv</span></code></p>
-<div style="background-color: white;"><p><img alt="fig 39_5" class="align-middle" src="../../_images/functions_39_5.png"/></p>
+<div style="background-color: white;"><p><img alt="fig 39_5" class="align-middle" src="../../_images/functions_39_5.png" /></p>
 </div></div>
 </div>
 <p>Limiting code duplication has an important benefit: if you need to
 change a feature of the code, you will only need to change it one place.</p>
 <section id="question-4-code-duplication">
-<h3>Question 4: Code duplication<a class="headerlink" href="#question-4-code-duplication" title="Permalink to this heading">¶</a></h3>
+<h3>Question 4: Code duplication<a class="headerlink" href="#question-4-code-duplication" title="Permalink to this heading">#</a></h3>
 <p>The code below takes 4 short DNA sequences and calculates the percentage
 of DNA bases that are either G or C for each of them. This runs the same
 process for each sequence.</p>
 <p>Take the code below and reduce some of the code duplication by creating
 one or more functions, or with other approaches.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--25-input--1" name="tab-set--25" type="radio"/><label class="tab-label" for="tab-set--25-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--25-input--1" name="tab-set--25" type="radio"><label class="tab-label" for="tab-set--25-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># initialize sequences</span>
-<span class="n">dna_sequence1</span> <span class="o">=</span> <span class="s1">'CGACCAATAGTGATCCACGGATTCTCTGAAGAGTCAGCATGCGGGAAATATACGCACAACTAACGGGACGGCGATTAACGCCAAGCCTGGGCTGAATATT'</span>
-<span class="n">dna_sequence2</span> <span class="o">=</span> <span class="s1">'TGCGGCAGGATTTCGGACCGAACCTTGTCACCCTTACATTCATGCATAGCAGGTTGCGTTGCGTGGCAGCGTGCCCACCACCTCCCGCTGGTTGCCCGTA'</span>
-<span class="n">dna_sequence3</span> <span class="o">=</span> <span class="s1">'AAAGTTGTGGTACTAATCGTATTGTTGCATTGACCCATAAAGATCCTCATTTTACAGAGCACATGAGATCCCGTTGGTATCAACGCCTGATTCTTATAGG'</span>
-<span class="n">dna_sequence4</span> <span class="o">=</span> <span class="s1">'GAGCGAGAGCTTACTGTGTGCTATCCCTCAAGATGCGTTGAAAAGTCAACTCACCAGATACTTAGGCCTGACGAGACATCGATTGCCGGTTCGAAAAGTG'</span>
+<span class="n">dna_sequence1</span> <span class="o">=</span> <span class="s1">&#39;CGACCAATAGTGATCCACGGATTCTCTGAAGAGTCAGCATGCGGGAAATATACGCACAACTAACGGGACGGCGATTAACGCCAAGCCTGGGCTGAATATT&#39;</span>
+<span class="n">dna_sequence2</span> <span class="o">=</span> <span class="s1">&#39;TGCGGCAGGATTTCGGACCGAACCTTGTCACCCTTACATTCATGCATAGCAGGTTGCGTTGCGTGGCAGCGTGCCCACCACCTCCCGCTGGTTGCCCGTA&#39;</span>
+<span class="n">dna_sequence3</span> <span class="o">=</span> <span class="s1">&#39;AAAGTTGTGGTACTAATCGTATTGTTGCATTGACCCATAAAGATCCTCATTTTACAGAGCACATGAGATCCCGTTGGTATCAACGCCTGATTCTTATAGG&#39;</span>
+<span class="n">dna_sequence4</span> <span class="o">=</span> <span class="s1">&#39;GAGCGAGAGCTTACTGTGTGCTATCCCTCAAGATGCGTTGAAAAGTCAACTCACCAGATACTTAGGCCTGACGAGACATCGATTGCCGGTTCGAAAAGTG&#39;</span>
 
 <span class="c1"># sequence 1</span>
 <span class="n">As1</span> <span class="o">=</span> <span class="mi">0</span>
@@ -765,16 +773,16 @@ one or more functions, or with other approaches.</p>
 
 <span class="k">for</span> <span class="n">base</span> <span class="ow">in</span> <span class="n">dna_sequence1</span><span class="p">:</span>
 
-   <span class="k">if</span> <span class="n">base</span> <span class="o">==</span> <span class="s1">'G'</span><span class="p">:</span>
+   <span class="k">if</span> <span class="n">base</span> <span class="o">==</span> <span class="s1">&#39;G&#39;</span><span class="p">:</span>
       <span class="n">Gs1</span> <span class="o">+=</span> <span class="mi">1</span>
-   <span class="k">elif</span> <span class="n">base</span> <span class="o">==</span> <span class="s1">'T'</span><span class="p">:</span>
+   <span class="k">elif</span> <span class="n">base</span> <span class="o">==</span> <span class="s1">&#39;T&#39;</span><span class="p">:</span>
       <span class="n">Ts1</span> <span class="o">+=</span> <span class="mi">1</span>
-   <span class="k">elif</span> <span class="n">base</span> <span class="o">==</span> <span class="s1">'A'</span><span class="p">:</span>
+   <span class="k">elif</span> <span class="n">base</span> <span class="o">==</span> <span class="s1">&#39;A&#39;</span><span class="p">:</span>
       <span class="n">As1</span> <span class="o">+=</span> <span class="mi">1</span>
-   <span class="k">elif</span> <span class="n">base</span> <span class="o">==</span> <span class="s1">'C'</span><span class="p">:</span>
+   <span class="k">elif</span> <span class="n">base</span> <span class="o">==</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span>
       <span class="n">Cs1</span> <span class="o">+=</span> <span class="mi">1</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"GC%:"</span><span class="p">,</span> <span class="p">(</span><span class="n">Gs1</span><span class="o">+</span><span class="n">Cs1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">Gs1</span><span class="o">+</span><span class="n">Cs1</span><span class="o">+</span><span class="n">Ts1</span><span class="o">+</span><span class="n">As1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GC%:&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">Gs1</span><span class="o">+</span><span class="n">Cs1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">Gs1</span><span class="o">+</span><span class="n">Cs1</span><span class="o">+</span><span class="n">Ts1</span><span class="o">+</span><span class="n">As1</span><span class="p">))</span>
 
 <span class="c1"># sequence 2</span>
 <span class="n">As2</span> <span class="o">=</span> <span class="mi">0</span>
@@ -784,16 +792,16 @@ one or more functions, or with other approaches.</p>
 
 <span class="k">for</span> <span class="n">base</span> <span class="ow">in</span> <span class="n">dna_sequence2</span><span class="p">:</span>
 
-   <span class="k">if</span> <span class="n">base</span> <span class="o">==</span> <span class="s1">'G'</span><span class="p">:</span>
+   <span class="k">if</span> <span class="n">base</span> <span class="o">==</span> <span class="s1">&#39;G&#39;</span><span class="p">:</span>
       <span class="n">Gs2</span> <span class="o">+=</span> <span class="mi">1</span>
-   <span class="k">elif</span> <span class="n">base</span> <span class="o">==</span> <span class="s1">'T'</span><span class="p">:</span>
+   <span class="k">elif</span> <span class="n">base</span> <span class="o">==</span> <span class="s1">&#39;T&#39;</span><span class="p">:</span>
       <span class="n">Ts2</span> <span class="o">+=</span> <span class="mi">1</span>
-   <span class="k">elif</span> <span class="n">base</span> <span class="o">==</span> <span class="s1">'A'</span><span class="p">:</span>
+   <span class="k">elif</span> <span class="n">base</span> <span class="o">==</span> <span class="s1">&#39;A&#39;</span><span class="p">:</span>
       <span class="n">As2</span> <span class="o">+=</span> <span class="mi">1</span>
-   <span class="k">elif</span> <span class="n">base</span> <span class="o">==</span> <span class="s1">'C'</span><span class="p">:</span>
+   <span class="k">elif</span> <span class="n">base</span> <span class="o">==</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span>
       <span class="n">Cs2</span> <span class="o">+=</span> <span class="mi">1</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"GC%:"</span><span class="p">,</span> <span class="p">(</span><span class="n">Gs2</span><span class="o">+</span><span class="n">Cs2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">Gs2</span><span class="o">+</span><span class="n">Cs2</span><span class="o">+</span><span class="n">Ts2</span><span class="o">+</span><span class="n">As2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GC%:&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">Gs2</span><span class="o">+</span><span class="n">Cs2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">Gs2</span><span class="o">+</span><span class="n">Cs2</span><span class="o">+</span><span class="n">Ts2</span><span class="o">+</span><span class="n">As2</span><span class="p">))</span>
 
 
 <span class="c1"># sequence 3</span>
@@ -804,16 +812,16 @@ one or more functions, or with other approaches.</p>
 
 <span class="k">for</span> <span class="n">base</span> <span class="ow">in</span> <span class="n">dna_sequence3</span><span class="p">:</span>
 
-   <span class="k">if</span> <span class="n">base</span> <span class="o">==</span> <span class="s1">'G'</span><span class="p">:</span>
+   <span class="k">if</span> <span class="n">base</span> <span class="o">==</span> <span class="s1">&#39;G&#39;</span><span class="p">:</span>
       <span class="n">Gs3</span> <span class="o">+=</span> <span class="mi">1</span>
-   <span class="k">elif</span> <span class="n">base</span> <span class="o">==</span> <span class="s1">'T'</span><span class="p">:</span>
+   <span class="k">elif</span> <span class="n">base</span> <span class="o">==</span> <span class="s1">&#39;T&#39;</span><span class="p">:</span>
       <span class="n">Ts3</span> <span class="o">+=</span> <span class="mi">1</span>
-   <span class="k">elif</span> <span class="n">base</span> <span class="o">==</span> <span class="s1">'A'</span><span class="p">:</span>
+   <span class="k">elif</span> <span class="n">base</span> <span class="o">==</span> <span class="s1">&#39;A&#39;</span><span class="p">:</span>
       <span class="n">As3</span> <span class="o">+=</span> <span class="mi">1</span>
-   <span class="k">elif</span> <span class="n">base</span> <span class="o">==</span> <span class="s1">'C'</span><span class="p">:</span>
+   <span class="k">elif</span> <span class="n">base</span> <span class="o">==</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span>
       <span class="n">Cs3</span> <span class="o">+=</span> <span class="mi">1</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"GC%:"</span><span class="p">,</span> <span class="p">(</span><span class="n">Gs3</span><span class="o">+</span><span class="n">Cs3</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">Gs3</span><span class="o">+</span><span class="n">Cs3</span><span class="o">+</span><span class="n">Ts3</span><span class="o">+</span><span class="n">As3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GC%:&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">Gs3</span><span class="o">+</span><span class="n">Cs3</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">Gs3</span><span class="o">+</span><span class="n">Cs3</span><span class="o">+</span><span class="n">Ts3</span><span class="o">+</span><span class="n">As3</span><span class="p">))</span>
 
 <span class="c1"># sequence 4</span>
 <span class="n">As4</span> <span class="o">=</span> <span class="mi">0</span>
@@ -823,20 +831,20 @@ one or more functions, or with other approaches.</p>
 
 <span class="k">for</span> <span class="n">base</span> <span class="ow">in</span> <span class="n">dna_sequence4</span><span class="p">:</span>
 
-   <span class="k">if</span> <span class="n">base</span> <span class="o">==</span> <span class="s1">'G'</span><span class="p">:</span>
+   <span class="k">if</span> <span class="n">base</span> <span class="o">==</span> <span class="s1">&#39;G&#39;</span><span class="p">:</span>
       <span class="n">Gs4</span> <span class="o">+=</span> <span class="mi">1</span>
-   <span class="k">elif</span> <span class="n">base</span> <span class="o">==</span> <span class="s1">'T'</span><span class="p">:</span>
+   <span class="k">elif</span> <span class="n">base</span> <span class="o">==</span> <span class="s1">&#39;T&#39;</span><span class="p">:</span>
       <span class="n">Ts4</span> <span class="o">+=</span> <span class="mi">1</span>
-   <span class="k">elif</span> <span class="n">base</span> <span class="o">==</span> <span class="s1">'A'</span><span class="p">:</span>
+   <span class="k">elif</span> <span class="n">base</span> <span class="o">==</span> <span class="s1">&#39;A&#39;</span><span class="p">:</span>
       <span class="n">As4</span> <span class="o">+=</span> <span class="mi">1</span>
-   <span class="k">elif</span> <span class="n">base</span> <span class="o">==</span> <span class="s1">'C'</span><span class="p">:</span>
+   <span class="k">elif</span> <span class="n">base</span> <span class="o">==</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span>
       <span class="n">Cs4</span> <span class="o">+=</span> <span class="mi">1</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"GC%:"</span><span class="p">,</span> <span class="p">(</span><span class="n">Gs4</span><span class="o">+</span><span class="n">Cs4</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">Gs4</span><span class="o">+</span><span class="n">Cs4</span><span class="o">+</span><span class="n">Ts4</span><span class="o">+</span><span class="n">As4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GC%:&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">Gs4</span><span class="o">+</span><span class="n">Cs4</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">Gs4</span><span class="o">+</span><span class="n">Cs4</span><span class="o">+</span><span class="n">Ts4</span><span class="o">+</span><span class="n">As4</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--25-input--2" name="tab-set--25" type="radio"/><label class="tab-label" for="tab-set--25-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--25-input--2" name="tab-set--25" type="radio"><label class="tab-label" for="tab-set--25-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>GC%: 0.5
 GC%: 0.6
 GC%: 0.4
@@ -849,20 +857,20 @@ GC%: 0.49
 <summary>Solution</summary><div class="docutils container">
 <p>There are many ways to clean up this code. Here is one example.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--26-input--1" name="tab-set--26" type="radio"/><label class="tab-label" for="tab-set--26-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--26-input--1" name="tab-set--26" type="radio"><label class="tab-label" for="tab-set--26-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># initialize sequences</span>
-<span class="n">dna_sequence1</span> <span class="o">=</span> <span class="s1">'CGACCAATAGTGATCCACGGATTCTCTGAAGAGTCAGCATGCGGGAAATATACGCACAACTAACGGGACGGCGATTAACGCCAAGCCTGGGCTGAATATT'</span>
-<span class="n">dna_sequence2</span> <span class="o">=</span> <span class="s1">'TGCGGCAGGATTTCGGACCGAACCTTGTCACCCTTACATTCATGCATAGCAGGTTGCGTTGCGTGGCAGCGTGCCCACCACCTCCCGCTGGTTGCCCGTA'</span>
-<span class="n">dna_sequence3</span> <span class="o">=</span> <span class="s1">'AAAGTTGTGGTACTAATCGTATTGTTGCATTGACCCATAAAGATCCTCATTTTACAGAGCACATGAGATCCCGTTGGTATCAACGCCTGATTCTTATAGG'</span>
-<span class="n">dna_sequence4</span> <span class="o">=</span> <span class="s1">'GAGCGAGAGCTTACTGTGTGCTATCCCTCAAGATGCGTTGAAAAGTCAACTCACCAGATACTTAGGCCTGACGAGACATCGATTGCCGGTTCGAAAAGTG'</span>
+<span class="n">dna_sequence1</span> <span class="o">=</span> <span class="s1">&#39;CGACCAATAGTGATCCACGGATTCTCTGAAGAGTCAGCATGCGGGAAATATACGCACAACTAACGGGACGGCGATTAACGCCAAGCCTGGGCTGAATATT&#39;</span>
+<span class="n">dna_sequence2</span> <span class="o">=</span> <span class="s1">&#39;TGCGGCAGGATTTCGGACCGAACCTTGTCACCCTTACATTCATGCATAGCAGGTTGCGTTGCGTGGCAGCGTGCCCACCACCTCCCGCTGGTTGCCCGTA&#39;</span>
+<span class="n">dna_sequence3</span> <span class="o">=</span> <span class="s1">&#39;AAAGTTGTGGTACTAATCGTATTGTTGCATTGACCCATAAAGATCCTCATTTTACAGAGCACATGAGATCCCGTTGGTATCAACGCCTGATTCTTATAGG&#39;</span>
+<span class="n">dna_sequence4</span> <span class="o">=</span> <span class="s1">&#39;GAGCGAGAGCTTACTGTGTGCTATCCCTCAAGATGCGTTGAAAAGTCAACTCACCAGATACTTAGGCCTGACGAGACATCGATTGCCGGTTCGAAAAGTG&#39;</span>
 
 <span class="k">def</span> <span class="nf">gc_analysis</span><span class="p">(</span><span class="n">sequence</span><span class="p">):</span>
    <span class="c1"># make bases into a dictionary</span>
    <span class="n">bases</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="s1">'A'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s1">'T'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s1">'G'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s1">'C'</span><span class="p">:</span> <span class="mi">0</span>
+      <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s1">&#39;T&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s1">&#39;G&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="mi">0</span>
    <span class="p">}</span>
 
    <span class="k">for</span> <span class="n">base</span> <span class="ow">in</span> <span class="n">sequence</span><span class="p">:</span>
@@ -870,10 +878,10 @@ GC%: 0.49
       <span class="n">bases</span><span class="p">[</span><span class="n">base</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># use keys to remove conditional</span>
 
    <span class="c1"># make calculation have less clutter</span>
-   <span class="n">GCs</span> <span class="o">=</span> <span class="n">bases</span><span class="p">[</span><span class="s1">'G'</span><span class="p">]</span><span class="o">+</span><span class="n">bases</span><span class="p">[</span><span class="s1">'C'</span><span class="p">]</span>
+   <span class="n">GCs</span> <span class="o">=</span> <span class="n">bases</span><span class="p">[</span><span class="s1">&#39;G&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">bases</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span>
    <span class="n">total_bases</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">sequence</span><span class="p">)</span>
 
-   <span class="nb">print</span><span class="p">(</span><span class="s2">"GC%:"</span><span class="p">,</span> <span class="n">GCs</span><span class="o">/</span><span class="n">total_bases</span><span class="p">)</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GC%:&quot;</span><span class="p">,</span> <span class="n">GCs</span><span class="o">/</span><span class="n">total_bases</span><span class="p">)</span>
 
 <span class="c1"># create an iterable to use for loop</span>
 <span class="n">dna_sequences</span> <span class="o">=</span> <span class="p">[</span><span class="n">dna_sequence1</span><span class="p">,</span> <span class="n">dna_sequence2</span><span class="p">,</span> <span class="n">dna_sequence3</span><span class="p">,</span> <span class="n">dna_sequence4</span><span class="p">]</span>
@@ -883,7 +891,7 @@ GC%: 0.49
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--26-input--2" name="tab-set--26" type="radio"/><label class="tab-label" for="tab-set--26-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--26-input--2" name="tab-set--26" type="radio"><label class="tab-label" for="tab-set--26-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>GC%: 0.5
 GC%: 0.6
 GC%: 0.4
@@ -896,7 +904,7 @@ GC%: 0.49
 </details></section>
 </section>
 <section id="add-documentation-to-your-functions">
-<h2>Add documentation to your functions<a class="headerlink" href="#add-documentation-to-your-functions" title="Permalink to this heading">¶</a></h2>
+<h2>Add documentation to your functions<a class="headerlink" href="#add-documentation-to-your-functions" title="Permalink to this heading">#</a></h2>
 <p>If the first thing in a function is a string that isn’t assigned to a
 variable, that string is attached to the function as its documentation.
 This is called a <em>docstring</em> and is in triple quotes.</p>
@@ -905,27 +913,27 @@ type.</p>
 <p><em>Note: You can also use triple quotes elsewhere in code as generic
 multi-line comments.</em></p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--28-input--1" name="tab-set--28" type="radio"/><label class="tab-label" for="tab-set--28-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--28-input--1" name="tab-set--28" type="radio"><label class="tab-label" for="tab-set--28-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">offset_mean</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">target_mean_value</span><span class="p">):</span>
-<span class="w">   </span><span class="sd">"""</span>
+<span class="w">   </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">   Return a new array containing the original data</span>
 <span class="sd">   with its mean offset to match the desired value.</span>
 <span class="sd">   ------------------------------------------------</span>
 <span class="sd">   data (numpy.array) - n x m dimensional array</span>
 <span class="sd">   target_mean_value (float) - desired mean value</span>
-<span class="sd">   """</span>
+<span class="sd">   &quot;&quot;&quot;</span>
    <span class="k">return</span> <span class="p">(</span><span class="n">data</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">))</span> <span class="o">+</span> <span class="n">target_mean_value</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--27-input--1" name="tab-set--27" type="radio"/><label class="tab-label" for="tab-set--27-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--27-input--1" name="tab-set--27" type="radio"><label class="tab-label" for="tab-set--27-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">offset_mean</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--27-input--2" name="tab-set--27" type="radio"/><label class="tab-label" for="tab-set--27-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--27-input--2" name="tab-set--27" type="radio"><label class="tab-label" for="tab-set--27-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Help on function offset_mean in module __main__:
 
 offset_mean(data, target_mean_value)
@@ -942,15 +950,15 @@ offset_mean(data, target_mean_value)
 that this will not enforce each data type, so you will need to build in
 checks to actually limit the data types of arguments.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--29-input--1" name="tab-set--29" type="radio"/><label class="tab-label" for="tab-set--29-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--29-input--1" name="tab-set--29" type="radio"><label class="tab-label" for="tab-set--29-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_func</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="nb">int</span><span class="p">):</span>
    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="n">my_func</span><span class="p">(</span><span class="s1">'Not a number'</span><span class="p">)</span>
+<span class="n">my_func</span><span class="p">(</span><span class="s1">&#39;Not a number&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--29-input--2" name="tab-set--29" type="radio"/><label class="tab-label" for="tab-set--29-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--29-input--2" name="tab-set--29" type="radio"><label class="tab-label" for="tab-set--29-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Not a number
 </pre></div>
 </div>
@@ -961,16 +969,16 @@ having errors thrown, you can use an <code class="docutils literal notranslate">
 you to make a quick boolean expression check with custom error message.
 The general format is <code class="docutils literal notranslate"><span class="pre">assert</span> <span class="pre">BOOLEAN_EXPRESSION,</span> <span class="pre">ERROR_MESSAGE</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--30-input--1" name="tab-set--30" type="radio"/><label class="tab-label" for="tab-set--30-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--30-input--1" name="tab-set--30" type="radio"><label class="tab-label" for="tab-set--30-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">better_func</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="nb">int</span><span class="p">):</span>
-   <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">int</span><span class="p">),</span> <span class="n">x</span> <span class="o">+</span> <span class="s2">" is not int"</span>
+   <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">int</span><span class="p">),</span> <span class="n">x</span> <span class="o">+</span> <span class="s2">&quot; is not int&quot;</span>
    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-<span class="n">better_func</span><span class="p">(</span><span class="s1">'Not a number'</span><span class="p">)</span>
+<span class="n">better_func</span><span class="p">(</span><span class="s1">&#39;Not a number&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--30-input--2" name="tab-set--30" type="radio"/><label class="tab-label" for="tab-set--30-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--30-input--2" name="tab-set--30" type="radio"><label class="tab-label" for="tab-set--30-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
 
 AssertionError                            Traceback (most recent call last)
@@ -981,11 +989,11 @@ AssertionError: Not a number is not int
 </div>
 </div>
 <section id="question-5-readable-functions">
-<h3>Question 5: Readable functions<a class="headerlink" href="#question-5-readable-functions" title="Permalink to this heading">¶</a></h3>
+<h3>Question 5: Readable functions<a class="headerlink" href="#question-5-readable-functions" title="Permalink to this heading">#</a></h3>
 <p>Which one of these functions is more readable - <code class="docutils literal notranslate"><span class="pre">s()</span></code> or
 <code class="docutils literal notranslate"><span class="pre">std_dev()</span></code>? Why?</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--31-input--1" name="tab-set--31" type="radio"/><label class="tab-label" for="tab-set--31-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--31-input--1" name="tab-set--31" type="radio"><label class="tab-label" for="tab-set--31-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">s</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
    <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">p</span><span class="p">:</span>
@@ -1021,7 +1029,7 @@ sense to an outside party (or your future self!).</p>
 </div>
 </details></section>
 <section id="resources">
-<h3>Resources<a class="headerlink" href="#resources" title="Permalink to this heading">¶</a></h3>
+<h3>Resources<a class="headerlink" href="#resources" title="Permalink to this heading">#</a></h3>
 <p>This lesson is developed from the following resources:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="http://swcarpentry.github.io/python-novice-gapminder/16-writing-functions/index.html">http://swcarpentry.github.io/python-novice-gapminder/16-writing-functions/index.html</a></p></li>
@@ -1043,10 +1051,10 @@ sense to an outside party (or your future self!).</p>
                 </div>
                 <div class="title">Statistics with Python</div>
               </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
           <a class="prev-page" href="../figures/">
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
@@ -1057,15 +1065,19 @@ sense to an outside party (or your future self!).</p>
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; 2023, Ford Fishman |
-          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../../_sources/python/functions.rst.txt"
-               rel="nofollow">
-              Show Source
-            </a>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Ford Fishman
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
         </div>
         
       </footer>
@@ -1076,7 +1088,7 @@ sense to an outside party (or your future self!).</p>
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            On this page
           </span>
         </div>
         <div class="toc-tree-container">
@@ -1118,7 +1130,7 @@ sense to an outside party (or your future self!).</p>
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=fbdbc327"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
-    <script src="../../_static/scripts/furo.js?v=818c8f69"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="../../_static/tabs.js?v=3ee01567"></script>
     </body>
 </html>

@@ -1,16 +1,16 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" data-content_root="">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Python data structures" href="../data-structures/" /><link rel="prev" title="How to use a Jupyter notebook" href="../jupyter/" />
 
-    <link rel="shortcut icon" href="../../_static/favicon-32x32.png"/><meta name="generator" content="sphinx-7.1.2, furo 2021.11.16"/>
+    <link rel="shortcut icon" href="../../_static/favicon-32x32.png"/><!-- Generated with Sphinx 7.1.2 and Furo 2023.09.10 -->
         <title>Python fundamentals - DeisData</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=916d6ed8f59335acffa15474ff504849343d4c76" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=934bd528" />
     
     
@@ -22,38 +22,38 @@
   --color-code-foreground: black;
   
   }
-  body[data-theme="dark"] {
-    --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-  }
-  @media (prefers-color-scheme: dark) {
-    body:not([data-theme="light"]) {
+  @media not print {
+    body[data-theme="dark"] {
       --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
   
     }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -62,14 +62,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -84,7 +84,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -92,7 +92,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -154,14 +154,14 @@
   <span class="sidebar-brand-text">DeisData</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../">Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../">Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../setup-install/">Setup and installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../jupyter/">Jupyter notebooks</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Fundamentals</a></li>
@@ -175,14 +175,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../stats/">Statistical tests</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../r/">R</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../r/">R</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of R</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../r/quick-start/">Intro to R and the Tidyverse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../r/data-wrangling/">Data wrangling with the Tidyverse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../r/data-visualization/">ggplot2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../r/text-mining/">Text mining</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../shell/">Unix Shell</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../shell/">Unix Shell</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Unix Shell</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../shell/setup/">Bash Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../shell/navigating/">Navigating</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../shell/alter-dir/">Altering files and directories</a></li>
@@ -192,7 +192,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../shell/search-find/">Searching and finding</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../git/">Git Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../git/">Git Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../git/setup-install/">Setup and installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../git/quick-start/">Quick start to Git and GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../git/pushing/">Pushing changes</a></li>
@@ -206,6 +206,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -213,8 +214,15 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -229,25 +237,25 @@
         </div>
         <article role="main">
           <section id="python-fundamentals">
-<h1>Python fundamentals<a class="headerlink" href="#python-fundamentals" title="Permalink to this heading">¶</a></h1>
+<h1>Python fundamentals<a class="headerlink" href="#python-fundamentals" title="Permalink to this heading">#</a></h1>
 <p>Python is a very powerful tool for automating tasks that would otherwise
 be time-consuming or impossible to do by hand or other conventional
 tools. Here, we’ll go over basic ways to use Python to introduce you to
 a slice of its potential.</p>
 <section id="materials">
-<h2>Materials:<a class="headerlink" href="#materials" title="Permalink to this heading">¶</a></h2>
+<h2>Materials:<a class="headerlink" href="#materials" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/python-fundamentals-codealong.ipynb">Code-along Jupyter notebook</a></p></li>
 <li><p><a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/python-fundamentals.ipynb">Filled-in Jupyter notebook</a></p></li>
 </ul>
 <section id="question-1-do-it-yourself">
-<h3>Question 1: Do it yourself!<a class="headerlink" href="#question-1-do-it-yourself" title="Permalink to this heading">¶</a></h3>
+<h3>Question 1: Do it yourself!<a class="headerlink" href="#question-1-do-it-yourself" title="Permalink to this heading">#</a></h3>
 <p>Write a message and print it out!</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"/><label class="tab-label" for="tab-set--0-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#  INSTRUCTIONS:   Write a message in the quotes.</span>
 <span class="c1">#  type Shift+Enter to run the cell.</span>
-<span class="n">message</span> <span class="o">=</span> <span class="s1">''</span>
+<span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
 </pre></div>
@@ -257,7 +265,7 @@ a slice of its potential.</p>
 </section>
 </section>
 <section id="python-as-a-calculator">
-<h2>Python as a calculator<a class="headerlink" href="#python-as-a-calculator" title="Permalink to this heading">¶</a></h2>
+<h2>Python as a calculator<a class="headerlink" href="#python-as-a-calculator" title="Permalink to this heading">#</a></h2>
 <p>An incredibly simple yet pivotal role of Python is to perform math
 calculations (addition, subtraction, multiplication, etc.). We show how
 to basic action below.</p>
@@ -265,12 +273,12 @@ to basic action below.</p>
 used to write descriptions. Any characters following <code class="docutils literal notranslate"><span class="pre">#</span></code> are not run
 or executed.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"/><label class="tab-label" for="tab-set--1-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">5</span>  <span class="c1"># addition and multiplication</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"/><label class="tab-label" for="tab-set--1-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>23
 </pre></div>
 </div>
@@ -281,12 +289,12 @@ or executed.</p>
 for that calculation. You can parentheses too if you want to group
 calculations.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"/><label class="tab-label" for="tab-set--2-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">12</span> <span class="o">/</span> <span class="p">(</span><span class="mi">6</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span> <span class="c1"># division and substraction</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"/><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>6.0
 </pre></div>
 </div>
@@ -295,28 +303,30 @@ calculations.</p>
 <p>Exponentiation (e.g. <span class="math notranslate nohighlight">\(2^3\)</span>) looks a little bit odd in Python as it
 uses <code class="docutils literal notranslate"><span class="pre">**</span></code> instead of a more traditional <code class="docutils literal notranslate"><span class="pre">^</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"/><label class="tab-label" for="tab-set--3-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span> <span class="c1"># exponentiation</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"/><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>8
 </pre></div>
 </div>
 </div>
 </div>
 <section id="question-2-writing-math">
-<h3>Question 2: Writing math<a class="headerlink" href="#question-2-writing-math" title="Permalink to this heading">¶</a></h3>
+<h3>Question 2: Writing math<a class="headerlink" href="#question-2-writing-math" title="Permalink to this heading">#</a></h3>
 <p>Calculate the following value in Python:</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[\frac{25}{(35 - 3)^3}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\frac{25}{(35 - 3)^3}\]</div>
+</div>
 <details class="summary-solution">
 <summary>Solution</summary><div class="docutils container">
 <p>Remember to include parentheses when needed, but Python also follows
 standard order of operations.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"/><label class="tab-label" for="tab-set--4-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">25</span><span class="o">/</span><span class="p">(</span><span class="mi">35</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span>
 </pre></div>
 </div>
@@ -326,11 +336,11 @@ standard order of operations.</p>
 </details></section>
 </section>
 <section id="assigning-variables">
-<h2>Assigning Variables<a class="headerlink" href="#assigning-variables" title="Permalink to this heading">¶</a></h2>
+<h2>Assigning Variables<a class="headerlink" href="#assigning-variables" title="Permalink to this heading">#</a></h2>
 <p>A foundational tool in Python is assigning values to variables. We do
 this with the <code class="docutils literal notranslate"><span class="pre">=</span></code> operator.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"/><label class="tab-label" for="tab-set--5-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">50</span> <span class="c1"># x is 50</span>
 </pre></div>
 </div>
@@ -341,13 +351,13 @@ value of x is now stored in our notebook, and we can access this value
 in other cells until the notebook is reset. For instance, subtracting 20
 from <code class="docutils literal notranslate"><span class="pre">x</span></code> prints out a value of 30.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"/><label class="tab-label" for="tab-set--6-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># What if I use x again in a different cell?</span>
 <span class="n">x</span> <span class="o">-</span> <span class="mi">20</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio"/><label class="tab-label" for="tab-set--6-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>30
 </pre></div>
 </div>
@@ -360,13 +370,13 @@ from <code class="docutils literal notranslate"><span class="pre">x</span></code
 <p>If we ever want to check the value of any variable, we can use the
 built-in <code class="docutils literal notranslate"><span class="pre">print()</span></code> command to display the value.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"/><label class="tab-label" for="tab-set--7-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mi">35</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--7-input--2" name="tab-set--7" type="radio"/><label class="tab-label" for="tab-set--7-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--7-input--2" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>35
 </pre></div>
 </div>
@@ -381,14 +391,14 @@ to <code class="docutils literal notranslate"><span class="pre">x</span></code>.
 interpretted as “let x take the current value of y”.</p>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"/><label class="tab-label" for="tab-set--8-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">y</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--8-input--2" name="tab-set--8" type="radio"/><label class="tab-label" for="tab-set--8-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--8-input--2" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>35
 35
 </pre></div>
@@ -397,14 +407,14 @@ interpretted as “let x take the current value of y”.</p>
 </div>
 <p>If we change <code class="docutils literal notranslate"><span class="pre">y</span></code> to be a different value, <code class="docutils literal notranslate"><span class="pre">x</span></code> will be unaffected.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"/><label class="tab-label" for="tab-set--9-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mf">3.8</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># will not always be the same value as y</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--9-input--2" name="tab-set--9" type="radio"/><label class="tab-label" for="tab-set--9-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--9-input--2" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>35
 3.8
 </pre></div>
@@ -417,11 +427,11 @@ interpretted as “let x take the current value of y”.</p>
 update automatically.</p>
 </div>
 <section id="question-3-swapping-values">
-<h3>Question 3: Swapping values<a class="headerlink" href="#question-3-swapping-values" title="Permalink to this heading">¶</a></h3>
+<h3>Question 3: Swapping values<a class="headerlink" href="#question-3-swapping-values" title="Permalink to this heading">#</a></h3>
 <p>Given the code below, what is the value of the variable <code class="docutils literal notranslate"><span class="pre">swap</span></code> by the
 end of the block?</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio"/><label class="tab-label" for="tab-set--10-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">1.0</span>
 <span class="n">y</span> <span class="o">=</span> <span class="mf">3.0</span>
 <span class="n">swap</span> <span class="o">=</span> <span class="n">x</span>
@@ -436,7 +446,7 @@ end of the block?</p>
 <p>The only statements here that effect the value of <code class="docutils literal notranslate"><span class="pre">swap</span></code> are
 <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">1.0</span></code> and <code class="docutils literal notranslate"><span class="pre">swap</span> <span class="pre">=</span> <span class="pre">x</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio"/><label class="tab-label" for="tab-set--11-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1.0
 </pre></div>
 </div>
@@ -456,13 +466,13 @@ end of the block?</p>
 <p>Variables must be created before they are used. Otherwise, Python
 will throw an error.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio"/><label class="tab-label" for="tab-set--12-input--1">Python</label><div class="tab-content docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="c1"># we haven't initialized z yet!</span>
+<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="c1"># we haven&#39;t initialized z yet!</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--12-input--2" name="tab-set--12" type="radio"/><label class="tab-label" for="tab-set--12-input--2">Output</label><div class="tab-content docutils container">
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>NameError: name 'z' is not defined
+<input class="tab-input" id="tab-set--12-input--2" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>NameError: name &#39;z&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -472,10 +482,10 @@ print it. This will not work. Within a cell, the statements are executed
 from top to bottom. If the Python interpreter finds an error, execution
 stops.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio"/><label class="tab-label" for="tab-set--13-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">last_name</span><span class="p">)</span> <span class="c1"># last name does not exist yet</span>
 <span class="c1"># What happens if I try to correct my error in the same cell?</span>
-<span class="n">last_name</span><span class="o">=</span><span class="s1">'Montoya'</span>
+<span class="n">last_name</span><span class="o">=</span><span class="s1">&#39;Montoya&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">last_name</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -484,14 +494,14 @@ stops.</p>
 <p>If we want to increase a value of a variable by a certain, we can use
 the <code class="docutils literal notranslate"><span class="pre">+=</span></code> operator. Here, we add 2 to the current value of x.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio"/><label class="tab-label" for="tab-set--14-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># before incrementing</span>
 <span class="n">x</span> <span class="o">+=</span> <span class="mi">2</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># after incrementing</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--14-input--2" name="tab-set--14" type="radio"/><label class="tab-label" for="tab-set--14-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--14-input--2" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>35
 37
 </pre></div>
@@ -501,18 +511,18 @@ the <code class="docutils literal notranslate"><span class="pre">+=</span></code
 <p>This is equivalent to running <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">2</span></code>. We can also do similar
 operations with subtraction, multiplication, and division.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio"/><label class="tab-label" for="tab-set--15-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio"><label class="tab-label" for="tab-set--15-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">8</span>
 <span class="n">x</span> <span class="o">-=</span> <span class="mi">2</span> <span class="c1"># 8 - 2</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"subtraction:"</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;subtraction:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">*=</span> <span class="mi">4</span> <span class="c1"># 6 * 4</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"multiplication:"</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;multiplication:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">/=</span> <span class="mi">6</span> <span class="c1"># 24 / 6</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"division:"</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;division:&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--15-input--2" name="tab-set--15" type="radio"/><label class="tab-label" for="tab-set--15-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--15-input--2" name="tab-set--15" type="radio"><label class="tab-label" for="tab-set--15-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>subtraction: 6
 multiplication: 24
 division: 4.0
@@ -522,11 +532,11 @@ division: 4.0
 </div>
 </section>
 <section id="question-4-using-variables">
-<h3>Question 4: Using variables<a class="headerlink" href="#question-4-using-variables" title="Permalink to this heading">¶</a></h3>
+<h3>Question 4: Using variables<a class="headerlink" href="#question-4-using-variables" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">a</span></code> has been initialized to be 25. Assign variable <code class="docutils literal notranslate"><span class="pre">b</span></code> to be 5 less
 than <code class="docutils literal notranslate"><span class="pre">a</span></code> without using <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">20</span></code>. Print the value of b.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio"/><label class="tab-label" for="tab-set--16-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="c1"># write your code here:</span>
 </pre></div>
@@ -537,7 +547,7 @@ than <code class="docutils literal notranslate"><span class="pre">a</span></code
 <summary>Solution</summary><div class="docutils container">
 <p>We can use variable <code class="docutils literal notranslate"><span class="pre">a</span></code> to assign value of <code class="docutils literal notranslate"><span class="pre">a-5</span></code> to <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio"/><label class="tab-label" for="tab-set--17-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="mi">5</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
@@ -549,19 +559,19 @@ than <code class="docutils literal notranslate"><span class="pre">a</span></code
 </details></section>
 </section>
 <section id="strings">
-<h2>Strings<a class="headerlink" href="#strings" title="Permalink to this heading">¶</a></h2>
+<h2>Strings<a class="headerlink" href="#strings" title="Permalink to this heading">#</a></h2>
 <p>So far, we have only assigned integer values to variables. We can also
 assign values characters to variables. These are called <strong>strings</strong>. You
 can specify a string by putting text within either single quotation
-(<code class="docutils literal notranslate"><span class="pre">'single'</span></code>) or double quotation marks (<code class="docutils literal notranslate"><span class="pre">"double"</span></code>).</p>
+(<code class="docutils literal notranslate"><span class="pre">'single'</span></code>) or double quotation marks (<code class="docutils literal notranslate"><span class="pre">&quot;double&quot;</span></code>).</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--18-input--1" name="tab-set--18" type="radio"/><label class="tab-label" for="tab-set--18-input--1">Python</label><div class="tab-content docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_name</span> <span class="o">=</span> <span class="s2">"Inigo Montoya"</span>
+<input checked="True" class="tab-input" id="tab-set--18-input--1" name="tab-set--18" type="radio"><label class="tab-label" for="tab-set--18-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_name</span> <span class="o">=</span> <span class="s2">&quot;Inigo Montoya&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">my_name</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--18-input--2" name="tab-set--18" type="radio"/><label class="tab-label" for="tab-set--18-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--18-input--2" name="tab-set--18" type="radio"><label class="tab-label" for="tab-set--18-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Inigo Montoya
 </pre></div>
 </div>
@@ -569,13 +579,13 @@ can specify a string by putting text within either single quotation
 </div>
 <p>We can print out a string directly in <code class="docutils literal notranslate"><span class="pre">print()</span></code>, as well.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--19-input--1" name="tab-set--19" type="radio"/><label class="tab-label" for="tab-set--19-input--1">Python</label><div class="tab-content docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"My name is"</span><span class="p">)</span>
+<input checked="True" class="tab-input" id="tab-set--19-input--1" name="tab-set--19" type="radio"><label class="tab-label" for="tab-set--19-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;My name is&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">my_name</span><span class="p">)</span> <span class="c1"># will print on a second line</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--19-input--2" name="tab-set--19" type="radio"/><label class="tab-label" for="tab-set--19-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--19-input--2" name="tab-set--19" type="radio"><label class="tab-label" for="tab-set--19-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>My name is
 Inigo Montoya
 </pre></div>
@@ -584,12 +594,12 @@ Inigo Montoya
 </div>
 <p>We can also print out multiple values in a single <code class="docutils literal notranslate"><span class="pre">print()</span></code> statement.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--20-input--1" name="tab-set--20" type="radio"/><label class="tab-label" for="tab-set--20-input--1">Python</label><div class="tab-content docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"My name is"</span><span class="p">,</span> <span class="n">my_name</span><span class="p">)</span> <span class="c1"># print() adds a space between the values</span>
+<input checked="True" class="tab-input" id="tab-set--20-input--1" name="tab-set--20" type="radio"><label class="tab-label" for="tab-set--20-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;My name is&quot;</span><span class="p">,</span> <span class="n">my_name</span><span class="p">)</span> <span class="c1"># print() adds a space between the values</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--20-input--2" name="tab-set--20" type="radio"/><label class="tab-label" for="tab-set--20-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--20-input--2" name="tab-set--20" type="radio"><label class="tab-label" for="tab-set--20-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>My name is Inigo Montoya
 </pre></div>
 </div>
@@ -598,23 +608,23 @@ Inigo Montoya
 <p>If we print out a string with an integer variable, it will convert the
 integer to a string in order to print it.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--21-input--1" name="tab-set--21" type="radio"/><label class="tab-label" for="tab-set--21-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--21-input--1" name="tab-set--21" type="radio"><label class="tab-label" for="tab-set--21-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num_balloons</span> <span class="o">=</span> <span class="mi">25</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"I would like"</span><span class="p">,</span> <span class="n">num_balloons</span><span class="p">,</span> <span class="s2">"balloons."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I would like&quot;</span><span class="p">,</span> <span class="n">num_balloons</span><span class="p">,</span> <span class="s2">&quot;balloons.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--21-input--2" name="tab-set--21" type="radio"/><label class="tab-label" for="tab-set--21-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--21-input--2" name="tab-set--21" type="radio"><label class="tab-label" for="tab-set--21-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>I would like 25 balloons.
 </pre></div>
 </div>
 </div>
 </div>
 <section id="question-5-string-syntax">
-<h3>Question 5: String syntax<a class="headerlink" href="#question-5-string-syntax" title="Permalink to this heading">¶</a></h3>
+<h3>Question 5: String syntax<a class="headerlink" href="#question-5-string-syntax" title="Permalink to this heading">#</a></h3>
 <p>What will happen if you run the following code?</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--22-input--1" name="tab-set--22" type="radio"/><label class="tab-label" for="tab-set--22-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--22-input--1" name="tab-set--22" type="radio"><label class="tab-label" for="tab-set--22-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">last_name</span> <span class="o">=</span> <span class="n">Montoya</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">last_name</span><span class="p">)</span>
 </pre></div>
@@ -627,8 +637,8 @@ integer to a string in order to print it.</p>
 <code class="docutils literal notranslate"><span class="pre">Montoya</span></code> previously. You may also see additional text describing
 more details about the error, such as where it occurred.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--23-input--1" name="tab-set--23" type="radio"/><label class="tab-label" for="tab-set--23-input--1">Output</label><div class="tab-content docutils container">
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>NameError: name 'Montoya' is not defined
+<input checked="True" class="tab-input" id="tab-set--23-input--1" name="tab-set--23" type="radio"><label class="tab-label" for="tab-set--23-input--1">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>NameError: name &#39;Montoya&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -637,7 +647,7 @@ more details about the error, such as where it occurred.</p>
 </details></section>
 </section>
 <section id="data-types">
-<h2>Data Types<a class="headerlink" href="#data-types" title="Permalink to this heading">¶</a></h2>
+<h2>Data Types<a class="headerlink" href="#data-types" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>integers (<code class="docutils literal notranslate"><span class="pre">int</span></code>) represent positive or negative whole numbers like
 3 or -512</p></li>
@@ -651,49 +661,49 @@ more details about the error, such as where it occurred.</p>
 </li>
 </ul>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--24-input--1" name="tab-set--24" type="radio"/><label class="tab-label" for="tab-set--24-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--24-input--1" name="tab-set--24" type="radio"><label class="tab-label" for="tab-set--24-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find the type with function type()</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">52</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s2">"Inigo Montoya"</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;Inigo Montoya&quot;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mf">3.14</span><span class="p">))</span>
 
 <span class="c1"># notice we are nesting functions -&gt; type() is inside of print()</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--24-input--2" name="tab-set--24" type="radio"/><label class="tab-label" for="tab-set--24-input--2">Output</label><div class="tab-content docutils container">
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;class 'int'&gt;
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;
-&lt;class 'float'&gt;
+<input class="tab-input" id="tab-set--24-input--2" name="tab-set--24" type="radio"><label class="tab-label" for="tab-set--24-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
+&lt;class &#39;int&#39;&gt;
+&lt;class &#39;str&#39;&gt;
+&lt;class &#39;float&#39;&gt;
 </pre></div>
 </div>
 </div>
 </div>
 <section id="combining-and-adding-data-types">
-<h3>Combining and adding data types<a class="headerlink" href="#combining-and-adding-data-types" title="Permalink to this heading">¶</a></h3>
+<h3>Combining and adding data types<a class="headerlink" href="#combining-and-adding-data-types" title="Permalink to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">+</span></code> operator concatenates (adds) strings together. However if you
 try to add an integer and a string, you will receive an error.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--26-input--1" name="tab-set--26" type="radio"/><label class="tab-label" for="tab-set--26-input--1">Python</label><div class="tab-content docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"several"</span> <span class="o">+</span> <span class="s2">" concatenated"</span> <span class="o">+</span> <span class="s2">" strings"</span><span class="p">)</span> <span class="c1"># need to manually add spaces when concatenating</span>
+<input checked="True" class="tab-input" id="tab-set--26-input--1" name="tab-set--26" type="radio"><label class="tab-label" for="tab-set--26-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;several&quot;</span> <span class="o">+</span> <span class="s2">&quot; concatenated&quot;</span> <span class="o">+</span> <span class="s2">&quot; strings&quot;</span><span class="p">)</span> <span class="c1"># need to manually add spaces when concatenating</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--26-input--2" name="tab-set--26" type="radio"/><label class="tab-label" for="tab-set--26-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--26-input--2" name="tab-set--26" type="radio"><label class="tab-label" for="tab-set--26-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>several concatenated strings
 </pre></div>
 </div>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--25-input--1" name="tab-set--25" type="radio"/><label class="tab-label" for="tab-set--25-input--1">Python</label><div class="tab-content docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="s2">"2"</span><span class="p">)</span> <span class="c1"># adding string to int doesn't work</span>
+<input checked="True" class="tab-input" id="tab-set--25-input--1" name="tab-set--25" type="radio"><label class="tab-label" for="tab-set--25-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="s2">&quot;2&quot;</span><span class="p">)</span> <span class="c1"># adding string to int doesn&#39;t work</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--25-input--2" name="tab-set--25" type="radio"/><label class="tab-label" for="tab-set--25-input--2">Output</label><div class="tab-content docutils container">
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>TypeError: unsupported operand type(s) for +: 'int' and 'str'
+<input class="tab-input" id="tab-set--25-input--2" name="tab-set--25" type="radio"><label class="tab-label" for="tab-set--25-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>TypeError: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
 </pre></div>
 </div>
 </div>
@@ -702,13 +712,13 @@ try to add an integer and a string, you will receive an error.</p>
 combine them. We must convert numbers to strings or vice versa when
 operating on them. Consistency is key!</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--27-input--1" name="tab-set--27" type="radio"/><label class="tab-label" for="tab-set--27-input--1">Python</label><div class="tab-content docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="s1">'2'</span><span class="p">))</span> <span class="c1"># convert string to int to do addition</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s1">'2'</span><span class="p">)</span> <span class="c1"># convert int to string to concatenate</span>
+<input checked="True" class="tab-input" id="tab-set--27-input--1" name="tab-set--27" type="radio"><label class="tab-label" for="tab-set--27-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">))</span> <span class="c1"># convert string to int to do addition</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;2&#39;</span><span class="p">)</span> <span class="c1"># convert int to string to concatenate</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--27-input--2" name="tab-set--27" type="radio"/><label class="tab-label" for="tab-set--27-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--27-input--2" name="tab-set--27" type="radio"><label class="tab-label" for="tab-set--27-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>3
 12
 </pre></div>
@@ -718,13 +728,13 @@ operating on them. Consistency is key!</p>
 <p>However, we can mix integers and floats freely in operations. This will
 result in the final value being a float.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--28-input--1" name="tab-set--28" type="radio"/><label class="tab-label" for="tab-set--28-input--1">Python</label><div class="tab-content docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'half is'</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mf">2.0</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'three squared is'</span><span class="p">,</span> <span class="mf">3.0</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<input checked="True" class="tab-input" id="tab-set--28-input--1" name="tab-set--28" type="radio"><label class="tab-label" for="tab-set--28-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;half is&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="mf">2.0</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;three squared is&#39;</span><span class="p">,</span> <span class="mf">3.0</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--28-input--2" name="tab-set--28" type="radio"/><label class="tab-label" for="tab-set--28-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--28-input--2" name="tab-set--28" type="radio"><label class="tab-label" for="tab-set--28-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>half is 0.5
 three squared is 9.0
 </pre></div>
@@ -733,23 +743,23 @@ three squared is 9.0
 </div>
 </section>
 <section id="length">
-<h3>Length<a class="headerlink" href="#length" title="Permalink to this heading">¶</a></h3>
+<h3>Length<a class="headerlink" href="#length" title="Permalink to this heading">#</a></h3>
 <p>Strings have length (how many characters long they are), which can find
 with <code class="docutils literal notranslate"><span class="pre">len()</span></code>. Floats and ints do not have length.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--30-input--1" name="tab-set--30" type="radio"/><label class="tab-label" for="tab-set--30-input--1">Python</label><div class="tab-content docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="s2">"a long string"</span><span class="p">)</span> <span class="p">)</span> <span class="c1"># spaces count in length</span>
+<input checked="True" class="tab-input" id="tab-set--30-input--1" name="tab-set--30" type="radio"><label class="tab-label" for="tab-set--30-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="s2">&quot;a long string&quot;</span><span class="p">)</span> <span class="p">)</span> <span class="c1"># spaces count in length</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--30-input--2" name="tab-set--30" type="radio"/><label class="tab-label" for="tab-set--30-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--30-input--2" name="tab-set--30" type="radio"><label class="tab-label" for="tab-set--30-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>13
 </pre></div>
 </div>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--29-input--1" name="tab-set--29" type="radio"/><label class="tab-label" for="tab-set--29-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--29-input--1" name="tab-set--29" type="radio"><label class="tab-label" for="tab-set--29-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="nb">len</span><span class="p">(</span><span class="mf">3.1415</span><span class="p">)</span> <span class="p">)</span> <span class="c1"># will get an error</span>
 </pre></div>
 </div>
@@ -765,14 +775,14 @@ with a decimal point)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">%</span></code> modulo operator returns the remainder from integer division</p></li>
 </ul>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--31-input--1" name="tab-set--31" type="radio"/><label class="tab-label" for="tab-set--31-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--31-input--1" name="tab-set--31" type="radio"><label class="tab-label" for="tab-set--31-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="o">//</span><span class="mi">3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="o">%</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--31-input--2" name="tab-set--31" type="radio"/><label class="tab-label" for="tab-set--31-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--31-input--2" name="tab-set--31" type="radio"><label class="tab-label" for="tab-set--31-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1
 1.6666666666666667
 2
@@ -783,7 +793,7 @@ with a decimal point)</p></li>
 </div>
 </section>
 <section id="question-6-picking-between-data-types">
-<h3>Question 6: Picking between data types<a class="headerlink" href="#question-6-picking-between-data-types" title="Permalink to this heading">¶</a></h3>
+<h3>Question 6: Picking between data types<a class="headerlink" href="#question-6-picking-between-data-types" title="Permalink to this heading">#</a></h3>
 <p>Choose the type (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">str</span></code>) that each of these
 descriptions should be:</p>
 <ol class="arabic simple">
@@ -803,21 +813,25 @@ otherwise <code class="docutils literal notranslate"><span class="pre">float</sp
 </div>
 </details></section>
 <section id="question-7-quadratic-formula">
-<h3>Question 7: Quadratic formula<a class="headerlink" href="#question-7-quadratic-formula" title="Permalink to this heading">¶</a></h3>
+<h3>Question 7: Quadratic formula<a class="headerlink" href="#question-7-quadratic-formula" title="Permalink to this heading">#</a></h3>
 <p>A quadratic equation has the following form:</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[0 = ax^2 + bx + c\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[0 = ax^2 + bx + c\]</div>
+</div>
 <p>We can use the quadratic forumula (below) to find the roots of a
 quadratic equation.</p>
-<div class="math-wrapper"><div class="math notranslate nohighlight">
-\[x = \frac{-b\pm\sqrt{b^2-4ac}}{2a}\]</div></div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[x = \frac{-b\pm\sqrt{b^2-4ac}}{2a}\]</div>
+</div>
 <p>Create variables <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, and <span class="math notranslate nohighlight">\(c\)</span> with the value of
 <span class="math notranslate nohighlight">\(4\)</span>, <span class="math notranslate nohighlight">\(-25\)</span>, and <span class="math notranslate nohighlight">\(20\)</span>, respectively.</p>
 <p>Calculate the values of <span class="math notranslate nohighlight">\(x\)</span> for a quadratic equation with
 <span class="math notranslate nohighlight">\(a=4\)</span>, <span class="math notranslate nohighlight">\(b=-25\)</span>, and <span class="math notranslate nohighlight">\(c = 20\)</span>. Remember to calculate
 the values for both plus and minus (<span class="math notranslate nohighlight">\(\pm\)</span>).</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--32-input--1" name="tab-set--32" type="radio"/><label class="tab-label" for="tab-set--32-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--32-input--1" name="tab-set--32" type="radio"><label class="tab-label" for="tab-set--32-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># your code below:</span>
 </pre></div>
 </div>
@@ -826,7 +840,7 @@ the values for both plus and minus (<span class="math notranslate nohighlight">\
 <details class="summary-solution">
 <summary>Solution</summary><div class="docutils container">
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--33-input--1" name="tab-set--33" type="radio"/><label class="tab-label" for="tab-set--33-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--33-input--1" name="tab-set--33" type="radio"><label class="tab-label" for="tab-set--33-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># initialize my variables</span>
 <span class="n">a</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mi">25</span>
@@ -847,19 +861,19 @@ the values for both plus and minus (<span class="math notranslate nohighlight">\
 </div>
 </details></section>
 <section id="question-8-converting-data-types">
-<h3>Question 8: Converting data types<a class="headerlink" href="#question-8-converting-data-types" title="Permalink to this heading">¶</a></h3>
+<h3>Question 8: Converting data types<a class="headerlink" href="#question-8-converting-data-types" title="Permalink to this heading">#</a></h3>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--34-input--1" name="tab-set--34" type="radio"/><label class="tab-label" for="tab-set--34-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--34-input--1" name="tab-set--34" type="radio"><label class="tab-label" for="tab-set--34-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">first</span>  <span class="o">=</span> <span class="mf">1.0</span>
-<span class="n">second</span> <span class="o">=</span> <span class="s2">"1"</span>
-<span class="n">third</span>  <span class="o">=</span> <span class="s2">"1.1"</span>
+<span class="n">second</span> <span class="o">=</span> <span class="s2">&quot;1&quot;</span>
+<span class="n">third</span>  <span class="o">=</span> <span class="s2">&quot;1.1&quot;</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>Which of the following will return the floating point number <code class="docutils literal notranslate"><span class="pre">2.0</span></code>?</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--35-input--1" name="tab-set--35" type="radio"/><label class="tab-label" for="tab-set--35-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--35-input--1" name="tab-set--35" type="radio"><label class="tab-label" for="tab-set--35-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># first + float(second)          # choice a</span>
 <span class="c1"># float(second) + float(third)   # choice b</span>
 <span class="c1"># first + int(third)             # choice c</span>
@@ -869,7 +883,7 @@ the values for both plus and minus (<span class="math notranslate nohighlight">\
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--35-input--2" name="tab-set--35" type="radio"/><label class="tab-label" for="tab-set--35-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--35-input--2" name="tab-set--35" type="radio"><label class="tab-label" for="tab-set--35-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>2.0
 </pre></div>
 </div>
@@ -893,10 +907,10 @@ the values for both plus and minus (<span class="math notranslate nohighlight">\
                 </div>
                 <div class="title">Python data structures</div>
               </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
           <a class="prev-page" href="../jupyter/">
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
@@ -907,15 +921,19 @@ the values for both plus and minus (<span class="math notranslate nohighlight">\
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; 2023, Ford Fishman |
-          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../../_sources/python/python-fundamentals.rst.txt"
-               rel="nofollow">
-              Show Source
-            </a>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Ford Fishman
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
         </div>
         
       </footer>
@@ -926,7 +944,7 @@ the values for both plus and minus (<span class="math notranslate nohighlight">\
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            On this page
           </span>
         </div>
         <div class="toc-tree-container">
@@ -972,7 +990,7 @@ the values for both plus and minus (<span class="math notranslate nohighlight">\
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=fbdbc327"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
-    <script src="../../_static/scripts/furo.js?v=818c8f69"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="../../_static/tabs.js?v=3ee01567"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
