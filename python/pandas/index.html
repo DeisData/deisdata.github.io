@@ -1,0 +1,1797 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Making figures in Python" href="../figures/" /><link rel="prev" title="NumPy" href="../numpy/" />
+
+    <link rel="shortcut icon" href="../../_static/favicon-32x32.png"/><meta name="generator" content="sphinx-7.1.2, furo 2021.11.16"/>
+        <title>Pandas - DeisData</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=916d6ed8f59335acffa15474ff504849343d4c76" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=934bd528" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  body[data-theme="dark"] {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+</style></head>
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" />
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../"><div class="brand">DeisData</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/DeisDatax1x_medium.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">DeisData</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search/" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../">Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../setup-install/">Setup and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jupyter/">Jupyter notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python-fundamentals/">Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-structures/">Data structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../conditionals/">Booleans and conditionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../loops/">Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numpy/">NumPy</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../figures/">Matplotlib and seaborn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../functions/">Writing functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../stats/">Statistical tests</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../r/">R</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../r/quick-start/">Intro to R and the Tidyverse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../r/data-wrangling/">Data wrangling with the Tidyverse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../r/data-visualization/">ggplot2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../r/text-mining/">Text mining</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../shell/">Unix Shell</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/setup/">Bash Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/navigating/">Navigating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/alter-dir/">Altering files and directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/pipes-filters/">Pipes and filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/loops/">Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/shell-scripts/">Shell scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/search-find/">Searching and finding</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../git/">Git Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../git/setup-install/">Setup and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/quick-start/">Quick start to Git and GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/pushing/">Pushing changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/fetch-merge/">Fetch and merge from GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/git-utilities/">Git utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/forking/">Forking in GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/glossary/">Git Glossary</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="pandas">
+<h1>Pandas<a class="headerlink" href="#pandas" title="Permalink to this heading">¶</a></h1>
+<section id="materials">
+<h2>Materials:<a class="headerlink" href="#materials" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/pandas-codealong.ipynb">Code-along Jupyter notebook</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/pandas.ipynb">Filled-in Jupyter notebook</a></p></li>
+</ul>
+<p>While NumPy can be used to important data, it is optimized around
+numerical data. Many data sets include categorical variables. For these
+data sets, it is best to use a library called <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, which focuses
+on creating and manipulating data frames.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"/><label class="tab-label" for="tab-set--0-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="read-data">
+<h2>Read data<a class="headerlink" href="#read-data" title="Permalink to this heading">¶</a></h2>
+<p>With <code class="docutils literal notranslate"><span class="pre">pandas</span></code> imported, we can read in .csv files with the <code class="docutils literal notranslate"><span class="pre">pandas</span></code>
+function <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code>.</p>
+<p>In that function, we can specify the file we want to use with a URL or
+with the path to a local file as a string.</p>
+<p>This saves the data in a structure called a DataFrame.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"/><label class="tab-label" for="tab-set--1-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"https://raw.githubusercontent.com/DeisData/python/master/data/gapminder.csv"</span><span class="p">)</span> <span class="c1"># read in data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Our data is now saved as a data frame in Python as the variable <code class="docutils literal notranslate"><span class="pre">df</span></code>.
+With the data now in the environment, we can take a look at the first
+few rows with <code class="docutils literal notranslate"><span class="pre">df.head()</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"/><label class="tab-label" for="tab-set--2-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"/><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
+<div class="table-wrapper"><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>country</p></th>
+<th class="head"><p>year</p></th>
+<th class="head"><p>region</p></th>
+<th class="head"><p>population</p></th>
+<th class="head"><p>life_expectancy</p></th>
+<th class="head"><p>age5_surviving</p></th>
+<th class="head"><p>babies_per_woman</p></th>
+<th class="head"><p>gdp_per_capita</p></th>
+<th class="head"><p>gdp_per_day</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>Afghanistan</p></td>
+<td><p>1800</p></td>
+<td><p>Asia</p></td>
+<td><p>3280000.0</p></td>
+<td><p>28.21</p></td>
+<td><p>53.142</p></td>
+<td><p>7.0</p></td>
+<td><p>603.0</p></td>
+<td><p>1.650924</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Afghanistan</p></td>
+<td><p>1810</p></td>
+<td><p>Asia</p></td>
+<td><p>3280000.0</p></td>
+<td><p>28.11</p></td>
+<td><p>53.002</p></td>
+<td><p>7.0</p></td>
+<td><p>604.0</p></td>
+<td><p>1.653662</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>Afghanistan</p></td>
+<td><p>1820</p></td>
+<td><p>Asia</p></td>
+<td><p>3323519.0</p></td>
+<td><p>28.01</p></td>
+<td><p>52.862</p></td>
+<td><p>7.0</p></td>
+<td><p>604.0</p></td>
+<td><p>1.653662</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>Afghanistan</p></td>
+<td><p>1830</p></td>
+<td><p>Asia</p></td>
+<td><p>3448982.0</p></td>
+<td><p>27.90</p></td>
+<td><p>52.719</p></td>
+<td><p>7.0</p></td>
+<td><p>625.0</p></td>
+<td><p>1.711157</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>Afghanistan</p></td>
+<td><p>1840</p></td>
+<td><p>Asia</p></td>
+<td><p>3625022.0</p></td>
+<td><p>27.80</p></td>
+<td><p>52.576</p></td>
+<td><p>7.0</p></td>
+<td><p>647.0</p></td>
+<td><p>1.771389</p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<p>We can see that this data frame has several different columns, with
+information about countries and demography.</p>
+</section>
+<section id="summarize-data-frame">
+<h2>Summarize data frame<a class="headerlink" href="#summarize-data-frame" title="Permalink to this heading">¶</a></h2>
+<p>It is important to understand the data we are working with before we
+begin analysis. First, let’s look at the dimenions of the data frame
+using <code class="docutils literal notranslate"><span class="pre">df.shape</span></code>. It gives the number of rows by the number of
+columns.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"/><label class="tab-label" for="tab-set--3-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"/><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(14740, 9)
+</pre></div>
+</div>
+</div>
+</div>
+<p>This shows that our data frame has 14740 rows by 9 columns.</p>
+<p>We can also use <code class="docutils literal notranslate"><span class="pre">df.columns</span></code> to display the column names.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"/><label class="tab-label" for="tab-set--4-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio"/><label class="tab-label" for="tab-set--4-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Index(['country', 'year', 'region', 'population', 'life_expectancy',
+       'age5_surviving', 'babies_per_woman', 'gdp_per_capita', 'gdp_per_day'],
+      dtype='object')
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="categorical-variables">
+<h2>Categorical variables<a class="headerlink" href="#categorical-variables" title="Permalink to this heading">¶</a></h2>
+<p>Next, let’s summarize the categorical, non-numerical variables. For
+instance, we can identify how many unique regions we have in the data
+set.</p>
+<p>First, to select a column, we use the notation <code class="docutils literal notranslate"><span class="pre">df['COLUMN_NAME']</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"/><label class="tab-label" for="tab-set--5-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'region'</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio"/><label class="tab-label" for="tab-set--5-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0          Asia
+1          Asia
+2          Asia
+3          Asia
+4          Asia
+         ...
+14735    Africa
+14736    Africa
+14737    Africa
+14738    Africa
+14739    Africa
+Name: region, Length: 14740, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>To identify unique entries in this column, we can use the <code class="docutils literal notranslate"><span class="pre">.unique()</span></code>
+function.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"/><label class="tab-label" for="tab-set--6-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'region'</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio"/><label class="tab-label" for="tab-set--6-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>array(['Asia', 'Europe', 'Africa', 'America'], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">countries</span></code> column has many unique values, so instead of
+<code class="docutils literal notranslate"><span class="pre">.unique()</span></code>, we can use <code class="docutils literal notranslate"><span class="pre">.nunique()</span></code> to find the number of unique
+countries in the data set.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"/><label class="tab-label" for="tab-set--7-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'country'</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--7-input--2" name="tab-set--7" type="radio"/><label class="tab-label" for="tab-set--7-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>182
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="numerical-variables">
+<h2>Numerical variables<a class="headerlink" href="#numerical-variables" title="Permalink to this heading">¶</a></h2>
+<p>Numerical columns can be summarized in several ways. Let’s find the mean
+first.</p>
+<p>To make things simpler, we’ll just do calculations on the
+<code class="docutils literal notranslate"><span class="pre">population</span></code>, <code class="docutils literal notranslate"><span class="pre">life_expectancy</span></code>, and <code class="docutils literal notranslate"><span class="pre">babies_per_woman</span></code> columns.
+We can put those names in an arrangement called a <code class="docutils literal notranslate"><span class="pre">list</span></code> and then
+specify that list for the columns.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"/><label class="tab-label" for="tab-set--8-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num_cols</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">'population'</span><span class="p">,</span> <span class="s1">'life_expectancy'</span><span class="p">,</span> <span class="s1">'babies_per_woman'</span> <span class="p">]</span> <span class="c1"># numerical columns</span>
+
+<span class="n">df</span><span class="p">[</span><span class="n">num_cols</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--8-input--2" name="tab-set--8" type="radio"/><label class="tab-label" for="tab-set--8-input--2">Output</label><div class="tab-content docutils container">
+<div class="table-wrapper"><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>population</p></th>
+<th class="head"><p>life_expectancy</p></th>
+<th class="head"><p>babies_per_woman</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>3280000.0</p></td>
+<td><p>28.21</p></td>
+<td><p>7.00</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>3280000.0</p></td>
+<td><p>28.11</p></td>
+<td><p>7.00</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>3323519.0</p></td>
+<td><p>28.01</p></td>
+<td><p>7.00</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>3448982.0</p></td>
+<td><p>27.90</p></td>
+<td><p>7.00</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>3625022.0</p></td>
+<td><p>27.80</p></td>
+<td><p>7.00</p></td>
+</tr>
+<tr class="row-odd"><td><p>...</p></td>
+<td><p>...</p></td>
+<td><p>...</p></td>
+<td><p>...</p></td>
+</tr>
+<tr class="row-even"><td><p>14735</p></td>
+<td><p>14255592.0</p></td>
+<td><p>51.60</p></td>
+<td><p>3.64</p></td>
+</tr>
+<tr class="row-odd"><td><p>14736</p></td>
+<td><p>14565482.0</p></td>
+<td><p>54.20</p></td>
+<td><p>3.56</p></td>
+</tr>
+<tr class="row-even"><td><p>14737</p></td>
+<td><p>14898092.0</p></td>
+<td><p>55.70</p></td>
+<td><p>3.49</p></td>
+</tr>
+<tr class="row-odd"><td><p>14738</p></td>
+<td><p>15245855.0</p></td>
+<td><p>57.00</p></td>
+<td><p>3.41</p></td>
+</tr>
+<tr class="row-even"><td><p>14739</p></td>
+<td><p>15602751.0</p></td>
+<td><p>59.30</p></td>
+<td><p>3.35</p></td>
+</tr>
+</tbody>
+</table></div>
+<p>14740 rows × 3 columns</p>
+</div>
+</div>
+<p>With this set of columns, we can run <code class="docutils literal notranslate"><span class="pre">.mean()</span></code> to find the mean of
+each column.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"/><label class="tab-label" for="tab-set--9-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">num_cols</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c1"># returns the mean of each column</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--9-input--2" name="tab-set--9" type="radio"/><label class="tab-label" for="tab-set--9-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>population          2.252933e+07
+life_expectancy     5.683453e+01
+babies_per_woman    4.643472e+00
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we want a larger variety of summary statistics, we can use the
+<code class="docutils literal notranslate"><span class="pre">.describe()</span></code> method.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio"/><label class="tab-label" for="tab-set--10-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">num_cols</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--10-input--2" name="tab-set--10" type="radio"/><label class="tab-label" for="tab-set--10-input--2">Output</label><div class="tab-content docutils container">
+<div class="table-wrapper"><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>population</p></th>
+<th class="head"><p>life_expectancy</p></th>
+<th class="head"><p>babies_per_woman</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>count</p></td>
+<td><p>1.474000e+04</p></td>
+<td><p>14740.000000</p></td>
+<td><p>14740.000000</p></td>
+</tr>
+<tr class="row-odd"><td><p>mean</p></td>
+<td><p>2.252933e+07</p></td>
+<td><p>56.834526</p></td>
+<td><p>4.643472</p></td>
+</tr>
+<tr class="row-even"><td><p>std</p></td>
+<td><p>9.307143e+07</p></td>
+<td><p>15.868464</p></td>
+<td><p>1.994833</p></td>
+</tr>
+<tr class="row-odd"><td><p>min</p></td>
+<td><p>2.128000e+03</p></td>
+<td><p>4.000000</p></td>
+<td><p>1.130000</p></td>
+</tr>
+<tr class="row-even"><td><p>25%</p></td>
+<td><p>8.990308e+05</p></td>
+<td><p>44.230000</p></td>
+<td><p>2.630000</p></td>
+</tr>
+<tr class="row-odd"><td><p>50%</p></td>
+<td><p>4.063978e+06</p></td>
+<td><p>60.080000</p></td>
+<td><p>5.060000</p></td>
+</tr>
+<tr class="row-even"><td><p>75%</p></td>
+<td><p>1.218722e+07</p></td>
+<td><p>70.380000</p></td>
+<td><p>6.440000</p></td>
+</tr>
+<tr class="row-odd"><td><p>max</p></td>
+<td><p>1.376049e+09</p></td>
+<td><p>83.300000</p></td>
+<td><p>9.220000</p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<p>We can also break down subgroupings of our data with the method
+<code class="docutils literal notranslate"><span class="pre">.groupby()</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio"/><label class="tab-label" for="tab-set--11-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grouped_data</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'region'</span><span class="p">)</span>
+<span class="n">grouped_data</span><span class="p">[</span><span class="s1">'population'</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--11-input--2" name="tab-set--11" type="radio"/><label class="tab-label" for="tab-set--11-input--2">Output</label><div class="tab-content docutils container">
+<div class="table-wrapper"><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>count</p></th>
+<th class="head"><p>mean</p></th>
+<th class="head"><p>std</p></th>
+<th class="head"><p>min</p></th>
+<th class="head"><p>25%</p></th>
+<th class="head"><p>50%</p></th>
+<th class="head"><p>75%</p></th>
+<th class="head"><p>max</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>region</p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>Africa</p></td>
+<td><p>4293.0</p></td>
+<td><p>9.181313e+06</p></td>
+<td><p>1.655128e+07</p></td>
+<td><p>12522.0</p></td>
+<td><p>996331.00</p></td>
+<td><p>3457113.0</p></td>
+<td><p>9901052.00</p></td>
+<td><p>1.822020e+08</p></td>
+</tr>
+<tr class="row-even"><td><p>America</p></td>
+<td><p>2673.0</p></td>
+<td><p>1.667833e+07</p></td>
+<td><p>4.411806e+07</p></td>
+<td><p>24000.0</p></td>
+<td><p>331799.00</p></td>
+<td><p>2843246.0</p></td>
+<td><p>10061519.00</p></td>
+<td><p>3.217736e+08</p></td>
+</tr>
+<tr class="row-odd"><td><p>Asia</p></td>
+<td><p>4212.0</p></td>
+<td><p>4.604245e+07</p></td>
+<td><p>1.658010e+08</p></td>
+<td><p>2128.0</p></td>
+<td><p>512028.25</p></td>
+<td><p>4011309.5</p></td>
+<td><p>19517390.25</p></td>
+<td><p>1.376049e+09</p></td>
+</tr>
+<tr class="row-even"><td><p>Europe</p></td>
+<td><p>3562.0</p></td>
+<td><p>1.520351e+07</p></td>
+<td><p>2.463153e+07</p></td>
+<td><p>61428.0</p></td>
+<td><p>2308682.00</p></td>
+<td><p>5186801.5</p></td>
+<td><p>10638884.75</p></td>
+<td><p>1.484358e+08</p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</section>
+<section id="accessing-rows-and-specific-entries">
+<h2>Accessing rows and specific entries<a class="headerlink" href="#accessing-rows-and-specific-entries" title="Permalink to this heading">¶</a></h2>
+<p>You can also to access a specific row using <code class="docutils literal notranslate"><span class="pre">df.loc[ROW,</span> <span class="pre">:]</span></code>. The
+colon specifies to select all columns for that row number.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio"/><label class="tab-label" for="tab-set--12-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span> <span class="c1"># the first row</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--12-input--2" name="tab-set--12" type="radio"/><label class="tab-label" for="tab-set--12-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>country             Afghanistan
+year                       1800
+region                     Asia
+population            3280000.0
+life_expectancy           28.21
+age5_surviving           53.142
+babies_per_woman            7.0
+gdp_per_capita            603.0
+gdp_per_day            1.650924
+Name: 0, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">.loc</span></code> to find the value of specific entries, as well.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio"/><label class="tab-label" for="tab-set--13-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">'country'</span><span class="p">]</span> <span class="c1"># first row entry for column</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--13-input--2" name="tab-set--13" type="radio"/><label class="tab-label" for="tab-set--13-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>'Afghanistan'
+</pre></div>
+</div>
+</div>
+</div>
+<section id="question-1-summarizing-data">
+<h3>Question 1: Summarizing data<a class="headerlink" href="#question-1-summarizing-data" title="Permalink to this heading">¶</a></h3>
+<p>Print out the summary statistics for columns <code class="docutils literal notranslate"><span class="pre">age5_surviving</span></code>,
+<code class="docutils literal notranslate"><span class="pre">gdp_per_day</span></code>, and <code class="docutils literal notranslate"><span class="pre">gdp_per_capita</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio"/><label class="tab-label" for="tab-set--14-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">### your code below:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio"/><label class="tab-label" for="tab-set--15-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">'age5_surviving'</span><span class="p">,</span> <span class="s1">'gdp_per_day'</span><span class="p">,</span> <span class="s1">'gdp_per_capita'</span><span class="p">]]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</details></section>
+</section>
+<section id="manipulate-data">
+<h2>Manipulate data<a class="headerlink" href="#manipulate-data" title="Permalink to this heading">¶</a></h2>
+<section id="subset-by-row">
+<h3>Subset by row<a class="headerlink" href="#subset-by-row" title="Permalink to this heading">¶</a></h3>
+<p>Sometimes, we want to create a subset of the main data frame based on
+certain conditions. We do this by using <code class="docutils literal notranslate"><span class="pre">df.loc</span></code> and specifying a
+condition for the rows.</p>
+<p>Below, we take all of the rows where <code class="docutils literal notranslate"><span class="pre">babies_per_woman</span></code> is greater or
+equal to 4 with <code class="docutils literal notranslate"><span class="pre">df['babies_per_woman']</span> <span class="pre">&gt;=</span> <span class="pre">4</span></code> and assign this to a new
+data frame.</p>
+<p>To check that this was done correctly, we can look at the minimum of the
+<code class="docutils literal notranslate"><span class="pre">babies_per_woman</span></code> column in the new data frame with <code class="docutils literal notranslate"><span class="pre">.min()</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio"/><label class="tab-label" for="tab-set--16-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># take all rows where babies_per_woman is greater or equal to 4 and make a new data frame</span>
+<span class="n">df_4</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'babies_per_woman'</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">,</span> <span class="p">:]</span>
+<span class="n">df_4</span><span class="p">[</span><span class="s1">'babies_per_woman'</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--16-input--2" name="tab-set--16" type="radio"/><label class="tab-label" for="tab-set--16-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>4.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use the following operators to make subsets: - Equals: <code class="docutils literal notranslate"><span class="pre">==</span></code> -
+Not equals: <code class="docutils literal notranslate"><span class="pre">!=</span></code> - Greater than, less than: <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> - Greater
+than or equal to: <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> - Less than or equal to: <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p>
+<p>We can also subset with categorical variables. Here, we take all rows
+where the country is Hungary.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio"/><label class="tab-label" for="tab-set--17-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_hungary</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'country'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Hungary'</span><span class="p">,</span> <span class="p">:]</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">df_hungary</span><span class="p">[</span><span class="s1">'country'</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--17-input--2" name="tab-set--17" type="radio"/><label class="tab-label" for="tab-set--17-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>array(['Hungary'], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="math">
+<h3>Math<a class="headerlink" href="#math" title="Permalink to this heading">¶</a></h3>
+<p>If we multiply a data frame by a single number, each value in the column
+will be muliplied by that value.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--18-input--1" name="tab-set--18" type="radio"/><label class="tab-label" for="tab-set--18-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'babies_per_woman'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1000</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--18-input--2" name="tab-set--18" type="radio"/><label class="tab-label" for="tab-set--18-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0        7000.0
+1        7000.0
+2        7000.0
+3        7000.0
+4        7000.0
+         ...
+14735    3640.0
+14736    3560.0
+14737    3490.0
+14738    3410.0
+14739    3350.0
+Name: babies_per_woman, Length: 14740, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also do math between columns, since they have the same length.
+Elements of the same row are added, substacted, multiplied, or divided.</p>
+<p>Here, we subtract the <code class="docutils literal notranslate"><span class="pre">life_expectancy</span></code> column from the
+<code class="docutils literal notranslate"><span class="pre">age5_surviving</span></code> column and assign it to a new column called
+<code class="docutils literal notranslate"><span class="pre">life_difference</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--19-input--1" name="tab-set--19" type="radio"/><label class="tab-label" for="tab-set--19-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">'life_difference'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'age5_surviving'</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">'life_expectancy'</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'life_difference'</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--19-input--2" name="tab-set--19" type="radio"/><label class="tab-label" for="tab-set--19-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0        24.932
+1        24.892
+2        24.852
+3        24.819
+4        24.776
+         ...
+14735    39.200
+14736    37.130
+14737    35.970
+14738    34.900
+14739    32.740
+Name: life_difference, Length: 14740, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>This new column is now reflected in the data frame.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--20-input--1" name="tab-set--20" type="radio"/><label class="tab-label" for="tab-set--20-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--20-input--2" name="tab-set--20" type="radio"/><label class="tab-label" for="tab-set--20-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Index(['country', 'year', 'region', 'population', 'life_expectancy',
+       'age5_surviving', 'babies_per_woman', 'gdp_per_capita', 'gdp_per_day',
+       'life_difference'],
+      dtype='object')
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="question-2-working-with-data">
+<h3>Question 2: Working with data<a class="headerlink" href="#question-2-working-with-data" title="Permalink to this heading">¶</a></h3>
+<p>Create a subset of data from Lithuania.</p>
+<p>Within that subset, calculate the mean GDP per 1000 people across
+entries.</p>
+<p><em>Hint: Multiply per capita GDP by 1000.</em></p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--21-input--1" name="tab-set--21" type="radio"/><label class="tab-label" for="tab-set--21-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">### Your code here:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--22-input--1" name="tab-set--22" type="radio"/><label class="tab-label" for="tab-set--22-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_lth</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'country'</span><span class="p">]</span><span class="o">==</span><span class="s1">'Lithuania'</span><span class="p">,:]</span>
+<span class="n">df_lth</span><span class="p">[</span><span class="s1">'gdp_per_1000'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1000</span> <span class="o">*</span> <span class="n">df_lth</span><span class="p">[</span><span class="s1">'gdp_per_capita'</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_lth</span><span class="p">[</span><span class="s1">'gdp_per_1000'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</details></section>
+</section>
+<section id="create-your-own-data-frame">
+<h2>Create your own data frame<a class="headerlink" href="#create-your-own-data-frame" title="Permalink to this heading">¶</a></h2>
+<p>To make your own data frame without a .csv, we use the function
+<code class="docutils literal notranslate"><span class="pre">pd.DataFrame()</span></code>. There are many ways to use this function to
+construct a data frame.</p>
+<p>Here, we show how to convert a dictionary of lists into a data frame.
+Each list will be its own column, and you need to make sure the lists
+are all the same length. The keys of each list should be the column
+names.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--23-input--1" name="tab-set--23" type="radio"/><label class="tab-label" for="tab-set--23-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data_dict</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="s1">'a'</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+   <span class="s1">'b'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'apple'</span><span class="p">,</span> <span class="s1">'banana'</span><span class="p">,</span> <span class="s1">'apple'</span><span class="p">],</span>
+   <span class="s1">'c'</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--23-input--2" name="tab-set--23" type="radio"/><label class="tab-label" for="tab-set--23-input--2">Output</label><div class="tab-content docutils container">
+<div class="table-wrapper"><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>a</p></th>
+<th class="head"><p>b</p></th>
+<th class="head"><p>c</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>apple</p></td>
+<td><p>-2.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>3</p></td>
+<td><p>banana</p></td>
+<td><p>-3.0</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>5</p></td>
+<td><p>apple</p></td>
+<td><p>-5.0</p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<p>You can also use lists of lists or 2D NumPy arrays to create data
+frames. Each list will be a row, instead of a column, and you will need
+to specify the column name as another argument in <code class="docutils literal notranslate"><span class="pre">pd.DataFrame()</span></code>
+called <code class="docutils literal notranslate"><span class="pre">columns</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--24-input--1" name="tab-set--24" type="radio"/><label class="tab-label" for="tab-set--24-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data_list</span> <span class="o">=</span> <span class="p">[</span>
+   <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">'apple'</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.</span><span class="p">],</span>
+   <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'banana'</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.</span><span class="p">],</span>
+   <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="s1">'apple'</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.</span><span class="p">]</span>
+<span class="p">]</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data_list</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--24-input--2" name="tab-set--24" type="radio"/><label class="tab-label" for="tab-set--24-input--2">Output</label><div class="tab-content docutils container">
+<div class="table-wrapper"><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>a</p></th>
+<th class="head"><p>b</p></th>
+<th class="head"><p>c</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>apple</p></td>
+<td><p>-2.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>3</p></td>
+<td><p>banana</p></td>
+<td><p>-3.0</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>5</p></td>
+<td><p>apple</p></td>
+<td><p>-5.0</p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<p>Note: we need to save this as a variable to use it in the future.</p>
+</section>
+<section id="sort-data-frame">
+<h2>Sort data frame<a class="headerlink" href="#sort-data-frame" title="Permalink to this heading">¶</a></h2>
+<p>To sort the rows in a data frame by the value of a column, we can use
+the <code class="docutils literal notranslate"><span class="pre">.sort_values()</span></code> method. The argument <code class="docutils literal notranslate"><span class="pre">by</span></code> requires a list with
+a column name.</p>
+<p>Again, if you want to use the sorted version in the future, you need to
+save it as a new variable.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--25-input--1" name="tab-set--25" type="radio"/><label class="tab-label" for="tab-set--25-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data_list</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">])</span>
+
+<span class="n">my_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">'b'</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--25-input--2" name="tab-set--25" type="radio"/><label class="tab-label" for="tab-set--25-input--2">Output</label><div class="tab-content docutils container">
+<div class="table-wrapper"><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>a</p></th>
+<th class="head"><p>b</p></th>
+<th class="head"><p>c</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>apple</p></td>
+<td><p>-2.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>5</p></td>
+<td><p>apple</p></td>
+<td><p>-5.0</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>3</p></td>
+<td><p>banana</p></td>
+<td><p>-3.0</p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<p>You can also sort descending by specifying the <code class="docutils literal notranslate"><span class="pre">ascending=False</span></code>
+argument.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--26-input--1" name="tab-set--26" type="radio"/><label class="tab-label" for="tab-set--26-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">'b'</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--26-input--2" name="tab-set--26" type="radio"/><label class="tab-label" for="tab-set--26-input--2">Output</label><div class="tab-content docutils container">
+<div class="table-wrapper"><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>a</p></th>
+<th class="head"><p>b</p></th>
+<th class="head"><p>c</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>3</p></td>
+<td><p>banana</p></td>
+<td><p>-3.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>apple</p></td>
+<td><p>-2.0</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>5</p></td>
+<td><p>apple</p></td>
+<td><p>-5.0</p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<p>If desired, multiple column names can be specified, with priority given
+to those first in the list.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--27-input--1" name="tab-set--27" type="radio"/><label class="tab-label" for="tab-set--27-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">'b'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--27-input--2" name="tab-set--27" type="radio"/><label class="tab-label" for="tab-set--27-input--2">Output</label><div class="tab-content docutils container">
+<div class="table-wrapper"><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>a</p></th>
+<th class="head"><p>b</p></th>
+<th class="head"><p>c</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>3</p></td>
+<td><p>banana</p></td>
+<td><p>-3.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>5</p></td>
+<td><p>apple</p></td>
+<td><p>-5.0</p></td>
+</tr>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>apple</p></td>
+<td><p>-2.0</p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</section>
+<section id="add-rows">
+<h2>Add rows<a class="headerlink" href="#add-rows" title="Permalink to this heading">¶</a></h2>
+<p>There are multiple ways to add a new row to a data frame. The most
+straightforward way is to use the <code class="docutils literal notranslate"><span class="pre">pandas.concat()</span></code> function with a
+new data frame with just one row.</p>
+<p>We put the the two data frames into a list, and we set <code class="docutils literal notranslate"><span class="pre">axis=0</span></code> to
+make sure it adds as a row. We will specify <code class="docutils literal notranslate"><span class="pre">.reset_index(drop=True)</span></code>
+to reset row numbers to account for the new row.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--28-input--1" name="tab-set--28" type="radio"/><label class="tab-label" for="tab-set--28-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_row</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+   <span class="s1">'a'</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+   <span class="s1">'b'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'banana'</span><span class="p">],</span>
+   <span class="s1">'c'</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">1.</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="n">my_df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">my_df</span><span class="p">,</span> <span class="n">new_row</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">my_df2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--28-input--2" name="tab-set--28" type="radio"/><label class="tab-label" for="tab-set--28-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>   a       b    c
+0  1   apple -2.0
+1  3  banana -3.0
+2  5   apple -5.0
+3  2  banana -1.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also use this approach to add multiple rows, as well, by having
+the new data frame consist of multiple rows.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--29-input--1" name="tab-set--29" type="radio"/><label class="tab-label" for="tab-set--29-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_rows</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+   <span class="s1">'a'</span><span class="p">:</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+   <span class="s1">'b'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'banana'</span><span class="p">,</span> <span class="s1">'orange'</span><span class="p">],</span>
+   <span class="s1">'c'</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">4.</span><span class="p">,</span> <span class="o">-</span><span class="mf">9.</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="n">my_df3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">my_df2</span><span class="p">,</span> <span class="n">new_rows</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">my_df3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--29-input--2" name="tab-set--29" type="radio"/><label class="tab-label" for="tab-set--29-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>   a       b    c
+0  1   apple -2.0
+1  3  banana -3.0
+2  5   apple -5.0
+3  2  banana -1.0
+4  6  banana -4.0
+5  5  orange -9.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="join-data-frames">
+<h2>Join data frames<a class="headerlink" href="#join-data-frames" title="Permalink to this heading">¶</a></h2>
+<p>A critical tool in data wrangling is combining data frames that share
+common values, columns, or identifiers.</p>
+<p>Let’s important two new .csv files and join them.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--30-input--1" name="tab-set--30" type="radio"/><label class="tab-label" for="tab-set--30-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">surveys_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"https://raw.githubusercontent.com/DeisData/python/master/data/surveys.csv"</span><span class="p">,</span> <span class="n">keep_default_na</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">na_values</span><span class="o">=</span><span class="p">[</span><span class="s2">""</span><span class="p">])</span>
+<span class="n">species_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"https://raw.githubusercontent.com/DeisData/python/master/data/species.csv"</span><span class="p">,</span> <span class="n">keep_default_na</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">na_values</span><span class="o">=</span><span class="p">[</span><span class="s2">""</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">surveys_df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">species_df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--30-input--2" name="tab-set--30" type="radio"/><label class="tab-label" for="tab-set--30-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>   record_id  month  day  year  plot_id species_id sex  hindfoot_length  \
+0          1      7   16  1977        2         NL   M             32.0
+1          2      7   16  1977        3         NL   M             33.0
+2          3      7   16  1977        2         DM   F             37.0
+3          4      7   16  1977        7         DM   M             36.0
+4          5      7   16  1977        3         DM   M             35.0
+
+   weight
+0     NaN
+1     NaN
+2     NaN
+3     NaN
+4     NaN
+
+species_id             genus          species    taxa
+0         AB        Amphispiza        bilineata    Bird
+1         AH  Ammospermophilus          harrisi  Rodent
+2         AS        Ammodramus       savannarum    Bird
+3         BA           Baiomys          taylori  Rodent
+4         CB   Campylorhynchus  brunneicapillus    Bird
+</pre></div>
+</div>
+</div>
+</div>
+<p>The shared column between these data frames is <code class="docutils literal notranslate"><span class="pre">species_id</span></code>, so this
+is the column we will want to join around.</p>
+<section id="inner-join">
+<h3>Inner Join<a class="headerlink" href="#inner-join" title="Permalink to this heading">¶</a></h3>
+<p>The pandas function for performing joins is called <code class="docutils literal notranslate"><span class="pre">merge()</span></code> and an
+Inner join is the default option.</p>
+<p>Inner joins take all rows from both data frames that share values from
+an identifier column. In our case, this means that our joined data frame
+will only include rows with species identifiers present in
+<code class="docutils literal notranslate"><span class="pre">species_df</span></code> and <code class="docutils literal notranslate"><span class="pre">surveys_df</span></code>.</p>
+<p><img alt="inner join" src="../../_images/innerjoin.png"/></p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--31-input--1" name="tab-set--31" type="radio"/><label class="tab-label" for="tab-set--31-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">merged_inner</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="n">surveys_df</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="n">species_df</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">'species_id'</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">'species_id'</span><span class="p">)</span>
+
+<span class="c1"># In this case `species_id` is the only column name in  both dataframes, so if we skipped `left_on`</span>
+<span class="c1"># And `right_on` arguments we would still get the same result</span>
+
+<span class="c1"># What's the size of the output data?</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">merged_inner</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">merged_inner</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--31-input--2" name="tab-set--31" type="radio"/><label class="tab-label" for="tab-set--31-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(34786, 12)
+</pre></div>
+</div>
+<div class="table-wrapper"><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>record_id</p></th>
+<th class="head"><p>month</p></th>
+<th class="head"><p>day</p></th>
+<th class="head"><p>year</p></th>
+<th class="head"><p>plot_id</p></th>
+<th class="head"><p>species_id</p></th>
+<th class="head"><p>sex</p></th>
+<th class="head"><p>hindfoot_length</p></th>
+<th class="head"><p>weight</p></th>
+<th class="head"><p>genus</p></th>
+<th class="head"><p>species</p></th>
+<th class="head"><p>taxa</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>7</p></td>
+<td><p>16</p></td>
+<td><p>1977</p></td>
+<td><p>2</p></td>
+<td><p>NL</p></td>
+<td><p>M</p></td>
+<td><p>32.0</p></td>
+<td><p>NaN</p></td>
+<td><p>Neotoma</p></td>
+<td><p>albigula</p></td>
+<td><p>Rodent</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>7</p></td>
+<td><p>16</p></td>
+<td><p>1977</p></td>
+<td><p>3</p></td>
+<td><p>NL</p></td>
+<td><p>M</p></td>
+<td><p>33.0</p></td>
+<td><p>NaN</p></td>
+<td><p>Neotoma</p></td>
+<td><p>albigula</p></td>
+<td><p>Rodent</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>22</p></td>
+<td><p>7</p></td>
+<td><p>17</p></td>
+<td><p>1977</p></td>
+<td><p>15</p></td>
+<td><p>NL</p></td>
+<td><p>F</p></td>
+<td><p>31.0</p></td>
+<td><p>NaN</p></td>
+<td><p>Neotoma</p></td>
+<td><p>albigula</p></td>
+<td><p>Rodent</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>38</p></td>
+<td><p>7</p></td>
+<td><p>17</p></td>
+<td><p>1977</p></td>
+<td><p>17</p></td>
+<td><p>NL</p></td>
+<td><p>M</p></td>
+<td><p>33.0</p></td>
+<td><p>NaN</p></td>
+<td><p>Neotoma</p></td>
+<td><p>albigula</p></td>
+<td><p>Rodent</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>72</p></td>
+<td><p>8</p></td>
+<td><p>19</p></td>
+<td><p>1977</p></td>
+<td><p>2</p></td>
+<td><p>NL</p></td>
+<td><p>M</p></td>
+<td><p>31.0</p></td>
+<td><p>NaN</p></td>
+<td><p>Neotoma</p></td>
+<td><p>albigula</p></td>
+<td><p>Rodent</p></td>
+</tr>
+<tr class="row-odd"><td><p>...</p></td>
+<td><p>...</p></td>
+<td><p>...</p></td>
+<td><p>...</p></td>
+<td><p>...</p></td>
+<td><p>...</p></td>
+<td><p>...</p></td>
+<td><p>...</p></td>
+<td><p>...</p></td>
+<td><p>...</p></td>
+<td><p>...</p></td>
+<td><p>...</p></td>
+<td><p>...</p></td>
+</tr>
+<tr class="row-even"><td><p>34781</p></td>
+<td><p>28988</p></td>
+<td><p>12</p></td>
+<td><p>23</p></td>
+<td><p>1998</p></td>
+<td><p>6</p></td>
+<td><p>CT</p></td>
+<td><p>NaN</p></td>
+<td><p>NaN</p></td>
+<td><p>NaN</p></td>
+<td><p>Cnemidophorus</p></td>
+<td><p>tigris</p></td>
+<td><p>Reptile</p></td>
+</tr>
+<tr class="row-odd"><td><p>34782</p></td>
+<td><p>35512</p></td>
+<td><p>12</p></td>
+<td><p>31</p></td>
+<td><p>2002</p></td>
+<td><p>11</p></td>
+<td><p>US</p></td>
+<td><p>NaN</p></td>
+<td><p>NaN</p></td>
+<td><p>NaN</p></td>
+<td><p>Sparrow</p></td>
+<td><p>sp.</p></td>
+<td><p>Bird</p></td>
+</tr>
+<tr class="row-even"><td><p>34783</p></td>
+<td><p>35513</p></td>
+<td><p>12</p></td>
+<td><p>31</p></td>
+<td><p>2002</p></td>
+<td><p>11</p></td>
+<td><p>US</p></td>
+<td><p>NaN</p></td>
+<td><p>NaN</p></td>
+<td><p>NaN</p></td>
+<td><p>Sparrow</p></td>
+<td><p>sp.</p></td>
+<td><p>Bird</p></td>
+</tr>
+<tr class="row-odd"><td><p>34784</p></td>
+<td><p>35528</p></td>
+<td><p>12</p></td>
+<td><p>31</p></td>
+<td><p>2002</p></td>
+<td><p>13</p></td>
+<td><p>US</p></td>
+<td><p>NaN</p></td>
+<td><p>NaN</p></td>
+<td><p>NaN</p></td>
+<td><p>Sparrow</p></td>
+<td><p>sp.</p></td>
+<td><p>Bird</p></td>
+</tr>
+<tr class="row-even"><td><p>34785</p></td>
+<td><p>35544</p></td>
+<td><p>12</p></td>
+<td><p>31</p></td>
+<td><p>2002</p></td>
+<td><p>15</p></td>
+<td><p>US</p></td>
+<td><p>NaN</p></td>
+<td><p>NaN</p></td>
+<td><p>NaN</p></td>
+<td><p>Sparrow</p></td>
+<td><p>sp.</p></td>
+<td><p>Bird</p></td>
+</tr>
+</tbody>
+</table></div>
+<p>34786 rows × 12 columns</p>
+</div>
+</div>
+<p>The result <code class="docutils literal notranslate"><span class="pre">merged_inner</span></code> data frame contains all of the columns from
+<code class="docutils literal notranslate"><span class="pre">surveys_df</span></code> (<code class="docutils literal notranslate"><span class="pre">record_id</span></code>, <code class="docutils literal notranslate"><span class="pre">month</span></code>, <code class="docutils literal notranslate"><span class="pre">day</span></code>, etc.) as well as all
+the columns from <code class="docutils literal notranslate"><span class="pre">species_df</span></code> (<code class="docutils literal notranslate"><span class="pre">species_id</span></code>, <code class="docutils literal notranslate"><span class="pre">genus</span></code>, <code class="docutils literal notranslate"><span class="pre">species</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">taxa</span></code>).</p>
+</section>
+<section id="left-join">
+<h3>Left join<a class="headerlink" href="#left-join" title="Permalink to this heading">¶</a></h3>
+<p>What if we want to add information from <code class="docutils literal notranslate"><span class="pre">species_df</span></code> to
+<code class="docutils literal notranslate"><span class="pre">surveys_df</span></code>without losing any of the information from
+<code class="docutils literal notranslate"><span class="pre">surveys_df</span></code>? In this case, we use a different type of join called a
+left join, where we keep all rows from the data frame we call left (in
+our case <code class="docutils literal notranslate"><span class="pre">surveys_df</span></code>) and only take rows from the right data frame
+(<code class="docutils literal notranslate"><span class="pre">species_df</span></code>) with species IDs in <code class="docutils literal notranslate"><span class="pre">surveys_df</span></code>.</p>
+<p><img alt="left join" src="../../_images/leftjoin.png"/></p>
+<p>A left join is performed in pandas by calling the same <code class="docutils literal notranslate"><span class="pre">merge()</span></code>
+function used for inner join, but using the <code class="docutils literal notranslate"><span class="pre">how='left'</span></code> argument.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--32-input--1" name="tab-set--32" type="radio"/><label class="tab-label" for="tab-set--32-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">merged_left</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="n">surveys_df</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="n">species_df</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">'left'</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">'species_id'</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">'species_id'</span><span class="p">)</span>
+<span class="n">merged_left</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--32-input--2" name="tab-set--32" type="radio"/><label class="tab-label" for="tab-set--32-input--2">Output</label><div class="tab-content docutils container">
+<div class="table-wrapper"><table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>record_id</p></th>
+<th class="head"><p>month</p></th>
+<th class="head"><p>day</p></th>
+<th class="head"><p>year</p></th>
+<th class="head"><p>plot_id</p></th>
+<th class="head"><p>species_id</p></th>
+<th class="head"><p>sex</p></th>
+<th class="head"><p>hindfoot_length</p></th>
+<th class="head"><p>weight</p></th>
+<th class="head"><p>genus</p></th>
+<th class="head"><p>species</p></th>
+<th class="head"><p>taxa</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>7</p></td>
+<td><p>16</p></td>
+<td><p>1977</p></td>
+<td><p>2</p></td>
+<td><p>NL</p></td>
+<td><p>M</p></td>
+<td><p>32.0</p></td>
+<td><p>NaN</p></td>
+<td><p>Neotoma</p></td>
+<td><p>albigula</p></td>
+<td><p>Rodent</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>7</p></td>
+<td><p>16</p></td>
+<td><p>1977</p></td>
+<td><p>3</p></td>
+<td><p>NL</p></td>
+<td><p>M</p></td>
+<td><p>33.0</p></td>
+<td><p>NaN</p></td>
+<td><p>Neotoma</p></td>
+<td><p>albigula</p></td>
+<td><p>Rodent</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>7</p></td>
+<td><p>16</p></td>
+<td><p>1977</p></td>
+<td><p>2</p></td>
+<td><p>DM</p></td>
+<td><p>F</p></td>
+<td><p>37.0</p></td>
+<td><p>NaN</p></td>
+<td><p>Dipodomys</p></td>
+<td><p>merriami</p></td>
+<td><p>Rodent</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>7</p></td>
+<td><p>6</p></td>
+<td><p>1977</p></td>
+<td><p>7</p></td>
+<td><p>DM</p></td>
+<td><p>M</p></td>
+<td><p>36.0</p></td>
+<td><p>NaN</p></td>
+<td><p>Dipodomys</p></td>
+<td><p>merriami</p></td>
+<td><p>Rodent</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>7</p></td>
+<td><p>16</p></td>
+<td><p>1977</p></td>
+<td><p>3</p></td>
+<td><p>DM</p></td>
+<td><p>M</p></td>
+<td><p>35.0</p></td>
+<td><p>NaN</p></td>
+<td><p>Dipodomys</p></td>
+<td><p>merriami</p></td>
+<td><p>Rodent</p></td>
+</tr>
+<tr class="row-odd"><td><p>...</p></td>
+<td><p>...</p></td>
+<td><p>...</p></td>
+<td><p>...</p></td>
+<td><p>...</p></td>
+<td><p>...</p></td>
+<td><p>...</p></td>
+<td><p>...</p></td>
+<td><p>...</p></td>
+<td><p>...</p></td>
+<td><p>...</p></td>
+<td><p>...</p></td>
+<td><p>...</p></td>
+</tr>
+<tr class="row-even"><td><p>35544</p></td>
+<td><p>35545</p></td>
+<td><p>12</p></td>
+<td><p>31</p></td>
+<td><p>2002</p></td>
+<td><p>15</p></td>
+<td><p>AH</p></td>
+<td><p>NaN</p></td>
+<td><p>NaN</p></td>
+<td><p>NaN</p></td>
+<td><p>Ammospermophilus</p></td>
+<td><p>harrisi</p></td>
+<td><p>Rodent</p></td>
+</tr>
+<tr class="row-odd"><td><p>35545</p></td>
+<td><p>35546</p></td>
+<td><p>12</p></td>
+<td><p>31</p></td>
+<td><p>2002</p></td>
+<td><p>15</p></td>
+<td><p>AH</p></td>
+<td><p>NaN</p></td>
+<td><p>NaN</p></td>
+<td><p>NaN</p></td>
+<td><p>Ammospermophilus</p></td>
+<td><p>harrisi</p></td>
+<td><p>Rodent</p></td>
+</tr>
+<tr class="row-even"><td><p>35546</p></td>
+<td><p>35547</p></td>
+<td><p>12</p></td>
+<td><p>31</p></td>
+<td><p>2002</p></td>
+<td><p>10</p></td>
+<td><p>RM</p></td>
+<td><p>F</p></td>
+<td><p>15.0</p></td>
+<td><p>14.0</p></td>
+<td><p>Reithrodontomys</p></td>
+<td><p>megalotis</p></td>
+<td><p>Rodent</p></td>
+</tr>
+<tr class="row-odd"><td><p>35547</p></td>
+<td><p>35548</p></td>
+<td><p>12</p></td>
+<td><p>31</p></td>
+<td><p>2002</p></td>
+<td><p>7</p></td>
+<td><p>DO</p></td>
+<td><p>M</p></td>
+<td><p>36.0</p></td>
+<td><p>51.0</p></td>
+<td><p>Dipodomys</p></td>
+<td><p>ordii</p></td>
+<td><p>Rodent</p></td>
+</tr>
+<tr class="row-even"><td><p>35548</p></td>
+<td><p>35549</p></td>
+<td><p>12</p></td>
+<td><p>31</p></td>
+<td><p>2002</p></td>
+<td><p>5</p></td>
+<td><p>NaN</p></td>
+<td><p>NaN</p></td>
+<td><p>NaN</p></td>
+<td><p>NaN</p></td>
+<td><p>NaN</p></td>
+<td><p>NaN</p></td>
+<td><p>NaN</p></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</section>
+</section>
+<section id="export-data-frame-as-csv">
+<h2>Export data frame as .csv<a class="headerlink" href="#export-data-frame-as-csv" title="Permalink to this heading">¶</a></h2>
+<p>If you have made modifications to a data set in Python and want to
+export that to a new .csv, you can easily do that with the <code class="docutils literal notranslate"><span class="pre">.to_csv()</span></code>
+method that all pandas data frames have.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--33-input--1" name="tab-set--33" type="radio"/><label class="tab-label" for="tab-set--33-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">script</span> <span class="n">false</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="k">raise</span><span class="o">-</span><span class="n">error</span> <span class="c1">## comment this line to run the cell</span>
+
+<span class="n">df_hungary</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">'gapminder_hungary.csv'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># index = False makes sure row names are not saved as their own columns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="question-3-putting-it-together">
+<h3>Question 3: Putting it together<a class="headerlink" href="#question-3-putting-it-together" title="Permalink to this heading">¶</a></h3>
+<p>Create two data frames called <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> with at least 3 columns
+and 4 rows. Make one column in both <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> an identifier
+column, with at least one ID present in both data frames. Use a left
+join with <code class="docutils literal notranslate"><span class="pre">A</span></code> as the left data frame, and call the new data frame
+<code class="docutils literal notranslate"><span class="pre">C</span></code>. Display the data frame, and export it as a .csv file.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--34-input--1" name="tab-set--34" type="radio"/><label class="tab-label" for="tab-set--34-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">### Your code here:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--35-input--1" name="tab-set--35" type="radio"/><label class="tab-label" for="tab-set--35-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+   <span class="s1">'ident'</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+   <span class="s1">'size'</span><span class="p">:</span> <span class="p">[</span><span class="mf">2.1</span><span class="p">,</span> <span class="mf">5.2</span><span class="p">,</span> <span class="mf">3.1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">],</span>
+   <span class="s1">'location'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'IL'</span><span class="p">,</span> <span class="s1">'MA'</span><span class="p">,</span> <span class="s1">'CA'</span><span class="p">,</span> <span class="s1">'NE'</span><span class="p">]</span>
+
+<span class="p">})</span>
+
+<span class="n">B</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+   <span class="s1">'ident'</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+   <span class="s1">'animal'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'monkey'</span><span class="p">,</span> <span class="s1">'giraffe'</span><span class="p">,</span> <span class="s1">'ape'</span><span class="p">,</span> <span class="s1">'lion'</span><span class="p">,</span> <span class="s1">'fish'</span><span class="p">],</span>
+   <span class="s1">'sex'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'M'</span><span class="p">,</span> <span class="s1">'F'</span><span class="p">,</span> <span class="s1">'F'</span><span class="p">,</span> <span class="s1">'F'</span><span class="p">,</span> <span class="s1">'M'</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="n">C</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="n">A</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="n">B</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">'left'</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">'ident'</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">'ident'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
+
+<span class="n">C</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">'joined_data.csv'</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--35-input--2" name="tab-set--35" type="radio"/><label class="tab-label" for="tab-set--35-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>   ident  size location animal  sex
+0      0   2.1       IL    ape    F
+1      1   5.2       MA   lion    F
+2      2   3.1       CA    NaN  NaN
+3      3   1.5       NE   fish    M
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</details></section>
+</section>
+<section id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pandas.pydata.org/docs/">Pandas docs</a></p></li>
+<li><p><a class="reference external" href="https://pandas.pydata.org/docs/getting_started/index.html#getting-started">Pandas getting
+started</a></p></li>
+<li><p><a class="reference external" href="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf">Pandas
+cheatsheet</a></p></li>
+<li><p><a class="reference external" href="https://spark.apache.org/docs/latest/api/python/">PySpark for big
+data</a></p></li>
+</ul>
+<p>This lesson is adapted from <a class="reference external" href="http://swcarpentry.github.io/python-novice-gapminder/design/">Software
+Carpentry</a>.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../figures/">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Making figures in Python</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../numpy/">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">NumPy</div>
+                
+              </div>
+            </a>
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2023, Ford Fishman |
+          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+            | <a class="muted-link" href="../../_sources/python/pandas.rst.txt"
+               rel="nofollow">
+              Show Source
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Pandas</a><ul>
+<li><a class="reference internal" href="#materials">Materials:</a></li>
+<li><a class="reference internal" href="#read-data">Read data</a></li>
+<li><a class="reference internal" href="#summarize-data-frame">Summarize data frame</a></li>
+<li><a class="reference internal" href="#categorical-variables">Categorical variables</a></li>
+<li><a class="reference internal" href="#numerical-variables">Numerical variables</a></li>
+<li><a class="reference internal" href="#accessing-rows-and-specific-entries">Accessing rows and specific entries</a><ul>
+<li><a class="reference internal" href="#question-1-summarizing-data">Question 1: Summarizing data</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#manipulate-data">Manipulate data</a><ul>
+<li><a class="reference internal" href="#subset-by-row">Subset by row</a></li>
+<li><a class="reference internal" href="#math">Math</a></li>
+<li><a class="reference internal" href="#question-2-working-with-data">Question 2: Working with data</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#create-your-own-data-frame">Create your own data frame</a></li>
+<li><a class="reference internal" href="#sort-data-frame">Sort data frame</a></li>
+<li><a class="reference internal" href="#add-rows">Add rows</a></li>
+<li><a class="reference internal" href="#join-data-frames">Join data frames</a><ul>
+<li><a class="reference internal" href="#inner-join">Inner Join</a></li>
+<li><a class="reference internal" href="#left-join">Left join</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#export-data-frame-as-csv">Export data frame as .csv</a><ul>
+<li><a class="reference internal" href="#question-3-putting-it-together">Question 3: Putting it together</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#resources">Resources</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=fbdbc327"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/scripts/furo.js?v=818c8f69"></script>
+    <script src="../../_static/tabs.js?v=3ee01567"></script>
+    </body>
+</html>
