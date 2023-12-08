@@ -12,7 +12,7 @@ jobs:
     - name: Build HTML
       uses: ammaraskar/sphinx-action@master
       with:
-        doc-folder: "docs/"
+        docs-folder: "docs/"
         build-command: make dirhtml
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
