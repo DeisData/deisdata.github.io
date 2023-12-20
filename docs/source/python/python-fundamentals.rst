@@ -273,7 +273,7 @@ stops.
       last_name='Montoya'
       print(last_name)
 
-If we want to increase a value of a variable by a certain, we can use
+If we want to increase a value of a variable by a certain value, we can use
 the ``+=`` operator. Here, we add 2 to the current value of x.
 
 .. tab:: Python

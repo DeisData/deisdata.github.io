@@ -321,7 +321,7 @@ dictionary.
       animals_dict['giraffes'] = 85 # key giraffes assigned the value of 85
       print(animals_dict)
 
-.. tab:: Python
+.. tab:: Output
 
    .. code:: none
 
