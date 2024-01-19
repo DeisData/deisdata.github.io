@@ -463,9 +463,6 @@ dictionaries containing lists, and much more.
       }
 
       samples = {'s1': sample1, 's2':sample2}
-      samples2 = dict()
-
-      samples = {'s1': sample1, 's2':sample2}
       print(samples)
 
 Indexing and referencing items in these nested structures can get quite
