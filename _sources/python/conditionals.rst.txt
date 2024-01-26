@@ -569,7 +569,7 @@ however.
 
       elif y < 200:
          
-         print('y ia between 100 and 200')
+         print('y is between 100 and 200')
 
       # nothing prints here
 
