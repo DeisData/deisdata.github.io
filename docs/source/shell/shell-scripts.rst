@@ -152,9 +152,9 @@ Resources
 This lesson is adapted from `The Unix Shell on Software
 Carpentry <http://swcarpentry.github.io/shell-novice/>`__. 
 
-- `Bash Help Sheet <https://www.shell-tips.com/sheets/bash-help-sheet.pdf>`__ has
+- `Bash Help Sheet <https://www.shell-tips.com/cheat-sheets/bash-quick-references/#gsc.tab=0>`__ has
   shortcuts for quick navigating and editing in your shell 
-- `Mastering Bash with Tips and Tricks <https://www.shell-tips.com/shell/>`__ has
+- `Mastering Bash with Tips and Tricks <https://www.shell-tips.com/#gsc.tab=0>`__ has
   some great examples of how scripts can be used in a variety of ways. 
 - `30 Bash Script Examples <https://linuxhint.com/30_bash_script_examples/>`__ depicts
   some basic to more complex scripting examples 
