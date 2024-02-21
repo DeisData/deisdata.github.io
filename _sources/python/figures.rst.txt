@@ -68,7 +68,7 @@ Finally, we can display the figure with ``plt.show()``.
    .. code:: python
 
       figure, ax = plt.subplots() # create blank figure and axes
-      ax.hist(df['life_expectancy']) # add histogram to axes with 30 bins
+      ax.hist(df['life_expectancy']) # add histogram to axes
       plt.show() # display figure
 
 
