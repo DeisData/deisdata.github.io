@@ -149,6 +149,7 @@ linewidth, and alpha (transparency).
          geom_point()
 
 .. tab:: Output
+   :new-set:
 
    .. figure:: /_static/images/r/data-visualization/Adding\ shape-1.png
 
@@ -208,6 +209,7 @@ specified with ``fill``.
          geom_histogram(binwidth = 0.25)
 
 .. tab:: Output
+   :new-set:
 
    .. figure:: /_static/images/r/data-visualization/unnamed-chunk-3-1.png
       

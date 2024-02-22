@@ -465,6 +465,13 @@ dictionaries containing lists, and much more.
       samples = {'s1': sample1, 's2':sample2}
       print(samples)
 
+.. tab:: Output
+
+   .. code:: none
+
+      [['a', 'b', 'c'], ['d', 'e', 'f', 'f'], ['h', 'i', 'j']]
+      {'s1': {'co2': [10.2, 3.4, 10.1], 'n': 4, 'city': 'Waltham'}, 's2': {'co2': [4.2, 2.3, 3.5, 23], 'a': 23, 'city': 'Watertown'}}
+
 Indexing and referencing items in these nested structures can get quite
 complicated. It’s important to know the full nested structure when doing
 these references.
@@ -478,6 +485,14 @@ these references.
       print(samples['s1']['city'])
 
       print(samples['s2']['co2'][0])
+
+.. tab:: Output
+
+   .. code:: none
+
+      c
+      Waltham
+      4.2
 
 Bonus Question 1: Nested structures pt. 1
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

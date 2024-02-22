@@ -378,13 +378,15 @@ color. This will also create a legend.</p>
 <p>In addition to color, you also add other aesthetics: fill, shape,
 linewidth, and alpha (transparency).</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bill_length_mm</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bill_depth_mm</span><span class="p">,</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">species</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
 <span class="w">   </span><span class="nf">geom_point</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--11-input--2" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--2">Output</label><div class="tab-content docutils container">
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--1">Output</label><div class="tab-content docutils container">
 <figure class="align-default">
 <img alt="../../_images/Adding%20shape-1.png" src="../../_images/Adding%20shape-1.png" />
 </figure>
@@ -394,7 +396,7 @@ linewidth, and alpha (transparency).</p>
 <code class="docutils literal notranslate"><span class="pre">geom_point()</span></code>, every data point will be that color. We pick the
 specific color in quotes.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bill_length_mm</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bill_depth_mm</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
 <span class="w">   </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;red&quot;</span><span class="p">)</span>
 </pre></div>
@@ -402,7 +404,7 @@ specific color in quotes.</p>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--1">Output</label><div class="tab-content docutils container">
 <figure class="align-default">
 <img alt="../../_images/adding%20color%20to%20geom-1.png" src="../../_images/adding%20color%20to%20geom-1.png" />
 </figure>
@@ -411,7 +413,7 @@ specific color in quotes.</p>
 <p>Let’s try making another type of plot. Here, we make a boxplot of bill
 depth by species with <code class="docutils literal notranslate"><span class="pre">geom_boxplot()</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio"><label class="tab-label" for="tab-set--15-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">species</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bill_depth_mm</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
 <span class="w">   </span><span class="nf">geom_boxplot</span><span class="p">()</span>
 </pre></div>
@@ -419,7 +421,7 @@ depth by species with <code class="docutils literal notranslate"><span class="pr
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio"><label class="tab-label" for="tab-set--15-input--1">Output</label><div class="tab-content docutils container">
 <figure class="align-default">
 <img alt="../../_images/boxplot-1.png" src="../../_images/boxplot-1.png" />
 </figure>
@@ -427,7 +429,7 @@ depth by species with <code class="docutils literal notranslate"><span class="pr
 </div>
 <p>We can make a histogram of bill depth with <code class="docutils literal notranslate"><span class="pre">geom_histogram</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--18-input--1" name="tab-set--18" type="radio"><label class="tab-label" for="tab-set--18-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bill_depth_mm</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
 <span class="w">   </span><span class="nf">geom_histogram</span><span class="p">()</span>
 </pre></div>
@@ -435,7 +437,7 @@ depth by species with <code class="docutils literal notranslate"><span class="pr
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--1">Output</label><div class="tab-content docutils container">
 <figure class="align-default">
 <img alt="../../_images/histogram-1.png" src="../../_images/histogram-1.png" />
 </figure>
@@ -444,13 +446,15 @@ depth by species with <code class="docutils literal notranslate"><span class="pr
 <p>Like with our scatter plot, we can separate out species with color, here
 specified with <code class="docutils literal notranslate"><span class="pre">fill</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--18-input--1" name="tab-set--18" type="radio"><label class="tab-label" for="tab-set--18-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--20-input--1" name="tab-set--20" type="radio"><label class="tab-label" for="tab-set--20-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">bill_depth_mm</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="o">=</span><span class="n">species</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
 <span class="w">   </span><span class="nf">geom_histogram</span><span class="p">(</span><span class="n">binwidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.25</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--18-input--2" name="tab-set--18" type="radio"><label class="tab-label" for="tab-set--18-input--2">Output</label><div class="tab-content docutils container">
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--19-input--1" name="tab-set--19" type="radio"><label class="tab-label" for="tab-set--19-input--1">Output</label><div class="tab-content docutils container">
 <figure class="align-default">
 <img alt="../../_images/unnamed-chunk-3-1.png" src="../../_images/unnamed-chunk-3-1.png" />
 </figure>
@@ -463,7 +467,7 @@ specified with <code class="docutils literal notranslate"><span class="pre">fill
 essentially panels showing each group individually. We specify the
 facets as their own layer in <code class="docutils literal notranslate"><span class="pre">facet_wrap()</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--20-input--1" name="tab-set--20" type="radio"><label class="tab-label" for="tab-set--20-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--22-input--1" name="tab-set--22" type="radio"><label class="tab-label" for="tab-set--22-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bill_depth_mm</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
 <span class="w">   </span><span class="nf">geom_histogram</span><span class="p">(</span><span class="n">binwidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.25</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
 <span class="w">   </span><span class="nf">facet_wrap</span><span class="p">(</span><span class="o">~</span><span class="w"> </span><span class="n">species</span><span class="p">)</span>
@@ -472,7 +476,7 @@ facets as their own layer in <code class="docutils literal notranslate"><span cl
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--19-input--1" name="tab-set--19" type="radio"><label class="tab-label" for="tab-set--19-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--21-input--1" name="tab-set--21" type="radio"><label class="tab-label" for="tab-set--21-input--1">Output</label><div class="tab-content docutils container">
 <figure class="align-default">
 <img alt="../../_images/creating%20multiple%20plots-1.png" src="../../_images/creating%20multiple%20plots-1.png" />
 </figure>
@@ -486,7 +490,7 @@ basics of those options here.</p>
 <p>We will start by saving a simple colored box plot to a variable named
 <code class="docutils literal notranslate"><span class="pre">myplot</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--22-input--1" name="tab-set--22" type="radio"><label class="tab-label" for="tab-set--22-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--24-input--1" name="tab-set--24" type="radio"><label class="tab-label" for="tab-set--24-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">myplot</span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">species</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bill_depth_mm</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">species</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
 <span class="w">   </span><span class="nf">geom_boxplot</span><span class="p">()</span>
 <span class="n">myplot</span>
@@ -495,7 +499,7 @@ basics of those options here.</p>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--21-input--1" name="tab-set--21" type="radio"><label class="tab-label" for="tab-set--21-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--23-input--1" name="tab-set--23" type="radio"><label class="tab-label" for="tab-set--23-input--1">Output</label><div class="tab-content docutils container">
 <figure class="align-default">
 <img alt="../../_images/unnamed-chunk-4-1.png" src="../../_images/unnamed-chunk-4-1.png" />
 </figure>
@@ -503,7 +507,7 @@ basics of those options here.</p>
 </div>
 <p>Once the plot is saved as a variable, we can add axes labels with <code class="docutils literal notranslate"><span class="pre">xlab()</span></code> and <code class="docutils literal notranslate"><span class="pre">ylab()</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--24-input--1" name="tab-set--24" type="radio"><label class="tab-label" for="tab-set--24-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--26-input--1" name="tab-set--26" type="radio"><label class="tab-label" for="tab-set--26-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">myplot</span><span class="o">+</span>
 <span class="w">   </span><span class="nf">xlab</span><span class="p">(</span><span class="s">&quot;Species&quot;</span><span class="p">)</span><span class="o">+</span>
 <span class="w">   </span><span class="nf">ylab</span><span class="p">(</span><span class="s">&quot;Bill Depth&quot;</span><span class="p">)</span>
@@ -512,7 +516,7 @@ basics of those options here.</p>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--23-input--1" name="tab-set--23" type="radio"><label class="tab-label" for="tab-set--23-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--25-input--1" name="tab-set--25" type="radio"><label class="tab-label" for="tab-set--25-input--1">Output</label><div class="tab-content docutils container">
 <figure class="align-default">
 <img alt="../../_images/adding%20adding%20labels-1.png" src="../../_images/adding%20adding%20labels-1.png" />
 </figure>
@@ -523,7 +527,7 @@ factors, such as how you are distinguishing groups, there are different
 functions for this. For this specific case, we use the function
 <code class="docutils literal notranslate"><span class="pre">scale_color_discrete()</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--26-input--1" name="tab-set--26" type="radio"><label class="tab-label" for="tab-set--26-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--28-input--1" name="tab-set--28" type="radio"><label class="tab-label" for="tab-set--28-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">myplot</span><span class="o">+</span>
 <span class="w">   </span><span class="nf">xlab</span><span class="p">(</span><span class="s">&quot;Species&quot;</span><span class="p">)</span><span class="o">+</span>
 <span class="w">   </span><span class="nf">ylab</span><span class="p">(</span><span class="s">&quot;Bill Depth&quot;</span><span class="p">)</span><span class="o">+</span>
@@ -533,7 +537,7 @@ functions for this. For this specific case, we use the function
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--25-input--1" name="tab-set--25" type="radio"><label class="tab-label" for="tab-set--25-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--27-input--1" name="tab-set--27" type="radio"><label class="tab-label" for="tab-set--27-input--1">Output</label><div class="tab-content docutils container">
 <figure class="align-default">
 <img alt="../../_images/Legends-1.png" src="../../_images/Legends-1.png" />
 </figure>
@@ -546,7 +550,7 @@ functions for this. For this specific case, we use the function
 grid. There are many other themes you can use in ggplot, such as
 <code class="docutils literal notranslate"><span class="pre">theme_minimal</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--28-input--1" name="tab-set--28" type="radio"><label class="tab-label" for="tab-set--28-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--30-input--1" name="tab-set--30" type="radio"><label class="tab-label" for="tab-set--30-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">myplot</span><span class="o">+</span>
 <span class="w">   </span><span class="nf">xlab</span><span class="p">(</span><span class="s">&quot;Species&quot;</span><span class="p">)</span><span class="o">+</span>
 <span class="w">   </span><span class="nf">ylab</span><span class="p">(</span><span class="s">&quot;Bill Depth&quot;</span><span class="p">)</span><span class="o">+</span>
@@ -557,7 +561,7 @@ grid. There are many other themes you can use in ggplot, such as
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--27-input--1" name="tab-set--27" type="radio"><label class="tab-label" for="tab-set--27-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--29-input--1" name="tab-set--29" type="radio"><label class="tab-label" for="tab-set--29-input--1">Output</label><div class="tab-content docutils container">
 <figure class="align-default">
 <img alt="../../_images/Themes-1.png" src="../../_images/Themes-1.png" />
 </figure>
@@ -569,7 +573,7 @@ theme</a>.</p>
 <p>If you would like to play with other pre-built themes, try the ggthemes
 package!</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--29-input--1" name="tab-set--29" type="radio"><label class="tab-label" for="tab-set--29-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--31-input--1" name="tab-set--31" type="radio"><label class="tab-label" for="tab-set--31-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&#39;ggthemes&#39;</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">ggthemes</span><span class="p">)</span>
 <span class="o">+</span><span class="nf">theme_tufte</span><span class="p">()</span>
@@ -587,7 +591,7 @@ package!</p>
 <p>Finally, to save a plot, you can use the <code class="docutils literal notranslate"><span class="pre">ggsave()</span></code> function,
 specifying the desired file name.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--30-input--1" name="tab-set--30" type="radio"><label class="tab-label" for="tab-set--30-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--32-input--1" name="tab-set--32" type="radio"><label class="tab-label" for="tab-set--32-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins_plot</span><span class="o">&lt;-</span><span class="n">myplot</span><span class="o">+</span>
 <span class="w">   </span><span class="nf">xlab</span><span class="p">(</span><span class="s">&quot;Species&quot;</span><span class="p">)</span><span class="o">+</span>
 <span class="w">   </span><span class="nf">ylab</span><span class="p">(</span><span class="s">&quot;Bill Depth&quot;</span><span class="p">)</span><span class="o">+</span>
@@ -598,7 +602,7 @@ specifying the desired file name.</p>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--30-input--2" name="tab-set--30" type="radio"><label class="tab-label" for="tab-set--30-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--32-input--2" name="tab-set--32" type="radio"><label class="tab-label" for="tab-set--32-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## Saving 7 x 5 in image
 </pre></div>
 </div>
@@ -614,7 +618,7 @@ specifying the desired file name.</p>
 <details class="summary-solution">
 <summary>Solution</summary><div class="docutils container">
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--31-input--1" name="tab-set--31" type="radio"><label class="tab-label" for="tab-set--31-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--33-input--1" name="tab-set--33" type="radio"><label class="tab-label" for="tab-set--33-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">flipper_length_mm</span><span class="p">,</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">body_mass_g</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
 <span class="w">   </span><span class="nf">geom_point</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">species</span><span class="p">,</span>
 <span class="w">                  </span><span class="n">shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">species</span><span class="p">),</span>
