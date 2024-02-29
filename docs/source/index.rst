@@ -57,6 +57,7 @@ and we’ll help you sort it out.
    R <r>
    shell
    git
+   sql
 
 
 
