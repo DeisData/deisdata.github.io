@@ -16,3 +16,21 @@ Key Points
 -  We can eliminate meaningless combinations of records by matching 
    primary keys and foreign keys between tables.
 -  The most common join condition is matching keys.
+
+Practice: Listing radiation readings
+------------------------------------
+
+Write a query that lists all radiation readings from the DR-1 site.
+
+.. collapse:: Solution
+
+    .. container:: 
+    
+         .. code:: sql
+
+            SELECT Survey.reading 
+            FROM Site JOIN Visited JOIN Survey 
+            ON Site.name = Visited.site
+            AND Visited.id = Survey.taken
+            WHERE Site.name = 'DR-1' 
+            AND Survey.quant = 'rad';

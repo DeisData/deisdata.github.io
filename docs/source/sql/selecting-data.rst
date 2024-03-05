@@ -12,3 +12,18 @@ Key Points
    information from databases.
 -  Use ``SELECT… FROM…`` to get values from a database table.
 -  SQL is case-insensitive (but data is case-sensitive).
+
+Practice: Selecting Site names
+------------------------------
+
+Write a query that selects only the name column from the Site table.
+
+.. collapse:: Solution
+
+   .. container::
+
+      .. tab:: SQL
+
+         .. code:: sql
+
+            SELECT name FROM Site;

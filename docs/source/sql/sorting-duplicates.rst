@@ -10,3 +10,19 @@ Key Points
 -  The values in a database are not guaranteed to be unique: if we 
    want to eliminate duplicates, we must specify that explicitly as 
    well using ``DISTINCT``.
+
+Practice: Finding distinct dates
+--------------------------------
+
+Write a query that selects distinct dates from the ``Visited`` table.
+
+.. collapse:: Solution
+
+   .. container::
+
+      .. tab:: SQL
+
+         .. code:: sql
+
+            SELECT DISTINCT dated FROM Visited;
+
