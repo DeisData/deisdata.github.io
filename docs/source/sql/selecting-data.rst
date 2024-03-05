@@ -1,6 +1,9 @@
 Selecting data
 ==============
 
+..  youtube:: 9CbdKhYcE4U
+   :width: 100%
+
 Key Points
 ----------
 

@@ -1,6 +1,9 @@
 Filtering
 =========
 
+..  youtube:: gMR7iaJrLYc
+   :width: 100%
+
 Key Points
 ----------
 

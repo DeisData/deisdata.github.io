@@ -1,6 +1,9 @@
 Combining data from multiple tables
 ===================================
 
+..  youtube:: K29HryxNf9w
+   :width: 100%
+
 Key Points
 ----------
 

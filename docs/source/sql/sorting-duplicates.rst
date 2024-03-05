@@ -1,6 +1,9 @@
 Sorting out and removing duplicates
 ===================================
 
+..  youtube:: 5Qfzm4vr5qY
+   :width: 100%
+
 Key Points
 ----------
 
@@ -10,6 +13,7 @@ Key Points
 -  The values in a database are not guaranteed to be unique: if we 
    want to eliminate duplicates, we must specify that explicitly as 
    well using ``DISTINCT``.
+
 
 Practice: Finding distinct dates
 --------------------------------

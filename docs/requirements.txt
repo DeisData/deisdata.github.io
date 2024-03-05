@@ -4,3 +4,4 @@ furo
 sphinx_toolbox
 sphinx-inline-tabs
 sphinx-reredirects
+sphinxcontrib-youtube

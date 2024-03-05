@@ -1,6 +1,9 @@
 Aggregates: sums, averages, and other summary values
 ====================================================
 
+..  youtube:: yIXOp_1RjDo
+   :width: 100%
+
 Key Points
 ----------
 

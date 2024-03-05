@@ -1,6 +1,9 @@
 Calculating new values
 ======================
 
+..  youtube:: 8gYifvvIV_k
+   :width: 100%
+
 Key Points
 ----------
 
