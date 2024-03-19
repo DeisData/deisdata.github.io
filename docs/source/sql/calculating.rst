@@ -1,6 +1,11 @@
 Calculating new values
 ======================
 
+Objective
+---------
+
+**Write queries that calculate new values for each selected record.**
+
 ..  youtube:: 8gYifvvIV_k
    :width: 100%
 
@@ -9,6 +14,46 @@ Key Points
 
 -  Queries can do the usual arithmetic operations on values.
 -  Use ``UNION`` to combine the results of two or more queries.
+
+Oh no! radiation measurements need to be corrected upward by 5%. 
+
+Rather than modify the stored data, we can do this on the fly 
+as part of our query.
+
+.. tab:: SQL
+
+    .. code:: sql
+
+        SELECT 1.05 * reading FROM Survey WHERE quant = 'rad';
+
+We can use all kinds of math operators. For example, we can
+convert from Fahrenheit to Celsius, and round 2 decimal places.
+
+.. tab:: SQL
+
+    .. code:: sql
+
+        SELECT taken, round(5*(reading - 32) / 9, 2) 
+        FROM Survey WHERE quant = 'temp';
+
+We can also rename this field in the output with ``as``.
+
+.. tab:: SQL
+
+    .. code:: sql
+
+        SELECT taken, round(5*(reading - 32) / 9, 2) as Celsius 
+        FROM Survey WHERE quant = 'temp';
+
+We can also combine values from different fields using string 
+concatenation operator ``||``.
+
+.. tab:: SQL
+
+    .. code:: sql
+
+        SELECT personal || ' ' || family as fullname FROM Person;
+
 
 Practice: Fixing salinity readings
 ----------------------------------

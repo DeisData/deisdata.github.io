@@ -1,6 +1,12 @@
 Selecting data
 ==============
 
+Objective
+---------
+
+**Write a query to select all values 
+for specific fields from a single table.**
+
 ..  youtube:: 9CbdKhYcE4U
    :width: 100%
 
@@ -15,6 +21,52 @@ Key Points
    information from databases.
 -  Use ``SELECT… FROM…`` to get values from a database table.
 -  SQL is case-insensitive (but data is case-sensitive).
+
+Introductory jargon
+-------------------
+
+-  A relational database is arranged as **tables**.
+-  Columns are called **fields**.
+-  Rows are called **records**.
+-  Commands are called **queries**.
+
+``SELECT``
+----------
+
+We will use ``SELECT ... FROM ...`` to get values from a database table.
+
+From our data set, we will use this syntax to display scientists' names 
+using ``SELECT`` and giving names of columns we want.
+
+.. tab:: SQL
+
+   .. code:: sql
+
+      SELECT family, personal FROM Person;
+
+SQL is case insensitive.
+
+.. tab:: SQL
+
+   .. code:: sql
+
+      SeleCT family, PERSONAL from person;
+
+We specify what order columns are displayed in.
+
+.. tab:: SQL
+
+   .. code:: sql
+
+      SELECT id, id, id FROM Person;
+
+We can select all the columns in a table using ``*``. 
+
+.. tab:: SQL
+
+   .. code:: sql
+
+      SELECT * FROM Person;
 
 Practice: Selecting Site names
 ------------------------------
