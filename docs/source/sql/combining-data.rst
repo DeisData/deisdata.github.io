@@ -67,13 +67,13 @@ Write a query that lists all radiation readings from the DR-1 site.
 
 .. collapse:: Solution
 
-    .. container:: 
+   .. container:: 
     
-         .. code:: sql
+      .. code:: sql
 
-            SELECT Survey.reading 
-            FROM Site JOIN Visited JOIN Survey 
-            ON Site.name = Visited.site
-            AND Visited.id = Survey.taken
-            WHERE Site.name = 'DR-1' 
-            AND Survey.quant = 'rad';
+         SELECT Survey.reading 
+         FROM Site JOIN Visited JOIN Survey 
+         ON Site.name = Visited.site
+         AND Visited.id = Survey.taken
+         WHERE Site.name = 'DR-1' 
+         AND Survey.quant = 'rad';
