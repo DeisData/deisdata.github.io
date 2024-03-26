@@ -1,0 +1,522 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Aggregates: sums, averages, and other summary values" href="../aggregates/" /><link rel="prev" title="Calculating new values" href="../calculating/" />
+
+    <link rel="shortcut icon" href="../../_static/favicon-32x32.png"/><!-- Generated with Sphinx 7.1.2 and Furo 2024.01.29 -->
+        <title>Missing data - DeisData</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=934bd528" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../"><div class="brand">DeisData</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/DeisDatax1x_medium.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">DeisData</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search/" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../python/">Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../python/setup-install/">Setup and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/jupyter/">Jupyter notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/python-fundamentals/">Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/data-structures/">Data structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/conditionals/">Booleans and conditionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/loops/">Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/numpy/">NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/pandas/">Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/figures/">Matplotlib and seaborn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/functions/">Writing functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/stats/">Statistical tests</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../r/">R</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of R</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../r/quick-start/">Intro to R and the Tidyverse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../r/data-wrangling/">Data wrangling with the Tidyverse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../r/data-visualization/">ggplot2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../r/text-mining/">Text mining</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../shell/">Unix Shell</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Unix Shell</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/setup/">Bash Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/navigating/">Navigating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/alter-dir/">Altering files and directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/pipes-filters/">Pipes and filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/loops/">Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/shell-scripts/">Shell scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/search-find/">Searching and finding</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../git/">Git Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../git/setup-install/">Setup and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/quick-start/">Quick start to Git and GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/pushing/">Pushing changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/fetch-merge/">Fetch and merge from GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/git-utilities/">Git utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/forking/">Forking in GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/glossary/">Git Glossary</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../">SQL</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of SQL</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../setup/">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../selecting-data/">Selecting data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sorting-duplicates/">Sorting out and removing duplicates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filtering/">Filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../calculating/">Calculating new values</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Missing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../aggregates/">Aggregates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../combining-data/">Combining data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../create-modify/">Create and modify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../glossary/">Glossary</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="missing-data">
+<h1>Missing data<a class="headerlink" href="#missing-data" title="Permalink to this heading">#</a></h1>
+<section id="objective">
+<h2>Objective<a class="headerlink" href="#objective" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Write queries that handle missing information (<code class="docutils literal notranslate"><span class="pre">NULL</span></code>) correctly.</p></li>
+</ul>
+<div class="video_wrapper" style="padding-bottom: 56.250000%; padding-top: 30px; position: relative; width: 100%">
+<iframe allowfullscreen="true" src="https://www.youtube.com/embed/kMifedE_J5I" style="border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%">
+</iframe></div></section>
+<section id="key-points">
+<h2>Key Points<a class="headerlink" href="#key-points" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Databases use a special value called <code class="docutils literal notranslate"><span class="pre">NULL</span></code> to represent missing information.</p></li>
+<li><p>Almost all operations on <code class="docutils literal notranslate"><span class="pre">NULL</span></code> produce <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p></li>
+<li><p>Queries can test for <code class="docutils literal notranslate"><span class="pre">NULL</span></code> using <code class="docutils literal notranslate"><span class="pre">IS</span> <span class="pre">NULL</span></code> and <code class="docutils literal notranslate"><span class="pre">IS</span> <span class="pre">NOT</span> <span class="pre">NULL</span></code>.</p></li>
+</ul>
+</section>
+<section id="code">
+<h2>Code<a class="headerlink" href="#code" title="Permalink to this heading">#</a></h2>
+<p>In our console, we’re going to make sure <code class="docutils literal notranslate"><span class="pre">NULL</span></code> gets displayed more obviously.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">SQL</label><div class="tab-content docutils container">
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="n">nullvalue</span><span class="w"> </span><span class="o">-</span><span class="k">null</span><span class="o">-</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s try running a query where some of the returned values are <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">SQL</label><div class="tab-content docutils container">
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Visited</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>id   site   dated
+---  -----  ----------
+619  DR-1   1927-02-08
+622  DR-1   1927-02-10
+734  DR-3   1930-01-07
+735  DR-3   1930-01-12
+751  DR-3   1930-02-26
+752  DR-3   -null-
+837  MSK-4  1932-01-14
+844  DR-1   1932-03-22
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">NULL</span></code> doesn’t behave like other values.
+It gets left out from conditional searches.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">SQL</label><div class="tab-content docutils container">
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Visited</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">dated</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="s1">&#39;1930-01-01&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>id   site  dated
+---  ----  ----------
+619  DR-1  1927-02-08
+622  DR-1  1927-02-10
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">SQL</label><div class="tab-content docutils container">
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Visited</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">dated</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="s1">&#39;1930-01-01&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>id   site   dated
+---  -----  ----------
+734  DR-3   1930-01-07
+735  DR-3   1930-01-12
+751  DR-3   1930-02-26
+837  MSK-4  1932-01-14
+844  DR-1   1932-03-22
+</pre></div>
+</div>
+</div>
+</div>
+<p>To filter for <code class="docutils literal notranslate"><span class="pre">NULL</span></code>, we have to use the command <code class="docutils literal notranslate"><span class="pre">IS</span></code>
+instead of <code class="docutils literal notranslate"><span class="pre">=</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">SQL</label><div class="tab-content docutils container">
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Visited</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">dated</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>id   site  dated
+---  ----  ------
+752  DR-3  -null-
+</pre></div>
+</div>
+</div>
+</div>
+<p>To omit <code class="docutils literal notranslate"><span class="pre">NULL</span></code>, we use <code class="docutils literal notranslate"><span class="pre">IS</span> <span class="pre">NOT</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">SQL</label><div class="tab-content docutils container">
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Visited</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">dated</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>id   site   dated
+---  -----  ----------
+619  DR-1   1927-02-08
+622  DR-1   1927-02-10
+734  DR-3   1930-01-07
+735  DR-3   1930-01-12
+751  DR-3   1930-02-26
+837  MSK-4  1932-01-14
+844  DR-1   1932-03-22
+</pre></div>
+</div>
+</div>
+</div>
+<p>Without explicitely saying that we want to include <code class="docutils literal notranslate"><span class="pre">NULL</span></code>,
+it is easy to filter them out accidentally.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">SQL</label><div class="tab-content docutils container">
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Survey</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">quant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;sal&#39;</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">person</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">&#39;lake&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>taken  person  quant  reading
+-----  ------  -----  -------
+619    dyer    sal    0.13
+622    dyer    sal    0.09
+752    roe     sal    41.6
+837    roe     sal    22.5
+</pre></div>
+</div>
+</div>
+</div>
+<p>We have to explicitely include <code class="docutils literal notranslate"><span class="pre">NULL</span></code> if we want to also include
+those values.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">SQL</label><div class="tab-content docutils container">
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Survey</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">quant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;sal&#39;</span>
+<span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="n">person</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">&#39;lake&#39;</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">person</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--7-input--2" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>taken  person  quant  reading
+-----  ------  -----  -------
+619    dyer    sal    0.13
+622    dyer    sal    0.09
+735    -null-  sal    0.06
+752    roe     sal    41.6
+837    roe     sal    22.5
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="practice-sorting-by-known-date">
+<h2>Practice: Sorting by Known Date<a class="headerlink" href="#practice-sorting-by-known-date" title="Permalink to this heading">#</a></h2>
+<p>Write a query that sorts the records in <code class="docutils literal notranslate"><span class="pre">Visited</span></code> by date, omitting entries for
+which the date is not known (i.e., is null).</p>
+<details class="summary-solution">
+<summary>Solution</summary><div class="docutils container">
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">SQL</label><div class="tab-content docutils container">
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Visited</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">dated</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">dated</span><span class="w"> </span><span class="k">ASC</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--8-input--2" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>id   site   dated
+---  -----  ----------
+619  DR-1   1927-02-08
+622  DR-1   1927-02-10
+734  DR-3   1930-01-07
+735  DR-3   1930-01-12
+751  DR-3   1930-02-26
+837  MSK-4  1932-01-14
+844  DR-1   1932-03-22
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</details></section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../aggregates/">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Aggregates: sums, averages, and other summary values</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../calculating/">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Calculating new values</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Ford Fishman
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Missing data</a><ul>
+<li><a class="reference internal" href="#objective">Objective</a></li>
+<li><a class="reference internal" href="#key-points">Key Points</a></li>
+<li><a class="reference internal" href="#code">Code</a></li>
+<li><a class="reference internal" href="#practice-sorting-by-known-date">Practice: Sorting by Known Date</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=fbdbc327"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../_static/tabs.js?v=3ee01567"></script>
+    </body>
+</html>
