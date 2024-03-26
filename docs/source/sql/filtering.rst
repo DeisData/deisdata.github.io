@@ -23,6 +23,9 @@ Key Points
    like operator, the wildcard “%” matches zero or more characters, 
    so that ``%able%`` matches “fixable” and “tablets”.
 
+Code
+----
+
 We want to see when a particular site was visited.
 We can select these records from ``Visited`` table using a 
 ``WHERE`` clause in our query.
@@ -32,6 +35,16 @@ We can select these records from ``Visited`` table using a
    .. code:: sql
 
       SELECT * FROM Visited WHERE site = 'DR-1';
+
+.. tab:: Output
+
+   .. code:: none
+
+      id   site  dated     
+      ---  ----  ----------
+      619  DR-1  1927-02-08
+      622  DR-1  1927-02-10
+      844  DR-1  1932-03-22      
 
 To explain what SQL is doing above:
 
@@ -47,6 +60,16 @@ columns that aren't displayed.
 
       SELECT id FROM Visited WHERE site = 'DR-1';
 
+.. tab:: Output
+
+   .. code:: none
+
+      id 
+      ---
+      619
+      622
+      844
+
 .. figure:: /_static/images/sql/filtering/example_filtering.png
    :alt: example filter 
 
@@ -61,6 +84,15 @@ For example, we can get information on DR-1 site collected before 1930.
 
       SELECT * FROM Visited WHERE site='DR-1' AND dated < '1930-01-01';
 
+.. tab:: Output
+
+   .. code:: none
+
+      id   site  dated     
+      ---  ----  ----------
+      619  DR-1  1927-02-08
+      622  DR-1  1927-02-10
+
 ``AND`` means both conditions must be true. 
 
 ``OR`` means at least one condition has to be true.
@@ -71,6 +103,23 @@ For example, we can get information on DR-1 site collected before 1930.
 
       SELECT * FROM Survey WHERE person = 'lake' OR person = 'roe';
 
+.. tab:: Output
+
+   .. code:: none
+
+      taken  person  quant  reading
+      -----  ------  -----  -------
+      734    lake    sal    0.05   
+      751    lake    sal    0.1    
+      752    lake    rad    2.19   
+      752    lake    sal    0.09   
+      752    lake    temp   -16.0  
+      752    roe     sal    41.6   
+      837    lake    rad    1.46   
+      837    lake    sal    0.21   
+      837    roe     sal    22.5   
+      844    roe     rad    11.25 
+
 Another way to write this is to see if a value is in a set.
 
 .. tab:: SQL
@@ -78,6 +127,24 @@ Another way to write this is to see if a value is in a set.
    .. code:: sql
 
       SELECT * FROM Survey WHERE person IN ('lake','roe');
+
+
+.. tab:: Output
+
+   .. code:: none
+
+      taken  person  quant  reading
+      -----  ------  -----  -------
+      734    lake    sal    0.05   
+      751    lake    sal    0.1    
+      752    lake    rad    2.19   
+      752    lake    sal    0.09   
+      752    lake    temp   -16.0  
+      752    roe     sal    41.6   
+      837    lake    rad    1.46   
+      837    lake    sal    0.21   
+      837    roe     sal    22.5   
+      844    roe     rad    11.25 
 
 And be careful about parentheses if you are putting together a lot of tests!
 
@@ -87,7 +154,22 @@ And be careful about parentheses if you are putting together a lot of tests!
 
       SELECT * FROM Survey 
       WHERE quant = 'sal' 
-      AND person = 'lake' OR person='roe'
+      AND person = 'lake' OR person='roe';
+
+.. tab:: Output
+
+   .. code:: none
+
+      taken  person  quant  reading
+      -----  ------  -----  -------
+      734    lake    sal    0.05   
+      751    lake    sal    0.1    
+      752    lake    sal    0.09   
+      752    roe     sal    41.6   
+      837    lake    sal    0.21   
+      837    roe     sal    22.5   
+      844    roe     rad    11.25  
+
 
 This gives us all the measurements by ``'roe'``.  
 
@@ -97,7 +179,20 @@ What we probably meant is this:
 
    .. code:: sql
 
-      SELECT * FROM Survey WHERE quant = 'sal' AND (person = 'lake'  OR person='roe')
+      SELECT * FROM Survey WHERE quant = 'sal' AND (person = 'lake'  OR person='roe');
+
+.. tab:: Output
+
+   .. code:: none
+
+      taken  person  quant  reading
+      -----  ------  -----  -------
+      734    lake    sal    0.05   
+      751    lake    sal    0.1    
+      752    lake    sal    0.09   
+      752    roe     sal    41.6   
+      837    lake    sal    0.21   
+      837    roe     sal    22.5   
 
 We can filter by partial matches using ``LIKE`` keyword.
 
@@ -109,6 +204,20 @@ The percent (``%``) acts like a wildcard, matching any characters in that place:
 
       SELECT * FROM Visited WHERE site LIKE 'DR%';
 
+.. tab:: Output
+
+   .. code:: none
+
+      id   site  dated     
+      ---  ----  ----------
+      619  DR-1  1927-02-08
+      622  DR-1  1927-02-10
+      734  DR-3  1930-01-07
+      735  DR-3  1930-01-12
+      751  DR-3  1930-02-26
+      752  DR-3            
+      844  DR-1  1932-03-22
+
 Finally, we can use ``DISTINCT`` and ``WHERE`` to give a second level of filtering.
 
 .. tab:: SQL
@@ -117,6 +226,18 @@ Finally, we can use ``DISTINCT`` and ``WHERE`` to give a second level of filteri
 
       SELECT DISTINCT person, quant FROM Survey 
       WHERE person='lake' OR person = 'roe';
+
+.. tab:: Output
+
+   .. code:: none
+
+      person  quant
+      ------  -----
+      lake    sal  
+      lake    rad  
+      lake    temp 
+      roe     sal  
+      roe     rad  
 
 But remember, ``DISTINCT`` is applied to the values displayed in the chosen columns, 
 not to all the rows being processed.
@@ -143,7 +264,7 @@ it is correct.
 
    .. container::
 
-      Because we used OR, a site on the South Pole for example 
+      Because we used ``OR``, a site on the South Pole for example 
       will still meet the second criteria and thus be included. 
       Instead, we want to restrict this to sites that meet both criteria:
 
@@ -152,6 +273,14 @@ it is correct.
             .. code:: sql
 
                SELECT * FROM Site WHERE (lat > -48) AND (lat < 48);
+         
+         .. tab:: Output
+
+            .. code:: none
+
+               name  lat     long   
+               ----  ------  -------
+               DR-3  -47.15  -126.72
 
 Practice: Matching patterns
 ---------------------------
