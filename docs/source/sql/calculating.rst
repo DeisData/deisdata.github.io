@@ -15,8 +15,8 @@ Key Points
 -  Queries can do the usual arithmetic operations on values.
 -  Use ``UNION`` to combine the results of two or more queries.
 
-Code
-----
+Mathematical operations
+-----------------------
 
 Oh no! radiation measurements need to be corrected upward by 5%. 
 

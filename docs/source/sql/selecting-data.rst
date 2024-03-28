@@ -30,8 +30,8 @@ Introductory jargon
 -  Rows are called **records**.
 -  Commands are called **queries**.
 
-Code
-----
+Selecting fields
+----------------
 
 We will use ``SELECT ... FROM ...`` to get values from a database table.
 

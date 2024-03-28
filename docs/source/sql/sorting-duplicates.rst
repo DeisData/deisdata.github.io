@@ -20,8 +20,8 @@ Key Points
    want to eliminate duplicates, we must specify that explicitly as 
    well using ``DISTINCT``.
 
-Code
-----
+Distinct values
+---------------
 
 Let's start by selecting the quantities that have been measured 
 from the ``Survey`` table.
@@ -115,6 +115,9 @@ If we select more than one column, distinct sets of values are returned.
       837    sal  
       844    rad  
 
+Sorting output
+--------------
+
 Now, let's identify scientists using ``Person`` table. We'll add ``ORDER BY`` 
 to sort our data alphabetically.
 
@@ -193,6 +196,9 @@ let's look at the Survey table, and sort on several fields at once.
       837    lake    rad  
       837    lake    sal  
       844    roe     rad 
+
+Putting it together
+-------------------
 
 It seems some scientists specialize in certain types of measurements. 
 Let's remove duplicates to check.
