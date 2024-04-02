@@ -22,8 +22,8 @@ Key Points
 -  If no aggregation function is specified for a field, 
    the query may return an arbitrary value for that field.
 
-Code
-----
+Minimum and maximum
+-------------------
 
 We want to calculate ranges and averages.
 
@@ -79,6 +79,9 @@ To combine them, we will use an aggregation function like ``min`` or ``max``.
       ----------
       1932-03-22
 
+Average, count, and sum
+-----------------------
+
 We can also use ``avg``, ``count``, and ``sum``.
 
 .. tab:: SQL
@@ -125,6 +128,9 @@ We can also use ``avg``, ``count``, and ``sum``.
       sum(reading)
       ------------
       64.83 
+
+Multiple aggregations
+---------------------
 
 We can make multiple aggregations in the same query, as well.
 
@@ -176,6 +182,9 @@ results may look strange.
       ------  --------
       dyer    7     
 
+Aggregations and NULL
+---------------------
+
 If we try to run an aggregation when looking for information that 
 is not in our tables, we will get a ``NULL`` output.
 
@@ -194,7 +203,6 @@ is not in our tables, we will get a ``NULL`` output.
       -null-  -null- 
 
 
-
 When aggregating over a field with a ``NULL`` value, the ``NULL``
 value gets skipped over. The default is to filter it out.
 
@@ -211,6 +219,9 @@ value gets skipped over. The default is to filter it out.
       min(dated)
       ----------
       1927-02-08  
+
+Grouping results
+----------------
 
 ``GROUP BY`` groups records with the same value together so that 
 aggregation processes each batch separately. 

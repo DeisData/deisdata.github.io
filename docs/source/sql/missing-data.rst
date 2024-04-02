@@ -16,8 +16,8 @@ Key Points
 -  Almost all operations on ``NULL`` produce ``NULL``.
 -  Queries can test for ``NULL`` using ``IS NULL`` and ``IS NOT NULL``.
 
-Code
-----
+NULL values
+-----------
 
 In our console, we're going to make sure ``NULL`` gets displayed more obviously.
 
@@ -87,6 +87,9 @@ It gets left out from conditional searches.
         751  DR-3   1930-02-26
         837  MSK-4  1932-01-14
         844  DR-1   1932-03-22
+
+Filtering NULL
+--------------
 
 To filter for ``NULL``, we have to use the command ``IS``
 instead of ``=``.

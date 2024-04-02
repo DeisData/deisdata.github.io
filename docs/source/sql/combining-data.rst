@@ -29,8 +29,8 @@ Key Points
 .. figure:: /_static/images/sql/combining-data/relations-between-tables.png
    :alt: Relationships between tables 
 
-Code
-----
+Joining tables
+--------------
 
 Let's try to join the ``Site`` and ``Visited`` tables.
 
