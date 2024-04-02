@@ -76,6 +76,7 @@ To remove a table, we can use ``DROP TABLE``.
 
 
 .. tab:: SQL
+    :new-set:
 
     .. code:: sql
 
