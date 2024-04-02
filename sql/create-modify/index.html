@@ -251,7 +251,12 @@
         <article role="main">
           <section id="creating-and-modifying-data-and-tables">
 <h1>Creating and Modifying Data and Tables<a class="headerlink" href="#creating-and-modifying-data-and-tables" title="Permalink to this heading">#</a></h1>
-<p><em>Page in progress</em></p>
+<section id="objective">
+<h2>Objective<a class="headerlink" href="#objective" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Create new tables and edit existing records</p></li>
+</ul>
+<iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/4297403/sp/429740300/embedIframeJs/uiconf_id/48867372/partner_id/4297403?iframeembed=true&playerId=kaltura_player&entry_id=1_6i19swbx&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_986e8vf4" width="640" height="360" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="SQL8_Create_Modify"></iframe></section>
 <section id="key-points">
 <h2>Key Points<a class="headerlink" href="#key-points" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
@@ -262,6 +267,125 @@
 <li><p>It is simpler and safer to modify data when every record has a unique primary key.</p></li>
 <li><p>Do not create dangling references by deleting records that other records refer to.</p></li>
 </ul>
+</section>
+<section id="create-table">
+<h2>CREATE TABLE<a class="headerlink" href="#create-table" title="Permalink to this heading">#</a></h2>
+<p>So far, we’ve only gotten information out of our database,
+but we want to also be able to edit the data, as well.</p>
+<p>We’ll start by creating a new table with <code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">TABLE</span></code>.
+Each table has a schema with which it was created. The command
+below creates a blank table.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">SQL</label><div class="tab-content docutils container">
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Extra</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="nb">text</span><span class="p">,</span><span class="w"> </span><span class="n">minutes</span><span class="w"> </span><span class="nb">integer</span><span class="p">,</span><span class="w"> </span><span class="n">measure</span><span class="w"> </span><span class="nb">real</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The fields in our new table will have different data types specified
+after the name of the field. <code class="docutils literal notranslate"><span class="pre">text</span></code> fields take character values.
+<code class="docutils literal notranslate"><span class="pre">integer</span></code> fields consist of positive and negative whole numbers (and 0).
+<code class="docutils literal notranslate"><span class="pre">real</span></code> fields contain numerical values with decimal points. There are also
+<code class="docutils literal notranslate"><span class="pre">BLOB</span></code> fields, which stand for binary large objects, such as an image.</p>
+<p>If you check <code class="docutils literal notranslate"><span class="pre">.schema</span></code> we can see our new table here.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">SQL</label><div class="tab-content docutils container">
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="k">schema</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>CREATE TABLE Person (id text, personal text, family text);
+CREATE TABLE Site (name text, lat real, long real);
+CREATE TABLE Survey (taken integer, person text, quant text, reading real);
+CREATE TABLE Visited (id integer, site text, dated text);
+CREATE TABLE Extra(name text, minutes integer, measure real);
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="drop-table">
+<h2>DROP TABLE<a class="headerlink" href="#drop-table" title="Permalink to this heading">#</a></h2>
+<p>To remove a table, we can use <code class="docutils literal notranslate"><span class="pre">DROP</span> <span class="pre">TABLE</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">SQL</label><div class="tab-content docutils container">
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Extra</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">SQL</label><div class="tab-content docutils container">
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="k">schema</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--2-input--3" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--3">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>CREATE TABLE Person (id text, personal text, family text);
+CREATE TABLE Site (name text, lat real, long real);
+CREATE TABLE Survey (taken integer, person text, quant text, reading real);
+CREATE TABLE Visited (id integer, site text, dated text);
+</pre></div>
+</div>
+</div>
+</div>
+<p>Make sure when you’re deleting data that you’re not removing
+primary keys that other references depend on. Also make sure to
+back up your database if there are files you would like to keep.</p>
+</section>
+<section id="primary-keys">
+<h2>Primary keys<a class="headerlink" href="#primary-keys" title="Permalink to this heading">#</a></h2>
+<p>When creating a table, we can also specify a field to be a primary key.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">SQL</label><div class="tab-content docutils container">
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Extra</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="nb">text</span><span class="p">,</span><span class="w"> </span><span class="n">minutes</span><span class="w"> </span><span class="nb">integer</span><span class="p">,</span><span class="w"> </span><span class="n">measure</span><span class="w"> </span><span class="nb">real</span>
+<span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="editing-tables">
+<h2>Editing tables<a class="headerlink" href="#editing-tables" title="Permalink to this heading">#</a></h2>
+<p>We can also add a row to a table too with <code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">INTO</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">SQL</label><div class="tab-content docutils container">
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">SITE</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">lat</span><span class="p">,</span><span class="w"> </span><span class="n">long</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;DR-5&#39;</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">49</span><span class="p">.</span><span class="mi">85</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">128</span><span class="p">.</span><span class="mi">57</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can take values from one table and put them into another table,
+as well.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">SQL</label><div class="tab-content docutils container">
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">JustLatLong</span><span class="w"> </span><span class="p">(</span><span class="n">lat</span><span class="w"> </span><span class="nb">real</span><span class="p">,</span><span class="w"> </span><span class="n">long</span><span class="w"> </span><span class="nb">real</span><span class="p">);</span>
+
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">JustLatLon</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">lat</span><span class="p">,</span><span class="w"> </span><span class="n">long</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Site</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can modify values with <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> and <code class="docutils literal notranslate"><span class="pre">SET</span></code>. One way to do this is with
+conditions. Don’t forget to include <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>, else you will update
+all values.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">SQL</label><div class="tab-content docutils container">
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span><span class="w"> </span><span class="n">Site</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">lat</span><span class="o">=-</span><span class="mi">47</span><span class="p">.</span><span class="mi">87</span><span class="p">,</span><span class="w"> </span><span class="n">long</span><span class="o">=-</span><span class="mi">122</span><span class="p">.</span><span class="mi">0</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;DR-5&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It can be a good idea to use a filter to check your query before
+running <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> to avoid modifying the database in unwanted ways.</p>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> to delete rows in a similar way. Make sure
+records you delete are not referred to by other tables.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">SQL</label><div class="tab-content docutils container">
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s1">&#39;danforth&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -321,7 +445,12 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Creating and Modifying Data and Tables</a><ul>
+<li><a class="reference internal" href="#objective">Objective</a></li>
 <li><a class="reference internal" href="#key-points">Key Points</a></li>
+<li><a class="reference internal" href="#create-table">CREATE TABLE</a></li>
+<li><a class="reference internal" href="#drop-table">DROP TABLE</a></li>
+<li><a class="reference internal" href="#primary-keys">Primary keys</a></li>
+<li><a class="reference internal" href="#editing-tables">Editing tables</a></li>
 </ul>
 </li>
 </ul>

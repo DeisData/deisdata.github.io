@@ -274,8 +274,8 @@ like operator, the wildcard “%” matches zero or more characters,
 so that <code class="docutils literal notranslate"><span class="pre">%able%</span></code> matches “fixable” and “tablets”.</p></li>
 </ul>
 </section>
-<section id="code">
-<h2>Code<a class="headerlink" href="#code" title="Permalink to this heading">#</a></h2>
+<section id="filtering-with-where">
+<h2>Filtering with WHERE<a class="headerlink" href="#filtering-with-where" title="Permalink to this heading">#</a></h2>
 <p>We want to see when a particular site was visited.
 We can select these records from <code class="docutils literal notranslate"><span class="pre">Visited</span></code> table using a
 <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> clause in our query.</p>
@@ -321,6 +321,9 @@ columns that aren’t displayed.</p>
 <figure class="align-default">
 <img alt="example filter" src="../../_images/example_filtering.png" />
 </figure>
+</section>
+<section id="combining-filters">
+<h2>Combining filters<a class="headerlink" href="#combining-filters" title="Permalink to this heading">#</a></h2>
 <p>We can use other boolean operators (<code class="docutils literal notranslate"><span class="pre">=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>)  to filter our data.</p>
 <p>We can combine these conditional tests with <code class="docutils literal notranslate"><span class="pre">AND</span></code> or <code class="docutils literal notranslate"><span class="pre">OR</span></code>.
 For example, we can get information on DR-1 site collected before 1930.</p>
@@ -364,6 +367,9 @@ For example, we can get information on DR-1 site collected before 1930.</p>
 </div>
 </div>
 </div>
+</section>
+<section id="parentheses">
+<h2>Parentheses<a class="headerlink" href="#parentheses" title="Permalink to this heading">#</a></h2>
 <p>Another way to write this is to see if a value is in a set.</p>
 <div class="tab-set docutils container">
 <input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">SQL</label><div class="tab-content docutils container">
@@ -432,6 +438,9 @@ For example, we can get information on DR-1 site collected before 1930.</p>
 </div>
 </div>
 </div>
+</section>
+<section id="partial-matches">
+<h2>Partial matches<a class="headerlink" href="#partial-matches" title="Permalink to this heading">#</a></h2>
 <p>We can filter by partial matches using <code class="docutils literal notranslate"><span class="pre">LIKE</span></code> keyword.</p>
 <p>The percent (<code class="docutils literal notranslate"><span class="pre">%</span></code>) acts like a wildcard, matching any characters in that place:</p>
 <div class="tab-set docutils container">
@@ -454,6 +463,9 @@ For example, we can get information on DR-1 site collected before 1930.</p>
 </div>
 </div>
 </div>
+</section>
+<section id="distinct-and-where">
+<h2>DISTINCT and WHERE<a class="headerlink" href="#distinct-and-where" title="Permalink to this heading">#</a></h2>
 <p>Finally, we can use <code class="docutils literal notranslate"><span class="pre">DISTINCT</span></code> and <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> to give a second level of filtering.</p>
 <div class="tab-set docutils container">
 <input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">SQL</label><div class="tab-content docutils container">
@@ -596,7 +608,11 @@ DR-3  -47.15  -126.72
 <li><a class="reference internal" href="#">Filtering</a><ul>
 <li><a class="reference internal" href="#objectives">Objectives</a></li>
 <li><a class="reference internal" href="#key-points">Key Points</a></li>
-<li><a class="reference internal" href="#code">Code</a></li>
+<li><a class="reference internal" href="#filtering-with-where">Filtering with WHERE</a></li>
+<li><a class="reference internal" href="#combining-filters">Combining filters</a></li>
+<li><a class="reference internal" href="#parentheses">Parentheses</a></li>
+<li><a class="reference internal" href="#partial-matches">Partial matches</a></li>
+<li><a class="reference internal" href="#distinct-and-where">DISTINCT and WHERE</a></li>
 <li><a class="reference internal" href="#practice-fix-this-query">Practice: Fix this query</a></li>
 <li><a class="reference internal" href="#practice-matching-patterns">Practice: Matching patterns</a></li>
 </ul>

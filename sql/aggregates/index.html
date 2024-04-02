@@ -272,8 +272,8 @@
 the query may return an arbitrary value for that field.</p></li>
 </ul>
 </section>
-<section id="code">
-<h2>Code<a class="headerlink" href="#code" title="Permalink to this heading">#</a></h2>
+<section id="minimum-and-maximum">
+<h2>Minimum and maximum<a class="headerlink" href="#minimum-and-maximum" title="Permalink to this heading">#</a></h2>
 <p>We want to calculate ranges and averages.</p>
 <div class="tab-set docutils container">
 <input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">SQL</label><div class="tab-content docutils container">
@@ -325,6 +325,9 @@ the query may return an arbitrary value for that field.</p></li>
 </div>
 </div>
 </div>
+</section>
+<section id="average-count-and-sum">
+<h2>Average, count, and sum<a class="headerlink" href="#average-count-and-sum" title="Permalink to this heading">#</a></h2>
 <p>We can also use <code class="docutils literal notranslate"><span class="pre">avg</span></code>, <code class="docutils literal notranslate"><span class="pre">count</span></code>, and <code class="docutils literal notranslate"><span class="pre">sum</span></code>.</p>
 <div class="tab-set docutils container">
 <input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">SQL</label><div class="tab-content docutils container">
@@ -368,6 +371,9 @@ the query may return an arbitrary value for that field.</p></li>
 </div>
 </div>
 </div>
+</section>
+<section id="multiple-aggregations">
+<h2>Multiple aggregations<a class="headerlink" href="#multiple-aggregations" title="Permalink to this heading">#</a></h2>
 <p>We can make multiple aggregations in the same query, as well.</p>
 <div class="tab-set docutils container">
 <input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">SQL</label><div class="tab-content docutils container">
@@ -415,6 +421,9 @@ dyer    7
 </div>
 </div>
 </div>
+</section>
+<section id="aggregations-and-null">
+<h2>Aggregations and NULL<a class="headerlink" href="#aggregations-and-null" title="Permalink to this heading">#</a></h2>
 <p>If we try to run an aggregation when looking for information that
 is not in our tables, we will get a <code class="docutils literal notranslate"><span class="pre">NULL</span></code> output.</p>
 <div class="tab-set docutils container">
@@ -447,6 +456,9 @@ value gets skipped over. The default is to filter it out.</p>
 </div>
 </div>
 </div>
+</section>
+<section id="grouping-results">
+<h2>Grouping results<a class="headerlink" href="#grouping-results" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> groups records with the same value together so that
 aggregation processes each batch separately.</p>
 <div class="tab-set docutils container">
@@ -608,7 +620,11 @@ and what was their average value?</p>
 <li><a class="reference internal" href="#">Aggregates: sums, averages, and other summary values</a><ul>
 <li><a class="reference internal" href="#objectives">Objectives</a></li>
 <li><a class="reference internal" href="#key-points">Key Points</a></li>
-<li><a class="reference internal" href="#code">Code</a></li>
+<li><a class="reference internal" href="#minimum-and-maximum">Minimum and maximum</a></li>
+<li><a class="reference internal" href="#average-count-and-sum">Average, count, and sum</a></li>
+<li><a class="reference internal" href="#multiple-aggregations">Multiple aggregations</a></li>
+<li><a class="reference internal" href="#aggregations-and-null">Aggregations and NULL</a></li>
+<li><a class="reference internal" href="#grouping-results">Grouping results</a></li>
 <li><a class="reference internal" href="#practice-counting-temperature-readings">Practice: Counting temperature readings</a></li>
 </ul>
 </li>

@@ -23,8 +23,8 @@ Key Points
    like operator, the wildcard “%” matches zero or more characters, 
    so that ``%able%`` matches “fixable” and “tablets”.
 
-Code
-----
+Filtering with WHERE
+--------------------
 
 We want to see when a particular site was visited.
 We can select these records from ``Visited`` table using a 
@@ -73,6 +73,9 @@ columns that aren't displayed.
 .. figure:: /_static/images/sql/filtering/example_filtering.png
    :alt: example filter 
 
+Combining filters
+-----------------
+
 We can use other boolean operators (``=``, ``>``, ``<``)  to filter our data.
 
 We can combine these conditional tests with ``AND`` or ``OR``.
@@ -119,6 +122,9 @@ For example, we can get information on DR-1 site collected before 1930.
       837    lake    sal    0.21   
       837    roe     sal    22.5   
       844    roe     rad    11.25 
+
+Parentheses
+-----------
 
 Another way to write this is to see if a value is in a set.
 
@@ -194,6 +200,9 @@ What we probably meant is this:
       837    lake    sal    0.21   
       837    roe     sal    22.5   
 
+Partial matches
+---------------
+
 We can filter by partial matches using ``LIKE`` keyword.
 
 The percent (``%``) acts like a wildcard, matching any characters in that place:
@@ -217,6 +226,9 @@ The percent (``%``) acts like a wildcard, matching any characters in that place:
       751  DR-3  1930-02-26
       752  DR-3            
       844  DR-1  1932-03-22
+
+DISTINCT and WHERE
+------------------
 
 Finally, we can use ``DISTINCT`` and ``WHERE`` to give a second level of filtering.
 
