@@ -77,14 +77,7 @@ Practice Examples and More Training
 -  `Practice Python: 30 beginner examples and
    solutions <http://www.practicepython.org/>`__
 -  `Kaggle Courses <https://www.kaggle.com/learn/overview>`__
--  `Brandeis LinkedIn
-   Learning <https://www.brandeis.edu/its/support/linkedin-learning/index.html>`__
-
-   -  `Python Statistics Essential Training on LinkedIn
-      Learning <https://www.linkedin.com/learning/python-statistics-essential-training/>`__
-   -  `Python for Data Visualization on LinkedIn
-      Learning <https://www.linkedin.com/learning/python-for-data-visualization/>`__
-
+-  `Basic Statistics and Regression for Machine Learning in Python with O'Reilly <https://learning.oreilly.com/course/basic-statistics-and/9781803238487/>`__
 -  Feeling competitive? Check out `Kaggle
    Competitions <https://www.kaggle.com/competitions>`__
 
