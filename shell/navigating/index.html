@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Altering files and directories" href="../alter-dir/" /><link rel="prev" title="Bash Setup" href="../setup/" />
 
-    <link rel="shortcut icon" href="../../_static/favicon-32x32.png"/><!-- Generated with Sphinx 7.1.2 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="../../_static/favicon-32x32.png"/><!-- Generated with Sphinx 7.1.2 and Furo 2024.05.06 -->
         <title>Navigating to files and directories - DeisData</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=934bd528" />
@@ -70,7 +70,7 @@
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
       <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -85,7 +85,7 @@
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
     </svg>
@@ -93,7 +93,7 @@
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
       <path d="M13 12h5" />
@@ -101,6 +101,60 @@
       <path d="M13 18h1" />
       <path d="M13 9h4" />
       <path d="M13 6h1" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" /
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
     </svg>
   </symbol>
 </svg>
@@ -113,6 +167,8 @@
 <label class="overlay toc-overlay" for="__toc">
   <div class="visually-hidden">Hide table of contents sidebar</div>
 </label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
 
 
@@ -131,7 +187,8 @@
       <div class="theme-toggle-container theme-toggle-header">
         <button class="theme-toggle">
           <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
@@ -234,11 +291,17 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          
+          <div class="view-this-page">
+  <a class="muted-link" href="../../_sources/shell/navigating.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
 <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
@@ -248,11 +311,11 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <article role="main">
+        <article role="main" id="furo-main-content">
           <section id="navigating-to-files-and-directories">
-<h1>Navigating to files and directories<a class="headerlink" href="#navigating-to-files-and-directories" title="Permalink to this heading">#</a></h1>
+<h1>Navigating to files and directories<a class="headerlink" href="#navigating-to-files-and-directories" title="Permalink to this heading">¶</a></h1>
 <section id="your-challenges-of-the-day">
-<h2>Your challenges of the day:<a class="headerlink" href="#your-challenges-of-the-day" title="Permalink to this heading">#</a></h2>
+<h2>Your challenges of the day:<a class="headerlink" href="#your-challenges-of-the-day" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Does type case matter? Is there a difference between <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-s</span></code> and
 <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-S</span></code>?</p></li>
@@ -261,7 +324,7 @@
 </ol>
 </section>
 <section id="questions-to-think-about">
-<h2>Questions to think about:<a class="headerlink" href="#questions-to-think-about" title="Permalink to this heading">#</a></h2>
+<h2>Questions to think about:<a class="headerlink" href="#questions-to-think-about" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>What is a command shell and why should I use one?</p></li>
 <li><p>How can I move around on my computer?</p></li>
@@ -270,7 +333,7 @@
 </ul>
 </section>
 <section id="what-is-unix-shell">
-<h2>What is Unix Shell?<a class="headerlink" href="#what-is-unix-shell" title="Permalink to this heading">#</a></h2>
+<h2>What is Unix Shell?<a class="headerlink" href="#what-is-unix-shell" title="Permalink to this heading">¶</a></h2>
 <p>We usually interact with our devices on a <strong>graphical user interface</strong>
 (GUI). Shell is a <strong>Command-Line Interface</strong> (CLI), where we type
 commands in the <strong>prompt</strong> <code class="docutils literal notranslate"><span class="pre">$</span></code> instead of pointing and clicking. We
@@ -279,14 +342,14 @@ and we will use the Unix Shell: Bash (Bourne Again SHell by Stephen
 Bourne).</p>
 </section>
 <section id="why-use-bash">
-<h2>Why use Bash?<a class="headerlink" href="#why-use-bash" title="Permalink to this heading">#</a></h2>
+<h2>Why use Bash?<a class="headerlink" href="#why-use-bash" title="Permalink to this heading">¶</a></h2>
 <p>Bash combines existing tools into powerful pipelines and handle large
 volumes of data automatically. We can write sequences of commands into a
 script, improving the reproducibility of workflows. It is essential to
 interface with hardware, HPCC, and remote machines.</p>
 </section>
 <section id="navigating-files-and-directories">
-<h2>Navigating files and directories<a class="headerlink" href="#navigating-files-and-directories" title="Permalink to this heading">#</a></h2>
+<h2>Navigating files and directories<a class="headerlink" href="#navigating-files-and-directories" title="Permalink to this heading">¶</a></h2>
 <p>The <strong>file system</strong> is the part of the operating system responsible for
 managing files and directories.</p>
 <ul class="simple">
@@ -316,7 +379,7 @@ hidden files.</p></li>
 </div>
 </section>
 <section id="paths">
-<h2>Paths<a class="headerlink" href="#paths" title="Permalink to this heading">#</a></h2>
+<h2>Paths<a class="headerlink" href="#paths" title="Permalink to this heading">¶</a></h2>
 <p>The path to a file displays the directories that file is a member of.
 For instance, if you have a file called <code class="docutils literal notranslate"><span class="pre">data.txt</span></code> on your Desktop,
 its path could be <code class="docutils literal notranslate"><span class="pre">/home/fordfishman/Desktop/data.txt</span></code>. This is an
@@ -326,7 +389,7 @@ If the working directory is <code class="docutils literal notranslate"><span cla
 the file is <code class="docutils literal notranslate"><span class="pre">Desktop/data.txt</span></code>.</p>
 </section>
 <section id="general-syntax-of-a-shell-command">
-<h2>General syntax of a shell command<a class="headerlink" href="#general-syntax-of-a-shell-command" title="Permalink to this heading">#</a></h2>
+<h2>General syntax of a shell command<a class="headerlink" href="#general-syntax-of-a-shell-command" title="Permalink to this heading">¶</a></h2>
 <div class="tab-set docutils container">
 <input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls<span class="w"> </span>-F<span class="w"> </span>/
@@ -347,7 +410,7 @@ options. (But options can be combined with a single <code class="docutils litera
 </div>
 </section>
 <section id="listing-ls">
-<h2>Listing: <code class="docutils literal notranslate"><span class="pre">ls</span></code><a class="headerlink" href="#listing-ls" title="Permalink to this heading">#</a></h2>
+<h2>Listing: <code class="docutils literal notranslate"><span class="pre">ls</span></code><a class="headerlink" href="#listing-ls" title="Permalink to this heading">¶</a></h2>
 <p>We use the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command to list the contents of the current directory.</p>
 <p>It has many options we can provide:</p>
 <ul class="simple">
@@ -374,7 +437,7 @@ Downloads/      Movies/
 </div>
 </div>
 <section id="explore-more-ls-flags">
-<h3>Explore more <code class="docutils literal notranslate"><span class="pre">ls</span></code> flags.<a class="headerlink" href="#explore-more-ls-flags" title="Permalink to this heading">#</a></h3>
+<h3>Explore more <code class="docutils literal notranslate"><span class="pre">ls</span></code> flags.<a class="headerlink" href="#explore-more-ls-flags" title="Permalink to this heading">¶</a></h3>
 <ol class="arabic simple">
 <li><p>What does <code class="docutils literal notranslate"><span class="pre">-l</span></code> option do? What if you use <code class="docutils literal notranslate"><span class="pre">-l</span></code> and <code class="docutils literal notranslate"><span class="pre">-h</span></code>?</p></li>
 <li><p>The default <code class="docutils literal notranslate"><span class="pre">ls</span></code> lists contents in alphabetical order. What option
@@ -383,7 +446,7 @@ do I use to see them by time of last change?</p></li>
 </section>
 </section>
 <section id="print-working-directory-pwd">
-<h2>Print working directory: <code class="docutils literal notranslate"><span class="pre">pwd</span></code><a class="headerlink" href="#print-working-directory-pwd" title="Permalink to this heading">#</a></h2>
+<h2>Print working directory: <code class="docutils literal notranslate"><span class="pre">pwd</span></code><a class="headerlink" href="#print-working-directory-pwd" title="Permalink to this heading">¶</a></h2>
 <p>To check where you are, use <code class="docutils literal notranslate"><span class="pre">pwd</span></code> to print the path of the <strong>working
 directory</strong>.</p>
 <div class="tab-set docutils container">
@@ -400,7 +463,7 @@ directory</strong>.</p>
 </div>
 </section>
 <section id="change-directory-cd">
-<h2>Change directory: <code class="docutils literal notranslate"><span class="pre">cd</span></code><a class="headerlink" href="#change-directory-cd" title="Permalink to this heading">#</a></h2>
+<h2>Change directory: <code class="docutils literal notranslate"><span class="pre">cd</span></code><a class="headerlink" href="#change-directory-cd" title="Permalink to this heading">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">cd</span></code> will change your working directory. <code class="docutils literal notranslate"><span class="pre">cd</span></code> can only see
 sub-directories inside your current working directory.</p>
 <ul class="simple">
@@ -425,7 +488,7 @@ $<span class="w"> </span><span class="nb">pwd</span>
 </div>
 </section>
 <section id="other-commands">
-<h2>Other commands<a class="headerlink" href="#other-commands" title="Permalink to this heading">#</a></h2>
+<h2>Other commands<a class="headerlink" href="#other-commands" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">clear</span></code>: clears the terminal if it gets to cluttered</p></li>
 <li><p>up and down arrows can be used to access previous commands (or
@@ -435,7 +498,7 @@ scroll)</p></li>
 <li><p>The help option can be used with a command, for example <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">--help</span></code></p></li>
 </ul>
 <section id="references">
-<h3>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h3>
+<h3>References<a class="headerlink" href="#references" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.google.com/document/d/1xY7fSNBzChx5PMPF_tGoBWOwXef5wVsH1Mf7vLdgJz0/edit?usp=sharing">Intermediate Linux
 Commands</a></p></li>
@@ -533,7 +596,7 @@ Shell</a></p></li>
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=fbdbc327"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
-    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../_static/scripts/furo.js?v=4e2eecee"></script>
     <script src="../../_static/tabs.js?v=3ee01567"></script>
     </body>
 </html>

@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Making figures in Python" href="../figures/" /><link rel="prev" title="NumPy" href="../numpy/" />
 
-    <link rel="shortcut icon" href="../../_static/favicon-32x32.png"/><!-- Generated with Sphinx 7.1.2 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="../../_static/favicon-32x32.png"/><!-- Generated with Sphinx 7.1.2 and Furo 2024.05.06 -->
         <title>Pandas - DeisData</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=934bd528" />
@@ -70,7 +70,7 @@
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
       <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -85,7 +85,7 @@
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
     </svg>
@@ -93,7 +93,7 @@
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
       <path d="M13 12h5" />
@@ -101,6 +101,60 @@
       <path d="M13 18h1" />
       <path d="M13 9h4" />
       <path d="M13 6h1" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" /
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
     </svg>
   </symbol>
 </svg>
@@ -113,6 +167,8 @@
 <label class="overlay toc-overlay" for="__toc">
   <div class="visually-hidden">Hide table of contents sidebar</div>
 </label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
 
 
@@ -131,7 +187,8 @@
       <div class="theme-toggle-container theme-toggle-header">
         <button class="theme-toggle">
           <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
@@ -234,11 +291,17 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          
+          <div class="view-this-page">
+  <a class="muted-link" href="../../_sources/python/pandas.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
 <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
@@ -248,11 +311,11 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <article role="main">
+        <article role="main" id="furo-main-content">
           <section id="pandas">
-<h1>Pandas<a class="headerlink" href="#pandas" title="Permalink to this heading">#</a></h1>
+<h1>Pandas<a class="headerlink" href="#pandas" title="Permalink to this heading">¶</a></h1>
 <section id="materials">
-<h2>Materials:<a class="headerlink" href="#materials" title="Permalink to this heading">#</a></h2>
+<h2>Materials:<a class="headerlink" href="#materials" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/pandas-codealong.ipynb">Code-along Jupyter notebook</a></p></li>
 <li><p><a class="reference external" href="https://colab.research.google.com/github/DeisData/python/blob/master/sequential/pandas.ipynb">Filled-in Jupyter notebook</a></p></li>
@@ -270,7 +333,7 @@ on creating and manipulating data frames.</p>
 </div>
 </section>
 <section id="read-data">
-<h2>Read data<a class="headerlink" href="#read-data" title="Permalink to this heading">#</a></h2>
+<h2>Read data<a class="headerlink" href="#read-data" title="Permalink to this heading">¶</a></h2>
 <p>With <code class="docutils literal notranslate"><span class="pre">pandas</span></code> imported, we can read in .csv files with the <code class="docutils literal notranslate"><span class="pre">pandas</span></code>
 function <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code>.</p>
 <p>In that function, we can specify the file we want to use with a URL or
@@ -373,7 +436,7 @@ few rows with <code class="docutils literal notranslate"><span class="pre">df.he
 information about countries and demography.</p>
 </section>
 <section id="summarize-data-frame">
-<h2>Summarize data frame<a class="headerlink" href="#summarize-data-frame" title="Permalink to this heading">#</a></h2>
+<h2>Summarize data frame<a class="headerlink" href="#summarize-data-frame" title="Permalink to this heading">¶</a></h2>
 <p>It is important to understand the data we are working with before we
 begin analysis. First, let’s look at the dimenions of the data frame
 using <code class="docutils literal notranslate"><span class="pre">df.shape</span></code>. It gives the number of rows by the number of
@@ -408,7 +471,7 @@ columns.</p>
 </div>
 </section>
 <section id="categorical-variables">
-<h2>Categorical variables<a class="headerlink" href="#categorical-variables" title="Permalink to this heading">#</a></h2>
+<h2>Categorical variables<a class="headerlink" href="#categorical-variables" title="Permalink to this heading">¶</a></h2>
 <p>Next, let’s summarize the categorical, non-numerical variables. For
 instance, we can identify how many unique regions we have in the data
 set.</p>
@@ -467,7 +530,7 @@ countries in the data set.</p>
 </div>
 </section>
 <section id="numerical-variables">
-<h2>Numerical variables<a class="headerlink" href="#numerical-variables" title="Permalink to this heading">#</a></h2>
+<h2>Numerical variables<a class="headerlink" href="#numerical-variables" title="Permalink to this heading">¶</a></h2>
 <p>Numerical columns can be summarized in several ways. Let’s find the mean
 first.</p>
 <p>To make things simpler, we’ll just do calculations on the
@@ -717,7 +780,7 @@ dtype: float64
 </div>
 </section>
 <section id="accessing-rows-and-specific-entries">
-<h2>Accessing rows and specific entries<a class="headerlink" href="#accessing-rows-and-specific-entries" title="Permalink to this heading">#</a></h2>
+<h2>Accessing rows and specific entries<a class="headerlink" href="#accessing-rows-and-specific-entries" title="Permalink to this heading">¶</a></h2>
 <p>You can also to access a specific row using <code class="docutils literal notranslate"><span class="pre">df.loc[ROW,</span> <span class="pre">:]</span></code>. The
 colon specifies to select all columns for that row number.</p>
 <div class="tab-set docutils container">
@@ -755,7 +818,7 @@ Name: 0, dtype: object
 </div>
 </div>
 <section id="question-1-summarizing-data">
-<h3>Question 1: Summarizing data<a class="headerlink" href="#question-1-summarizing-data" title="Permalink to this heading">#</a></h3>
+<h3>Question 1: Summarizing data<a class="headerlink" href="#question-1-summarizing-data" title="Permalink to this heading">¶</a></h3>
 <p>Print out the summary statistics for columns <code class="docutils literal notranslate"><span class="pre">age5_surviving</span></code>,
 <code class="docutils literal notranslate"><span class="pre">gdp_per_day</span></code>, and <code class="docutils literal notranslate"><span class="pre">gdp_per_capita</span></code>.</p>
 <div class="tab-set docutils container">
@@ -778,9 +841,9 @@ Name: 0, dtype: object
 </details></section>
 </section>
 <section id="manipulate-data">
-<h2>Manipulate data<a class="headerlink" href="#manipulate-data" title="Permalink to this heading">#</a></h2>
+<h2>Manipulate data<a class="headerlink" href="#manipulate-data" title="Permalink to this heading">¶</a></h2>
 <section id="subset-by-row">
-<h3>Subset by row<a class="headerlink" href="#subset-by-row" title="Permalink to this heading">#</a></h3>
+<h3>Subset by row<a class="headerlink" href="#subset-by-row" title="Permalink to this heading">¶</a></h3>
 <p>Sometimes, we want to create a subset of the main data frame based on
 certain conditions. We do this by using <code class="docutils literal notranslate"><span class="pre">df.loc</span></code> and specifying a
 condition for the rows.</p>
@@ -823,7 +886,7 @@ where the country is Hungary.</p>
 </div>
 </section>
 <section id="math">
-<h3>Math<a class="headerlink" href="#math" title="Permalink to this heading">#</a></h3>
+<h3>Math<a class="headerlink" href="#math" title="Permalink to this heading">¶</a></h3>
 <p>If we multiply a data frame by a single number, each value in the column
 will be muliplied by that value.</p>
 <div class="tab-set docutils container">
@@ -896,7 +959,7 @@ Name: life_difference, Length: 14740, dtype: float64
 </div>
 </section>
 <section id="question-2-working-with-data">
-<h3>Question 2: Working with data<a class="headerlink" href="#question-2-working-with-data" title="Permalink to this heading">#</a></h3>
+<h3>Question 2: Working with data<a class="headerlink" href="#question-2-working-with-data" title="Permalink to this heading">¶</a></h3>
 <p>Create a subset of data from Lithuania.</p>
 <p>Within that subset, calculate the mean GDP per 1000 people across
 entries.</p>
@@ -923,7 +986,7 @@ entries.</p>
 </details></section>
 </section>
 <section id="create-your-own-data-frame">
-<h2>Create your own data frame<a class="headerlink" href="#create-your-own-data-frame" title="Permalink to this heading">#</a></h2>
+<h2>Create your own data frame<a class="headerlink" href="#create-your-own-data-frame" title="Permalink to this heading">¶</a></h2>
 <p>To make your own data frame without a .csv, we use the function
 <code class="docutils literal notranslate"><span class="pre">pd.DataFrame()</span></code>. There are many ways to use this function to
 construct a data frame.</p>
@@ -1023,7 +1086,7 @@ called <code class="docutils literal notranslate"><span class="pre">columns</spa
 <p>Note: we need to save this as a variable to use it in the future.</p>
 </section>
 <section id="sort-data-frame">
-<h2>Sort data frame<a class="headerlink" href="#sort-data-frame" title="Permalink to this heading">#</a></h2>
+<h2>Sort data frame<a class="headerlink" href="#sort-data-frame" title="Permalink to this heading">¶</a></h2>
 <p>To sort the rows in a data frame by the value of a column, we can use
 the <code class="docutils literal notranslate"><span class="pre">.sort_values()</span></code> method. The argument <code class="docutils literal notranslate"><span class="pre">by</span></code> requires a list with
 a column name.</p>
@@ -1148,7 +1211,7 @@ to those first in the list.</p>
 </div>
 </section>
 <section id="add-rows">
-<h2>Add rows<a class="headerlink" href="#add-rows" title="Permalink to this heading">#</a></h2>
+<h2>Add rows<a class="headerlink" href="#add-rows" title="Permalink to this heading">¶</a></h2>
 <p>There are multiple ways to add a new row to a data frame. The most
 straightforward way is to use the <code class="docutils literal notranslate"><span class="pre">pandas.concat()</span></code> function with a
 new data frame with just one row.</p>
@@ -1209,7 +1272,7 @@ the new data frame consist of multiple rows.</p>
 </div>
 </section>
 <section id="join-data-frames">
-<h2>Join data frames<a class="headerlink" href="#join-data-frames" title="Permalink to this heading">#</a></h2>
+<h2>Join data frames<a class="headerlink" href="#join-data-frames" title="Permalink to this heading">¶</a></h2>
 <p>A critical tool in data wrangling is combining data frames that share
 common values, columns, or identifiers.</p>
 <p>Let’s important two new .csv files and join them.</p>
@@ -1251,7 +1314,7 @@ species_id             genus          species    taxa
 <p>The shared column between these data frames is <code class="docutils literal notranslate"><span class="pre">species_id</span></code>, so this
 is the column we will want to join around.</p>
 <section id="inner-join">
-<h3>Inner Join<a class="headerlink" href="#inner-join" title="Permalink to this heading">#</a></h3>
+<h3>Inner Join<a class="headerlink" href="#inner-join" title="Permalink to this heading">¶</a></h3>
 <p>The pandas function for performing joins is called <code class="docutils literal notranslate"><span class="pre">merge()</span></code> and an
 Inner join is the default option.</p>
 <p>Inner joins take all rows from both data frames that share values from
@@ -1461,7 +1524,7 @@ the columns from <code class="docutils literal notranslate"><span class="pre">sp
 and <code class="docutils literal notranslate"><span class="pre">taxa</span></code>).</p>
 </section>
 <section id="left-join">
-<h3>Left join<a class="headerlink" href="#left-join" title="Permalink to this heading">#</a></h3>
+<h3>Left join<a class="headerlink" href="#left-join" title="Permalink to this heading">¶</a></h3>
 <p>What if we want to add information from <code class="docutils literal notranslate"><span class="pre">species_df</span></code> to
 <code class="docutils literal notranslate"><span class="pre">surveys_df</span></code>without losing any of the information from
 <code class="docutils literal notranslate"><span class="pre">surveys_df</span></code>? In this case, we use a different type of join called a
@@ -1660,7 +1723,7 @@ function used for inner join, but using the <code class="docutils literal notran
 </section>
 </section>
 <section id="export-data-frame-as-csv">
-<h2>Export data frame as .csv<a class="headerlink" href="#export-data-frame-as-csv" title="Permalink to this heading">#</a></h2>
+<h2>Export data frame as .csv<a class="headerlink" href="#export-data-frame-as-csv" title="Permalink to this heading">¶</a></h2>
 <p>If you have made modifications to a data set in Python and want to
 export that to a new .csv, you can easily do that with the <code class="docutils literal notranslate"><span class="pre">.to_csv()</span></code>
 method that all pandas data frames have.</p>
@@ -1674,7 +1737,7 @@ method that all pandas data frames have.</p>
 </div>
 </div>
 <section id="question-3-putting-it-together">
-<h3>Question 3: Putting it together<a class="headerlink" href="#question-3-putting-it-together" title="Permalink to this heading">#</a></h3>
+<h3>Question 3: Putting it together<a class="headerlink" href="#question-3-putting-it-together" title="Permalink to this heading">¶</a></h3>
 <p>Create two data frames called <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> with at least 3 columns
 and 4 rows. Make one column in both <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> an identifier
 column, with at least one ID present in both data frames. Use a left
@@ -1725,7 +1788,7 @@ join with <code class="docutils literal notranslate"><span class="pre">A</span><
 </details></section>
 </section>
 <section id="resources">
-<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this heading">#</a></h2>
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://pandas.pydata.org/docs/">Pandas docs</a></p></li>
 <li><p><a class="reference external" href="https://pandas.pydata.org/docs/getting_started/index.html#getting-started">Pandas getting
@@ -1838,7 +1901,7 @@ Carpentry</a>.</p>
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=fbdbc327"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
-    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../_static/scripts/furo.js?v=4e2eecee"></script>
     <script src="../../_static/tabs.js?v=3ee01567"></script>
     </body>
 </html>

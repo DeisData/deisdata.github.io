@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Data wrangling with the Tidyverse" href="../data-wrangling/" /><link rel="prev" title="Installing R" href="../" />
 
-    <link rel="shortcut icon" href="../../_static/favicon-32x32.png"/><!-- Generated with Sphinx 7.1.2 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="../../_static/favicon-32x32.png"/><!-- Generated with Sphinx 7.1.2 and Furo 2024.05.06 -->
         <title>Intro to R and the Tidyverse - DeisData</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=934bd528" />
@@ -70,7 +70,7 @@
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
       <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -85,7 +85,7 @@
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
     </svg>
@@ -93,7 +93,7 @@
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
       <path d="M13 12h5" />
@@ -101,6 +101,60 @@
       <path d="M13 18h1" />
       <path d="M13 9h4" />
       <path d="M13 6h1" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" /
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
     </svg>
   </symbol>
 </svg>
@@ -113,6 +167,8 @@
 <label class="overlay toc-overlay" for="__toc">
   <div class="visually-hidden">Hide table of contents sidebar</div>
 </label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
 
 
@@ -131,7 +187,8 @@
       <div class="theme-toggle-container theme-toggle-header">
         <button class="theme-toggle">
           <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
@@ -234,11 +291,17 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          
+          <div class="view-this-page">
+  <a class="muted-link" href="../../_sources/r/quick-start.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
 <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
-              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
@@ -248,17 +311,17 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <article role="main">
+        <article role="main" id="furo-main-content">
           <section id="intro-to-r-and-the-tidyverse">
-<h1>Intro to R and the Tidyverse<a class="headerlink" href="#intro-to-r-and-the-tidyverse" title="Permalink to this heading">#</a></h1>
+<h1>Intro to R and the Tidyverse<a class="headerlink" href="#intro-to-r-and-the-tidyverse" title="Permalink to this heading">¶</a></h1>
 <p><a class="reference external" href="https://drive.google.com/drive/folders/1e-8Qs_AZBH-QcQqmmCloT9ghZesV55z6">Workshop materials</a></p>
 <section id="what-is-r">
-<h2>What is R?<a class="headerlink" href="#what-is-r" title="Permalink to this heading">#</a></h2>
+<h2>What is R?<a class="headerlink" href="#what-is-r" title="Permalink to this heading">¶</a></h2>
 <p>R is a programming language designed for statistical computing. It is
 not just a statistics package: it is a language.</p>
 </section>
 <section id="what-is-rstudio">
-<h2>What is RStudio?<a class="headerlink" href="#what-is-rstudio" title="Permalink to this heading">#</a></h2>
+<h2>What is RStudio?<a class="headerlink" href="#what-is-rstudio" title="Permalink to this heading">¶</a></h2>
 <p>RStudio is a free R integrated development environment (IDE). It is
 cleaner and simpler than the default R GUI (graphical user interface).
 It has many useful features, like syntax highlighting and tab for
@@ -278,7 +341,7 @@ suggested code auto-completion.</p>
 </ul>
 </section>
 <section id="things-to-keep-in-mind">
-<h2>Things to keep in mind<a class="headerlink" href="#things-to-keep-in-mind" title="Permalink to this heading">#</a></h2>
+<h2>Things to keep in mind<a class="headerlink" href="#things-to-keep-in-mind" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>R is case sensitive, so be careful while typing.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">#</span></code> is used for comments</p>
@@ -293,7 +356,7 @@ suggested code auto-completion.</p>
 </ul>
 </section>
 <section id="working-directory">
-<h2>Working directory<a class="headerlink" href="#working-directory" title="Permalink to this heading">#</a></h2>
+<h2>Working directory<a class="headerlink" href="#working-directory" title="Permalink to this heading">¶</a></h2>
 <p>Your <strong>working directory</strong> is the folder on your computer in which you
 are working. We can find this with the <code class="docutils literal notranslate"><span class="pre">getwd()</span></code> command.</p>
 <div class="tab-set docutils container">
@@ -335,7 +398,7 @@ are working. We can find this with the <code class="docutils literal notranslate
 </div>
 </section>
 <section id="creating-objects">
-<h2>Creating Objects<a class="headerlink" href="#creating-objects" title="Permalink to this heading">#</a></h2>
+<h2>Creating Objects<a class="headerlink" href="#creating-objects" title="Permalink to this heading">¶</a></h2>
 <p>However, it would be more useful if we assigned values to objects. We
 create an object by giving it a name followed by the assignment <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code>
 operator. You can make <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> with the following shortcuts: <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd>+<kbd class="kbd docutils literal notranslate">-</kbd></kbd>
@@ -368,7 +431,7 @@ command.</p>
 </div>
 </div>
 <section id="storing-many-numbers-as-a-vector">
-<h3>Storing many numbers as a vector<a class="headerlink" href="#storing-many-numbers-as-a-vector" title="Permalink to this heading">#</a></h3>
+<h3>Storing many numbers as a vector<a class="headerlink" href="#storing-many-numbers-as-a-vector" title="Permalink to this heading">¶</a></h3>
 <p>We can use <code class="docutils literal notranslate"><span class="pre">c()</span></code> to combine or concatenate values together into a
 vector.</p>
 <div class="tab-set docutils container">
@@ -437,7 +500,7 @@ item.</p>
 </div>
 </section>
 <section id="exercise-1">
-<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this heading">¶</a></h3>
 <p>Extract Tuesday, Wednesday and Thursday from the <code class="docutils literal notranslate"><span class="pre">days</span></code> vector.</p>
 <details class="summary-solution">
 <summary>Solution</summary><div class="docutils container">
@@ -462,7 +525,7 @@ item.</p>
 </details></section>
 </section>
 <section id="replacing-adding-new-elements">
-<h2>Replacing/adding new elements<a class="headerlink" href="#replacing-adding-new-elements" title="Permalink to this heading">#</a></h2>
+<h2>Replacing/adding new elements<a class="headerlink" href="#replacing-adding-new-elements" title="Permalink to this heading">¶</a></h2>
 <p>We can also use indexing to replace or add new elements to a vector.</p>
 <div class="tab-set docutils container">
 <input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--1">R</label><div class="tab-content docutils container">
@@ -473,7 +536,7 @@ item.</p>
 </div>
 </div>
 <section id="exercise-2">
-<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this heading">#</a></h3>
+<h3>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this heading">¶</a></h3>
 <p>Replace the 3rd element in <code class="docutils literal notranslate"><span class="pre">Myvector2</span></code> with a 10.</p>
 <details class="summary-solution">
 <summary>Solution</summary><div class="docutils container">
@@ -488,7 +551,7 @@ item.</p>
 </details></section>
 </section>
 <section id="data-types">
-<h2>Data types<a class="headerlink" href="#data-types" title="Permalink to this heading">#</a></h2>
+<h2>Data types<a class="headerlink" href="#data-types" title="Permalink to this heading">¶</a></h2>
 <p>When we use <code class="docutils literal notranslate"><span class="pre">c()</span></code>, R assumes that everything in your vector is of the
 same data type (all # or all characters).</p>
 <div class="tab-set docutils container">
@@ -532,7 +595,7 @@ function.</p>
 </div>
 </section>
 <section id="functions">
-<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h2>
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">¶</a></h2>
 <p>A function is a piece of code to carry out a specified task. R has many
 built-in functions.</p>
 <div class="tab-set docutils container">
@@ -571,7 +634,7 @@ built-in functions.</p>
 </div>
 </section>
 <section id="packages">
-<h2>Packages<a class="headerlink" href="#packages" title="Permalink to this heading">#</a></h2>
+<h2>Packages<a class="headerlink" href="#packages" title="Permalink to this heading">¶</a></h2>
 <p>We can also bring in extra functions by downloading packages. Packages
 are collections of functions. There are thousands of add-on packages
 available at the CRAN (<strong>C</strong>omprehensive <strong>R</strong> <strong>A</strong>rchive
@@ -586,7 +649,7 @@ expect tidy data. Tidy data is set up so that each row is an observation
 and each column is a variable.</p>
 </section>
 <section id="using-the-tidyverse-packages">
-<h2>Using the tidyverse packages<a class="headerlink" href="#using-the-tidyverse-packages" title="Permalink to this heading">#</a></h2>
+<h2>Using the tidyverse packages<a class="headerlink" href="#using-the-tidyverse-packages" title="Permalink to this heading">¶</a></h2>
 <p>To install a package we use the function
 <code class="docutils literal notranslate"><span class="pre">install.packages(&quot;package</span> <span class="pre">name&quot;)</span></code>. We only need to install a package
 once.</p>
@@ -608,7 +671,7 @@ using the <code class="docutils literal notranslate"><span class="pre">library()
 </div>
 </section>
 <section id="importing-data">
-<h2>Importing data<a class="headerlink" href="#importing-data" title="Permalink to this heading">#</a></h2>
+<h2>Importing data<a class="headerlink" href="#importing-data" title="Permalink to this heading">¶</a></h2>
 <p>Let’s explore penguins! In our file called <code class="docutils literal notranslate"><span class="pre">penguins.csv</span></code>, we have
 data for three penguin species observed in the Palmer Archipelago,
 Antarctica, collected by Dr. Kristen Gorman with Palmer Station LTER.</p>
@@ -617,7 +680,7 @@ Antarctica, collected by Dr. Kristen Gorman with Palmer Station LTER.</p>
 </div>
 </section>
 <section id="exploring-your-data">
-<h2>Exploring your data<a class="headerlink" href="#exploring-your-data" title="Permalink to this heading">#</a></h2>
+<h2>Exploring your data<a class="headerlink" href="#exploring-your-data" title="Permalink to this heading">¶</a></h2>
 <p>We can use the <code class="docutils literal notranslate"><span class="pre">View()</span></code> function to look at our data frame.</p>
 <div class="tab-set docutils container">
 <input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--1">R</label><div class="tab-content docutils container">
@@ -903,7 +966,7 @@ look like <code class="docutils literal notranslate"><span class="pre">%&gt;%</s
 </div>
 </section>
 <section id="simple-graphs">
-<h2>Simple graphs<a class="headerlink" href="#simple-graphs" title="Permalink to this heading">#</a></h2>
+<h2>Simple graphs<a class="headerlink" href="#simple-graphs" title="Permalink to this heading">¶</a></h2>
 <p>To make a simple scatter plot in R, we can use the <code class="docutils literal notranslate"><span class="pre">plot()</span></code> function.</p>
 <div class="tab-set docutils container">
 <input checked="True" class="tab-input" id="tab-set--33-input--1" name="tab-set--33" type="radio"><label class="tab-label" for="tab-set--33-input--1">R</label><div class="tab-content docutils container">
@@ -956,7 +1019,7 @@ customizations.</p>
 </div>
 </section>
 <section id="useful-resources">
-<h2>Useful Resources<a class="headerlink" href="#useful-resources" title="Permalink to this heading">#</a></h2>
+<h2>Useful Resources<a class="headerlink" href="#useful-resources" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://rstudio.com/wp-content/uploads/2016/10/r-cheat-sheet-3.pdf">Base R Cheat
 Sheet</a></p></li>
@@ -1056,7 +1119,7 @@ Sheet</a></p></li>
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=fbdbc327"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
-    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../_static/scripts/furo.js?v=4e2eecee"></script>
     <script src="../../_static/tabs.js?v=3ee01567"></script>
     </body>
 </html>
