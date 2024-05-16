@@ -8,13 +8,6 @@ Objectives
 -  Import some standard and useful libraries for python
 -  Introduce some model fitting
 
-Reference and resources
------------------------
-
-This lesson and data is adapted from LinkedIn Learning: Python
-Statistics Essential Training. See these lessons for more details
-including working with categorical data.
-
 Importing libraries and data
 ----------------------------
 
