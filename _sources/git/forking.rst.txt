@@ -93,6 +93,8 @@ use ``git fetch`` and ``git merge``, specifying ``upstream``.
       git fetch upstream
       git merge upstream/main
 
+.. _pull request:
+
 Creating a pull request
 -----------------------
 

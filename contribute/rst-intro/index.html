@@ -1,0 +1,873 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="How to suggest structural changes" href="../structural-changes/" /><link rel="prev" title="How to contribute small changes" href="../small-changes/" />
+
+    <link rel="shortcut icon" href="../../_static/favicon-32x32.png"/><!-- Generated with Sphinx 7.1.2 and Furo 2024.05.06 -->
+        <title>reStructuredText basics - DeisData</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=387cc868" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=934bd528" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" /
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../"><div class="brand">DeisData</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/DeisDatax1x_medium.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">DeisData</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search/" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../python/">Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../python/setup-install/">Setup and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/jupyter/">Jupyter notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/python-fundamentals/">Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/data-structures/">Data structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/conditionals/">Booleans and conditionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/loops/">Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/numpy/">NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/pandas/">Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/figures/">Matplotlib and seaborn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/functions/">Writing functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/stats/">Statistical tests</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../r/">R</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of R</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../r/quick-start/">Intro to R and the Tidyverse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../r/data-wrangling/">Data wrangling with the Tidyverse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../r/data-visualization/">ggplot2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../r/text-mining/">Text mining</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../shell/">Unix Shell</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Unix Shell</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/setup/">Bash Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/navigating/">Navigating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/alter-dir/">Altering files and directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/pipes-filters/">Pipes and filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/loops/">Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/shell-scripts/">Shell scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/search-find/">Searching and finding</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../git/">Git Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../git/setup-install/">Setup and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/quick-start/">Quick start to Git and GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/pushing/">Pushing changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/fetch-merge/">Fetch and merge from GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/git-utilities/">Git utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/forking/">Forking in GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/glossary/">Git Glossary</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../sql/">SQL</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of SQL</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/setup/">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/selecting-data/">Selecting data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/sorting-duplicates/">Sorting out and removing duplicates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/filtering/">Filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/calculating/">Calculating new values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/missing-data/">Missing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/aggregates/">Aggregates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/combining-data/">Combining data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/create-modify/">Create and modify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/glossary/">Glossary</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../">Contribute to DeisData</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Contribute to DeisData</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../small-changes/">Small changes</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">reStructuredText basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../structural-changes/">Structural changes</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../../_sources/contribute/rst-intro.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="restructuredtext-basics">
+<h1>reStructuredText basics<a class="headerlink" href="#restructuredtext-basics" title="Permalink to this heading">¶</a></h1>
+<p>The base language for this website is reStructuredText (RST). It is used
+to produce documents with formatted text, similar to the language markdown. RST documents are built into HTML web pages with the help of Sphinx, a document generator.</p>
+<section id="rst-syntax">
+<h2>RST Syntax<a class="headerlink" href="#rst-syntax" title="Permalink to this heading">¶</a></h2>
+<section id="plain-text">
+<h3>Plain text<a class="headerlink" href="#plain-text" title="Permalink to this heading">¶</a></h3>
+<p>In RST, lines of code that are not formatted will be displayed as text.
+Long lines of text will be wrapped into a single paragraph when rendered.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">RST</label><div class="tab-content docutils container">
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at ultrices magna, ac volutpat nisi. Sed sed finibus libero, eget luctus massa. Praesent pulvinar orci in metus mollis consectetur. Integer gravida dolor ut quam efficitur euismod. Phasellus vitae elementum massa. Praesent volutpat sed purus id mollis. Maecenas sit amet libero ac mauris porta mattis. Nam at ullamcorper nulla. Donec eu leo eu nunc malesuada pharetra id ac justo. Nulla facilisis magna ante, vitae consectetur augue hendrerit at.
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">Output</label><div class="tab-content docutils container">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at ultrices magna, ac volutpat nisi. Sed sed finibus libero, eget luctus massa. Praesent pulvinar orci in metus mollis consectetur. Integer gravida dolor ut quam efficitur euismod. Phasellus vitae elementum massa. Praesent volutpat sed purus id mollis. Maecenas sit amet libero ac mauris porta mattis. Nam at ullamcorper nulla. Donec eu leo eu nunc malesuada pharetra id ac justo. Nulla facilisis magna ante, vitae consectetur augue hendrerit at.</p>
+</div>
+</div>
+<p>In addition, subsequent lines of text will be considered one paragraph,
+as well. This is to enhance readability of the RST files.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">RST</label><div class="tab-content docutils container">
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Donec at ultrices magna, ac volutpat nisi. Sed sed finibus
+libero, eget luctus massa. Praesent pulvinar orci in metus
+mollis consectetur. Integer gravida dolor ut quam efficitur
+euismod. Phasellus vitae elementum massa. Praesent volutpat
+sed purus id mollis. Maecenas sit amet libero ac mauris porta
+mattis. Nam at ullamcorper nulla. Donec eu leo eu nunc malesuada
+pharetra id ac justo. Nulla facilisis magna ante, vitae consectetur
+augue hendrerit at.
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Output</label><div class="tab-content docutils container">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Donec at ultrices magna, ac volutpat nisi. Sed sed finibus
+libero, eget luctus massa. Praesent pulvinar orci in metus
+mollis consectetur. Integer gravida dolor ut quam efficitur
+euismod. Phasellus vitae elementum massa. Praesent volutpat
+sed purus id mollis. Maecenas sit amet libero ac mauris porta
+mattis. Nam at ullamcorper nulla. Donec eu leo eu nunc malesuada
+pharetra id ac justo. Nulla facilisis magna ante, vitae consectetur
+augue hendrerit at.</p>
+</div>
+</div>
+<p>If you separate lines of text with blank lines in between, this creates
+a new paragraph.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">RST</label><div class="tab-content docutils container">
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Donec at ultrices magna, ac volutpat nisi. Sed sed finibus
+libero, eget luctus massa. Praesent pulvinar orci in metus
+mollis consectetur. Integer gravida dolor ut quam efficitur
+euismod.
+
+Phasellus vitae elementum massa. Praesent volutpat
+sed purus id mollis. Maecenas sit amet libero ac mauris porta
+mattis. Nam at ullamcorper nulla. Donec eu leo eu nunc malesuada
+pharetra id ac justo. Nulla facilisis magna ante, vitae consectetur
+augue hendrerit at.
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Donec at ultrices magna, ac volutpat nisi. Sed sed finibus
+libero, eget luctus massa. Praesent pulvinar orci in metus
+mollis consectetur. Integer gravida dolor ut quam efficitur
+euismod.</p>
+<p>Phasellus vitae elementum massa. Praesent volutpat
+sed purus id mollis. Maecenas sit amet libero ac mauris porta
+mattis. Nam at ullamcorper nulla. Donec eu leo eu nunc malesuada
+pharetra id ac justo. Nulla facilisis magna ante, vitae consectetur
+augue hendrerit at.</p>
+</div>
+</div>
+</section>
+<section id="headers-and-titles">
+<h3>Headers and titles<a class="headerlink" href="#headers-and-titles" title="Permalink to this heading">¶</a></h3>
+<p>RST has the ability to make headers in your document by underlining text
+with different characters.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">RST</label><div class="tab-content docutils container">
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">My header</span>
+<span class="gh">=========</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Titles can also be made with underling and overlining equals signs.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">RST</label><div class="tab-content docutils container">
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">========</span>
+<span class="gh">My Title</span>
+<span class="gh">========</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Please visit the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html#sections">documentation</a>
+for more information on headings.</p>
+</section>
+<section id="in-line-text-formatting">
+<h3>In-line text formatting<a class="headerlink" href="#in-line-text-formatting" title="Permalink to this heading">¶</a></h3>
+<p>Any text can be formatted to be italic, bold, or as in-line code.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">RST</label><div class="tab-content docutils container">
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="ge">*italics*</span>
+
+<span class="gs">**bold**</span>
+
+<span class="s">``inline code``</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--2">Output</label><div class="tab-content docutils container">
+<p><em>italics</em></p>
+<p><strong>bold</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">inline</span> <span class="pre">code</span></code></p>
+</div>
+</div>
+<p>You can also make bulleted and numbered lists. If you would like to put an
+entry on two adjacent lines for visual clarity, make sure the second line
+is tabbed over to start at the same horizontal location as the previous
+line.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">RST</label><div class="tab-content docutils container">
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="m">-</span>  Small bullet
+<span class="m">-</span>  Multi-line
+   bullet point
+<span class="m">-</span>  Small bullet
+
+<span class="m">1.</span> Number 1
+<span class="m">2.</span> Number 2
+   is longer
+<span class="m">3.</span> Number 3
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--2">Output</label><div class="tab-content docutils container">
+<ul class="simple">
+<li><p>Small bullet</p></li>
+<li><p>Multi-line
+bullet point</p></li>
+<li><p>Small bullet</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Number 1</p></li>
+<li><p>Number 2
+is longer</p></li>
+<li><p>Number 3</p></li>
+</ol>
+</div>
+</div>
+<p>You can also do sub-bullets with additional tabbing.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">RST</label><div class="tab-content docutils container">
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="m">-</span>  Main bullet
+    <span class="m">-</span>  sub bullet
+<span class="m">-</span> Another main bullet
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--7-input--2" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--2">Output</label><div class="tab-content docutils container">
+<ul class="simple">
+<li><dl class="simple">
+<dt>Main bullet</dt><dd><ul>
+<li><p>sub bullet</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Another main bullet</p></li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="directives">
+<h2>Directives<a class="headerlink" href="#directives" title="Permalink to this heading">¶</a></h2>
+<p>Some formatted text requires using a directive. This is a way to denote a
+block of code for a specific purpose. There are some built-in directives,
+but also many from extensions that we will use.  <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">code::</span></code>,
+for instance, creates a code block with highlighting of the specified
+language.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">RST</label><div class="tab-content docutils container">
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">code</span><span class="p">::</span> <span class="k">python</span>
+
+    <span class="k">def</span> <span class="nf">my_func</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--8-input--2" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_func</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are many codecs you can use for code highlighting, which you can
+view <a class="reference external" href="https://docs.typo3.org/m/typo3/docs-how-to-document/main/en-us/WritingReST/Reference/Code/Codeblocks.html">here</a>.</p>
+<p>Similarly, sphinx_inline_tabs gives access to the <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">tab::</span></code>
+directive. This is commonly used throughout this site to display code and
+output. The text following the directive will be used as the name on the tab.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--1">RST</label><div class="tab-content docutils container">
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">tab</span><span class="p">::</span> First tab
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Donec at ultrices magna, ac volutpat nisi. Sed sed finibus
+    libero, eget luctus massa. Praesent pulvinar orci in metus
+    mollis consectetur. Integer gravida dolor ut quam efficitur
+    euismod.
+
+<span class="p">..</span> <span class="ow">tab</span><span class="p">::</span> Second tab
+
+    Phasellus vitae elementum massa. Praesent volutpat
+    sed purus id mollis. Maecenas sit amet libero ac mauris porta
+    mattis. Nam at ullamcorper nulla. Donec eu leo eu nunc malesuada
+    pharetra id ac justo. Nulla facilisis magna ante, vitae consectetur
+    augue hendrerit at.
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--10-input--2" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--2">Output</label><div class="tab-content docutils container">
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--1">First tab</label><div class="tab-content docutils container">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Donec at ultrices magna, ac volutpat nisi. Sed sed finibus
+libero, eget luctus massa. Praesent pulvinar orci in metus
+mollis consectetur. Integer gravida dolor ut quam efficitur
+euismod.</p>
+</div>
+<input class="tab-input" id="tab-set--9-input--2" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--2">Second tab</label><div class="tab-content docutils container">
+<p>Phasellus vitae elementum massa. Praesent volutpat
+sed purus id mollis. Maecenas sit amet libero ac mauris porta
+mattis. Nam at ullamcorper nulla. Donec eu leo eu nunc malesuada
+pharetra id ac justo. Nulla facilisis magna ante, vitae consectetur
+augue hendrerit at.</p>
+</div>
+</div>
+</div>
+</div>
+<p>The spacing and tabbing here is important. Any named arguments must come
+on the next line after the directive and tabbed over. Any content in the
+directive has to be tabbed over and have a blank line after the directive
+and arguments. Nested directives also follow this pattern.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--1">RST</label><div class="tab-content docutils container">
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">tab</span><span class="p">::</span> Python
+
+<span class="p">    ..</span> <span class="ow">code</span><span class="p">::</span> <span class="k">python</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">)</span>
+
+<span class="p">..</span> <span class="ow">tab</span><span class="p">::</span> Output
+
+<span class="p">    ..</span> <span class="ow">code</span><span class="p">::</span> none
+
+        hello world
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--12-input--2" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--2">Output</label><div class="tab-content docutils container">
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--11-input--2" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>hello world
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>If you have two sets of tabs one after the other, you can use the
+<code class="docutils literal notranslate"><span class="pre">:new-set:</span></code> argument to separte the sets of tabs.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio"><label class="tab-label" for="tab-set--15-input--1">RST</label><div class="tab-content docutils container">
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">tab</span><span class="p">::</span> Python
+
+<span class="p">    ..</span> <span class="ow">code</span><span class="p">::</span> <span class="k">python</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">)</span>
+
+<span class="p">..</span> <span class="ow">tab</span><span class="p">::</span> Output
+
+<span class="p">    ..</span> <span class="ow">code</span><span class="p">::</span> <span class="k">none</span>
+
+<span class="s">        hello world</span>
+
+<span class="p">..</span> <span class="ow">tab</span><span class="p">::</span> Python
+    <span class="nc">:new-set:</span>
+
+<span class="p">    ..</span> <span class="ow">code</span><span class="p">::</span> <span class="k">python</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="p">..</span> <span class="ow">tab</span><span class="p">::</span> Output
+
+<span class="p">    ..</span> <span class="ow">code</span><span class="p">::</span> none
+
+        6
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--15-input--2" name="tab-set--15" type="radio"><label class="tab-label" for="tab-set--15-input--2">Output</label><div class="tab-content docutils container">
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello world&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--14-input--2" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>hello world
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--13-input--2" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="toctree">
+<h2>Toctree<a class="headerlink" href="#toctree" title="Permalink to this heading">¶</a></h2>
+<p>One of the most important directives is the toctree - the table of
+contents tree. It defines the structure of the website and how different
+documents relate to each other. The navigation on the left-hand side of
+the website is determined by the toctrees present in different documents.
+Every document must be listed in another document’s toctree to appear in
+the navigation.</p>
+<p>This is the toctree of <code class="docutils literal notranslate"><span class="pre">index.rst</span></code>, the base page of the website:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
+    <span class="nc">:hidden:</span>
+    <span class="nc">:maxdepth:</span> 2
+    <span class="nc">:caption:</span> Contents:
+
+    python
+    R &lt;r&gt;
+    shell
+    git
+    sql
+    Contribute to DeisData &lt;contribute&gt;
+</pre></div>
+</div>
+<p>The toctree directive here has 3 specified parameters. <code class="docutils literal notranslate"><span class="pre">:hidden:</span></code> means
+that the toctree will only be displayed in the page navigation and not in
+the main body of the document. <code class="docutils literal notranslate"><span class="pre">:maxdepth:</span> <span class="pre">2</span></code> means that the displayed
+toctree will show 2 levels deep. For instance index.rst contains
+<code class="docutils literal notranslate"><span class="pre">python.rst</span></code> in its toctree, which contains <code class="docutils literal notranslate"><span class="pre">setup-install.rst</span></code> in its
+toctree. If <code class="docutils literal notranslate"><span class="pre">setup-install.rst</span></code> had documents in its toctree, these would
+not be displayed, as that would be a depth of 3. <code class="docutils literal notranslate"><span class="pre">:caption:</span> <span class="pre">Contents:</span></code>
+right now is not doing anything because the toctree is hidden, but if it
+were not, this would be the title of it in the document.</p>
+<p>Underneath the arguments are documents we want to include in the toctree.
+The names specified are the names of the documents without the .rst file
+extension. In the navigation, the name specified will be the title of that
+document. If you would like to use a different name, you can write the
+name you prefer and include the name of the document afterwards in angle
+brackets -&gt; <code class="docutils literal notranslate"><span class="pre">Contribute</span> <span class="pre">to</span> <span class="pre">DeisData</span> <span class="pre">&lt;contribute&gt;</span></code>.</p>
+<p>If the document is in a subdirectory of <code class="docutils literal notranslate"><span class="pre">source</span></code>, like the <code class="docutils literal notranslate"><span class="pre">python</span></code> directory,
+you’ll need to specify the relative path to the document from the source
+directory. For example, to add the <code class="docutils literal notranslate"><span class="pre">setup-install.rst</span></code> document, you’ll need
+to specify <code class="docutils literal notranslate"><span class="pre">python/setup-install</span></code>. Sometimes, adding a leading slash is necessary
+<code class="docutils literal notranslate"><span class="pre">/python/setup-install</span></code> depending on the directory.</p>
+</section>
+<section id="links">
+<h2>Links<a class="headerlink" href="#links" title="Permalink to this heading">¶</a></h2>
+<p>In RST, we separate links into two categories: external references and
+internal references. External references can go to any URL and are a
+little simpler.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--1">RST</label><div class="tab-content docutils container">
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>Check out <span class="s">`this link </span><span class="si">&lt;https://en.wikipedia.org/wiki/Main_Page&gt;</span><span class="s">`__</span>.
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--16-input--2" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--2">Output</label><div class="tab-content docutils container">
+<p>Check out <a class="reference external" href="https://en.wikipedia.org/wiki/Main_Page">this link</a>.</p>
+</div>
+</div>
+<p>Internal references, on the other hand, are used to link to other
+documents or to other labeled points of interest on any given document.
+When linking to documents you can specify the document you want to like
+to with <code class="docutils literal notranslate"><span class="pre">:doc:`docname`</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--1">RST</label><div class="tab-content docutils container">
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>For more on Python, check out our <span class="na">:doc:</span><span class="nv">`installation guide &lt;/python/setup-install&gt;`</span>.
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--17-input--2" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--2">Output</label><div class="tab-content docutils container">
+<p>For more on Python, check out our <a class="reference internal" href="../../python/setup-install/"><span class="doc">installation guide</span></a>.</p>
+</div>
+</div>
+<p>We can also make links to internal headings or any other places of
+interest.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--18-input--1" name="tab-set--18" type="radio"><label class="tab-label" for="tab-set--18-input--1">RST</label><div class="tab-content docutils container">
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="nt">_test reference:</span>
+
+Some text to reference.
+
+This points to <span class="na">:ref:</span><span class="nv">`the test reference &lt;test reference&gt;`</span>.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="images">
+<h2>Images<a class="headerlink" href="#images" title="Permalink to this heading">¶</a></h2>
+<p>You can also include images or figures through a couple of different
+methods, including using the <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">figure:</span> <span class="pre">directive</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--19-input--1" name="tab-set--19" type="radio"><label class="tab-label" for="tab-set--19-input--1">RST</label><div class="tab-content docutils container">
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">figure</span><span class="p">::</span> /_static/images/contribute/cat.jpeg
+    <span class="nc">:alt:</span> cat pic
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--19-input--2" name="tab-set--19" type="radio"><label class="tab-label" for="tab-set--19-input--2">Output</label><div class="tab-content docutils container">
+<figure class="align-default">
+<img alt="cat pic" src="../../_images/cat.jpeg" />
+</figure>
+</div>
+</div>
+<p>In our directory structure, images are stored in the <cite>source/_static/images</cite> directory.</p>
+<p>You can also include images with the <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">image::</span></code> directive. In several documents,
+we use this approach combined with tagging with <code class="docutils literal notranslate"><span class="pre">|image</span> <span class="pre">tag</span> <span class="pre">name|</span></code> to refer to
+images.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--20-input--1" name="tab-set--20" type="radio"><label class="tab-label" for="tab-set--20-input--1">RST</label><div class="tab-content docutils container">
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>|cat image|
+
+<span class="p">..</span> <span class="nt">|cat image|</span> <span class="ow">image</span><span class="p">::</span> /_static/images/contribute/cat.jpeg
+</pre></div>
+</div>
+</div>
+</div>
+<section id="documentation">
+<h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading">¶</a></h3>
+<p>Please view the <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html">Sphinx primer on RST</a>
+for more information.</p>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../structural-changes/">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">How to suggest structural changes</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../small-changes/">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">How to contribute small changes</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Ford Fishman
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">reStructuredText basics</a><ul>
+<li><a class="reference internal" href="#rst-syntax">RST Syntax</a><ul>
+<li><a class="reference internal" href="#plain-text">Plain text</a></li>
+<li><a class="reference internal" href="#headers-and-titles">Headers and titles</a></li>
+<li><a class="reference internal" href="#in-line-text-formatting">In-line text formatting</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#directives">Directives</a></li>
+<li><a class="reference internal" href="#toctree">Toctree</a></li>
+<li><a class="reference internal" href="#links">Links</a></li>
+<li><a class="reference internal" href="#images">Images</a><ul>
+<li><a class="reference internal" href="#documentation">Documentation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=fbdbc327"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/scripts/furo.js?v=4e2eecee"></script>
+    <script src="../../_static/tabs.js?v=3ee01567"></script>
+    </body>
+</html>

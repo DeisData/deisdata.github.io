@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex/" /><link rel="search" title="Search" href="../search/" /><link rel="next" title="Intro to R and the Tidyverse" href="quick-start/" /><link rel="prev" title="Statistics with Python" href="../python/stats/" />
+<link rel="index" title="Index" href="../genindex/" /><link rel="search" title="Search" href="../search/" /><link rel="next" title="How to contribute small changes" href="small-changes/" /><link rel="prev" title="SQL Glossary" href="../sql/glossary/" />
 
     <link rel="shortcut icon" href="../_static/favicon-32x32.png"/><!-- Generated with Sphinx 7.1.2 and Furo 2024.05.06 -->
-        <title>Installing R - DeisData</title>
+        <title>How to contribute to DeisData - DeisData</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css?v=4c969af8" />
@@ -193,7 +193,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -232,11 +232,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../python/stats/">Statistical tests</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">R</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of R</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="quick-start/">Intro to R and the Tidyverse</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data-wrangling/">Data wrangling with the Tidyverse</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data-visualization/">ggplot2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="text-mining/">Text mining</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../r/">R</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of R</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../r/quick-start/">Intro to R and the Tidyverse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../r/data-wrangling/">Data wrangling with the Tidyverse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../r/data-visualization/">ggplot2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../r/text-mining/">Text mining</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../shell/">Unix Shell</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Unix Shell</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -272,10 +272,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../sql/glossary/">Glossary</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../contribute/">Contribute to DeisData</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Contribute to DeisData</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../contribute/small-changes/">Small changes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contribute/rst-intro/">reStructuredText basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../contribute/structural-changes/">Structural changes</a></li>
+<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Contribute to DeisData</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Contribute to DeisData</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="small-changes/">Small changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rst-intro/">reStructuredText basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structural-changes/">Structural changes</a></li>
 </ul>
 </li>
 </ul>
@@ -298,7 +298,7 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="../_sources/r.rst.txt" title="View this page">
+  <a class="muted-link" href="../_sources/contribute.rst.txt" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
@@ -312,120 +312,27 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="installing-r">
-<h1>Installing R<a class="headerlink" href="#installing-r" title="Permalink to this heading">¶</a></h1>
-<section id="install-update-r-rstudio">
-<h2>Install/Update R &amp; RStudio<a class="headerlink" href="#install-update-r-rstudio" title="Permalink to this heading">¶</a></h2>
-<section id="before-the-first-session">
-<h3>Before the first session<a class="headerlink" href="#before-the-first-session" title="Permalink to this heading">¶</a></h3>
-<p>To participate in Programming with R, please bring a laptop with R and
-RStudio installed. We recommend that you have the latest version of R.</p>
-<p>You need to have RStudio installed, but it is less crucial that you are
-using the most recent version.</p>
-<section id="do-you-already-have-r-and-rstudio-installed">
-<h4>Do you already have R and RStudio installed?<a class="headerlink" href="#do-you-already-have-r-and-rstudio-installed" title="Permalink to this heading">¶</a></h4>
-<p><strong>No</strong>: follow the instructions for “I do not have R installed”.</p>
-<p><strong>Yes</strong>: follow the instructions for “I have R installed”.</p>
-</section>
-<section id="id1">
-<h4>Installing R<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h4>
-<p><strong>Windows</strong>:</p>
-<ul class="simple">
-<li><p>Go to <a class="reference external" href="https://cloud.r-project.org/bin/windows/base/">https://cloud.r-project.org/bin/windows/base/</a></p></li>
-<li><p>Click the “Download R X.X.X for Windows” link. The X’s will be replaced with the numbers for most recent version of R.</p></li>
-<li><p>When the file finishes downloading, double-click to install. You should be able to click “Next” to all dialogs to finish the installation.</p></li>
-</ul>
-<p><strong>Mac</strong>:</p>
-<ul class="simple">
-<li><p>Go to <a class="reference external" href="https://cloud.r-project.org/bin/macosx/">https://cloud.r-project.org/bin/macosx/</a>.</p></li>
-<li><p>Click the link “R-X.X.X.pkg” (again, with the X’s standing in the most recent version).</p></li>
-<li><p>When the file finishes downloading, double-click to install. You should be able to click “Next” to all dialogs to finish the installation.</p></li>
-</ul>
-<section id="installing-rstudio">
-<h5>Installing RStudio<a class="headerlink" href="#installing-rstudio" title="Permalink to this heading">¶</a></h5>
-<ul class="simple">
-<li><p>Go to <a class="reference external" href="https://www.rstudio.com/products/rstudio/download/#download">https://www.rstudio.com/products/rstudio/download/#download</a>.</p></li>
-<li><p>Under “Installers for Supported Platforms” select the appropriate
-installer for your operating system:</p>
-<ul>
-<li><p>Windows: “RSTUDIO-20xx.xx.x-xxx.EXE”</p></li>
-<li><p>Mac: “RSTUDIO-20xx.xx.x-xxx.DMG”</p></li>
-</ul>
-</li>
-<li><p>When the file finishes downloading, double-click to install. You
-should be able to click “Next” to all dialogs to finish the
-installation.</p></li>
-</ul>
-<p>You are ready for Data Science Essentials for R!</p>
-</section>
-</section>
-<section id="already-installed-r">
-<h4>Already Installed R<a class="headerlink" href="#already-installed-r" title="Permalink to this heading">¶</a></h4>
-<p>The workshops run more smoothly when everyone is using the same version
-of R. Please update R, if necessary (and less crucially, RStudio).</p>
-<section id="verify-r-version">
-<h5>Verify R version<a class="headerlink" href="#verify-r-version" title="Permalink to this heading">¶</a></h5>
-<ul class="simple">
-<li><p>Open RStudio.</p></li>
-<li><p>At the top of the Console you will see session info. The first line
-tells you which version of R you are using.</p></li>
-<li><p>If RStudio is already open and you’re deep in a session, type
-R.version.string to print out the R version.</p></li>
-</ul>
-</section>
-<section id="do-you-have-the-most-recent-version-of-r-installed">
-<h5>Do you have the most recent version of R installed?<a class="headerlink" href="#do-you-have-the-most-recent-version-of-r-installed" title="Permalink to this heading">¶</a></h5>
-<p><strong>No</strong>: follow the instructions for “Updating R”.</p>
-<p><strong>Yes</strong>: You are ready for Data Science Essentials for R!</p>
-</section>
-</section>
-<section id="updating-r-rstudio">
-<h4>Updating R/RStudio<a class="headerlink" href="#updating-r-rstudio" title="Permalink to this heading">¶</a></h4>
-<p><strong>Windows</strong></p>
-<p>To update R on Windows, try using the package installr (only for
-Windows).</p>
-<section id="install-and-load-installr">
-<h5>Install and load <code class="docutils literal notranslate"><span class="pre">installr</span></code><a class="headerlink" href="#install-and-load-installr" title="Permalink to this heading">¶</a></h5>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">install.packages(“installr”)</span></code> and <code class="docutils literal notranslate"><span class="pre">library(installr)</span></code></p></li>
-<li><p>Call <code class="docutils literal notranslate"><span class="pre">updateR()</span></code> function. This will start the updating process of your
-R installation by finding the latest R version, downloading it,
-running the installer, deleting the installation file, copy and
-updating old packages to the new R installation.</p></li>
-<li><p>From within RStudio, go to <strong>Help</strong> &gt; <strong>Check for Updates</strong> to install newer
-version of RStudio (if available, optional).</p></li>
-</ul>
-<p>You are ready for Data Science Essentials for R!</p>
-<p><strong>Mac</strong></p>
-<p>On Mac, you can simply download and install the newest version of R.
-When you restart RStudio, it will use the updated version of R.</p>
-<ul class="simple">
-<li><p>Go to <a class="reference external" href="https://cloud.r-project.org/bin/macosx/">https://cloud.r-project.org/bin/macosx/</a></p></li>
-<li><p>Click the link “R-x.x.x.pkg”</p></li>
-<li><p>When the file finishes downloading, double-click to install. You
-should be able to click <strong>Next</strong> to all dialogs to finish the
-installation.</p></li>
-<li><p>From within RStudio, go to <strong>Help</strong> &gt; <strong>Check for Updates</strong> to install newer
-version of RStudio (if available, optional).</p></li>
-</ul>
-</section>
-</section>
-</section>
-<section id="data-set-and-code">
-<h3>Data set and code<a class="headerlink" href="#data-set-and-code" title="Permalink to this heading">¶</a></h3>
-<ul class="simple">
-<li><p>Intro to R and Tidyverse [ <a class="reference external" href="https://drive.google.com/drive/folders/1e-8Qs_AZBH-QcQqmmCloT9ghZesV55z6">code and data</a> ]</p></li>
-</ul>
+          <section id="how-to-contribute-to-deisdata">
+<h1>How to contribute to DeisData<a class="headerlink" href="#how-to-contribute-to-deisdata" title="Permalink to this heading">¶</a></h1>
+<p>Programming and data are ever-evolving fields.
+While we regularly update and maintain the information here,
+we encourage suggestions of changes to update information and
+fill in any knowledge gaps.</p>
+<p>Feel free to email us with any potential changes:
+<a class="reference external" href="mailto:dataservices&#37;&#52;&#48;brandeis&#46;edu">dataservices<span>&#64;</span>brandeis<span>&#46;</span>edu</a></p>
+<p>For any changes you would be personally willing to work on yourself, we have
+guides for submitting both <a class="reference internal" href="small-changes/"><span class="doc">small changes</span></a> and <a class="reference internal" href="structural-changes/"><span class="doc">larger structural changes</span></a>.
+Make sure you have a GitHub account for making these suggestions.</p>
+<p>This website is built using the language reStructured Text with Sphinx.
+We have a brief guide of these tools here, if you are unfamiliar.</p>
 <div class="toctree-wrapper compound">
 </div>
-</section>
-</section>
 </section>
 
         </article>
@@ -433,23 +340,23 @@ version of RStudio (if available, optional).</p></li>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="quick-start/">
+          <a class="next-page" href="small-changes/">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Intro to R and the Tidyverse</div>
+                <div class="title">How to contribute small changes</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../python/stats/">
+          <a class="prev-page" href="../sql/glossary/">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Statistics with Python</div>
+                <div class="title">SQL Glossary</div>
                 
               </div>
             </a>
@@ -471,47 +378,8 @@ version of RStudio (if available, optional).</p></li>
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Installing R</a><ul>
-<li><a class="reference internal" href="#install-update-r-rstudio">Install/Update R &amp; RStudio</a><ul>
-<li><a class="reference internal" href="#before-the-first-session">Before the first session</a><ul>
-<li><a class="reference internal" href="#do-you-already-have-r-and-rstudio-installed">Do you already have R and RStudio installed?</a></li>
-<li><a class="reference internal" href="#id1">Installing R</a><ul>
-<li><a class="reference internal" href="#installing-rstudio">Installing RStudio</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#already-installed-r">Already Installed R</a><ul>
-<li><a class="reference internal" href="#verify-r-version">Verify R version</a></li>
-<li><a class="reference internal" href="#do-you-have-the-most-recent-version-of-r-installed">Do you have the most recent version of R installed?</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#updating-r-rstudio">Updating R/RStudio</a><ul>
-<li><a class="reference internal" href="#install-and-load-installr">Install and load <code class="docutils literal notranslate"><span class="pre">installr</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#data-set-and-code">Data set and code</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

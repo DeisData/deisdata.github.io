@@ -58,6 +58,7 @@ and we’ll help you sort it out.
    shell
    git
    sql
+   Contribute to DeisData <contribute>
 
 
 
