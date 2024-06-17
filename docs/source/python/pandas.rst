@@ -337,10 +337,7 @@ Subset by row
 ~~~~~~~~~~~~~
 
 Sometimes, we want to create a subset of the main data frame based on
-certain conditions. We do this by using ``df.loc`` and specifying a
-condition for the rows.
-
-Below, we take all of the rows where ``babies_per_woman`` is greater or
+certain conditions. Below, we take all of the rows where ``babies_per_woman`` is greater or
 equal to 4 with ``df['babies_per_woman'] >= 4`` and assign this to a new
 data frame.
 
@@ -352,7 +349,7 @@ To check that this was done correctly, we can look at the minimum of the
    .. code:: python
 
       # take all rows where babies_per_woman is greater or equal to 4 and make a new data frame
-      df_4 = df.loc[df['babies_per_woman'] >= 4, :]
+      df_4 = df[df['babies_per_woman'] >= 4]
       df_4['babies_per_woman'].min()
 
 .. tab:: Output
@@ -361,9 +358,13 @@ To check that this was done correctly, we can look at the minimum of the
 
       4.0
 
-We can use the following operators to make subsets: - Equals: ``==`` -
-Not equals: ``!=`` - Greater than, less than: ``>``, ``<`` - Greater
-than or equal to: ``>=`` - Less than or equal to: ``<=``
+We can use the following operators to make subsets: 
+
+- Equals: ``==`` 
+- Not equals: ``!=`` 
+- Greater than, less than: ``>``, ``<`` 
+- Greater than or equal to: ``>=`` 
+- Less than or equal to: ``<=``
 
 We can also subset with categorical variables. Here, we take all rows
 where the country is Hungary.
@@ -372,7 +373,7 @@ where the country is Hungary.
 
    .. code:: python
 
-      df_hungary = df.loc[df['country'] == 'Hungary', :]
+      df_hungary = df[df['country'] == 'Hungary']
       pd.unique(df_hungary['country'])
 
 .. tab:: Output
@@ -482,7 +483,7 @@ entries.
 
          .. code:: python
 
-            df_lth = df.loc[df['country']=='Lithuania',:]
+            df_lth = df[df['country']=='Lithuania']
             df_lth['gdp_per_1000'] = 1000 * df_lth['gdp_per_capita']
             print(df_lth['gdp_per_1000'].mean())
 
