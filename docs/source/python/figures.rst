@@ -144,7 +144,7 @@ specify the x axis, followed by life expectancy for the y.
    .. code:: python
 
       # subset data
-      df_jm = df.loc[ df['country']=='Jamaica', :]
+      df_jm = df[ df['country']=='Jamaica']
       # create plot
       figure, ax = plt.subplots()
       ax.plot(df_jm['year'], df_jm['life_expectancy'], color='#333') # a dark charcoal
@@ -175,7 +175,7 @@ legend.
 
    .. code:: python
 
-      df_cb = df.loc[ df['country']=='Cuba', :]
+      df_cb = df[ df['country']=='Cuba']
       figure, ax = plt.subplots()
       # draw two lines, with different colors and different labels
       ax.plot(df_jm['year'], df_jm['life_expectancy'], color='#333', label='Jamaica') 
@@ -214,7 +214,7 @@ with ``ax[i]``.
 
    .. code:: python
 
-      df_cb = df.loc[ df['country']=='Cuba', :]
+      df_cb = df[ df['country']=='Cuba']
       # create plot
       figure, ax = plt.subplots(2,1) # rows by columns
       ax[0].plot(df_jm['year'], df_jm['life_expectancy'])
@@ -306,8 +306,8 @@ If we want to use multiple rows and columns, we now gain another index
 
    .. code:: python
 
-      df_us = df.loc[ df['country']=='United States', :]
-      df_ca = df.loc[ df['country']=='Canada', :]
+      df_us = df[df['country']=='United States']
+      df_ca = df[df['country']=='Canada']
 
       figure, ax = plt.subplots(2,2, sharex=True, sharey=True, figsize=(8,8)) # rows by columns
       ax[0,0].plot(df_jm['year'], df_jm['life_expectancy'])
@@ -363,7 +363,7 @@ row at a time, going left to right, making a new subset for each panel.
          for j in range(ncol): # j goes from 0 - 2
             
             country = countries[i][j]
-            df_sub = df.loc[ df['country']==country, :]
+            df_sub = df[df['country']==country]
             
             ax[i,j].plot(df_sub['year'], df_sub['life_expectancy'], color='#333') 
             ax[i,j].set_xlabel('Year')
@@ -466,7 +466,7 @@ theme, Matplotlib will also use that theme.
          for j in range(ncol): # j goes from 0 - 2
             
             country = countries[i][j]
-            df_sub = df.loc[ df['country']==country, :]
+            df_sub = df[df['country']==country]
             
             ax[i,j].plot(df_sub['year'], df_sub['life_expectancy'], color='#333') 
             ax[i,j].set_xlabel('Year')
@@ -516,7 +516,7 @@ panels.
             # import log function
             from numpy import log10
             # subset
-            df_2000 = df.loc[df['year']==2000,:].copy() # .copy() removes some warnings pandas will throw
+            df_2000 = df[df['year']==2000].copy() # .copy() removes some warnings pandas will throw
             # log transform
             df_2000['population_log10'] = log10(df.population)
             sns.histplot(df_2000, x='population_log10', multiple='stack', hue='region')
@@ -546,7 +546,7 @@ panels.
             # import log function and array
             from numpy import log10
             # subset
-            df_2000 = df.loc[df['year']==2000,:].copy() # .copy() removes some warnings pandas will throw
+            df_2000 = df[df['year']==2000].copy() # .copy() removes some warnings pandas will throw
             # log transform
             df_2000['population_log10'] = log10(df.population)
 
@@ -565,7 +565,7 @@ panels.
                for j in range(ncol): # j goes from 0 - 1
                   
                   region = regions[i][j]
-                  df_sub = df_2000.loc[ df_2000['region']==region, :]
+                  df_sub = df_2000[ df_2000['region']==region]
                   
                   ax[i,j].hist(df_sub['population_log10'], bins=15) 
                   ax[i,j].set_xlabel('Population (log10)')
