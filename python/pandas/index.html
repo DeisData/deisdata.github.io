@@ -851,9 +851,7 @@ Name: 0, dtype: object
 <section id="subset-by-row">
 <h3>Subset by row<a class="headerlink" href="#subset-by-row" title="Permalink to this heading">¶</a></h3>
 <p>Sometimes, we want to create a subset of the main data frame based on
-certain conditions. We do this by using <code class="docutils literal notranslate"><span class="pre">df.loc</span></code> and specifying a
-condition for the rows.</p>
-<p>Below, we take all of the rows where <code class="docutils literal notranslate"><span class="pre">babies_per_woman</span></code> is greater or
+certain conditions. Below, we take all of the rows where <code class="docutils literal notranslate"><span class="pre">babies_per_woman</span></code> is greater or
 equal to 4 with <code class="docutils literal notranslate"><span class="pre">df['babies_per_woman']</span> <span class="pre">&gt;=</span> <span class="pre">4</span></code> and assign this to a new
 data frame.</p>
 <p>To check that this was done correctly, we can look at the minimum of the
@@ -861,7 +859,7 @@ data frame.</p>
 <div class="tab-set docutils container">
 <input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># take all rows where babies_per_woman is greater or equal to 4 and make a new data frame</span>
-<span class="n">df_4</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;babies_per_woman&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">,</span> <span class="p">:]</span>
+<span class="n">df_4</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;babies_per_woman&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">]</span>
 <span class="n">df_4</span><span class="p">[</span><span class="s1">&#39;babies_per_woman&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -872,14 +870,19 @@ data frame.</p>
 </div>
 </div>
 </div>
-<p>We can use the following operators to make subsets: - Equals: <code class="docutils literal notranslate"><span class="pre">==</span></code> -
-Not equals: <code class="docutils literal notranslate"><span class="pre">!=</span></code> - Greater than, less than: <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> - Greater
-than or equal to: <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> - Less than or equal to: <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p>
+<p>We can use the following operators to make subsets:</p>
+<ul class="simple">
+<li><p>Equals: <code class="docutils literal notranslate"><span class="pre">==</span></code></p></li>
+<li><p>Not equals: <code class="docutils literal notranslate"><span class="pre">!=</span></code></p></li>
+<li><p>Greater than, less than: <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></li>
+<li><p>Greater than or equal to: <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></li>
+<li><p>Less than or equal to: <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p></li>
+</ul>
 <p>We can also subset with categorical variables. Here, we take all rows
 where the country is Hungary.</p>
 <div class="tab-set docutils container">
 <input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--1">Python</label><div class="tab-content docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_hungary</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Hungary&#39;</span><span class="p">,</span> <span class="p">:]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_hungary</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Hungary&#39;</span><span class="p">]</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">df_hungary</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -981,7 +984,7 @@ entries.</p>
 <summary>Solution</summary><div class="docutils container">
 <div class="tab-set docutils container">
 <input checked="True" class="tab-input" id="tab-set--22-input--1" name="tab-set--22" type="radio"><label class="tab-label" for="tab-set--22-input--1">Python</label><div class="tab-content docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_lth</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Lithuania&#39;</span><span class="p">,:]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_lth</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Lithuania&#39;</span><span class="p">]</span>
 <span class="n">df_lth</span><span class="p">[</span><span class="s1">&#39;gdp_per_1000&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1000</span> <span class="o">*</span> <span class="n">df_lth</span><span class="p">[</span><span class="s1">&#39;gdp_per_capita&#39;</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df_lth</span><span class="p">[</span><span class="s1">&#39;gdp_per_1000&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
 </pre></div>
