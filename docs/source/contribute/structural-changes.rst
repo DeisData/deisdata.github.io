@@ -181,9 +181,9 @@ We need to install some necessary packages for our specific project.
 
 .. code:: bash   
 
-    conda install -c condaforge furo sphinx-inline-tabs sphinx-toolbox sphinx-reredirects sphinxcontrib-youtube
+    conda install -c conda-forge furo sphinx-inline-tabs sphinx-toolbox sphinx-reredirects sphinxcontrib-youtube
 
-``-c condaforge`` specifies that we are installing these from ``condaforge``. ``furo`` 
+``-c conda-forge`` specifies that we are installing these from ``condaforge``. ``furo`` 
 is used for the specific style of our website. ``sphinx-inline-tabs`` is used to create 
 tabs, mostly used to show code languages and/or output. ``sphinx-toolbox`` is used for a 
 variety of different utilities. ``sphinx-reredirects`` handles redirects of pages.
