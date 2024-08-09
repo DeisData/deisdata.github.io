@@ -18,9 +18,6 @@ Meet your research community of support.
    -  `Ford
       Fishman <https://calendar.library.brandeis.edu/appointments/fordfishman>`__
       (sciences)
-   -  `Alex
-      Willett <http://calendar.library.brandeis.edu/appointment/5342>`__
-      (Geographical Information Systems)
 
 -  `Register for Library
    Workshops <https://calendar.library.brandeis.edu/calendar/workshops/>`__,
