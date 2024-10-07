@@ -97,4 +97,4 @@ Practice Examples and More Training
    Matplotlib and seaborn <python/figures>
    python/functions
    Statistical tests <python/stats>
-   python/webscraping
+   Web scraping <python/webscraping>
