@@ -213,7 +213,7 @@ To find all appearances of a certain tag on a webpage, we can use
     
 
 
-As you can see, tags can contin a lot of information, including other
+As you can see, tags can contain a lot of information, including other
 tags. ``<div>`` is a very common tag type, and this page has hundreds of
 them.
 
@@ -249,7 +249,7 @@ This page stores country data in ``<div>`` tags with the class
 
 Let’s take a look at the first country div. We’ll use ``.text`` to
 remove the tag information and ``.strip()`` to remove some formatting
-characters
+characters.
 
 .. tab:: Python   
 
@@ -475,7 +475,7 @@ format we want the data in. We’ll also provide some data about the data
 we want, specifically a series ID and year ranges for the data.
 
 ``json.dumps()`` converts a Python dictionary into a json object, while
-``json.loads()`` does the opposite
+``json.loads()`` does the opposite.
 
 .. tab:: Python   
 
