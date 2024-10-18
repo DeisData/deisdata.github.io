@@ -55,6 +55,7 @@ and we’ll help you sort it out.
    shell
    git
    sql
+   case-studies
    Contribute to DeisData <contribute>
 
 
