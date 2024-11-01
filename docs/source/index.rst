@@ -52,6 +52,7 @@ and we’ll help you sort it out.
    
    python
    R <r>
+   machine-learning
    shell
    git
    sql
