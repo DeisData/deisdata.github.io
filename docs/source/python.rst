@@ -45,6 +45,7 @@ Topics
     [ `code-along notebook <https://colab.research.google.com/github/DeisData/python/blob/master/sequential/functions-codealong.ipynb>`__ 
     / `filled-in notebook <https://colab.research.google.com/github/DeisData/python/blob/master/sequential/functions.ipynb>`__ ]
 11. :doc:`Statistical tests <python/stats>`
+12. :doc:`Web scraping <python/webscraping>`
 
 Using Colab
 -----------
@@ -96,3 +97,4 @@ Practice Examples and More Training
    Matplotlib and seaborn <python/figures>
    python/functions
    Statistical tests <python/stats>
+   Web scraping <python/webscraping>
