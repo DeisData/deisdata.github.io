@@ -1,0 +1,1079 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Text Mining with R" href="../text-mining/" /><link rel="prev" title="ggplot2" href="../data-visualization/" />
+
+    <link rel="shortcut icon" href="../../_static/favicon-32x32.png"/><!-- Generated with Sphinx 7.1.2 and Furo 2024.08.06 -->
+        <title>Data Analysis - DeisData</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=302659d7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=934bd528" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../"><div class="brand">DeisData</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/DeisDatax1x_medium.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">DeisData</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search/" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../python/">Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../python/setup-install/">Setup and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/jupyter/">Jupyter notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/python-fundamentals/">Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/data-structures/">Data structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/conditionals/">Booleans and conditionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/loops/">Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/numpy/">NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/pandas/">Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/figures/">Matplotlib and seaborn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/functions/">Writing functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/stats/">Statistical tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/webscraping/">Web scraping</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../">R</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of R</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../quick-start/">Intro to R and the Tidyverse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-wrangling/">Data wrangling with the Tidyverse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data-visualization/">ggplot2</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Data Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text-mining/">Text mining</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../shell/">Unix Shell</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Unix Shell</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/setup/">Bash Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/navigating/">Navigating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/alter-dir/">Altering files and directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/pipes-filters/">Pipes and filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/loops/">Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/shell-scripts/">Shell scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/search-find/">Searching and finding</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../git/">Git Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../git/setup-install/">Setup and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/quick-start/">Quick start to Git and GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/pushing/">Pushing changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/fetch-merge/">Fetch and merge from GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/git-utilities/">Git utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/forking/">Forking in GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/glossary/">Git Glossary</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../sql/">SQL</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of SQL</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/setup/">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/selecting-data/">Selecting data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/sorting-duplicates/">Sorting out and removing duplicates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/filtering/">Filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/calculating/">Calculating new values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/missing-data/">Missing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/aggregates/">Aggregates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/combining-data/">Combining data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/create-modify/">Create and modify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/glossary/">Glossary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../case-studies/">Data Services Case Studies</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../contribute/">Contribute to DeisData</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Contribute to DeisData</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/small-changes/">Small changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/rst-intro/">reStructuredText basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/structural-changes/">Structural changes</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../../_sources/r/data-analysis.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="data-analysis">
+<h1>Data Analysis<a class="headerlink" href="#data-analysis" title="Permalink to this heading">¶</a></h1>
+<p>This section covers:</p>
+<ul class="simple">
+<li><p>Exploring and summarizing data</p></li>
+<li><p>Correlation and Chi-Squared tests</p></li>
+<li><p>T-test and ANOVA</p></li>
+<li><p>Checking assumptions</p></li>
+<li><p>Linear regression</p></li>
+</ul>
+<section id="set-up">
+<h2>Set up<a class="headerlink" href="#set-up" title="Permalink to this heading">¶</a></h2>
+<p>To get started let’s install and/or load the libraries we will be using.
+If this is your first time using one of the packages “uncomment” and
+run the appropriate install.package(‘package’)</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#install.packages(&#39;tidyverse&#39;)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+<span class="c1">#install.packages(&#39;car&#39;)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>
+<span class="c1">#install.packages(&#39;broom&#39;)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">broom</span><span class="p">)</span>
+<span class="c1">#install.packages (&#39;rstatix&#39;)</span>
+<span class="nf">library </span><span class="p">(</span><span class="n">rstatix</span><span class="p">)</span>
+<span class="c1">#install.packages(&quot;sjPlot&quot;)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">sjPlot</span><span class="p">)</span>
+<span class="c1">#install.packages(&quot;lmtest&quot;)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">lmtest</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We are going to analyze penguins! See <a class="reference external" href="https://allisonhorst.github.io/palmerpenguins/">https://allisonhorst.github.io/palmerpenguins/</a></p>
+<p>Let’s get the data</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;palmerpenguins&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">palmerpenguins</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exploring-the-data-set">
+<h2>Exploring the data set<a class="headerlink" href="#exploring-the-data-set" title="Permalink to this heading">¶</a></h2>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">View</span><span class="p">(</span><span class="n">penguins</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can check the structure</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">str</span><span class="p">(</span><span class="n">penguins</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>tibble [344 × 8] (S3: tbl_df/tbl/data.frame)
+$ species          : Factor w/ 3 levels &quot;Adelie&quot;,&quot;Chinstrap&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+$ island           : Factor w/ 3 levels &quot;Biscoe&quot;,&quot;Dream&quot;,..: 3 3 3 3 3 3 3 3 3 3 ...
+$ bill_length_mm   : num [1:344] 39.1 39.5 40.3 NA 36.7 39.3 38.9 39.2 34.1 42 ...
+$ bill_depth_mm    : num [1:344] 18.7 17.4 18 NA 19.3 20.6 17.8 19.6 18.1 20.2 ...
+$ flipper_length_mm: int [1:344] 181 186 195 NA 193 190 181 195 193 190 ...
+$ body_mass_g      : int [1:344] 3750 3800 3250 NA 3450 3650 3625 4675 3475 4250 ...
+$ sex              : Factor w/ 2 levels &quot;female&quot;,&quot;male&quot;: 2 1 1 NA 1 2 1 2 NA NA ...
+$ year             : int [1:344] 2007 2007 2007 2007 2007 2007 2007 2007 2007 2007
+</pre></div>
+</div>
+</div>
+</div>
+<p>I want to see how many penguins I have</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w"> </span><span class="nf">count</span><span class="p">(</span><span class="n">species</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 3 x 2
+## species       n
+## &lt;fctr&gt;      &lt;int&gt;
+## Adelie             152
+## Chinstrap       68
+          ## Gentoo       124
+          ## # 3 rows
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s create a bar graph</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot </span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">species</span><span class="p">))</span><span class="o">+</span>
+<span class="nf">geom_bar</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">Output</label><div class="tab-content docutils container">
+<figure class="align-default">
+<img alt="../../_images/penguinspecies.png" src="../../_images/penguinspecies.png" />
+</figure>
+</div>
+</div>
+<p>I want to see summary statistics for each species
+of penguin</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">  </span><span class="nf">group_by</span><span class="p">(</span><span class="n">species</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">summarize</span><span class="p">(</span><span class="nf">across</span><span class="p">(</span><span class="n">bill_length_mm</span><span class="o">:</span><span class="n">body_mass_g</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="correlation">
+<h2>Correlation<a class="headerlink" href="#correlation" title="Permalink to this heading">¶</a></h2>
+<p>Is there a correlation between Flipper Length and Body Mass? Let’s create a scatterplot first</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">correlation_graph</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">flipper_length_mm</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">body_mass_g</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lm</span><span class="p">)</span>
+<span class="n">correlation_graph</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">Output</label><div class="tab-content docutils container">
+<figure class="align-default">
+<img alt="../../_images/correlation.png" src="../../_images/correlation.png" />
+</figure>
+</div>
+</div>
+<p>What’s the correlation coefficient?</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">cor.test</span><span class="p">(</span><span class="n">penguins</span><span class="o">$</span><span class="n">flipper_length_mm</span><span class="p">,</span><span class="w"> </span><span class="n">penguins</span><span class="o">$</span><span class="n">body_mass_g</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--10-input--2" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # Pearson&#39;s product-moment correlation
+## data:  penguins$flipper_length_mm and
+## t = 32.722, df = 340, p-value &lt;
+## 2.2e-16
+## alternative hypothesis: true correlation is
+          ## not equal to 0
+## 95 percent confidence interval:
+## # 0.843041 0.894599
+## sample estimates:
+          ## # cor
+## 0.8712018
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="chi-squared-test">
+<h2>Chi-Squared test<a class="headerlink" href="#chi-squared-test" title="Permalink to this heading">¶</a></h2>
+<p>Now, I want to see if there is relationship between species and island. As both variables are categorical,
+we need to run a chi-squared test</p>
+<p>Let’s visualize both varibles first</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">species</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">island</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">geom_bar</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--1">Output</label><div class="tab-content docutils container">
+<figure class="align-default">
+<img alt="../../_images/speciesisland.png" src="../../_images/speciesisland.png" />
+</figure>
+</div>
+</div>
+<p>We can also build contigency tables</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins_table</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">table </span><span class="p">(</span><span class="n">penguins</span><span class="o">$</span><span class="n">species</span><span class="p">,</span><span class="w"> </span><span class="n">penguins</span><span class="o">$</span><span class="n">island</span><span class="p">)</span>
+<span class="n">penguins_table</span>
+<span class="nf">prop.table</span><span class="p">(</span><span class="n">penguins_table</span><span class="p">)</span>
+<span class="nf">prop.table</span><span class="p">(</span><span class="n">penguins_table</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">)</span><span class="o">*</span><span class="m">100</span>
+<span class="nf">prop.table</span><span class="p">(</span><span class="n">penguins_table</span><span class="p">,</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="o">*</span><span class="m">100</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--13-input--2" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## #           Biscoe Dream Torgersen
+## Adelie        44    56        52
+## Chinstrap      0    68         0
+## Gentoo       124     0         0
+## #            Biscoe  Dream    Torgersen
+          ## Adelie    0.1279070 0.1627907 0.1511628
+## Chinstrap 0.0000000 0.1976744 0.0000000
+## Gentoo    0.3604651 0.0000000 0.0000000
+## #            Biscoe   Dream    Torgersen
+          ## Adelie     28.94737  36.84211  34.21053
+## Chinstrap   0.00000 100.00000   0.00000
+## Gentoo    100.00000   0.00000   0.00000
+## #            Biscoe  Dream    Torgersen
+## Adelie     26.19048  45.16129 100.00000
+## Chinstrap   0.00000  54.83871   0.00000
+## Gentoo     73.80952   0.00000   0.00000
+</pre></div>
+</div>
+</div>
+</div>
+<p>chi-squared test</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">chisq</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">chisq.test</span><span class="p">(</span><span class="n">penguins</span><span class="o">$</span><span class="n">species</span><span class="p">,</span><span class="w"> </span><span class="n">penguins</span><span class="o">$</span><span class="n">island</span><span class="p">)</span>
+<span class="n">chisq</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--14-input--2" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## #           Pearson&#39;s Chi-squared test
+## data:  penguins$species and penguins$island
+## X-squared = 299.55, df = 4, p-value &lt; 2.2e-16
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="independent-samples-t-test">
+<h2>Independent Samples t-test<a class="headerlink" href="#independent-samples-t-test" title="Permalink to this heading">¶</a></h2>
+<p>Is there a difference between males and females in their body mass?</p>
+<p>Let’s visualize the data first</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="nf">na.omit</span><span class="p">(</span><span class="n">penguins</span><span class="p">))</span><span class="o">+</span>
+<span class="nf">geom_boxplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">body_mass_g</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="o">=</span><span class="n">sex</span><span class="p">))</span><span class="o">+</span>
+<span class="nf">theme_classic</span><span class="p">()</span><span class="o">+</span>
+<span class="nf">ylab</span><span class="p">(</span><span class="s">&quot;Body mass&quot;</span><span class="p">)</span><span class="o">+</span>
+<span class="nf">xlab</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">)</span><span class="o">+</span>
+<span class="nf">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#39;none&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio"><label class="tab-label" for="tab-set--15-input--1">Output</label><div class="tab-content docutils container">
+<figure class="align-default">
+<img alt="../../_images/ttestgraph.png" src="../../_images/ttestgraph.png" />
+</figure>
+</div>
+</div>
+<p>Are there any outliers?
+We can display these specific rows with the identify_outliers() function from the {rstatix} package</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="nf">group_by</span><span class="p">(</span><span class="n">sex</span><span class="p">)</span><span class="o">%&gt;%</span>
+<span class="nf">identify_outliers</span><span class="p">(</span><span class="n">body_mass_g</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--17-input--2" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## 0 rows | 1-4 of 10 columns
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can check to see if the two samples have equal variance
+by performing a leveneTest, inside the functions we put a formula of the structure
+‘continuous_variable ~ grouping’.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--18-input--1" name="tab-set--18" type="radio"><label class="tab-label" for="tab-set--18-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">leveneTest</span><span class="p">(</span><span class="n">body_mass_g</span><span class="o">~</span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">penguins</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Levene’s test has a null hypothesis that the variances are equal,
+based on the results of our test we reject the null hypothesis.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--19-input--1" name="tab-set--19" type="radio"><label class="tab-label" for="tab-set--19-input--1">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## #  Levene&#39;s Test for Homogeneity of Variance (center = median)
+##        Df F value  Pr(&gt;F)
+##group   1  6.0586 0.01435 *
+##  331
+## Signif. codes:
+## 0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will use the <em>t.test()</em> to compare the two means, the default for the function is to assume variances are not equal,
+and it performs a Welch Two Sample t-test.
+If we have equal variance we have to set the argument var.equal=TRUE which would run a Two-sample t-test.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--20-input--1" name="tab-set--20" type="radio"><label class="tab-label" for="tab-set--20-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">t.test</span><span class="p">(</span><span class="n">penguins</span><span class="o">$</span><span class="n">body_mass_g</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">penguins</span><span class="o">$</span><span class="n">sex</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--20-input--2" name="tab-set--20" type="radio"><label class="tab-label" for="tab-set--20-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## #  Welch Two Sample t-test
+## data:  penguins$body_mass_g by penguins$sex
+##t = -8.5545, df = 323.9, p-value =
+##4.794e-16
+## alternative hypothesis: true difference in means
+##  between group female and group male is not equal to 0
+## 95 percent confidence interval:
+## -840.5783 -526.2453
+## sample estimates:
+## mean in group female   mean in group male
+## 3862.273             4545.685
+</pre></div>
+</div>
+</div>
+</div>
+<p>Effect Size. T-test conventional effect sizes:
+0.2 (small effect), 0.5 (moderate effect) and 0.8 (large effect).
+For Welch t-test use ‘var.equal=FALSE’</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--21-input--1" name="tab-set--21" type="radio"><label class="tab-label" for="tab-set--21-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="nf">cohens_d</span><span class="p">(</span><span class="n">body_mass_g</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">var.equal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--21-input--2" name="tab-set--21" type="radio"><label class="tab-label" for="tab-set--21-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 1 x 7
+## .y.            group1  group2  effsize     n1   n2    magnitude
+## &lt;chr&gt;           &lt;chr&gt;  &lt;chr&gt;   &lt;dbl&gt;       &lt;int&gt; &lt;int&gt;  &lt;ord&gt;
+##1 body_mass_g   female  male    -0.9369085      165     168     large
+          ## # 1 row
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="anova-comparing-means-from-multiple-groups">
+<h2>ANOVA: Comparing means from multiple groups<a class="headerlink" href="#anova-comparing-means-from-multiple-groups" title="Permalink to this heading">¶</a></h2>
+<p>I would like to see if there are differences in the bill length between species.</p>
+<p>We can start with a visualization</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--23-input--1" name="tab-set--23" type="radio"><label class="tab-label" for="tab-set--23-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">species</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bill_length_mm</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">geom_boxplot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--22-input--1" name="tab-set--22" type="radio"><label class="tab-label" for="tab-set--22-input--1">Output</label><div class="tab-content docutils container">
+<figure class="align-default">
+<img alt="../../_images/anovaplot.png" src="../../_images/anovaplot.png" />
+</figure>
+</div>
+</div>
+<p>We can use the <em>aov()</em> function to run our anova.  We will check our model assumptions after we fit the model.
+You want to assign the model fit to a variable name because we will use it to get the statistics and check assumptions.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--24-input--1" name="tab-set--24" type="radio"><label class="tab-label" for="tab-set--24-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">anova</span><span class="o">&lt;-</span><span class="nf">aov</span><span class="p">(</span><span class="n">bill_length_mm</span><span class="o">~</span><span class="n">species</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">penguins</span><span class="p">)</span>
+
+<span class="nf">summary</span><span class="p">(</span><span class="n">anova</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--24-input--2" name="tab-set--24" type="radio"><label class="tab-label" for="tab-set--24-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## #            Df Sum Sq Mean Sq F value Pr(&gt;F)
+## species       2   7194    3597   410.6 &lt;2e-16 ***
+## Residuals   339   2970       9
+## Signif. codes:
+## 0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+## 2 observations deleted due to missingness
+</pre></div>
+</div>
+</div>
+</div>
+<p>Post-Hoc analysis to see where the differences are</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--25-input--1" name="tab-set--25" type="radio"><label class="tab-label" for="tab-set--25-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">Tukey_test</span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">TukeyHSD</span><span class="p">(</span><span class="n">anova</span><span class="p">)</span>
+<span class="n">Tukey_test</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--25-input--2" name="tab-set--25" type="radio"><label class="tab-label" for="tab-set--25-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## #  Tukey multiple comparisons of means
+## 95% family-wise confidence level
+## Fit: aov(formula = bill_length_mm ~ species, data = penguins)
+## $species
+##                       diff       lwr        upr     p adj
+## Chinstrap-Adelie 10.042433  9.024859 11.0600064 0.0000000
+## Gentoo-Adelie     8.713487  7.867194  9.5597807 0.0000000
+## Gentoo-Chinstrap -1.328945 -2.381868 -0.2760231 0.0088993
+</pre></div>
+</div>
+</div>
+</div>
+<p>The tidyverse has a package called broom (we loaded this in earlier) and broom has a function
+called <em>tidy()</em> that we can use to create a cleaner table.
+We can also highlight significant differences with *</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--26-input--1" name="tab-set--26" type="radio"><label class="tab-label" for="tab-set--26-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">TukeyTidy</span><span class="o">&lt;-</span><span class="nf">TukeyHSD</span><span class="p">(</span><span class="n">anova</span><span class="p">)</span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">tidy</span><span class="p">()</span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="nf">mutate</span><span class="p">(</span><span class="n">sig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">case_when</span><span class="p">(</span><span class="n">adj.p.value</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">.</span><span class="m">05</span><span class="o">~</span><span class="w"> </span><span class="s">&#39;*&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">TRUE</span><span class="w"> </span><span class="o">~</span><span class="s">&#39;&#39;</span><span class="p">))</span>
+<span class="n">TukeyTidy</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--26-input--2" name="tab-set--26" type="radio"><label class="tab-label" for="tab-set--26-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 3 x 8
+## term contrast null.value estimate conf.low conf.high  adj.p.value  sig
+## &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt;       &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;       &lt;chr&gt;
+## species        Chinstrap-Adelie        0       10.042433       9.024859        11.0600064      0.000000000     *
+## species        Gentoo-Adelie   0       8.713487        7.867194        9.5597807       0.000000000     *
+## species        Gentoo-Chinstrap        0       -1.328945       -2.381868       -0.2760231      0.008899333     *
+## 1-1 of 3 rows
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also get a plot
+.. tab:: R</p>
+<blockquote>
+<div><div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">par</span><span class="p">(</span><span class="n">mar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">))</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">Tukey_test</span><span class="p">,</span><span class="w"> </span><span class="n">las</span><span class="o">=</span><span class="m">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--27-input--1" name="tab-set--27" type="radio"><label class="tab-label" for="tab-set--27-input--1">Output</label><div class="tab-content docutils container">
+<figure class="align-default">
+<img alt="../../_images/tukey.png" src="../../_images/tukey.png" />
+</figure>
+</div>
+</div>
+<p>Checking the homogeneity of variance assumption</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--28-input--1" name="tab-set--28" type="radio"><label class="tab-label" for="tab-set--28-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">leveneTest</span><span class="p">(</span><span class="n">bill_length_mm</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">species</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">penguins</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--28-input--2" name="tab-set--28" type="radio"><label class="tab-label" for="tab-set--28-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # Levene&#39;s Test for Homogeneity of Variance (center = median)
+##         Df F value Pr(&gt;F)
+## group   2  2.2425 0.1078
+## #        339
+</pre></div>
+</div>
+</div>
+</div>
+<p>Checking the normality assumption</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--30-input--1" name="tab-set--30" type="radio"><label class="tab-label" for="tab-set--30-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="n">anova</span><span class="p">,</span><span class="m">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--29-input--1" name="tab-set--29" type="radio"><label class="tab-label" for="tab-set--29-input--1">Output</label><div class="tab-content docutils container">
+<figure class="align-default">
+<img alt="../../_images/anovaresid.png" src="../../_images/anovaresid.png" />
+</figure>
+</div>
+</div>
+<p>or we can use the Shapiro_Wilk test</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--31-input--1" name="tab-set--31" type="radio"><label class="tab-label" for="tab-set--31-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">anova_residuals</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">residuals</span><span class="p">(</span><span class="n">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">anova</span><span class="w"> </span><span class="p">)</span>
+<span class="nf">shapiro.test</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">anova_residuals</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--31-input--2" name="tab-set--31" type="radio"><label class="tab-label" for="tab-set--31-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # Shapiro-Wilk normality test
+## data:  anova_residuals
+## W = 0.98903, p-value = 0.01131
+</pre></div>
+</div>
+</div>
+</div>
+<p>The non-parametric alternative to one-way ANOVA is Kruskal-Wallis rank sum test,
+which can be used when ANNOVA assumptions are not met.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--32-input--1" name="tab-set--32" type="radio"><label class="tab-label" for="tab-set--32-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">kruskal.test</span><span class="p">(</span><span class="n">bill_length_mm</span><span class="o">~</span><span class="n">species</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">penguins</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--32-input--2" name="tab-set--32" type="radio"><label class="tab-label" for="tab-set--32-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # Kruskal-Wallis rank sum test
+## data:  bill_length_mm by species
+## Kruskal-Wallis chi-squared = 244.14, df = 2, p-value &lt;
+## 2.2e-16
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="linear-regression">
+<h2>Linear Regression<a class="headerlink" href="#linear-regression" title="Permalink to this heading">¶</a></h2>
+<p>A linear regression can be calculated the command lm.
+This function takes an R formula Y ~ X where Y is the dependent or outcome variable
+and X is the independent or predictor variable.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--33-input--1" name="tab-set--33" type="radio"><label class="tab-label" for="tab-set--33-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model1</span><span class="o">&lt;-</span><span class="nf">lm</span><span class="p">(</span><span class="n">body_mass_g</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">bill_length_mm</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">penguins</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--33-input--2" name="tab-set--33" type="radio"><label class="tab-label" for="tab-set--33-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # Call:
+## lm(formula = body_mass_g ~ bill_length_mm, data = penguins)
+
+## # Residuals:
+##     Min       1Q   Median       3Q      Max
+## -1762.08  -446.98    32.59   462.31  1636.86
+## Coefficients:
+      ##         Estimate Std. Error t value Pr(&gt;|t|)
+## (Intercept)     362.307    283.345   1.279    0.202
+## bill_length_mm   87.415      6.402  13.654   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+## Residual standard error: 645.4 on 340 degrees of freedom
+##  (2 observations deleted due to missingness)
+## Multiple R-squared:  0.3542,   Adjusted R-squared:  0.3523
+## F-statistic: 186.4 on 1 and 340 DF,  p-value: &lt; 2.2e-16
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can add more variables</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--34-input--1" name="tab-set--34" type="radio"><label class="tab-label" for="tab-set--34-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">body_mass_g</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">bill_depth_mm</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">flipper_length_mm</span><span class="p">,</span><span class="w"> </span><span class="n">penguins</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--34-input--2" name="tab-set--34" type="radio"><label class="tab-label" for="tab-set--34-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## Call:
+## lm(formula = body_mass_g ~ bill_depth_mm + flipper_length_mm,
+## data = penguins)
+
+## Residuals:
+## Min       1Q   Median       3Q      Max
+## -1029.78  -271.45   -23.58   245.15  1275.97
+
+## Coefficients:
+##                   Estimate Std. Error t value Pr(&gt;|t|)
+## (Intercept)       -6541.907    540.751 -12.098   &lt;2e-16 ***
+## bill_depth_mm        22.634     13.280   1.704   0.0892 .
+## flipper_length_mm    51.541      1.865  27.635   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+## Residual standard error: 393.2 on 339 degrees of freedom
+##   (2 observations deleted due to missingness)
+## Multiple R-squared:  0.761,    Adjusted R-squared:  0.7596
+## F-statistic: 539.8 on 2 and 339 DF,  p-value: &lt; 2.2e-16
+</pre></div>
+</div>
+</div>
+</div>
+<p>…and compare our models with the ‘tab_model’ function</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--35-input--1" name="tab-set--35" type="radio"><label class="tab-label" for="tab-set--35-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">tab_model</span><span class="p">(</span><span class="n">model1</span><span class="p">,</span><span class="w"> </span><span class="n">model2</span><span class="p">,</span><span class="w"> </span><span class="n">dv.labels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Model 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Model 2&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Linear Regression assumptions</p>
+<p>-Residuals are normally distributed. The plot()function will give us 4 diagnostic plots</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--41-input--1" name="tab-set--41" type="radio"><label class="tab-label" for="tab-set--41-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="o">&lt;-</span><span class="nf">residuals</span><span class="p">(</span><span class="n">model2</span><span class="p">)</span>
+<span class="n">res</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.data.frame</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="nf">aes</span><span class="p">(</span><span class="n">res</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="nf">geom_histogram</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="s">&#39;blue&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="m">0.5</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="m">15</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">model2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--40-input--1" name="tab-set--40" type="radio"><label class="tab-label" for="tab-set--40-input--1">Output</label><div class="tab-content docutils container">
+<figure class="align-default">
+<img alt="../../_images/histresid.png" src="../../_images/histresid.png" />
+</figure>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--39-input--1" name="tab-set--39" type="radio"><label class="tab-label" for="tab-set--39-input--1">Output</label><div class="tab-content docutils container">
+<figure class="align-default">
+<img alt="../../_images/residfitted.png" src="../../_images/residfitted.png" />
+</figure>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--38-input--1" name="tab-set--38" type="radio"><label class="tab-label" for="tab-set--38-input--1">Output</label><div class="tab-content docutils container">
+<figure class="align-default">
+<img alt="../../_images/qqresid.png" src="../../_images/qqresid.png" />
+</figure>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--37-input--1" name="tab-set--37" type="radio"><label class="tab-label" for="tab-set--37-input--1">Output</label><div class="tab-content docutils container">
+<figure class="align-default">
+<img alt="../../_images/scalelocation.png" src="../../_images/scalelocation.png" />
+</figure>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--36-input--1" name="tab-set--36" type="radio"><label class="tab-label" for="tab-set--36-input--1">Output</label><div class="tab-content docutils container">
+<figure class="align-default">
+<img alt="../../_images/residleverage.png" src="../../_images/residleverage.png" />
+</figure>
+</div>
+</div>
+<p>We can also run the Shapiro test</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--42-input--1" name="tab-set--42" type="radio"><label class="tab-label" for="tab-set--42-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">shapiro.test</span><span class="p">(</span><span class="n">model2</span><span class="o">$</span><span class="n">residuals</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--42-input--2" name="tab-set--42" type="radio"><label class="tab-label" for="tab-set--42-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # Shapiro-Wilk normality test
+## data:  model2$residuals
+## W = 0.99353, p-value = 0.1506
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Homoscedasticity. The variance of the residual in a regression model is constant.</p></li>
+</ul>
+<p>We can check the Scale-Location plot or use the Breusch-Pagan test
+(null hypothesis: heteroskedasticity is not present)</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--43-input--1" name="tab-set--43" type="radio"><label class="tab-label" for="tab-set--43-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">bptest</span><span class="p">(</span><span class="n">model2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--43-input--2" name="tab-set--43" type="radio"><label class="tab-label" for="tab-set--43-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # studentized Breusch-Pagan test
+## data:  model2
+##BP = 2.4223, df = 2, p-value = 0.2979
+</pre></div>
+</div>
+</div>
+</div>
+<p>-Multicollinearity. This issue occurs when two or more independent variables are highly correlated.
+We can use vif() to calculate the variance inflation factor. A value larger than 2.5 may be a cause for concern.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--44-input--1" name="tab-set--44" type="radio"><label class="tab-label" for="tab-set--44-input--1">R</label><div class="tab-content docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">vif</span><span class="p">(</span><span class="n">model2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--44-input--2" name="tab-set--44" type="radio"><label class="tab-label" for="tab-set--44-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## bill_depth_mm flipper_length_mm
+##     1.51718           1.51718
+</pre></div>
+</div>
+</div>
+</div>
+<p>Good resources to check out for more variations/details:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://search.library.brandeis.edu/permalink/f/1skfba6/TN_sbo_s9780596809287">R cookbook</a> by Paul Teetor</p></li>
+<li><p><a class="reference external" href="https://learningstatisticswithr.com/book/">Learning Statistics with R</a> by Danielle Navarro</p></li>
+</ul>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../text-mining/">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Text Mining with R</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../data-visualization/">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">ggplot2</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Ford Fishman
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Data Analysis</a><ul>
+<li><a class="reference internal" href="#set-up">Set up</a></li>
+<li><a class="reference internal" href="#exploring-the-data-set">Exploring the data set</a></li>
+<li><a class="reference internal" href="#correlation">Correlation</a></li>
+<li><a class="reference internal" href="#chi-squared-test">Chi-Squared test</a></li>
+<li><a class="reference internal" href="#independent-samples-t-test">Independent Samples t-test</a></li>
+<li><a class="reference internal" href="#anova-comparing-means-from-multiple-groups">ANOVA: Comparing means from multiple groups</a></li>
+<li><a class="reference internal" href="#linear-regression">Linear Regression</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=fbdbc327"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="../../_static/tabs.js?v=3ee01567"></script>
+    </body>
+</html>
