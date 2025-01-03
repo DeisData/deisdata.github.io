@@ -8,4 +8,4 @@ Machine learning
    :caption: Contents:
 
    Quick start <machine-learning/quick-start>
-   Image recognition <machine-learning/image-recognition>
+   Image recognition: Model components <machine-learning/image-recognition1>

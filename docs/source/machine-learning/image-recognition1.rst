@@ -1,5 +1,5 @@
-Image recognition with tensorflow
-=================================
+Image recognition with tensorflow: Model components
+===================================================
 
 Adapted from `Tensorflow Image Classification
 Walkthrough <https://www.tensorflow.org/tutorials/images/classification>`__.
@@ -801,7 +801,7 @@ than training accuracy.
 
 
 Our model isn’t performing particularly well. Next time, we will go over
-ways to fix it to be more accurate.
+ways to fix it to be more accurate. 
 
 Homework: TensorFlow Playground
 -------------------------------
