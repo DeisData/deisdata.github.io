@@ -1,4 +1,4 @@
-Image recognition with tensorflow: Model components
+Image recognition with Tensorflow: Model components
 ===================================================
 
 Adapted from `Tensorflow Image Classification
@@ -501,12 +501,18 @@ Here is a simplification, where we have a 2D array of zeros and ones.
 Zero is interpreted as black (no color), and one is interpreted as white
 (max color).
 
+.. image:: /_static/images/machine-learning/image-recognition/bitmap.png
+    :align: center
+
 In reality, images don’t just contain black and white pixels: they have
 pixels that values for red, green, and blue (RGB) at different
 intensities.
 
 Each pixel has 3 values for RGB intensity, combining to look like a
 single color to our eyes.
+
+.. image:: /_static/images/machine-learning/image-recognition/rgb_colors.png
+    :align: center
 
 The intensity values go from 0 through 255, which we can see in our own
 data by looking at the maximum and minimum values of an image.
@@ -527,6 +533,9 @@ data by looking at the maximum and minimum values of an image.
 
 Neural networks like input values to be small, so we transform them to
 be between 0.0 and 1.0.
+
+.. image:: /_static/images/machine-learning/image-recognition/three_d_array.png
+    :align: center
 
 Here, we test this out by create a normalization layer and then check to
 make sure the normalization works.
@@ -563,6 +572,9 @@ model <https://www.tensorflow.org/api_docs/python/tf/keras/Sequential>`__,
 which puts layers in a defined order, and feeds data through the layers
 in that order. Each layer will have a single tensor input and a single
 tensor output.
+
+.. image:: /_static/images/machine-learning/image-recognition/multi_layer_model.jpg
+    :align: center
 
 We are starting our basic model with the following layers:
 
@@ -617,10 +629,16 @@ the minimum, and smaller steps when it’s near.
 If it takes steps that are too large, however, the model may have a hard
 time finding the minimum loss due to overshooting.
 
+.. image:: /_static/images/machine-learning/image-recognition/gradient-descent-learning-rate.png
+    :align: center
+
 Reality is more complicated than this simple case. Here we show a more
 complicated gradient. It contains many places for the minimization
 process to get stuck (local minima). Therefore, making sure our step
 size is large enough to get out of local minima is also important.
+
+.. image:: /_static/images/machine-learning/image-recognition/gradient-descent-3d.png
+    :align: center
 
 We also will keep track of the accuracy of our model. This is the
 proportion of images that the model correctly classifies. The model does
