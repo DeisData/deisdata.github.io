@@ -173,9 +173,9 @@ model trained for the training and validation data.
 .. admonition:: Custom functions
 
     We have taken the code we used last time for building a figure into a
-    `custom function <https://deisdata.github.io/python/functions/>`__
-    called ``plot_results()``. This allows us to reuse this code several
-    times, without needed to type it all again.
+    :doc:`custom function </python/functions/>` called ``plot_results()``. 
+    This allows us to reuse this code several times, without needed to type 
+    it all again.
 
 .. tab:: Python
 
@@ -949,8 +949,7 @@ predict the flower type.
 
    .. container::
 
-    We define a custom function here. Please look at `this guide about
-    custom function <https://deisdata.github.io/python/functions/>`__.
+    We define a custom function here. Please look at :doc:`this guide about custom function </python/functions/>`.
 
     We use
     `tf.keras.utils.get_file() <https://www.tensorflow.org/api_docs/python/tf/keras/utils/get_file>`__

@@ -135,7 +135,7 @@ Let’s display our sample size to see how many images we’re working with.
     method (stands for global) to find files with that directory. Inside of
     the folder we downloaded, there are 5 folders, one for each type of
     flower. ``.glob('*/*.jpg')`` means “from all subfolders (\*/), grab all
-    files that end in ‘.jpg’). The”\*” is a wildcard that match any number
+    files that end in ‘.jpg’. The”\*” is a wildcard that match any number
     of characters.
 
     ``.glob()`` gives us all the file names in a ``generator``. We convert
