@@ -246,7 +246,7 @@ Building Your Model
 ===================
 
 You will use the
-```scikit-learn`` <https://scikit-learn.org/stable/index.html>`__
+`scikit-learn <https://scikit-learn.org/stable/index.html>`__
 library to create your models. When coding, this library is written as
 **sklearn**, as you will see in the sample code. Scikit-learn is easily
 the most popular library for modeling the types of data typically stored
