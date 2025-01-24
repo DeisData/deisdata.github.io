@@ -1,0 +1,1414 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Unix Shell" href="../../shell/" /><link rel="prev" title="Image recognition with Tensorflow: Model components" href="../image-recognition1/" />
+
+    <link rel="shortcut icon" href="../../_static/favicon-32x32.png"/><!-- Generated with Sphinx 7.1.2 and Furo 2024.08.06 -->
+        <title>Image recognition with Tensorflow: Improving the model - DeisData</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=302659d7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=934bd528" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../"><div class="brand">DeisData</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/DeisDatax1x_medium.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">DeisData</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search/" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../python/">Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../python/setup-install/">Setup and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/jupyter/">Jupyter notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/python-fundamentals/">Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/data-structures/">Data structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/conditionals/">Booleans and conditionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/loops/">Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/numpy/">NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/pandas/">Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/figures/">Matplotlib and seaborn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/functions/">Writing functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/stats/">Statistical tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/webscraping/">Web scraping</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../r/">R</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of R</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../r/quick-start/">Intro to R and the Tidyverse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../r/data-wrangling/">Data wrangling with the Tidyverse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../r/data-visualization/">ggplot2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../r/data-analysis/">Data Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../r/text-mining/">Text mining</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../">Machine learning</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Machine learning</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../quick-start/">Quick start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image-recognition1/">Image recognition: Model components</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Image recognition: Improving the model</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../shell/">Unix Shell</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Unix Shell</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/setup/">Bash Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/navigating/">Navigating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/alter-dir/">Altering files and directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/pipes-filters/">Pipes and filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/loops/">Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/shell-scripts/">Shell scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/search-find/">Searching and finding</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../git/">Git Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../git/setup-install/">Setup and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/quick-start/">Quick start to Git and GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/pushing/">Pushing changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/fetch-merge/">Fetch and merge from GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/git-utilities/">Git utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/forking/">Forking in GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/glossary/">Git Glossary</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../sql/">SQL</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of SQL</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/setup/">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/selecting-data/">Selecting data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/sorting-duplicates/">Sorting out and removing duplicates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/filtering/">Filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/calculating/">Calculating new values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/missing-data/">Missing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/aggregates/">Aggregates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/combining-data/">Combining data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/create-modify/">Create and modify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/glossary/">Glossary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../case-studies/">Data Services Case Studies</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../contribute/">Contribute to DeisData</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Contribute to DeisData</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/small-changes/">Small changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/rst-intro/">reStructuredText basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/structural-changes/">Structural changes</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../../_sources/machine-learning/image-recognition2.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="image-recognition-with-tensorflow-improving-the-model">
+<h1>Image recognition with Tensorflow: Improving the model<a class="headerlink" href="#image-recognition-with-tensorflow-improving-the-model" title="Permalink to this heading">¶</a></h1>
+<p>In the first session, we learned how to make a basic image recognition
+model in tensorflow, but our model performed rather poorly.</p>
+<p>Today, we’ll be going over various ways to improve our model.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">PIL</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="kn">import</span> <span class="n">keras</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras</span><span class="w"> </span><span class="kn">import</span> <span class="n">layers</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Sequential</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We’ll need to get our dataset again -&gt; images of daisies, dandelions,
+roses, sunflowers, tulips.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pathlib</span>
+<span class="n">dataset_url</span> <span class="o">=</span> <span class="s2">&quot;https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz&quot;</span>
+<span class="n">data_dir</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">get_file</span><span class="p">(</span><span class="s1">&#39;flower_photos&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="n">dataset_url</span><span class="p">,</span> <span class="n">untar</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">data_dir</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can then reload our model into Keras.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">32</span>
+<span class="n">img_height</span> <span class="o">=</span> <span class="mi">180</span>
+<span class="n">img_width</span> <span class="o">=</span> <span class="mi">180</span>
+
+<span class="n">train_ds</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">image_dataset_from_directory</span><span class="p">(</span>
+  <span class="n">data_dir</span><span class="p">,</span>
+  <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+  <span class="n">subset</span><span class="o">=</span><span class="s2">&quot;training&quot;</span><span class="p">,</span>
+  <span class="n">seed</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+  <span class="n">image_size</span><span class="o">=</span><span class="p">(</span><span class="n">img_height</span><span class="p">,</span> <span class="n">img_width</span><span class="p">),</span>
+  <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">)</span>
+
+<span class="n">val_ds</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">image_dataset_from_directory</span><span class="p">(</span>
+  <span class="n">data_dir</span><span class="p">,</span>
+  <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+  <span class="n">subset</span><span class="o">=</span><span class="s2">&quot;validation&quot;</span><span class="p">,</span>
+  <span class="n">seed</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+  <span class="n">image_size</span><span class="o">=</span><span class="p">(</span><span class="n">img_height</span><span class="p">,</span> <span class="n">img_width</span><span class="p">),</span>
+  <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">)</span>
+
+<span class="n">class_names</span> <span class="o">=</span> <span class="n">train_ds</span><span class="o">.</span><span class="n">class_names</span>
+
+<span class="n">AUTOTUNE</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">AUTOTUNE</span>
+
+<span class="n">train_ds</span> <span class="o">=</span> <span class="n">train_ds</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="n">prefetch</span><span class="p">(</span><span class="n">buffer_size</span><span class="o">=</span><span class="n">AUTOTUNE</span><span class="p">)</span>
+<span class="n">val_ds</span> <span class="o">=</span> <span class="n">val_ds</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span><span class="o">.</span><span class="n">prefetch</span><span class="p">(</span><span class="n">buffer_size</span><span class="o">=</span><span class="n">AUTOTUNE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Found 3670 files belonging to 5 classes.
+Using 2936 files for training.
+Found 3670 files belonging to 5 classes.
+Using 734 files for validation.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Our first model was built by constructing various layers that feed into
+one another. The layers so far included:</p>
+<ul class="simple">
+<li><p>rescaling our values to be between 0 and 1, rather than 0 and 255.</p></li>
+<li><p>flattening our data to be in a single dimension, rather than 3.</p></li>
+<li><p>a fully connected Dense layer that uses all pixel information</p></li>
+<li><p>another fully connected layer that makes class predictions</p></li>
+</ul>
+<p>We then compile our model and pick an optimizer, a loss function, and a
+measure for us to evaluate.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num_classes</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">class_names</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">([</span>
+  <span class="n">layers</span><span class="o">.</span><span class="n">Rescaling</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mi">255</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">img_height</span><span class="p">,</span> <span class="n">img_width</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
+  <span class="n">layers</span><span class="o">.</span><span class="n">Flatten</span><span class="p">(),</span>
+  <span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+  <span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">num_classes</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span>
+              <span class="n">loss</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">SparseCategoricalCrossentropy</span><span class="p">(</span><span class="n">from_logits</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+              <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+<span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Model: &quot;sequential_1&quot;
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ rescaling_1 (Rescaling)     (None, 180, 180, 3)       0
+
+ flatten_1 (Flatten)         (None, 97200)             0
+
+ dense_2 (Dense)             (None, 32)                3110432
+
+ dense_3 (Dense)             (None, 5)                 165
+
+=================================================================
+Total params: 3,110,597
+Trainable params: 3,110,597
+Non-trainable params: 0
+_________________________________________________________________
+</pre></div>
+</div>
+</div>
+</div>
+<p>We then run our model for 10 epochs.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span><span class="o">=</span><span class="mi">10</span>
+<span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+<span class="n">train_ds</span><span class="p">,</span>
+<span class="n">validation_data</span><span class="o">=</span><span class="n">val_ds</span><span class="p">,</span>
+<span class="n">epochs</span><span class="o">=</span><span class="n">epochs</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Epoch 1/10
+92/92 [==============================] - 11s 92ms/step - loss: 2.7531 - accuracy: 0.1952 - val_loss: 1.5996 - val_accuracy: 0.2439
+Epoch 2/10
+92/92 [==============================] - 7s 72ms/step - loss: 1.6110 - accuracy: 0.2466 - val_loss: 1.6066 - val_accuracy: 0.2398
+Epoch 3/10
+92/92 [==============================] - 7s 82ms/step - loss: 1.6054 - accuracy: 0.2459 - val_loss: 1.6048 - val_accuracy: 0.2398
+Epoch 4/10
+92/92 [==============================] - 7s 82ms/step - loss: 1.6036 - accuracy: 0.2459 - val_loss: 1.6036 - val_accuracy: 0.2398
+Epoch 5/10
+92/92 [==============================] - 8s 88ms/step - loss: 1.6024 - accuracy: 0.2459 - val_loss: 1.6028 - val_accuracy: 0.2398
+Epoch 6/10
+92/92 [==============================] - 8s 91ms/step - loss: 1.6015 - accuracy: 0.2459 - val_loss: 1.6022 - val_accuracy: 0.2398
+Epoch 7/10
+92/92 [==============================] - 7s 80ms/step - loss: 1.6009 - accuracy: 0.2459 - val_loss: 1.6021 - val_accuracy: 0.2398
+Epoch 8/10
+92/92 [==============================] - 7s 79ms/step - loss: 1.6005 - accuracy: 0.2459 - val_loss: 1.6019 - val_accuracy: 0.2398
+Epoch 9/10
+92/92 [==============================] - 7s 79ms/step - loss: 1.6003 - accuracy: 0.2459 - val_loss: 1.6018 - val_accuracy: 0.2398
+Epoch 10/10
+92/92 [==============================] - 7s 79ms/step - loss: 1.6002 - accuracy: 0.2459 - val_loss: 1.6017 - val_accuracy: 0.2398
+</pre></div>
+</div>
+</div>
+</div>
+<p>We then plotted the model, showing loss and accuracy over time as the
+model trained for the training and validation data.</p>
+<div class="admonition-custom-functions admonition">
+<p class="admonition-title">Custom functions</p>
+<p>We have taken the code we used last time for building a figure into a
+<a class="reference internal" href="../../python/functions/"><span class="doc">custom function</span></a> called <code class="docutils literal notranslate"><span class="pre">plot_results()</span></code>.
+This allows us to reuse this code several times, without needed to type
+it all again.</p>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_results</span><span class="p">(</span><span class="n">history</span><span class="p">):</span>
+    <span class="n">acc</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">]</span>
+    <span class="n">val_acc</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_accuracy&#39;</span><span class="p">]</span>
+
+    <span class="n">loss</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">]</span>
+    <span class="n">val_loss</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_loss&#39;</span><span class="p">]</span>
+
+    <span class="n">epochs_range</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">epochs_range</span><span class="p">,</span> <span class="n">acc</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Training Accuracy&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">epochs_range</span><span class="p">,</span> <span class="n">val_acc</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Validation Accuracy&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Training and Validation Accuracy&#39;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">epochs_range</span><span class="p">,</span> <span class="n">loss</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Training Loss&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">epochs_range</span><span class="p">,</span> <span class="n">val_loss</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Validation Loss&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Training and Validation Loss&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plot_results</span><span class="p">(</span><span class="n">history</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">Output</label><div class="tab-content docutils container">
+<img alt="../../_images/training-validation-1.png" class="align-center" src="../../_images/training-validation-1.png" />
+</div>
+</div>
+<p>By the end of the session, we will produce a model that has an accuracy
+of approximately 75% that looks like this:</p>
+<img alt="../../_images/good_training.png" class="align-center" src="../../_images/good_training.png" />
+<section id="model-complexity">
+<h2>Model complexity<a class="headerlink" href="#model-complexity" title="Permalink to this heading">¶</a></h2>
+<p>Our original model had 32 nodes in the primary Dense layer. We can
+increase the number of nodes to try to capture more complicated
+relationships in our image data.</p>
+<p>In this new model, we have 128 nodes in the first Dense layer.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">([</span>
+    <span class="n">layers</span><span class="o">.</span><span class="n">Rescaling</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mi">255</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">img_height</span><span class="p">,</span> <span class="n">img_width</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
+    <span class="n">layers</span><span class="o">.</span><span class="n">Flatten</span><span class="p">(),</span>
+    <span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+    <span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">num_classes</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span>
+              <span class="n">loss</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">SparseCategoricalCrossentropy</span><span class="p">(</span><span class="n">from_logits</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+              <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+<span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+
+<span class="n">epochs</span><span class="o">=</span><span class="mi">10</span>
+    <span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+    <span class="n">train_ds</span><span class="p">,</span>
+    <span class="n">validation_data</span><span class="o">=</span><span class="n">val_ds</span><span class="p">,</span>
+    <span class="n">epochs</span><span class="o">=</span><span class="n">epochs</span>
+<span class="p">)</span>
+
+<span class="n">plot_results</span><span class="p">(</span><span class="n">history</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--7-input--2" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Model: &quot;sequential_2&quot;
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ rescaling_2 (Rescaling)     (None, 180, 180, 3)       0
+
+ flatten_2 (Flatten)         (None, 97200)             0
+
+ dense_4 (Dense)             (None, 128)               12441728
+
+ dense_5 (Dense)             (None, 5)                 645
+
+=================================================================
+Total params: 12,442,373
+Trainable params: 12,442,373
+Non-trainable params: 0
+_________________________________________________________________
+Epoch 1/10
+92/92 [==============================] - 14s 146ms/step - loss: 7.5241 - accuracy: 0.3038 - val_loss: 1.7235 - val_accuracy: 0.3597
+Epoch 2/10
+92/92 [==============================] - 12s 134ms/step - loss: 1.7192 - accuracy: 0.3822 - val_loss: 1.9573 - val_accuracy: 0.3529
+Epoch 3/10
+92/92 [==============================] - 13s 141ms/step - loss: 1.4352 - accuracy: 0.4523 - val_loss: 1.8062 - val_accuracy: 0.3910
+Epoch 4/10
+92/92 [==============================] - 13s 137ms/step - loss: 1.6018 - accuracy: 0.4452 - val_loss: 1.5387 - val_accuracy: 0.4169
+Epoch 5/10
+92/92 [==============================] - 12s 131ms/step - loss: 1.3087 - accuracy: 0.5133 - val_loss: 2.5156 - val_accuracy: 0.3406
+Epoch 6/10
+92/92 [==============================] - 13s 143ms/step - loss: 1.2992 - accuracy: 0.5221 - val_loss: 1.6486 - val_accuracy: 0.3924
+Epoch 7/10
+92/92 [==============================] - 14s 148ms/step - loss: 1.1644 - accuracy: 0.5640 - val_loss: 1.4594 - val_accuracy: 0.4292
+Epoch 8/10
+92/92 [==============================] - 13s 144ms/step - loss: 1.0563 - accuracy: 0.6008 - val_loss: 1.3974 - val_accuracy: 0.4673
+Epoch 9/10
+92/92 [==============================] - 13s 139ms/step - loss: 1.1096 - accuracy: 0.5838 - val_loss: 1.4080 - val_accuracy: 0.4537
+Epoch 10/10
+92/92 [==============================] - 13s 141ms/step - loss: 1.0183 - accuracy: 0.6233 - val_loss: 1.5409 - val_accuracy: 0.4060
+</pre></div>
+</div>
+</div>
+</div>
+<img alt="../../_images/training-validation-2.png" class="align-center" src="../../_images/training-validation-2.png" />
+</section>
+<section id="convolutional-layer">
+<h2>Convolutional layer<a class="headerlink" href="#convolutional-layer" title="Permalink to this heading">¶</a></h2>
+<p>Having more nodes helps, but our model performance is still poor. Dense
+layers ignore the dimensional and structural parts of a image -&gt; which
+are the values of the pixels nearby?</p>
+<p>To consider this dimensional aspect of image data, we need to add an
+additional layer called a <strong>convolutional layer</strong>. Convolutional layers
+look for patterns of pixels across small portions of our image, such as
+vertical or horizontal lines. These filters are passed over the image in
+an overlapping fashion to pick out where they occur. Below is an example
+of a particular filter called an embossing filter.</p>
+<img alt="../../_images/emboss_filter.png" class="align-center" src="../../_images/emboss_filter.png" />
+<img alt="../../_images/Emboss_example.jpg" class="align-center" src="../../_images/Emboss_example.jpg" />
+<div class="admonition-more-on-our-layers admonition">
+<p class="admonition-title">More on our layers</p>
+<p>We use
+<a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/Rescaling">layers.Rescaling()</a>
+to create a convolutional layer.</p>
+<p>We’ll start by applying 16 filters to our 3 RGB channels.
+<code class="docutils literal notranslate"><span class="pre">padding=same</span></code> just makes sure the output for each filter is the same
+size as each image. We’ll use the same activation function as for the
+Dense layer, as well.</p>
+<p>After the convolutional layer, we’ll add a <strong>max pooling layer</strong> with
+<a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/MaxPooling2D">layers.MaxPooling2D()</a>.
+Max pooling layers will summarize parts of the image for each filter,
+saying how strongly the filter appeared in each region of the image.</p>
+<img alt="../../_images/MaxpoolSample2.png" class="align-center" src="../../_images/MaxpoolSample2.png" />
+<p>We’ll also keep our Dense layer, and feed the output of the
+convolutional layer to it.</p>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">([</span>
+  <span class="n">layers</span><span class="o">.</span><span class="n">Rescaling</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mi">255</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">img_height</span><span class="p">,</span> <span class="n">img_width</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
+  <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+  <span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling2D</span><span class="p">(),</span>
+  <span class="n">layers</span><span class="o">.</span><span class="n">Flatten</span><span class="p">(),</span>
+  <span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+  <span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">num_classes</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span>
+              <span class="n">loss</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">SparseCategoricalCrossentropy</span><span class="p">(</span><span class="n">from_logits</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+              <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+<span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--9-input--2" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Model: &quot;sequential_3&quot;
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ rescaling_3 (Rescaling)     (None, 180, 180, 3)       0
+
+ conv2d (Conv2D)             (None, 180, 180, 16)      448
+
+ max_pooling2d (MaxPooling2D  (None, 90, 90, 16)       0
+ )
+
+ flatten_3 (Flatten)         (None, 129600)            0
+
+ dense_6 (Dense)             (None, 128)               16588928
+
+ dense_7 (Dense)             (None, 5)                 645
+
+=================================================================
+Total params: 16,590,021
+Trainable params: 16,590,021
+Non-trainable params: 0
+_________________________________________________________________
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span><span class="o">=</span><span class="mi">10</span>
+<span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+  <span class="n">train_ds</span><span class="p">,</span>
+  <span class="n">validation_data</span><span class="o">=</span><span class="n">val_ds</span><span class="p">,</span>
+  <span class="n">epochs</span><span class="o">=</span><span class="n">epochs</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--8-input--2" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Epoch 1/10
+92/92 [==============================] - 23s 248ms/step - loss: 2.2693 - accuracy: 0.4077 - val_loss: 1.1336 - val_accuracy: 0.5409
+Epoch 2/10
+92/92 [==============================] - 22s 241ms/step - loss: 0.9376 - accuracy: 0.6352 - val_loss: 1.1416 - val_accuracy: 0.5286
+Epoch 3/10
+92/92 [==============================] - 22s 239ms/step - loss: 0.6816 - accuracy: 0.7694 - val_loss: 1.0825 - val_accuracy: 0.5736
+Epoch 4/10
+92/92 [==============================] - 23s 247ms/step - loss: 0.4227 - accuracy: 0.8815 - val_loss: 1.0544 - val_accuracy: 0.5926
+Epoch 5/10
+92/92 [==============================] - 24s 258ms/step - loss: 0.2387 - accuracy: 0.9496 - val_loss: 1.1503 - val_accuracy: 0.5913
+Epoch 6/10
+92/92 [==============================] - 23s 250ms/step - loss: 0.1448 - accuracy: 0.9751 - val_loss: 1.1923 - val_accuracy: 0.5886
+Epoch 7/10
+92/92 [==============================] - 24s 264ms/step - loss: 0.0867 - accuracy: 0.9901 - val_loss: 1.3246 - val_accuracy: 0.5586
+Epoch 8/10
+92/92 [==============================] - 23s 246ms/step - loss: 0.0580 - accuracy: 0.9942 - val_loss: 1.2783 - val_accuracy: 0.5599
+Epoch 9/10
+92/92 [==============================] - 24s 260ms/step - loss: 0.0311 - accuracy: 0.9980 - val_loss: 1.3972 - val_accuracy: 0.5599
+Epoch 10/10
+92/92 [==============================] - 25s 275ms/step - loss: 0.0223 - accuracy: 0.9986 - val_loss: 1.4029 - val_accuracy: 0.5899
+</pre></div>
+</div>
+</div>
+</div>
+<p>This model still performs less than optimally, but more consistently
+overall.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot_results</span><span class="p">(</span><span class="n">history</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--1">Output</label><div class="tab-content docutils container">
+<img alt="../../_images/training-validation-3.png" class="align-center" src="../../_images/training-validation-3.png" />
+</div>
+</div>
+</section>
+<section id="adding-more-layers">
+<h2>Adding more layers<a class="headerlink" href="#adding-more-layers" title="Permalink to this heading">¶</a></h2>
+<p>A single convolutional layer can pick simple parts of images, like lines
+or curves. However, if we feed the output from one convolutional layer
+to a new convolutional layer, the model can start to identify pieces of
+the image together. Lines can combine to be the ovals, which can combine
+to be the petals of a flower by the time we reach a third layer. By
+looking at combinations of simple parts of an image, the model becomes
+capable of identifying complex components.</p>
+<p>We do want to add a max pooling layer after every convolutional layer to
+help summarize as our model grows increasingly complex.</p>
+<img alt="../../_images/neural_net_layers.jpeg" class="align-center" src="../../_images/neural_net_layers.jpeg" />
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">([</span>
+<span class="n">layers</span><span class="o">.</span><span class="n">Rescaling</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mi">255</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">img_height</span><span class="p">,</span> <span class="n">img_width</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
+<span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+<span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling2D</span><span class="p">(),</span>
+<span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+<span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling2D</span><span class="p">(),</span>
+<span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+<span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling2D</span><span class="p">(),</span>
+<span class="n">layers</span><span class="o">.</span><span class="n">Flatten</span><span class="p">(),</span>
+<span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+<span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">num_classes</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span>
+              <span class="n">loss</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">SparseCategoricalCrossentropy</span><span class="p">(</span><span class="n">from_logits</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+              <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+<span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--12-input--2" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Model: &quot;sequential_5&quot;
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ rescaling_5 (Rescaling)     (None, 180, 180, 3)       0
+
+ conv2d_4 (Conv2D)           (None, 180, 180, 16)      448
+
+ max_pooling2d_4 (MaxPooling  (None, 90, 90, 16)       0
+ 2D)
+
+ conv2d_5 (Conv2D)           (None, 90, 90, 32)        4640
+
+ max_pooling2d_5 (MaxPooling  (None, 45, 45, 32)       0
+ 2D)
+
+ conv2d_6 (Conv2D)           (None, 45, 45, 64)        18496
+
+ max_pooling2d_6 (MaxPooling  (None, 22, 22, 64)       0
+ 2D)
+
+ flatten_5 (Flatten)         (None, 30976)             0
+
+ dense_10 (Dense)            (None, 128)               3965056
+
+ dense_11 (Dense)            (None, 5)                 645
+
+=================================================================
+Total params: 3,989,285
+Trainable params: 3,989,285
+Non-trainable params: 0
+_________________________________________________________________
+</pre></div>
+</div>
+</div>
+</div>
+<p>Fit same model as last time.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio"><label class="tab-label" for="tab-set--15-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span><span class="o">=</span><span class="mi">10</span>
+    <span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+    <span class="n">train_ds</span><span class="p">,</span>
+    <span class="n">validation_data</span><span class="o">=</span><span class="n">val_ds</span><span class="p">,</span>
+    <span class="n">epochs</span><span class="o">=</span><span class="n">epochs</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--15-input--2" name="tab-set--15" type="radio"><label class="tab-label" for="tab-set--15-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Epoch 1/10
+92/92 [==============================] - 31s 333ms/step - loss: 1.3661 - accuracy: 0.4544 - val_loss: 1.0383 - val_accuracy: 0.5722
+Epoch 2/10
+92/92 [==============================] - 35s 379ms/step - loss: 0.9859 - accuracy: 0.6148 - val_loss: 0.9836 - val_accuracy: 0.6253
+Epoch 3/10
+92/92 [==============================] - 31s 332ms/step - loss: 0.8168 - accuracy: 0.6826 - val_loss: 0.9336 - val_accuracy: 0.6512
+Epoch 4/10
+92/92 [==============================] - 32s 345ms/step - loss: 0.6347 - accuracy: 0.7582 - val_loss: 0.9632 - val_accuracy: 0.6485
+Epoch 5/10
+92/92 [==============================] - 34s 368ms/step - loss: 0.4451 - accuracy: 0.8362 - val_loss: 1.0757 - val_accuracy: 0.6322
+Epoch 6/10
+92/92 [==============================] - 30s 331ms/step - loss: 0.3166 - accuracy: 0.8931 - val_loss: 1.1708 - val_accuracy: 0.6362
+Epoch 7/10
+92/92 [==============================] - 30s 329ms/step - loss: 0.1727 - accuracy: 0.9414 - val_loss: 1.4464 - val_accuracy: 0.6076
+Epoch 8/10
+92/92 [==============================] - 31s 335ms/step - loss: 0.1047 - accuracy: 0.9704 - val_loss: 1.6272 - val_accuracy: 0.6185
+Epoch 9/10
+92/92 [==============================] - 33s 358ms/step - loss: 0.0638 - accuracy: 0.9847 - val_loss: 1.6699 - val_accuracy: 0.6512
+Epoch 10/10
+92/92 [==============================] - 28s 309ms/step - loss: 0.0253 - accuracy: 0.9959 - val_loss: 1.8831 - val_accuracy: 0.6662
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot_results</span><span class="p">(</span><span class="n">history</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--1">Output</label><div class="tab-content docutils container">
+<img alt="../../_images/training-validation-4.png" class="align-center" src="../../_images/training-validation-4.png" />
+</div>
+</div>
+<p>Our model is starting to perform a lot better, with our validation
+accuracy above 60%. We can see that training accuracy is actually nearly
+perfect however, and our validation loss is actually becoming worse over
+time.</p>
+<p>This pattern is consistent with <strong>overfitting</strong>. This occurs when the
+model becomes excellent at predicting the training data, but the
+predictions don’t generalize as well to new data.</p>
+<p>You can think of overfitting as memorizing an answer sheet. When the
+model gets presented new information that is not on the answer sheet, it
+does poorly.</p>
+<p>Looking at our data, how might our model be memorizing the answer sheet?</p>
+<img alt="../../_images/some_flowers.png" class="align-center" src="../../_images/some_flowers.png" />
+</section>
+<section id="dropout-layer">
+<h2>Dropout layer<a class="headerlink" href="#dropout-layer" title="Permalink to this heading">¶</a></h2>
+<p>Overfitting can be caused by having a model that is too complicated. New
+data are not likely to contain every single feature or shape in our
+training data, so making our model contain too many of these can lead to
+overfitting.</p>
+<p>To alleviate this problem, we can use a <strong>dropout layer</strong>. This randomly
+removes a proportion of the inputs to the next layer, removing some
+complexity from the model.</p>
+<img alt="../../_images/dropout_layer.jpg" class="align-center" src="../../_images/dropout_layer.jpg" />
+<div class="admonition-dropout-layers admonition">
+<p class="admonition-title">Dropout layers</p>
+<p>We can use
+<a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/Dropout">layers.Dropout()</a>
+to create a dropout layer. The proportion specified inside the function
+will determine the proportion of inputs randomly removed or deactivated
+from the previous layer.</p>
+<p>This forces the model to not rely too heavily on specific values. This
+should eliminate some overfitting that is going on.</p>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">([</span>
+  <span class="n">layers</span><span class="o">.</span><span class="n">Rescaling</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mi">255</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">img_height</span><span class="p">,</span> <span class="n">img_width</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
+  <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+  <span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling2D</span><span class="p">(),</span>
+  <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+  <span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling2D</span><span class="p">(),</span>
+  <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+  <span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling2D</span><span class="p">(),</span>
+  <span class="n">layers</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.2</span><span class="p">),</span>
+  <span class="n">layers</span><span class="o">.</span><span class="n">Flatten</span><span class="p">(),</span>
+  <span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+  <span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">num_classes</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;outputs&quot;</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span>
+              <span class="n">loss</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">SparseCategoricalCrossentropy</span><span class="p">(</span><span class="n">from_logits</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+              <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+<span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--17-input--2" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Model: &quot;sequential_6&quot;
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ rescaling_6 (Rescaling)     (None, 180, 180, 3)       0
+
+ conv2d_7 (Conv2D)           (None, 180, 180, 16)      448
+
+ max_pooling2d_7 (MaxPooling  (None, 90, 90, 16)       0
+ 2D)
+
+ conv2d_8 (Conv2D)           (None, 90, 90, 32)        4640
+
+ max_pooling2d_8 (MaxPooling  (None, 45, 45, 32)       0
+ 2D)
+
+ conv2d_9 (Conv2D)           (None, 45, 45, 64)        18496
+
+ max_pooling2d_9 (MaxPooling  (None, 22, 22, 64)       0
+ 2D)
+
+ dropout (Dropout)           (None, 22, 22, 64)        0
+
+ flatten_6 (Flatten)         (None, 30976)             0
+
+ dense_12 (Dense)            (None, 128)               3965056
+
+ outputs (Dense)             (None, 5)                 645
+
+=================================================================
+Total params: 3,989,285
+Trainable params: 3,989,285
+Non-trainable params: 0
+_________________________________________________________________
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+    <span class="n">train_ds</span><span class="p">,</span>
+    <span class="n">validation_data</span><span class="o">=</span><span class="n">val_ds</span><span class="p">,</span>
+    <span class="n">epochs</span><span class="o">=</span><span class="n">epochs</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--16-input--2" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Epoch 1/10
+92/92 [==============================] - 35s 369ms/step - loss: 1.2947 - accuracy: 0.4377 - val_loss: 1.1064 - val_accuracy: 0.5654
+Epoch 2/10
+92/92 [==============================] - 28s 306ms/step - loss: 0.9720 - accuracy: 0.6277 - val_loss: 1.0085 - val_accuracy: 0.5913
+Epoch 3/10
+92/92 [==============================] - 28s 307ms/step - loss: 0.7915 - accuracy: 0.6989 - val_loss: 0.8812 - val_accuracy: 0.6567
+Epoch 4/10
+92/92 [==============================] - 34s 374ms/step - loss: 0.5771 - accuracy: 0.7916 - val_loss: 0.8650 - val_accuracy: 0.6771
+Epoch 5/10
+92/92 [==============================] - 34s 363ms/step - loss: 0.3629 - accuracy: 0.8747 - val_loss: 1.0409 - val_accuracy: 0.6499
+Epoch 6/10
+92/92 [==============================] - 37s 406ms/step - loss: 0.2467 - accuracy: 0.9176 - val_loss: 1.2296 - val_accuracy: 0.6376
+Epoch 7/10
+92/92 [==============================] - 41s 441ms/step - loss: 0.1355 - accuracy: 0.9564 - val_loss: 1.3323 - val_accuracy: 0.6594
+Epoch 8/10
+92/92 [==============================] - 43s 467ms/step - loss: 0.1058 - accuracy: 0.9690 - val_loss: 1.3769 - val_accuracy: 0.6608
+Epoch 9/10
+92/92 [==============================] - 41s 444ms/step - loss: 0.0664 - accuracy: 0.9799 - val_loss: 1.4244 - val_accuracy: 0.6458
+Epoch 10/10
+92/92 [==============================] - 38s 419ms/step - loss: 0.0539 - accuracy: 0.9826 - val_loss: 1.7785 - val_accuracy: 0.6444
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can see that our model performance didn’t really improve over the
+last rendition. Model performance is still plateauing, meaning reducing
+model complexity was not incredibly successful.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--19-input--1" name="tab-set--19" type="radio"><label class="tab-label" for="tab-set--19-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot_results</span><span class="p">(</span><span class="n">history</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--18-input--1" name="tab-set--18" type="radio"><label class="tab-label" for="tab-set--18-input--1">Output</label><div class="tab-content docutils container">
+<img alt="../../_images/training-validation-5.png" class="align-center" src="../../_images/training-validation-5.png" />
+</div>
+</div>
+</section>
+<section id="data-augmentation">
+<h2>Data augmentation<a class="headerlink" href="#data-augmentation" title="Permalink to this heading">¶</a></h2>
+<p>Our data set is somewhat limited in size, only containing several
+thousand images. We could try to increase the sample size by grabbing
+more images of flowers from the internet, which can be time consuming.</p>
+<p>Another potential solution is <strong>data augmentation</strong>. Data augmentation
+is taking the data we already have and applying random transformations
+to data to generate more training data. For us, this means taking images
+we already have, and randomly flipping rotating, and zooming them. We
+then add these modified images to the data set.</p>
+<p>Note: the current version of tensorflow prints out a lot of warnings
+when you do data augmentation. This is a bug which you can safely
+ignore.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--20-input--1" name="tab-set--20" type="radio"><label class="tab-label" for="tab-set--20-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data_augmentation</span> <span class="o">=</span> <span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="n">layers</span><span class="o">.</span><span class="n">RandomFlip</span><span class="p">(</span><span class="s2">&quot;horizontal&quot;</span><span class="p">,</span>
+                          <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">img_height</span><span class="p">,</span>
+                                       <span class="n">img_width</span><span class="p">,</span>
+                                       <span class="mi">3</span><span class="p">)),</span>
+        <span class="n">layers</span><span class="o">.</span><span class="n">RandomRotation</span><span class="p">(</span><span class="mf">0.1</span><span class="p">),</span>
+        <span class="n">layers</span><span class="o">.</span><span class="n">RandomZoom</span><span class="p">(</span><span class="mf">0.1</span><span class="p">),</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When we visualize, the data, we can see that we have new versions of old
+images with slight zooms, flips, and rotations.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--22-input--1" name="tab-set--22" type="radio"><label class="tab-label" for="tab-set--22-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">images</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">train_ds</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+        <span class="n">augmented_images</span> <span class="o">=</span> <span class="n">data_augmentation</span><span class="p">(</span><span class="n">images</span><span class="p">)</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">augmented_images</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;uint8&quot;</span><span class="p">))</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--21-input--1" name="tab-set--21" type="radio"><label class="tab-label" for="tab-set--21-input--1">Output</label><div class="tab-content docutils container">
+<img alt="../../_images/data_augmentation.png" class="align-center" src="../../_images/data_augmentation.png" />
+</div>
+</div>
+<p>We can insert the data augmentation into the model as a first layer.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--23-input--1" name="tab-set--23" type="radio"><label class="tab-label" for="tab-set--23-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">([</span>
+    <span class="n">data_augmentation</span><span class="p">,</span>
+    <span class="n">layers</span><span class="o">.</span><span class="n">Rescaling</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mi">255</span><span class="p">),</span>
+    <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+    <span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling2D</span><span class="p">(),</span>
+    <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+    <span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling2D</span><span class="p">(),</span>
+    <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+    <span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling2D</span><span class="p">(),</span>
+    <span class="n">layers</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.2</span><span class="p">),</span>
+    <span class="n">layers</span><span class="o">.</span><span class="n">Flatten</span><span class="p">(),</span>
+    <span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+    <span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">num_classes</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;outputs&quot;</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span>
+              <span class="n">loss</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">SparseCategoricalCrossentropy</span><span class="p">(</span><span class="n">from_logits</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+              <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+<span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--23-input--2" name="tab-set--23" type="radio"><label class="tab-label" for="tab-set--23-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Model: &quot;sequential_8&quot;
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ sequential_7 (Sequential)   (None, 180, 180, 3)       0
+
+ rescaling_7 (Rescaling)     (None, 180, 180, 3)       0
+
+ conv2d_10 (Conv2D)          (None, 180, 180, 16)      448
+
+ max_pooling2d_10 (MaxPoolin  (None, 90, 90, 16)       0
+ g2D)
+
+ conv2d_11 (Conv2D)          (None, 90, 90, 32)        4640
+
+ max_pooling2d_11 (MaxPoolin  (None, 45, 45, 32)       0
+ g2D)
+
+ conv2d_12 (Conv2D)          (None, 45, 45, 64)        18496
+
+ max_pooling2d_12 (MaxPoolin  (None, 22, 22, 64)       0
+ g2D)
+
+ dropout_1 (Dropout)         (None, 22, 22, 64)        0
+
+ flatten_7 (Flatten)         (None, 30976)             0
+
+ dense_13 (Dense)            (None, 128)               3965056
+
+ outputs (Dense)             (None, 5)                 645
+
+=================================================================
+Total params: 3,989,285
+Trainable params: 3,989,285
+Non-trainable params: 0
+_________________________________________________________________
+</pre></div>
+</div>
+</div>
+</div>
+<p>We increase the number of epochs here to make sure we minimize
+validation loss.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--24-input--1" name="tab-set--24" type="radio"><label class="tab-label" for="tab-set--24-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span><span class="o">=</span><span class="mi">20</span>
+<span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+    <span class="n">train_ds</span><span class="p">,</span>
+    <span class="n">validation_data</span><span class="o">=</span><span class="n">val_ds</span><span class="p">,</span>
+    <span class="n">epochs</span><span class="o">=</span><span class="n">epochs</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--24-input--2" name="tab-set--24" type="radio"><label class="tab-label" for="tab-set--24-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Epoch 1/20
+92/92 [==============================] - 41s 428ms/step - loss: 1.2081 - accuracy: 0.4877 - val_loss: 1.1076 - val_accuracy: 0.5409
+Epoch 2/20
+92/92 [==============================] - 38s 418ms/step - loss: 1.0066 - accuracy: 0.6076 - val_loss: 0.9422 - val_accuracy: 0.6376
+Epoch 3/20
+92/92 [==============================] - 37s 403ms/step - loss: 0.8936 - accuracy: 0.6557 - val_loss: 0.9431 - val_accuracy: 0.6308
+Epoch 4/20
+92/92 [==============================] - 38s 418ms/step - loss: 0.8185 - accuracy: 0.6836 - val_loss: 0.8330 - val_accuracy: 0.6635
+Epoch 5/20
+92/92 [==============================] - 38s 417ms/step - loss: 0.7811 - accuracy: 0.7010 - val_loss: 0.8102 - val_accuracy: 0.6798
+Epoch 6/20
+92/92 [==============================] - 42s 454ms/step - loss: 0.7439 - accuracy: 0.7221 - val_loss: 0.8108 - val_accuracy: 0.7003
+Epoch 7/20
+92/92 [==============================] - 40s 436ms/step - loss: 0.6975 - accuracy: 0.7381 - val_loss: 0.8033 - val_accuracy: 0.6866
+Epoch 8/20
+92/92 [==============================] - 37s 402ms/step - loss: 0.6671 - accuracy: 0.7466 - val_loss: 0.8010 - val_accuracy: 0.6866
+Epoch 9/20
+92/92 [==============================] - 37s 405ms/step - loss: 0.6394 - accuracy: 0.7589 - val_loss: 0.7509 - val_accuracy: 0.6962
+Epoch 10/20
+92/92 [==============================] - 39s 424ms/step - loss: 0.6038 - accuracy: 0.7602 - val_loss: 0.6841 - val_accuracy: 0.7234
+Epoch 11/20
+92/92 [==============================] - 41s 441ms/step - loss: 0.5788 - accuracy: 0.7813 - val_loss: 0.7177 - val_accuracy: 0.7343
+Epoch 12/20
+92/92 [==============================] - 38s 415ms/step - loss: 0.5617 - accuracy: 0.7888 - val_loss: 0.7086 - val_accuracy: 0.7275
+Epoch 13/20
+92/92 [==============================] - 38s 411ms/step - loss: 0.5211 - accuracy: 0.8045 - val_loss: 0.7097 - val_accuracy: 0.7234
+Epoch 14/20
+92/92 [==============================] - 34s 370ms/step - loss: 0.5050 - accuracy: 0.8140 - val_loss: 0.6678 - val_accuracy: 0.7493
+Epoch 15/20
+92/92 [==============================] - 34s 375ms/step - loss: 0.4933 - accuracy: 0.8205 - val_loss: 0.7441 - val_accuracy: 0.7166
+Epoch 16/20
+92/92 [==============================] - 37s 402ms/step - loss: 0.4630 - accuracy: 0.8324 - val_loss: 0.7033 - val_accuracy: 0.7302
+Epoch 17/20
+92/92 [==============================] - 42s 463ms/step - loss: 0.4207 - accuracy: 0.8386 - val_loss: 0.6541 - val_accuracy: 0.7698
+Epoch 18/20
+92/92 [==============================] - 37s 405ms/step - loss: 0.4236 - accuracy: 0.8443 - val_loss: 0.7598 - val_accuracy: 0.7357
+Epoch 19/20
+92/92 [==============================] - 57s 626ms/step - loss: 0.3940 - accuracy: 0.8552 - val_loss: 0.7461 - val_accuracy: 0.7411
+Epoch 20/20
+92/92 [==============================] - 76s 827ms/step - loss: 0.3551 - accuracy: 0.8723 - val_loss: 0.7043 - val_accuracy: 0.7629
+</pre></div>
+</div>
+</div>
+</div>
+<p>We are now approaching validation accuracy over 70%, much better than
+where we started. However, there is still room to improve. Feel free to
+keep trying to make modifications to make the model better.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--26-input--1" name="tab-set--26" type="radio"><label class="tab-label" for="tab-set--26-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot_results</span><span class="p">(</span><span class="n">history</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--25-input--1" name="tab-set--25" type="radio"><label class="tab-label" for="tab-set--25-input--1">Output</label><div class="tab-content docutils container">
+<blockquote>
+<div><img alt="../../_images/training-validation-6.png" src="../../_images/training-validation-6.png" />
+</div></blockquote>
+</div>
+</div>
+</section>
+<section id="using-our-model-to-make-predictions">
+<h2>Using our model to make predictions<a class="headerlink" href="#using-our-model-to-make-predictions" title="Permalink to this heading">¶</a></h2>
+<p>We can try to predict flower type of an image not in the training or
+validation set. We have a function below that imports images of flowers
+from the internet (when provided a URL) and uses the model we’ve made to
+predict the flower type.</p>
+<details class="summary-more-details">
+<summary>More details</summary><div class="docutils container">
+<p>We define a custom function here. Please look at <a class="reference internal" href="../../python/functions/"><span class="doc">this guide about custom function</span></a>.</p>
+<p>We use
+<a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/utils/get_file">tf.keras.utils.get_file()</a>
+to download an image file from the internet that we specify when we run
+the function. If the file is already downloaded, it does not get
+re-downloaded.</p>
+<p><a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/utils/load_img">tf.keras.utils.load_img()</a>
+loads the image into a PIL format.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--27-input--1" name="tab-set--27" type="radio"><label class="tab-label" for="tab-set--27-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">flower_path</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">get_file</span><span class="p">(</span><span class="n">origin</span><span class="o">=</span><span class="n">flower_url</span><span class="p">)</span>
+
+<span class="n">img</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">load_img</span><span class="p">(</span>
+    <span class="n">flower_path</span><span class="p">,</span> <span class="n">target_size</span><span class="o">=</span><span class="p">(</span><span class="n">img_height</span><span class="p">,</span> <span class="n">img_width</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, we use
+<a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/utils/img_to_array">tf.keras.utils.img_to_array()</a>
+to convert our image data into an array.
+<a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/expand_dims">tf.expand_dims()</a>
+adds another dimension to the array to compensate for the fact that we
+need input data to be in a batch. This function here essentially puts
+the image into a batch of 1 so that it is usable by our pipeline.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--28-input--1" name="tab-set--28" type="radio"><label class="tab-label" for="tab-set--28-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">img_array</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">img_to_array</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">img_array</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">img_array</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># Create a batch</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can feed our new image into <code class="docutils literal notranslate"><span class="pre">model.predict()</span></code> to give scores for
+each of the five flowers. The class with the highest score is the
+prediction for that image.</p>
+<p><a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/nn/softmax">tf.nn.softmax()</a>
+converts the scores from <code class="docutils literal notranslate"><span class="pre">model.predict()</span></code> so that the total of all of
+the scores adds up to 1.0. You can read more about the softmax function
+<a class="reference external" href="https://deepai.org/machine-learning-glossary-and-terms/softmax-layer">here</a>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--29-input--1" name="tab-set--29" type="radio"><label class="tab-label" for="tab-set--29-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">img_array</span><span class="p">)</span>
+<span class="n">score</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">predictions</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We use
+<a class="reference external" href="https://www.w3schools.com/python/ref_string_format.asp">.format()</a>
+to insert values into our printed string.</p>
+<p>We can
+<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.argmax.html">np.argmax()</a>
+to get the index of the highest value in <code class="docutils literal notranslate"><span class="pre">score</span></code>. We treat the highest
+relative score as the confidence in our prediction.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--30-input--1" name="tab-set--30" type="radio"><label class="tab-label" for="tab-set--30-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span>
+    <span class="s2">&quot;This image most likely belongs to </span><span class="si">{}</span><span class="s2"> with a </span><span class="si">{:.2f}</span><span class="s2"> percent confidence.&quot;</span>
+    <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">class_names</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">score</span><span class="p">)],</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">score</span><span class="p">))</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</details><div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--31-input--1" name="tab-set--31" type="radio"><label class="tab-label" for="tab-set--31-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">predict_flower</span><span class="p">(</span><span class="n">flower_url</span><span class="p">):</span>
+
+    <span class="n">flower_path</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">get_file</span><span class="p">(</span><span class="n">origin</span><span class="o">=</span><span class="n">flower_url</span><span class="p">)</span>
+
+    <span class="n">img</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">load_img</span><span class="p">(</span>
+        <span class="n">flower_path</span><span class="p">,</span> <span class="n">target_size</span><span class="o">=</span><span class="p">(</span><span class="n">img_height</span><span class="p">,</span> <span class="n">img_width</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">img_array</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">img_to_array</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="n">img_array</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">img_array</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># Create a batch</span>
+
+    <span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">img_array</span><span class="p">)</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">predictions</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="s2">&quot;This image most likely belongs to </span><span class="si">{}</span><span class="s2"> with a </span><span class="si">{:.2f}</span><span class="s2"> percent confidence.&quot;</span>
+        <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">class_names</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">score</span><span class="p">)],</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">score</span><span class="p">))</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Our model makes some successful predictions with high confidence, but it
+also makes some incorrect predictions with reasonably high confidence as
+well.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--32-input--1" name="tab-set--32" type="radio"><label class="tab-label" for="tab-set--32-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sunflower_url</span> <span class="o">=</span> <span class="s2">&quot;https://storage.googleapis.com/download.tensorflow.org/example_images/592px-Red_sunflower.jpg&quot;</span>
+<span class="n">tulip_url</span> <span class="o">=</span> <span class="s2">&quot;https://helloartsy.com/wp-content/uploads/kids/flowers/how_to_draw_a_tulip/how-to-draw-a-tulip_step-6.jpg&quot;</span>
+<span class="n">dandelion_url1</span> <span class="o">=</span> <span class="s2">&quot;https://www.southernliving.com/thmb/lJ33cHiLHjUloZlfDX1UppUJ_DA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1176988236-2000-c8f09103b3f5459ebd1528b7ea264c4e.jpg</span>
+<span class="n">dandelion_url2</span> <span class="o">=</span> <span class="s2">&quot;https://www.minnesotawildflowers.info/udata/r9ndp23q/pd/taraxacum-officinale-3.jpg&quot;</span>
+<span class="n">rose_url</span> <span class="o">=</span> <span class="s2">&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Natural_Rose_1.jpg/3024px-Natural_Rose_1.jpg&quot;</span>
+<span class="n">daisy_url</span> <span class="o">=</span> <span class="s2">&quot;https://upload.wikimedia.org/wikipedia/commons/5/53/Belis_peremnis_-_panoramio.jpg&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SUNFLOWER&#39;</span><span class="p">)</span>
+<span class="n">predict_flower</span><span class="p">(</span><span class="n">sunflower_url</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;TULIP&#39;</span><span class="p">)</span>
+<span class="n">predict_flower</span><span class="p">(</span><span class="n">tulip_url</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DANDELION (yellow)&#39;</span><span class="p">)</span>
+<span class="n">predict_flower</span><span class="p">(</span><span class="n">dandelion_url1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DANDELION (white)&#39;</span><span class="p">)</span>
+<span class="n">predict_flower</span><span class="p">(</span><span class="n">dandelion_url2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ROSE&#39;</span><span class="p">)</span>
+<span class="n">predict_flower</span><span class="p">(</span><span class="n">rose_url</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DAISY&#39;</span><span class="p">)</span>
+<span class="n">predict_flower</span><span class="p">(</span><span class="n">daisy_url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--32-input--2" name="tab-set--32" type="radio"><label class="tab-label" for="tab-set--32-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>SUNFLOWER
+1/1 [==============================] - 0s 62ms/step
+This image most likely belongs to sunflowers with a 99.18 percent confidence.
+TULIP
+1/1 [==============================] - 0s 143ms/step
+This image most likely belongs to tulips with a 88.10 percent confidence.
+DANDELION (yellow)
+1/1 [==============================] - 0s 61ms/step
+This image most likely belongs to sunflowers with a 72.07 percent confidence.
+DANDELION (white)
+1/1 [==============================] - 0s 148ms/step
+This image most likely belongs to dandelion with a 98.70 percent confidence.
+ROSE
+1/1 [==============================] - 0s 29ms/step
+This image most likely belongs to roses with a 76.97 percent confidence.
+DAISY
+1/1 [==============================] - 0s 58ms/step
+This image most likely belongs to daisy with a 100.00 percent confidence.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../../shell/">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Unix Shell</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../image-recognition1/">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Image recognition with Tensorflow: Model components</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Ford Fishman
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Image recognition with Tensorflow: Improving the model</a><ul>
+<li><a class="reference internal" href="#model-complexity">Model complexity</a></li>
+<li><a class="reference internal" href="#convolutional-layer">Convolutional layer</a></li>
+<li><a class="reference internal" href="#adding-more-layers">Adding more layers</a></li>
+<li><a class="reference internal" href="#dropout-layer">Dropout layer</a></li>
+<li><a class="reference internal" href="#data-augmentation">Data augmentation</a></li>
+<li><a class="reference internal" href="#using-our-model-to-make-predictions">Using our model to make predictions</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=fbdbc327"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="../../_static/tabs.js?v=3ee01567"></script>
+    </body>
+</html>

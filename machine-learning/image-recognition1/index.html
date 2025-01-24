@@ -1,0 +1,1119 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Image recognition with Tensorflow: Improving the model" href="../image-recognition2/" /><link rel="prev" title="Quick start to machine learning" href="../quick-start/" />
+
+    <link rel="shortcut icon" href="../../_static/favicon-32x32.png"/><!-- Generated with Sphinx 7.1.2 and Furo 2024.08.06 -->
+        <title>Image recognition with Tensorflow: Model components - DeisData</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=302659d7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=934bd528" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../"><div class="brand">DeisData</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/DeisDatax1x_medium.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">DeisData</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search/" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../python/">Python</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Python</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../python/setup-install/">Setup and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/jupyter/">Jupyter notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/python-fundamentals/">Fundamentals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/data-structures/">Data structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/conditionals/">Booleans and conditionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/loops/">Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/numpy/">NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/pandas/">Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/figures/">Matplotlib and seaborn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/functions/">Writing functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/stats/">Statistical tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python/webscraping/">Web scraping</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../r/">R</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of R</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../r/quick-start/">Intro to R and the Tidyverse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../r/data-wrangling/">Data wrangling with the Tidyverse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../r/data-visualization/">ggplot2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../r/data-analysis/">Data Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../r/text-mining/">Text mining</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../">Machine learning</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Machine learning</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../quick-start/">Quick start</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Image recognition: Model components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../image-recognition2/">Image recognition: Improving the model</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../shell/">Unix Shell</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Unix Shell</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/setup/">Bash Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/navigating/">Navigating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/alter-dir/">Altering files and directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/pipes-filters/">Pipes and filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/loops/">Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/shell-scripts/">Shell scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../shell/search-find/">Searching and finding</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../git/">Git Version Control</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Git Version Control</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../git/setup-install/">Setup and installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/quick-start/">Quick start to Git and GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/pushing/">Pushing changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/fetch-merge/">Fetch and merge from GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/git-utilities/">Git utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/forking/">Forking in GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../git/glossary/">Git Glossary</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../sql/">SQL</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of SQL</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/setup/">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/selecting-data/">Selecting data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/sorting-duplicates/">Sorting out and removing duplicates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/filtering/">Filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/calculating/">Calculating new values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/missing-data/">Missing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/aggregates/">Aggregates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/combining-data/">Combining data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/create-modify/">Create and modify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sql/glossary/">Glossary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../case-studies/">Data Services Case Studies</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../contribute/">Contribute to DeisData</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Contribute to DeisData</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/small-changes/">Small changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/rst-intro/">reStructuredText basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/structural-changes/">Structural changes</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../../_sources/machine-learning/image-recognition1.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="image-recognition-with-tensorflow-model-components">
+<h1>Image recognition with Tensorflow: Model components<a class="headerlink" href="#image-recognition-with-tensorflow-model-components" title="Permalink to this heading">¶</a></h1>
+<p>Adapted from <a class="reference external" href="https://www.tensorflow.org/tutorials/images/classification">Tensorflow Image Classification
+Walkthrough</a>.</p>
+<p>This is the first part of the Image Recognition workshop series, where
+we will be making a first pass at a model to differentiate flower types
+by images.</p>
+<section id="machine-learning-and-deep-learning">
+<h2>Machine learning and deep learning<a class="headerlink" href="#machine-learning-and-deep-learning" title="Permalink to this heading">¶</a></h2>
+<p>Machine learning (ML) and deep learning (DL) are tools to made
+predictions. We train models up on data; they become good at making
+predictions on those data, and then we feed them new information and see
+how they do on the new information.</p>
+<a class="reference internal image-reference" href="../../_images/machine-vs-deep-learning.jpg"><img alt="../../_images/machine-vs-deep-learning.jpg" class="align-center" src="../../_images/machine-vs-deep-learning.jpg" style="width: 50%;" /></a>
+<p>We use ML and DL to model complex systems with complicated
+relationships. If your data is relatively simple, machine learning and
+deep learning are likely not the best choice; will take longer and may
+do worse than more simple models.</p>
+</section>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">¶</a></h2>
+<p>First, we import <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code> and other libraries that we will be
+using for the analysis. These libraries contain various tools not found
+in base Python that we will need.</p>
+<div class="admonition-library-info admonition">
+<p class="admonition-title">Library Info</p>
+<p><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> is used for creating figures. Numpy is used for
+mathematical operations. <code class="docutils literal notranslate"><span class="pre">PIL</span></code> is used to visualize image files (jpg,
+png, etc.).</p>
+<p>We will be using several modules within tensorflow. keras is a neural
+network framework built into tensorflow, and we will relying on it for
+the models we make.</p>
+<p><code class="docutils literal notranslate"><span class="pre">tensorflow</span></code> makes use of tensors: multi-dimension arrays of  data. If
+you are familiar with numpy arrays, tensors are similar, but optimized
+for deep learning.</p>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">PIL</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="kn">import</span> <span class="n">keras</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras</span><span class="w"> </span><span class="kn">import</span> <span class="n">layers</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Sequential</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Our first step is to download the data set and decompress it. The data
+contains 5 subdirectories for our flower types: daisy, dandelion, roses,
+sunflowers, tulips.</p>
+<div class="admonition-file-pathing-and-downloads admonition">
+<p class="admonition-title">File pathing and downloads</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pathlib</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a class="reference external" href="https://realpython.com/python-pathlib/">pathlib</a> allows us to
+use and interact with file paths.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dataset_url</span> <span class="o">=</span> <span class="s2">&quot;https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The data we are using is directly from tensorflow. It is located online
+in a compressed file format. We create a string variable <code class="docutils literal notranslate"><span class="pre">dataset_url</span></code>
+that points at the URL where the file is stored. This file can be
+uncompressed into a folder containing our image files.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data_dir</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">get_file</span><span class="p">(</span><span class="s1">&#39;flower_photos&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="n">dataset_url</span><span class="p">,</span> <span class="n">untar</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, we are using a function we imported. Inside of <code class="docutils literal notranslate"><span class="pre">tf</span></code>, there is a
+submodule called <code class="docutils literal notranslate"><span class="pre">keras</span></code>, which itself contains a submodule called
+<code class="docutils literal notranslate"><span class="pre">utils</span></code>. We are using a function called
+<a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/utils/get_file">get_file()</a>
+from
+<a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/utils">utils</a>.
+This function will download the compressed data at our URL (what we feed
+into <code class="docutils literal notranslate"><span class="pre">origin</span></code>). <code class="docutils literal notranslate"><span class="pre">flower_photos</span></code> is name we’ll give to the folder
+when we uncompress. <code class="docutils literal notranslate"><span class="pre">untar=True</span></code> makes sure that we uncompress the
+file right when we download.</p>
+<p>We save the path where we saved the folder as <code class="docutils literal notranslate"><span class="pre">data_dir</span></code>.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data_dir</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We finally convert the path to folder to a <code class="docutils literal notranslate"><span class="pre">pathlib.Path</span></code> object,
+which will allow us easy access to the files in those folders.</p>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pathlib</span>
+<span class="n">dataset_url</span> <span class="o">=</span> <span class="s2">&quot;https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz&quot;</span>
+<span class="n">data_dir</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">get_file</span><span class="p">(</span><span class="s1">&#39;flower_photos&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="n">dataset_url</span><span class="p">,</span> <span class="n">untar</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">data_dir</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s display our sample size to see how many images we’re working with.</p>
+<div class="admonition-pathing admonition">
+<p class="admonition-title">Pathing</p>
+<p>Because <code class="docutils literal notranslate"><span class="pre">data_dir</span></code> is a pathlib.Path object, we use its <code class="docutils literal notranslate"><span class="pre">.glob()</span></code>
+method (stands for global) to find files with that directory. Inside of
+the folder we downloaded, there are 5 folders, one for each type of
+flower. <code class="docutils literal notranslate"><span class="pre">.glob('*/*.jpg')</span></code> means “from all subfolders (*/), grab all
+files that end in ‘.jpg’. The”*” is a wildcard that match any number
+of characters.</p>
+<p><code class="docutils literal notranslate"><span class="pre">.glob()</span></code> gives us all the file names in a <code class="docutils literal notranslate"><span class="pre">generator</span></code>. We convert
+it to a <code class="docutils literal notranslate"><span class="pre">list</span></code> to make it easier to handle, and then we take the
+<code class="docutils literal notranslate"><span class="pre">len</span></code> to see how many files there are in all of our folders.</p>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">image_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">data_dir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*/*.jpg&#39;</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">image_count</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>3670
+</pre></div>
+</div>
+</div>
+</div>
+<p>We use the PIL library we imported to open and view images.</p>
+<div class="admonition-reading-image-paths admonition">
+<p class="admonition-title">Reading image paths</p>
+<p>Here, instead of looking at all the files with <code class="docutils literal notranslate"><span class="pre">(*/*.jpg)</span></code>, we pick
+only the files with roses in them with <code class="docutils literal notranslate"><span class="pre">roses/*.jpg</span></code>.</p>
+<p><a class="reference external" href="https://www.geeksforgeeks.org/python-pil-image-open-method/">PIL.Image.open()</a>
+displays an image file, given a file path. Here, we take the path to
+first rose file, and cast the path as a string to be usable by the PIL
+function.</p>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">roses</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data_dir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;roses/*.jpg&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">roses</span><span class="p">))</span>
+<span class="n">PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">roses</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--7-input--2" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>641
+</pre></div>
+</div>
+</div>
+</div>
+<img alt="../../_images/rose0.png" class="align-center" src="../../_images/rose0.png" />
+<p>Here, we take a look at another rose.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">roses</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">Output</label><div class="tab-content docutils container">
+<img alt="../../_images/rose1.png" class="align-center" src="../../_images/rose1.png" />
+</div>
+</div>
+<p>We can do the same for the tulips images.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tulips</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data_dir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;tulips/*.jpg&#39;</span><span class="p">))</span>
+<span class="n">PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">tulips</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--1">Output</label><div class="tab-content docutils container">
+<img alt="../../_images/tulip0.png" class="align-center" src="../../_images/tulip0.png" />
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">tulips</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--1">Output</label><div class="tab-content docutils container">
+<img alt="../../_images/tulip1.png" class="align-center" src="../../_images/tulip1.png" />
+</div>
+</div>
+<p>Let’s breakdown our data by type of flower to see if we have imbalanced
+data -&gt; more of some types of flowers than others.</p>
+<p>If we have an overwhelming amount of one type, our model will primarily
+be trained on that type, which will make differentiating between types
+difficult.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">daisy</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data_dir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;daisy/*.jpg&#39;</span><span class="p">))</span>
+<span class="n">sunflowers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data_dir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;sunflowers/*.jpg&#39;</span><span class="p">))</span>
+<span class="n">dandelion</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data_dir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;dandelion/*.jpg&#39;</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;roses:&#39;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">roses</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;tulips:&#39;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">tulips</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;daisy&#39;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">daisy</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sunflower&#39;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">sunflowers</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;dandelion&#39;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">dandelion</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--14-input--2" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>roses: 641
+tulips: 799
+daisy 633
+sunflower 699
+dandelion 898
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="load-data-as-a-keras-dataset">
+<h2>Load data as a keras dataset<a class="headerlink" href="#load-data-as-a-keras-dataset" title="Permalink to this heading">¶</a></h2>
+<p>While our data is accessible to Python, we need to do some extra steps
+to make it usable in tensorflow. For instance, we’ll need to make sure
+all images have the same height and width.</p>
+<p>We then will split our data into two subsets: <strong>training</strong> and
+<strong>validation</strong>. The training subset is used to construct the model, and
+the validation subset is used to see how well our model performs.</p>
+<img alt="../../_images/train-and-test-1-min-1.webp" class="align-center" src="../../_images/train-and-test-1-min-1.webp" />
+<div class="admonition-training-validation-split admonition">
+<p class="admonition-title">Training-validation split</p>
+<p>For our purposes, we are going to use the function
+<a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/utils/image_dataset_from_directory">image_dataset_from_directory()</a>
+from
+<a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/utils">tf.keras.utils</a>.
+We first call this function with <code class="docutils literal notranslate"><span class="pre">subset=&quot;training&quot;</span></code> to grab the
+training set.</p>
+<p>We make the training-validation split 80-20 to make sure we use most of
+the data for training, but that we still have enough left over for
+validation. We specify the split with <code class="docutils literal notranslate"><span class="pre">validation-split</span></code>.</p>
+<p>We also are going to specify a batch size, which helps with loading
+images into memory. For us, 32 images will be loaded in at once.</p>
+<p>We are going to reformat our images to be square: 180x180. This pipeline
+requires that all images be identical in size and shape. This does mean
+we will squish images that were not square already, and we lose some
+pixel density on larger images. We specify this in the argument
+<code class="docutils literal notranslate"><span class="pre">image_size</span></code> as a tuple.</p>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio"><label class="tab-label" for="tab-set--15-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">32</span>
+<span class="n">img_height</span> <span class="o">=</span> <span class="mi">180</span>
+<span class="n">img_width</span> <span class="o">=</span> <span class="mi">180</span>
+
+<span class="n">train_ds</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">image_dataset_from_directory</span><span class="p">(</span>
+<span class="n">data_dir</span><span class="p">,</span>
+<span class="n">validation_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+<span class="n">subset</span><span class="o">=</span><span class="s2">&quot;training&quot;</span><span class="p">,</span>
+<span class="n">seed</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+<span class="n">image_size</span><span class="o">=</span><span class="p">(</span><span class="n">img_height</span><span class="p">,</span> <span class="n">img_width</span><span class="p">),</span>
+<span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--15-input--2" name="tab-set--15" type="radio"><label class="tab-label" for="tab-set--15-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Found 3670 files belonging to 5 classes.
+Using 2936 files for training.
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can run the same command again to get the validation set. Beyond
+specifying <code class="docutils literal notranslate"><span class="pre">subset=&quot;validation&quot;</span></code>, make sure to keep the parameters
+<code class="docutils literal notranslate"><span class="pre">validation_split</span></code> and <code class="docutils literal notranslate"><span class="pre">seed</span></code>, the same as for the training set to
+ensure the split is complementary to the training set. <code class="docutils literal notranslate"><span class="pre">image_size</span></code>
+and <code class="docutils literal notranslate"><span class="pre">batch_size</span></code> should also be kept the same for consistency.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">val_ds</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">image_dataset_from_directory</span><span class="p">(</span>
+<span class="n">data_dir</span><span class="p">,</span>
+<span class="n">validation_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+<span class="n">subset</span><span class="o">=</span><span class="s2">&quot;validation&quot;</span><span class="p">,</span>
+<span class="n">seed</span><span class="o">=</span><span class="mi">123</span><span class="p">,</span>
+<span class="n">image_size</span><span class="o">=</span><span class="p">(</span><span class="n">img_height</span><span class="p">,</span> <span class="n">img_width</span><span class="p">),</span>
+<span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--16-input--2" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Found 3670 files belonging to 5 classes.
+Using 734 files for validation.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s save the names of our flowers (our class names), and print them
+out using the <code class="docutils literal notranslate"><span class="pre">.class-name</span></code> attribute.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">class_names</span> <span class="o">=</span> <span class="n">train_ds</span><span class="o">.</span><span class="n">class_names</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">class_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--17-input--2" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;daisy&#39;, &#39;dandelion&#39;, &#39;roses&#39;, &#39;sunflowers&#39;, &#39;tulips&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we’ve loaded our data into tensorflow, let’s visualize it again
+after re-sizing images.</p>
+<div class="admonition-visualizing-images-with-matplotlib admonition">
+<p class="admonition-title">Visualizing images with matplotlib</p>
+<p>While we can visualize our images in a similar way to before, here we
+use <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> to organize our images into a 3x3 grid.</p>
+<p>First, we define a 10x10 figure.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--18-input--1" name="tab-set--18" type="radio"><label class="tab-label" for="tab-set--18-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can grab a single batch from our data with <code class="docutils literal notranslate"><span class="pre">train_ds.take(1)</span></code>.
+Converting to a list lets us pull out individual images and labels.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--19-input--1" name="tab-set--19" type="radio"><label class="tab-label" for="tab-set--19-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">images</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">train_ds</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">1</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We iterate over a range of 9 for our 9 total images.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ax</span> <span class="pre">=</span> <span class="pre">plt.subplot(3,</span> <span class="pre">3,</span> <span class="pre">i</span> <span class="pre">+</span> <span class="pre">1)</span></code> makes sure we are plotting on the
+right set of axes for our image.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--20-input--1" name="tab-set--20" type="radio"><label class="tab-label" for="tab-set--20-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">plt.imshow()</span></code> displays image data. We take our images and convert them into
+sets of integers from 0 to 255, which <code class="docutils literal notranslate"><span class="pre">plt.imshow()</span></code> needs to display images.
+The significance of this range is discussed in greater detail below.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--21-input--1" name="tab-set--21" type="radio"><label class="tab-label" for="tab-set--21-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;uint8&quot;</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">class_names</span><span class="p">[</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--23-input--1" name="tab-set--23" type="radio"><label class="tab-label" for="tab-set--23-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">images</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">train_ds</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">1</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;uint8&quot;</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">class_names</span><span class="p">[</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--22-input--1" name="tab-set--22" type="radio"><label class="tab-label" for="tab-set--22-input--1">Output</label><div class="tab-content docutils container">
+<img alt="../../_images/matplotlib_gallery.png" class="align-center" src="../../_images/matplotlib_gallery.png" />
+</div>
+</div>
+<section id="image-batching">
+<h3>Image batching<a class="headerlink" href="#image-batching" title="Permalink to this heading">¶</a></h3>
+<p>Each batch has 32 images, 180x180 pixels, with RGB data.</p>
+<p>Each image has an accompanying label, as well.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--24-input--1" name="tab-set--24" type="radio"><label class="tab-label" for="tab-set--24-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">image_batch</span><span class="p">,</span> <span class="n">labels_batch</span> <span class="ow">in</span> <span class="n">train_ds</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">image_batch</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">labels_batch</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--24-input--2" name="tab-set--24" type="radio"><label class="tab-label" for="tab-set--24-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(32, 180, 180, 3)
+(32,)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We’re also going to configure the dataset for performance.</p>
+<p><code class="docutils literal notranslate"><span class="pre">dataset.cache()</span></code> keeps images in memory so that we don’t need to load
+them each epoch. <code class="docutils literal notranslate"><span class="pre">dataset.prefetch()</span></code> prepares images ahead of time
+while current image is being worked on. Uses additional memory.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--25-input--1" name="tab-set--25" type="radio"><label class="tab-label" for="tab-set--25-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">AUTOTUNE</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">AUTOTUNE</span>
+
+<span class="n">train_ds</span> <span class="o">=</span> <span class="n">train_ds</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="n">prefetch</span><span class="p">(</span><span class="n">buffer_size</span><span class="o">=</span><span class="n">AUTOTUNE</span><span class="p">)</span>
+<span class="n">val_ds</span> <span class="o">=</span> <span class="n">val_ds</span><span class="o">.</span><span class="n">cache</span><span class="p">()</span><span class="o">.</span><span class="n">prefetch</span><span class="p">(</span><span class="n">buffer_size</span><span class="o">=</span><span class="n">AUTOTUNE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="image-data-and-normalization">
+<h3>Image data and normalization<a class="headerlink" href="#image-data-and-normalization" title="Permalink to this heading">¶</a></h3>
+<p>You can think of image data as a series of numerical values that are
+interpreted to create something visual.</p>
+<p>Here is a simplification, where we have a 2D array of zeros and ones.
+Zero is interpreted as black (no color), and one is interpreted as white
+(max color).</p>
+<img alt="../../_images/bitmap.png" class="align-center" src="../../_images/bitmap.png" />
+<p>In reality, images don’t just contain black and white pixels: they have
+pixels that values for red, green, and blue (RGB) at different
+intensities.</p>
+<p>Each pixel has 3 values for RGB intensity, combining to look like a
+single color to our eyes.</p>
+<img alt="../../_images/rgb_colors.png" class="align-center" src="../../_images/rgb_colors.png" />
+<p>The intensity values go from 0 through 255, which we can see in our own
+data by looking at the maximum and minimum values of an image.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--26-input--1" name="tab-set--26" type="radio"><label class="tab-label" for="tab-set--26-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">first_image</span> <span class="o">=</span> <span class="n">image_batch</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">first_image</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">first_image</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--26-input--2" name="tab-set--26" type="radio"><label class="tab-label" for="tab-set--26-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0.0 255.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Neural networks like input values to be small, so we transform them to
+be between 0.0 and 1.0.</p>
+<img alt="../../_images/three_d_array.png" class="align-center" src="../../_images/three_d_array.png" />
+<p>Here, we test this out by create a normalization layer and then check to
+make sure the normalization works.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--27-input--1" name="tab-set--27" type="radio"><label class="tab-label" for="tab-set--27-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">normalization_layer</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Rescaling</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mi">255</span><span class="p">)</span>
+<span class="n">normalized_ds</span> <span class="o">=</span> <span class="n">train_ds</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="p">(</span><span class="n">normalization_layer</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">y</span><span class="p">))</span>
+<span class="n">image_batch</span><span class="p">,</span> <span class="n">labels_batch</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">normalized_ds</span><span class="p">))</span>
+<span class="n">first_image</span> <span class="o">=</span> <span class="n">image_batch</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1"># Notice the pixel values are now in `[0,1]`.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">first_image</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">first_image</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--27-input--2" name="tab-set--27" type="radio"><label class="tab-label" for="tab-set--27-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0.0 1.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="building-a-model">
+<h2>Building a model<a class="headerlink" href="#building-a-model" title="Permalink to this heading">¶</a></h2>
+<p>Now that we gone through our preprocessing workflow, we are going to
+construct a basic Keras model, which contains several <strong>layers</strong>. Layers
+take information, process them in some way, and then pass the output on
+to different layers.</p>
+<p>We are going to build <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/Sequential">a sequential
+model</a>,
+which puts layers in a defined order, and feeds data through the layers
+in that order. Each layer will have a single tensor input and a single
+tensor output.</p>
+<img alt="../../_images/multi_layer_model.jpg" class="align-center" src="../../_images/multi_layer_model.jpg" />
+<p>We are starting our basic model with the following layers:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/Rescaling">Rescaling
+layer</a>:
+works like above example. Our data contains 3 dimensions: x position,
+y position, and RGB channel</p></li>
+<li><p><a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/Flatten">Flatten
+layer</a>:
+removes dimensional component into a single dimension; only reformats
+our data</p></li>
+<li><p><a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/Dense">Dense
+layer</a>:
+a layer that is fully connected to the previous layer.</p>
+<ul>
+<li><p>Our Dense layer has 32 neurons or nodes. Every node is receives
+information about all pixels</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">relu</span></code> activation. Activation functions determines how
+strongly each neuron “fires” -&gt; to what degree each node gets used
+to make predictions</p></li>
+</ul>
+</li>
+<li><p>ends with another Dense layer with 5 nodes, one for each class. It
+will contain the odds of the images being each flower type.</p></li>
+</ul>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--28-input--1" name="tab-set--28" type="radio"><label class="tab-label" for="tab-set--28-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num_classes</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">class_names</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">([</span>
+<span class="n">layers</span><span class="o">.</span><span class="n">Rescaling</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mi">255</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">img_height</span><span class="p">,</span> <span class="n">img_width</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
+<span class="n">layers</span><span class="o">.</span><span class="n">Flatten</span><span class="p">(),</span>
+<span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">),</span>
+<span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">num_classes</span><span class="p">)</span>
+<span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We then compile our model with <code class="docutils literal notranslate"><span class="pre">model.compile()</span></code>, adding in a few more
+important options.</p>
+<p>Loss is how the training process determines how well it is doing. We
+want loss to be as close to zero as possible. There are many possible
+loss functions; here we use one called sparse categorical cross entropy.</p>
+<p>Our optimizer tries to decide how to make changes to our model to
+decrease loss.</p>
+<p>In the example below, the optimizer is trying to find the lowest point
+on the parabola. It tries to take larger steps when it’s far away from
+the minimum, and smaller steps when it’s near.</p>
+<p>If it takes steps that are too large, however, the model may have a hard
+time finding the minimum loss due to overshooting.</p>
+<img alt="../../_images/gradient-descent-learning-rate.png" class="align-center" src="../../_images/gradient-descent-learning-rate.png" />
+<p>Reality is more complicated than this simple case. Here we show a more
+complicated gradient. It contains many places for the minimization
+process to get stuck (local minima). Therefore, making sure our step
+size is large enough to get out of local minima is also important.</p>
+<img alt="../../_images/gradient-descent-3d.png" class="align-center" src="../../_images/gradient-descent-3d.png" />
+<p>We also will keep track of the accuracy of our model. This is the
+proportion of images that the model correctly classifies. The model does
+not use this information; it is purely for us, the users.</p>
+<div class="admonition-loss-and-accuracy-metrics admonition">
+<p class="admonition-title">Loss and accuracy metrics</p>
+<p>We use a type of loss called sparse categorical cross entropy. However,
+there are <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/losses">many different kinds of
+loss</a> we
+can use.</p>
+<p>There are also <a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/metrics">different metrics we can
+track</a>
+besides accuracy, as well. If we add them to the list, we can track
+multiple metrics at the same time.</p>
+<p>We use an optimizer called “Adam” commonly used in neural networks.
+<a class="reference external" href="https://www.tensorflow.org/api_docs/python/tf/keras/optimizers">Other
+optimers</a>
+can be usedm as well.</p>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--29-input--1" name="tab-set--29" type="radio"><label class="tab-label" for="tab-set--29-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span>
+            <span class="n">loss</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">SparseCategoricalCrossentropy</span><span class="p">(</span><span class="n">from_logits</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+            <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can print model summary, which shows our layers and how many
+parameters we have for each layer.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--30-input--1" name="tab-set--30" type="radio"><label class="tab-label" for="tab-set--30-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--30-input--2" name="tab-set--30" type="radio"><label class="tab-label" for="tab-set--30-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Model: &quot;sequential&quot;
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ rescaling_1 (Rescaling)     (None, 180, 180, 3)       0
+
+ flatten (Flatten)           (None, 97200)             0
+
+ dense (Dense)               (None, 32)                3110432
+
+ dense_1 (Dense)             (None, 5)                 165
+
+=================================================================
+Total params: 3,110,597
+Trainable params: 3,110,597
+Non-trainable params: 0
+_________________________________________________________________
+</pre></div>
+</div>
+</div>
+</div>
+<p>We are going to run the model for 10 <strong>epochs</strong>. An <strong>epoch</strong> is one
+iteration through the model pipeline where the model can adjust itself
+throughout. This means that we will pass our entire data set through our
+model 10 times. After the first epoch, future epochs will build upon the
+model created in prior epochs and refine it to minimize the <strong>loss</strong>.</p>
+<p>Here, we use <code class="docutils literal notranslate"><span class="pre">model.fit()</span></code> to actually fit the model that we have
+defined. We will call the output of the model fitting <code class="docutils literal notranslate"><span class="pre">history</span></code>, as it
+will store a record of the fitting process over time.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--31-input--1" name="tab-set--31" type="radio"><label class="tab-label" for="tab-set--31-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">epochs</span><span class="o">=</span><span class="mi">10</span>
+<span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+  <span class="n">train_ds</span><span class="p">,</span>
+  <span class="n">validation_data</span><span class="o">=</span><span class="n">val_ds</span><span class="p">,</span>
+  <span class="n">epochs</span><span class="o">=</span><span class="n">epochs</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--31-input--2" name="tab-set--31" type="radio"><label class="tab-label" for="tab-set--31-input--2">Output</label><div class="tab-content docutils container">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Epoch 1/10
+92/92 [==============================] - 1s 7ms/step - loss: 3.8806 - accuracy: 0.2016 - val_loss: 1.6087 - val_accuracy: 0.2398
+Epoch 2/10
+92/92 [==============================] - 0s 4ms/step - loss: 1.6073 - accuracy: 0.2459 - val_loss: 1.6065 - val_accuracy: 0.2398
+Epoch 3/10
+92/92 [==============================] - 0s 4ms/step - loss: 1.6051 - accuracy: 0.2459 - val_loss: 1.6048 - val_accuracy: 0.2398
+Epoch 4/10
+92/92 [==============================] - 0s 4ms/step - loss: 1.6034 - accuracy: 0.2459 - val_loss: 1.6036 - val_accuracy: 0.2398
+Epoch 5/10
+92/92 [==============================] - 0s 4ms/step - loss: 1.6022 - accuracy: 0.2459 - val_loss: 1.6028 - val_accuracy: 0.2398
+Epoch 6/10
+92/92 [==============================] - 0s 4ms/step - loss: 1.6014 - accuracy: 0.2459 - val_loss: 1.6023 - val_accuracy: 0.2398
+Epoch 7/10
+92/92 [==============================] - 0s 4ms/step - loss: 1.6009 - accuracy: 0.2459 - val_loss: 1.6021 - val_accuracy: 0.2398
+Epoch 8/10
+92/92 [==============================] - 0s 4ms/step - loss: 1.6005 - accuracy: 0.2459 - val_loss: 1.6019 - val_accuracy: 0.2398
+Epoch 9/10
+92/92 [==============================] - 0s 4ms/step - loss: 1.6003 - accuracy: 0.2459 - val_loss: 1.6019 - val_accuracy: 0.2398
+Epoch 10/10
+92/92 [==============================] - 0s 4ms/step - loss: 1.6002 - accuracy: 0.2459 - val_loss: 1.6017 - val_accuracy: 0.2398
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can visualize the results of our model in matplotlib, looking both at
+the training and validation sets. For each we look at accuracy, as well
+as loss.</p>
+<p>Here is an example of how we want our plot to look:</p>
+<img alt="../../_images/good_training.png" class="align-center" src="../../_images/good_training.png" />
+<p>Here, the validation accuracy slowly increases to be around 75%. It is a
+little smaller than the training accuracy, because we are always more
+accurate on the data that the model has already seen than on new data.</p>
+<p>When we look at training and validation loss, the absolute values are
+less important. However, we want to see loss decrease as we train the
+model. Smaller loss is better. We will see validation loss be larger
+than training loss, similar to how validation accuracy is always smaller
+than training accuracy.</p>
+<div class="admonition-model-history admonition">
+<p class="admonition-title">Model history</p>
+<p>We saved the record of the fitting process and the resulting model in a
+variable called <code class="docutils literal notranslate"><span class="pre">history</span></code>. This variable has an attribute
+<code class="docutils literal notranslate"><span class="pre">.history</span></code>, which is a dictionary containing information about our
+fitting.</p>
+<p>For instance, <code class="docutils literal notranslate"><span class="pre">history.history['accuracy']</span></code> contains the training
+accuracy across our epochs, while <code class="docutils literal notranslate"><span class="pre">history.history['val_accuracy']</span></code>
+contains the validation accuracy. Likewise, <code class="docutils literal notranslate"><span class="pre">history.history['loss']</span></code>
+is the training loss, and <code class="docutils literal notranslate"><span class="pre">history.history['val_loss']</span></code> is the
+validation loss.</p>
+<p>We then plot each one in their own subplots.</p>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--33-input--1" name="tab-set--33" type="radio"><label class="tab-label" for="tab-set--33-input--1">Python</label><div class="tab-content docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">acc</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">]</span>
+<span class="n">val_acc</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_accuracy&#39;</span><span class="p">]</span>
+
+<span class="n">loss</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">]</span>
+<span class="n">val_loss</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;val_loss&#39;</span><span class="p">]</span>
+
+<span class="n">epochs_range</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">epochs_range</span><span class="p">,</span> <span class="n">acc</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Training Accuracy&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">epochs_range</span><span class="p">,</span> <span class="n">val_acc</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Validation Accuracy&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Training and Validation Accuracy&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">epochs_range</span><span class="p">,</span> <span class="n">loss</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Training Loss&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">epochs_range</span><span class="p">,</span> <span class="n">val_loss</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Validation Loss&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Training and Validation Loss&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--32-input--1" name="tab-set--32" type="radio"><label class="tab-label" for="tab-set--32-input--1">Output</label><div class="tab-content docutils container">
+<img alt="../../_images/model1_training.png" class="align-center" src="../../_images/model1_training.png" />
+</div>
+</div>
+<p>Our model isn’t performing particularly well. Next time, we will go over
+ways to fix it to be more accurate.</p>
+</section>
+<section id="homework-tensorflow-playground">
+<h2>Homework: TensorFlow Playground<a class="headerlink" href="#homework-tensorflow-playground" title="Permalink to this heading">¶</a></h2>
+<p>Using <a class="reference external" href="https://playground.tensorflow.org/#activation=tanh&amp;batchSize=10&amp;dataset=circle&amp;regDataset=reg-plane&amp;learningRate=0.03&amp;regularizationRate=0&amp;noise=0&amp;networkShape=4,2&amp;seed=0.80210&amp;showTestData=false&amp;discretize=false&amp;percTrainData=50&amp;x=true&amp;y=true&amp;xTimesY=false&amp;xSquared=false&amp;ySquared=false&amp;cosX=false&amp;sinX=false&amp;cosY=false&amp;sinY=false&amp;collectStats=false&amp;problem=classification&amp;initZero=false&amp;hideText=false">TensorFlow
+Playground</a>,
+create the best model possible for the spiral data set.</p>
+<p>We will be judging models based on their test loss and the number of
+epochs it takes to get that loss.</p>
+<p>You should experiment with using different features, different numbers
+of nodes and layers, and other settings to create the best model.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../image-recognition2/">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Image recognition with Tensorflow: Improving the model</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../quick-start/">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Quick start to machine learning</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Ford Fishman
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Image recognition with Tensorflow: Model components</a><ul>
+<li><a class="reference internal" href="#machine-learning-and-deep-learning">Machine learning and deep learning</a></li>
+<li><a class="reference internal" href="#setup">Setup</a></li>
+<li><a class="reference internal" href="#load-data-as-a-keras-dataset">Load data as a keras dataset</a><ul>
+<li><a class="reference internal" href="#image-batching">Image batching</a></li>
+<li><a class="reference internal" href="#image-data-and-normalization">Image data and normalization</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#building-a-model">Building a model</a></li>
+<li><a class="reference internal" href="#homework-tensorflow-playground">Homework: TensorFlow Playground</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=fbdbc327"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="../../_static/tabs.js?v=3ee01567"></script>
+    </body>
+</html>
