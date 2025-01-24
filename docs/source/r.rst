@@ -122,4 +122,5 @@ Data set and code
    r/quick-start
    r/data-wrangling
    r/data-visualization
+   r/data-analysis
    Text mining <r/text-mining>
