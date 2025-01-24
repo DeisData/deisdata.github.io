@@ -359,12 +359,7 @@ considering.</p>
 There are fancier models that give more accurate predictions, but
 decision trees are easy to understand.</p>
 <p>For simplicity, we’ll start with the simplest possible decision tree.</p>
-<figure class="align-default" id="id1">
-<img alt="First Decision Trees" src="../../_images/decision-tree1.png" />
-<figcaption>
-<p><span class="caption-text">First Decision Trees</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<img alt="../../_images/decision-tree1.png" class="align-center" src="../../_images/decision-tree1.png" />
 <p>It divides houses into only two categories. The predicted price for any
 house under consideration is the historical average price of houses in
 the same category.</p>
@@ -382,12 +377,7 @@ the data). After the model has been fit, you can apply it to new data to
 <p>You can capture more factors affecting home price using a tree that has
 more “splits.” These are called “deeper” trees. A decision tree that
 also considers the total size of each house’s lot might look like this:</p>
-<figure class="align-default" id="id2">
-<img alt="Depth 2 Tree" src="../../_images/decision-tree2.png" />
-<figcaption>
-<p><span class="caption-text">Depth 2 Tree</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<img alt="../../_images/decision-tree2.png" class="align-center" src="../../_images/decision-tree2.png" />
 <p>You predict the price of any house by tracing through the decision tree,
 always picking the path corresponding to that house’s characteristics.
 The predicted price for the house is at the bottom of the tree. The
@@ -714,13 +704,15 @@ library to create your models. When coding, this library is written as
 <strong>sklearn</strong>, as you will see in the sample code. Scikit-learn is easily
 the most popular library for modeling the types of data typically stored
 in DataFrames.</p>
-<p>The steps to building and using a model are: * <strong>Define:</strong> What
-question are you asking? What type of model bests answers the question?
+<p>The steps to building and using a model are:</p>
+<ul class="simple">
+<li><p><strong>Define:</strong> What question are you asking? What type of model bests answers the question?
 A decision tree? Some other type of model? Some other parameters of the
-model type are specified too. * <strong>Fit:</strong> Capture patterns from provided
-data. This is the heart of modeling. * <strong>Predict:</strong> Just what it sounds
-like * <strong>Evaluate</strong>: Determine how accurate the model’s predictions
-are.</p>
+model type are specified too.</p></li>
+<li><p><strong>Fit:</strong> Capture patterns from provided data. This is the heart of modeling.</p></li>
+<li><p><strong>Predict:</strong> Just what it sounds like</p></li>
+<li><p><strong>Evaluate</strong>: Determine how accurate the model’s predictionsare.</p></li>
+</ul>
 <p>Here is an example of defining a decision tree model with
 <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> and fitting it with the features and target variable.</p>
 <div class="tab-set docutils container">
@@ -747,7 +739,9 @@ run.</p>
 <p>Many machine learning models allow some randomness in model training.
 Specifying a number for <code class="docutils literal notranslate"><span class="pre">random_state</span></code> ensures you get the same
 results in each run.</p>
-<p>A side note on global optimum: <em>The problem of learning an optimal
+<div class="admonition-global-optima admonition">
+<p class="admonition-title">Global optima</p>
+<p>The problem of learning an optimal
 decision tree is known to be NP-complete under several aspects of
 optimality and even for simple concepts. Consequently, practical
 decision-tree learning algorithms are based on heuristic algorithms such
@@ -755,7 +749,8 @@ as the greedy algorithm where locally optimal decisions are made at each
 node. Such algorithms cannot guarantee to return the globally optimal
 decision tree. This can be mitigated by training multiple trees in an
 ensemble learner, where the features and samples are randomly sampled
-with replacement.</em></p>
+with replacement.</p>
+</div>
 <p>We now have a fitted model that we can use to make predictions.</p>
 <p>In practice, you’ll want to make predictions for new houses coming on
 the market rather than the houses we already have prices for. But we’ll
@@ -943,6 +938,7 @@ important distinctions and patterns in the data, so it performs poorly
 even in training data, that is called <strong>underfitting</strong>.</p>
 <p>We want to find the model between underfitting and overfitting.
 Visually, we want the low point of the (red) validation curve.</p>
+<img alt="../../_images/underfitting-overfitting.png" class="align-center" src="../../_images/underfitting-overfitting.png" />
 <section id="example">
 <h3>Example<a class="headerlink" href="#example" title="Permalink to this heading">¶</a></h3>
 <p>Let’s use <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> argument to control overfitting vs underfitting.
@@ -1090,7 +1086,7 @@ generally work reasonably even without this tuning.</p>
 <li><p>Try <a class="reference external" href="https://www.kaggle.com/kernels/fork/1259186">Using a Random Forest
 model</a> yourself and
 see how much it improves your model.</p></li>
-<li><p>Visit <a class="reference external" href="https://www.kaggle.com/learn">https://www.kaggle.com/learn</a> for <strong>Intermediate ML</strong> and
+<li><p>Visit <a class="reference external" href="https://www.kaggle.com/learn">kaggle</a> for <strong>Intermediate ML</strong> and
 <strong>Intro to Deep Learning</strong> courses.</p></li>
 </ul>
 </section>

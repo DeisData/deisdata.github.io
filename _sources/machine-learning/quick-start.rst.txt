@@ -53,10 +53,9 @@ decision trees are easy to understand.
 
 For simplicity, we’ll start with the simplest possible decision tree.
 
-.. figure:: /_static/images/machine-learning/quick-start/decision-tree1.png
-   :alt: First Decision Trees
+.. image:: /_static/images/machine-learning/quick-start/decision-tree1.png
+   :align: center
 
-   First Decision Trees
 
 It divides houses into only two categories. The predicted price for any
 house under consideration is the historical average price of houses in
@@ -79,10 +78,9 @@ You can capture more factors affecting home price using a tree that has
 more “splits.” These are called “deeper” trees. A decision tree that
 also considers the total size of each house’s lot might look like this:
 
-.. figure:: /_static/images/machine-learning/quick-start/decision-tree2.png
-   :alt: Depth 2 Tree
-
-   Depth 2 Tree
+.. image:: /_static/images/machine-learning/quick-start/decision-tree2.png
+    :align: center
+    
 
 You predict the price of any house by tracing through the decision tree,
 always picking the path corresponding to that house’s characteristics.
@@ -254,13 +252,14 @@ library to create your models. When coding, this library is written as
 the most popular library for modeling the types of data typically stored
 in DataFrames.
 
-The steps to building and using a model are: \* **Define:** What
-question are you asking? What type of model bests answers the question?
-A decision tree? Some other type of model? Some other parameters of the
-model type are specified too. \* **Fit:** Capture patterns from provided
-data. This is the heart of modeling. \* **Predict:** Just what it sounds
-like \* **Evaluate**: Determine how accurate the model’s predictions
-are.
+The steps to building and using a model are: 
+
+- **Define:** What question are you asking? What type of model bests answers the question?
+  A decision tree? Some other type of model? Some other parameters of the
+  model type are specified too. 
+- **Fit:** Capture patterns from provided data. This is the heart of modeling. 
+- **Predict:** Just what it sounds like 
+- **Evaluate**: Determine how accurate the model’s predictionsare.
 
 Here is an example of defining a decision tree model with
 ``scikit-learn`` and fitting it with the features and target variable.
@@ -294,15 +293,17 @@ Many machine learning models allow some randomness in model training.
 Specifying a number for ``random_state`` ensures you get the same
 results in each run.
 
-A side note on global optimum: *The problem of learning an optimal
-decision tree is known to be NP-complete under several aspects of
-optimality and even for simple concepts. Consequently, practical
-decision-tree learning algorithms are based on heuristic algorithms such
-as the greedy algorithm where locally optimal decisions are made at each
-node. Such algorithms cannot guarantee to return the globally optimal
-decision tree. This can be mitigated by training multiple trees in an
-ensemble learner, where the features and samples are randomly sampled
-with replacement.*
+.. admonition:: Global optima 
+    
+    The problem of learning an optimal
+    decision tree is known to be NP-complete under several aspects of
+    optimality and even for simple concepts. Consequently, practical
+    decision-tree learning algorithms are based on heuristic algorithms such
+    as the greedy algorithm where locally optimal decisions are made at each
+    node. Such algorithms cannot guarantee to return the globally optimal
+    decision tree. This can be mitigated by training multiple trees in an
+    ensemble learner, where the features and samples are randomly sampled
+    with replacement.
 
 We now have a fitted model that we can use to make predictions.
 
@@ -521,6 +522,10 @@ even in training data, that is called **underfitting**.
 We want to find the model between underfitting and overfitting.
 Visually, we want the low point of the (red) validation curve.
 
+.. image:: /_static/images/machine-learning/quick-start/underfitting-overfitting.png
+   :align: center
+
+
 Example
 -------
 
@@ -691,5 +696,5 @@ Your Turn
 -  Try `Using a Random Forest
    model <https://www.kaggle.com/kernels/fork/1259186>`__ yourself and
    see how much it improves your model.
--  Visit https://www.kaggle.com/learn for **Intermediate ML** and
+-  Visit `kaggle <https://www.kaggle.com/learn>`__ for **Intermediate ML** and
    **Intro to Deep Learning** courses.
