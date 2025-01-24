@@ -655,7 +655,7 @@ We can also run the Shapiro test
       ## data:  model2$residuals 
       ## W = 0.99353, p-value = 0.1506
 
-- Homoscedasticity. The variance of the residual in a regression model is constant.
+-Homoscedasticity. The variance of the residual in a regression model is constant.
 We can check the Scale-Location plot or use the Breusch-Pagan test
 (null hypothesis: heteroskedasticity is not present)
 
