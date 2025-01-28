@@ -1,7 +1,7 @@
 Intro to R and the Tidyverse
 ============================
 
-`Workshop materials <https://drive.google.com/drive/folders/1e-8Qs_AZBH-QcQqmmCloT9ghZesV55z6>`__
+`Workshop materials <https://drive.google.com/drive/folders/1d7kM7NJaXmlwVKdA76yh7LyoKCYDfP56?usp=sharing>`__
 
 What is R?
 ----------
