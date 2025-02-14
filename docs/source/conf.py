@@ -5,6 +5,7 @@
 
 
 from pathlib import Path
+import os
 
 def remove_tabs_js(app, exc):
     if app.builder.format == 'html' and not exc:
@@ -34,7 +35,9 @@ extensions = [
 templates_path = ['_templates']
 exclude_patterns = []
 
-
+if os.getenv('GITHUB_ACTIONS'):
+    extensions.append('sphinxcontrib.googleanalytics')
+    googleanalytics_id = 'G-VPGX1FF4LJ'
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
