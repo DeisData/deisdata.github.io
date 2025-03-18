@@ -18,6 +18,8 @@ Meet your research community of support.
    -  `Ford
       Fishman <https://calendar.library.brandeis.edu/appointments/fordfishman>`__
       (sciences)
+   -  `Kevin Martyn <https://calendar.library.brandeis.edu/appointments/kpm>`__
+      (GIS)
 
 -  `Register for Library
    Workshops <https://calendar.library.brandeis.edu/calendar/workshops/>`__,
@@ -41,7 +43,8 @@ Specialists**, `Dr. Margarita
 Corral <http://calendar.library.brandeis.edu/appointment/8518>`__ and
 `Ford
 Fishman <https://calendar.library.brandeis.edu/appointments/fordfishman>`__
-(sciences), or your `Brandeis Library Subject
+(sciences), `Kevin Martyn <https://calendar.library.brandeis.edu/appointments/kpm>`__
+(GIS) or your `Brandeis Library Subject
 Liaison <https://www.brandeis.edu/library/research/help/liaison-subject.html>`__
 and we’ll help you sort it out.
 
