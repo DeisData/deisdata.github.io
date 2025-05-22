@@ -29,7 +29,8 @@ release = '1.01'
 extensions = [
     'sphinx_toolbox.collapse',
     'sphinx_inline_tabs',
-    'sphinxcontrib.youtube'
+    'sphinxcontrib.youtube',
+    'notfound.extension'
 ]
 
 templates_path = ['_templates']
