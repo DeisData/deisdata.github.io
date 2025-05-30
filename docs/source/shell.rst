@@ -7,12 +7,12 @@ and datasets used in the workshop through Brandeis Library Data
 Services.
 
 If you are participating asynchronously and need assistance, please
-email us at dataservices@brandeis.edu.
+email us at `dataservices@brandeis.edu <dataservices@brandeis.edu>`__.
 
 Installation and Setup
 ----------------------
 
-Please refer to our setup guide for installation instructions for your
+Please refer to :doc:`our setup guide <shell/setup/>` for installation instructions for your
 specific operating system.
 
 Materials
