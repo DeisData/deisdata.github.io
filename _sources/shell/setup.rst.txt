@@ -84,8 +84,8 @@ For advanced users, you may choose one of the following alternatives:
 
 
 - `Install the Windows Subsystem for Linux <https://docs.microsoft.com/en-us/windows/wsl/install-win10>`__
-- `Using a Unix/Linux emulator (Cygwin) or Secure Shell (SSH) client
-  (PuTTy) <http://faculty.smu.edu/reynolds/unixtut/windows.html>`__
+- `Using a Unix/Linux emulator (Cygwin) <https://www.cygwin.com/>`__ or `Secure Shell (SSH) client
+  (PuTTy) <https://www.putty.org/>`__
 
 .. warning::
 
