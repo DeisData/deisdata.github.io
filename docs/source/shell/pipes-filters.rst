@@ -78,9 +78,9 @@ Write to a file from the prompt
 -------------------------------
 
 -  ``>`` **redirects** a command’s output to a file instead of printing
-   it to the screen. DO NOT write to the same file.
+   it to the screen. This WILL overwrite the file if it already exists.
 -  ``>>`` **redirects** a command’s output to append to the end of a
-   file
+   file.
 
 Here we get the number of lines in all of our files and redirect the
 output to a new file called ``line_count.txt``.
@@ -143,19 +143,19 @@ View particular file contents
 -----------------------------
 
 -  ``cat`` is the concatentate (join together) command that prints the
-   contents of files one after another
+   contents of files one after another.
 -  ``less`` displays a screenful of the file and then stops. You can go
-   forward one screenful by pressingthe spacebar, or back one by
+   forward one screenful by pressing the spacebar, or back one by
    pressing B and Q to quit.
 -  ``head`` shows the first few lines of a file. For example,
    ``head -n 5`` will show the first 5 lines.
--  ``tail`` shows the last few lines of a file
--  ``cut`` removes or cuts out certain sections of each line in a file
+-  ``tail`` shows the last few lines of a file.
+-  ``cut`` removes or cuts out certain sections of each line in a file.
 
-   -  ``-d`` option specifies a delimeter
-   -  ``-f`` option specifies the column for extraction
+   -  ``-d`` option specifies a delimiter.
+   -  ``-f`` option specifies the column for extraction.
 
--  ``uniq`` filters out adjecent matching lines in a file.
+-  ``uniq`` filters out adjacent matching lines in a file.
 
 Piping Commands Together
 ------------------------
@@ -186,7 +186,7 @@ Here, we take the output of ``wc -l *.pdb`` and feed that right into
           9 methane.pdb
 
 You can chain pipes consecutively between multiple commands. We do so
-here to grab the first line of the sort with ``head -n 1``
+here to grab the first line of the sort with ``head -n 1``.
 
 .. tab:: Bash
 

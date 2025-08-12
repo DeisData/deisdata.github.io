@@ -1,5 +1,5 @@
-Altering files and directories
-==============================
+Altering directories
+====================
 
 .. raw:: html
 
@@ -113,7 +113,7 @@ Copying directories and/or files
 --------------------------------
 
 ``cp old new`` command copies a file (first argument) to a new location
-(second argument)
+(second argument).
 
 .. tab:: Bash
 
@@ -219,7 +219,7 @@ but you may want to try more powerful editors.
    If you start an editor from the shell, it will use your current working
    directory as its default location.
 
-   In editor commands, the Control key is also called :kbd:`Ctrl` or :kbd:`^`.
+   In editor commands, the Control key is also referred to as :kbd:`Ctrl` or :kbd:`^`.
 
 Challenge Questions
 -------------------
@@ -334,7 +334,8 @@ Challenge Project
 ~~~~~~~~~~~~~~~~~
 
 Before heading on a trip, you want to back up your data and send some
-datasets to Ford. Fill in the following commands to get the job done.
+datasets to your research mentor. Fill in the following commands to get the job done.
+
 First, let’s set up a directory and files.
 
 .. tab:: Bash
@@ -398,7 +399,7 @@ Now, it’s your turn!
 1. Create a backup directory with separate
    subdirectories for data and calibration files. Copy files to the
    appropriate locations. 
-2. Create a directory named send_to_ford and copy all the data from June 11th to it.
+2. Create a directory named send_to_mentor and copy all the data from June 11th to it.
 
 .. collapse:: Hint
 
@@ -426,7 +427,7 @@ Now, it’s your turn!
 
             cp *-data.txt backup/___
 
-      Copy June 11th files to ``send_to_ford/``.
+      Copy June 11th files to ``send_to_mentor/``.
 
       -  Hint: Use the copy command ``cp`` with wildcards!
 
@@ -434,7 +435,7 @@ Now, it’s your turn!
 
          .. code:: bash
 
-            cp *-11-*.txt send_to_ford/
+            cp *-11-*.txt send_to_mentor/
 
 
 Resources

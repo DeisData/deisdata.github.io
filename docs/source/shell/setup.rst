@@ -21,12 +21,12 @@ or a program to access a Unix Shell on a server.
 
 
 If none of the options below address your circumstances, try an online
-search for: Unix shell [your computer model] [your operating system].
+search for: "Unix shell [your computer model] [your operating system]".
 
 Linux
 -----
 
-The default Unix Shell for Linux operating systems is usually Bash. On
+The default Unix Shell for Linux operating systems is usually ``bash``. On
 most versions of Linux, it is accessible by running the `(Gnome) Terminal 
 <https://help.gnome.org/users/gnome-terminal/stable/>`__
 or `(KDE) Konsole <https://konsole.kde.org/>`__ or `xterm <https://en.wikipedia.org/wiki/Xterm>`__, 
@@ -38,15 +38,15 @@ macOS
 -----
 
 For a Mac computer running macOS Mojave or earlier releases, the default
-Unix Shell is Bash. For a Mac computer running macOS Catalina or later
-releases, the default Unix Shell is Zsh. Your default shell is available
+Unix Shell is ``bash``. For a Mac computer running macOS Catalina or later
+releases, the default Unix Shell is ``zsh``. Your default shell is available
 via the Terminal program within your Utilities folder.
 
 To open Terminal, try one or both of the following:
 
 - In Finder, select the Go menu, then select Utilities. 
   Locate Terminal in the Utilities folder and open it.
-- Use the Mac ‘Spotlight’ computer search function. Search for: **Terminal**
+- Use the Mac Spotlight computer search function. Search for: **Terminal**
   and press :kbd:`Return`.
 
 To check if your machine is set up to use something other than Bash,
@@ -67,16 +67,16 @@ Windows
 Computers with Windows operating systems do not automatically have a
 Unix Shell program installed. In this lesson, we encourage you to use an
 emulator included in `Git for Windows <https://git-for-windows.github.io/>`__, 
-which gives you access to both Bash shell commands and Git. If you are attending a Software Carpentry
+which gives you access to both ``bash`` shell commands and Git. If you are attending a Software Carpentry
 workshop session, it is likely you have already received instructions on
 how to install Git for Windows.
 
 Once installed, you can open a terminal by running the program Git Bash
 from the Windows start menu.
 
-Other solutions are available for running Bash commands on Windows.
-There is now a Bash shell command-line tool available for Windows 10.
-Additionally, you can run Bash commands on a remote computer or server
+Other solutions are available for running ``bash`` commands on Windows.
+There is now a ``bash`` shell command-line tool available for Windows 10.
+Additionally, you can run ``bash`` commands on a remote computer or server
 that already has a Unix Shell, from your Windows machine. This can
 usually be done through a Secure Shell (SSH) client. One such client
 available for free for Windows computers is `PuTTY <https://www.putty.org/>`__. See the reference

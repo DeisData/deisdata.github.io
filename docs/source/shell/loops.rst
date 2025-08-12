@@ -28,12 +28,12 @@ Here is some pseudo-code showing the basic syntax of a for loop in bash.
       >     my_command $thing
       > done
 
--  ``list_of_things`` is some collection, like a group of files
--  ``thing`` is a variable name we assign to each file, one at a time
+-  ``list_of_things`` is some collection, like a group of files.
+-  ``thing`` is a variable name we assign to each file, one at a time.
 -  The actions we do in the loop is between the keywords ``do`` and
-   ``done`` and tabbed over
+   ``done`` and tabbed over.
 -  We use some command and refer to the variable ``thing`` with a
-   leading ``$``
+   leading ``$``.
 
 Loop Examples
 -------------
