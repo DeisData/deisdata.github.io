@@ -22,7 +22,7 @@ Materials
 
 1. :doc:`Bash setup <shell/setup/>`
 2. :doc:`Introduction to Shell, Navigating to Files and Directories <shell/navigating/>`
-3. :doc:`Working with files and directories <shell/alter-dir/>`
+3. :doc:`Altering directories <shell/alter-dir/>`
 4. :doc:`Pipes and filters <shell/pipes-filters/>`
 5. :doc:`Loops <shell/loops/>`
 6. :doc:`Shell scripts <shell/shell-scripts/>`

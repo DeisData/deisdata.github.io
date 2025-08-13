@@ -12,7 +12,7 @@
         gtag('js', new Date());
         gtag('config', 'G-VPGX1FF4LJ');
     </script>
-    <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Altering files and directories" href="../alter-dir/" /><link rel="prev" title="Bash Setup" href="../setup/" />
+    <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Altering directories" href="../alter-dir/" /><link rel="prev" title="Shell Setup" href="../setup/" />
 
     <link rel="shortcut icon" href="../../_static/favicon-32x32.png"/><!-- Generated with Sphinx 7.1.2 and Furo 2024.08.06 -->
         <title>Navigating to files and directories - DeisData</title>
@@ -244,9 +244,9 @@
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../">Unix Shell</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Unix Shell</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../setup/">Bash Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../setup/">Shell Setup</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Navigating</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../alter-dir/">Altering files and directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../alter-dir/">Altering directories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../pipes-filters/">Pipes and filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../loops/">Loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../shell-scripts/">Shell scripts</a></li>
@@ -325,8 +325,8 @@
         <article role="main" id="furo-main-content">
           <section id="navigating-to-files-and-directories">
 <h1>Navigating to files and directories<a class="headerlink" href="#navigating-to-files-and-directories" title="Permalink to this heading">¶</a></h1>
-<section id="your-challenges-of-the-day">
-<h2>Your challenges of the day:<a class="headerlink" href="#your-challenges-of-the-day" title="Permalink to this heading">¶</a></h2>
+<div style="max-width:960px"><div style="position:relative;padding-bottom:56.25%"><iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/4297403/sp/429740300/embedIframeJs/uiconf_id/48867372/partner_id/4297403?iframeembed=true&playerId=kaltura_player&entry_id=1_3rjjjmq1&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_67isyuj1" width="960" height="540" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Unix Shell 2: Navigating" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"></iframe></div></div><section id="your-challenges-for-this-lesson">
+<h2>Your challenges for this lesson:<a class="headerlink" href="#your-challenges-for-this-lesson" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Does type case matter? Is there a difference between <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-s</span></code> and
 <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-S</span></code>?</p></li>
@@ -359,8 +359,8 @@ volumes of data automatically. We can write sequences of commands into a
 script, improving the reproducibility of workflows. It is essential to
 interface with hardware, HPCC, and remote machines.</p>
 </section>
-<section id="navigating-files-and-directories">
-<h2>Navigating files and directories<a class="headerlink" href="#navigating-files-and-directories" title="Permalink to this heading">¶</a></h2>
+<section id="navigating">
+<h2>Navigating<a class="headerlink" href="#navigating" title="Permalink to this heading">¶</a></h2>
 <p>The <strong>file system</strong> is the part of the operating system responsible for
 managing files and directories.</p>
 <ul class="simple">
@@ -481,7 +481,7 @@ sub-directories inside your current working directory.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code> is a shortcut to move up one directory to the <em>parent directory</em> of the one
 we are in</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/</span></code> is a shortcut to move to the current user’s home
-directory. For example, if my home directory is <code class="docutils literal notranslate"><span class="pre">/home/fordfishman</span></code>,
+directory. For example, if your home directory is <code class="docutils literal notranslate"><span class="pre">/home/fordfishman</span></code>,
 then <code class="docutils literal notranslate"><span class="pre">~/data</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">/home/fordfishman/data</span></code></p></li>
 </ul>
 <div class="tab-set docutils container">
@@ -530,7 +530,7 @@ Shell</a></p></li>
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Altering files and directories</div>
+                <div class="title">Altering directories</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -541,7 +541,7 @@ Shell</a></p></li>
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Bash Setup</div>
+                <div class="title">Shell Setup</div>
                 
               </div>
             </a>
@@ -576,11 +576,11 @@ Shell</a></p></li>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Navigating to files and directories</a><ul>
-<li><a class="reference internal" href="#your-challenges-of-the-day">Your challenges of the day:</a></li>
+<li><a class="reference internal" href="#your-challenges-for-this-lesson">Your challenges for this lesson:</a></li>
 <li><a class="reference internal" href="#questions-to-think-about">Questions to think about:</a></li>
 <li><a class="reference internal" href="#what-is-unix-shell">What is Unix Shell?</a></li>
 <li><a class="reference internal" href="#why-use-bash">Why use Bash?</a></li>
-<li><a class="reference internal" href="#navigating-files-and-directories">Navigating files and directories</a></li>
+<li><a class="reference internal" href="#navigating">Navigating</a></li>
 <li><a class="reference internal" href="#paths">Paths</a></li>
 <li><a class="reference internal" href="#general-syntax-of-a-shell-command">General syntax of a shell command</a></li>
 <li><a class="reference internal" href="#listing-ls">Listing: <code class="docutils literal notranslate"><span class="pre">ls</span></code></a><ul>

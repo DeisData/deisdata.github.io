@@ -1,5 +1,9 @@
-Altering files and directories
-==============================
+Altering directories
+====================
+
+.. raw:: html
+
+   <div style="max-width:960px"><div style="position:relative;padding-bottom:56.25%"><iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/4297403/sp/429740300/embedIframeJs/uiconf_id/48867372/partner_id/4297403?iframeembed=true&playerId=kaltura_player&entry_id=1_nckeglmv&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_tzs4jeav" width="960" height="540" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Unix Shell 3: Altering Directories" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"></iframe></div></div>
 
 Questions to think about:
 -------------------------
@@ -109,7 +113,7 @@ Copying directories and/or files
 --------------------------------
 
 ``cp old new`` command copies a file (first argument) to a new location
-(second argument)
+(second argument).
 
 .. tab:: Bash
 
@@ -215,7 +219,7 @@ but you may want to try more powerful editors.
    If you start an editor from the shell, it will use your current working
    directory as its default location.
 
-   In editor commands, the Control key is also called :kbd:`Ctrl` or :kbd:`^`.
+   In editor commands, the Control key is also referred to as :kbd:`Ctrl` or :kbd:`^`.
 
 Challenge Questions
 -------------------
@@ -330,7 +334,8 @@ Challenge Project
 ~~~~~~~~~~~~~~~~~
 
 Before heading on a trip, you want to back up your data and send some
-datasets to Ford. Fill in the following commands to get the job done.
+datasets to your research mentor. Fill in the following commands to get the job done.
+
 First, let’s set up a directory and files.
 
 .. tab:: Bash
@@ -394,7 +399,7 @@ Now, it’s your turn!
 1. Create a backup directory with separate
    subdirectories for data and calibration files. Copy files to the
    appropriate locations. 
-2. Create a directory named send_to_ford and copy all the data from June 11th to it.
+2. Create a directory named send_to_mentor and copy all the data from June 11th to it.
 
 .. collapse:: Hint
 
@@ -422,7 +427,7 @@ Now, it’s your turn!
 
             cp *-data.txt backup/___
 
-      Copy June 11th files to ``send_to_ford/``.
+      Copy June 11th files to ``send_to_mentor/``.
 
       -  Hint: Use the copy command ``cp`` with wildcards!
 
@@ -430,7 +435,7 @@ Now, it’s your turn!
 
          .. code:: bash
 
-            cp *-11-*.txt send_to_ford/
+            cp *-11-*.txt send_to_mentor/
 
 
 Resources

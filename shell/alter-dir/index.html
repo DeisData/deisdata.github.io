@@ -15,7 +15,7 @@
     <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Pipes and filters" href="../pipes-filters/" /><link rel="prev" title="Navigating to files and directories" href="../navigating/" />
 
     <link rel="shortcut icon" href="../../_static/favicon-32x32.png"/><!-- Generated with Sphinx 7.1.2 and Furo 2024.08.06 -->
-        <title>Altering files and directories - DeisData</title>
+        <title>Altering directories - DeisData</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
@@ -244,9 +244,9 @@
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../">Unix Shell</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Unix Shell</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../setup/">Bash Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../setup/">Shell Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../navigating/">Navigating</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Altering files and directories</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Altering directories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../pipes-filters/">Pipes and filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../loops/">Loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../shell-scripts/">Shell scripts</a></li>
@@ -323,9 +323,9 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="altering-files-and-directories">
-<h1>Altering files and directories<a class="headerlink" href="#altering-files-and-directories" title="Permalink to this heading">¶</a></h1>
-<section id="questions-to-think-about">
+          <section id="altering-directories">
+<h1>Altering directories<a class="headerlink" href="#altering-directories" title="Permalink to this heading">¶</a></h1>
+<div style="max-width:960px"><div style="position:relative;padding-bottom:56.25%"><iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/4297403/sp/429740300/embedIframeJs/uiconf_id/48867372/partner_id/4297403?iframeembed=true&playerId=kaltura_player&entry_id=1_nckeglmv&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_tzs4jeav" width="960" height="540" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Unix Shell 3: Altering Directories" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"></iframe></div></div><section id="questions-to-think-about">
 <h2>Questions to think about:<a class="headerlink" href="#questions-to-think-about" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>How can I create, copy, and delete files and directories?</p></li>
@@ -428,7 +428,7 @@ overwrite.)</p>
 <section id="copying-directories-and-or-files">
 <h2>Copying directories and/or files<a class="headerlink" href="#copying-directories-and-or-files" title="Permalink to this heading">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">old</span> <span class="pre">new</span></code> command copies a file (first argument) to a new location
-(second argument)</p>
+(second argument).</p>
 <div class="tab-set docutils container">
 <input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cp<span class="w"> </span>filename2.txt<span class="w"> </span>new_dir
@@ -530,7 +530,7 @@ but you may want to try more powerful editors.</p>
 <p class="admonition-title">Editor tips</p>
 <p>If you start an editor from the shell, it will use your current working
 directory as its default location.</p>
-<p>In editor commands, the Control key is also called <kbd class="kbd docutils literal notranslate">Ctrl</kbd> or <kbd class="kbd docutils literal notranslate">^</kbd>.</p>
+<p>In editor commands, the Control key is also referred to as <kbd class="kbd docutils literal notranslate">Ctrl</kbd> or <kbd class="kbd docutils literal notranslate">^</kbd>.</p>
 </div>
 </section>
 <section id="challenge-questions">
@@ -626,8 +626,8 @@ wildcard can match to zero to many characters.</p>
 </details><section id="challenge-project">
 <h3>Challenge Project<a class="headerlink" href="#challenge-project" title="Permalink to this heading">¶</a></h3>
 <p>Before heading on a trip, you want to back up your data and send some
-datasets to Ford. Fill in the following commands to get the job done.
-First, let’s set up a directory and files.</p>
+datasets to your research mentor. Fill in the following commands to get the job done.</p>
+<p>First, let’s set up a directory and files.</p>
 <div class="tab-set docutils container">
 <input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hashtag denotes a comment. The line will be skipped</span>
@@ -689,7 +689,7 @@ file and run it.</p>
 <li><p>Create a backup directory with separate
 subdirectories for data and calibration files. Copy files to the
 appropriate locations.</p></li>
-<li><p>Create a directory named send_to_ford and copy all the data from June 11th to it.</p></li>
+<li><p>Create a directory named send_to_mentor and copy all the data from June 11th to it.</p></li>
 </ol>
 <details class="summary-hint">
 <summary>Hint</summary><div class="docutils container">
@@ -717,13 +717,13 @@ mkdir<span class="w"> </span>___/___
 </div>
 </div>
 </div>
-<p>Copy June 11th files to <code class="docutils literal notranslate"><span class="pre">send_to_ford/</span></code>.</p>
+<p>Copy June 11th files to <code class="docutils literal notranslate"><span class="pre">send_to_mentor/</span></code>.</p>
 <ul class="simple">
 <li><p>Hint: Use the copy command <code class="docutils literal notranslate"><span class="pre">cp</span></code> with wildcards!</p></li>
 </ul>
 <div class="tab-set docutils container">
 <input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--1">Bash</label><div class="tab-content docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>*-11-*.txt<span class="w"> </span>send_to_ford/
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>*-11-*.txt<span class="w"> </span>send_to_mentor/
 </pre></div>
 </div>
 </div>
@@ -793,7 +793,7 @@ Carpentry</a>.</p>
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Altering files and directories</a><ul>
+<li><a class="reference internal" href="#">Altering directories</a><ul>
 <li><a class="reference internal" href="#questions-to-think-about">Questions to think about:</a></li>
 <li><a class="reference internal" href="#creating-directories-or-files">Creating Directories or Files</a></li>
 <li><a class="reference internal" href="#moving-or-renaming-directories-or-files-safely">Moving or renaming directories or files safely</a></li>

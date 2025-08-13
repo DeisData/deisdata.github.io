@@ -12,7 +12,7 @@
         gtag('js', new Date());
         gtag('config', 'G-VPGX1FF4LJ');
     </script>
-    <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Loops" href="../loops/" /><link rel="prev" title="Altering files and directories" href="../alter-dir/" />
+    <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Loops" href="../loops/" /><link rel="prev" title="Altering directories" href="../alter-dir/" />
 
     <link rel="shortcut icon" href="../../_static/favicon-32x32.png"/><!-- Generated with Sphinx 7.1.2 and Furo 2024.08.06 -->
         <title>Pipes and filters - DeisData</title>
@@ -244,9 +244,9 @@
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../">Unix Shell</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Unix Shell</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../setup/">Bash Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../setup/">Shell Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../navigating/">Navigating</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../alter-dir/">Altering files and directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../alter-dir/">Altering directories</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Pipes and filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../loops/">Loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../shell-scripts/">Shell scripts</a></li>
@@ -325,7 +325,7 @@
         <article role="main" id="furo-main-content">
           <section id="pipes-and-filters">
 <h1>Pipes and filters<a class="headerlink" href="#pipes-and-filters" title="Permalink to this heading">¶</a></h1>
-<p>The idea of linking together programs is why Unix has been so
+<div style="max-width:960px"><div style="position:relative;padding-bottom:56.25%"><iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/4297403/sp/429740300/embedIframeJs/uiconf_id/48867372/partner_id/4297403?iframeembed=true&playerId=kaltura_player&entry_id=1_uutk1pld&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_puys3828" width="960" height="540" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Unix Shell 4: Pipes and Filters" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"></iframe></div></div><p>The idea of linking together programs is why Unix has been so
 successful. Instead of creating enormous programs that try to do many
 different things, we focus on lots of simple tools that work well with
 each other.</p>
@@ -393,9 +393,9 @@ $<span class="w"> </span>wc<span class="w"> </span>cubane.pdb
 <h2>Write to a file from the prompt<a class="headerlink" href="#write-to-a-file-from-the-prompt" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code> <strong>redirects</strong> a command’s output to a file instead of printing
-it to the screen. DO NOT write to the same file.</p></li>
+it to the screen. This WILL overwrite the file if it already exists.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> <strong>redirects</strong> a command’s output to append to the end of a
-file</p></li>
+file.</p></li>
 </ul>
 <p>Here we get the number of lines in all of our files and redirect the
 output to a new file called <code class="docutils literal notranslate"><span class="pre">line_count.txt</span></code>.</p>
@@ -457,20 +457,20 @@ file.</p>
 <h2>View particular file contents<a class="headerlink" href="#view-particular-file-contents" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">cat</span></code> is the concatentate (join together) command that prints the
-contents of files one after another</p></li>
+contents of files one after another.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">less</span></code> displays a screenful of the file and then stops. You can go
-forward one screenful by pressingthe spacebar, or back one by
+forward one screenful by pressing the spacebar, or back one by
 pressing B and Q to quit.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">head</span></code> shows the first few lines of a file. For example,
 <code class="docutils literal notranslate"><span class="pre">head</span> <span class="pre">-n</span> <span class="pre">5</span></code> will show the first 5 lines.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">tail</span></code> shows the last few lines of a file</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cut</span></code> removes or cuts out certain sections of each line in a file</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">tail</span></code> shows the last few lines of a file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cut</span></code> removes or cuts out certain sections of each line in a file.</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">-d</span></code> option specifies a delimeter</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-f</span></code> option specifies the column for extraction</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-d</span></code> option specifies a delimiter.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-f</span></code> option specifies the column for extraction.</p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">uniq</span></code> filters out adjecent matching lines in a file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">uniq</span></code> filters out adjacent matching lines in a file.</p></li>
 </ul>
 </section>
 <section id="piping-commands-together">
@@ -498,7 +498,7 @@ command on the left as the input of the command on the right.</p>
 </div>
 </div>
 <p>You can chain pipes consecutively between multiple commands. We do so
-here to grab the first line of the sort with <code class="docutils literal notranslate"><span class="pre">head</span> <span class="pre">-n</span> <span class="pre">1</span></code></p>
+here to grab the first line of the sort with <code class="docutils literal notranslate"><span class="pre">head</span> <span class="pre">-n</span> <span class="pre">1</span></code>.</p>
 <div class="tab-set docutils container">
 <input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>wc<span class="w"> </span>-l<span class="w"> </span>*.pdb<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-nr<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span>
@@ -630,7 +630,7 @@ Carpentry</a>.</p>
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Altering files and directories</div>
+                <div class="title">Altering directories</div>
                 
               </div>
             </a>

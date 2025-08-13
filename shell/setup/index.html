@@ -15,7 +15,7 @@
     <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Navigating to files and directories" href="../navigating/" /><link rel="prev" title="Unix Shell" href="../" />
 
     <link rel="shortcut icon" href="../../_static/favicon-32x32.png"/><!-- Generated with Sphinx 7.1.2 and Furo 2024.08.06 -->
-        <title>Bash Setup - DeisData</title>
+        <title>Shell Setup - DeisData</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
@@ -244,9 +244,9 @@
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../">Unix Shell</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Unix Shell</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Bash Setup</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Shell Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../navigating/">Navigating</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../alter-dir/">Altering files and directories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../alter-dir/">Altering directories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../pipes-filters/">Pipes and filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../loops/">Loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../shell-scripts/">Shell scripts</a></li>
@@ -323,9 +323,9 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="bash-setup">
-<h1>Bash Setup<a class="headerlink" href="#bash-setup" title="Permalink to this heading">¶</a></h1>
-<p><em>Adapted from</em> <a class="reference external" href="https://software-carpentry.org">Software
+          <section id="shell-setup">
+<h1>Shell Setup<a class="headerlink" href="#shell-setup" title="Permalink to this heading">¶</a></h1>
+<div style="max-width:960px"><div style="position:relative;padding-bottom:56.25%"><iframe id="kaltura_player" src="https://cdnapisec.kaltura.com/p/4297403/sp/429740300/embedIframeJs/uiconf_id/48867372/partner_id/4297403?iframeembed=true&playerId=kaltura_player&entry_id=1_0koy5hmm&flashvars[streamerType]=auto&amp;flashvars[localizationCode]=en&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[hotspots.plugin]=1&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&wid=1_hieplttd" width="960" height="540" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-downloads allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" frameborder="0" title="Unix Shell1: Introduction" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"></iframe></div></div><p><em>Adapted from</em> <a class="reference external" href="https://software-carpentry.org">Software
 Carpentry</a></p>
 <p>The shell is a program that enables us to send commands to the computer
 and receive output. It is also referred to as the terminal or command
@@ -336,10 +336,10 @@ if you already have one installed. There are also options for
 identifying and downloading a Unix Shell program, a Linux/UNIX emulator,
 or a program to access a Unix Shell on a server.</p>
 <p>If none of the options below address your circumstances, try an online
-search for: Unix shell [your computer model] [your operating system].</p>
+search for: “Unix shell [your computer model] [your operating system]”.</p>
 <section id="linux">
 <h2>Linux<a class="headerlink" href="#linux" title="Permalink to this heading">¶</a></h2>
-<p>The default Unix Shell for Linux operating systems is usually Bash. On
+<p>The default Unix Shell for Linux operating systems is usually <code class="docutils literal notranslate"><span class="pre">bash</span></code>. On
 most versions of Linux, it is accessible by running the <a class="reference external" href="https://help.gnome.org/users/gnome-terminal/stable/">(Gnome) Terminal</a>
 or <a class="reference external" href="https://konsole.kde.org/">(KDE) Konsole</a> or <a class="reference external" href="https://en.wikipedia.org/wiki/Xterm">xterm</a>,
 which can be found via the applications menu
@@ -349,14 +349,14 @@ Bash, you can run it by opening a terminal and typing <code class="docutils lite
 <section id="macos">
 <h2>macOS<a class="headerlink" href="#macos" title="Permalink to this heading">¶</a></h2>
 <p>For a Mac computer running macOS Mojave or earlier releases, the default
-Unix Shell is Bash. For a Mac computer running macOS Catalina or later
-releases, the default Unix Shell is Zsh. Your default shell is available
+Unix Shell is <code class="docutils literal notranslate"><span class="pre">bash</span></code>. For a Mac computer running macOS Catalina or later
+releases, the default Unix Shell is <code class="docutils literal notranslate"><span class="pre">zsh</span></code>. Your default shell is available
 via the Terminal program within your Utilities folder.</p>
 <p>To open Terminal, try one or both of the following:</p>
 <ul class="simple">
 <li><p>In Finder, select the Go menu, then select Utilities.
 Locate Terminal in the Utilities folder and open it.</p></li>
-<li><p>Use the Mac ‘Spotlight’ computer search function. Search for: <strong>Terminal</strong>
+<li><p>Use the Mac Spotlight computer search function. Search for: <strong>Terminal</strong>
 and press <kbd class="kbd docutils literal notranslate">Return</kbd>.</p></li>
 </ul>
 <p>To check if your machine is set up to use something other than Bash,
@@ -372,14 +372,14 @@ instructions</a>.</p>
 <p>Computers with Windows operating systems do not automatically have a
 Unix Shell program installed. In this lesson, we encourage you to use an
 emulator included in <a class="reference external" href="https://git-for-windows.github.io/">Git for Windows</a>,
-which gives you access to both Bash shell commands and Git. If you are attending a Software Carpentry
+which gives you access to both <code class="docutils literal notranslate"><span class="pre">bash</span></code> shell commands and Git. If you are attending a Software Carpentry
 workshop session, it is likely you have already received instructions on
 how to install Git for Windows.</p>
 <p>Once installed, you can open a terminal by running the program Git Bash
 from the Windows start menu.</p>
-<p>Other solutions are available for running Bash commands on Windows.
-There is now a Bash shell command-line tool available for Windows 10.
-Additionally, you can run Bash commands on a remote computer or server
+<p>Other solutions are available for running <code class="docutils literal notranslate"><span class="pre">bash</span></code> commands on Windows.
+There is now a <code class="docutils literal notranslate"><span class="pre">bash</span></code> shell command-line tool available for Windows 10.
+Additionally, you can run <code class="docutils literal notranslate"><span class="pre">bash</span></code> commands on a remote computer or server
 that already has a Unix Shell, from your Windows machine. This can
 usually be done through a Secure Shell (SSH) client. One such client
 available for free for Windows computers is <a class="reference external" href="https://www.putty.org/">PuTTY</a>. See the reference
@@ -463,7 +463,7 @@ Carpentry</a>.</p>
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Bash Setup</a><ul>
+<li><a class="reference internal" href="#">Shell Setup</a><ul>
 <li><a class="reference internal" href="#linux">Linux</a></li>
 <li><a class="reference internal" href="#macos">macOS</a></li>
 <li><a class="reference internal" href="#windows">Windows</a></li>
