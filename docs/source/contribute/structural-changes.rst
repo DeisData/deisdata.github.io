@@ -159,38 +159,18 @@ Install sphinx and dependencies
 
 First, we're going to use ``conda`` to create a virtual environment. 
 This allows us to download and install different software with 
-compatible versions to installed without conflicts arising. 
+compatible versions to installed without conflicts arising. We will use
+a ``yml`` file to specify the packages we want to install.
+
+Navigate to the root directory of the repository in your console. This is the directory
+that contains the ``environment.yml`` file. Then run:
 
 .. code:: bash
 
-    conda create -n sphinx
-    conda activate sphinx
+    conda env create -f environment.yml
 
-You should now be inside your new conda environment. We're going to install
-``sphinx`` with conda. 
-
-.. code:: bash
-
-    conda install sphinx
-
-Once you run this command, you'll eventually see a list of packages that will be
-installed along with sphinx. These are dependencies that sphinx needs to work
-that will be installed along with it. Type ``y`` and hit enter when prompted.
-
-We need to install some necessary packages for our specific project. 
-
-.. code:: bash   
-
-    conda install -c conda-forge furo sphinx-inline-tabs sphinx-toolbox sphinx-reredirects sphinxcontrib-youtube
-
-``-c conda-forge`` specifies that we are installing these from ``condaforge``. ``furo`` 
-is used for the specific style of our website. ``sphinx-inline-tabs`` is used to create 
-tabs, mostly used to show code languages and/or output. ``sphinx-toolbox`` is used for a 
-variety of different utilities. ``sphinx-reredirects`` handles redirects of pages.
-``sphinxcontrib-youtube`` allows easy embedding of YouTube videos.
-
-
-Check the ``source/requirements.txt`` file for the full list of required sphinx packages.
+This will create a new conda environment with all the packages specified in the
+``environment.yml`` file.
 
 Making changes
 ==============

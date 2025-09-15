@@ -212,11 +212,6 @@ language.
 There are many codecs you can use for code highlighting, which you can
 view `here <https://docs.typo3.org/m/typo3/docs-how-to-document/main/en-us/WritingReST/Reference/Code/Codeblocks.html>`__. 
 
-.. The ``.. youtube::`` directive is from the 
-.. ``sphinxcontrib-youtube`` extension. It is used to embed YouTube videos. 
-
-.. .. youtube:: https://www.youtube.com/watch?v=wupToqz1e2g
-
 Similarly, sphinx_inline_tabs gives access to the ``.. tab::`` 
 directive. This is commonly used throughout this site to display code and 
 output. The text following the directive will be used as the name on the tab.
