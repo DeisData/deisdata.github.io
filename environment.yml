@@ -1,0 +1,12 @@
+name: sphinx
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - sphinx>=6.1.3
+  - docutils>=0.19
+  - furo=2024.8.6
+  - sphinx-toolbox
+  - sphinx-inline-tabs
+  - sphinx-reredirects
+  - sphinxcontrib-googleanalytics=0.4
