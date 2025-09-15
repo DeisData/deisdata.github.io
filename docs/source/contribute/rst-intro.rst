@@ -484,6 +484,29 @@ images.
 
         .. |cat image| image:: /_static/images/contribute/cat.jpeg
 
+Embed Kaltura videos
+====================
+
+The videos on this site are hosted on Kaltura. To embed a Kaltura video, follow
+these instructions.
+
+1. Upload video to Kaltura as an unlisted or public video.
+2. Go to the video.
+3. Below the video, select **Share** and then **Embed**.
+4. Under **Player Size**, select **960x540**.
+5. Toggle on **Responsive Sizing**.
+6. Copy the embed code (will be HTML).
+7. Use the following RSS syntax, replacing ``<div> … </div>`` with the copied embed code:
+
+.. tab:: RST
+
+    .. code:: rst
+
+        .. raw:: html
+	
+            <div> … </div>
+
+
 Documentation
 -------------
 
