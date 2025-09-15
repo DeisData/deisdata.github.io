@@ -83,9 +83,8 @@ Installation
    **Launch**) to open Jupyter Notebook in a web browser.
 5. Jupyter Notebook opens in a web browser but is running locally on
    your computer. On the main tab **Files** you will see a location in
-   your file system. This startup folder is called the root directory of
-   the app. Make sure you have a folder you can navigate to where you
-   can put any files and datasets you’ll be using.
+   your file system. You should save your workshop files in a folder you
+   can navigate easily, like somewhere on your Desktop or your Documents.
 
 Miniconda (Most streamlined)
 ----------------------------
