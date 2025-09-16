@@ -464,29 +464,15 @@ also install the <a class="reference external" href="https://marketplace.visuals
 <h3>Install sphinx and dependencies<a class="headerlink" href="#install-sphinx-and-dependencies" title="Permalink to this heading">¶</a></h3>
 <p>First, we’re going to use <code class="docutils literal notranslate"><span class="pre">conda</span></code> to create a virtual environment.
 This allows us to download and install different software with
-compatible versions to installed without conflicts arising.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>sphinx
-conda<span class="w"> </span>activate<span class="w"> </span>sphinx
+compatible versions to installed without conflicts arising. We will use
+a <code class="docutils literal notranslate"><span class="pre">yml</span></code> file to specify the packages we want to install.</p>
+<p>Navigate to the root directory of the repository in your console. This is the directory
+that contains the <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file. Then run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yml
 </pre></div>
 </div>
-<p>You should now be inside your new conda environment. We’re going to install
-<code class="docutils literal notranslate"><span class="pre">sphinx</span></code> with conda.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>sphinx
-</pre></div>
-</div>
-<p>Once you run this command, you’ll eventually see a list of packages that will be
-installed along with sphinx. These are dependencies that sphinx needs to work
-that will be installed along with it. Type <code class="docutils literal notranslate"><span class="pre">y</span></code> and hit enter when prompted.</p>
-<p>We need to install some necessary packages for our specific project.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>furo<span class="w"> </span>sphinx-inline-tabs<span class="w"> </span>sphinx-toolbox<span class="w"> </span>sphinx-reredirects<span class="w"> </span>sphinxcontrib-youtube
-</pre></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">conda-forge</span></code> specifies that we are installing these from <code class="docutils literal notranslate"><span class="pre">condaforge</span></code>. <code class="docutils literal notranslate"><span class="pre">furo</span></code>
-is used for the specific style of our website. <code class="docutils literal notranslate"><span class="pre">sphinx-inline-tabs</span></code> is used to create
-tabs, mostly used to show code languages and/or output. <code class="docutils literal notranslate"><span class="pre">sphinx-toolbox</span></code> is used for a
-variety of different utilities. <code class="docutils literal notranslate"><span class="pre">sphinx-reredirects</span></code> handles redirects of pages.
-<code class="docutils literal notranslate"><span class="pre">sphinxcontrib-youtube</span></code> allows easy embedding of YouTube videos.</p>
-<p>Check the <code class="docutils literal notranslate"><span class="pre">source/requirements.txt</span></code> file for the full list of required sphinx packages.</p>
+<p>This will create a new conda environment with all the packages specified in the
+<code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file.</p>
 </section>
 </section>
 <section id="making-changes">
