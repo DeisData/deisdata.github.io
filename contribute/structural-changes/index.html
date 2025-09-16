@@ -334,7 +334,8 @@ build the website to check that your changes work as intended.</p>
 <h3>Install Git<a class="headerlink" href="#install-git" title="Permalink to this heading">¶</a></h3>
 <p>To clone the website your repository, you will need Git installed
 on your machine. This allows you to interact with the GitHub repository
-and commit your changes to version control.</p>
+and commit your changes to version control. You can accept the defaults
+for the installation options.</p>
 <p>Please follow <a class="reference internal" href="../../git/setup-install/"><span class="doc">our instructions for installing Git</span></a>.</p>
 </section>
 <section id="install-miniconda">
@@ -364,7 +365,7 @@ you can skip this installation.</p>
 <li><p>This will open a graphical interface to install. Follow the instructions and
 accept the defaults until you reach <strong>Advanced Installation Options</strong>. If you use
 another Python installation and would like to keep using it primarily, uncheck
-“Register Miniconda3 as my default Python 3.12”.</p></li>
+“Register Miniconda3 as my default Python 3.xx”. Otherwise, you can leave it checked.</p></li>
 <li><p>Click “Install” and then “Next” and “Finished” once completed.</p></li>
 <li><p>Remove the installer:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm<span class="w"> </span>miniconda.exe
@@ -454,15 +455,76 @@ the default conda environment. To make conda activate when you open your console
 </div>
 <p>When you reboot, the change will be in effect.</p>
 </section>
+<section id="install-make">
+<h3>Install make<a class="headerlink" href="#install-make" title="Permalink to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">make</span></code> is a tool that automates the building of files. We will use it to
+build the website from the source files.</p>
+<p>To see if <code class="docutils literal notranslate"><span class="pre">make</span></code> is already installed, you can run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>--version
+</pre></div>
+</div>
+<p>To install <code class="docutils literal notranslate"><span class="pre">make</span></code>, you can use the package manager for your operating system.</p>
+<div class="tab-set docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Windows</label><div class="tab-content docutils container">
+<p>Windows has a more involved installation process. We recommend using <code class="docutils literal notranslate"><span class="pre">scoop</span></code> to install
+<code class="docutils literal notranslate"><span class="pre">make</span></code>. If you do not have <code class="docutils literal notranslate"><span class="pre">scoop</span></code> installed, you can install it by following the
+instructions at <a class="reference external" href="https://scoop.sh/">https://scoop.sh/</a>. Open PowerShell, and run:</p>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Set-ExecutionPolicy</span> <span class="n">-ExecutionPolicy</span> <span class="n">RemoteSigned</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+<span class="nb">Invoke-RestMethod</span> <span class="n">-Uri</span> <span class="n">https</span><span class="p">://</span><span class="n">get</span><span class="p">.</span><span class="n">scoop</span><span class="p">.</span><span class="n">sh</span> <span class="p">|</span> <span class="nb">Invoke-Expression</span>
+</pre></div>
+</div>
+<p>Give the process the permissions it needs, and accept any prompts that appear.</p>
+<p>Then, you can install <code class="docutils literal notranslate"><span class="pre">make</span></code> with this command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scoop<span class="w"> </span>install<span class="w"> </span>make
+</pre></div>
+</div>
+<p>Restart Git Bash and run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">--version</span></code> again to confirm the installation was successful.</p>
+</div>
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">MacOS</label><div class="tab-content docutils container">
+<blockquote>
+<div><p>If you do not have Homebrew installed, you can install it by following
+the instructions at <a class="reference external" href="https://brew.sh/">https://brew.sh/</a>.</p>
+<p>Then, you can install <code class="docutils literal notranslate"><span class="pre">make</span></code> with this command:</p>
+</div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>brew<span class="w"> </span>install<span class="w"> </span>make
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--1-input--3" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--3">Linux</label><div class="tab-content docutils container">
+<ul class="simple">
+<li><p>On Ubuntu or Debian:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>make
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>On CentOS or Fedora:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>make
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="install-a-text-editor">
 <h3>Install a text editor<a class="headerlink" href="#install-a-text-editor" title="Permalink to this heading">¶</a></h3>
 <p>To edit the document files, you will need a text editor. We recommend <a class="reference external" href="https://code.visualstudio.com/">VS Code</a>,
 as it is a flexible editing environment. Once you install VS Code, make sure to
 also install the <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python extension</a>.</p>
 </section>
+<section id="clone-the-repository">
+<h3>Clone the repository<a class="headerlink" href="#clone-the-repository" title="Permalink to this heading">¶</a></h3>
+<p>If you have not already, make sure to fork the repository to your
+personal GitHub account. Once you’ve made the fork, you can <a class="reference internal" href="../../git/quick-start/"><span class="doc">clone</span></a>
+your forked repo and use a text editor (like VS Code). You can use the code below,
+replacing <code class="docutils literal notranslate"><span class="pre">&lt;your-username&gt;</span></code> with your GitHub username:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/&lt;your-username&gt;/deisdata.github.io.git
+</pre></div>
+</div>
+</section>
 <section id="install-sphinx-and-dependencies">
 <h3>Install sphinx and dependencies<a class="headerlink" href="#install-sphinx-and-dependencies" title="Permalink to this heading">¶</a></h3>
-<p>First, we’re going to use <code class="docutils literal notranslate"><span class="pre">conda</span></code> to create a virtual environment.
+<p>We’re going to use <code class="docutils literal notranslate"><span class="pre">conda</span></code> to create a virtual environment.
 This allows us to download and install different software with
 compatible versions to installed without conflicts arising. We will use
 a <code class="docutils literal notranslate"><span class="pre">yml</span></code> file to specify the packages we want to install.</p>
@@ -472,18 +534,25 @@ that contains the <code class="docutils literal notranslate"><span class="pre">e
 </pre></div>
 </div>
 <p>This will create a new conda environment with all the packages specified in the
+<code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file. You may be prompted to accept ToS for some software,
+so please read and accept.</p>
+<p>To activate the environment, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>sphinx
+</pre></div>
+</div>
+<p>You should see the name of the environment, <code class="docutils literal notranslate"><span class="pre">(sphinx)</span></code>, appear in your console prompt. If you
+ever need to update the environment with new packages, you can run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>update<span class="w"> </span>-f<span class="w"> </span>environment.yml
+</pre></div>
+</div>
+<p>This will update the environment to include any new packages specified in the
 <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file.</p>
 </section>
 </section>
 <section id="making-changes">
 <h2>Making changes<a class="headerlink" href="#making-changes" title="Permalink to this heading">¶</a></h2>
-<section id="clone-the-repository">
-<h3>Clone the repository<a class="headerlink" href="#clone-the-repository" title="Permalink to this heading">¶</a></h3>
-<p>If you have not already, make sure to fork the repository to your
-personal GitHub account. Once you’ve made the fork, you can <a class="reference internal" href="../../git/quick-start/"><span class="doc">clone</span></a>
-your forked repo and use a text editor (like VS Code).</p>
 <section id="adding-a-new-set-of-pages">
-<h4>Adding a new set of pages<a class="headerlink" href="#adding-a-new-set-of-pages" title="Permalink to this heading">¶</a></h4>
+<h3>Adding a new set of pages<a class="headerlink" href="#adding-a-new-set-of-pages" title="Permalink to this heading">¶</a></h3>
 <p>While you can in theory place a new document RST file anywhere in the
 <code class="docutils literal notranslate"><span class="pre">source/</span></code> directory, our structure is to put the home page of a topic
 directly in the <code class="docutils literal notranslate"><span class="pre">source/</span></code> directory. The subpages for that topic are
@@ -494,7 +563,6 @@ when adding any new pages.</p>
 documents you add. When you build the website, you’ll get a warning
 if there is a document that’s not included in any toctree.</p>
 <p>Make sure to <a class="reference internal" href="../../git/quick-start/"><span class="doc">stage and commit</span></a> all changes you make in the repository.</p>
-</section>
 </section>
 <section id="make-html">
 <h3><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code><a class="headerlink" href="#make-html" title="Permalink to this heading">¶</a></h3>
@@ -515,7 +583,7 @@ for the website. The html files you’ve just built will be in <code class="docu
 You can open these files in any browser by double clicking them, and from here, you
 can navigate the site just like you would on the live website.</p>
 <p>Once you are ready, you can commit your changes and push them to your forked repo.
-Due to the default .gitignore settings, the build will not be commited;
+Due to the default <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> settings, the build will not be commited;
 only the source files will be in version control.</p>
 </section>
 </section>
@@ -572,15 +640,14 @@ only the source files will be in version control.</p>
 <li><a class="reference internal" href="#necessary-installations-for-local-builds">Necessary installations for local builds</a><ul>
 <li><a class="reference internal" href="#install-git">Install Git</a></li>
 <li><a class="reference internal" href="#install-miniconda">Install Miniconda</a></li>
+<li><a class="reference internal" href="#install-make">Install make</a></li>
 <li><a class="reference internal" href="#install-a-text-editor">Install a text editor</a></li>
+<li><a class="reference internal" href="#clone-the-repository">Clone the repository</a></li>
 <li><a class="reference internal" href="#install-sphinx-and-dependencies">Install sphinx and dependencies</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#making-changes">Making changes</a><ul>
-<li><a class="reference internal" href="#clone-the-repository">Clone the repository</a><ul>
 <li><a class="reference internal" href="#adding-a-new-set-of-pages">Adding a new set of pages</a></li>
-</ul>
-</li>
 <li><a class="reference internal" href="#make-html"><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code></a></li>
 </ul>
 </li>
