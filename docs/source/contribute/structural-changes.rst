@@ -14,7 +14,8 @@ Install Git
 
 To clone the website your repository, you will need Git installed 
 on your machine. This allows you to interact with the GitHub repository
-and commit your changes to version control. 
+and commit your changes to version control. You can accept the defaults
+for the installation options.
 
 Please follow :doc:`our instructions for installing Git </git/setup-install>`.
 
@@ -48,7 +49,7 @@ Installation adapted from the `Anaconda documentation <https://docs.anaconda.com
     4. This will open a graphical interface to install. Follow the instructions and 
        accept the defaults until you reach **Advanced Installation Options**. If you use
        another Python installation and would like to keep using it primarily, uncheck 
-       "Register Miniconda3 as my default Python 3.12".
+       "Register Miniconda3 as my default Python 3.xx". Otherwise, you can leave it checked.
     5. Click "Install" and then "Next" and "Finished" once completed.
     6. Remove the installer:
        
@@ -147,6 +148,70 @@ the default conda environment. To make conda activate when you open your console
 
 When you reboot, the change will be in effect.
 
+Install make
+------------
+
+``make`` is a tool that automates the building of files. We will use it to
+build the website from the source files.
+
+To see if ``make`` is already installed, you can run:
+
+.. code:: bash
+
+    make --version
+
+To install ``make``, you can use the package manager for your operating system.
+
+.. tab:: Windows
+
+   Windows has a more involved installation process. We recommend using ``scoop`` to install 
+   ``make``. If you do not have ``scoop`` installed, you can install it by following the
+   instructions at `https://scoop.sh/ <https://scoop.sh/>`__. Open PowerShell, and run:
+
+   .. code:: powershell
+
+      Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+      Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+
+   Give the process the permissions it needs, and accept any prompts that appear.
+
+
+   Then, you can install ``make`` with this command:
+
+   .. code:: bash
+
+      scoop install make
+
+   Restart Git Bash and run ``make --version`` again to confirm the installation was successful.
+
+.. tab:: MacOS
+
+   If you do not have Homebrew installed, you can install it by following 
+   the instructions at `https://brew.sh/ <https://brew.sh/>`__.
+
+   Then, you can install ``make`` with this command:
+
+
+  .. code:: bash
+
+      brew install make
+
+.. tab:: Linux
+
+
+   - On Ubuntu or Debian:
+
+   .. code:: bash
+
+         sudo apt-get install make
+
+   - On CentOS or Fedora:
+
+   .. code:: bash
+
+         sudo dnf install make
+
+
 Install a text editor
 ---------------------
 
@@ -154,10 +219,22 @@ To edit the document files, you will need a text editor. We recommend `VS Code <
 as it is a flexible editing environment. Once you install VS Code, make sure to
 also install the `Python extension <https://marketplace.visualstudio.com/items?itemName=ms-python.python>`__. 
 
+Clone the repository
+--------------------
+
+If you have not already, make sure to fork the repository to your 
+personal GitHub account. Once you've made the fork, you can :doc:`clone </git/quick-start>` 
+your forked repo and use a text editor (like VS Code). You can use the code below,
+replacing ``<your-username>`` with your GitHub username:
+
+.. code:: bash
+
+    git clone https://github.com/<your-username>/deisdata.github.io.git
+
 Install sphinx and dependencies
 -------------------------------
 
-First, we're going to use ``conda`` to create a virtual environment. 
+We're going to use ``conda`` to create a virtual environment. 
 This allows us to download and install different software with 
 compatible versions to installed without conflicts arising. We will use
 a ``yml`` file to specify the packages we want to install.
@@ -170,20 +247,30 @@ that contains the ``environment.yml`` file. Then run:
     conda env create -f environment.yml
 
 This will create a new conda environment with all the packages specified in the
+``environment.yml`` file. You may be prompted to accept ToS for some software, 
+so please read and accept. 
+
+To activate the environment, run:
+
+.. code:: bash
+
+    conda activate sphinx
+
+You should see the name of the environment, ``(sphinx)``, appear in your console prompt. If you
+ever need to update the environment with new packages, you can run:
+
+.. code:: bash
+
+    conda env update -f environment.yml
+
+This will update the environment to include any new packages specified in the 
 ``environment.yml`` file.
 
 Making changes
 ==============
 
-Clone the repository
---------------------
-
-If you have not already, make sure to fork the repository to your 
-personal GitHub account. Once you've made the fork, you can :doc:`clone </git/quick-start>` 
-your forked repo and use a text editor (like VS Code).
-
 Adding a new set of pages 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 While you can in theory place a new document RST file anywhere in the
 ``source/`` directory, our structure is to put the home page of a topic
@@ -223,5 +310,5 @@ You can open these files in any browser by double clicking them, and from here, 
 can navigate the site just like you would on the live website.
 
 Once you are ready, you can commit your changes and push them to your forked repo.
-Due to the default .gitignore settings, the build will not be commited; 
+Due to the default ``.gitignore`` settings, the build will not be commited; 
 only the source files will be in version control.
