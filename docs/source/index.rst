@@ -15,11 +15,16 @@ Meet your research community of support.
    -  `Dr. Margarita
       Corral <http://calendar.library.brandeis.edu/appointment/8518>`__
       (social sciences)
+   -  `Surma
+      Talapatra <https://calendar.library.brandeis.edu/appointments/stalapatra>`__
+      (sciences)
    -  `Ford
       Fishman <https://calendar.library.brandeis.edu/appointments/fordfishman>`__
       (sciences)
    -  `Kevin Martyn <https://calendar.library.brandeis.edu/appointments/kpm>`__
       (GIS)
+
+
 
 -  `Register for Library
    Workshops <https://calendar.library.brandeis.edu/calendar/workshops/>`__,
