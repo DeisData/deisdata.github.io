@@ -46,8 +46,8 @@ How to I get support?
 Having trouble? **Make an appointment with your Data Analysis
 Specialists**, `Dr. Margarita
 Corral <http://calendar.library.brandeis.edu/appointment/8518>`__ and
-`Ford
-Fishman <https://calendar.library.brandeis.edu/appointments/fordfishman>`__
+`Surma
+Talapatra <https://calendar.library.brandeis.edu/appointments/stalapatra>`__
 (sciences), `Kevin Martyn <https://calendar.library.brandeis.edu/appointments/kpm>`__
 (GIS) or your `Brandeis Library Subject
 Liaison <https://www.brandeis.edu/library/research/help/liaison-subject.html>`__
