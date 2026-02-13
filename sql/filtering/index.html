@@ -352,12 +352,12 @@ so that <code class="docutils literal notranslate"><span class="pre">%able%</spa
 We can select these records from <code class="docutils literal notranslate"><span class="pre">Visited</span></code> table using a
 <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> clause in our query.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio" /><label class="tab-label" for="tab-set--0-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Visited</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">site</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;DR-1&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio" /><label class="tab-label" for="tab-set--0-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>id   site  dated
 ---  ----  ----------
 619  DR-1  1927-02-08
@@ -375,12 +375,12 @@ We can select these records from <code class="docutils literal notranslate"><spa
 <p>This processing order means we can filter records using <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> based on values in
 columns that aren’t displayed.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio" /><label class="tab-label" for="tab-set--1-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Visited</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">site</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;DR-1&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio" /><label class="tab-label" for="tab-set--1-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>id
 ---
 619
@@ -400,12 +400,12 @@ columns that aren’t displayed.</p>
 <p>We can combine these conditional tests with <code class="docutils literal notranslate"><span class="pre">AND</span></code> or <code class="docutils literal notranslate"><span class="pre">OR</span></code>.
 For example, we can get information on DR-1 site collected before 1930.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio" /><label class="tab-label" for="tab-set--2-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Visited</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">site</span><span class="o">=</span><span class="s1">&#39;DR-1&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">dated</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="s1">&#39;1930-01-01&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio" /><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>id   site  dated
 ---  ----  ----------
 619  DR-1  1927-02-08
@@ -417,12 +417,12 @@ For example, we can get information on DR-1 site collected before 1930.</p>
 <p><code class="docutils literal notranslate"><span class="pre">AND</span></code> means both conditions must be true.</p>
 <p><code class="docutils literal notranslate"><span class="pre">OR</span></code> means at least one condition has to be true.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio" /><label class="tab-label" for="tab-set--3-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Survey</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;lake&#39;</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;roe&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio" /><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>taken  person  quant  reading
 -----  ------  -----  -------
 734    lake    sal    0.05
@@ -444,12 +444,12 @@ For example, we can get information on DR-1 site collected before 1930.</p>
 <h2>Parentheses<a class="headerlink" href="#parentheses" title="Permalink to this heading">¶</a></h2>
 <p>Another way to write this is to see if a value is in a set.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio" /><label class="tab-label" for="tab-set--4-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Survey</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">person</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;lake&#39;</span><span class="p">,</span><span class="s1">&#39;roe&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio" /><label class="tab-label" for="tab-set--4-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>taken  person  quant  reading
 -----  ------  -----  -------
 734    lake    sal    0.05
@@ -468,14 +468,14 @@ For example, we can get information on DR-1 site collected before 1930.</p>
 </div>
 <p>And be careful about parentheses if you are putting together a lot of tests!</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio" /><label class="tab-label" for="tab-set--5-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Survey</span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">quant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;sal&#39;</span>
 <span class="k">AND</span><span class="w"> </span><span class="n">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;lake&#39;</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">person</span><span class="o">=</span><span class="s1">&#39;roe&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio" /><label class="tab-label" for="tab-set--5-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>taken  person  quant  reading
 -----  ------  -----  -------
 734    lake    sal    0.05
@@ -492,12 +492,12 @@ For example, we can get information on DR-1 site collected before 1930.</p>
 <p>This gives us all the measurements by <code class="docutils literal notranslate"><span class="pre">'roe'</span></code>.</p>
 <p>What we probably meant is this:</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio" /><label class="tab-label" for="tab-set--6-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Survey</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">quant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;sal&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="p">(</span><span class="n">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;lake&#39;</span><span class="w">  </span><span class="k">OR</span><span class="w"> </span><span class="n">person</span><span class="o">=</span><span class="s1">&#39;roe&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio" /><label class="tab-label" for="tab-set--6-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>taken  person  quant  reading
 -----  ------  -----  -------
 734    lake    sal    0.05
@@ -516,12 +516,12 @@ For example, we can get information on DR-1 site collected before 1930.</p>
 <p>We can filter by partial matches using <code class="docutils literal notranslate"><span class="pre">LIKE</span></code> keyword.</p>
 <p>The percent (<code class="docutils literal notranslate"><span class="pre">%</span></code>) acts like a wildcard, matching any characters in that place:</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio" /><label class="tab-label" for="tab-set--7-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Visited</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">site</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;DR%&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--7-input--2" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--7-input--2" name="tab-set--7" type="radio" /><label class="tab-label" for="tab-set--7-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>id   site  dated
 ---  ----  ----------
 619  DR-1  1927-02-08
@@ -540,13 +540,13 @@ For example, we can get information on DR-1 site collected before 1930.</p>
 <h2>DISTINCT and WHERE<a class="headerlink" href="#distinct-and-where" title="Permalink to this heading">¶</a></h2>
 <p>Finally, we can use <code class="docutils literal notranslate"><span class="pre">DISTINCT</span></code> and <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> to give a second level of filtering.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio" /><label class="tab-label" for="tab-set--8-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">person</span><span class="p">,</span><span class="w"> </span><span class="n">quant</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Survey</span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">person</span><span class="o">=</span><span class="s1">&#39;lake&#39;</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="n">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;roe&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--8-input--2" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--8-input--2" name="tab-set--8" type="radio" /><label class="tab-label" for="tab-set--8-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>person  quant
 ------  -----
 lake    sal
@@ -568,7 +568,7 @@ add more clauses as you go!</p>
 <p>Suppose we want to select all sites that lie within
 48 degrees of the equator. Our first query is:</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio" /><label class="tab-label" for="tab-set--9-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Site</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="p">(</span><span class="n">lat</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="mi">48</span><span class="p">)</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="p">(</span><span class="n">lat</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">48</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -583,12 +583,12 @@ will still meet the second criteria and thus be included.
 Instead, we want to restrict this to sites that meet both criteria:</p>
 <blockquote>
 <div><div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio" /><label class="tab-label" for="tab-set--10-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Site</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="p">(</span><span class="n">lat</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="mi">48</span><span class="p">)</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="p">(</span><span class="n">lat</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">48</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--10-input--2" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--10-input--2" name="tab-set--10" type="radio" /><label class="tab-label" for="tab-set--10-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>name  lat     long
 ----  ------  -------
 DR-3  -47.15  -126.72

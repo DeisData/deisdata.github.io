@@ -348,12 +348,12 @@ the query may return an arbitrary value for that field.</p></li>
 <h2>Minimum and maximum<a class="headerlink" href="#minimum-and-maximum" title="Permalink to this heading">¶</a></h2>
 <p>We want to calculate ranges and averages.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio" /><label class="tab-label" for="tab-set--0-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">dated</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Visited</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio" /><label class="tab-label" for="tab-set--0-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>dated
 ----------
 1927-02-08
@@ -370,12 +370,12 @@ the query may return an arbitrary value for that field.</p></li>
 </div>
 <p>To combine them, we will use an aggregation function like <code class="docutils literal notranslate"><span class="pre">min</span></code> or <code class="docutils literal notranslate"><span class="pre">max</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio" /><label class="tab-label" for="tab-set--2-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">min</span><span class="p">(</span><span class="n">dated</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Visited</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio" /><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>min(dated)
 ----------
 1927-02-08
@@ -384,12 +384,12 @@ the query may return an arbitrary value for that field.</p></li>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio" /><label class="tab-label" for="tab-set--1-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">max</span><span class="p">(</span><span class="n">dated</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Visited</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio" /><label class="tab-label" for="tab-set--1-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>max(dated)
 ----------
 1932-03-22
@@ -402,12 +402,12 @@ the query may return an arbitrary value for that field.</p></li>
 <h2>Average, count, and sum<a class="headerlink" href="#average-count-and-sum" title="Permalink to this heading">¶</a></h2>
 <p>We can also use <code class="docutils literal notranslate"><span class="pre">avg</span></code>, <code class="docutils literal notranslate"><span class="pre">count</span></code>, and <code class="docutils literal notranslate"><span class="pre">sum</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio" /><label class="tab-label" for="tab-set--5-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">reading</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Survey</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">quant</span><span class="o">=</span><span class="s1">&#39;sal&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio" /><label class="tab-label" for="tab-set--5-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>avg(reading)
 ----------------
 7.20333333333333
@@ -416,12 +416,12 @@ the query may return an arbitrary value for that field.</p></li>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio" /><label class="tab-label" for="tab-set--4-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="n">reading</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Survey</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">quant</span><span class="o">=</span><span class="s1">&#39;sal&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio" /><label class="tab-label" for="tab-set--4-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>count(reading)
 --------------
 9
@@ -430,12 +430,12 @@ the query may return an arbitrary value for that field.</p></li>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio" /><label class="tab-label" for="tab-set--3-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">sum</span><span class="p">(</span><span class="n">reading</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Survey</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">quant</span><span class="o">=</span><span class="s1">&#39;sal&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio" /><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sum(reading)
 ------------
 64.83
@@ -448,13 +448,13 @@ the query may return an arbitrary value for that field.</p></li>
 <h2>Multiple aggregations<a class="headerlink" href="#multiple-aggregations" title="Permalink to this heading">¶</a></h2>
 <p>We can make multiple aggregations in the same query, as well.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio" /><label class="tab-label" for="tab-set--7-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">min</span><span class="p">(</span><span class="n">reading</span><span class="p">),</span><span class="w"> </span><span class="k">max</span><span class="p">(</span><span class="n">reading</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Survey</span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">quant</span><span class="o">=</span><span class="s1">&#39;sal&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">READING</span><span class="w"> </span><span class="o">&lt;=</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--7-input--2" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--7-input--2" name="tab-set--7" type="radio" /><label class="tab-label" for="tab-set--7-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>min(reading)  max(reading)
 ------------  ------------
 0.05          0.21
@@ -463,13 +463,13 @@ the query may return an arbitrary value for that field.</p></li>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio" /><label class="tab-label" for="tab-set--6-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">min</span><span class="p">(</span><span class="n">reading</span><span class="p">),</span><span class="w"> </span><span class="k">max</span><span class="p">(</span><span class="n">reading</span><span class="p">),</span><span class="w"> </span><span class="k">max</span><span class="p">(</span><span class="n">reading</span><span class="p">)</span><span class="o">-</span><span class="k">min</span><span class="p">(</span><span class="n">reading</span><span class="p">)</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">Survey</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">quant</span><span class="o">=</span><span class="s1">&#39;sal&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">READING</span><span class="w"> </span><span class="o">&lt;=</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio" /><label class="tab-label" for="tab-set--6-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>min(reading)  max(reading)  max(reading)-min(reading)
 ------------  ------------  -------------------------
 0.05          0.21          0.16
@@ -480,12 +480,12 @@ the query may return an arbitrary value for that field.</p></li>
 <p>We can also combine aggregated results with raw results, though
 results may look strange.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio" /><label class="tab-label" for="tab-set--8-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">person</span><span class="p">,</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Survey</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">quant</span><span class="o">=</span><span class="s1">&#39;sal&#39;</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">reading</span><span class="w"> </span><span class="o">&lt;=</span><span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--8-input--2" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--8-input--2" name="tab-set--8" type="radio" /><label class="tab-label" for="tab-set--8-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>person  count(*)
 ------  --------
 dyer    7
@@ -499,12 +499,12 @@ dyer    7
 <p>If we try to run an aggregation when looking for information that
 is not in our tables, we will get a <code class="docutils literal notranslate"><span class="pre">NULL</span></code> output.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio" /><label class="tab-label" for="tab-set--9-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">person</span><span class="p">,</span><span class="w"> </span><span class="k">max</span><span class="p">(</span><span class="n">reading</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Survey</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">quant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;missing&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--9-input--2" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--9-input--2" name="tab-set--9" type="radio" /><label class="tab-label" for="tab-set--9-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>person  max(reading)
 ------  ------------
 -null-  -null-
@@ -515,12 +515,12 @@ is not in our tables, we will get a <code class="docutils literal notranslate"><
 <p>When aggregating over a field with a <code class="docutils literal notranslate"><span class="pre">NULL</span></code> value, the <code class="docutils literal notranslate"><span class="pre">NULL</span></code>
 value gets skipped over. The default is to filter it out.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio" /><label class="tab-label" for="tab-set--10-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">min</span><span class="p">(</span><span class="n">dated</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Visited</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--10-input--2" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--10-input--2" name="tab-set--10" type="radio" /><label class="tab-label" for="tab-set--10-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>min(dated)
 ----------
 1927-02-08
@@ -534,7 +534,7 @@ value gets skipped over. The default is to filter it out.</p>
 <p><code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code> groups records with the same value together so that
 aggregation processes each batch separately.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio" /><label class="tab-label" for="tab-set--11-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">person</span><span class="p">,</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="n">reading</span><span class="p">),</span><span class="w"> </span><span class="n">round</span><span class="p">(</span><span class="k">avg</span><span class="p">(</span><span class="n">reading</span><span class="p">),</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
 <span class="k">From</span><span class="w"> </span><span class="n">Survey</span>
 <span class="k">Where</span><span class="w"> </span><span class="n">quant</span><span class="o">=</span><span class="s1">&#39;rad&#39;</span>
@@ -542,7 +542,7 @@ aggregation processes each batch separately.</p>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--11-input--2" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--11-input--2" name="tab-set--11" type="radio" /><label class="tab-label" for="tab-set--11-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>person  count(reading)  round(avg(reading), 2)
 ------  --------------  ----------------------
 dyer    2               8.81
@@ -555,14 +555,14 @@ roe     1               11.25
 </div>
 <p>We can also group by multiple fields at once.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio" /><label class="tab-label" for="tab-set--12-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">person</span><span class="p">,</span><span class="w"> </span><span class="n">quant</span><span class="p">,</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="n">reading</span><span class="p">),</span><span class="w"> </span><span class="n">round</span><span class="p">(</span><span class="k">avg</span><span class="p">(</span><span class="n">reading</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">Survey</span>
 <span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">person</span><span class="p">,</span><span class="w"> </span><span class="n">quant</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--12-input--2" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--12-input--2" name="tab-set--12" type="radio" /><label class="tab-label" for="tab-set--12-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>person  quant  count(reading)  round(avg(reading), 2)
 ------  -----  --------------  ----------------------
 -null-  sal    1               0.06
@@ -583,7 +583,7 @@ roe     sal    2               32.05
 <p>We can finish this up by removing measurements from
 unknown people and ordering our output.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio" /><label class="tab-label" for="tab-set--13-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">person</span><span class="p">,</span><span class="w"> </span><span class="n">quant</span><span class="p">,</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="n">reading</span><span class="p">),</span><span class="w"> </span><span class="n">round</span><span class="p">(</span><span class="k">avg</span><span class="p">(</span><span class="n">reading</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">Survey</span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">person</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span>
@@ -592,7 +592,7 @@ unknown people and ordering our output.</p>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--13-input--2" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--13-input--2" name="tab-set--13" type="radio" /><label class="tab-label" for="tab-set--13-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>person  quant  count(reading)  round(avg(reading), 2)
 ------  -----  --------------  ----------------------
 dyer    rad    2               8.81
@@ -616,13 +616,13 @@ and what was their average value?</p>
 <details class="summary-solution">
 <summary>Solution</summary><div class="docutils container">
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio" /><label class="tab-label" for="tab-set--14-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="k">count</span><span class="p">(</span><span class="n">reading</span><span class="p">),</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">reading</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Survey</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">quant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;temp&#39;</span>
 <span class="k">AND</span><span class="w"> </span><span class="n">person</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;pb&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--14-input--2" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--14-input--2" name="tab-set--14" type="radio" /><label class="tab-label" for="tab-set--14-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>count(reading)  avg(reading)
 --------------  ------------
 2               -20.0

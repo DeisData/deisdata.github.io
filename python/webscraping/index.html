@@ -347,7 +347,7 @@ used to structure web documents. It defines what goes where on the page
 and to some extent the style of objects on a page. <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code>
 allows us to navigate HTML and extract useful information from it.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio" /><label class="tab-label" for="tab-set--0-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
 </pre></div>
@@ -359,7 +359,7 @@ allows us to navigate HTML and extract useful information from it.</p>
 <p>This page includes some information about different countries in a
 tabular format.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio" /><label class="tab-label" for="tab-set--1-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://www.scrapethissite.com/pages/simple/&#39;</span>
 </pre></div>
 </div>
@@ -369,14 +369,14 @@ tabular format.</p>
 <code class="docutils literal notranslate"><span class="pre">requests.get()</span></code>. This function uses the HTTP command <code class="docutils literal notranslate"><span class="pre">GET</span></code> to
 retrieve the information from this URL.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio" /><label class="tab-label" for="tab-set--2-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get data from the URL</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">data</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio" /><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;Response [200]&gt;
 </pre></div>
 </div>
@@ -387,13 +387,13 @@ means that we can retrieve the HTML of the page by using the <code class="docuti
 attribute. We’ll then look at the first 1000 characters of the page’s
 html.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio" /><label class="tab-label" for="tab-set--3-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">html</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">text</span>
 <span class="n">html</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1000</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio" /><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;&lt;!doctype html&gt;\n&lt;html lang=&quot;en&quot;&gt;\n  &lt;head&gt;\n    &lt;meta charset=&quot;utf-8&quot;&gt;\n    &lt;title&gt;Countries of the World: A Simple Example | Scrape This Site | A public sandbox for learning web scraping&lt;/title&gt;\n    &lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; href=&quot;/static/images/scraper-icon.png&quot; /&gt;\n\n    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;\n    &lt;meta name=&quot;description&quot; content=&quot;A single page that lists information about all the countries in the world. Good for those just get started with web scraping.&quot;&gt;\n\n    &lt;link href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot; integrity=&quot;sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==&quot; crossorigin=&quot;anonymous&quot;&gt;\n    &lt;link href=\&#39;https://fonts.googleapis.com/css?family=Lato:400,700\&#39; rel=\&#39;stylesheet\&#39; type=\&#39;text/css\&#39;&gt;\n    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/static/css/styles.css&quot;&gt;\n\n    \n&lt;meta name=&#39;
 </pre></div>
 </div>
@@ -403,7 +403,7 @@ html.</p>
 takes a second argument where we’ll tell it we want to parse HTML, as
 opposed to other formats.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio" /><label class="tab-label" for="tab-set--4-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -412,12 +412,12 @@ opposed to other formats.</p>
 <p>If we print <code class="docutils literal notranslate"><span class="pre">soup.prettify()</span></code>, we can see the HTML in a structured
 format.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio" /><label class="tab-label" for="tab-set--5-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">soup</span><span class="o">.</span><span class="n">prettify</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio" /><label class="tab-label" for="tab-set--5-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;!DOCTYPE html&gt;
  &lt;html lang=&quot;en&quot;&gt;
  &lt;head&gt;
@@ -439,7 +439,7 @@ format.</p>
 <p>In HTML, tags define structure. For example, the text of a page lives in
 the body tag:</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">HTML</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio" /><label class="tab-label" for="tab-set--6-input--1">HTML</label><div class="tab-content docutils container">
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
     ...
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
@@ -463,7 +463,7 @@ on how to inspect, check out this link:
 <code class="docutils literal notranslate"><span class="pre">soup.find_all(tagname)</span></code>, where <code class="docutils literal notranslate"><span class="pre">tagname</span></code> is a string like
 <code class="docutils literal notranslate"><span class="pre">&quot;div&quot;</span></code>, a common type of tag.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio" /><label class="tab-label" for="tab-set--7-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">divs</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of divs: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">divs</span><span class="p">)))</span>
@@ -472,7 +472,7 @@ on how to inspect, check out this link:
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--7-input--2" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--7-input--2" name="tab-set--7" type="radio" /><label class="tab-label" for="tab-set--7-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Number of divs: 599
 Example div
 &lt;div class=&quot;col-md-12&quot;&gt;
@@ -516,13 +516,13 @@ and to some degree the function of the material in these tags.</p>
 <p>This page stores country data in <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> tags with the class
 <code class="docutils literal notranslate"><span class="pre">col-md-4</span> <span class="pre">country</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio" /><label class="tab-label" for="tab-set--8-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">div_countries</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;col-md-4 country&quot;</span><span class="p">)</span>
 <span class="n">div_countries</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--8-input--2" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--8-input--2" name="tab-set--8" type="radio" /><label class="tab-label" for="tab-set--8-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;div class=&quot;col-md-4 country&quot;&gt;
 &lt;h3 class=&quot;country-name&quot;&gt;
 &lt;i class=&quot;flag-icon flag-icon-ad&quot;&gt;&lt;/i&gt;
@@ -542,12 +542,12 @@ and to some degree the function of the material in these tags.</p>
 remove the tag information and <code class="docutils literal notranslate"><span class="pre">.strip()</span></code> to remove some formatting
 characters.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio" /><label class="tab-label" for="tab-set--9-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">div_countries</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--9-input--2" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--9-input--2" name="tab-set--9" type="radio" /><label class="tab-label" for="tab-set--9-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Andorra
 
 
@@ -562,12 +562,12 @@ Area (km2): 468.0
 instance, each country <code class="docutils literal notranslate"><span class="pre">div</span></code> contains a <code class="docutils literal notranslate"><span class="pre">div</span></code> of class
 <code class="docutils literal notranslate"><span class="pre">country-capital</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio" /><label class="tab-label" for="tab-set--10-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">div_countries</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">class_</span><span class="o">=</span><span class="s2">&quot;country-capital&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--10-input--2" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--10-input--2" name="tab-set--10" type="radio" /><label class="tab-label" for="tab-set--10-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;span class=&quot;country-capital&quot;&gt;Andorra la Vella&lt;/span&gt;
 </pre></div>
 </div>
@@ -576,12 +576,12 @@ instance, each country <code class="docutils literal notranslate"><span class="p
 <p>There are also similar divs with the classes <code class="docutils literal notranslate"><span class="pre">country-name</span></code>,
 <code class="docutils literal notranslate"><span class="pre">country-population</span></code>, and <code class="docutils literal notranslate"><span class="pre">country-area</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio" /><label class="tab-label" for="tab-set--13-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">div_countries</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">class_</span><span class="o">=</span><span class="s2">&quot;country-name&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--13-input--2" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--13-input--2" name="tab-set--13" type="radio" /><label class="tab-label" for="tab-set--13-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;h3 class=&quot;country-name&quot;&gt;
 &lt;i class=&quot;flag-icon flag-icon-ad&quot;&gt;&lt;/i&gt;
                             Andorra
@@ -591,24 +591,24 @@ instance, each country <code class="docutils literal notranslate"><span class="p
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio" /><label class="tab-label" for="tab-set--12-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">div_countries</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">class_</span><span class="o">=</span><span class="s2">&quot;country-population&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--12-input--2" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--12-input--2" name="tab-set--12" type="radio" /><label class="tab-label" for="tab-set--12-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;span class=&quot;country-population&quot;&gt;84000&lt;/span&gt;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio" /><label class="tab-label" for="tab-set--11-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">div_countries</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">class_</span><span class="o">=</span><span class="s2">&quot;country-area&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--11-input--2" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--11-input--2" name="tab-set--11" type="radio" /><label class="tab-label" for="tab-set--11-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;span class=&quot;country-area&quot;&gt;468.0&lt;/span&gt;
 </pre></div>
 </div>
@@ -617,7 +617,7 @@ instance, each country <code class="docutils literal notranslate"><span class="p
 <p>We can use a for loop to iterate over the country divs to grab each
 capital.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio" /><label class="tab-label" for="tab-set--14-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">capitals</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
@@ -630,7 +630,7 @@ capital.</p>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--14-input--2" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--14-input--2" name="tab-set--14" type="radio" /><label class="tab-label" for="tab-set--14-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;Andorra la Vella&#39;, &#39;Abu Dhabi&#39;, &#39;Kabul&#39;, &quot;St. John&#39;s&quot;, &#39;The Valley&#39;]
 </pre></div>
 </div>
@@ -639,7 +639,7 @@ capital.</p>
 <p>We can use this approach to store the information in a pandas data
 frame.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio"><label class="tab-label" for="tab-set--15-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio" /><label class="tab-label" for="tab-set--15-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
 <span class="n">country_names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
@@ -671,7 +671,7 @@ frame.</p>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--15-input--2" name="tab-set--15" type="radio"><label class="tab-label" for="tab-set--15-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--15-input--2" name="tab-set--15" type="radio" /><label class="tab-label" for="tab-set--15-input--2">Output</label><div class="tab-content docutils container">
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
 <thead>
@@ -741,7 +741,7 @@ these data after the data have been retrieved from BLS.gov.</p>
 JSON looks and acts similarly to a Python dictionary, and we can
 interact with it with the <code class="docutils literal notranslate"><span class="pre">json</span></code> library.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio" /><label class="tab-label" for="tab-set--16-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
 </pre></div>
 </div>
@@ -761,7 +761,7 @@ we want, specifically a series ID and year ranges for the data.</p>
 <p><code class="docutils literal notranslate"><span class="pre">json.dumps()</span></code> converts a Python dictionary into a json object, while
 <code class="docutils literal notranslate"><span class="pre">json.loads()</span></code> does the opposite.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio" /><label class="tab-label" for="tab-set--17-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Content-type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">}</span>
 <span class="c1"># civilian unemployment query</span>
 <span class="n">post_json</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;seriesid&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;LNS13000000&#39;</span><span class="p">],</span> <span class="s2">&quot;startyear&quot;</span><span class="p">:</span><span class="s2">&quot;2015&quot;</span><span class="p">,</span> <span class="s2">&quot;endyear&quot;</span><span class="p">:</span><span class="s2">&quot;2024&quot;</span><span class="p">}</span>
@@ -774,7 +774,7 @@ we want, specifically a series ID and year ranges for the data.</p>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--17-input--2" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--17-input--2" name="tab-set--17" type="radio" /><label class="tab-label" for="tab-set--17-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;status&#39;: &#39;REQUEST_SUCCEEDED&#39;,
  &#39;responseTime&#39;: 175,
  &#39;message&#39;: [],
@@ -1367,7 +1367,7 @@ we want, specifically a series ID and year ranges for the data.</p>
 <p>We can use a similar pipeline as we did above to get the json data into
 a pandas dictionary.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--18-input--1" name="tab-set--18" type="radio"><label class="tab-label" for="tab-set--18-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--18-input--1" name="tab-set--18" type="radio" /><label class="tab-label" for="tab-set--18-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pandas_data</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;seriesId&#39;</span><span class="p">:</span> <span class="p">[],</span>
     <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="p">[],</span>
@@ -1395,13 +1395,13 @@ a pandas dictionary.</p>
 <p>Let’s convert our dictionary into a pandas DataFrame and take a look at
 it.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--19-input--1" name="tab-set--19" type="radio"><label class="tab-label" for="tab-set--19-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--19-input--1" name="tab-set--19" type="radio" /><label class="tab-label" for="tab-set--19-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pandas_data</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--19-input--2" name="tab-set--19" type="radio"><label class="tab-label" for="tab-set--19-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--19-input--2" name="tab-set--19" type="radio" /><label class="tab-label" for="tab-set--19-input--2">Output</label><div class="tab-content docutils container">
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
 <thead>
@@ -1453,12 +1453,12 @@ idea to check how the data loaded into pandas. For instance, sometimes
 numerical variables are treated as categorical variables. We can the
 data type of our columns with <code class="docutils literal notranslate"><span class="pre">df.dtypes</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--20-input--1" name="tab-set--20" type="radio"><label class="tab-label" for="tab-set--20-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--20-input--1" name="tab-set--20" type="radio" /><label class="tab-label" for="tab-set--20-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--20-input--2" name="tab-set--20" type="radio"><label class="tab-label" for="tab-set--20-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--20-input--2" name="tab-set--20" type="radio" /><label class="tab-label" for="tab-set--20-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>seriesId     object
 year         object
 period       object
@@ -1474,14 +1474,14 @@ which means they will be treated as strings. We can change the column by
 using <code class="docutils literal notranslate"><span class="pre">.astype('int64')</span></code> and re-assigning the output to our columns.
 <code class="docutils literal notranslate"><span class="pre">'int64'</span></code> is a pandas-specific data type for integer values.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--21-input--1" name="tab-set--21" type="radio"><label class="tab-label" for="tab-set--21-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--21-input--1" name="tab-set--21" type="radio" /><label class="tab-label" for="tab-set--21-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int64&#39;</span><span class="p">)</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int64&#39;</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--21-input--2" name="tab-set--21" type="radio"><label class="tab-label" for="tab-set--21-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--21-input--2" name="tab-set--21" type="radio" /><label class="tab-label" for="tab-set--21-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>seriesId     object
 year          int64
 period       object
@@ -1497,14 +1497,14 @@ summarize citizen employment unemployment by year. To do this, we can
 group our data by year with <code class="docutils literal notranslate"><span class="pre">.groupby()</span></code> and then calculating the
 mean.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--22-input--1" name="tab-set--22" type="radio"><label class="tab-label" for="tab-set--22-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--22-input--1" name="tab-set--22" type="radio" /><label class="tab-label" for="tab-set--22-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">year_groups</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span>
 <span class="n">unemployment_by_year</span> <span class="o">=</span> <span class="n">year_groups</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="n">unemployment_by_year</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--22-input--2" name="tab-set--22" type="radio"><label class="tab-label" for="tab-set--22-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--22-input--2" name="tab-set--22" type="radio" /><label class="tab-label" for="tab-set--22-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>year
 2019     5999.166667
 2020    12951.666667
@@ -1521,13 +1521,13 @@ Name: value, dtype: float64
 <code class="docutils literal notranslate"><span class="pre">.reset_index()</span></code> to turn it back into a standard, non-grouped data
 frame.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--23-input--1" name="tab-set--23" type="radio"><label class="tab-label" for="tab-set--23-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--23-input--1" name="tab-set--23" type="radio" /><label class="tab-label" for="tab-set--23-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">unemployment_by_year_df</span> <span class="o">=</span> <span class="n">unemployment_by_year</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 <span class="n">unemployment_by_year_df</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--23-input--2" name="tab-set--23" type="radio"><label class="tab-label" for="tab-set--23-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--23-input--2" name="tab-set--23" type="radio" /><label class="tab-label" for="tab-set--23-input--2">Output</label><div class="tab-content docutils container">
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
 <thead>
@@ -1562,7 +1562,7 @@ frame.</p>
 <p>Now, let’s use matplotlib to plot the change in civilian unemployment
 over the last few years.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--25-input--1" name="tab-set--25" type="radio"><label class="tab-label" for="tab-set--25-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--25-input--1" name="tab-set--25" type="radio" /><label class="tab-label" for="tab-set--25-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
 
@@ -1576,13 +1576,13 @@ over the last few years.</p>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--24-input--1" name="tab-set--24" type="radio"><label class="tab-label" for="tab-set--24-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--24-input--1" name="tab-set--24" type="radio" /><label class="tab-label" for="tab-set--24-input--1">Output</label><div class="tab-content docutils container">
 <div style="background-color: white;"><p><img alt="web 48_0" class="align-middle" src="../../_images/webscraping_48_0.png" /></p>
 </div></div>
 </div>
 <p>Finally, we can save our unemployment data for future use or storage.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--26-input--1" name="tab-set--26" type="radio"><label class="tab-label" for="tab-set--26-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--26-input--1" name="tab-set--26" type="radio" /><label class="tab-label" for="tab-set--26-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;output.csv&#39;</span><span class="p">)</span>
 </pre></div>
 </div>

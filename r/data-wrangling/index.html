@@ -337,7 +337,7 @@ prepare data for analysis and plotting.</p>
 libraries onto your computer. After that, use <code class="docutils literal notranslate"><span class="pre">library()</span></code> any time you
 want to access the tools and functions in a package.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio" /><label class="tab-label" for="tab-set--0-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># To install packages:</span>
 <span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;tidyverse&quot;</span><span class="p">)</span>
 
@@ -353,12 +353,12 @@ want to access the tools and functions in a package.</p>
 islands. To read in our data, we will use the function <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code>,
 which is from a package in the Tidyverse called <code class="docutils literal notranslate"><span class="pre">readr</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio" /><label class="tab-label" for="tab-set--1-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read_csv</span><span class="p">(</span><span class="s">&quot;penguins.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio" /><label class="tab-label" for="tab-set--1-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## Rows: 344 Columns: 8
 ## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
@@ -384,12 +384,12 @@ which is from a package in the Tidyverse called <code class="docutils literal no
 first using <code class="docutils literal notranslate"><span class="pre">glimpse()</span></code> to see a summary that shows the dimensions of
 the data, the column names, and what type of data live in each column.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio" /><label class="tab-label" for="tab-set--2-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">glimpse</span><span class="p">(</span><span class="n">penguins</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio" /><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## Rows: 344
 ## Columns: 8
 ## $ species           &lt;chr&gt; &quot;Adelie&quot;, &quot;Adelie&quot;, &quot;Adelie&quot;, &quot;Adelie&quot;, &quot;Adelie&quot;, &quot;A…
@@ -412,12 +412,12 @@ function takes at least two <strong>arguments</strong> (inputs). The first must 
 the name of the data frame (e.g., <code class="docutils literal notranslate"><span class="pre">penguins</span></code>). Any subsequent
 arguments must be column names.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio" /><label class="tab-label" for="tab-set--3-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">select</span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span><span class="n">species</span><span class="p">,</span><span class="w"> </span><span class="n">body_mass_g</span><span class="p">,</span><span class="w"> </span><span class="n">sex</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio" /><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 344 × 3
 ##    species body_mass_g sex
 ##    &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;
@@ -439,12 +439,12 @@ arguments must be column names.</p>
 <p>We can also use <code class="docutils literal notranslate"><span class="pre">columnA:columnB</span></code> to select all of the columns from
 <code class="docutils literal notranslate"><span class="pre">columnA</span></code> to <code class="docutils literal notranslate"><span class="pre">columnB</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio" /><label class="tab-label" for="tab-set--4-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">select</span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="n">species</span><span class="o">:</span><span class="n">body_mass_g</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio" /><label class="tab-label" for="tab-set--4-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 344 × 6
 ##    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
 ##    &lt;chr&gt;   &lt;chr&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;       &lt;dbl&gt;
@@ -466,12 +466,12 @@ arguments must be column names.</p>
 <p>If we put a <code class="docutils literal notranslate"><span class="pre">-</span></code> before the column names, we will include all but those
 columns.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio" /><label class="tab-label" for="tab-set--5-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">select</span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">year</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">island</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio" /><label class="tab-label" for="tab-set--5-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 344 × 6
 ##    species bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex
 ##    &lt;chr&gt;            &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;
@@ -494,12 +494,12 @@ columns.</p>
 with columns starting with certain characters. Note you will need to put
 the characters in quotes.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio" /><label class="tab-label" for="tab-set--6-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">select</span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="nf">starts_with</span><span class="p">(</span><span class="s">&quot;bill&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio" /><label class="tab-label" for="tab-set--6-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 344 × 2
 ##    bill_length_mm bill_depth_mm
 ##             &lt;dbl&gt;         &lt;dbl&gt;
@@ -520,12 +520,12 @@ the characters in quotes.</p>
 </div>
 <p>We can accomplish a similar task with <code class="docutils literal notranslate"><span class="pre">ends_with()</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio" /><label class="tab-label" for="tab-set--7-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">select</span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="nf">ends_with</span><span class="p">(</span><span class="s">&quot;mm&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--7-input--2" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--7-input--2" name="tab-set--7" type="radio" /><label class="tab-label" for="tab-set--7-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 344 × 3
 ##    bill_length_mm bill_depth_mm flipper_length_mm
 ##             &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;
@@ -552,12 +552,12 @@ the characters in quotes.</p>
 a specific <code class="docutils literal notranslate"><span class="pre">island</span></code> using the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator. Note that a single
 <code class="docutils literal notranslate"><span class="pre">=</span></code> does not work for this.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio" /><label class="tab-label" for="tab-set--8-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">filter</span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="n">island</span><span class="o">==</span><span class="s">&quot;Torgersen&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--8-input--2" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--8-input--2" name="tab-set--8" type="radio" /><label class="tab-label" for="tab-set--8-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 52 × 8
 ##    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
 ##    &lt;chr&gt;   &lt;chr&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;       &lt;dbl&gt;
@@ -584,12 +584,12 @@ a specific <code class="docutils literal notranslate"><span class="pre">island</
 <li><p>greater than or equal to: <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code></p></li>
 </ul>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio" /><label class="tab-label" for="tab-set--9-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">filter</span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="n">year</span><span class="o">&lt;=</span><span class="m">2008</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--9-input--2" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--9-input--2" name="tab-set--9" type="radio" /><label class="tab-label" for="tab-set--9-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 224 × 8
 ##    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
 ##    &lt;chr&gt;   &lt;chr&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;       &lt;dbl&gt;
@@ -610,12 +610,12 @@ a specific <code class="docutils literal notranslate"><span class="pre">island</
 </div>
 <p>We can use multiple conditions at the same time, as well.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio" /><label class="tab-label" for="tab-set--10-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">filter </span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="n">island</span><span class="o">==</span><span class="s">&quot;Torgersen&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sex</span><span class="o">==</span><span class="s">&quot;male&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--10-input--2" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--10-input--2" name="tab-set--10" type="radio" /><label class="tab-label" for="tab-set--10-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 23 × 8
 ##    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
 ##    &lt;chr&gt;   &lt;chr&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;       &lt;dbl&gt;
@@ -639,12 +639,12 @@ conditions. <code class="docutils literal notranslate"><span class="pre">|</span
 satisfy one condition or the other. You can do a similar operation with
 <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, which means “and”.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio" /><label class="tab-label" for="tab-set--11-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">filter</span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="n">species</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Chinstrap&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">species</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Gentoo&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--11-input--2" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--11-input--2" name="tab-set--11" type="radio" /><label class="tab-label" for="tab-set--11-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 192 × 8
 ##    species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
 ##    &lt;chr&gt;   &lt;chr&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;       &lt;dbl&gt;
@@ -666,12 +666,12 @@ satisfy one condition or the other. You can do a similar operation with
 <p>The <code class="docutils literal notranslate"><span class="pre">%in%</span></code> operator checks to see if values are contained in a given
 vector.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio" /><label class="tab-label" for="tab-set--12-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">filter</span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="n">species</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Chinstrap&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Gentoo&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--12-input--2" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--12-input--2" name="tab-set--12" type="radio" /><label class="tab-label" for="tab-set--12-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 192 × 8
 ##    species island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
 ##    &lt;chr&gt;   &lt;chr&gt;           &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;       &lt;dbl&gt;
@@ -693,12 +693,12 @@ vector.</p>
 <p>Data sets often contain missing values for various samples. We can check
 our missing data with <code class="docutils literal notranslate"><span class="pre">is.na()</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio" /><label class="tab-label" for="tab-set--13-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">filter</span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="nf">is.na</span><span class="p">(</span><span class="n">sex</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--13-input--2" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--13-input--2" name="tab-set--13" type="radio" /><label class="tab-label" for="tab-set--13-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 11 × 8
 ##    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
 ##    &lt;chr&gt;   &lt;chr&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;       &lt;dbl&gt;
@@ -721,12 +721,12 @@ our missing data with <code class="docutils literal notranslate"><span class="pr
 <p>We can also only return samples without missing data using <code class="docutils literal notranslate"><span class="pre">!</span></code>, which
 means “not”, before <code class="docutils literal notranslate"><span class="pre">is.na()</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio" /><label class="tab-label" for="tab-set--14-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">filter</span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">sex</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--14-input--2" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--14-input--2" name="tab-set--14" type="radio" /><label class="tab-label" for="tab-set--14-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 333 × 8
 ##    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
 ##    &lt;chr&gt;   &lt;chr&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;       &lt;dbl&gt;
@@ -757,7 +757,7 @@ the data frame within each function we use.</p>
 <p><code class="docutils literal notranslate"><span class="pre">%&gt;%</span></code> is the pipe operator in R. You can read the pipe like the word
 “then”.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio"><label class="tab-label" for="tab-set--15-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio" /><label class="tab-label" for="tab-set--15-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using pipes</span>
 <span class="n">penguins_biscoe</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">penguins</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">filter</span><span class="p">(</span><span class="n">island</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Biscoe&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
@@ -777,14 +777,14 @@ bill.</p>
 <details class="summary-solution">
 <summary>Solution</summary><div class="docutils container">
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio" /><label class="tab-label" for="tab-set--16-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">filter</span><span class="p">(</span><span class="n">species</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s">&quot;Adelie&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">select</span><span class="p">(</span><span class="n">species</span><span class="p">,</span><span class="w"> </span><span class="n">bill_length_mm</span><span class="p">,</span><span class="w"> </span><span class="n">bill_depth_mm</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--16-input--2" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--16-input--2" name="tab-set--16" type="radio" /><label class="tab-label" for="tab-set--16-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 192 × 3
 ##    species bill_length_mm bill_depth_mm
 ##    &lt;chr&gt;            &lt;dbl&gt;         &lt;dbl&gt;
@@ -812,13 +812,13 @@ existing columns for tasks like unit conversion or finding the ratio of
 values in two columns. For this, we’ll use <code class="docutils literal notranslate"><span class="pre">mutate()</span></code>.</p>
 <p>We might be interested in the body mass of penguins in kg instead of g:</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio" /><label class="tab-label" for="tab-set--17-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">mutate</span><span class="p">(</span><span class="n">body_mass_kg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">body_mass_g</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">1000</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--17-input--2" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--17-input--2" name="tab-set--17" type="radio" /><label class="tab-label" for="tab-set--17-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 344 × 9
 ##    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
 ##    &lt;chr&gt;   &lt;chr&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;       &lt;dbl&gt;
@@ -853,14 +853,14 @@ collapses each group into a single-row summary of that group.</p>
 variables for which you want to calculate the summary statistics.</p>
 <p>So to compute the average body mass by species:</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--18-input--1" name="tab-set--18" type="radio"><label class="tab-label" for="tab-set--18-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--18-input--1" name="tab-set--18" type="radio" /><label class="tab-label" for="tab-set--18-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">group_by</span><span class="p">(</span><span class="n">species</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">summarize</span><span class="p">(</span><span class="n">body_mass_g_mean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">body_mass_g</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--18-input--2" name="tab-set--18" type="radio"><label class="tab-label" for="tab-set--18-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--18-input--2" name="tab-set--18" type="radio" /><label class="tab-label" for="tab-set--18-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 3 × 2
 ##   species   body_mass_g_mean
 ##   &lt;chr&gt;                &lt;dbl&gt;
@@ -873,7 +873,7 @@ variables for which you want to calculate the summary statistics.</p>
 </div>
 <p>You can also group by multiple columns:</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--19-input--1" name="tab-set--19" type="radio"><label class="tab-label" for="tab-set--19-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--19-input--1" name="tab-set--19" type="radio" /><label class="tab-label" for="tab-set--19-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">group_by</span><span class="p">(</span><span class="n">island</span><span class="p">,</span><span class="w"> </span><span class="n">species</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">summarize</span><span class="p">(</span><span class="n">flipper_length_mm_mean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">flipper_length_mm</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">),</span>
@@ -883,7 +883,7 @@ variables for which you want to calculate the summary statistics.</p>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--19-input--2" name="tab-set--19" type="radio"><label class="tab-label" for="tab-set--19-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--19-input--2" name="tab-set--19" type="radio" /><label class="tab-label" for="tab-set--19-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## `summarise()` has grouped output by &#39;island&#39;. You can override using the
 ## `.groups` argument.
 
@@ -912,13 +912,13 @@ found for each factor or combination of factors. For this task,
 <p>If we wanted to count the number of penguins by species, we would do the
 following:</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--20-input--1" name="tab-set--20" type="radio"><label class="tab-label" for="tab-set--20-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--20-input--1" name="tab-set--20" type="radio" /><label class="tab-label" for="tab-set--20-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">count</span><span class="p">(</span><span class="n">species</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--20-input--2" name="tab-set--20" type="radio"><label class="tab-label" for="tab-set--20-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--20-input--2" name="tab-set--20" type="radio" /><label class="tab-label" for="tab-set--20-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 3 × 2
 ##   species       n
 ##   &lt;chr&gt;     &lt;int&gt;
@@ -932,13 +932,13 @@ following:</p>
 <p>For convenience, <code class="docutils literal notranslate"><span class="pre">count()</span></code> provides the <code class="docutils literal notranslate"><span class="pre">sort</span></code> argument to get
 results in decreasing order:</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--21-input--1" name="tab-set--21" type="radio"><label class="tab-label" for="tab-set--21-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--21-input--1" name="tab-set--21" type="radio" /><label class="tab-label" for="tab-set--21-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">count</span><span class="p">(</span><span class="n">species</span><span class="p">,</span><span class="w"> </span><span class="n">sort</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--21-input--2" name="tab-set--21" type="radio"><label class="tab-label" for="tab-set--21-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--21-input--2" name="tab-set--21" type="radio" /><label class="tab-label" for="tab-set--21-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 3 × 2
 ##   species       n
 ##   &lt;chr&gt;     &lt;int&gt;
@@ -951,13 +951,13 @@ results in decreasing order:</p>
 </div>
 <p>We can add more than one variable:</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--22-input--1" name="tab-set--22" type="radio"><label class="tab-label" for="tab-set--22-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--22-input--1" name="tab-set--22" type="radio" /><label class="tab-label" for="tab-set--22-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">count</span><span class="p">(</span><span class="n">species</span><span class="p">,</span><span class="w"> </span><span class="n">island</span><span class="p">,</span><span class="w"> </span><span class="n">sex</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--22-input--2" name="tab-set--22" type="radio"><label class="tab-label" for="tab-set--22-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--22-input--2" name="tab-set--22" type="radio" /><label class="tab-label" for="tab-set--22-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 13 × 4
 ##    species   island    sex        n
 ##    &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;  &lt;int&gt;
@@ -985,13 +985,13 @@ results in decreasing order:</p>
 function on the variable inside <code class="docutils literal notranslate"><span class="pre">arrange()</span></code> to arrange in descending
 order.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--23-input--1" name="tab-set--23" type="radio"><label class="tab-label" for="tab-set--23-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--23-input--1" name="tab-set--23" type="radio" /><label class="tab-label" for="tab-set--23-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">arrange</span><span class="p">(</span><span class="n">body_mass_g</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--23-input--2" name="tab-set--23" type="radio"><label class="tab-label" for="tab-set--23-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--23-input--2" name="tab-set--23" type="radio" /><label class="tab-label" for="tab-set--23-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 344 × 8
 ##    species   island    bill_length_mm bill_depth_mm flipper_length_… body_mass_g
 ##    &lt;chr&gt;     &lt;chr&gt;              &lt;dbl&gt;         &lt;dbl&gt;            &lt;dbl&gt;       &lt;dbl&gt;
@@ -1012,13 +1012,13 @@ order.</p>
 </div>
 <p>We can rename columns using the <code class="docutils literal notranslate"><span class="pre">rename()</span></code> functions.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--24-input--1" name="tab-set--24" type="radio"><label class="tab-label" for="tab-set--24-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--24-input--1" name="tab-set--24" type="radio" /><label class="tab-label" for="tab-set--24-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">rename</span><span class="p">(</span><span class="n">bill_length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bill_length_mm</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--24-input--2" name="tab-set--24" type="radio"><label class="tab-label" for="tab-set--24-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--24-input--2" name="tab-set--24" type="radio" /><label class="tab-label" for="tab-set--24-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 344 × 8
 ##    species island   bill_length bill_depth_mm flipper_length_… body_mass_g sex
 ##    &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;         &lt;dbl&gt;            &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;
@@ -1043,7 +1043,7 @@ we make a new column called <code class="docutils literal notranslate"><span cla
 <code class="docutils literal notranslate"><span class="pre">small</span></code>, <code class="docutils literal notranslate"><span class="pre">normal</span></code>, or <code class="docutils literal notranslate"><span class="pre">large</span></code> based on the value in the same row
 of <code class="docutils literal notranslate"><span class="pre">body_mass_g</span></code>, which are specified as individual conditions.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--25-input--1" name="tab-set--25" type="radio"><label class="tab-label" for="tab-set--25-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--25-input--1" name="tab-set--25" type="radio" /><label class="tab-label" for="tab-set--25-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">mutate</span><span class="p">(</span><span class="n">body_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">case_when</span><span class="p">(</span>
 <span class="w">          </span><span class="n">body_mass_g</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">3000</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="s">&quot;small&quot;</span><span class="p">,</span>
@@ -1052,7 +1052,7 @@ of <code class="docutils literal notranslate"><span class="pre">body_mass_g</spa
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--25-input--2" name="tab-set--25" type="radio"><label class="tab-label" for="tab-set--25-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--25-input--2" name="tab-set--25" type="radio" /><label class="tab-label" for="tab-set--25-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 344 × 9
 ##    species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
 ##    &lt;chr&gt;   &lt;chr&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;       &lt;dbl&gt;
@@ -1080,13 +1080,13 @@ where columns represent different values or levels of a variable. We can
 reshape our data using two tidyr functions, <code class="docutils literal notranslate"><span class="pre">pivot_wider()</span></code> and
 <code class="docutils literal notranslate"><span class="pre">pivot_longer()</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--26-input--1" name="tab-set--26" type="radio"><label class="tab-label" for="tab-set--26-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--26-input--1" name="tab-set--26" type="radio" /><label class="tab-label" for="tab-set--26-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">pivot_longer</span><span class="p">(</span><span class="nf">contains</span><span class="p">(</span><span class="s">&quot;_&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--26-input--2" name="tab-set--26" type="radio"><label class="tab-label" for="tab-set--26-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--26-input--2" name="tab-set--26" type="radio" /><label class="tab-label" for="tab-set--26-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 1,376 × 6
 ##    species island    sex     year name               value
 ##    &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;              &lt;dbl&gt;
@@ -1108,13 +1108,13 @@ reshape our data using two tidyr functions, <code class="docutils literal notran
 <p>Here we pivot the penguin data so that all the bill measurements are in
 the same column.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--27-input--1" name="tab-set--27" type="radio"><label class="tab-label" for="tab-set--27-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--27-input--1" name="tab-set--27" type="radio" /><label class="tab-label" for="tab-set--27-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">pivot_longer</span><span class="p">(</span><span class="nf">starts_with</span><span class="p">(</span><span class="s">&quot;bill&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--27-input--2" name="tab-set--27" type="radio"><label class="tab-label" for="tab-set--27-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--27-input--2" name="tab-set--27" type="radio" /><label class="tab-label" for="tab-set--27-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 688 × 8
 ##    species island    flipper_length_mm body_mass_g sex     year name       value
 ##    &lt;chr&gt;   &lt;chr&gt;                 &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt;
@@ -1135,14 +1135,14 @@ the same column.</p>
 </div>
 <p>We can remove NAs at the same time.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--28-input--1" name="tab-set--28" type="radio"><label class="tab-label" for="tab-set--28-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--28-input--1" name="tab-set--28" type="radio" /><label class="tab-label" for="tab-set--28-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">pivot_longer</span><span class="p">(</span><span class="nf">starts_with</span><span class="p">(</span><span class="s">&quot;bill&quot;</span><span class="p">),</span>
 <span class="w">                </span><span class="n">values_drop_na</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--28-input--2" name="tab-set--28" type="radio"><label class="tab-label" for="tab-set--28-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--28-input--2" name="tab-set--28" type="radio" /><label class="tab-label" for="tab-set--28-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 684 × 8
 ##    species island    flipper_length_mm body_mass_g sex     year name       value
 ##    &lt;chr&gt;   &lt;chr&gt;                 &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt;
@@ -1164,7 +1164,7 @@ the same column.</p>
 <p>When making our data into a long format, we can split the former column
 names into multiple new columns.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--29-input--1" name="tab-set--29" type="radio"><label class="tab-label" for="tab-set--29-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--29-input--1" name="tab-set--29" type="radio" /><label class="tab-label" for="tab-set--29-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins_long</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">penguins</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">pivot_longer</span><span class="p">(</span><span class="nf">contains</span><span class="p">(</span><span class="s">&quot;_&quot;</span><span class="p">),</span>
 <span class="w">                </span><span class="n">names_to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;part&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;measure&quot;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s">&quot;unit&quot;</span><span class="p">),</span>
@@ -1174,7 +1174,7 @@ names into multiple new columns.</p>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--29-input--2" name="tab-set--29" type="radio"><label class="tab-label" for="tab-set--29-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--29-input--2" name="tab-set--29" type="radio" /><label class="tab-label" for="tab-set--29-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 1,368 × 8
 ##    species island    sex     year part    measure unit   value
 ##    &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;  &lt;dbl&gt;
@@ -1198,14 +1198,14 @@ names into multiple new columns.</p>
 <p>We can also take a long data set and make it wide.</p>
 <p>First, let’s create a simple long datafame.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--30-input--1" name="tab-set--30" type="radio"><label class="tab-label" for="tab-set--30-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--30-input--1" name="tab-set--30" type="radio" /><label class="tab-label" for="tab-set--30-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins_long_simple</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">penguins</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">pivot_longer</span><span class="p">(</span><span class="nf">contains</span><span class="p">(</span><span class="s">&quot;_&quot;</span><span class="p">))</span>
 <span class="n">penguins_long_simple</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--30-input--2" name="tab-set--30" type="radio"><label class="tab-label" for="tab-set--30-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--30-input--2" name="tab-set--30" type="radio" /><label class="tab-label" for="tab-set--30-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 1,376 × 6
 ##    species island    sex     year name               value
 ##    &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;              &lt;dbl&gt;
@@ -1227,14 +1227,14 @@ names into multiple new columns.</p>
 <p>If we want to make this wider again we can use <code class="docutils literal notranslate"><span class="pre">pivot_wider()</span></code>,
 specifying the names of the columns we want to expand.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--31-input--1" name="tab-set--31" type="radio"><label class="tab-label" for="tab-set--31-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--31-input--1" name="tab-set--31" type="radio" /><label class="tab-label" for="tab-set--31-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins_long_simple</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">pivot_wider</span><span class="p">(</span><span class="n">names_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">,</span>
 <span class="w">               </span><span class="n">values_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--31-input--2" name="tab-set--31" type="radio"><label class="tab-label" for="tab-set--31-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--31-input--2" name="tab-set--31" type="radio" /><label class="tab-label" for="tab-set--31-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 35 × 8
 ##    species island    sex     year bill_length_mm bill_depth_mm flipper_length_mm
 ##    &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;  &lt;dbl&gt; &lt;list&gt;         &lt;list&gt;        &lt;list&gt;
@@ -1260,7 +1260,7 @@ number in the long data set.</p>
 <p>Note the alternative pipe operator here (<code class="docutils literal notranslate"><span class="pre">|&gt;</span></code>). This is equivalent to
 <code class="docutils literal notranslate"><span class="pre">%&gt;%</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--32-input--1" name="tab-set--32" type="radio"><label class="tab-label" for="tab-set--32-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--32-input--1" name="tab-set--32" type="radio" /><label class="tab-label" for="tab-set--32-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins_long_simple</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">penguins</span><span class="w"> </span><span class="o">|&gt;</span>
 <span class="w">   </span><span class="nf">mutate</span><span class="p">(</span><span class="n">sample</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">row_number</span><span class="p">())</span><span class="w"> </span><span class="o">|&gt;</span>
 <span class="w">   </span><span class="nf">pivot_longer</span><span class="p">(</span><span class="nf">contains</span><span class="p">(</span><span class="s">&quot;_&quot;</span><span class="p">))</span>
@@ -1268,7 +1268,7 @@ number in the long data set.</p>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--32-input--2" name="tab-set--32" type="radio"><label class="tab-label" for="tab-set--32-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--32-input--2" name="tab-set--32" type="radio" /><label class="tab-label" for="tab-set--32-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 1,376 × 7
 ##    species island    sex     year sample name               value
 ##    &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;  &lt;dbl&gt;  &lt;int&gt; &lt;chr&gt;              &lt;dbl&gt;
@@ -1289,7 +1289,7 @@ number in the long data set.</p>
 </div>
 <p>We can also use <code class="docutils literal notranslate"><span class="pre">pivot_wider()</span></code> across multiple columns.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--34-input--1" name="tab-set--34" type="radio"><label class="tab-label" for="tab-set--34-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--34-input--1" name="tab-set--34" type="radio" /><label class="tab-label" for="tab-set--34-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins_long</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">penguins</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">mutate</span><span class="p">(</span><span class="n">sample</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">row_number</span><span class="p">())</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">pivot_longer</span><span class="p">(</span><span class="nf">contains</span><span class="p">(</span><span class="s">&quot;_&quot;</span><span class="p">),</span>
@@ -1300,7 +1300,7 @@ number in the long data set.</p>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--34-input--2" name="tab-set--34" type="radio"><label class="tab-label" for="tab-set--34-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--34-input--2" name="tab-set--34" type="radio" /><label class="tab-label" for="tab-set--34-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 1,368 × 9
 ##    species island    sex     year sample part    measure unit   value
 ##    &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;  &lt;dbl&gt;  &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;  &lt;dbl&gt;
@@ -1320,7 +1320,7 @@ number in the long data set.</p>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--33-input--1" name="tab-set--33" type="radio"><label class="tab-label" for="tab-set--33-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--33-input--1" name="tab-set--33" type="radio" /><label class="tab-label" for="tab-set--33-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins_long</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">   </span><span class="nf">pivot_wider</span><span class="p">(</span><span class="n">names_from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;part&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;measure&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;unit&quot;</span><span class="p">),</span>
 <span class="w">               </span><span class="n">names_sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;_&quot;</span><span class="p">,</span>
@@ -1328,7 +1328,7 @@ number in the long data set.</p>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--33-input--2" name="tab-set--33" type="radio"><label class="tab-label" for="tab-set--33-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--33-input--2" name="tab-set--33" type="radio" /><label class="tab-label" for="tab-set--33-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 342 × 9
 ##    species island    sex     year sample bill_length_mm bill_depth_mm
 ##    &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;  &lt;dbl&gt;  &lt;int&gt;          &lt;dbl&gt;         &lt;dbl&gt;
@@ -1357,7 +1357,7 @@ there are various methods for doing so.</p>
 <p>To start, let’s create two small data sets with some overlapping
 information.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--35-input--1" name="tab-set--35" type="radio"><label class="tab-label" for="tab-set--35-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--35-input--1" name="tab-set--35" type="radio" /><label class="tab-label" for="tab-set--35-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">data1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">country</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Germany&quot;</span><span class="p">,</span><span class="s">&quot;Australia&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Ecuador&quot;</span><span class="p">),</span>
 <span class="w">                    </span><span class="n">region</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Europe&quot;</span><span class="p">,</span><span class="s">&quot;Western Pacific&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Americas&quot;</span><span class="w"> </span><span class="p">),</span>
 <span class="w">                    </span><span class="n">life_exp</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">81</span><span class="p">,</span><span class="w"> </span><span class="m">83</span><span class="p">,</span><span class="w"> </span><span class="m">75</span><span class="p">))</span>
@@ -1371,7 +1371,7 @@ information.</p>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--35-input--2" name="tab-set--35" type="radio"><label class="tab-label" for="tab-set--35-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--35-input--2" name="tab-set--35" type="radio" /><label class="tab-label" for="tab-set--35-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>##     country          region life_exp
 ## 1   Germany          Europe       81
 ## 2 Australia Western Pacific       83
@@ -1392,12 +1392,12 @@ identifier.</p>
 the identifier column. In the following example, we use <code class="docutils literal notranslate"><span class="pre">inner_join()</span></code>
 to return rows with countries present in both data frames.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--36-input--1" name="tab-set--36" type="radio"><label class="tab-label" for="tab-set--36-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--36-input--1" name="tab-set--36" type="radio" /><label class="tab-label" for="tab-set--36-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">inner_join</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span><span class="w"> </span><span class="n">data2</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="o">=</span><span class="s">&quot;country&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--36-input--2" name="tab-set--36" type="radio"><label class="tab-label" for="tab-set--36-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--36-input--2" name="tab-set--36" type="radio" /><label class="tab-label" for="tab-set--36-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>##     country        region.x life_exp        region.y urban_pop
 ## 1   Germany          Europe       81          Europe        76
 ## 2 Australia Western Pacific       83 Western Pacific        86
@@ -1408,12 +1408,12 @@ to return rows with countries present in both data frames.</p>
 <p>A <strong>left join</strong> keeps what is in the first data frame and any matches to
 that in the second data frame.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--37-input--1" name="tab-set--37" type="radio"><label class="tab-label" for="tab-set--37-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--37-input--1" name="tab-set--37" type="radio" /><label class="tab-label" for="tab-set--37-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">left_join</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span><span class="w"> </span><span class="n">data2</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="o">=</span><span class="s">&quot;country&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--37-input--2" name="tab-set--37" type="radio"><label class="tab-label" for="tab-set--37-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--37-input--2" name="tab-set--37" type="radio" /><label class="tab-label" for="tab-set--37-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>##     country        region.x life_exp        region.y urban_pop
 ## 1   Germany          Europe       81          Europe        76
 ## 2 Australia Western Pacific       83 Western Pacific        86
@@ -1425,12 +1425,12 @@ that in the second data frame.</p>
 <p>A <strong>right join</strong> does just the opposite and keeps matches to items in
 the second data frame.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--38-input--1" name="tab-set--38" type="radio"><label class="tab-label" for="tab-set--38-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--38-input--1" name="tab-set--38" type="radio" /><label class="tab-label" for="tab-set--38-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">right_join</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span><span class="w"> </span><span class="n">data2</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="o">=</span><span class="s">&quot;country&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--38-input--2" name="tab-set--38" type="radio"><label class="tab-label" for="tab-set--38-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--38-input--2" name="tab-set--38" type="radio" /><label class="tab-label" for="tab-set--38-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>##     country        region.x life_exp        region.y urban_pop
 ## 1   Germany          Europe       81          Europe        76
 ## 2 Australia Western Pacific       83 Western Pacific        86
@@ -1441,12 +1441,12 @@ the second data frame.</p>
 </div>
 <p>A <strong>full join</strong> will include all data from both data frames.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--39-input--1" name="tab-set--39" type="radio"><label class="tab-label" for="tab-set--39-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--39-input--1" name="tab-set--39" type="radio" /><label class="tab-label" for="tab-set--39-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">full_join</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span><span class="w"> </span><span class="n">data2</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="o">=</span><span class="s">&quot;country&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--39-input--2" name="tab-set--39" type="radio"><label class="tab-label" for="tab-set--39-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--39-input--2" name="tab-set--39" type="radio" /><label class="tab-label" for="tab-set--39-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>##     country        region.x life_exp        region.y urban_pop
 ## 1   Germany          Europe       81          Europe        76
 ## 2 Australia Western Pacific       83 Western Pacific        86
@@ -1462,12 +1462,12 @@ the second data frame.</p>
 several methods for this. <code class="docutils literal notranslate"><span class="pre">semi_join()</span></code> will keep rows in the first
 data frame for entries present in the second.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--40-input--1" name="tab-set--40" type="radio"><label class="tab-label" for="tab-set--40-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--40-input--1" name="tab-set--40" type="radio" /><label class="tab-label" for="tab-set--40-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">semi_join</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span><span class="w"> </span><span class="n">data2</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="o">=</span><span class="s">&quot;country&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--40-input--2" name="tab-set--40" type="radio"><label class="tab-label" for="tab-set--40-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--40-input--2" name="tab-set--40" type="radio" /><label class="tab-label" for="tab-set--40-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>##     country          region life_exp
 ## 1   Germany          Europe       81
 ## 2 Australia Western Pacific       83
@@ -1478,12 +1478,12 @@ data frame for entries present in the second.</p>
 <p>We can do the opposite with <code class="docutils literal notranslate"><span class="pre">anti_join()</span></code>. This only keeps rows of the
 first data frame that do not have entries in the second.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--41-input--1" name="tab-set--41" type="radio"><label class="tab-label" for="tab-set--41-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--41-input--1" name="tab-set--41" type="radio" /><label class="tab-label" for="tab-set--41-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">anti_join</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span><span class="w"> </span><span class="n">data2</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="o">=</span><span class="s">&quot;country&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--41-input--2" name="tab-set--41" type="radio"><label class="tab-label" for="tab-set--41-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--41-input--2" name="tab-set--41" type="radio" /><label class="tab-label" for="tab-set--41-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>##   country   region life_exp
 ## 1 Ecuador Americas       75
 </pre></div>
@@ -1495,7 +1495,7 @@ first data frame that do not have entries in the second.</p>
 <h3>Combining<a class="headerlink" href="#combining" title="Permalink to this heading">¶</a></h3>
 <p>Let’s make two new data frame for the next examples.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--42-input--1" name="tab-set--42" type="radio"><label class="tab-label" for="tab-set--42-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--42-input--1" name="tab-set--42" type="radio" /><label class="tab-label" for="tab-set--42-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">data3</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">country</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Germany&quot;</span><span class="p">,</span><span class="s">&quot;Ecuador&quot;</span><span class="p">),</span>
 <span class="w">                    </span><span class="n">life_exp</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">81</span><span class="p">,</span><span class="w">  </span><span class="m">75</span><span class="p">))</span>
 
@@ -1508,12 +1508,12 @@ first data frame that do not have entries in the second.</p>
 <p>If we simply want to add new rows on top of each other, we can use the
 <code class="docutils literal notranslate"><span class="pre">bind_rows()</span></code> function.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--43-input--1" name="tab-set--43" type="radio"><label class="tab-label" for="tab-set--43-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--43-input--1" name="tab-set--43" type="radio" /><label class="tab-label" for="tab-set--43-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">bind_rows</span><span class="p">(</span><span class="n">data3</span><span class="p">,</span><span class="w"> </span><span class="n">data4</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--43-input--2" name="tab-set--43" type="radio"><label class="tab-label" for="tab-set--43-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--43-input--2" name="tab-set--43" type="radio" /><label class="tab-label" for="tab-set--43-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>##     country life_exp
 ## 1   Germany       81
 ## 2   Ecuador       75
@@ -1526,12 +1526,12 @@ first data frame that do not have entries in the second.</p>
 <p>We can keep rows that are the same in both data frames with
 <code class="docutils literal notranslate"><span class="pre">intersect()</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--44-input--1" name="tab-set--44" type="radio"><label class="tab-label" for="tab-set--44-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--44-input--1" name="tab-set--44" type="radio" /><label class="tab-label" for="tab-set--44-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">intersect</span><span class="p">(</span><span class="n">data3</span><span class="p">,</span><span class="w"> </span><span class="n">data4</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--44-input--2" name="tab-set--44" type="radio"><label class="tab-label" for="tab-set--44-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--44-input--2" name="tab-set--44" type="radio" /><label class="tab-label" for="tab-set--44-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>##   country life_exp
 ## 1 Germany       81
 </pre></div>
@@ -1541,12 +1541,12 @@ first data frame that do not have entries in the second.</p>
 <p><code class="docutils literal notranslate"><span class="pre">setdiff()</span></code> returns the rows that appear in the first but not the
 second data frame.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--45-input--1" name="tab-set--45" type="radio"><label class="tab-label" for="tab-set--45-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--45-input--1" name="tab-set--45" type="radio" /><label class="tab-label" for="tab-set--45-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">setdiff</span><span class="p">(</span><span class="n">data3</span><span class="p">,</span><span class="w"> </span><span class="n">data4</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--45-input--2" name="tab-set--45" type="radio"><label class="tab-label" for="tab-set--45-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--45-input--2" name="tab-set--45" type="radio" /><label class="tab-label" for="tab-set--45-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>##   country life_exp
 ## 1 Ecuador       75
 </pre></div>
@@ -1555,12 +1555,12 @@ second data frame.</p>
 </div>
 <p>Finally, <code class="docutils literal notranslate"><span class="pre">union()</span></code> returns all unique rows.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--46-input--1" name="tab-set--46" type="radio"><label class="tab-label" for="tab-set--46-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--46-input--1" name="tab-set--46" type="radio" /><label class="tab-label" for="tab-set--46-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">union</span><span class="p">(</span><span class="n">data3</span><span class="p">,</span><span class="w"> </span><span class="n">data4</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--46-input--2" name="tab-set--46" type="radio"><label class="tab-label" for="tab-set--46-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--46-input--2" name="tab-set--46" type="radio" /><label class="tab-label" for="tab-set--46-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>##     country life_exp
 ## 1   Germany       81
 ## 2   Ecuador       75
@@ -1580,7 +1580,7 @@ sets to share them with your collaborators or for archival.</p>
 R, there is a <code class="docutils literal notranslate"><span class="pre">write_csv()</span></code> function that generates CSV files from
 dataframes.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--47-input--1" name="tab-set--47" type="radio"><label class="tab-label" for="tab-set--47-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--47-input--1" name="tab-set--47" type="radio" /><label class="tab-label" for="tab-set--47-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">write_csv</span><span class="p">(</span><span class="n">data4</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;countries.csv&#39;</span><span class="p">)</span>
 
 <span class="nf">help</span><span class="p">(</span><span class="n">write_csv</span><span class="p">)</span>

@@ -338,7 +338,7 @@
 <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> library, specifically a set of functions in a module
 called <code class="docutils literal notranslate"><span class="pre">pyplot</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio" /><label class="tab-label" for="tab-set--0-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 </pre></div>
@@ -350,13 +350,13 @@ called <code class="docutils literal notranslate"><span class="pre">pyplot</span
 <p>Before we can plot, we need to read in our data, the <code class="docutils literal notranslate"><span class="pre">gapminder.csv</span></code>
 data set.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio" /><label class="tab-label" for="tab-set--1-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/DeisData/python/master/data/gapminder.csv&quot;</span><span class="p">)</span> <span class="c1"># read in data</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio" /><label class="tab-label" for="tab-set--1-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      country  year region  population  life_expectancy  age5_surviving  \
 0  Afghanistan  1800   Asia   3280000.0            28.21          53.142
 1  Afghanistan  1810   Asia   3280000.0            28.11          53.002
@@ -382,7 +382,7 @@ expectancy.</p>
 sure to specify the life expectancy column.</p>
 <p>Finally, we can display the figure with <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio" /><label class="tab-label" for="tab-set--3-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">figure</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span> <span class="c1"># create blank figure and axes</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;life_expectancy&#39;</span><span class="p">])</span> <span class="c1"># add histogram to axes</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># display figure</span>
@@ -391,7 +391,7 @@ sure to specify the life expectancy column.</p>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio" /><label class="tab-label" for="tab-set--2-input--1">Output</label><div class="tab-content docutils container">
 <div style="background-color: white;"><p><img alt="fig 7_0" class="align-middle" src="../../_images/figures_7_0.png" /></p>
 </div></div>
 </div>
@@ -401,7 +401,7 @@ bin edges within <code class="docutils literal notranslate"><span class="pre">hi
 <p>We can also specify axis labels with <code class="docutils literal notranslate"><span class="pre">ax.set_xlabel()</span></code> and
 <code class="docutils literal notranslate"><span class="pre">ax.set_ylabel()</span></code>. The plot title is set with <code class="docutils literal notranslate"><span class="pre">ax.set_title()</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio" /><label class="tab-label" for="tab-set--5-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">figure</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;life_expectancy&#39;</span><span class="p">],</span><span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span> <span class="c1"># specify bins, color, and edge color</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Life Expectancy&#39;</span><span class="p">)</span> <span class="c1"># x axis label</span>
@@ -413,7 +413,7 @@ bin edges within <code class="docutils literal notranslate"><span class="pre">hi
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio" /><label class="tab-label" for="tab-set--4-input--1">Output</label><div class="tab-content docutils container">
 <div style="background-color: white;"><p><img alt="fig 9_0" class="align-middle" src="../../_images/figures_9_0.png" /></p>
 </div></div>
 </div>
@@ -430,7 +430,7 @@ need to subset the data frame to only include data from Jamaica.</p>
 <code class="docutils literal notranslate"><span class="pre">ax.hist()</span></code>, we use <code class="docutils literal notranslate"><span class="pre">ax.plot(x,</span> <span class="pre">y)</span></code>, putting the year first to
 specify the x axis, followed by life expectancy for the y.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio" /><label class="tab-label" for="tab-set--7-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># subset data</span>
 <span class="n">df_jm</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Jamaica&#39;</span><span class="p">]</span>
 <span class="c1"># create plot</span>
@@ -445,7 +445,7 @@ specify the x axis, followed by life expectancy for the y.</p>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio" /><label class="tab-label" for="tab-set--6-input--1">Output</label><div class="tab-content docutils container">
 <div style="background-color: white;"><p><img alt="fig 12_0" class="align-middle" src="../../_images/figures_12_0.png" /></p>
 </div></div>
 </div>
@@ -454,7 +454,7 @@ well, just by calling <code class="docutils literal notranslate"><span class="pr
 different color and label. Calling <code class="docutils literal notranslate"><span class="pre">ax.legend()</span></code> will auto-generate a
 legend.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio" /><label class="tab-label" for="tab-set--9-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_cb</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Cuba&#39;</span><span class="p">]</span>
 <span class="n">figure</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="c1"># draw two lines, with different colors and different labels</span>
@@ -470,7 +470,7 @@ legend.</p>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio" /><label class="tab-label" for="tab-set--8-input--1">Output</label><div class="tab-content docutils container">
 <div style="background-color: white;"><p><img alt="fig 14_0" class="align-middle" src="../../_images/figures_14_0.png" /></p>
 </div></div>
 </div>
@@ -484,7 +484,7 @@ numbers of columns. This creates an axes object with multiple indexes.</p>
 <code class="docutils literal notranslate"><span class="pre">plt.subplots(2,1)</span></code>. To make the different plots, you specify where
 with <code class="docutils literal notranslate"><span class="pre">ax[i]</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio" /><label class="tab-label" for="tab-set--11-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_cb</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Cuba&#39;</span><span class="p">]</span>
 <span class="c1"># create plot</span>
 <span class="n">figure</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># rows by columns</span>
@@ -497,7 +497,7 @@ with <code class="docutils literal notranslate"><span class="pre">ax[i]</span></
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio" /><label class="tab-label" for="tab-set--10-input--1">Output</label><div class="tab-content docutils container">
 <div style="background-color: white;"><p><img alt="fig 16_0" class="align-middle" src="../../_images/figures_16_0.png" /></p>
 </div></div>
 </div>
@@ -507,7 +507,7 @@ with <code class="docutils literal notranslate"><span class="pre">ax[i]</span></
 labels. This also makes the axes of the different panels have the same
 ranges. Make sure your panels use the same units, however.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio" /><label class="tab-label" for="tab-set--13-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># create plot</span>
 <span class="n">figure</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># rows by columns</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_jm</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">],</span> <span class="n">df_jm</span><span class="p">[</span><span class="s1">&#39;life_expectancy&#39;</span><span class="p">])</span>
@@ -523,14 +523,14 @@ ranges. Make sure your panels use the same units, however.</p>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio" /><label class="tab-label" for="tab-set--12-input--1">Output</label><div class="tab-content docutils container">
 <div style="background-color: white;"><p><img alt="fig 18_0" class="align-middle" src="../../_images/figures_18_0.png" /></p>
 </div></div>
 </div>
 <p>If subplots become too squished, you can also change the figure size
 with <code class="docutils literal notranslate"><span class="pre">plt.subplots(figsize=(x,y))</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio"><label class="tab-label" for="tab-set--15-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio" /><label class="tab-label" for="tab-set--15-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">figure</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span> <span class="c1"># rows by columns</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_jm</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">],</span> <span class="n">df_jm</span><span class="p">[</span><span class="s1">&#39;life_expectancy&#39;</span><span class="p">])</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_cb</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">],</span> <span class="n">df_cb</span><span class="p">[</span><span class="s1">&#39;life_expectancy&#39;</span><span class="p">])</span>
@@ -545,14 +545,14 @@ with <code class="docutils literal notranslate"><span class="pre">plt.subplots(f
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio" /><label class="tab-label" for="tab-set--14-input--1">Output</label><div class="tab-content docutils container">
 <div style="background-color: white;"><p><img alt="fig 20_0" class="align-middle" src="../../_images/figures_20_0.png" /></p>
 </div></div>
 </div>
 <p>If we want to use multiple rows and columns, we now gain another index
 (<code class="docutils literal notranslate"><span class="pre">ax[i,j]</span></code>).</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio" /><label class="tab-label" for="tab-set--17-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_us</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;United States&#39;</span><span class="p">]</span>
 <span class="n">df_ca</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Canada&#39;</span><span class="p">]</span>
 
@@ -571,7 +571,7 @@ with <code class="docutils literal notranslate"><span class="pre">plt.subplots(f
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio" /><label class="tab-label" for="tab-set--16-input--1">Output</label><div class="tab-content docutils container">
 <div style="background-color: white;"><p><img alt="fig 22_0" class="align-middle" src="../../_images/figures_22_0.png" /></p>
 </div></div>
 </div>
@@ -581,7 +581,7 @@ to reduce the amount of code needed for a 3 x 3 figure.</p>
 <p>We generate a blank multipanel figure before the loops. We then make one
 row at a time, going left to right, making a new subset for each panel.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--19-input--1" name="tab-set--19" type="radio"><label class="tab-label" for="tab-set--19-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--19-input--1" name="tab-set--19" type="radio" /><label class="tab-label" for="tab-set--19-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># how many rows and columns?</span>
 <span class="n">nrow</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">ncol</span> <span class="o">=</span> <span class="mi">3</span>
@@ -614,7 +614,7 @@ row at a time, going left to right, making a new subset for each panel.</p>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--18-input--1" name="tab-set--18" type="radio"><label class="tab-label" for="tab-set--18-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--18-input--1" name="tab-set--18" type="radio" /><label class="tab-label" for="tab-set--18-input--1">Output</label><div class="tab-content docutils container">
 <div style="background-color: white;"><p><img alt="fig 24_0" class="align-middle" src="../../_images/figures_24_0.png" /></p>
 </div></div>
 </div>
@@ -628,7 +628,7 @@ out of the box. It has its own syntax and functions, but it also has
 compatibility with Matplotlib, if you would like to use the same
 functions but with Seaborn aesthetics.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--20-input--1" name="tab-set--20" type="radio"><label class="tab-label" for="tab-set--20-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--20-input--1" name="tab-set--20" type="radio" /><label class="tab-label" for="tab-set--20-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
 </pre></div>
 </div>
@@ -637,7 +637,7 @@ functions but with Seaborn aesthetics.</p>
 <p>Seaborn allows you to set a theme that will be used for subsequently
 created figures. We will use the default theme with <code class="docutils literal notranslate"><span class="pre">sns.set_theme()</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--21-input--1" name="tab-set--21" type="radio"><label class="tab-label" for="tab-set--21-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--21-input--1" name="tab-set--21" type="radio" /><label class="tab-label" for="tab-set--21-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Apply the default theme</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span>
 </pre></div>
@@ -651,7 +651,7 @@ data source as <code class="docutils literal notranslate"><span class="pre">df</
 that the x-values will be from the <code class="docutils literal notranslate"><span class="pre">life_expectancy</span></code> column, and the
 colors of the stacks will be from <code class="docutils literal notranslate"><span class="pre">region</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--23-input--1" name="tab-set--23" type="radio"><label class="tab-label" for="tab-set--23-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--23-input--1" name="tab-set--23" type="radio" /><label class="tab-label" for="tab-set--23-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;life_expectancy&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;region&quot;</span><span class="p">,</span> <span class="n">multiple</span><span class="o">=</span><span class="s2">&quot;stack&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -659,14 +659,14 @@ colors of the stacks will be from <code class="docutils literal notranslate"><sp
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--22-input--1" name="tab-set--22" type="radio"><label class="tab-label" for="tab-set--22-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--22-input--1" name="tab-set--22" type="radio" /><label class="tab-label" for="tab-set--22-input--1">Output</label><div class="tab-content docutils container">
 <div style="background-color: white;"><p><img alt="fig 30_0" class="align-middle" src="../../_images/figures_30_0.png" /></p>
 </div></div>
 </div>
 <p>Seaborn also fully integrates with Matplotlib. Once you use a Seaborn
 theme, Matplotlib will also use that theme.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--25-input--1" name="tab-set--25" type="radio"><label class="tab-label" for="tab-set--25-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--25-input--1" name="tab-set--25" type="radio" /><label class="tab-label" for="tab-set--25-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">## same code as above for 3x3 plot</span>
 
 <span class="c1"># how many rows and columns?</span>
@@ -701,7 +701,7 @@ theme, Matplotlib will also use that theme.</p>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--24-input--1" name="tab-set--24" type="radio"><label class="tab-label" for="tab-set--24-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--24-input--1" name="tab-set--24" type="radio" /><label class="tab-label" for="tab-set--24-input--1">Output</label><div class="tab-content docutils container">
 <div style="background-color: white;"><p><img alt="fig 32_0" class="align-middle" src="../../_images/figures_32_0.png" /></p>
 </div></div>
 </div>
@@ -711,7 +711,7 @@ theme, Matplotlib will also use that theme.</p>
 the <code class="docutils literal notranslate"><span class="pre">gapminder.csv</span></code> data set. You can do this in one or multiple
 panels.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--26-input--1" name="tab-set--26" type="radio"><label class="tab-label" for="tab-set--26-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--26-input--1" name="tab-set--26" type="radio" /><label class="tab-label" for="tab-set--26-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">### your code here:</span>
 </pre></div>
 </div>
@@ -721,7 +721,7 @@ panels.</p>
 <summary>Solution</summary><div class="docutils container">
 <p class="rubric" id="one-panel-with-seaborn">One panel with Seaborn</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--28-input--1" name="tab-set--28" type="radio"><label class="tab-label" for="tab-set--28-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--28-input--1" name="tab-set--28" type="radio" /><label class="tab-label" for="tab-set--28-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># import log function</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">log10</span>
 <span class="c1"># subset</span>
@@ -735,13 +735,13 @@ panels.</p>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--27-input--1" name="tab-set--27" type="radio"><label class="tab-label" for="tab-set--27-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--27-input--1" name="tab-set--27" type="radio" /><label class="tab-label" for="tab-set--27-input--1">Output</label><div class="tab-content docutils container">
 <div style="background-color: white;"><p><img alt="fig 36_0" class="align-middle" src="../../_images/figures_36_0.png" /></p>
 </div></div>
 </div>
 <p class="rubric" id="multipanel">Multipanel</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--30-input--1" name="tab-set--30" type="radio"><label class="tab-label" for="tab-set--30-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--30-input--1" name="tab-set--30" type="radio" /><label class="tab-label" for="tab-set--30-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># import log function and array</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">log10</span>
 <span class="c1"># subset</span>
@@ -778,7 +778,7 @@ panels.</p>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--29-input--1" name="tab-set--29" type="radio"><label class="tab-label" for="tab-set--29-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--29-input--1" name="tab-set--29" type="radio" /><label class="tab-label" for="tab-set--29-input--1">Output</label><div class="tab-content docutils container">
 <div style="background-color: white;"><p><img alt="fig 38_0" class="align-middle" src="../../_images/figures_38_0.png" /></p>
 </div></div>
 </div>

@@ -338,7 +338,7 @@ we have learned will be put to use.</p>
 <h2>Loop Structure<a class="headerlink" href="#loop-structure" title="Permalink to this heading">¶</a></h2>
 <p>Here is some pseudo-code showing the basic syntax of a for loop in bash.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Bash</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio" /><label class="tab-label" for="tab-set--0-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>thing<span class="w"> </span><span class="k">in</span><span class="w"> </span>list_of_things
 &gt;<span class="w"> </span><span class="k">do</span>
 &gt;<span class="w">     </span>my_command<span class="w"> </span><span class="nv">$thing</span>
@@ -361,7 +361,7 @@ leading <code class="docutils literal notranslate"><span class="pre">$</span></c
 <p>The following for loop lists the contents of working directory one item
 at a time.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Bash</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio" /><label class="tab-label" for="tab-set--1-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>itemname<span class="w"> </span><span class="k">in</span><span class="w"> </span>*
 &gt;<span class="w"> </span><span class="k">do</span>
 &gt;<span class="w">     </span>ls<span class="w"> </span><span class="nv">$itemname</span>
@@ -372,7 +372,7 @@ at a time.</p>
 </div>
 <p>Here we grab the first two lines of 3 data files.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Bash</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio" /><label class="tab-label" for="tab-set--2-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>Desktop/data-shell/creatures
 $<span class="w"> </span><span class="k">for</span><span class="w"> </span>filename<span class="w"> </span><span class="k">in</span><span class="w"> </span>basilisk.dat<span class="w"> </span>minotaur.dat<span class="w"> </span>unicorn.dat
 &gt;<span class="w"> </span><span class="k">do</span>
@@ -384,7 +384,7 @@ $<span class="w"> </span><span class="k">for</span><span class="w"> </span>filen
 </div>
 <p>We can make changes to files within loops, as well.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Bash</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio" /><label class="tab-label" for="tab-set--3-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>Desktop/data-shell/creatures
 $<span class="w"> </span><span class="k">for</span><span class="w"> </span>filename<span class="w"> </span><span class="k">in</span><span class="w"> </span>basilisk.dat<span class="w"> </span>minotaur.dat<span class="w"> </span>unicorn.dat
 &gt;<span class="w"> </span><span class="k">do</span>
@@ -400,7 +400,7 @@ $<span class="w"> </span><span class="k">for</span><span class="w"> </span>filen
 through the program <code class="docutils literal notranslate"><span class="pre">goostats</span></code> one at a time. The program <code class="docutils literal notranslate"><span class="pre">goostats</span></code>
 has two arguments, the input data file, and the output statistics file.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">Bash</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio" /><label class="tab-label" for="tab-set--4-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>../north-pacific-gyre/2012-07-03
 $<span class="w"> </span><span class="k">for</span><span class="w"> </span>datafile<span class="w"> </span><span class="k">in</span><span class="w"> </span>NENE*<span class="o">[</span>AB<span class="o">]</span>.txt
 &gt;<span class="w"> </span><span class="k">do</span>
@@ -424,7 +424,7 @@ to execute the <code class="docutils literal notranslate"><span class="pre">goos
 <h3>Nested Loops Challenge!<a class="headerlink" href="#nested-loops-challenge" title="Permalink to this heading">¶</a></h3>
 <p>What does this do?</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">Bash</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio" /><label class="tab-label" for="tab-set--5-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="k">for</span><span class="w"> </span>species<span class="w"> </span><span class="k">in</span><span class="w"> </span>cubane<span class="w"> </span>ethane<span class="w"> </span>methane
 &gt;<span class="w"> </span><span class="k">do</span>
 &gt;<span class="w">     </span><span class="k">for</span><span class="w"> </span>temperature<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">25</span><span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">37</span><span class="w"> </span><span class="m">40</span>

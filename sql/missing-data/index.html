@@ -343,7 +343,7 @@
 <h2>NULL values<a class="headerlink" href="#null-values" title="Permalink to this heading">¶</a></h2>
 <p>In our console, we’re going to make sure <code class="docutils literal notranslate"><span class="pre">NULL</span></code> gets displayed more obviously.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio" /><label class="tab-label" for="tab-set--0-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="n">nullvalue</span><span class="w"> </span><span class="o">-</span><span class="k">null</span><span class="o">-</span>
 </pre></div>
 </div>
@@ -351,12 +351,12 @@
 </div>
 <p>Let’s try running a query where some of the returned values are <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio" /><label class="tab-label" for="tab-set--1-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Visited</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio" /><label class="tab-label" for="tab-set--1-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>id   site   dated
 ---  -----  ----------
 619  DR-1   1927-02-08
@@ -374,12 +374,12 @@
 <p><code class="docutils literal notranslate"><span class="pre">NULL</span></code> doesn’t behave like other values.
 It gets left out from conditional searches.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio" /><label class="tab-label" for="tab-set--3-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Visited</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">dated</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="s1">&#39;1930-01-01&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio" /><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>id   site  dated
 ---  ----  ----------
 619  DR-1  1927-02-08
@@ -389,12 +389,12 @@ It gets left out from conditional searches.</p>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio" /><label class="tab-label" for="tab-set--2-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Visited</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">dated</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="s1">&#39;1930-01-01&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio" /><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>id   site   dated
 ---  -----  ----------
 734  DR-3   1930-01-07
@@ -412,12 +412,12 @@ It gets left out from conditional searches.</p>
 <p>To filter for <code class="docutils literal notranslate"><span class="pre">NULL</span></code>, we have to use the command <code class="docutils literal notranslate"><span class="pre">IS</span></code>
 instead of <code class="docutils literal notranslate"><span class="pre">=</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio" /><label class="tab-label" for="tab-set--4-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Visited</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">dated</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio" /><label class="tab-label" for="tab-set--4-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>id   site  dated
 ---  ----  ------
 752  DR-3  -null-
@@ -427,12 +427,12 @@ instead of <code class="docutils literal notranslate"><span class="pre">=</span>
 </div>
 <p>To omit <code class="docutils literal notranslate"><span class="pre">NULL</span></code>, we use <code class="docutils literal notranslate"><span class="pre">IS</span> <span class="pre">NOT</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio" /><label class="tab-label" for="tab-set--5-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Visited</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">dated</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio" /><label class="tab-label" for="tab-set--5-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>id   site   dated
 ---  -----  ----------
 619  DR-1   1927-02-08
@@ -449,12 +449,12 @@ instead of <code class="docutils literal notranslate"><span class="pre">=</span>
 <p>Without explicitely saying that we want to include <code class="docutils literal notranslate"><span class="pre">NULL</span></code>,
 it is easy to filter them out accidentally.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio" /><label class="tab-label" for="tab-set--6-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Survey</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">quant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;sal&#39;</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">person</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">&#39;lake&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio" /><label class="tab-label" for="tab-set--6-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>taken  person  quant  reading
 -----  ------  -----  -------
 619    dyer    sal    0.13
@@ -468,13 +468,13 @@ it is easy to filter them out accidentally.</p>
 <p>We have to explicitely include <code class="docutils literal notranslate"><span class="pre">NULL</span></code> if we want to also include
 those values.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio" /><label class="tab-label" for="tab-set--7-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Survey</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">quant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;sal&#39;</span>
 <span class="k">and</span><span class="w"> </span><span class="p">(</span><span class="n">person</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">&#39;lake&#39;</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">person</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--7-input--2" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--7-input--2" name="tab-set--7" type="radio" /><label class="tab-label" for="tab-set--7-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>taken  person  quant  reading
 -----  ------  -----  -------
 619    dyer    sal    0.13
@@ -494,12 +494,12 @@ which the date is not known (i.e., is null).</p>
 <details class="summary-solution">
 <summary>Solution</summary><div class="docutils container">
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio" /><label class="tab-label" for="tab-set--8-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Visited</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">dated</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">dated</span><span class="w"> </span><span class="k">ASC</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--8-input--2" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--8-input--2" name="tab-set--8" type="radio" /><label class="tab-label" for="tab-set--8-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>id   site   dated
 ---  -----  ----------
 619  DR-1   1927-02-08

@@ -337,7 +337,7 @@ small program, so we can re-run operations with a single command.</p>
 <section id="shebang-the-top-line-of-a-script">
 <h2>Shebang the top line of a script:<a class="headerlink" href="#shebang-the-top-line-of-a-script" title="Permalink to this heading">¶</a></h2>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Bash</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio" /><label class="tab-label" for="tab-set--0-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 </pre></div>
 </div>
@@ -354,7 +354,7 @@ tell the shell to run a perl script.)</p>
 <p>We need set permissions on executable files before we can run them. To
 run them we can use the <code class="docutils literal notranslate"><span class="pre">chmod</span></code> or “change mode” command.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Bash</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio" /><label class="tab-label" for="tab-set--1-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>header.sh
 </pre></div>
 </div>
@@ -376,7 +376,7 @@ directories, including the working directory, for commands.</p>
 use <code class="docutils literal notranslate"><span class="pre">./</span></code> to ensure that it knows to look in the current working
 directory: <code class="docutils literal notranslate"><span class="pre">./myscript.sh</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Bash</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio" /><label class="tab-label" for="tab-set--2-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./header.sh
 </pre></div>
 </div>
@@ -394,7 +394,7 @@ a script, <code class="docutils literal notranslate"><span class="pre">$1</span>
 script <code class="docutils literal notranslate"><span class="pre">header.sh</span></code>.</p>
 <p><strong>header.sh:</strong></p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Bash</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio" /><label class="tab-label" for="tab-set--3-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 <span class="c1"># This script prints the first 15 lines of the file named in the command line (datafile.txt)</span>
 head<span class="w"> </span>-n<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="nv">$1</span>
@@ -404,7 +404,7 @@ head<span class="w"> </span>-n<span class="w"> </span><span class="m">15</span><
 </div>
 <p><strong>Command line:</strong></p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">Bash</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio" /><label class="tab-label" for="tab-set--4-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./header.sh<span class="w"> </span>datafile.txt
 </pre></div>
 </div>
@@ -421,7 +421,7 @@ for the third, so on and so forth. It can be helpful to use double
 quotes around a variable in case a filename happens to contain spaces.</p>
 <p><strong>header.sh:</strong></p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">Bash</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio" /><label class="tab-label" for="tab-set--5-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 <span class="c1"># This script prints the top $2 lines of the file $1, then writes the top lines to file $3</span>
 head<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$2</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$3</span><span class="s2">&quot;</span>
@@ -431,7 +431,7 @@ head<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</s
 </div>
 <p><strong>Command line:</strong></p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">Bash</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio" /><label class="tab-label" for="tab-set--6-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./header.sh<span class="w"> </span>datafile.txt<span class="w"> </span><span class="m">10</span><span class="w"> </span>topdata.txt
 </pre></div>
 </div>
@@ -443,7 +443,7 @@ head<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</s
 script. You can still add quotations in case of filename spaces <code class="docutils literal notranslate"><span class="pre">&quot;$&#64;&quot;</span></code>.</p>
 <p><strong>sorted.sh:</strong></p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">Bash</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio" /><label class="tab-label" for="tab-set--7-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 <span class="c1"># Sort files by their length</span>
 <span class="c1"># USAGE: ./sorted.sh one_or_more_filenames</span>
@@ -454,7 +454,7 @@ $<span class="w"> </span>wc<span class="w"> </span>-l<span class="w"> </span><sp
 </div>
 <p><strong>Command line:</strong></p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">Bash</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio" /><label class="tab-label" for="tab-set--8-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>./sorted.sh<span class="w"> </span>*.pdb<span class="w"> </span>../creatures/*.dat
 </pre></div>
 </div>

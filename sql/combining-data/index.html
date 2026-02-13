@@ -357,12 +357,12 @@ primary keys and foreign keys between tables.</p></li>
 <p>Let’s try to join the <code class="docutils literal notranslate"><span class="pre">Site</span></code> and <code class="docutils literal notranslate"><span class="pre">Visited</span></code> tables.</p>
 <p>We will first demonstrate the <strong>WRONG</strong> way to do this first.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio" /><label class="tab-label" for="tab-set--0-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Site</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Visited</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio" /><label class="tab-label" for="tab-set--0-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>name   lat     long     id   site   dated
 -----  ------  -------  ---  -----  ----------
 DR-1   -49.85  -128.57  619  DR-1   1927-02-08
@@ -396,12 +396,12 @@ MSK-4  -48.87  -123.4   844  DR-1   1932-03-22
 <p><code class="docutils literal notranslate"><span class="pre">JOIN</span></code> creates the cross product, creating all possible combinations (3*8=24).
 It hasn’t figured out what the relationship between the tables is.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio" /><label class="tab-label" for="tab-set--1-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Site</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Visited</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">Site</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Visited</span><span class="p">.</span><span class="n">site</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio" /><label class="tab-label" for="tab-set--1-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>name   lat     long     id   site   dated
 -----  ------  -------  ---  -----  ----------
 DR-1   -49.85  -128.57  619  DR-1   1927-02-08
@@ -420,14 +420,14 @@ MSK-4  -48.87  -123.4   837  MSK-4  1932-01-14
 we are using.</p>
 <p>We can use this syntax to select only specific columns from the tables.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio" /><label class="tab-label" for="tab-set--2-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">Site</span><span class="p">.</span><span class="n">lat</span><span class="p">,</span><span class="w"> </span><span class="n">Site</span><span class="p">.</span><span class="n">long</span><span class="p">,</span><span class="w"> </span><span class="n">Visited</span><span class="p">.</span><span class="n">dated</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">Site</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Visited</span>
 <span class="k">ON</span><span class="w"> </span><span class="n">Site</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Visited</span><span class="p">.</span><span class="n">site</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio" /><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>lat     long     dated
 ------  -------  ----------
 -49.85  -128.57  1927-02-08
@@ -444,7 +444,7 @@ we are using.</p>
 </div>
 <p>We can also join multiple tables at once.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio" /><label class="tab-label" for="tab-set--3-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">Site</span><span class="p">.</span><span class="n">lat</span><span class="p">,</span><span class="w"> </span><span class="n">Site</span><span class="p">.</span><span class="n">long</span><span class="p">,</span><span class="w"> </span><span class="n">Visited</span><span class="p">.</span><span class="n">dated</span><span class="p">,</span><span class="w"> </span><span class="n">Survey</span><span class="p">.</span><span class="n">quant</span><span class="p">,</span><span class="w"> </span><span class="n">Survey</span><span class="p">.</span><span class="n">reading</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">Site</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Visited</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Survey</span>
 <span class="k">ON</span><span class="w"> </span><span class="n">Site</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Visited</span><span class="p">.</span><span class="n">site</span>
@@ -453,7 +453,7 @@ we are using.</p>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio" /><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>lat     long     dated       quant  reading
 ------  -------  ----------  -----  -------
 -49.85  -128.57  1927-02-08  rad    9.82
@@ -484,7 +484,7 @@ we are using.</p>
 <details class="summary-solution">
 <summary>Solution</summary><div class="docutils container">
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio" /><label class="tab-label" for="tab-set--4-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">Survey</span><span class="p">.</span><span class="n">reading</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">Site</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Visited</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Survey</span>
 <span class="k">ON</span><span class="w"> </span><span class="n">Site</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Visited</span><span class="p">.</span><span class="n">site</span>
@@ -494,7 +494,7 @@ we are using.</p>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio" /><label class="tab-label" for="tab-set--4-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>reading
 -------
 9.82

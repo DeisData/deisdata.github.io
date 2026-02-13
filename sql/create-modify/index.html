@@ -350,7 +350,7 @@ but we want to also be able to edit the data, as well.</p>
 Each table has a schema with which it was created. The command
 below creates a blank table.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio" /><label class="tab-label" for="tab-set--0-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Extra</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="nb">text</span><span class="p">,</span><span class="w"> </span><span class="n">minutes</span><span class="w"> </span><span class="nb">integer</span><span class="p">,</span><span class="w"> </span><span class="n">measure</span><span class="w"> </span><span class="nb">real</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -363,12 +363,12 @@ after the name of the field. <code class="docutils literal notranslate"><span cl
 <code class="docutils literal notranslate"><span class="pre">BLOB</span></code> fields, which stand for binary large objects, such as an image.</p>
 <p>If you check <code class="docutils literal notranslate"><span class="pre">.schema</span></code> we can see our new table here.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio" /><label class="tab-label" for="tab-set--1-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="k">schema</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio" /><label class="tab-label" for="tab-set--1-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>CREATE TABLE Person (id text, personal text, family text);
 CREATE TABLE Site (name text, lat real, long real);
 CREATE TABLE Survey (taken integer, person text, quant text, reading real);
@@ -383,19 +383,19 @@ CREATE TABLE Extra(name text, minutes integer, measure real);
 <h2>DROP TABLE<a class="headerlink" href="#drop-table" title="Permalink to this heading">¶</a></h2>
 <p>To remove a table, we can use <code class="docutils literal notranslate"><span class="pre">DROP</span> <span class="pre">TABLE</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio" /><label class="tab-label" for="tab-set--3-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Extra</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio" /><label class="tab-label" for="tab-set--2-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="k">schema</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio" /><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>CREATE TABLE Person (id text, personal text, family text);
 CREATE TABLE Site (name text, lat real, long real);
 CREATE TABLE Survey (taken integer, person text, quant text, reading real);
@@ -412,7 +412,7 @@ back up your database if there are files you would like to keep.</p>
 <h2>Primary keys<a class="headerlink" href="#primary-keys" title="Permalink to this heading">¶</a></h2>
 <p>When creating a table, we can also specify a field to be a primary key.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio" /><label class="tab-label" for="tab-set--4-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">Extra</span><span class="p">(</span><span class="n">name</span><span class="w"> </span><span class="nb">text</span><span class="p">,</span><span class="w"> </span><span class="n">minutes</span><span class="w"> </span><span class="nb">integer</span><span class="p">,</span><span class="w"> </span><span class="n">measure</span><span class="w"> </span><span class="nb">real</span>
 <span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">));</span>
 </pre></div>
@@ -424,7 +424,7 @@ back up your database if there are files you would like to keep.</p>
 <h2>Editing tables<a class="headerlink" href="#editing-tables" title="Permalink to this heading">¶</a></h2>
 <p>We can also add a row to a table too with <code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">INTO</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio" /><label class="tab-label" for="tab-set--5-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">SITE</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">lat</span><span class="p">,</span><span class="w"> </span><span class="n">long</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;DR-5&#39;</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">49</span><span class="p">.</span><span class="mi">85</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">128</span><span class="p">.</span><span class="mi">57</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -433,7 +433,7 @@ back up your database if there are files you would like to keep.</p>
 <p>We can take values from one table and put them into another table,
 as well.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio" /><label class="tab-label" for="tab-set--6-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">JustLatLong</span><span class="w"> </span><span class="p">(</span><span class="n">lat</span><span class="w"> </span><span class="nb">real</span><span class="p">,</span><span class="w"> </span><span class="n">long</span><span class="w"> </span><span class="nb">real</span><span class="p">);</span>
 
 <span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">JustLatLon</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">lat</span><span class="p">,</span><span class="w"> </span><span class="n">long</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Site</span><span class="p">;</span>
@@ -445,7 +445,7 @@ as well.</p>
 conditions. Don’t forget to include <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>, else you will update
 all values.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio" /><label class="tab-label" for="tab-set--7-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span><span class="w"> </span><span class="n">Site</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">lat</span><span class="o">=-</span><span class="mi">47</span><span class="p">.</span><span class="mi">87</span><span class="p">,</span><span class="w"> </span><span class="n">long</span><span class="o">=-</span><span class="mi">122</span><span class="p">.</span><span class="mi">0</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;DR-5&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -456,7 +456,7 @@ running <code class="docutils literal notranslate"><span class="pre">UPDATE</spa
 <p>We can use <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> to delete rows in a similar way. Make sure
 records you delete are not referred to by other tables.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">SQL</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio" /><label class="tab-label" for="tab-set--8-input--1">SQL</label><div class="tab-content docutils container">
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s1">&#39;danforth&#39;</span><span class="p">;</span>
 </pre></div>
 </div>

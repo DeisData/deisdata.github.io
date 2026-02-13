@@ -339,7 +339,7 @@
 particular, we will use <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> and <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> for running
 hypothesis testing and model fitting.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio" /><label class="tab-label" for="tab-set--0-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>   <span class="c1"># Load standard libraries for data analysis</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -362,7 +362,7 @@ hypothesis testing and model fitting.</p>
 <p>To find out more about a library and see the documentation, you can run
 <code class="docutils literal notranslate"><span class="pre">?LIBRARY_NAME</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio" /><label class="tab-label" for="tab-set--1-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>?scipy.stats
 </pre></div>
 </div>
@@ -373,14 +373,14 @@ hypothesis testing and model fitting.</p>
 <h2>Describe and plot distributions<a class="headerlink" href="#describe-and-plot-distributions" title="Permalink to this heading">¶</a></h2>
 <p>Let’s first import our GapMinder data set and summarize it.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio" /><label class="tab-label" for="tab-set--3-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import data</span>
 <span class="n">gapminder</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../data/gapminder.csv&#39;</span><span class="p">)</span>
 <span class="n">gapminder</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio" /><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 RangeIndex: 14740 entries, 0 to 14739
 Data columns (total 9 columns):
@@ -402,12 +402,12 @@ memory usage: 1.0+ MB
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio" /><label class="tab-label" for="tab-set--2-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gapminder</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio" /><label class="tab-label" for="tab-set--2-input--2">Output</label><div class="tab-content docutils container">
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
 <thead>
@@ -557,7 +557,7 @@ memory usage: 1.0+ MB
 <p>We can use built in functions in pandas to summarize key aspects of our
 data.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio" /><label class="tab-label" for="tab-set--4-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">max_pop</span> <span class="o">=</span> <span class="n">gapminder</span><span class="o">.</span><span class="n">population</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 <span class="n">ave_bpw</span> <span class="o">=</span> <span class="n">gapminder</span><span class="o">.</span><span class="n">babies_per_woman</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="n">var_bpw</span> <span class="o">=</span> <span class="n">gapminder</span><span class="o">.</span><span class="n">babies_per_woman</span><span class="o">.</span><span class="n">var</span><span class="p">()</span>
@@ -568,7 +568,7 @@ data.</p>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio" /><label class="tab-label" for="tab-set--4-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Max population: 1376048943.0
 Mean babies per woman: 4.643471506105837
 Variance in babies per woman: 3.9793570162855287
@@ -579,12 +579,12 @@ Variance in babies per woman: 3.9793570162855287
 <p>We examine quartiles using the <code class="docutils literal notranslate"><span class="pre">.quantile()</span></code> method and specifying
 0.25, 0.50 and 0.75.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio" /><label class="tab-label" for="tab-set--5-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gapminder</span><span class="o">.</span><span class="n">life_expectancy</span><span class="o">.</span><span class="n">quantile</span><span class="p">([</span><span class="mf">0.25</span><span class="p">,</span><span class="mf">0.50</span><span class="p">,</span><span class="mf">0.75</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio" /><label class="tab-label" for="tab-set--5-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0.25    44.23
 0.50    60.08
 0.75    70.38
@@ -597,7 +597,7 @@ Name: life_expectancy, dtype: float64
 type of plot with the argument <code class="docutils literal notranslate"><span class="pre">kind</span></code>. Here we make a box plot and a
 histogram. We can then add labels with matplotlib.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio" /><label class="tab-label" for="tab-set--10-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gapminder</span><span class="o">.</span><span class="n">life_expectancy</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Percentage Surviving&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -606,24 +606,24 @@ histogram. We can then add labels with matplotlib.</p>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio" /><label class="tab-label" for="tab-set--9-input--1">Output</label><div class="tab-content docutils container">
 <div style="background-color: white;"><p><img alt="fig 13_0" class="align-middle" src="../../_images/stats_13_0.png" /></p>
 </div></div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio" /><label class="tab-label" for="tab-set--8-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gapminder</span><span class="o">.</span><span class="n">age5_surviving</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--8-input--2" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--8-input--2" name="tab-set--8" type="radio" /><label class="tab-label" for="tab-set--8-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>84.45266533242852
 </pre></div>
 </div>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio" /><label class="tab-label" for="tab-set--7-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gapminder</span><span class="o">.</span><span class="n">life_expectancy</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Percentage Surviving&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -632,7 +632,7 @@ histogram. We can then add labels with matplotlib.</p>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio" /><label class="tab-label" for="tab-set--6-input--1">Output</label><div class="tab-content docutils container">
 <div style="background-color: white;"><p><img alt="fig 15_0" class="align-middle" src="../../_images/stats_15_0.png" /></p>
 </div></div>
 </div>
@@ -649,14 +649,14 @@ value. To do this, we use a <strong>1-sample t-test</strong>.</p>
 <p>To run a 1-sample t-test, we can use the <code class="docutils literal notranslate"><span class="pre">ttest_1sample()</span></code> function
 from the <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> module.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio" /><label class="tab-label" for="tab-set--11-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1 Sample t-test</span>
 <span class="c1"># Is the mean of the data 84.4?</span>
 <span class="n">scipy</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">ttest_1samp</span><span class="p">(</span><span class="n">gapminder</span><span class="p">[</span><span class="s1">&#39;life_expectancy&#39;</span><span class="p">],</span> <span class="mi">57</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--11-input--2" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--11-input--2" name="tab-set--11" type="radio" /><label class="tab-label" for="tab-set--11-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Ttest_1sampResult(statistic=-1.2660253842508842, pvalue=0.20552400415951508)
 </pre></div>
 </div>
@@ -666,7 +666,7 @@ from the <code class="docutils literal notranslate"><span class="pre">scipy.stat
 <strong>2-sample t-test</strong>, also called an <strong>independent samples t-test</strong>. We
 can use the function <code class="docutils literal notranslate"><span class="pre">ttest_ind()</span></code> for this.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio" /><label class="tab-label" for="tab-set--12-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2 sample t-test</span>
 <span class="n">gdata_us</span> <span class="o">=</span> <span class="n">gapminder</span><span class="p">[</span><span class="n">gapminder</span><span class="o">.</span><span class="n">country</span> <span class="o">==</span> <span class="s1">&#39;United States&#39;</span><span class="p">]</span>
 <span class="n">gdata_canada</span> <span class="o">=</span> <span class="n">gapminder</span><span class="p">[</span><span class="n">gapminder</span><span class="o">.</span><span class="n">country</span> <span class="o">==</span> <span class="s1">&#39;Canada&#39;</span><span class="p">]</span>
@@ -675,7 +675,7 @@ can use the function <code class="docutils literal notranslate"><span class="pre
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--12-input--2" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--12-input--2" name="tab-set--12" type="radio" /><label class="tab-label" for="tab-set--12-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Ttest_indResult(statistic=-0.741088317096773, pvalue=0.4597261729067277)
 </pre></div>
 </div>
@@ -687,7 +687,7 @@ can use the function <code class="docutils literal notranslate"><span class="pre
 <p>We have described the sample of a population with statistics. Now let’s
 understand what we can say about a population from a sample of data.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio" /><label class="tab-label" for="tab-set--13-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get data subset</span>
 <span class="n">gdata</span> <span class="o">=</span> <span class="n">gapminder</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;year == 1985&#39;</span><span class="p">)</span>
 <span class="c1"># grab population for point sizes</span>
@@ -706,14 +706,14 @@ understand what we can say about a population from a sample of data.</p>
 <p>Using the custom function we just specified, let’s visualize the
 relationship between <code class="docutils literal notranslate"><span class="pre">age5_surviving</span></code> and <code class="docutils literal notranslate"><span class="pre">babies_per_woman</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio"><label class="tab-label" for="tab-set--15-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio" /><label class="tab-label" for="tab-set--15-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plotdata</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio" /><label class="tab-label" for="tab-set--14-input--1">Output</label><div class="tab-content docutils container">
 <div style="background-color: white;"><p><img alt="fig 24_0" class="align-middle" src="../../_images/stats_24_0.png" /></p>
 </div></div>
 </div>
@@ -734,7 +734,7 @@ in R) response variable ~ model terms.</p>
 just use the mean <code class="docutils literal notranslate"><span class="pre">babies_per_woman</span></code> value as the prediction for all
 data points.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio" /><label class="tab-label" for="tab-set--16-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ordinary least squares model</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s1">&#39;babies_per_woman ~ 1&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">gdata</span><span class="p">)</span>
 <span class="c1">#    where babies per woman is the response variable and</span>
@@ -750,7 +750,7 @@ data points.</p>
 function we just made and adding in our predictions from our model on
 top.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--19-input--1" name="tab-set--19" type="radio"><label class="tab-label" for="tab-set--19-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--19-input--1" name="tab-set--19" type="radio" /><label class="tab-label" for="tab-set--19-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s make a function to plot the data against the model prediction</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">plotfit</span><span class="p">(</span><span class="n">fit</span><span class="p">):</span>
    <span class="n">plotdata</span><span class="p">()</span>
@@ -763,17 +763,17 @@ top.</p>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--18-input--1" name="tab-set--18" type="radio"><label class="tab-label" for="tab-set--18-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--18-input--1" name="tab-set--18" type="radio" /><label class="tab-label" for="tab-set--18-input--1">Output</label><div class="tab-content docutils container">
 <div style="background-color: white;"><p><img alt="fig 30_0" class="align-middle" src="../../_images/stats_30_0.png" /></p>
 </div></div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio" /><label class="tab-label" for="tab-set--17-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grandmean</span><span class="o">.</span><span class="n">params</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--17-input--2" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--17-input--2" name="tab-set--17" type="radio" /><label class="tab-label" for="tab-set--17-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Intercept    4.360714
 dtype: float64
 </pre></div>
@@ -786,7 +786,7 @@ Thus, this is a very poor model.</p>
 per woman. We use <code class="docutils literal notranslate"><span class="pre">-1</span></code> in the formula to say we do not want to include
 a constant in the model.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--21-input--1" name="tab-set--21" type="radio"><label class="tab-label" for="tab-set--21-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--21-input--1" name="tab-set--21" type="radio" /><label class="tab-label" for="tab-set--21-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">groupmeans</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s1">&#39;babies_per_woman ~ -1 + region&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">gdata</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 
 <span class="n">plotfit</span><span class="p">(</span><span class="n">groupmeans</span><span class="p">)</span>
@@ -795,19 +795,19 @@ a constant in the model.</p>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--20-input--1" name="tab-set--20" type="radio"><label class="tab-label" for="tab-set--20-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--20-input--1" name="tab-set--20" type="radio" /><label class="tab-label" for="tab-set--20-input--1">Output</label><div class="tab-content docutils container">
 <div style="background-color: white;"><p><img alt="fig 34_0" class="align-middle" src="../../_images/stats_34_0.png" /></p>
 </div></div>
 </div>
 <p>We can check the parameters of our fitted model to see the main effect
 of each region.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--22-input--1" name="tab-set--22" type="radio"><label class="tab-label" for="tab-set--22-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--22-input--1" name="tab-set--22" type="radio" /><label class="tab-label" for="tab-set--22-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">groupmeans</span><span class="o">.</span><span class="n">params</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--22-input--2" name="tab-set--22" type="radio"><label class="tab-label" for="tab-set--22-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--22-input--2" name="tab-set--22" type="radio" /><label class="tab-label" for="tab-set--22-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>region[Africa]     6.321321
 region[America]    3.658182
 region[Asia]       4.775577
@@ -819,12 +819,12 @@ dtype: float64
 </div>
 <p>An ANOVA can be used to test if these effects are significant.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--23-input--1" name="tab-set--23" type="radio"><label class="tab-label" for="tab-set--23-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--23-input--1" name="tab-set--23" type="radio" /><label class="tab-label" for="tab-set--23-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sm</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">anova_lm</span><span class="p">(</span><span class="n">groupmeans</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--23-input--2" name="tab-set--23" type="radio"><label class="tab-label" for="tab-set--23-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--23-input--2" name="tab-set--23" type="radio" /><label class="tab-label" for="tab-set--23-input--2">Output</label><div class="tab-content docutils container">
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
 <thead>
@@ -859,7 +859,7 @@ dtype: float64
 <p>This is a much more informed model, but we can still do a lot better.
 Let’s take <code class="docutils literal notranslate"><span class="pre">life_expectancy</span></code> into account in a new model.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--25-input--1" name="tab-set--25" type="radio"><label class="tab-label" for="tab-set--25-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--25-input--1" name="tab-set--25" type="radio" /><label class="tab-label" for="tab-set--25-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">surviving</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s1">&#39;babies_per_woman ~ -1 + region + life_expectancy&#39;</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">gdata</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
 <span class="n">plotfit</span><span class="p">(</span><span class="n">surviving</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">surviving</span><span class="o">.</span><span class="n">params</span><span class="p">)</span>
@@ -868,7 +868,7 @@ Let’s take <code class="docutils literal notranslate"><span class="pre">life_e
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--24-input--1" name="tab-set--24" type="radio"><label class="tab-label" for="tab-set--24-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--24-input--1" name="tab-set--24" type="radio" /><label class="tab-label" for="tab-set--24-input--1">Output</label><div class="tab-content docutils container">
 <blockquote>
 <div><div style="background-color: white;"><p><img alt="fig 38_1" class="align-middle" src="../../_images/stats_38_1.png" /></p>
 </div></div></blockquote>
@@ -887,12 +887,12 @@ dtype: float64
 statistics, and also provides an anova table for the significance of the
 added variables.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--26-input--1" name="tab-set--26" type="radio"><label class="tab-label" for="tab-set--26-input--1">Python</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--26-input--1" name="tab-set--26" type="radio" /><label class="tab-label" for="tab-set--26-input--1">Python</label><div class="tab-content docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">surviving</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--26-input--2" name="tab-set--26" type="radio"><label class="tab-label" for="tab-set--26-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--26-input--2" name="tab-set--26" type="radio" /><label class="tab-label" for="tab-set--26-input--2">Output</label><div class="tab-content docutils container">
 <div class="table-wrapper docutils container" id="id1">
 <table class="docutils align-center" id="id1">
 <caption><span class="caption-text">OLS Regression Results</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>

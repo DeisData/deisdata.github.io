@@ -333,7 +333,7 @@ show differences across a file’s history.</p>
 <p>Let’s simulate making a poor change to our code by adding a line to our
 README with <code class="docutils literal notranslate"><span class="pre">nano</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Bash</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio" /><label class="tab-label" for="tab-set--0-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>nano<span class="w"> </span>README.md
 </pre></div>
 </div>
@@ -354,7 +354,7 @@ changes.</p>
 <p>If we only want to see changes for a specific file, we can specify that
 filename, as well.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Bash</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio" /><label class="tab-label" for="tab-set--1-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>diff<span class="w"> </span>HEAD<span class="w"> </span>README.md
 </pre></div>
 </div>
@@ -372,7 +372,7 @@ work only when the changes are unstaged. You can add
 <p>We can also see the difference between our uncommitted changes and
 several commits ago by adding <code class="docutils literal notranslate"><span class="pre">~{NUMBER}</span></code> to <code class="docutils literal notranslate"><span class="pre">HEAD</span></code>.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Bash</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio" /><label class="tab-label" for="tab-set--2-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>diff<span class="w"> </span>HEAD~2<span class="w"> </span>README.md
 </pre></div>
 </div>
@@ -386,7 +386,7 @@ commit.</p>
 <p>You can also use the first 7 or so characters of the commit ID to
 compare.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Bash</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio" /><label class="tab-label" for="tab-set--3-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>diff<span class="w"> </span>36237fea<span class="w"> </span>README.md
 </pre></div>
 </div>
@@ -398,7 +398,7 @@ compare.</p>
 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> with the commit ID and filename. This will erase all
 uncommitted changes and revert the file.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">Bash</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio" /><label class="tab-label" for="tab-set--4-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>36237fea<span class="w"> </span>README.md
 </pre></div>
 </div>
@@ -411,7 +411,7 @@ lines added after this commit.</p>
 <p>If we want to return to our last made commit, we can still do that, as
 well.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">Bash</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio" /><label class="tab-label" for="tab-set--5-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>checkout<span class="w"> </span>HEAD<span class="w"> </span>README.md
 </pre></div>
 </div>
@@ -437,7 +437,7 @@ specify files for Git to ignore in a file called <code class="docutils literal n
 and <strong>private</strong> information. <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> will show that this newly
 created file has not been staged yet.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">Bash</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio" /><label class="tab-label" for="tab-set--6-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>touch<span class="w"> </span>super_secret_private.csv
 </pre></div>
 </div>
@@ -446,7 +446,7 @@ created file has not been staged yet.</p>
 <p>We do not currently have a <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> in our repository yet. We can
 make one with <code class="docutils literal notranslate"><span class="pre">nano</span></code> and add in our .csv file.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">Bash</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio" /><label class="tab-label" for="tab-set--7-input--1">Bash</label><div class="tab-content docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>nano<span class="w"> </span>.gitignore
 </pre></div>
 </div>

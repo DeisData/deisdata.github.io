@@ -339,7 +339,7 @@
 If this is your first time using one of the packages “uncomment” and
 run the appropriate install.package(‘package’)</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio" /><label class="tab-label" for="tab-set--0-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#install.packages(&#39;tidyverse&#39;)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
 <span class="c1">#install.packages(&#39;car&#39;)</span>
@@ -359,7 +359,7 @@ run the appropriate install.package(‘package’)</p>
 <p>We are going to analyze penguins! See <a class="reference external" href="https://allisonhorst.github.io/palmerpenguins/">https://allisonhorst.github.io/palmerpenguins/</a></p>
 <p>Let’s get the data</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio" /><label class="tab-label" for="tab-set--1-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;palmerpenguins&quot;</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">palmerpenguins</span><span class="p">)</span>
 </pre></div>
@@ -370,7 +370,7 @@ run the appropriate install.package(‘package’)</p>
 <section id="exploring-the-data-set">
 <h2>Exploring the data set<a class="headerlink" href="#exploring-the-data-set" title="Permalink to this heading">¶</a></h2>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio" /><label class="tab-label" for="tab-set--2-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">View</span><span class="p">(</span><span class="n">penguins</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -378,12 +378,12 @@ run the appropriate install.package(‘package’)</p>
 </div>
 <p>We can check the structure</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio" /><label class="tab-label" for="tab-set--3-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">str</span><span class="p">(</span><span class="n">penguins</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio" /><label class="tab-label" for="tab-set--3-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>tibble [344 × 8] (S3: tbl_df/tbl/data.frame)
 $ species          : Factor w/ 3 levels &quot;Adelie&quot;,&quot;Chinstrap&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
 $ island           : Factor w/ 3 levels &quot;Biscoe&quot;,&quot;Dream&quot;,..: 3 3 3 3 3 3 3 3 3 3 ...
@@ -399,13 +399,13 @@ $ year             : int [1:344] 2007 2007 2007 2007 2007 2007 2007 2007 2007 20
 </div>
 <p>I want to see how many penguins I have</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio" /><label class="tab-label" for="tab-set--4-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w"> </span><span class="nf">count</span><span class="p">(</span><span class="n">species</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio" /><label class="tab-label" for="tab-set--4-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 3 x 2
 ## species       n
 ## &lt;fctr&gt;      &lt;int&gt;
@@ -419,7 +419,7 @@ $ year             : int [1:344] 2007 2007 2007 2007 2007 2007 2007 2007 2007 20
 </div>
 <p>Let’s create a bar graph</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio" /><label class="tab-label" for="tab-set--6-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot </span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">species</span><span class="p">))</span><span class="o">+</span>
 <span class="nf">geom_bar</span><span class="p">()</span>
 </pre></div>
@@ -427,7 +427,7 @@ $ year             : int [1:344] 2007 2007 2007 2007 2007 2007 2007 2007 2007 20
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio" /><label class="tab-label" for="tab-set--5-input--1">Output</label><div class="tab-content docutils container">
 <figure class="align-default">
 <img alt="../../_images/penguinspecies.png" src="../../_images/penguinspecies.png" />
 </figure>
@@ -436,7 +436,7 @@ $ year             : int [1:344] 2007 2007 2007 2007 2007 2007 2007 2007 2007 20
 <p>I want to see summary statistics for each species
 of penguin</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio" /><label class="tab-label" for="tab-set--7-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">  </span><span class="nf">group_by</span><span class="p">(</span><span class="n">species</span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">summarize</span><span class="p">(</span><span class="nf">across</span><span class="p">(</span><span class="n">bill_length_mm</span><span class="o">:</span><span class="n">body_mass_g</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">))</span>
@@ -449,7 +449,7 @@ of penguin</p>
 <h2>Correlation<a class="headerlink" href="#correlation" title="Permalink to this heading">¶</a></h2>
 <p>Is there a correlation between Flipper Length and Body Mass? Let’s create a scatterplot first</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio" /><label class="tab-label" for="tab-set--9-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">correlation_graph</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">flipper_length_mm</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">body_mass_g</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
 <span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
 <span class="nf">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lm</span><span class="p">)</span>
@@ -459,7 +459,7 @@ of penguin</p>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio" /><label class="tab-label" for="tab-set--8-input--1">Output</label><div class="tab-content docutils container">
 <figure class="align-default">
 <img alt="../../_images/correlation.png" src="../../_images/correlation.png" />
 </figure>
@@ -467,12 +467,12 @@ of penguin</p>
 </div>
 <p>What’s the correlation coefficient?</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio" /><label class="tab-label" for="tab-set--10-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">cor.test</span><span class="p">(</span><span class="n">penguins</span><span class="o">$</span><span class="n">flipper_length_mm</span><span class="p">,</span><span class="w"> </span><span class="n">penguins</span><span class="o">$</span><span class="n">body_mass_g</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--10-input--2" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--10-input--2" name="tab-set--10" type="radio" /><label class="tab-label" for="tab-set--10-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # Pearson&#39;s product-moment correlation
 ## data:  penguins$flipper_length_mm and
 ## t = 32.722, df = 340, p-value &lt;
@@ -495,14 +495,14 @@ of penguin</p>
 we need to run a chi-squared test</p>
 <p>Let’s visualize both varibles first</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio" /><label class="tab-label" for="tab-set--12-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">species</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">island</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">geom_bar</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio" /><label class="tab-label" for="tab-set--11-input--1">Output</label><div class="tab-content docutils container">
 <figure class="align-default">
 <img alt="../../_images/speciesisland.png" src="../../_images/speciesisland.png" />
 </figure>
@@ -510,7 +510,7 @@ we need to run a chi-squared test</p>
 </div>
 <p>We can also build contigency tables</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio" /><label class="tab-label" for="tab-set--13-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins_table</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">table </span><span class="p">(</span><span class="n">penguins</span><span class="o">$</span><span class="n">species</span><span class="p">,</span><span class="w"> </span><span class="n">penguins</span><span class="o">$</span><span class="n">island</span><span class="p">)</span>
 <span class="n">penguins_table</span>
 <span class="nf">prop.table</span><span class="p">(</span><span class="n">penguins_table</span><span class="p">)</span>
@@ -519,7 +519,7 @@ we need to run a chi-squared test</p>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--13-input--2" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--13-input--2" name="tab-set--13" type="radio" /><label class="tab-label" for="tab-set--13-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## #           Biscoe Dream Torgersen
 ## Adelie        44    56        52
 ## Chinstrap      0    68         0
@@ -542,13 +542,13 @@ we need to run a chi-squared test</p>
 </div>
 <p>chi-squared test</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio" /><label class="tab-label" for="tab-set--14-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">chisq</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">chisq.test</span><span class="p">(</span><span class="n">penguins</span><span class="o">$</span><span class="n">species</span><span class="p">,</span><span class="w"> </span><span class="n">penguins</span><span class="o">$</span><span class="n">island</span><span class="p">)</span>
 <span class="n">chisq</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--14-input--2" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--14-input--2" name="tab-set--14" type="radio" /><label class="tab-label" for="tab-set--14-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## #           Pearson&#39;s Chi-squared test
 ## data:  penguins$species and penguins$island
 ## X-squared = 299.55, df = 4, p-value &lt; 2.2e-16
@@ -562,7 +562,7 @@ we need to run a chi-squared test</p>
 <p>Is there a difference between males and females in their body mass?</p>
 <p>Let’s visualize the data first</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio" /><label class="tab-label" for="tab-set--16-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="nf">na.omit</span><span class="p">(</span><span class="n">penguins</span><span class="p">))</span><span class="o">+</span>
 <span class="nf">geom_boxplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">body_mass_g</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="o">=</span><span class="n">sex</span><span class="p">))</span><span class="o">+</span>
 <span class="nf">theme_classic</span><span class="p">()</span><span class="o">+</span>
@@ -574,7 +574,7 @@ we need to run a chi-squared test</p>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio"><label class="tab-label" for="tab-set--15-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio" /><label class="tab-label" for="tab-set--15-input--1">Output</label><div class="tab-content docutils container">
 <figure class="align-default">
 <img alt="../../_images/ttestgraph.png" src="../../_images/ttestgraph.png" />
 </figure>
@@ -583,14 +583,14 @@ we need to run a chi-squared test</p>
 <p>Are there any outliers?
 We can display these specific rows with the identify_outliers() function from the {rstatix} package</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio" /><label class="tab-label" for="tab-set--17-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="nf">group_by</span><span class="p">(</span><span class="n">sex</span><span class="p">)</span><span class="o">%&gt;%</span>
 <span class="nf">identify_outliers</span><span class="p">(</span><span class="n">body_mass_g</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--17-input--2" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--17-input--2" name="tab-set--17" type="radio" /><label class="tab-label" for="tab-set--17-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## 0 rows | 1-4 of 10 columns
 </pre></div>
 </div>
@@ -600,7 +600,7 @@ We can display these specific rows with the identify_outliers() function from th
 by performing a leveneTest, inside the functions we put a formula of the structure
 ‘continuous_variable ~ grouping’.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--18-input--1" name="tab-set--18" type="radio"><label class="tab-label" for="tab-set--18-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--18-input--1" name="tab-set--18" type="radio" /><label class="tab-label" for="tab-set--18-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">leveneTest</span><span class="p">(</span><span class="n">body_mass_g</span><span class="o">~</span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">penguins</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -609,7 +609,7 @@ by performing a leveneTest, inside the functions we put a formula of the structu
 <p>Levene’s test has a null hypothesis that the variances are equal,
 based on the results of our test we reject the null hypothesis.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--19-input--1" name="tab-set--19" type="radio"><label class="tab-label" for="tab-set--19-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--19-input--1" name="tab-set--19" type="radio" /><label class="tab-label" for="tab-set--19-input--1">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## #  Levene&#39;s Test for Homogeneity of Variance (center = median)
 ##        Df F value  Pr(&gt;F)
 ##group   1  6.0586 0.01435 *
@@ -624,12 +624,12 @@ based on the results of our test we reject the null hypothesis.</p>
 and it performs a Welch Two Sample t-test.
 If we have equal variance we have to set the argument var.equal=TRUE which would run a Two-sample t-test.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--20-input--1" name="tab-set--20" type="radio"><label class="tab-label" for="tab-set--20-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--20-input--1" name="tab-set--20" type="radio" /><label class="tab-label" for="tab-set--20-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">t.test</span><span class="p">(</span><span class="n">penguins</span><span class="o">$</span><span class="n">body_mass_g</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">penguins</span><span class="o">$</span><span class="n">sex</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--20-input--2" name="tab-set--20" type="radio"><label class="tab-label" for="tab-set--20-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--20-input--2" name="tab-set--20" type="radio" /><label class="tab-label" for="tab-set--20-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## #  Welch Two Sample t-test
 ## data:  penguins$body_mass_g by penguins$sex
 ##t = -8.5545, df = 323.9, p-value =
@@ -649,13 +649,13 @@ If we have equal variance we have to set the argument var.equal=TRUE which would
 0.2 (small effect), 0.5 (moderate effect) and 0.8 (large effect).
 For Welch t-test use ‘var.equal=FALSE’</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--21-input--1" name="tab-set--21" type="radio"><label class="tab-label" for="tab-set--21-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--21-input--1" name="tab-set--21" type="radio" /><label class="tab-label" for="tab-set--21-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">penguins</span><span class="w"> </span><span class="o">%&gt;%</span>
 <span class="nf">cohens_d</span><span class="p">(</span><span class="n">body_mass_g</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">sex</span><span class="p">,</span><span class="w"> </span><span class="n">var.equal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--21-input--2" name="tab-set--21" type="radio"><label class="tab-label" for="tab-set--21-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--21-input--2" name="tab-set--21" type="radio" /><label class="tab-label" for="tab-set--21-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 1 x 7
 ## .y.            group1  group2  effsize     n1   n2    magnitude
 ## &lt;chr&gt;           &lt;chr&gt;  &lt;chr&gt;   &lt;dbl&gt;       &lt;int&gt; &lt;int&gt;  &lt;ord&gt;
@@ -671,7 +671,7 @@ For Welch t-test use ‘var.equal=FALSE’</p>
 <p>I would like to see if there are differences in the bill length between species.</p>
 <p>We can start with a visualization</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--23-input--1" name="tab-set--23" type="radio"><label class="tab-label" for="tab-set--23-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--23-input--1" name="tab-set--23" type="radio" /><label class="tab-label" for="tab-set--23-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">species</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bill_length_mm</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
 <span class="nf">geom_boxplot</span><span class="p">()</span>
 </pre></div>
@@ -679,7 +679,7 @@ For Welch t-test use ‘var.equal=FALSE’</p>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--22-input--1" name="tab-set--22" type="radio"><label class="tab-label" for="tab-set--22-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--22-input--1" name="tab-set--22" type="radio" /><label class="tab-label" for="tab-set--22-input--1">Output</label><div class="tab-content docutils container">
 <figure class="align-default">
 <img alt="../../_images/anovaplot.png" src="../../_images/anovaplot.png" />
 </figure>
@@ -688,14 +688,14 @@ For Welch t-test use ‘var.equal=FALSE’</p>
 <p>We can use the <em>aov()</em> function to run our anova.  We will check our model assumptions after we fit the model.
 You want to assign the model fit to a variable name because we will use it to get the statistics and check assumptions.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--24-input--1" name="tab-set--24" type="radio"><label class="tab-label" for="tab-set--24-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--24-input--1" name="tab-set--24" type="radio" /><label class="tab-label" for="tab-set--24-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">anova</span><span class="o">&lt;-</span><span class="nf">aov</span><span class="p">(</span><span class="n">bill_length_mm</span><span class="o">~</span><span class="n">species</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">penguins</span><span class="p">)</span>
 
 <span class="nf">summary</span><span class="p">(</span><span class="n">anova</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--24-input--2" name="tab-set--24" type="radio"><label class="tab-label" for="tab-set--24-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--24-input--2" name="tab-set--24" type="radio" /><label class="tab-label" for="tab-set--24-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## #            Df Sum Sq Mean Sq F value Pr(&gt;F)
 ## species       2   7194    3597   410.6 &lt;2e-16 ***
 ## Residuals   339   2970       9
@@ -708,13 +708,13 @@ You want to assign the model fit to a variable name because we will use it to ge
 </div>
 <p>Post-Hoc analysis to see where the differences are</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--25-input--1" name="tab-set--25" type="radio"><label class="tab-label" for="tab-set--25-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--25-input--1" name="tab-set--25" type="radio" /><label class="tab-label" for="tab-set--25-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">Tukey_test</span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">TukeyHSD</span><span class="p">(</span><span class="n">anova</span><span class="p">)</span>
 <span class="n">Tukey_test</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--25-input--2" name="tab-set--25" type="radio"><label class="tab-label" for="tab-set--25-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--25-input--2" name="tab-set--25" type="radio" /><label class="tab-label" for="tab-set--25-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## #  Tukey multiple comparisons of means
 ## 95% family-wise confidence level
 ## Fit: aov(formula = bill_length_mm ~ species, data = penguins)
@@ -731,7 +731,7 @@ You want to assign the model fit to a variable name because we will use it to ge
 called <em>tidy()</em> that we can use to create a cleaner table.
 We can also highlight significant differences with *</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--26-input--1" name="tab-set--26" type="radio"><label class="tab-label" for="tab-set--26-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--26-input--1" name="tab-set--26" type="radio" /><label class="tab-label" for="tab-set--26-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">TukeyTidy</span><span class="o">&lt;-</span><span class="nf">TukeyHSD</span><span class="p">(</span><span class="n">anova</span><span class="p">)</span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">tidy</span><span class="p">()</span><span class="o">%&gt;%</span>
 <span class="w">    </span><span class="nf">mutate</span><span class="p">(</span><span class="n">sig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">case_when</span><span class="p">(</span><span class="n">adj.p.value</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">.</span><span class="m">05</span><span class="o">~</span><span class="w"> </span><span class="s">&#39;*&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">TRUE</span><span class="w"> </span><span class="o">~</span><span class="s">&#39;&#39;</span><span class="p">))</span>
@@ -739,7 +739,7 @@ We can also highlight significant differences with *</p>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--26-input--2" name="tab-set--26" type="radio"><label class="tab-label" for="tab-set--26-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--26-input--2" name="tab-set--26" type="radio" /><label class="tab-label" for="tab-set--26-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # A tibble: 3 x 8
 ## term contrast null.value estimate conf.low conf.high  adj.p.value  sig
 ## &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt;       &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;       &lt;chr&gt;
@@ -760,7 +760,7 @@ We can also highlight significant differences with *</p>
 </div>
 </div></blockquote>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--27-input--1" name="tab-set--27" type="radio"><label class="tab-label" for="tab-set--27-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--27-input--1" name="tab-set--27" type="radio" /><label class="tab-label" for="tab-set--27-input--1">Output</label><div class="tab-content docutils container">
 <figure class="align-default">
 <img alt="../../_images/tukey.png" src="../../_images/tukey.png" />
 </figure>
@@ -768,12 +768,12 @@ We can also highlight significant differences with *</p>
 </div>
 <p>Checking the homogeneity of variance assumption</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--28-input--1" name="tab-set--28" type="radio"><label class="tab-label" for="tab-set--28-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--28-input--1" name="tab-set--28" type="radio" /><label class="tab-label" for="tab-set--28-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">leveneTest</span><span class="p">(</span><span class="n">bill_length_mm</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">species</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">penguins</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--28-input--2" name="tab-set--28" type="radio"><label class="tab-label" for="tab-set--28-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--28-input--2" name="tab-set--28" type="radio" /><label class="tab-label" for="tab-set--28-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # Levene&#39;s Test for Homogeneity of Variance (center = median)
 ##         Df F value Pr(&gt;F)
 ## group   2  2.2425 0.1078
@@ -784,14 +784,14 @@ We can also highlight significant differences with *</p>
 </div>
 <p>Checking the normality assumption</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--30-input--1" name="tab-set--30" type="radio"><label class="tab-label" for="tab-set--30-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--30-input--1" name="tab-set--30" type="radio" /><label class="tab-label" for="tab-set--30-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="n">anova</span><span class="p">,</span><span class="m">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--29-input--1" name="tab-set--29" type="radio"><label class="tab-label" for="tab-set--29-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--29-input--1" name="tab-set--29" type="radio" /><label class="tab-label" for="tab-set--29-input--1">Output</label><div class="tab-content docutils container">
 <figure class="align-default">
 <img alt="../../_images/anovaresid.png" src="../../_images/anovaresid.png" />
 </figure>
@@ -799,13 +799,13 @@ We can also highlight significant differences with *</p>
 </div>
 <p>or we can use the Shapiro_Wilk test</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--31-input--1" name="tab-set--31" type="radio"><label class="tab-label" for="tab-set--31-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--31-input--1" name="tab-set--31" type="radio" /><label class="tab-label" for="tab-set--31-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">anova_residuals</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">residuals</span><span class="p">(</span><span class="n">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">anova</span><span class="w"> </span><span class="p">)</span>
 <span class="nf">shapiro.test</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">anova_residuals</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--31-input--2" name="tab-set--31" type="radio"><label class="tab-label" for="tab-set--31-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--31-input--2" name="tab-set--31" type="radio" /><label class="tab-label" for="tab-set--31-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # Shapiro-Wilk normality test
 ## data:  anova_residuals
 ## W = 0.98903, p-value = 0.01131
@@ -816,12 +816,12 @@ We can also highlight significant differences with *</p>
 <p>The non-parametric alternative to one-way ANOVA is Kruskal-Wallis rank sum test,
 which can be used when ANNOVA assumptions are not met.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--32-input--1" name="tab-set--32" type="radio"><label class="tab-label" for="tab-set--32-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--32-input--1" name="tab-set--32" type="radio" /><label class="tab-label" for="tab-set--32-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">kruskal.test</span><span class="p">(</span><span class="n">bill_length_mm</span><span class="o">~</span><span class="n">species</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">penguins</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--32-input--2" name="tab-set--32" type="radio"><label class="tab-label" for="tab-set--32-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--32-input--2" name="tab-set--32" type="radio" /><label class="tab-label" for="tab-set--32-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # Kruskal-Wallis rank sum test
 ## data:  bill_length_mm by species
 ## Kruskal-Wallis chi-squared = 244.14, df = 2, p-value &lt;
@@ -837,13 +837,13 @@ which can be used when ANNOVA assumptions are not met.</p>
 This function takes an R formula Y ~ X where Y is the dependent or outcome variable
 and X is the independent or predictor variable.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--33-input--1" name="tab-set--33" type="radio"><label class="tab-label" for="tab-set--33-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--33-input--1" name="tab-set--33" type="radio" /><label class="tab-label" for="tab-set--33-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model1</span><span class="o">&lt;-</span><span class="nf">lm</span><span class="p">(</span><span class="n">body_mass_g</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">bill_length_mm</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">penguins</span><span class="p">)</span>
 <span class="nf">summary</span><span class="p">(</span><span class="n">model1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--33-input--2" name="tab-set--33" type="radio"><label class="tab-label" for="tab-set--33-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--33-input--2" name="tab-set--33" type="radio" /><label class="tab-label" for="tab-set--33-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # Call:
 ## lm(formula = body_mass_g ~ bill_length_mm, data = penguins)
 
@@ -867,13 +867,13 @@ and X is the independent or predictor variable.</p>
 </div>
 <p>We can add more variables</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--34-input--1" name="tab-set--34" type="radio"><label class="tab-label" for="tab-set--34-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--34-input--1" name="tab-set--34" type="radio" /><label class="tab-label" for="tab-set--34-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">body_mass_g</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">bill_depth_mm</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">flipper_length_mm</span><span class="p">,</span><span class="w"> </span><span class="n">penguins</span><span class="p">)</span>
 <span class="nf">summary</span><span class="p">(</span><span class="n">model2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--34-input--2" name="tab-set--34" type="radio"><label class="tab-label" for="tab-set--34-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--34-input--2" name="tab-set--34" type="radio" /><label class="tab-label" for="tab-set--34-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## Call:
 ## lm(formula = body_mass_g ~ bill_depth_mm + flipper_length_mm,
 ## data = penguins)
@@ -900,7 +900,7 @@ and X is the independent or predictor variable.</p>
 </div>
 <p>…and compare our models with the ‘tab_model’ function</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--35-input--1" name="tab-set--35" type="radio"><label class="tab-label" for="tab-set--35-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--35-input--1" name="tab-set--35" type="radio" /><label class="tab-label" for="tab-set--35-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">tab_model</span><span class="p">(</span><span class="n">model1</span><span class="p">,</span><span class="w"> </span><span class="n">model2</span><span class="p">,</span><span class="w"> </span><span class="n">dv.labels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Model 1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Model 2&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -909,7 +909,7 @@ and X is the independent or predictor variable.</p>
 <p>Linear Regression assumptions</p>
 <p>-Residuals are normally distributed. The plot()function will give us 4 diagnostic plots</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--41-input--1" name="tab-set--41" type="radio"><label class="tab-label" for="tab-set--41-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--41-input--1" name="tab-set--41" type="radio" /><label class="tab-label" for="tab-set--41-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="o">&lt;-</span><span class="nf">residuals</span><span class="p">(</span><span class="n">model2</span><span class="p">)</span>
 <span class="n">res</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.data.frame</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 <span class="nf">ggplot</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="nf">aes</span><span class="p">(</span><span class="n">res</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
@@ -920,35 +920,35 @@ and X is the independent or predictor variable.</p>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--40-input--1" name="tab-set--40" type="radio"><label class="tab-label" for="tab-set--40-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--40-input--1" name="tab-set--40" type="radio" /><label class="tab-label" for="tab-set--40-input--1">Output</label><div class="tab-content docutils container">
 <figure class="align-default">
 <img alt="../../_images/histresid.png" src="../../_images/histresid.png" />
 </figure>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--39-input--1" name="tab-set--39" type="radio"><label class="tab-label" for="tab-set--39-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--39-input--1" name="tab-set--39" type="radio" /><label class="tab-label" for="tab-set--39-input--1">Output</label><div class="tab-content docutils container">
 <figure class="align-default">
 <img alt="../../_images/residfitted.png" src="../../_images/residfitted.png" />
 </figure>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--38-input--1" name="tab-set--38" type="radio"><label class="tab-label" for="tab-set--38-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--38-input--1" name="tab-set--38" type="radio" /><label class="tab-label" for="tab-set--38-input--1">Output</label><div class="tab-content docutils container">
 <figure class="align-default">
 <img alt="../../_images/qqresid.png" src="../../_images/qqresid.png" />
 </figure>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--37-input--1" name="tab-set--37" type="radio"><label class="tab-label" for="tab-set--37-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--37-input--1" name="tab-set--37" type="radio" /><label class="tab-label" for="tab-set--37-input--1">Output</label><div class="tab-content docutils container">
 <figure class="align-default">
 <img alt="../../_images/scalelocation.png" src="../../_images/scalelocation.png" />
 </figure>
 </div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--36-input--1" name="tab-set--36" type="radio"><label class="tab-label" for="tab-set--36-input--1">Output</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--36-input--1" name="tab-set--36" type="radio" /><label class="tab-label" for="tab-set--36-input--1">Output</label><div class="tab-content docutils container">
 <figure class="align-default">
 <img alt="../../_images/residleverage.png" src="../../_images/residleverage.png" />
 </figure>
@@ -956,12 +956,12 @@ and X is the independent or predictor variable.</p>
 </div>
 <p>We can also run the Shapiro test</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--42-input--1" name="tab-set--42" type="radio"><label class="tab-label" for="tab-set--42-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--42-input--1" name="tab-set--42" type="radio" /><label class="tab-label" for="tab-set--42-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">shapiro.test</span><span class="p">(</span><span class="n">model2</span><span class="o">$</span><span class="n">residuals</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--42-input--2" name="tab-set--42" type="radio"><label class="tab-label" for="tab-set--42-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--42-input--2" name="tab-set--42" type="radio" /><label class="tab-label" for="tab-set--42-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # Shapiro-Wilk normality test
 ## data:  model2$residuals
 ## W = 0.99353, p-value = 0.1506
@@ -973,12 +973,12 @@ and X is the independent or predictor variable.</p>
 We can check the Scale-Location plot or use the Breusch-Pagan test
 (null hypothesis: heteroskedasticity is not present)</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--43-input--1" name="tab-set--43" type="radio"><label class="tab-label" for="tab-set--43-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--43-input--1" name="tab-set--43" type="radio" /><label class="tab-label" for="tab-set--43-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">bptest</span><span class="p">(</span><span class="n">model2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--43-input--2" name="tab-set--43" type="radio"><label class="tab-label" for="tab-set--43-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--43-input--2" name="tab-set--43" type="radio" /><label class="tab-label" for="tab-set--43-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## # studentized Breusch-Pagan test
 ## data:  model2
 ##BP = 2.4223, df = 2, p-value = 0.2979
@@ -989,12 +989,12 @@ We can check the Scale-Location plot or use the Breusch-Pagan test
 <p>-Multicollinearity. This issue occurs when two or more independent variables are highly correlated.
 We can use vif() to calculate the variance inflation factor. A value larger than 2.5 may be a cause for concern.</p>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--44-input--1" name="tab-set--44" type="radio"><label class="tab-label" for="tab-set--44-input--1">R</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--44-input--1" name="tab-set--44" type="radio" /><label class="tab-label" for="tab-set--44-input--1">R</label><div class="tab-content docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">vif</span><span class="p">(</span><span class="n">model2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--44-input--2" name="tab-set--44" type="radio"><label class="tab-label" for="tab-set--44-input--2">Output</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--44-input--2" name="tab-set--44" type="radio" /><label class="tab-label" for="tab-set--44-input--2">Output</label><div class="tab-content docutils container">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## bill_depth_mm flipper_length_mm
 ##     1.51718           1.51718
 </pre></div>
