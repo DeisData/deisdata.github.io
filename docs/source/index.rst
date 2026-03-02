@@ -18,9 +18,6 @@ Meet your research community of support.
    -  `Surma
       Talapatra <https://calendar.library.brandeis.edu/appointments/stalapatra>`__
       (sciences)
-   -  `Ford
-      Fishman <https://calendar.library.brandeis.edu/appointments/fordfishman>`__
-      (sciences)
    -  `Kevin Martyn <https://calendar.library.brandeis.edu/appointments/kpm>`__
       (GIS)
 
